@@ -50,6 +50,7 @@ function Mixer() {
       success: function(data){
         console.log("Got results");
         self.results = data;
+        $("#response").html(JSON.stringify(data));        
       },
       error: function(){
         alert('an error occured');
@@ -95,4 +96,10 @@ function Mixer() {
 
 $(function() {
   m = new Mixer();
+  
+  // interface
+  $("form").submit(function() {
+    data = m.get_results();
+    return false;
+  });
 });
