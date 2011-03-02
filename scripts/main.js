@@ -38,10 +38,9 @@ function Mixer() {
     return url;
   };
   
-  
   self.get_results = function(res) {
     if(!res) res = ["co2_emission_total"];
-    var url = self.base_path_with_session_id() + ".json?";
+    var url = self.base_path_with_session_id() + ".json";
     console.log(url);
     $.ajax({
       url: url,
@@ -60,16 +59,11 @@ function Mixer() {
   };
 
   self.push_parameters = function() {
-    var url = self.base_path_with_session_id() + ".json?";
-    var query_items = []; 
-    $.each(self.parameters, function(index, value){
-      // Ugly, use jQuery options
-      query_items.push("input[" + index + "]=" + value);
-    });
-    url += query_items.join("&");
+    var url = self.base_path_with_session_id() + ".json";
     console.log(url);
     $.ajax({
       url: url,
+      data: { input: self.parameters },
       dataType: 'jsonp',
       success: function(data){
         console.log("Pushed parameters");
@@ -79,10 +73,58 @@ function Mixer() {
       }
     });
   };
-  
+    
   // merges in the common hash
   self.set_parameter = function(key, value) {
     self.parameters[key] = value;
+    return self.parameters;
+  };
+  
+  // will send the parameters and fetch results in a single step
+  self.run = function(res) {
+    self.process_form();
+    if(!res) res = ["co2_emission_total"];
+    var url = self.base_path_with_session_id() + ".json";
+    console.log(url);
+    $.ajax({
+      url: url,
+      data: { result: res, input: self.parameters },
+      dataType: 'jsonp',
+      success: function(data){
+        console.log("Got results");
+        self.results = data;
+        $("#response").html(JSON.stringify(data));        
+      },
+      error: function(){
+        alert('an error occured');
+      }
+    });
+    
+  };
+  
+  self.process_form = function() {
+    console.log("Processing form elements");
+    switch ($("input[name=q1]:checked").val()) {
+      case "1":
+        self.parameters[58] = 1; // cost_combustion_gas
+        self.parameters[11] = 1; // cost_combustion_oil
+        self.parameters[57] = 1; // cost_combustion_coal
+        self.parameters[59] = 1; // cost_combustion_biomass
+        break;
+      case "2":
+        self.parameters[58] = 1.25; // cost_combustion_gas
+        self.parameters[11] = 1.25; // cost_combustion_oil
+        self.parameters[57] = 1.25; // cost_combustion_coal
+        self.parameters[59] = 1.25; // cost_combustion_biomass
+        break;
+      case "3":
+        self.parameters[58] = 0.75; // cost_combustion_gas
+        self.parameters[11] = 0.75; // cost_combustion_oil
+        self.parameters[57] = 0.75; // cost_combustion_coal
+        self.parameters[59] = 0.75; // cost_combustion_biomass
+        break;
+      default:
+    }
     return self.parameters;
   };
   
@@ -99,7 +141,9 @@ $(function() {
   
   // interface
   $("form").submit(function() {
-    data = m.get_results();
+    // m.process_form();
+    // data = m.get_results();
+    m.run();
     return false;
   });
 });
