@@ -474,9 +474,13 @@ function Mixer() {
 $(function() {
   m = new Mixer();
   
+  
+  
   // interface
   $("form").submit(function() {
     m.run();
     return false;
   });
+  
+  $("#tabs").tabs();
 });
