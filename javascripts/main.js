@@ -482,6 +482,4 @@ $(function() {
     return false;
   });
   
-  $("#tabs").tabs();
-  $("input:submit").button();
 });
