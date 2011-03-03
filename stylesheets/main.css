@@ -1,4 +1,30 @@
-#response {
-  border: 1px solid #333;
-  height: 150px;
+html{
+  font-family: Arial;
+}
+
+#questions form input[type=radio]{
+  display:none;
+}
+
+#questions fieldset{
+  border: none;
+}
+
+#questions fieldset legend{
+  padding: 0 0 0 0;
+}
+
+#questions form label{
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+}
+
+#questions form label:hover, #questions form label.active{
+  display: block;
+  background-color: #00f;
+  color: #fff;
 }
