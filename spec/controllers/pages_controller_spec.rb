@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe HomeController do
+describe PagesController do
   render_views
 
   before do
     Factory :question
   end
   
-  describe "GET 'index'" do
+  describe "GET 'home'" do
     it "should be successful" do
-      get 'index'
+      get :home
       response.should be_success
     end
   end
