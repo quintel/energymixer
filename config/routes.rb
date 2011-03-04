@@ -1,5 +1,5 @@
 EnergyMixer::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "pages#home"
 
   resources :inputs
   resources :answers, :only => [:edit, :update, :show]
