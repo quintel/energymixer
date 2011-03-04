@@ -163,15 +163,15 @@ Question.destroy_all
 qct = 0
 @questions.each do |q|
 
-  @q = Question.create!( :question => q[:question], :order => qct)
+  @q = Question.create!(:question => q[:question], :ordering => qct)
 
   act = 0
   q[:answers].each do |a|
-    @a = @q.answers.create!( :answer => a[:short], :description => a[:long], :order  => act )    
+    @a = @q.answers.create!(:answer => a[:short], :description => a[:long], :ordering => act)
     act += 1
     
     a[:inputs].each do |i|
-      @a.inputs.create!( :key   => i[:key], :value => i[:value] )
+      @a.inputs.create!(:key => i[:key], :value => i[:value])
     end
   end
   qct += 1

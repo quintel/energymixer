@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Question.ordered.all
 
     respond_to do |format|
       format.html # index.html.erb
