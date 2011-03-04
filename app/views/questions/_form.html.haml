@@ -9,7 +9,7 @@
     = f.input :question
     = f.input :ordering
     = f.semantic_fields_for :answers do |a|
-      = a.inputs do
+      = a.inputs :class => (a.object.new_record? ? 'inputs new_record' : 'inputs') do
         = a.input :answer
         = a.input :ordering
         = a.input :_destroy, :as => :boolean

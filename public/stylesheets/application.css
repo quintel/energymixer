@@ -20,6 +20,12 @@ body {
           color: red; }
   body .content {
     padding: 0.5em; }
+    body .content h1 {
+      font-size: 1.8em;
+      font-weight: bold; }
+    body .content h2 {
+      font-size: 1.5em;
+      font-weight: bold; }
 
 #pages_home #questions .question {
   border: 1px solid #eeeeee;
@@ -31,3 +37,15 @@ body {
     line-height: 20px; }
   #pages_home #questions .question fieldset .answer {
     padding: 0.2em; }
+
+table.striped td {
+  padding: 0.5em; }
+table.striped thead tr {
+  background-color: #333333; }
+  table.striped thead tr th {
+    color: white;
+    text-align: left;
+    padding: 0.5em;
+    font-weight: bold; }
+table.striped tbody tr.even {
+  background-color: #dddddd; }
