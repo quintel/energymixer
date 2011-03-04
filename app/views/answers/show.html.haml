@@ -10,6 +10,12 @@
   %b Question:
   = @answer.question_id
 
+%h2 Inputs
+%dl
+  - @answer.inputs.each do |i|
+    %dt= i.key
+    %dd= i.value
+
 = link_to 'Edit', edit_answer_path(@answer)
 \|
 = link_to 'Back', answers_path
