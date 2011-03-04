@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.xml
   def new
     @question = Question.new
+    5.times{ @question.answers.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
+    5.times{ @question.answers.build }
   end
 
   # POST /questions
