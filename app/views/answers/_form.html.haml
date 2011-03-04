@@ -10,7 +10,7 @@
     = f.input :description
     = f.input :ordering
     = f.semantic_fields_for :inputs do |i|
-      = i.inputs do
+      = i.inputs :class => (i.object.new_record? ? 'inputs new_record' : 'inputs') do
         = i.input :key
         = i.input :value
         = i.input :_destroy, :as => :boolean

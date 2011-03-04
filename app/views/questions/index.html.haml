@@ -1,20 +1,21 @@
-%h1 Listing questions
+%h1 Question Index
 
-%table
-  %tr
-    %th Question
-    %th Order
-    %th
-    %th
-    %th
-
-  - @questions.each do |question|
+%table.striped
+  %thead
     %tr
-      %td= question.question
-      %td= question.ordering
-      %td= link_to 'Show', question
-      %td= link_to 'Edit', edit_question_path(question)
-      %td= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
+      %th Question Name
+      %th Order
+      %th
+      %th
+      %th
+  %tbody
+    - @questions.each do |question|
+      %tr{:class => cycle('even', 'odd')}
+        %td= question.question
+        %td= question.ordering
+        %td= link_to 'Show', question
+        %td= link_to 'Edit', edit_question_path(question)
+        %td= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
