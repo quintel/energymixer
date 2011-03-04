@@ -1,10 +1,8 @@
 EnergyMixer::Application.routes.draw do
-  get "home/index"
+  root :to => "home#index"
 
   resources :inputs
-
   resources :answers
-
   resources :questions
 
   # The priority is based upon order of creation:
