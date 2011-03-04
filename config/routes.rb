@@ -4,6 +4,12 @@ EnergyMixer::Application.routes.draw do
   resources :inputs
   resources :answers, :only => [:edit, :update, :show]
   resources :questions
+  resources :pages do
+    collection do 
+      get 'mix'
+      get 'home'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
