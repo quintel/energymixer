@@ -1,0 +1,8 @@
+ul#mix {
+  background-color: #cccccc;
+  width: 200px; }
+  ul#mix li {
+    display: block;
+    text-indent: -9999px;
+    text-align: center;
+    border: 1px solid black; }
