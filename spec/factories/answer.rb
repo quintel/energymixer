@@ -1,5 +1,4 @@
 Factory.define :answer do |f|
-  f.association :question, :factory => :question
   f.sequence(:answer) {|n| "Answer ##{n}"}
-  # f.inputs {|i| [i.association(:input), i.association(:input)] }
+  f.inputs {|i| Array.new(3).map{ i.association(:input)} }
 end
