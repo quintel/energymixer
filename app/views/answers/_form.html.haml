@@ -1,19 +1,16 @@
-= form_for @answer do |f|
+= semantic_form_for @answer do |f|
   -if @answer.errors.any?
     #error_explanation
       %h2= "#{pluralize(@answer.errors.count, "error")} prohibited this answer from being saved:"
       %ul
         - @answer.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :answer
-    = f.text_field :answer
-  .field
-    = f.label :order
-    = f.text_field :order
-  .field
-    = f.label :question_id
-    = f.text_field :question_id
-  .actions
-    = f.submit 'Save'
+  = f.inputs do
+    = f.input :answer
+    = f.input :order
+    = f.semantic_fields_for :inputs do |i|
+      = i.inputs do
+        = i.input :key
+        = i.input :value
+        = i.input :_destroy, :as => :boolean
+    = f.buttons

@@ -22,11 +22,13 @@ ActiveRecord::Schema.define(:version => 20110304091407) do
 
   create_table "inputs", :force => true do |t|
     t.string   "key"
-    t.decimal  "value",      :precision => 10, :scale => 0
-    t.integer  "answr_id"
+    t.decimal  "value",      :precision => 10, :scale => 2
+    t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "inputs", ["answer_id"], :name => "index_inputs_on_answer_id"
 
   create_table "questions", :force => true do |t|
     t.string   "question"

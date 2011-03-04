@@ -35,6 +35,7 @@ class AnswersController < ApplicationController
   # GET /answers/1/edit
   def edit
     @answer = Answer.find(params[:id])
+    4.times{ @answer.inputs.build }
   end
 
   # POST /answers

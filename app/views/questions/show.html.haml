@@ -11,7 +11,9 @@
 
 %ul
   - @question.answers.each do |a|
-    %li= a.answer
+    %li
+      = a.answer
+      = link_to 'edit', edit_answer_path(a)
 
 = link_to 'Edit', edit_question_path(@question)
 \|
