@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Question do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of :question }
+  it { should have_many :answers }
 end

@@ -12,7 +12,7 @@ describe AnswersController do
   describe "GET show" do
     it "assigns the requested answer as @answer" do
       get :show, :id => answer.id
-      assigns(:answer).should be(answer)
+      assigns(:answer).should == answer
       response.should be_success
     end
   end
@@ -20,38 +20,30 @@ describe AnswersController do
   describe "GET edit" do
     it "assigns the requested answer as @answer" do
       get :edit, :id => answer.id
-      assigns(:answer).should be(answer)
-      response.should be_success
+      assigns(:answer).should == answer
+      response.should render_template('edit')
     end
   end
 
   describe "PUT update" do
+    before do
+      @answer = Factory :answer
+    end
+
     describe "with valid params" do
       it "updates the requested answer" do
-        answer.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => answer.id, :answer => {'these' => 'params'}
-      end
-
-      it "assigns the requested answer as @answer" do
-        put :update, :id => "1"
-        assigns(:answer).should be(answer)
-      end
-
-      it "redirects to the answer" do
-        put :update, :id => "1"
-        response.should redirect_to(answer_url(answer))
+        put :update, :id => @answer.id, :answer => { :answer => 'Hi!'}
+        assigns(:answer).should == @answer
+        @answer.reload.answer.should == 'Hi!'
+        response.should redirect_to(answer_url(@answer))
       end
     end
 
     describe "with invalid params" do
       it "assigns the answer as @answer" do
-        put :update, :id => "1"
-        assigns(:answer).should be(answer)
-      end
-
-      it "re-renders the 'edit' template" do        Answer.stub(:find) { answer(:update_attributes => false) }
-        put :update, :id => "1"
-        response.should render_template("edit")
+        put :update, :id => @answer.id, :answer => { :answer => '' }
+        assigns(:answer).should == @answer
+        response.should render_template('edit')
       end
     end
   end

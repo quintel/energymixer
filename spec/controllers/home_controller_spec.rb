@@ -2,9 +2,10 @@ require 'spec_helper'
 
 describe HomeController do
   render_views
-  # before do
-  #   Factory :question
-  # end
+
+  before do
+    Factory :question
+  end
   
   describe "GET 'index'" do
     it "should be successful" do
