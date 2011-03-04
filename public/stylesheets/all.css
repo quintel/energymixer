@@ -93,6 +93,21 @@ table.striped thead tr {
 table.striped tbody tr.even {
   background-color: #dddddd; }
 
+.flash {
+  text-align: center;
+  border: 1px solid;
+  margin: 0.5em;
+  padding: 1em;
+  font-weight: bold; }
+
+.flash#alert {
+  color: red;
+  background-color: #fdbbbc; }
+
+.flash#notice {
+  color: green;
+  background-color: #7bff76; }
+
 ul#mix {
   background-color: #cccccc;
   width: 200px; }
