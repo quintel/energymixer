@@ -13,5 +13,8 @@
       %nav
         = link_to 'Home', root_path
         = link_to 'Questions', questions_path
+    - flash.each do |k,msg|
+      .flash{:id => k}
+        = msg
     .content
       = yield
