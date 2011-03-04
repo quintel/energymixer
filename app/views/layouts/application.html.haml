@@ -9,5 +9,8 @@
   %body
     %header
       %h1 Energy Mixer
-    %content
+      %nav
+        = link_to 'Home', root_path
+        = link_to 'Questions', questions_path
+    .content
       = yield

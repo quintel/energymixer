@@ -10,6 +10,7 @@ gem 'autotest'
 gem 'devise'
 gem 'haml-rails'
 gem 'jquery-rails', '0.2.7'
+gem 'formtastic'
 # Use unicorn as the web server
 # gem 'unicorn'
 

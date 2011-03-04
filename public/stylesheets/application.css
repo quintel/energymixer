@@ -1,0 +1,22 @@
+body {
+  font-family: helvetica;
+  margin: 0;
+  padding: 0; }
+  body header {
+    margin: 0;
+    background-color: #777777; }
+    body header h1 {
+      margin: 0;
+      padding: 0.5em;
+      color: white; }
+    body header nav {
+      padding: 0.5em;
+      margin: 0;
+      background-color: #cccccc; }
+      body header nav a {
+        color: black;
+        text-decoration: none; }
+        body header nav a:hover {
+          color: red; }
+  body .content {
+    padding: 0.5em; }
