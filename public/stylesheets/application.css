@@ -20,3 +20,14 @@ body {
           color: red; }
   body .content {
     padding: 0.5em; }
+
+#pages_home #questions .question {
+  border: 1px solid #eeeeee;
+  padding: 0.5em;
+  margin-bottom: 0.2em; }
+  #pages_home #questions .question fieldset legend {
+    display: none; }
+  #pages_home #questions .question fieldset .question_text {
+    line-height: 20px; }
+  #pages_home #questions .question fieldset .answer {
+    padding: 0.2em; }
