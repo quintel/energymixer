@@ -1,0 +1,23 @@
+%h1 Listing inputs
+
+%table
+  %tr
+    %th Key
+    %th Value
+    %th Answr
+    %th
+    %th
+    %th
+
+  - @inputs.each do |input|
+    %tr
+      %td= input.key
+      %td= input.value
+      %td= input.answr_id
+      %td= link_to 'Show', input
+      %td= link_to 'Edit', edit_input_path(input)
+      %td= link_to 'Destroy', input, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Input', new_input_path

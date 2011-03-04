@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Shell::Application.load_tasks
+EnergyMixer::Application.load_tasks
