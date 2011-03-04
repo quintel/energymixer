@@ -7,11 +7,11 @@
           %li= msg
   = f.inputs do
     = f.input :question
-    = f.input :order
+    = f.input :ordering
     = f.semantic_fields_for :answers do |a|
       = a.inputs do
         = a.input :answer
-        = a.input :order
+        = a.input :ordering
         = a.input :_destroy, :as => :boolean
   = f.buttons
     

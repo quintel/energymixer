@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @questions = Question.all
+    @questions = Question.ordered.all
   end
 end
