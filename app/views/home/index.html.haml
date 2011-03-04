@@ -1,2 +1,43 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+#questions
+  %form
+    - @questions.each_with_index do |i, q|
+      .question
+        %fieldset
+          %legend= "question ##{i}"
+    #tabs
+      %ul
+        %li
+          %a{:href => "#question_1"} 1
+        %li
+          %a{:href => "#question_2"} 2
+      #question-1
+        %fieldset
+          %legend Question #1
+          .question_text Benzine, gas en elektriciteit
+          .answer.active
+            %input#question_1_opt_1{:name => "q1", :type => "radio", :value => "1"}/
+            %label.active{:for => "question_1_opt_1"} Blijven even duur
+          .answer
+            %input#question_1_opt_2{:name => "q1", :type => "radio", :value => "2"}/
+            %label{:for => "question_1_opt_2"} Worden duurder
+          .answer
+            %input#question_1_opt_3{:name => "q1", :type => "radio", :value => "3"}/
+            %label{:for => "question_1_opt_3"} Worden goedkoper
+      #question-2
+        %fieldset
+          %legend Question #2
+          .question_text De Nederlandse aardgasvelden raken geleidelijk leger, de eigen aardgasproductie neemt af. Om voldoende energie beschikbaar te hebben (equivalent van ongeveer 20miljard M3 aardgas), moet Nederland deze energie.
+          %div
+            %input#question_2_opt_1{:name => "q2", :type => "radio", :value => "1"}/
+            %label{:for => "question_2_opt_1"} Importeren in de vorm van aardgas via pijplijnen en LNG in schepen
+          %div
+            %input#question_2_opt_2{:name => "q2", :type => "radio", :value => "2"}/
+            %label{:for => "question_2_opt_2"} De helft importeren en de helft de helft oplossen met energiebesparing
+          %div
+            %input#question_2_opt_3{:name => "q2", :type => "radio", :value => "3"}/
+            %label{:for => "question_2_opt_3"} De helft opwekken met eigen energie uit biomassa, zon en wind en de helft uit energiebesparing halen
+    %input{:type => "submit"}/
+#response
+
+- content_for :head do
+  = javascript_include_tag 'main'
