@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Shell::Application.config.secret_token = 'f1d43fc3e5a0cd205c28412f7737966f99ee35d77edc974fea4dbda866898f99f1b2a760f123347f2811583e623286db759da40733e33b8dbdc0df37c398d766'
+EnergyMixer::Application.config.secret_token = 'b54dba0948ad2e182886be8d3034dd67e7fcf8ebd2f0de4660ace2e036baa451673dc6fcb0c0805ed236f050eeb110be996e7b88c16276f9349da8fed18f492d'

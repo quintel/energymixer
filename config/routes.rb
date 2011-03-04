@@ -1,4 +1,6 @@
-Shell::Application.routes.draw do
+EnergyMixer::Application.routes.draw do
+  get "home/index"
+
   resources :inputs
 
   resources :answers
