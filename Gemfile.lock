@@ -68,6 +68,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.12)
     mysql2 (0.2.6)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -129,6 +130,7 @@ DEPENDENCIES
   formtastic
   haml-rails
   jquery-rails (= 0.2.7)
+  mocha
   mysql2
   rails (= 3.0.5)
   rspec-rails

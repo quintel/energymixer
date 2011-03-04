@@ -1,6 +1,4 @@
 class QuestionsController < ApplicationController
-  # GET /questions
-  # GET /questions.xml
   def index
     @questions = Question.all
 
@@ -10,8 +8,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/1
-  # GET /questions/1.xml
   def show
     @question = Question.find(params[:id])
 
@@ -21,8 +17,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/new
-  # GET /questions/new.xml
   def new
     @question = Question.new
     5.times{ @question.answers.build }
@@ -33,14 +27,11 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # GET /questions/1/edit
   def edit
     @question = Question.find(params[:id])
     5.times{ @question.answers.build }
   end
 
-  # POST /questions
-  # POST /questions.xml
   def create
     @question = Question.new(params[:question])
 
@@ -55,8 +46,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # PUT /questions/1
-  # PUT /questions/1.xml
   def update
     @question = Question.find(params[:id])
 
@@ -71,8 +60,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # DELETE /questions/1
-  # DELETE /questions/1.xml
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
