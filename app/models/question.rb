@@ -4,4 +4,6 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :answers, :allow_destroy => true, :reject_if => proc {|attrs| attrs['answer'].blank? }
 
   validates :question, :presence => true
+  
+  scope :ordered, order('ordering, id')
 end

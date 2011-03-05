@@ -63,3 +63,56 @@ body {
           color: red; }
   body .content {
     padding: 0.5em; }
+    body .content h1 {
+      font-size: 1.8em;
+      font-weight: bold; }
+    body .content h2 {
+      font-size: 1.5em;
+      font-weight: bold; }
+
+#pages_home #questions .question {
+  border: 1px solid #eeeeee;
+  padding: 0.5em;
+  margin-bottom: 0.2em; }
+  #pages_home #questions .question fieldset legend {
+    display: none; }
+  #pages_home #questions .question fieldset .question_text {
+    line-height: 20px; }
+  #pages_home #questions .question fieldset .answer {
+    padding: 0.2em; }
+
+table.striped td {
+  padding: 0.5em; }
+table.striped thead tr {
+  background-color: #333333; }
+  table.striped thead tr th {
+    color: white;
+    text-align: left;
+    padding: 0.5em;
+    font-weight: bold; }
+table.striped tbody tr.even {
+  background-color: #dddddd; }
+
+.flash {
+  text-align: center;
+  border: 1px solid;
+  margin: 0.5em;
+  padding: 1em;
+  font-weight: bold; }
+
+.flash#alert {
+  color: red;
+  background-color: #fdbbbc; }
+
+.flash#notice {
+  color: green;
+  background-color: #7bff76; }
+
+ul#mix {
+  background-color: #cccccc;
+  width: 200px; }
+  ul#mix li {
+    display: block;
+    text-indent: -9999px;
+    text-align: center;
+    border: 1px solid black; }

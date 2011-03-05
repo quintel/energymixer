@@ -1,17 +1,11 @@
 = semantic_form_for @question do |f|
-  -if @question.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
-      %ul
-        - @question.errors.full_messages.each do |msg|
-          %li= msg
   = f.inputs do
     = f.input :question
-    = f.input :order
+    = f.input :ordering
     = f.semantic_fields_for :answers do |a|
-      = a.inputs do
+      = a.inputs :class => (a.object.new_record? ? 'inputs new_record' : 'inputs') do
         = a.input :answer
-        = a.input :order
+        = a.input :ordering
         = a.input :_destroy, :as => :boolean
   = f.buttons
     
