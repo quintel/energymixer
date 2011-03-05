@@ -8,7 +8,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: shell_dev
+  database: energymixer_dev
   pool: 5
   username: root
   password:
@@ -21,7 +21,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: shell_test
+  database: energymixer_test
   pool: 5
   username: root
   password:
@@ -30,7 +30,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: shell_production
+  database: energymixer_production
   pool: 5
   username: root
   password:
