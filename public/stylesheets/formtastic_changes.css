@@ -18,3 +18,7 @@ form.formtastic fieldset {
   margin: .5em;
   padding: .3em;
 }
+
+form.formtastic fieldset.new_record {
+  background-color: #F1FF99;
+}

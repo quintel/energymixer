@@ -10,15 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304091407) do
+ActiveRecord::Schema.define(:version => 20110304143613) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
-    t.integer  "order"
+    t.integer  "ordering"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
+
+  add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
 
   create_table "inputs", :force => true do |t|
     t.string   "key"
@@ -32,9 +36,11 @@ ActiveRecord::Schema.define(:version => 20110304091407) do
 
   create_table "questions", :force => true do |t|
     t.string   "question"
-    t.integer  "order"
+    t.integer  "ordering"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
 
 end
