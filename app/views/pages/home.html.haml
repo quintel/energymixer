@@ -13,6 +13,7 @@
                      :value => answer.id, 
                      :id => "answer_#{answer.id}"}
               %label{:for => "answer_#{answer.id}"}
+                = answer.letter
                 = answer.answer
 
   %input{:type => "submit"}
