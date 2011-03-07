@@ -1,17 +1,18 @@
-#questions
+%content#questions
   %form
     - @questions.each_with_index do |question, i|
-      .question
+      %article.question
         %fieldset
           %legend= "Question ##{i + 1}"
           .question_text= question.question
           - question.answers.each do |answer|
-            .answer.active
+            .answer
               %input{:name => "question_#{question.id}", 
                      :type => "radio", 
                      :value => answer.id, 
                      :id => "ans_#{answer.id}"}
-              %label.active{:for => "question_1_opt_1"}= answer.answer          
+              %label{:for => "question_1_opt_1"}
+                = answer.answer
 
   %input{:type => "submit"}
 #response
