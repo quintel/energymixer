@@ -10,8 +10,8 @@
               %input{:name => "question_#{question.id}", 
                      :type => "radio", 
                      :value => answer.id, 
-                     :id => "ans_#{answer.id}"}
-              %label{:for => "ans_#{answer.id}"}
+                     :id => "answer_#{answer.id}"}
+              %label{:for => "answer_#{answer.id}"}
                 = answer.answer
 
   %input{:type => "submit"}
