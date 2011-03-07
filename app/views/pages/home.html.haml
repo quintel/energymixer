@@ -1,4 +1,4 @@
-%content#questions
+%section#questions
   %form
     - @questions.each_with_index do |question, i|
       %article.question
@@ -15,7 +15,9 @@
                 = answer.answer
 
   %input{:type => "submit"}
-#response
+
+%section
+  
 
 - content_for :head do
   = javascript_include_tag 'main'
