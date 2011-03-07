@@ -1,3 +1,4 @@
+-#TODO: Cut these pieces into partials
 %section#questions
   %form
     - @questions.each_with_index do |question, i|
@@ -16,8 +17,28 @@
 
   %input{:type => "submit"}
 
-%section
-  
+%section{:class=>"output"}
+  %table{:class=>"zebra"}
+    %tr
+      %th Energy carrier
+      %th Value
+    -{coal: "Q(total_cost_of_primary_natural_gas)", natural_gas: "Q(total_cost_of_primary_coal)"}.each do |carrier, gquery|
+      %tr
+        %td=carrier
+        %td{:gquery => gquery, :class=>"output"}
+          loading...
+
+%section{:class=>"output"}
+  %table{:class=>"zebra"}
+    %tr
+      %th Indicator
+      %th Value
+    -{CO2: "Q(co2_emission)", sustainability: "Q(share_of_renewable_energy)", bio_footprint: "Q(area_footprint_per_nl)", net_energy_import: "Q(energy_dependence)"}.each do |carrier, gquery|
+      %tr
+        %td=carrier
+        %td{:gquery => gquery, :class=>"output"}
+          loading...
+
 
 - content_for :head do
   = javascript_include_tag 'main'
