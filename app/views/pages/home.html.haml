@@ -40,7 +40,7 @@
       %tr
         %th Indicator
         %th Value
-      -{CO2: "Q(co2_emission)", sustainability: "Q(share_of_renewable_energy)", bio_footprint: "Q(area_footprint_per_nl)", net_energy_import: "Q(energy_dependence)"}.each do |carrier, gquery|
+      -{CO2: "co2_emission", sustainability: "share_of_renewable_energy", bio_footprint: "area_footprint_per_nl", net_energy_import: "energy_dependence"}.each do |carrier, gquery|
         %tr
           %td=carrier
           %td{:gquery => gquery, :class=>"output"}
