@@ -1,15 +1,16 @@
 -#TODO: Cut these pieces into partials
-%nav#questions
-  -@questions.each_with_index do |question, i|
-    %a{:id => question.id}
-      question.ordering
 %section#questions
+  %nav
+    -@questions.each do |question|
+      %a{:id => question.id, :href=>"#"}
+        =question.number
   %form
-    - @questions.each_with_index do |question, i|
+    - @questions.each do |question|
       %article.question
         %fieldset
-          %legend= "#{question.number}"
-          .question_text= question.question
+          %p.text
+            %span.number= question.number
+            %span.text= question.question
           - question.answers.each do |answer|
             .answer
               %input{:name => "question_#{question.id}", 
