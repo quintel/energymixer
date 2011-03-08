@@ -7,7 +7,7 @@
     = csrf_meta_tag
     = yield :head
   %body{:id => "#{controller.controller_name}_#{controller.action_name}", 
-        :class => controller.controller_name}
+        :class => [controller.controller_name, "admin"]}
     %header
       %h1 Energy Mixer > Admin
       %nav
