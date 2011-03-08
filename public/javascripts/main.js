@@ -462,6 +462,27 @@ function Mixer() {
 
     return self.parameters;
   };
+
+  self.update_results_section = function() {
+    var res = $.map($(".output[gquery]"), function(container, index) {
+      return $(container).attr("gquery");
+    });
+
+    $.ajax({
+      url: self.base_path_with_session_id() + ".json",
+      data: { result: res },
+      dataType: 'jsonp',
+      success: function(data){
+        var results = data.result;
+        $.each(results, function(parameter, result) {
+          $('.output[gquery="' + parameter + '"]').html(result[1][1]);
+        });
+      },
+      error: function(){
+        alert('an error occured');
+      }
+    });
+  };
   
   self.init = function() {
     self.fetch_session_id();
@@ -474,6 +495,7 @@ function Mixer() {
 $(function() {
   m = new Mixer();
   
+  m.update_results_section();
   
   
   // interface
