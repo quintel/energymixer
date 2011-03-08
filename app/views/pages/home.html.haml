@@ -1,10 +1,14 @@
 -#TODO: Cut these pieces into partials
+%nav#questions
+  -@questions.each_with_index do |question, i|
+    %a{:id => question.id}
+      question.ordering
 %section#questions
   %form
     - @questions.each_with_index do |question, i|
       %article.question
         %fieldset
-          %legend= "Question ##{i + 1}"
+          %legend= "#{question.number}"
           .question_text= question.question
           - question.answers.each do |answer|
             .answer
@@ -18,27 +22,28 @@
 
   %input{:type => "submit"}
 
-%section{:class=>"output"}
-  %table
-    %tr
-      %th Energy carrier
-      %th Value
-    -{coal: "total_cost_of_primary_natural_gas", natural_gas: "total_cost_of_primary_coal", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
+%section#results
+  %section{:class=>"output"}
+    %table
       %tr
-        %td=carrier
-        %td{:gquery => gquery, :class=>"output"}
-          loading...
+        %th Energy carrier
+        %th Value
+      -{coal: "total_cost_of_primary_natural_gas", natural_gas: "total_cost_of_primary_coal", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
+        %tr
+          %td=carrier
+          %td{:gquery => gquery, :class=>"output"}
+            loading...
 
-%section{:class=>"output"}
-  %table
-    %tr
-      %th Indicator
-      %th Value
-    -{CO2: "Q(co2_emission)", sustainability: "Q(share_of_renewable_energy)", bio_footprint: "Q(area_footprint_per_nl)", net_energy_import: "Q(energy_dependence)"}.each do |carrier, gquery|
+  %section{:class=>"output"}
+    %table
       %tr
-        %td=carrier
-        %td{:gquery => gquery, :class=>"output"}
-          loading...
+        %th Indicator
+        %th Value
+      -{CO2: "Q(co2_emission)", sustainability: "Q(share_of_renewable_energy)", bio_footprint: "Q(area_footprint_per_nl)", net_energy_import: "Q(energy_dependence)"}.each do |carrier, gquery|
+        %tr
+          %td=carrier
+          %td{:gquery => gquery, :class=>"output"}
+            loading...
 
 
 - content_for :head do

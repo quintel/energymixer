@@ -6,4 +6,8 @@ class Question < ActiveRecord::Base
   validates :question, :presence => true
   
   scope :ordered, order('ordering, id')
+  
+  def number
+    ordering+1
+  end
 end
