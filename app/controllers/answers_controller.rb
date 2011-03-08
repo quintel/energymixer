@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  layout 'admin'
   def show
     @answer = Answer.find(params[:id])
 
