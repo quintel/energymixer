@@ -23,7 +23,7 @@
     %tr
       %th Energy carrier
       %th Value
-    -{coal: "Q(total_cost_of_primary_natural_gas)", natural_gas: "Q(total_cost_of_primary_coal)"}.each do |carrier, gquery|
+    -{coal: "total_cost_of_primary_natural_gas", natural_gas: "total_cost_of_primary_coal", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
       %tr
         %td=carrier
         %td{:gquery => gquery, :class=>"output"}
