@@ -9,6 +9,7 @@ gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 0.2.7'
 gem 'formtastic',   '~> 1.2.3'
 gem 'ruby-debug19', '~> 0.11.6'
+gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'

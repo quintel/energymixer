@@ -37,6 +37,7 @@ GEM
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     columnize (0.3.2)
+    crack (0.1.8)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -58,6 +59,8 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hirb (0.4.0)
+    httparty (0.7.4)
+      crack (= 0.1.8)
     i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
@@ -137,6 +140,7 @@ DEPENDENCIES
   formtastic (~> 1.2.3)
   haml-rails (~> 0.3.4)
   hirb
+  httparty
   jquery-rails (~> 0.2.7)
   mocha (~> 0.9.12)
   mysql2 (~> 0.2.6)

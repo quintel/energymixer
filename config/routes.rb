@@ -7,6 +7,7 @@ EnergyMixer::Application.routes.draw do
 
   match "/home" => "pages#home"
   match "/mix" => "pages#mix"
+  match "/httptest" => "pages#httptest"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
