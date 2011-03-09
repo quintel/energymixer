@@ -3,6 +3,10 @@ class ResultsController < ApplicationController
 
   def index
     @results = Result.all
+    respond_to do |format|
+      format.html
+      format.js  { render :json => @results }
+    end
   end
   
   def edit
