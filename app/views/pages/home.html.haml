@@ -70,8 +70,6 @@
 
 :javascript
   $(function() {
-    $("form").bind("ajax:success", function(event, data, status, xhr) { eval($(data).text()) });
-
     $("form").submit(function(event) {
       $("#results .output .output").html("loading...");
     });
