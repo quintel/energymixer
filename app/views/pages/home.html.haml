@@ -33,7 +33,8 @@
       next
 
 %script{:type => "text/javascript"}
-  $(".question").not("#question_1").hide();
+  -#Hides all the questions on load except the first one
+  -#$(".question").not("#question_1").hide();
 
 %section#results
   %section{:class=>"output"}
@@ -41,7 +42,7 @@
       %tr
         %th Energy carrier
         %th Value
-      -{coal: "total_cost_of_primary_natural_gas", natural_gas: "total_cost_of_primary_coal", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
+      -{coal: "total_cost_of_primary_natural_coal", natural_gas: "total_cost_of_primary_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
         %tr
           %td=carrier
           %td{:gquery => gquery, :class=>"output"}
