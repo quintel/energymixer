@@ -176,3 +176,15 @@ qct = 0
   end
   qct += 1
 end
+
+Result.create!(:gquery=>"total_cost_of_primary_coal", :group=>"total_mix", :key=>"coal")
+Result.create!(:gquery=>"total_cost_of_primary_natural_gas", :group=>"total_mix", :key=>"gas")
+Result.create!(:gquery=>"total_cost_of_primary_oil", :group=>"total_mix",:key=>"oil")
+Result.create!(:gquery=>"total_cost_of_primary_nuclear", :group=>"total_mix",:key=>"nuclear")
+Result.create!(:gquery=>"total_cost_of_primary_renewable", :group=>"total_mix", :key=>"renewable")
+
+Result.create!(:gquery=>"co2_emission", :group=>"dashboard", :key=>"co2")
+Result.create!(:gquery=>"share_of_renewable_energy", :group=>"dashboard", :key=> "share_renewable")
+Result.create!(:gquery=>"area_footprint_per_nl", :group=>"dashboard", :key => "bio-footprint")
+Result.create!(:gquery=>"energy_dependence", :group=>"dashboard", :key => "dependence")
+
