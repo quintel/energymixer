@@ -5,9 +5,16 @@
 %h2 Answers
 
 %table.striped
+  %thead
+    %tr
+      %th #
+      %th Antwoord
+      %th Settings voor ETM
+      %th
   %tbody
     - @question.answers.each do |a|
       %tr{:class => cycle('even', 'odd')}
+        %td= a.letter
         %td= a.answer
         %td
           %ul
