@@ -45,7 +45,7 @@
       -{coal: "total_cost_of_primary_coal", natural_gas: "total_cost_of_primary_natural_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear", renewable: "total_cost_of_primary_renewable"}.each do |carrier, gquery|
         %tr
           %td=carrier
-          %td{:gquery => gquery, :class=>"output"}
+          %td{:id => gquery, :class=>"output"}
             loading...
 
   %section{:class=>"output"}
@@ -56,11 +56,9 @@
       -{CO2: "co2_emission", sustainability: "share_of_renewable_energy", bio_footprint: "area_footprint_per_nl", net_energy_import: "energy_dependence"}.each do |carrier, gquery|
         %tr
           %td=carrier
-          %td{:gquery => gquery, :class=>"output"}
+          %td{:id => gquery, :class=>"output"}
             loading...
-#response
-  Results here... 
-
+            
 - content_for(:head) do
   = javascript_include_tag 'main'
   :javascript
