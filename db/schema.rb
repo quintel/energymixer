@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304143613) do
+ActiveRecord::Schema.define(:version => 20110309103816) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20110304143613) do
     t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "slider_id"
   end
 
   add_index "inputs", ["answer_id"], :name => "index_inputs_on_answer_id"

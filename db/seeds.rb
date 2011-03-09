@@ -171,7 +171,7 @@ qct = 0
     act += 1
     
     a[:inputs].each do |i|
-      @a.inputs.create!(:key => i[:key], :value => i[:value])
+      @a.inputs.create!(:key => i[:key], :value => i[:value], :slider_id => i[:id])
     end
   end
   qct += 1
