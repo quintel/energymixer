@@ -42,7 +42,7 @@
       %tr
         %th Energy carrier
         %th Value
-      -{coal: "total_cost_of_primary_coal", natural_gas: "total_cost_of_primary_natural_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
+      -{coal: "total_cost_of_primary_coal", natural_gas: "total_cost_of_primary_natural_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear", renewable: "total_cost_of_primary_renewable"}.each do |carrier, gquery|
         %tr
           %td=carrier
           %td{:gquery => gquery, :class=>"output"}
