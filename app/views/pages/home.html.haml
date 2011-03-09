@@ -4,7 +4,8 @@
     -@questions.each do |question|
       %a{:id => question.id, :href=>"#"}
         =question.number
-  %form
+
+  = form_tag home_path, :method => :get, :remote => true do
     - @questions.each do |question|
       .question{:id=>"question_#{question.number}"}
         .number
@@ -57,6 +58,23 @@
           %td{:gquery => gquery, :class=>"output"}
             loading...
 
+- content_for(:head) do
+  = javascript_include_tag 'home'
+  :javascript
+    mixer = new Mixer();
+    mixer.base_path = "#{Rails.configuration.api_base_path}";
+    mixer.session_settings = #{options_for_javascript(Rails.configuration.api_session_settings)};
 
-- content_for :head do
-  = javascript_include_tag 'main'
+    mixer.new_session();
+
+:javascript
+  $(function() {
+    $("form").bind("ajax:success", function(event, data, status, xhr) { eval($(data).text()) });
+
+    $("form").submit(function(event) {
+      $("#results .output .output").html("loading...");
+    });
+    $("input").change(function(event) { $("form").submit() });
+
+    $("form").submit()
+  });

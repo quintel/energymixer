@@ -3,12 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.5'
 
 gem 'mysql2',       '~> 0.2.6'
-gem 'autotest',     '~> 4.4.6'
 gem 'devise',       '~> 1.1.7'
 gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 0.2.7'
 gem 'formtastic',   '~> 1.2.3'
-gem 'ruby-debug19', '~> 0.11.6'
 gem 'httparty'
 
 group :development, :test do
@@ -19,8 +17,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'autotest',     '~> 4.4.6'
+  gem 'ruby-debug19', '~> 0.11.6'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
+  gem 'capistrano'
 end
 
 group :test do
