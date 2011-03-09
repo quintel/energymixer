@@ -1,0 +1,7 @@
+@mixin shadow($color: #333333) {
+  -moz-box-shadow: 0 2px 3px 3px $color;
+  -webkit-box-shadow: 0 2px 3px 3px $color;
+  box-shadow: 0 2px 3px 3px $color;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+}

@@ -1,0 +1,50 @@
+section#questions nav
+  text-align: center
+  height: 20px
+  padding: 4px
+  font-size: 10px
+  a
+    color: #00f
+    margin: 0 5px
+
+section#questions
+  line-height: 1.5em
+  float: left
+  width: 385px
+  background-image: -moz-linear-gradient(top, #fefefe, #eee)
+  background-color: #eee
+  border: 1px solid #fff
+  @include shadow(#cccccc)
+  .question
+    padding: 10px
+    float: left
+    clear: both
+    width: 365px
+    .number
+      font-weight: bold
+      width: 5%
+      float: left
+    .question_text
+      font-weight: bold
+      width: 95%
+      float: left
+
+    .answers
+      float: left
+      clear: both
+      width: 365px
+      margin-top: 10px
+      .answer
+        float: left
+        width: 365px
+        clear: both
+        margin-bottom: 10px
+        .letter
+          float: left
+          width: 5%
+          font-weight: bold
+        .answer_text
+          float: left
+          width: 95%
+        input[type=radio]
+          display: none
