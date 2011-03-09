@@ -21,6 +21,7 @@ end
 group :development do
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
+  gem 'capistrano'
 end
 
 group :test do
