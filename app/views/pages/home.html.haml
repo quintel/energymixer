@@ -6,11 +6,12 @@
         =question.number
   %form
     - @questions.each do |question|
-      %article.question
-        %fieldset
-          %p.text
-            %span.number= question.number
-            %span.text= question.question
+      .question{:id=>"question_#{question.number}"}
+        .number
+          = question.number
+        .question_text
+          = question.question
+        .answers
           - question.answers.each do |answer|
             .answer
               %input{:name => "question_#{question.id}", 
@@ -18,10 +19,20 @@
                      :value => answer.id, 
                      :id => "answer_#{answer.id}"}
               %label{:for => "answer_#{answer.id}"}
-                = answer.letter
-                = answer.answer
+                %span.letter
+                  = answer.letter
+                %span.answer_text
+                  = answer.answer
 
     %input{:type => "submit"}
+  %nav
+    %a{:href=>"#", :id=>"previous_question"}
+      previous        
+    %a{:href=>"#", :id=>"next_question"}
+      next
+
+%script{:type => "text/javascript"}
+  $(".question").not("#question_1").hide();
 
 %section#results
   %section{:class=>"output"}
