@@ -84,9 +84,11 @@ function Mixer() {
   self.push_inputs = function(hash) {
     $.ajax({
       url: self.json_path_with_session_id(),
-      data: { input: hash },
+      data: { input: hash, result: self.gqueries },
       dataType: 'jsonp',
       success: function(data){
+        console.log("Got results");
+        console.log(data.result);
         self.results = data;
         console.log("Updated self.results");
         self.update_results_section();
