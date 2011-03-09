@@ -9,17 +9,26 @@ function Mixer() {
   self.base_path  = "http://testing.et-model.com/api/v1/api_scenarios/";
   self.session_id = false;
   self.parameters = {};
-    
+  self.results={};
+  self.gqueries= ["total_cost_of_primary_coal",
+                  "total_cost_of_primary_natural_gas",
+                  "total_cost_of_primary_oil",
+                  "total_cost_of_primary_nuclear",
+                  "total_cost_of_primary_renewable",
+                  
+                  "co2_emission",
+                  "share_of_renewable_energy",
+                  "area_footprint_per_nl",
+                  "energy_dependence"
+                  ];
+
   self.fetch_session_id = function() {
     if (self.session_id) {
       console.log("Using cached session key " + self.session_id);
       return self.session_id;
     }
-    
-    var url = self.base_path + "new.json"
-    
     $.ajax({
-      url: url,
+      url: self.base_path + "new.json",
       dataType: 'jsonp',
       success: function(data){
         var key = data.api_scenario.api_session_key;
@@ -42,11 +51,12 @@ function Mixer() {
     var url = self.base_path_with_session_id() + ".json";
     return url;
   };
-  
+    
   self.get_results = function(res) {
-    if(!res) res = ["co2_emission_total"]; //for testing
-    var url = self.json_path_with_session_id();
-    console.log(url);
+    if(res===undefined || !res){
+      res = self.gqueries;
+    }
+    console.log("trying to send request");
     $.ajax({
       url: self.json_path_with_session_id(),
       data: { result: res },
@@ -58,6 +68,7 @@ function Mixer() {
         $("#response").html(JSON.stringify(data));        
       },
       error: function(data){
+        console.log('an error occured');
         alert('an error occured');
         console.log(url);
       }
@@ -153,18 +164,3 @@ function Mixer() {
   
   self.init();
 }
-
-
-$(function() {
-  m = new Mixer();
-  
-  m.update_results_section();
-  
-  
-  // interface
-  $("form").submit(function() {
-    m.run();
-    return false;
-  });
-  
-});
