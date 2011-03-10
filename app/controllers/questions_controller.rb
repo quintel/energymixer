@@ -66,7 +66,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to(questions_url) }
+      format.html { redirect_to(questions_url, :notice => 'Question deleted') }
       format.xml  { head :ok }
     end
   end
