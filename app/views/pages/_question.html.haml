@@ -10,7 +10,7 @@
                :type => "radio", 
                :value => answer.id, 
                :id => "answer_#{answer.id}"}
-        %label{:for => "answer_#{answer.id}"}
+        %label{:for => "answer_#{answer.id}", :id => "label_#{answer.id}"}
           %span.letter
             = answer.letter
           %span.answer_text
