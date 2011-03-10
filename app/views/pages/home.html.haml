@@ -1,36 +1,5 @@
--#TODO: Cut these pieces into partials
 %section#questions
-  %nav
-    -@questions.each do |question|
-      %a{:id => question.id, :href=>"#"}
-        =question.number
-
-  = form_tag home_path, :method => :get, :remote => true do
-    - @questions.each do |question|
-      .question{:id=>"question_#{question.number}"}
-        .number
-          = question.number
-        .question_text
-          = question.question
-        .answers
-          - question.answers.each do |answer|
-            .answer
-              %input{:name => "question_#{question.id}", 
-                     :type => "radio", 
-                     :value => answer.id, 
-                     :id => "answer_#{answer.id}"}
-              %label{:for => "answer_#{answer.id}"}
-                %span.letter
-                  = answer.letter
-                %span.answer_text
-                  = answer.answer
-
-    %input{:type => "submit"}
-  %nav
-    %a{:href=>"#", :id=>"previous_question"}
-      previous        
-    %a{:href=>"#", :id=>"next_question"}
-      next
+  = render :partial => 'questions'
 
 %script{:type => "text/javascript"}
   -#Hides all the questions on load except the first one
