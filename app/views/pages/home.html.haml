@@ -4,13 +4,15 @@
     -@questions.each do |question|
       %a{:id => question.id, :href=>"#"}
         =question.number
-  %form
+
+  = form_tag home_path, :method => :get, :remote => true do
     - @questions.each do |question|
-      %article.question
-        %fieldset
-          %p.text
-            %span.number= question.number
-            %span.text= question.question
+      .question{:id=>"question_#{question.number}"}
+        .number
+          = question.number
+        .question_text
+          = question.question
+        .answers
           - question.answers.each do |answer|
             .answer
               %input{:name => "question_#{question.id}", 
@@ -18,10 +20,21 @@
                      :value => answer.id, 
                      :id => "answer_#{answer.id}"}
               %label{:for => "answer_#{answer.id}"}
-                = answer.letter
-                = answer.answer
+                %span.letter
+                  = answer.letter
+                %span.answer_text
+                  = answer.answer
 
     %input{:type => "submit"}
+  %nav
+    %a{:href=>"#", :id=>"previous_question"}
+      previous        
+    %a{:href=>"#", :id=>"next_question"}
+      next
+
+%script{:type => "text/javascript"}
+  -#Hides all the questions on load except the first one
+  -#$(".question").not("#question_1").hide();
 
 %section#results
   %section{:class=>"output"}
@@ -29,10 +42,10 @@
       %tr
         %th Energy carrier
         %th Value
-      -{coal: "total_cost_of_primary_natural_gas", natural_gas: "total_cost_of_primary_coal", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear"}.each do |carrier, gquery|
+      -{coal: "total_cost_of_primary_coal", natural_gas: "total_cost_of_primary_natural_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear", renewable: "total_cost_of_primary_renewable"}.each do |carrier, gquery|
         %tr
           %td=carrier
-          %td{:gquery => gquery, :class=>"output"}
+          %td{:id => gquery, :class=>"output"}
             loading...
 
   %section{:class=>"output"}
@@ -43,9 +56,11 @@
       -{CO2: "co2_emission", sustainability: "share_of_renewable_energy", bio_footprint: "area_footprint_per_nl", net_energy_import: "energy_dependence"}.each do |carrier, gquery|
         %tr
           %td=carrier
-          %td{:gquery => gquery, :class=>"output"}
+          %td{:id => gquery, :class=>"output"}
             loading...
-
-
-- content_for :head do
+            
+- content_for(:head) do
   = javascript_include_tag 'main'
+  = javascript_include_tag '/results.js'
+  :javascript
+    mixer = new Mixer();
