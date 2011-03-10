@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110309162248) do
+ActiveRecord::Schema.define(:version => 20110310112150) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110309162248) do
     t.integer  "ordering"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "information"
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
