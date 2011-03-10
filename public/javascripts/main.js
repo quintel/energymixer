@@ -80,6 +80,7 @@ function Mixer() {
   };
   
   self.push_inputs = function(hash) {
+    if(!hash) hash = self.parameters;
     $.ajax({
       url: self.json_path_with_session_id(),
       data: { input: hash, result: self.gqueries },
@@ -113,13 +114,25 @@ function Mixer() {
       var selected_option = $(field_selector).val();
       if (!selected_option) return;
       var selected_option_label = "answer_" + selected_option;
-      $(answers[question_name][selected_option_label]).each(function(param_key, val) {
+      $.each(answers[question_name][selected_option_label], function(param_key, val) {
         self.set_parameter(param_key, val);
       });
     });
 
     return self.parameters;
   };
+
+	self.debug_parameters = function() {
+	  $.each(self.parameters, function(k,v){
+	    console.log(k + ":" + v);
+	  });
+	};
+	
+	self.refresh = function() {
+	  self.process_form();
+	  self.debug_parameters();
+	  self.push_inputs();
+	};
   
   self.init = function() {
     self.fetch_session_id();
