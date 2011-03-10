@@ -1,6 +1,8 @@
 $(document).ready(function(){
   $("input[type='radio']").change(function(){
-      console.log('Question changed to answer id:' + $(this).attr('id') + ' changed.');
+      var id = $(this).attr('id');
+      //console.log('Question changed to answer id:' + id + ' changed.');
       mixer.refresh();
+      $("label[for=" + id + "]").addClass('active');
   });
 });
