@@ -1,18 +1,21 @@
-%p
-  %b Question Title:
-  = @question.question
-
-%h2 Answers
+%h2="Vraag #{@question.number}: #{@question.question}"
 
 %table.striped
+  %thead
+    %tr
+      %th #
+      %th Antwoord
+      %th Settings voor ETM
+      %th
   %tbody
     - @question.answers.each do |a|
       %tr{:class => cycle('even', 'odd')}
+        %td= a.letter
         %td= a.answer
         %td
           %ul
             - a.inputs.each do |i|
-              %li= "#{i.key}: #{i.value}"
+              %li= "#{i.slider_id}.#{i.key}: #{i.value}"
         %td= link_to 'edit', edit_answer_path(a)
 
 = link_to 'Edit', edit_question_path(@question)

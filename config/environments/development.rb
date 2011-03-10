@@ -22,5 +22,11 @@ EnergyMixer::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  config.api_base_path = "http://testing.et-model.com/api/v1/api_scenarios/"
+  config.api_session_settings = {
+    :country => '"nl"',  # HACK because this is passed to #options_for_javascript
+    :end_year => 2025
+  }
 end
 
