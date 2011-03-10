@@ -12,17 +12,15 @@ function Mixer() {
   self.results={};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
-  self.gqueries= ["total_cost_of_primary_coal",
+  self.gqueries = ["total_cost_of_primary_coal",
                   "total_cost_of_primary_natural_gas",
                   "total_cost_of_primary_oil",
                   "total_cost_of_primary_nuclear",
-                  "total_cost_of_primary_renewable",
-                  
+                  "total_cost_of_primary_renewable",                  
                   "co2_emission",
                   "share_of_renewable_energy",
                   "area_footprint_per_nl",
-                  "energy_dependence"
-                  ];
+                  "energy_dependence"];
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -61,8 +59,8 @@ function Mixer() {
       data: { result: self.gqueries },
       dataType: 'jsonp',
       success: function(data){
-        //console.log("Got results");
-        //console.log(data.result);
+        // console.log("Got results");
+        // console.log(data.result);
         self.results = data;
         self.update_results_section();
       },
@@ -109,13 +107,14 @@ function Mixer() {
   self.process_form = function() {
     console.log("Processing form elements");
     
-    $.each(["q1"], function(index, question_name) {
+    $("div.question").each(function(el) {
+      var question_name = $(this).attr('id');
       var field_selector = "input[name=" + question_name + "]:checked";
       var selected_option = $(field_selector).val();
       if (!selected_option) return;
-      $.each(self.property_matrix[question_name][selected_option], function(param_key, val) {
-        var param_id = self.property_map[param_key];
-        self.parameters[param_id] = val;
+      var selected_option_label = "answer_" + selected_option;
+      $(answers[question_name][selected_option_label]).each(function(param_key, val) {
+        self.set_parameter(param_key, val);
       });
     });
 
