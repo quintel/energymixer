@@ -13,15 +13,10 @@ class PagesController < ApplicationController
   def mix
     render :layout => 'naked'
   end
-  
-  def httptest
-    @response = HTTParty.get('http://twitter.com/statuses/public_timeline.json')
-  end
 
 protected
 
   def answer_ids
     @answer_ids ||= request.query_parameters.select{|key, _| key.starts_with?('question_')}.values
   end
-
 end

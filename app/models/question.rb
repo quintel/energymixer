@@ -8,6 +8,6 @@ class Question < ActiveRecord::Base
   scope :ordered, order('ordering, id')
   
   def number
-    ordering+1
+    ordering + 1 rescue nil
   end
 end
