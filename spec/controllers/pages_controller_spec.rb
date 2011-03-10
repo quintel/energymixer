@@ -14,4 +14,11 @@ describe PagesController do
     end
   end
 
+  describe "GET 'home.js'" do
+    it "should be successful" do
+      xhr :get, :home
+      response.should be_success
+    end
+  end
+
 end

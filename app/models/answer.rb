@@ -1,5 +1,4 @@
 class Answer < ActiveRecord::Base
-
   belongs_to :question
   has_many :inputs, :dependent => :destroy do
     def slider_values
@@ -17,7 +16,6 @@ class Answer < ActiveRecord::Base
   scope :ordered, order('ordering, id')
   
   def letter
-    ('A'..'Z').to_a[ordering]
+    ('A'..'Z').to_a[ordering] rescue nil
   end
-
 end
