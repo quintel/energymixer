@@ -4,7 +4,6 @@ set :application, "energymixer"
 
 set :stage, :production
 
-
 set :domain, "79.125.109.178"
 role :web, domain # Your HTTP server, Apache/etc
 role :app, domain # This may be the same as your `Web` server
@@ -26,4 +25,7 @@ set :branch, "master"
 ssh_options[:forward_agent] = true
 
 
-set :use_sudo,     true
+set :use_sudo,     false
+
+set :rvm_ruby_string, '1.9.2'
+#set :rvm_type, :user  # Don't use system-wide RVM
