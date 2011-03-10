@@ -79,6 +79,7 @@ function Mixer() {
     }
   };
   
+  // sends the current parameters to the engine
   self.push_inputs = function(hash) {
     if(!hash) hash = self.parameters;
     $.ajax({
@@ -105,6 +106,8 @@ function Mixer() {
     return self.parameters;
   };
   
+  // fills the parameters hash (to be sent by ajax to the engine) with the values corresponding
+  // to the selected answers
   self.process_form = function() {
     console.log("Processing form elements");
     
@@ -128,10 +131,13 @@ function Mixer() {
 	  });
 	};
 	
+	// parses form, prepares parametes, makes ajax request and refreshes the graph
+	// called every time the user selects an answer
 	self.refresh = function() {
 	  self.process_form();
 	  self.debug_parameters();
 	  self.push_inputs();
+	  self.update_results_section();
 	};
   
   self.init = function() {
