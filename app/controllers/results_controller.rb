@@ -21,7 +21,5 @@ class ResultsController < ApplicationController
     else
       render :action => "edit"
     end
-    
   end
-
 end
