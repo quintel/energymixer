@@ -393,7 +393,7 @@ Question.destroy_all
 qct = 0
 @questions.each do |q|
 
-  @q = Question.create!(:question => q[:question], :ordering => qct)
+  @q = Question.create!(:question => q[:question], :ordering => qct, :information => q[:information])
 
   act = 0
   q[:answers].each do |a|
