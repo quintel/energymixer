@@ -2,10 +2,11 @@
   = f.inputs do
     = f.input :question
     = f.input :ordering
+    %h3 Answers
     = f.semantic_fields_for :answers do |a|
-      = a.inputs :class => (a.object.new_record? ? 'inputs new_record' : 'inputs') do
+      = a.inputs do
         = a.input :answer
         = a.input :ordering
-        = a.input :_destroy, :as => :boolean
+        = a.input :_destroy, :as => :boolean unless a.object.new_record?
   = f.buttons
     

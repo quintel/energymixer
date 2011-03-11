@@ -4,10 +4,18 @@ form.formtastic fieldset {
   padding: 0.5em; }
   form.formtastic fieldset ol li {
     margin-bottom: 0; }
-  form.formtastic fieldset label {
-    font-size: 0.9em; }
-  form.formtastic fieldset textarea {
-    font-size: 0.8em; }
-  form.formtastic fieldset input[type=text] {
-    font-size: 0.8em;
-    padding: 0.5em; }
+    form.formtastic fieldset ol li label {
+      font-size: 0.8em;
+      width: 15%; }
+    form.formtastic fieldset ol li textarea {
+      font-size: 0.8em;
+      padding: 0.5em;
+      border: 1px solid #dddddd; }
+    form.formtastic fieldset ol li input[type=text] {
+      font-size: 0.8em;
+      padding: 0.5em;
+      border: 1px solid #dddddd; }
+  form.formtastic fieldset h3 {
+    padding: 0.2em 0.5em;
+    font-size: 1.3em;
+    font-weight: bold; }
