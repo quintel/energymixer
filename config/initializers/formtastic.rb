@@ -9,7 +9,7 @@
 # --------------------------------------------------------------------------------------------------
 
 # Set the default text field size when input is a string. Default is nil.
-Formtastic::SemanticFormBuilder.default_text_field_size = 50
+Formtastic::SemanticFormBuilder.default_text_field_size = 78
 
 # Set the default text area height when input is a text. Default is 20.
 Formtastic::SemanticFormBuilder.default_text_area_height = 7
