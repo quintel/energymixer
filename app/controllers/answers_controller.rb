@@ -15,14 +15,14 @@ class AnswersController < ApplicationController
   end
 
   def update
-    @answer = Answer.find(params[:id])
-
+    @answer = Answer.find(params[:id])    
+    
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
-        format.html { redirect_to(@answer, :notice => 'Answer was successfully updated.') }
+        format.html { redirect_to(@answer.question, :notice => 'Answer was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :notice => "Something was wrong" }
         format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
       end
     end

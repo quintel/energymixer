@@ -15,7 +15,10 @@
         %td
           %ul
             - a.inputs.each do |i|
-              %li= "#{i.slider_id}.#{i.key}: #{i.value}"
+              %li
+                %span.key= "#{i.key}"
+                %span.slider_id= "(##{i.slider_id}):"
+                %span.value= " #{i.value}"
         %td= link_to 'edit', edit_answer_path(a)
 
 = link_to 'Edit', edit_question_path(@question)
