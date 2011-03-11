@@ -11,50 +11,50 @@ Question.destroy_all
         short: "Even duur",
         long: "Het blijft even duur",
         inputs: [
-          { id: 58, value: 1, key: 'costs_combustion_gas' },
-          { id: 11, value: 1, key: 'costs_combustion_oil' },
-          { id: 57, value: 1, key: 'costs_combustion_coal' },
-          { id: 59, value: 1, key: 'costs_combustion_biomass' }
+          { id: 58, value: 0, key: 'costs_combustion_gas' },
+          { id: 11, value: 0, key: 'costs_combustion_oil' },
+          { id: 57, value: 0, key: 'costs_combustion_coal' },
+          { id: 59, value: 0, key: 'costs_combustion_biomass' }
         ]
       },
       {
         short: "Het wordt duurder",
         long: "Fosiele brandstoffen worden 25% duurder",
         inputs: [
-          { id: 58, value: 1.25, key: 'costs_combustion_gas' },
-          { id: 11, value: 1.25, key: 'costs_combustion_oil' },
-          { id: 57, value: 1.25, key: 'costs_combustion_coal' },
-          { id: 59, value: 1.25, key: 'costs_combustion_biomass' }
+          { id: 58, value: 25, key: 'costs_combustion_gas' },
+          { id: 11, value: 25, key: 'costs_combustion_oil' },
+          { id: 57, value: 25, key: 'costs_combustion_coal' },
+          { id: 59, value: 25, key: 'costs_combustion_biomass' }
         ]
       },
       {
         short: "Het wordt veel duurder",
         long: "Fosiele brandstoffen worden 100% duurder",
         inputs: [
-          { id: 58, value: 2, key: 'costs_combustion_gas' },
-          { id: 11, value: 2, key: 'costs_combustion_oil' },
-          { id: 57, value: 2, key: 'costs_combustion_coal' },
-          { id: 59, value: 2, key: 'costs_combustion_biomass' }
+          { id: 58, value: 100, key: 'costs_combustion_gas' },
+          { id: 11, value: 100, key: 'costs_combustion_oil' },
+          { id: 57, value: 100, key: 'costs_combustion_coal' },
+          { id: 59, value: 100, key: 'costs_combustion_biomass' }
         ]
       },
       {
         short: "Het wordt goedkoper",
         long: "Fosiele brandstoffen worden 25% goedkoper",
         inputs: [
-          { id: 58, value: 0.75, key: 'costs_combustion_gas' },
-          { id: 11, value: 0.75, key: 'costs_combustion_oil' },
-          { id: 57, value: 0.75, key: 'costs_combustion_coal' },
-          { id: 59, value: 0.75, key: 'costs_combustion_biomass' }
+          { id: 58, value: -25, key: 'costs_combustion_gas' },
+          { id: 11, value: -25, key: 'costs_combustion_oil' },
+          { id: 57, value: -25, key: 'costs_combustion_coal' },
+          { id: 59, value: -25, key: 'costs_combustion_biomass' }
         ]
       },
       {
         short: "Het wordt veel goedkoper",
         long: "Fosiele brandstoffen worden 50% goedkoper",
         inputs: [
-          { id: 58, value: 0.50, key: 'costs_combustion_gas' },
-          { id: 11, value: 0.50, key: 'costs_combustion_oil' },
-          { id: 57, value: 0.50, key: 'costs_combustion_coal' },
-          { id: 59, value: 0.50, key: 'costs_combustion_biomass' }
+          { id: 58, value: -50, key: 'costs_combustion_gas' },
+          { id: 11, value: -50, key: 'costs_combustion_oil' },
+          { id: 57, value: -50, key: 'costs_combustion_coal' },
+          { id: 59, value: -50, key: 'costs_combustion_biomass' }
         ]
       }
     ]
