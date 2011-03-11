@@ -5,13 +5,20 @@
     %tr
       %th #
       %th Antwoord
-      %th Settings voor ETM
+      %th Settings voor ETM (kaal)
+      %th Settings voor ETM (uitgebreid)
       %th
   %tbody
     - @question.answers.each do |a|
       %tr{:class => cycle('even', 'odd')}
         %td= a.letter
         %td= a.answer
+        %td
+          %ul
+            - a.inputs.each do |i|
+              %li
+                %span.slider_id= "#{i.slider_id}:"
+                %span.value= " #{i.value}"
         %td
           %ul
             - a.inputs.each do |i|
