@@ -32,9 +32,9 @@ function Mixer() {
       success: function(data){
         var key = data.api_scenario.api_session_key;
         self.session_id = key;
-        console.log("Fetched new session Key: " + key)
-        //this has to be here, since we have to wait for the session id.
-        self.get_results();
+        console.log("Fetched new session Key: " + key);
+        // show data for the first time
+        self.make_request();
       },
       error: function(){
         alert('an error occured');
@@ -53,23 +53,7 @@ function Mixer() {
     return url;
   };
     
-  self.get_results = function() {
-    $.ajax({
-      url: self.json_path_with_session_id(),
-      data: { result: self.gqueries },
-      dataType: 'jsonp',
-      success: function(data){
-        self.results = data;
-        self.update_results_section();
-      },
-      error: function(data){
-        alert('an error occured');
-      }
-    });
-    return self.results;
-  };
-  
-  self.update_results_section = function() {
+  self.display_results = function() {
     var results = self.results.result
     for (gquery in results){
       $("#"+gquery).html(results[gquery][1][1]);
@@ -77,17 +61,20 @@ function Mixer() {
     console.log("Updated results section");    
   };
   
-  // sends the current parameters to the engine
-  self.push_inputs = function(hash) {
+  // sends the current parameters to the engine, stores
+  // the results and triggers the interface update
+  self.make_request = function(hash) {
     if(!hash) hash = self.parameters;
+    var request_parameters = {result: self.gqueries, reset: 1};
+    if(!$.isEmptyObject(hash)) request_parameters['input'] = hash;
     $.ajax({
       url: self.json_path_with_session_id(),
-      data: { input: hash, result: self.gqueries },
+      data: request_parameters,
       dataType: 'jsonp',
       success: function(data){
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
-        self.update_results_section();
+        self.display_results();
       },
       error: function(){
         alert('an error occured');
@@ -95,17 +82,17 @@ function Mixer() {
     });
     return true;
   };
-    
+  
   self.set_parameter = function(id, value) {
     self.parameters[id] = value;
     return self.parameters;
   };
   
-  // fills the parameters hash (to be sent by ajax to the engine) with the values corresponding
-  // to the selected answers
+  // fills the parameters hash (to be sent by ajax to the engine) with the values
+  // corresponding to the selected answers
   self.process_form = function() {
     console.log("Processing form elements");
-    
+    self.parameters = {};
     $("div.question").each(function(el) {
       var question_name = $(this).attr('id');
       var field_selector = "input[name=" + question_name + "]:checked";
@@ -127,11 +114,10 @@ function Mixer() {
 	// parses form, prepares parametes, makes ajax request and refreshes the graph
 	// called every time the user selects an answer
 	self.refresh = function() {
+	  self.block_interface();
 	  self.process_form();
 	  self.debug_parameters();
-	  self.block_interface();
-	  self.push_inputs();
-	  self.update_results_section();
+	  self.make_request();
 	  self.unblock_interface();
 	};
 	
