@@ -1,3 +1,5 @@
+%h2 Answer details
+
 %p
   %b Answer:
   = @answer.answer
@@ -14,6 +16,6 @@
     %dt= i.key
     %dd= i.value
 
-= link_to 'Edit', edit_answer_path(@answer)
-\|
-= link_to 'Back', question_path(@answer.question)
+#actions
+  = link_to 'Edit', edit_answer_path(@answer)
+  = link_to 'Back', question_path(@answer.question)
