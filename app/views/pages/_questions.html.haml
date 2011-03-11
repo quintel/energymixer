@@ -1,13 +1,13 @@
-%nav
+%nav#up
   -@questions.each do |question|
-    %a{:id => question.id, :href=>"#"}
+    %a{:href=>"#", :rel=>"question_#{question.id}"}
       =question.number
 
 = form_tag home_path, :method => :get, :remote => true do
   = render :partial => 'question', :collection => @questions
 
   %input{:type => "submit"}
-%nav
+%nav#down
   %a{:href=>"#", :id=>"previous_question"}
     previous        
   %a{:href=>"#", :id=>"next_question"}
