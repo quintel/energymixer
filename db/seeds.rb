@@ -411,5 +411,3 @@ Result.create!(:gquery=>"co2_emission", :group=>"dashboard", :key=>"co2")
 Result.create!(:gquery=>"share_of_renewable_energy", :group=>"dashboard", :key=> "share_renewable")
 Result.create!(:gquery=>"area_footprint_per_nl", :group=>"dashboard", :key => "bio-footprint")
 Result.create!(:gquery=>"energy_dependence", :group=>"dashboard", :key => "dependence")
-
-Fixtures.create_fixtures "#{Rails.root}/db/fixtures", 'input_elements'
