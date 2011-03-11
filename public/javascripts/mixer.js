@@ -12,15 +12,19 @@ function Mixer() {
   self.results={};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
-  self.gqueries = ["total_cost_of_primary_coal",
+  self.mix_table = ["total_cost_of_primary_coal",
                   "total_cost_of_primary_natural_gas",
                   "total_cost_of_primary_oil",
                   "total_cost_of_primary_nuclear",
-                  "total_cost_of_primary_renewable",                  
-                  "co2_emission",
+                  "total_cost_of_primary_renewable"];
+
+  self.dashboard = ["co2_emission",
                   "share_of_renewable_energy",
                   "area_footprint_per_nl",
                   "energy_dependence"];
+
+  self.gqueries = self.mix_table.concat(self.dashboard);
+
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -55,8 +59,12 @@ function Mixer() {
     
   self.display_results = function() {
     var results = self.results.result
-    for (gquery in results){
-      $("#"+gquery).html(results[gquery][1][1]);
+    //TODO: Needs to be refactored, ugly now
+    for (index in self.mix_table){
+      $("#"+self.mix_table[index]).html(Math.round(results[self.mix_table[index]][1][1]/1000000));
+    }
+    for (index in self.dashboard){
+      $("#"+self.dashboard[index]).html(results[self.dashboard[index]][1][1]);
     }
     console.log("Updated results section");    
   };
