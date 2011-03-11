@@ -48,4 +48,15 @@ describe AnswersController do
       end
     end
   end
+  
+  describe "DELETE destroy" do
+    it "should delete an answer" do
+      @question = Factory :question
+      @answer = @question.answers.first
+      lambda {
+        delete :destroy, :id => @answer.id
+      }.should change(Answer, :count)
+      response.should redirect_to(question_path(@question))
+    end
+  end
 end
