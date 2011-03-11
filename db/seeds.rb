@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+require 'active_record/fixtures'
 
 Question.destroy_all
 
@@ -418,3 +412,4 @@ Result.create!(:gquery=>"share_of_renewable_energy", :group=>"dashboard", :key=>
 Result.create!(:gquery=>"area_footprint_per_nl", :group=>"dashboard", :key => "bio-footprint")
 Result.create!(:gquery=>"energy_dependence", :group=>"dashboard", :key => "dependence")
 
+Fixtures.create_fixtures "#{Rails.root}/db/fixtures", 'input_elements'
