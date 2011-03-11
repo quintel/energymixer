@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: inputs
+#
+#  id         :integer(4)      not null, primary key
+#  value      :decimal(10, 2)
+#  answer_id  :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#  slider_id  :integer(4)
+#
+
 # t.decimal  "value",      :precision => 10, :scale => 2
 # t.integer  "answer_id"
 # t.datetime "created_at"
@@ -325,3 +337,4 @@ class Input < ActiveRecord::Base
   547=>"mw_of_heat_agriculture_mall_gas_chp"
   }  
 end
+
