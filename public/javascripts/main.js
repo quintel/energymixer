@@ -59,8 +59,6 @@ function Mixer() {
       data: { result: self.gqueries },
       dataType: 'jsonp',
       success: function(data){
-        // console.log("Got results");
-        // console.log(data.result);
         self.results = data;
         self.update_results_section();
       },
@@ -74,7 +72,6 @@ function Mixer() {
   self.update_results_section = function() {
     var results = self.results.result
     for (gquery in results){
-      //console.log(gquery + ": " + results[gquery][1][1]);
       $("#"+gquery).html(results[gquery][1][1]);
     }
   };
@@ -136,9 +133,21 @@ function Mixer() {
 	self.refresh = function() {
 	  self.process_form();
 	  self.debug_parameters();
+	  self.block_interface();
 	  self.push_inputs();
 	  self.update_results_section();
+	  self.unblock_interface();
 	};
+	
+  self.block_interface = function() {
+    $("#results table").fadeTo(1, 0.2);
+    $(".answers input:radio").attr('disabled', true);
+  };
+  
+  self.unblock_interface = function() {
+    $("#results table").fadeTo(1, 1);
+    $(".answers input:radio").attr('disabled', false);
+  };
   
   self.init = function() {
     self.fetch_session_id();
