@@ -1,4 +1,4 @@
 Factory.define :input do |f|
-  f.sequence(:key) {|n| "input_key_#{n}"}
+  f.slider_id { Input::KEYS.keys.sample }
   f.value 1.23
 end

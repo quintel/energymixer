@@ -6,9 +6,9 @@
 
 class Input < ActiveRecord::Base
   belongs_to :answer
-
-  validates :key, :presence => true
   
+  validates :slider_id, :presence => true
+
   def key
     KEYS[slider_id]
   end
