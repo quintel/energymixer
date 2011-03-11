@@ -1,8 +1,9 @@
 class AnswersController < ApplicationController
   layout 'admin'
+  
+  before_filter :find_answer
+  
   def show
-    @answer = Answer.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @answer }
@@ -10,13 +11,18 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    @answer = Answer.find(params[:id])
     4.times{ @answer.inputs.build }
+  end
+  
+  def destroy
+    @answer.destroy
+    respond_to do |format|
+      format.html { redirect_to(@answer.question, :notice => 'Answer was successfully deleted.') }
+      format.xml  { head :ok }
+    end
   end
 
   def update
-    @answer = Answer.find(params[:id])    
-    
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
         format.html { redirect_to(@answer.question, :notice => 'Answer was successfully updated.') }
@@ -27,4 +33,10 @@ class AnswersController < ApplicationController
       end
     end
   end
+  
+  private
+  
+    def find_answer
+      @answer = Answer.find(params[:id])
+    end
 end

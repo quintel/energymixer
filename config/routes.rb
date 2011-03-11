@@ -3,7 +3,8 @@ EnergyMixer::Application.routes.draw do
 
   root :to => "pages#home"
 
-  resources :answers, :only => [:edit, :update, :show]
+  resources :answers, :only => [:edit, :update, :show, :destroy]
+
   resources :questions
 
   match "/home" => "pages#home"
