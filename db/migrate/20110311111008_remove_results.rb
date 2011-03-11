@@ -1,6 +1,6 @@
 class RemoveResults < ActiveRecord::Migration
   def self.up
-    remove_table :results
+    drop_table :results
   end
 
   def self.down
