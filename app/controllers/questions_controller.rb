@@ -1,5 +1,4 @@
-class QuestionsController < ApplicationController
-  layout 'admin'
+class QuestionsController < AdminController
   def index
     @questions = Question.ordered.all
   end
