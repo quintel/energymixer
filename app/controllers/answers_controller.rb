@@ -1,13 +1,7 @@
-class AnswersController < ApplicationController
-  layout 'admin'
-  
+class AnswersController < AdminController
   before_filter :find_answer
   
   def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @answer }
-    end
   end
 
   def edit
@@ -16,21 +10,14 @@ class AnswersController < ApplicationController
   
   def destroy
     @answer.destroy
-    respond_to do |format|
-      format.html { redirect_to(@answer.question, :notice => 'Answer was successfully deleted.') }
-      format.xml  { head :ok }
-    end
+    redirect_to(@answer.question, :notice => 'Answer was successfully deleted.')
   end
 
   def update
-    respond_to do |format|
-      if @answer.update_attributes(params[:answer])
-        format.html { redirect_to(@answer.question, :notice => 'Answer was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit", :notice => "Something was wrong" }
-        format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
-      end
+    if @answer.update_attributes(params[:answer])
+      redirect_to(@answer.question, :notice => 'Answer was successfully updated.')
+    else
+      render :action => "edit", :notice => "Something was wrong"
     end
   end
   

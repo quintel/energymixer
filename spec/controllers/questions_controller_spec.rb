@@ -24,6 +24,11 @@ describe QuestionsController do
       assigns(:question).should == @question
       response.should be_success
     end
+
+    it "should handle gracefully a missing record" do
+      get :show, :id => 'foobar'
+      response.should be_redirect      
+    end
   end
 
   describe "GET new" do
