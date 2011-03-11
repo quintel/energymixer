@@ -12,7 +12,13 @@ function Mixer() {
   self.results={};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
-  self.mix_table = ["total_cost_of_primary_coal",
+  self.mix_table = ["costs_share_of_coal",
+                  "costs_share_of_gas",
+                  "costs_share_of_oil",
+                  "costs_share_of_uranium",
+                  "costs_share_of_sustainable"];
+
+  self.mix_table_old = ["total_cost_of_primary_coal",
                   "total_cost_of_primary_natural_gas",
                   "total_cost_of_primary_oil",
                   "total_cost_of_primary_nuclear",
