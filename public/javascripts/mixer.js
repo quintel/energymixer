@@ -56,7 +56,7 @@ function Mixer() {
   self.display_results = function() {
     var results = self.results.result
     for (gquery in results){
-      $("#"+gquery).html(results[gquery][1][1]);
+      $("#"+gquery).html(Math.round(results[gquery][1][1]/1000000));
     }
     console.log("Updated results section");    
   };
