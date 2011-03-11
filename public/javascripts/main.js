@@ -74,6 +74,7 @@ function Mixer() {
     for (gquery in results){
       $("#"+gquery).html(results[gquery][1][1]);
     }
+    console.log("Updated results section");    
   };
   
   // sends the current parameters to the engine
@@ -84,12 +85,9 @@ function Mixer() {
       data: { input: hash, result: self.gqueries },
       dataType: 'jsonp',
       success: function(data){
-        console.log("Got results");
-        console.log(data.result);
+        console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
-        console.log("Updated self.results");
         self.update_results_section();
-        console.log("Updated results section");
       },
       error: function(){
         alert('an error occured');
@@ -123,9 +121,7 @@ function Mixer() {
   };
 
 	self.debug_parameters = function() {
-	  $.each(self.parameters, function(k,v){
-	    console.log(k + ":" + v);
-	  });
+	  console.log($.toJSON(self.parameters));
 	};
 	
 	// parses form, prepares parametes, makes ajax request and refreshes the graph
