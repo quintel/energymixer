@@ -1,4 +1,4 @@
-%h1 Question Index
+%h2 Question Index
 
 %table.striped
   %thead
@@ -17,6 +17,5 @@
         %td= link_to 'Edit', edit_question_path(question)
         %td= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Question', new_question_path
+#actions
+  = link_to 'New Question', new_question_path
