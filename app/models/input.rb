@@ -20,6 +20,8 @@ class Input < ActiveRecord::Base
   belongs_to :answer
   
   validates :slider_id, :presence => true
+  
+  validate :check_valid_key
 
   def key
     KEYS[slider_id]
@@ -27,6 +29,10 @@ class Input < ActiveRecord::Base
   
   def key=(value)
     self.slider_id = KEYS.invert[value] rescue nil
+  end
+  
+  def check_valid_key
+    errors.add(:key, 'invalid code') unless slider_id    
   end
   
   KEYS = 
