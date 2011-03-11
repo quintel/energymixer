@@ -22,6 +22,7 @@ group :development do
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
   gem 'capistrano'
+  gem 'annotate', :require => false
 end
 
 group :test do

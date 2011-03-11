@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: answers
+#
+#  id          :integer(4)      not null, primary key
+#  answer      :string(255)
+#  ordering    :integer(4)
+#  question_id :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  description :text
+#
+
 class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :inputs, :dependent => :destroy do
@@ -19,3 +32,4 @@ class Answer < ActiveRecord::Base
     ('A'..'Z').to_a[ordering] rescue nil
   end
 end
+
