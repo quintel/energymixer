@@ -28,7 +28,7 @@
                 %span.slider_id= "(##{i.slider_id}):"
                 %span.value= " #{i.value}"
         %td= link_to 'edit', edit_answer_path(a)
-        %td= link_to 'edit', edit_answer_path(a)
+        %td= link_to 'delete', a, :method => :delete, :confirm => 'Are you sure?'
 
 #actions
   = link_to 'Edit', edit_question_path(@question)
