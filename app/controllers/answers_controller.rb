@@ -1,6 +1,4 @@
-class AnswersController < ApplicationController
-  layout 'admin'
-  
+class AnswersController < AdminController
   before_filter :find_answer
   
   def show
