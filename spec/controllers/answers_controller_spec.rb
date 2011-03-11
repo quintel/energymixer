@@ -27,7 +27,8 @@ describe AnswersController do
 
   describe "PUT update" do
     before do
-      @answer = Factory :answer
+      @question = Factory :question
+      @answer = @question.answers.first
     end
 
     describe "with valid params" do
@@ -35,7 +36,7 @@ describe AnswersController do
         put :update, :id => @answer.id, :answer => { :answer => 'Hi!'}
         assigns(:answer).should == @answer
         @answer.reload.answer.should == 'Hi!'
-        response.should redirect_to(answer_url(@answer))
+        response.should redirect_to(question_url(@question))
       end
     end
 
