@@ -1,10 +1,16 @@
+# t.decimal  "value",      :precision => 10, :scale => 2
+# t.integer  "answer_id"
+# t.datetime "created_at"
+# t.datetime "updated_at"
+# t.integer  "slider_id"
+
 class Input < ActiveRecord::Base
   belongs_to :answer
 
   validates :key, :presence => true
   
   def key
-    KEYS[id]
+    KEYS[slider_id]
   end
 
   KEYS = 
