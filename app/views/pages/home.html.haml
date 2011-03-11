@@ -9,11 +9,12 @@
       %tr
         %th Energy carrier
         %th Value
-      -{coal: "total_cost_of_primary_coal", natural_gas: "total_cost_of_primary_natural_gas", total_cost_of_primary_oil: "total_cost_of_primary_oil", total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear", renewable: "total_cost_of_primary_renewable"}.each do |carrier, gquery|
+      -@results[:mix].each do |carrier, hash|
         %tr
           %td=carrier
-          %td{:id => gquery, :class=>"output"}
+          %td{:id => hash[:gquery], :class=>"output"}
             loading...
+          %td=hash[:unit]
 
   %section{:class=>"output"}
     %table
