@@ -29,6 +29,7 @@
             loading...
             
 - content_for(:head) do
+  = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
   = javascript_include_tag 'main'
   = javascript_include_tag '/results.js'
   :javascript
