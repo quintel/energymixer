@@ -7,10 +7,4 @@ $(document).ready(function(){
     $("label[for=" + id + "]").addClass('active');
   });
 
-  $("input[type='radio']").focus(function(){
-    alert('focus!');
-  }).blur(function(){
-    alert('blur!');
-  });
-
 });
