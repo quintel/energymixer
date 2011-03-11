@@ -29,8 +29,8 @@
             loading...
             
 - content_for(:head) do
-  = javascript_include_tag 'main'
-  = javascript_include_tag '/results.js'
+  = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
+  = javascript_include_tag 'mixer'
+  = javascript_include_tag 'questions'
   :javascript
-    mixer = new Mixer();
     answers = #{answers_json}
