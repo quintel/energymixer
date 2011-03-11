@@ -1,4 +1,6 @@
 @import "reset"
+@import "mixins"
+
 body.admin
   font-family: helvetica
   margin: 0
@@ -6,6 +8,7 @@ body.admin
   header
     margin: 0
     background-color: #777
+    @include gradient(#555, #999)
     h1
       margin: 0
       padding: .5em
@@ -14,6 +17,7 @@ body.admin
       padding: .5em
       margin: 0
       background-color: #ccc
+      @include gradient(#eee, #ccc)
       a
         padding-right: 1em
         margin-right: 1em
@@ -38,6 +42,7 @@ body.admin
       margin-top: .5em
       border: 1px solid #eee
       padding: 1em 0.5em
+      @include gradient(#eee, #fff)
       a
         text-decoration: none
         margin-right: 1em
