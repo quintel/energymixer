@@ -1,10 +1,10 @@
 .question{:id=>"question_#{question.number}"}
   .information
-    = question.information.html_safe
+    = raw question.information
   .number
     = question.number
   .question_text
-    = question.question.html_safe
+    = raw question.question
   .answers
     - question.answers.each do |answer|
       .answer
@@ -16,4 +16,4 @@
           %span.letter
             = answer.letter
           %span.answer_text
-            = answer.answer.html_safe
+            = raw answer.answer

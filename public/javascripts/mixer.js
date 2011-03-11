@@ -75,8 +75,10 @@ function Mixer() {
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
         self.display_results();
+        self.unblock_interface();
       },
       error: function(){
+        self.unblock_interface();
         alert('an error occured');
       }
     });
@@ -107,22 +109,21 @@ function Mixer() {
     return self.parameters;
   };
 
-	self.debug_parameters = function() {
-	  console.log($.toJSON(self.parameters));
-	};
-	
-	// parses form, prepares parametes, makes ajax request and refreshes the graph
-	// called every time the user selects an answer
-	self.refresh = function() {
-	  self.block_interface();
-	  self.process_form();
-	  self.debug_parameters();
-	  self.make_request();
-	  self.unblock_interface();
-	};
-	
+  self.debug_parameters = function() {
+    console.log($.toJSON(self.parameters));
+  };
+  
+  // parses form, prepares parametes, makes ajax request and refreshes the graph
+  // called every time the user selects an answer
+  self.refresh = function() {
+    self.block_interface();
+    self.process_form();
+    self.debug_parameters();
+    self.make_request();
+  };
+  
   self.block_interface = function() {
-    $("#results table").fadeTo(1, 0.2);
+    $("#results table").fadeTo(1, 0.05);
     $(".answers input:radio").attr('disabled', true);
   };
   

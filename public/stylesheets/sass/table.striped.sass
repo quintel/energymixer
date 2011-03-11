@@ -1,14 +1,24 @@
 table.striped
+  width: 100%
   td
     padding: .5em
   thead
     tr
-      background-color: #333
+      @include gradient(#555, #999)
+      background-color: #aaa
       th
         color: white
         text-align: left
         padding: .5em
         font-weight: bold
+        border: 1px solid #ddd
+        font-weight: 300
   tbody
+    tr
+      td
+        font-weight: 100
+        font-size: .9em
+        border: 1px solid #ddd
     tr.even
-      background-color: #ddd
+      background-color: #eee
+      // border-bottom: 1px solid #ddd
