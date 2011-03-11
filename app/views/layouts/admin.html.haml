@@ -13,6 +13,7 @@
       %nav
         = link_to 'Frontend', root_path
         = link_to 'Questions', questions_path
+        = link_to 'Sign out', destroy_user_session_path
     - flash.each do |k,msg|
       .flash{:id => k}
         = msg
