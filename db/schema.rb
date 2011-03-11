@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110311091802) do
+ActiveRecord::Schema.define(:version => 20110311092607) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20110311091802) do
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
 
   create_table "inputs", :force => true do |t|
-    t.string   "key"
     t.decimal  "value",      :precision => 10, :scale => 2
     t.integer  "answer_id"
     t.datetime "created_at"
