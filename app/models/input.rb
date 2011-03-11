@@ -7,12 +7,16 @@
 class Input < ActiveRecord::Base
   belongs_to :answer
 
-  validates :key, :presence => true
+  validates :slider_id, :presence => true
   
   def key
     KEYS[slider_id]
   end
-
+  
+  def key=(value)
+    self.slider_id = KEYS.invert[value] rescue nil
+  end
+  
   KEYS = 
   {
   1=>"households_replacement_of_existing_houses",
