@@ -26,7 +26,6 @@ function Mixer() {
 
   self.gqueries = self.mix_table.concat(self.dashboard);
 
-
   self.fetch_session_id = function() {
     if (self.session_id) {
       return self.session_id;
@@ -61,12 +60,14 @@ function Mixer() {
   self.display_results = function() {
     var results = self.results.result
     //TODO: Needs to be refactored, ugly now
-    for (index in self.mix_table){
-      $("#"+self.mix_table[index]).html(Math.round(results[self.mix_table[index]][1][1]/1000000));
-    }
-    for (index in self.dashboard){
-      $("#"+self.dashboard[index]).html(results[self.dashboard[index]][1][1]);
-    }
+    $.each(self.mix_table, function(index, code){
+      var value = Math.round(results[code][1][1]/1000000)
+      $("#" + code).html(value);
+    });
+    $.each(self.dashboard, function(index, code){
+      var value = results[code][1][1];
+      $("#" + code).html(value);
+    });
     console.log("Updated results section");    
   };
   
@@ -139,12 +140,12 @@ function Mixer() {
   };
   
   self.block_interface = function() {
-    $("#results table").fadeTo(1, 0.05);
+    $("#results").fadeTo(1, 0.25);
     $(".answers input:radio").attr('disabled', true);
   };
   
   self.unblock_interface = function() {
-    $("#results table").fadeTo(1, 1);
+    $("#results").fadeTo(1, 1);
     $(".answers input:radio").attr('disabled', false);
   };
   
