@@ -61,14 +61,25 @@ function Mixer() {
   
   // assumes results have been stored  
   self.display_results = function() {
-    var results = self.results.result
     $.each(self.carriers_values, function(key, value){
       $("#" + key).html(value);
     });
     $.each(self.dashboard_values, function(key, value){
       $("#" + key).html(value);
     });
-    console.log("Updated results section");    
+    self.update_graph();
+  };
+  
+  self.update_graph = function() {
+    console.log("Updating graph");
+    var total_sum = 0.0;
+    var graph_height = 250;
+    $.each(self.carriers_values, function(code, val) { total_sum += val });
+    console.log("Total sum: " + total_sum);
+    $.each(self.carriers_values, function(code, val) {
+      var new_height = val / total_sum * graph_height;
+      $("#graph_" + code).animate({"height": new_height}, "slow");
+    });
   };
   
   // saving results to local variables in human readable format
