@@ -1,16 +1,26 @@
+@import 'mixins'
+
 section#results
-  border: 1px solid #000
   .box
-    margin: 3px
-    height: 50px
-    border: 1px solid #0080FF
-    background-color: #66CCFF
+    margin: 10px
+    height: 80px
+    @include shadow(#eee)
+    @include gradient(#fdfdfd, #eee)
     text-align: center
     h3
-      padding: 3px
+      text-align: right
+      padding: 5px
       font-weight: bold
-      color: #0080FF
-    span
+      font-size: .7em
+      color: #073571
+    .value
+      overflow: hidden
+      font-size: 1.6em
+      padding: 5px
+      margin-top: 20px
+      text-align: right
+      font-weight: bold
+      color: #073574
   table#carriers
     tr
       th
@@ -21,19 +31,23 @@ section#results
         border: 1px solid #ddd
 
 section#questions
+  @include gradient(#fdfdfd, #eee)
+  @include shadow(#ddd)
+  line-height: 1.5em
+  background-color: #eee
   nav
+    @include gradient(#fdfdfd, #eee)
+    display: block
     text-align: center
     height: 20px
     padding: 4px
     font-size: 10px
     a
-      color: #00f
-      margin: 0 5px    
-  line-height: 1.5em
-  //background-image: -moz-linear-gradient(top, #fefefe, #eee)
-  background-color: #eee
-  //border: 1px solid #fff
-  //@include shadow
+      margin: 0 5px
+      color: #bbb
+      font-weight: bold
+    &#up
+    &#down
   .question
     padding: 10px
     float: left
@@ -88,11 +102,11 @@ section#questions
       li
         a
           outline: none
-          text-indent: -9999px
+          text-indent: 10px
           display: block
           text-decoration: none
-          color: inherit
-          font-size: 10px
+          color: #fff
+          font-size: 9px
         &.carrier
         &.in_between, &#top
           height: 9px
