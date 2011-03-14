@@ -6,10 +6,11 @@ function Mixer() {
 
   var self = this;
   
-  self.base_path  = "http://testing.et-model.com/api/v1/api_scenarios/";
-  self.session_id = false;
-  self.parameters = {};
-  self.results={};
+  self.base_path    = "http://testing.et-model.com/api/v1/api_scenarios/";
+  self.session_id   = false;
+  self.parameters   = {};
+  self.results      = {};
+  self.user_answers = {};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
   self.mix_table = ["total_cost_of_primary_coal",
@@ -98,22 +99,29 @@ function Mixer() {
     return self.parameters;
   };
   
-  // fills the parameters hash (to be sent by ajax to the engine) with the values
-  // corresponding to the selected answers
-  self.process_form = function() {
-    console.log("Processing form elements");
+  // build parameters given user answers. The parameter values are defined in the
+  // global answer hash.
+  self.build_parameters = function() {
     self.parameters = {};
-    $("div.question").each(function(el) {
-      var question_name = $(this).attr('id');
-      var field_selector = "input[name=" + question_name + "]:checked";
-      var selected_option = $(field_selector).val();
-      if (!selected_option) return;
-      var selected_option_label = "answer_" + selected_option;
-      $.each(answers[question_name][selected_option_label], function(param_key, val) {
+    $.each(self.user_answers, function(question_id, answer_id){
+      // console.log("Processing question #" + question_id);
+      $.each(answers[question_id][answer_id], function(param_key, val) {
         self.set_parameter(param_key, val);
-      });
+      });      
     });
-
+  };
+  
+  // makes a hash out of user answers in this format:
+  // { question_1_id : answer_1_id, question_2_id : answer_2_id }
+  self.process_form = function() {
+    self.user_answers = {};
+    $("div.question input:checked").each(function(el) {
+      var question_id = $(this).attr('data-question_id');
+      self.user_answers[question_id] = $(this).val();
+    });
+    console.log("User answers:" + $.toJSON(self.user_answers));
+    self.build_parameters();
+    self.debug_parameters();
     return self.parameters;
   };
 
@@ -126,8 +134,8 @@ function Mixer() {
   self.refresh = function() {
     self.block_interface();
     self.process_form();
-    self.debug_parameters();
     self.make_request();
+    // the interface is released in the make_request method
   };
   
   self.block_interface = function() {
