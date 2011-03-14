@@ -11,6 +11,8 @@ function Mixer() {
   self.parameters   = {};
   self.results      = {};
   self.user_answers = {};
+  self.carriers_values  = {};
+  self.dashboard_values = {};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
   self.mix_table = ["total_cost_of_primary_coal",
@@ -56,19 +58,31 @@ function Mixer() {
     var url = self.base_path_with_session_id() + ".json";
     return url;
   };
-    
+  
+  // assumes results have been stored  
   self.display_results = function() {
     var results = self.results.result
-    //TODO: Needs to be refactored, ugly now
+    $.each(self.carriers_values, function(key, value){
+      $("#" + key).html(value);
+    });
+    $.each(self.dashboard_values, function(key, value){
+      $("#" + key).html(value);
+    });
+    console.log("Updated results section");    
+  };
+  
+  // saving results to local variables in human readable format
+  self.store_results = function() {
+    var results = self.results.result    
     $.each(self.mix_table, function(index, code){
+      // TODO: refactor
       var value = Math.round(results[code][1][1]/1000000)
-      $("#" + code).html(value);
+      self.carriers_values[code] = value;
     });
     $.each(self.dashboard, function(index, code){
       var value = results[code][1][1];
-      $("#" + code).html(value);
+      self.dashboard_values[code] = value;
     });
-    console.log("Updated results section");    
   };
   
   // sends the current parameters to the engine, stores
@@ -84,6 +98,7 @@ function Mixer() {
       success: function(data){
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
+        self.store_results();
         self.display_results();
         self.unblock_interface();
       },
