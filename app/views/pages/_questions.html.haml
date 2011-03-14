@@ -5,6 +5,7 @@
 
 = form_tag home_path, :method => :get do
   = render :partial => 'question', :collection => @questions
+.clear
 %nav#down
   %a{:href=>"#", :id=>"previous_question"}
     previous        
