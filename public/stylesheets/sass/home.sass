@@ -1,5 +1,17 @@
 @import 'mixins'
 
+section#bottom
+  @include shadow(#eee)
+  @include gradient(#fdfdfd, #eee)
+  table#carriers
+    tr
+      th
+        text-align: left
+        padding: 3px
+      td
+        padding: 3px
+        border: 1px solid #ddd
+  
 section#results
   .box
     margin: 10px
@@ -21,14 +33,6 @@ section#results
       text-align: right
       font-weight: bold
       color: #073574
-  table#carriers
-    tr
-      th
-        text-align: left
-        padding: 3px
-      td
-        padding: 3px
-        border: 1px solid #ddd
 
 section#questions
   @include gradient(#fdfdfd, #eee)

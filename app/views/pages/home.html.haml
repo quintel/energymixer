@@ -8,9 +8,10 @@
   .grid_3.omega.dashboard
     %section{:class=>"output"}
       = render :partial => 'boxes'
-  .grid_6
-    %section{:class=>"output"}
-      = render :partial => 'debug_results'
+.clear
+%section#bottom.grid_12.alpha.omega
+  %section{:class=>"output"}
+    = render :partial => 'debug_results'
     
             
 - content_for(:head) do
