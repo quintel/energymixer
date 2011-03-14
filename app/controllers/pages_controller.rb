@@ -69,9 +69,12 @@ class PagesController < ApplicationController
        }
       }
     
-  end
+    @boxes = {
+      CO2: "co2_emission",
+      sustainability: "share_of_renewable_energy",
+      bio_footprint: "area_footprint_per_nl",
+      net_energy_import: "energy_dependence"
+    }
 
-  def mix
-    render :layout => 'naked'
   end
 end

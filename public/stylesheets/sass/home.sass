@@ -1,0 +1,126 @@
+section#results
+  float: left
+  border: 1px solid #000
+  width: 371px
+  .box
+    margin: 3px
+    width: 150px
+    height: 50px
+    border: 1px solid #0080FF
+    background-color: #66CCFF
+    text-align: center
+    h3
+      padding: 3px
+      font-weight: bold
+      color: #0080FF
+    span
+  table#carriers
+    tr
+      th
+        text-align: left
+        padding: 3px
+      td
+        padding: 3px
+        border: 1px solid #ddd
+
+section#questions
+  nav
+    text-align: center
+    height: 20px
+    padding: 4px
+    font-size: 10px
+    a
+      color: #00f
+      margin: 0 5px    
+  line-height: 1.5em
+  float: left
+  width: 385px
+  //background-image: -moz-linear-gradient(top, #fefefe, #eee)
+  background-color: #eee
+  //border: 1px solid #fff
+  //@include shadow
+  .question
+    padding: 10px
+    float: left
+    clear: both
+    width: 365px
+    .information
+      margin-bottom: 5px
+    .number
+      font-weight: bold
+      width: 5%
+      float: left
+    .question_text
+      font-weight: bold
+      width: 95%
+      float: left
+    .answers
+      border-top: 1px solid #ccc
+      float: left
+      clear: both
+      width: 365px
+      margin-top: 5px
+      padding-top: 5px
+      .answer
+        float: left
+        width: 365px
+        clear: both
+        margin-bottom: 10px
+        .letter
+          float: left
+          width: 5%
+          font-weight: bold
+        .answer_text
+          float: left
+          width: 95%
+        input[type=radio]
+          display: none
+        label.active
+          background: #000
+          color: #f00
+
+#passepartout
+  width: 90px
+  margin: 50px auto
+  #mixholder
+    height: 300px
+    background: url('/images/mix_bg.png') repeat-y
+    position: relative
+    ul#mix
+      position: absolute
+      bottom: 0px
+      width: 90px
+      li
+        a
+          outline: none
+          text-indent: -9999px
+          display: block
+          text-decoration: none
+          color: inherit
+          font-size: 10px
+        &.carrier
+        &.in_between, &#top
+          height: 9px
+        &#top
+          background: url('/images/top_of_oil.png')
+        &#graph_total_cost_of_primary_oil
+          background: url('/images/texture_oil.png')
+        &#graph_total_cost_of_primary_natural_gas
+          background: url('/images/texture_gas.png')
+        &#graph_total_cost_of_primary_coal
+          background: url('/images/texture_coal.png')
+        &#graph_total_cost_of_primary_nuclear
+          background: url('/images/texture_nuclear.png')
+        &#graph_total_cost_of_primary_renewable
+          background: url('/images/texture_renewable.png')
+        &#between_oil_and_gas
+          background: url('/images/between_oil_and_gas.png')
+        &#between_gas_and_coal
+          background: url('/images/between_gas_and_coal.png')
+        &#between_coal_and_nuclear
+          background: url('/images/between_coal_and_uranium.png')
+        &#between_nuclear_and_renewable
+          background: url('/images/between_uranium_and_renewable.jpg')
+        &#bottom
+          height: 7px
+          background: url('/images/underneath_renewables.png') bottom center

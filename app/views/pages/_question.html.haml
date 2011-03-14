@@ -8,10 +8,11 @@
   .answers
     - question.answers.each do |answer|
       .answer
-        %input{:name => "question_#{question.id}", 
-               :type => "radio", 
+        %input{:name  => "question_#{question.id}", 
+               :type  => "radio", 
                :value => answer.id, 
-               :id => "answer_#{answer.id}"}
+               :id    => "answer_#{answer.id}",
+               :'data-question_id' => question.id}
         %label{:for => "answer_#{answer.id}", :id => "label_#{answer.id}"}
           %span.letter
             = answer.letter

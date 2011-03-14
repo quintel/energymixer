@@ -6,10 +6,13 @@ function Mixer() {
 
   var self = this;
   
-  self.base_path  = "http://testing.et-model.com/api/v1/api_scenarios/";
-  self.session_id = false;
-  self.parameters = {};
-  self.results={};
+  self.base_path    = "http://testing.et-model.com/api/v1/api_scenarios/";
+  self.session_id   = false;
+  self.parameters   = {};
+  self.results      = {};
+  self.user_answers = {};
+  self.carriers_values  = {};
+  self.dashboard_values = {};
   
   //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
   self.mix_table = ["costs_share_of_coal",
@@ -30,7 +33,6 @@ function Mixer() {
                   "energy_dependence"];
 
   self.gqueries = self.mix_table.concat(self.dashboard);
-
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -62,17 +64,42 @@ function Mixer() {
     var url = self.base_path_with_session_id() + ".json";
     return url;
   };
-    
+  
+  // assumes results have been stored  
   self.display_results = function() {
-    var results = self.results.result
-    //TODO: Needs to be refactored, ugly now
-    for (index in self.mix_table){
-      $("#"+self.mix_table[index]).html(Math.round(results[self.mix_table[index]][1][1]/1000000));
-    }
-    for (index in self.dashboard){
-      $("#"+self.dashboard[index]).html(results[self.dashboard[index]][1][1]);
-    }
-    console.log("Updated results section");    
+    $.each(self.carriers_values, function(key, value){
+      $("#" + key).html(value);
+    });
+    $.each(self.dashboard_values, function(key, value){
+      $("#" + key).html(value);
+    });
+    self.update_graph();
+  };
+  
+  self.update_graph = function() {
+    console.log("Updating graph");
+    var total_sum = 0.0;
+    var graph_height = 250;
+    $.each(self.carriers_values, function(code, val) { total_sum += val });
+    console.log("Total sum: " + total_sum);
+    $.each(self.carriers_values, function(code, val) {
+      var new_height = val / total_sum * graph_height;
+      $("#graph_" + code).animate({"height": new_height}, "slow");
+    });
+  };
+  
+  // saving results to local variables in human readable format
+  self.store_results = function() {
+    var results = self.results.result    
+    $.each(self.mix_table, function(index, code){
+      // TODO: refactor
+      var value = Math.round(results[code][1][1]/1000000)
+      self.carriers_values[code] = value;
+    });
+    $.each(self.dashboard, function(index, code){
+      var value = results[code][1][1];
+      self.dashboard_values[code] = value;
+    });
   };
   
   // sends the current parameters to the engine, stores
@@ -88,6 +115,7 @@ function Mixer() {
       success: function(data){
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
+        self.store_results();
         self.display_results();
         self.unblock_interface();
       },
@@ -104,22 +132,29 @@ function Mixer() {
     return self.parameters;
   };
   
-  // fills the parameters hash (to be sent by ajax to the engine) with the values
-  // corresponding to the selected answers
-  self.process_form = function() {
-    console.log("Processing form elements");
+  // build parameters given user answers. The parameter values are defined in the
+  // global answer hash.
+  self.build_parameters = function() {
     self.parameters = {};
-    $("div.question").each(function(el) {
-      var question_name = $(this).attr('id');
-      var field_selector = "input[name=" + question_name + "]:checked";
-      var selected_option = $(field_selector).val();
-      if (!selected_option) return;
-      var selected_option_label = "answer_" + selected_option;
-      $.each(answers[question_name][selected_option_label], function(param_key, val) {
+    $.each(self.user_answers, function(question_id, answer_id){
+      // console.log("Processing question #" + question_id);
+      $.each(answers[question_id][answer_id], function(param_key, val) {
         self.set_parameter(param_key, val);
-      });
+      });      
     });
-
+  };
+  
+  // makes a hash out of user answers in this format:
+  // { question_1_id : answer_1_id, question_2_id : answer_2_id }
+  self.process_form = function() {
+    self.user_answers = {};
+    $("div.question input:checked").each(function(el) {
+      var question_id = $(this).attr('data-question_id');
+      self.user_answers[question_id] = $(this).val();
+    });
+    console.log("User answers:" + $.toJSON(self.user_answers));
+    self.build_parameters();
+    self.debug_parameters();
     return self.parameters;
   };
 
@@ -132,17 +167,17 @@ function Mixer() {
   self.refresh = function() {
     self.block_interface();
     self.process_form();
-    self.debug_parameters();
     self.make_request();
+    // the interface is released in the make_request method
   };
   
   self.block_interface = function() {
-    $("#results table").fadeTo(1, 0.05);
+    $("#results").fadeTo(1, 0.25);
     $(".answers input:radio").attr('disabled', true);
   };
   
   self.unblock_interface = function() {
-    $("#results table").fadeTo(1, 1);
+    $("#results").fadeTo(1, 1);
     $(".answers input:radio").attr('disabled', false);
   };
   

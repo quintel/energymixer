@@ -1,27 +1,24 @@
-%h1
-  Test Mixer. Click on it.
-
 #passepartout
   #mixholder
     %ul#mix    
       %li{:id=>"top"}
-      %li{:id=>"oil",:class=> "carrier",:style=>"height:30px;"}
+      %li{:id=>"graph_total_cost_of_primary_oil",:class=> "carrier",:style=>"height:40px;"}
         %a{:href=>"#"}
           Olie
       %li{:class=>"in_between", :id=>"between_oil_and_gas"}
-      %li{:id=>"gas",:class=> "carrier",:style=>"height:20px;"}
+      %li{:id=>"graph_total_cost_of_primary_natural_gas",:class=> "carrier",:style=>"height:40px;"}
         %a{:href=>"#"}
           Aardgas
       %li{:class=>"in_between", :id=>"between_gas_and_coal"}
-      %li{:id=>"coal",:class=> "carrier",:style=>"height:10px;"}
+      %li{:id=>"graph_total_cost_of_primary_coal",:class=> "carrier",:style=>"height:40px;"}
         %a{:href=>"#"}
           Kolen
       %li{:class=>"in_between", :id=>"between_coal_and_nuclear"}
-      %li{:id=>"nuclear",:class=> "carrier",:style=>"height:30px;"}
+      %li{:id=>"graph_total_cost_of_primary_nuclear",:class=> "carrier",:style=>"height:40px;"}
         %a{:href=>"#"}
           Nuclear
       %li{:class=>"in_between", :id=>"between_nuclear_and_renewable"}
-      %li{:id=>"renewable",:class=> "carrier", :style=>"height:30px;"}
+      %li{:id=>"graph_total_cost_of_primary_renewable",:class=> "carrier", :style=>"height:40px;"}
         %a{:href=>"#"}
           %span
             Hernieuwbaar
