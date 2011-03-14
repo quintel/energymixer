@@ -1,0 +1,10 @@
+%table
+  %tr
+    %th Energy carrier
+    %th Value
+  -@results[:mix].each do |carrier, hash|
+    %tr
+      %td=carrier
+      %td{:id => hash[:gquery], :class=>"output"}
+        loading...
+      %td=hash[:unit]
