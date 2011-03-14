@@ -6,13 +6,13 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
     = yield :head
-  %body{:id => "#{controller.controller_name}_#{controller.action_name}", 
-        :class => [controller.controller_name, "admin"]}
+  %body{:id => "#{controller_name}_#{controller.action_name}", 
+        :class => [controller_name, "admin"]}
     %header
       %h1 Energy Mixer > Admin
       %nav
         = link_to 'Frontend', root_path
-        = link_to 'Questions', questions_path
+        = link_to 'Questions', questions_path, :class => ('active' if controller_name == 'questions')
         .login_box
           - if user_signed_in?
             Logged in as
