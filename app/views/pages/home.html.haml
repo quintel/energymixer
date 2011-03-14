@@ -1,33 +1,16 @@
 %section#questions
   = render :partial => 'questions'
 
-%script{:type => "text/javascript"}
-
 %section#results
   %section{:class=>"output"}
-    %table
-      %tr
-        %th Energy carrier
-        %th Value
-      -@results[:mix].each do |carrier, hash|
-        %tr
-          %td=carrier
-          %td{:id => hash[:gquery], :class=>"output"}
-            loading...
-          %td=hash[:unit]
-
+    = render :partial => 'debug_results'
   %section{:class=>"output"}
-    %table
-      %tr
-        %th Indicator
-        %th Value
-      -{CO2: "co2_emission", sustainability: "share_of_renewable_energy", bio_footprint: "area_footprint_per_nl", net_energy_import: "energy_dependence"}.each do |carrier, gquery|
-        %tr
-          %td=carrier
-          %td{:id => gquery, :class=>"output"}
-            loading...
+    = render :partial => 'boxes'
+  %section{:class=>"output"}
+    = render :partial => 'graph'
             
 - content_for(:head) do
+  = stylesheet_link_tag 'home'
   = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
   = javascript_include_tag 'mixer'
   = javascript_include_tag 'questions'
