@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+body.admin {
+  font-family: helvetica;
+  margin: 0;
+  padding: 0; }
+  body.admin header {
+    margin: 0;
+    background-color: #777777;
+    background: #999999;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#999999));
+    background: -moz-linear-gradient(top, #555555, #999999); }
+    body.admin header h1 {
+      margin: 0;
+      padding: 0.5em;
+      color: white; }
+    body.admin header nav {
+      padding: 0.5em;
+      margin: 0;
+      background-color: #cccccc;
+      background: #cccccc;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+      background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+      background: -moz-linear-gradient(top, #eeeeee, #cccccc); }
+      body.admin header nav a {
+        padding-right: 1em;
+        margin-right: 1em;
+        border-right: 1px solid white;
+        text-decoration: none; }
+        body.admin header nav a.active {
+          color: white; }
+      body.admin header nav .login_box {
+        font-size: 0.8em;
+        float: right; }
+  body.admin a {
+    color: #000066;
+    text-decoration: underline; }
+    body.admin a:hover {
+      color: red; }
+  body.admin #content {
+    padding: 0.5em; }
+    body.admin #content h1 {
+      font-size: 1.8em;
+      font-weight: bold; }
+    body.admin #content h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin: 0.75em 0.3em; }
+    body.admin #content #actions {
+      margin-top: 0.5em;
+      border: 1px solid #eeeeee;
+      padding: 1em 0.5em;
+      background: white;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+      background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(white));
+      background: -moz-linear-gradient(top, #eeeeee, white); }
+      body.admin #content #actions a {
+        text-decoration: none;
+        margin-right: 1em; }
+  body.admin .flash {
+    text-align: center;
+    border: 1px solid;
+    margin: 0.5em;
+    padding: 1em;
+    font-weight: bold; }
+  body.admin .flash#alert {
+    color: red;
+    background-color: #fdbbbc; }
+  body.admin .flash#notice {
+    color: green;
+    background-color: #7bff76; }
+
+table.striped {
+  width: 100%; }
+  table.striped td {
+    padding: 0.5em; }
+  table.striped thead tr {
+    background: #999999;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#999999));
+    background: -moz-linear-gradient(top, #555555, #999999);
+    background-color: #aaaaaa; }
+    table.striped thead tr th {
+      color: white;
+      text-align: left;
+      padding: 0.5em;
+      font-weight: bold;
+      border: 1px solid #dddddd;
+      font-weight: 300; }
+  table.striped tbody tr td {
+    font-weight: 100;
+    font-size: 0.9em;
+    border: 1px solid #dddddd; }
+  table.striped tbody tr.even {
+    background-color: #eeeeee; }
