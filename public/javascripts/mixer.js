@@ -71,6 +71,7 @@ function Mixer() {
       var new_height = val / total_sum * graph_height;
       $("#mixholder ." + code).animate({"height": new_height}, "slow");
     });
+    $("#total_amount span").html(total_sum / 1000);
   };
   
   // saving results to local variables in human readable format
