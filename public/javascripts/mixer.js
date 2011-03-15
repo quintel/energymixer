@@ -69,7 +69,7 @@ function Mixer() {
     $.each(self.carriers_values, function(code, val) { total_sum += val });
     $.each(self.carriers_values, function(code, val) {
       var new_height = val / total_sum * graph_height;
-      $("#mixholder ." + code).animate({"height": new_height}, "slow");
+      $("#graph ." + code).animate({"height": new_height}, "slow");
     });
     $("#total_amount span").html(total_sum / 1000);
   };

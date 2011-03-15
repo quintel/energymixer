@@ -1,9 +1,9 @@
-#passepartout
-  #mixholder.solid
+#graph_container
+  #graph.cilinder
     %ul#mix
       - @results.each do |_, item|
         %li{:class => [item[:css_class], item[:gquery]]}
-          %span= item[:label]
+          .label= item[:label]
   = link_to 'solid', '#', :id => 'solid_view'
   \|
   = link_to '3d', '#', :id => '3d_view'
