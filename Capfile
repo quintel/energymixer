@@ -16,3 +16,10 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 end
+
+namespace :rake do
+  desc "Reset production db loading seeds file"
+  task :db_reset do
+    run("cd #{deploy_to}/current && /usr/bin/env rake db:reset RAILS_ENV=production")
+  end
+end

@@ -1,6 +1,6 @@
 #passepartout
-  #mixholder
-    %ul#mix    
+  #mixholder.solid
+    %ul#mix
       %li{:id=>"top"}
       %li{:id=>"graph_total_cost_of_primary_oil",:class=> "carrier",:style=>"height:40px;"}
         %a{:href=>"#"}
@@ -23,3 +23,7 @@
           %span
             Hernieuwbaar
       %li{:id=>"bottom"}
+  = link_to 'solid', '#', :id => 'solid_view'
+  \|
+  = link_to '3d', '#', :id => '3d_view'
+  

@@ -1,19 +1,8 @@
-section#results
-  float: left
-  border: 1px solid #000
-  width: 371px
-  .box
-    margin: 3px
-    width: 150px
-    height: 50px
-    border: 1px solid #0080FF
-    background-color: #66CCFF
-    text-align: center
-    h3
-      padding: 3px
-      font-weight: bold
-      color: #0080FF
-    span
+@import 'mixins'
+
+section#bottom
+  @include shadow(#eee)
+  @include gradient(#fdfdfd, #eee)
   table#carriers
     tr
       th
@@ -22,23 +11,50 @@ section#results
       td
         padding: 3px
         border: 1px solid #ddd
+  
+section#results
+  .box
+    margin: 10px
+    height: 80px
+    @include shadow(#eee)
+    @include gradient(#fdfdfd, #eee)
+    text-align: center
+    h3
+      text-align: right
+      padding: 5px
+      font-weight: bold
+      font-size: .7em
+      color: #073571
+    .value
+      overflow: hidden
+      font-size: 1.6em
+      padding: 5px
+      margin-top: 20px
+      text-align: right
+      font-weight: bold
+      color: #073574
 
 section#questions
+  @include gradient(#fdfdfd, #eee)
+  @include shadow(#ddd)
+  line-height: 1.5em
+  background-color: #eee
   nav
+    @include gradient(#fdfdfd, #eee)
+    display: block
     text-align: center
     height: 20px
     padding: 4px
     font-size: 10px
     a
-      color: #00f
-      margin: 0 5px    
-  line-height: 1.5em
-  float: left
-  width: 385px
-  //background-image: -moz-linear-gradient(top, #fefefe, #eee)
-  background-color: #eee
-  //border: 1px solid #fff
-  //@include shadow
+      margin: 0 5px
+      color: #bbb
+      font-weight: bold
+      
+    &#up
+      a.active
+        color: red
+    &#down
   .question
     padding: 10px
     float: left
@@ -82,7 +98,7 @@ section#questions
 #passepartout
   width: 90px
   margin: 50px auto
-  #mixholder
+  #mixholder.cilinder
     height: 300px
     background: url('/images/mix_bg.png') repeat-y
     position: relative
@@ -93,11 +109,11 @@ section#questions
       li
         a
           outline: none
-          text-indent: -9999px
+          text-indent: 10px
           display: block
           text-decoration: none
-          color: inherit
-          font-size: 10px
+          color: #fff
+          font-size: 9px
         &.carrier
         &.in_between, &#top
           height: 9px
@@ -124,3 +140,39 @@ section#questions
         &#bottom
           height: 7px
           background: url('/images/underneath_renewables.png') bottom center
+  #mixholder.solid
+    height: 300px
+    background: #eee
+    position: relative    
+    ul#mix
+      position: absolute
+      bottom: 0px
+      width: 90px
+      li
+        a
+          outline: none
+          text-indent: 10px
+          display: block
+          text-decoration: none
+          color: #fff
+          font-size: 9px
+        &.carrier
+        &.in_between, &#top
+          height: 9px
+        &#top
+        &#graph_total_cost_of_primary_oil
+          background: #413E3D
+        &#graph_total_cost_of_primary_natural_gas
+          background: #7D9DDD
+        &#graph_total_cost_of_primary_coal
+          background: #573403
+        &#graph_total_cost_of_primary_nuclear
+          background: #FCDA0B
+        &#graph_total_cost_of_primary_renewable
+          background: #39BF06
+        &#between_oil_and_gas
+        &#between_gas_and_coal
+        &#between_coal_and_nuclear
+        &#between_nuclear_and_renewable
+        &#bottom
+          height: 7px

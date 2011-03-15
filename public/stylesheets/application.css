@@ -1,0 +1,8 @@
+body {
+  font-family: verdana, helvetica;
+  font-size: 11px; }
+  body header {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px; }
+    body header h1 {
+      font-weight: bold; }
