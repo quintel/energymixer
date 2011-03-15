@@ -1,13 +1,18 @@
-%section#questions
+%section#questions.grid_6.alpha
   = render :partial => 'questions'
 
-%section#results
+%section#results.grid_6.omega
+  .grid_3.alpha
+    %section{:class=>"output"}
+      = render :partial => 'graph'
+  .grid_3.omega.dashboard
+    %section{:class=>"output"}
+      = render :partial => 'boxes'
+.clear
+%section#bottom.grid_12.alpha.omega
   %section{:class=>"output"}
     = render :partial => 'debug_results'
-  %section{:class=>"output"}
-    = render :partial => 'boxes'
-  %section{:class=>"output"}
-    = render :partial => 'graph'
+    
             
 - content_for(:head) do
   = stylesheet_link_tag 'home'
