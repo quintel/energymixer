@@ -2,9 +2,9 @@
   %tr
     %th Energy carrier
     %th Value
-  -@results[:mix].each do |carrier, hash|
+  -@results.each do |carrier, hash|
     %tr
       %td=carrier
-      %td{:id => hash[:gquery], :class=>"output"}
+      %td{:class=> hash[:gquery]}
         loading...
       %td=hash[:unit]

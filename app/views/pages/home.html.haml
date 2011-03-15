@@ -7,7 +7,7 @@
       = render :partial => 'graph'
   .grid_3.omega.dashboard
     %section{:class=>"output"}
-      = render :partial => 'boxes'
+      = render :partial => 'dashboard'
 .clear
 %section#bottom.grid_12.alpha.omega
   %section{:class=>"output"}
@@ -21,4 +21,8 @@
   = javascript_include_tag 'mixer'
   = javascript_include_tag 'questions'
   :javascript
-    answers = #{answers_json}
+    var globals = {
+      answers: #{answers_json},
+      dashboard_items: #{dashboard_items_json},
+      mix_table: #{mix_table_json}
+    }

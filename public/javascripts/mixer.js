@@ -13,24 +13,9 @@ function Mixer() {
   self.user_answers = {};
   self.carriers_values  = {};
   self.dashboard_values = {};
-  
-  //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
-  self.mix_table = ["costs_share_of_coal",
-                  "costs_share_of_gas",
-                  "costs_share_of_oil",
-                  "costs_share_of_uranium",
-                  "costs_share_of_sustainable"];
 
-  self.mix_table_old = ["total_cost_of_primary_coal",
-                  "total_cost_of_primary_natural_gas",
-                  "total_cost_of_primary_oil",
-                  "total_cost_of_primary_nuclear",
-                  "total_cost_of_primary_renewable"];
-
-  self.dashboard = ["co2_emission",
-                  "share_of_renewable_energy",
-                  "area_footprint_per_nl",
-                  "energy_dependence"];
+  self.dashboard = globals.dashboard_items;
+  self.mix_table = globals.mix_table;
 
   self.gqueries = self.mix_table.concat(self.dashboard);
 
@@ -67,11 +52,12 @@ function Mixer() {
   
   // assumes results have been stored  
   self.display_results = function() {
+    // update carriers table
     $.each(self.carriers_values, function(key, value){
-      $("#" + key).html(value);
+      $("#carriers ." + key).html(value);
     });
     $.each(self.dashboard_values, function(key, value){
-      $("#" + key).html(value);
+      $("#dashboard ." + key).html(value);
     });
     self.update_graph();
   };
@@ -79,12 +65,11 @@ function Mixer() {
   self.update_graph = function() {
     console.log("Updating graph");
     var total_sum = 0.0;
-    var graph_height = 250;
+    var graph_height = 300;
     $.each(self.carriers_values, function(code, val) { total_sum += val });
-    // console.log("Total sum: " + total_sum);
     $.each(self.carriers_values, function(code, val) {
       var new_height = val / total_sum * graph_height;
-      $("#graph_" + code).animate({"height": new_height}, "slow");
+      $("#mixholder ." + code).animate({"height": new_height}, "slow");
     });
   };
   
@@ -142,8 +127,8 @@ function Mixer() {
   self.build_parameters = function() {
     self.parameters = {};
     $.each(self.user_answers, function(question_id, answer_id){
-      // console.log("Processing question #" + question_id);
-      $.each(answers[question_id][answer_id], function(param_key, val) {
+      // globals.answers is defined on the view!
+      $.each(globals.answers[question_id][answer_id], function(param_key, val) {
         self.set_parameter(param_key, val);
       });      
     });
