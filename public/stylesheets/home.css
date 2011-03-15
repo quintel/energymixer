@@ -112,43 +112,72 @@ section#questions {
 #passepartout {
   width: 90px;
   margin: 50px auto; }
-  #passepartout #mixholder {
+  #passepartout #mixholder.cilinder {
     height: 300px;
     background: url("/images/mix_bg.png") repeat-y;
     position: relative; }
-    #passepartout #mixholder ul#mix {
+    #passepartout #mixholder.cilinder ul#mix {
       position: absolute;
       bottom: 0px;
       width: 90px; }
-      #passepartout #mixholder ul#mix li a {
+      #passepartout #mixholder.cilinder ul#mix li a {
         outline: none;
         text-indent: 10px;
         display: block;
         text-decoration: none;
         color: white;
         font-size: 9px; }
-      #passepartout #mixholder ul#mix li.in_between, #passepartout #mixholder ul#mix li#top {
+      #passepartout #mixholder.cilinder ul#mix li.in_between, #passepartout #mixholder.cilinder ul#mix li#top {
         height: 9px; }
-      #passepartout #mixholder ul#mix li#top {
+      #passepartout #mixholder.cilinder ul#mix li#top {
         background: url("/images/top_of_oil.png"); }
-      #passepartout #mixholder ul#mix li#graph_total_cost_of_primary_oil {
+      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_oil {
         background: url("/images/texture_oil.png"); }
-      #passepartout #mixholder ul#mix li#graph_total_cost_of_primary_natural_gas {
+      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_natural_gas {
         background: url("/images/texture_gas.png"); }
-      #passepartout #mixholder ul#mix li#graph_total_cost_of_primary_coal {
+      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_coal {
         background: url("/images/texture_coal.png"); }
-      #passepartout #mixholder ul#mix li#graph_total_cost_of_primary_nuclear {
+      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_nuclear {
         background: url("/images/texture_nuclear.png"); }
-      #passepartout #mixholder ul#mix li#graph_total_cost_of_primary_renewable {
+      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_renewable {
         background: url("/images/texture_renewable.png"); }
-      #passepartout #mixholder ul#mix li#between_oil_and_gas {
+      #passepartout #mixholder.cilinder ul#mix li#between_oil_and_gas {
         background: url("/images/between_oil_and_gas.png"); }
-      #passepartout #mixholder ul#mix li#between_gas_and_coal {
+      #passepartout #mixholder.cilinder ul#mix li#between_gas_and_coal {
         background: url("/images/between_gas_and_coal.png"); }
-      #passepartout #mixholder ul#mix li#between_coal_and_nuclear {
+      #passepartout #mixholder.cilinder ul#mix li#between_coal_and_nuclear {
         background: url("/images/between_coal_and_uranium.png"); }
-      #passepartout #mixholder ul#mix li#between_nuclear_and_renewable {
+      #passepartout #mixholder.cilinder ul#mix li#between_nuclear_and_renewable {
         background: url("/images/between_uranium_and_renewable.jpg"); }
-      #passepartout #mixholder ul#mix li#bottom {
+      #passepartout #mixholder.cilinder ul#mix li#bottom {
         height: 7px;
         background: url("/images/underneath_renewables.png") bottom center; }
+  #passepartout #mixholder.solid {
+    height: 300px;
+    background: #eeeeee;
+    position: relative; }
+    #passepartout #mixholder.solid ul#mix {
+      position: absolute;
+      bottom: 0px;
+      width: 90px; }
+      #passepartout #mixholder.solid ul#mix li a {
+        outline: none;
+        text-indent: 10px;
+        display: block;
+        text-decoration: none;
+        color: white;
+        font-size: 9px; }
+      #passepartout #mixholder.solid ul#mix li.in_between, #passepartout #mixholder.solid ul#mix li#top {
+        height: 9px; }
+      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_oil {
+        background: #413e3d; }
+      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_natural_gas {
+        background: #7d9ddd; }
+      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_coal {
+        background: #573403; }
+      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_nuclear {
+        background: #fcda0b; }
+      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_renewable {
+        background: #39bf06; }
+      #passepartout #mixholder.solid ul#mix li#bottom {
+        height: 7px; }
