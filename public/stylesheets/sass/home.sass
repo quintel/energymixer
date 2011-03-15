@@ -95,7 +95,7 @@ section#questions
 #passepartout
   width: 90px
   margin: 50px auto
-  #mixholder
+  #mixholder.cilinder
     height: 300px
     background: url('/images/mix_bg.png') repeat-y
     position: relative
@@ -137,3 +137,39 @@ section#questions
         &#bottom
           height: 7px
           background: url('/images/underneath_renewables.png') bottom center
+  #mixholder.solid
+    height: 300px
+    background: #eee
+    position: relative    
+    ul#mix
+      position: absolute
+      bottom: 0px
+      width: 90px
+      li
+        a
+          outline: none
+          text-indent: 10px
+          display: block
+          text-decoration: none
+          color: #fff
+          font-size: 9px
+        &.carrier
+        &.in_between, &#top
+          height: 9px
+        &#top
+        &#graph_total_cost_of_primary_oil
+          background: #413E3D
+        &#graph_total_cost_of_primary_natural_gas
+          background: #7D9DDD
+        &#graph_total_cost_of_primary_coal
+          background: #573403
+        &#graph_total_cost_of_primary_nuclear
+          background: #FCDA0B
+        &#graph_total_cost_of_primary_renewable
+          background: #39BF06
+        &#between_oil_and_gas
+        &#between_gas_and_coal
+        &#between_coal_and_nuclear
+        &#between_nuclear_and_renewable
+        &#bottom
+          height: 7px
