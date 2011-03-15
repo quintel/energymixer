@@ -1,6 +1,9 @@
 %nav#up
   -@questions.each do |question|
-    %a{:href=>"#", :rel=>"question_#{question.id}"}
+    %a{:href  => "#",
+       :rel   => "question_#{question.id}",
+       :class => 'question_tab',
+       :'data-question_id' => question.number}
       =question.number
 
 = form_tag home_path, :method => :get do

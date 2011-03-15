@@ -48,8 +48,8 @@ function Mixer() {
         // show data for the first time
         self.make_request();
       },
-      error: function(){
-        alert('an error occured');
+      error: function(request, status, error){
+        console.log(error);
       }
     });
     return self.session_id;
@@ -81,7 +81,7 @@ function Mixer() {
     var total_sum = 0.0;
     var graph_height = 250;
     $.each(self.carriers_values, function(code, val) { total_sum += val });
-    console.log("Total sum: " + total_sum);
+    // console.log("Total sum: " + total_sum);
     $.each(self.carriers_values, function(code, val) {
       var new_height = val / total_sum * graph_height;
       $("#graph_" + code).animate({"height": new_height}, "slow");
@@ -108,10 +108,15 @@ function Mixer() {
     if(!hash) hash = self.parameters;
     var request_parameters = {result: self.gqueries, reset: 1};
     if(!$.isEmptyObject(hash)) request_parameters['input'] = hash;
-    $.ajax({
-      url: self.json_path_with_session_id(),
+    // Note that we're not using the standard jquery ajax call,
+    // but http://code.google.com/p/jquery-jsonp/
+    // for its better error handling.
+    // http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
+    // if we're going back to vanilla jquery change the callback parameters,
+    // add type: json and remove the '?callback=?' url suffix
+    $.jsonp({      
+      url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
-      dataType: 'jsonp',
       success: function(data){
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
@@ -119,9 +124,9 @@ function Mixer() {
         self.display_results();
         self.unblock_interface();
       },
-      error: function(){
+      error: function(data, error){
         self.unblock_interface();
-        alert('an error occured');
+        console.log(error);
       }
     });
     return true;

@@ -69,6 +69,8 @@ section#questions {
       margin: 0 5px;
       color: #bbbbbb;
       font-weight: bold; }
+    section#questions nav#up a.active {
+      color: red; }
   section#questions .question {
     padding: 10px;
     float: left;
