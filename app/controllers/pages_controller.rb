@@ -5,75 +5,43 @@ class PagesController < ApplicationController
   def home
     @questions = Question.ordered.all
     
-    @old_results = {
-      mix: {
-        coal: {
-          gquery: "total_cost_of_primary_coal",
-          unit: "Mln. Euro"
-        },
-        natural_gas: {
-          gquery: "total_cost_of_primary_natural_gas",
-          unit: "Mln. Euro"
-        }, 
-        total_cost_of_primary_oil: {
-          gquery: "total_cost_of_primary_oil",
-          unit: "Mln. Euro"
-        },
-        total_cost_of_primary_nuclear: {
-          gquery: "total_cost_of_primary_nuclear",
-          unit: "Mln. Euro"
-        }, 
-        renewable: {
-          gquery: "total_cost_of_primary_renewable",
-          unit: "Mln. Euro"
-        }
+    # Be careful with this variable! The CSS currently uses the gquery value to
+    # style the graph
+    @results = {    
+      coal: {
+       gquery: "costs_share_of_coal",
+       unit: "Mln. Euro",
+       label: "Coal"
       },
-      dashboard: {
-        coal: "total_cost_of_primary_coal", 
-        natural_gas: "total_cost_of_primary_natural_gas", 
-        total_cost_of_primary_oil: "total_cost_of_primary_oil", 
-        total_cost_of_primary_nuclear: "total_cost_of_primary_nuclear", 
-        renewable: "total_cost_of_primary_renewable"
+      natural_gas: {
+       gquery: "costs_share_of_gas",
+       unit: "Mln. Euro",
+       label: "Gas"
+      }, 
+      total_cost_of_primary_oil: {
+       gquery: "costs_share_of_oil",
+       unit: "Mln. Euro",
+       label: "Oil"
+      },
+      total_cost_of_primary_nuclear: {
+       gquery: "costs_share_of_uranium",
+       unit: "Mln. Euro",
+       label: "Uranium"
+      }, 
+      renewable: {
+       gquery: "costs_share_of_sustainable",
+       unit: "Mln. Euro",
+       label: "Sustainable"
       }
     }
-
-    @results = {    
-      mix: {
-        coal: {
-         gquery: "costs_share_of_coal",
-         unit: "Mln. Euro"
-        },
-        natural_gas: {
-         gquery: "costs_share_of_gas",
-         unit: "Mln. Euro"
-        }, 
-        total_cost_of_primary_oil: {
-         gquery: "costs_share_of_oil",
-         unit: "Mln. Euro"
-        },
-        total_cost_of_primary_nuclear: {
-         gquery: "costs_share_of_uranium",
-         unit: "Mln. Euro"
-        }, 
-        renewable: {
-         gquery: "costs_share_of_sustainable",
-         unit: "Mln. Euro"
-        }
-       },
-       dashboard: {
-        coal: "costs_share_of_coal", 
-        natural_gas: "costs_share_of_gas", 
-        total_cost_of_primary_oil: "costs_share_of_coal", 
-        total_cost_of_primary_nuclear: "costs_share_of_uranium", 
-        renewable: "costs_share_of_sustainable"
-       }
-      }
     
-    @boxes = {
-      CO2: "co2_emission",
-      sustainability: "share_of_renewable_energy",
-      bio_footprint: "area_footprint_per_nl",
-      net_energy_import: "energy_dependence"
+    # This hash keys will be used to create the dashboard items. Mixer.js uses this keys too
+    # to perform queries.
+    @dashboard_items = {
+      co2_emission: "CO2 Emissions",
+      share_of_renewable_energy: "Share of renewable energy",
+      area_footprint_per_nl: "Area Footprint per NL",
+      energy_dependence: "Energy Dependence"
     }
 
   end
