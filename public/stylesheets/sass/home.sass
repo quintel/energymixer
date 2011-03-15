@@ -103,29 +103,27 @@ section#questions
           background: #000
           color: #f00
 
-#passepartout
+#graph_container
   width: 90px
   margin: 50px auto
-  #mixholder
+  #graph
     height: 300px
     position: relative
-    ul#mix
+    ul
       position: absolute
       bottom: 0px
       width: 90px
       li
         height: 60px
-        margin-bottom: 3px
-        a
-          outline: none
-          text-indent: 10px
-          display: block
+        margin-bottom: 2px
+        .label
+          position: absolute
+          left: 100px
           text-decoration: none
-          color: #fff
-          font-size: 9px
+          color: black
+          font-size: 8px
     &.cilinder
-      background: url('/images/mix_bg.png') repeat-y
-      ul#mix
+      ul
         li
           &.oil
             background: url('/images/texture_oil.png')
@@ -140,7 +138,7 @@ section#questions
     &.solid
       height: 300px
       background: #eee
-      ul#mix
+      ul
         li
           &.oil
             background: #413E3D
