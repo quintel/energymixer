@@ -8,6 +8,11 @@ function Questions() {
   
   self.current_question = 1;
   
+  self.count_questions = function() {
+    self.num_questions = self.num_questions || $(".question").size();
+    return self.num_questions;
+  };
+  
   self.show_right_question = function() {
     console.log("Current question:" + self.current_question);
     $(".active_question").removeClass('active_question');
@@ -18,6 +23,12 @@ function Questions() {
     $("a.question_tab").removeClass('active');
     var tab_selector = "a.question_tab[data-question_id=" + self.current_question + "]";
     $(tab_selector).addClass('active');
+    //update links
+    self.current_question == 1 ? 
+      $("#previous_question").hide() : $("#previous_question").show();
+    self.current_question == self.count_questions() ? 
+      $("#next_question").hide() : $("#next_question").show();
+    
   };
   
   self.setup_callbacks = function() {
@@ -27,12 +38,15 @@ function Questions() {
 
     $("#next_question").click(function(){
       self.current_question++;
+      var last_question = self.count_questions();
+      if (self.current_question > last_question) self.current_question = last_question;
       self.show_right_question();
       return false;
     });
 
     $("#previous_question").click(function(){
       self.current_question--;
+      if (self.current_question < 1) self.current_question = 1;
       self.show_right_question();      
       return false;
     });
