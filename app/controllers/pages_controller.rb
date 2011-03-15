@@ -5,33 +5,38 @@ class PagesController < ApplicationController
   def home
     @questions = Question.ordered.all
     
-    # Be careful with this variable! The CSS currently uses the gquery value to
-    # style the graph
+    # Be careful with this variable!
     @results = {    
       coal: {
        gquery: "costs_share_of_coal",
        unit: "Mln. Euro",
-       label: "Coal"
+       label: "Coal",
+       css_class: "coal"
       },
-      natural_gas: {
+      gas: {
        gquery: "costs_share_of_gas",
        unit: "Mln. Euro",
-       label: "Gas"
+       label: "Gas",
+       css_class: "gas"
       }, 
-      total_cost_of_primary_oil: {
+      oil: {
        gquery: "costs_share_of_oil",
        unit: "Mln. Euro",
-       label: "Oil"
+       label: "Oil",
+       css_class: "oil"
       },
-      total_cost_of_primary_nuclear: {
+      nuclear: {
        gquery: "costs_share_of_uranium",
        unit: "Mln. Euro",
-       label: "Uranium"
+       label: "Uranium",
+       css_class: "nuclear"
+       
       }, 
       renewable: {
        gquery: "costs_share_of_sustainable",
        unit: "Mln. Euro",
-       label: "Sustainable"
+       label: "Sustainable",
+       css_class: "renewable"       
       }
     }
     
