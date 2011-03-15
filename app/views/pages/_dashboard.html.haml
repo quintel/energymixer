@@ -2,5 +2,7 @@
   - @dashboard_items.each do |gquery, label|
     .item
       %h3= label
-      .value{:class=>["output", gquery]}
-        loading...
+      .value
+        %span{:class => gquery }
+          loading...
+        \%

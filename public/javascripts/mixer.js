@@ -84,7 +84,7 @@ function Mixer() {
     });
     $.each(self.dashboard, function(index, code){
       var value = results[code][1][1];
-      self.dashboard_values[code] = value;
+      self.dashboard_values[code] = sprintf("%.1f", value * 100);
     });
   };
   
