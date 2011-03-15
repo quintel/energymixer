@@ -1,9 +1,9 @@
 #passepartout
   #mixholder.solid
     %ul#mix
-      - @results.each do |k, h|
-        %li{:class => h[:gquery]}
-          %span= h[:label]
+      - @results.each do |_, item|
+        %li{:class => [item[:css_class], item[:gquery]]}
+          %span= item[:label]
   = link_to 'solid', '#', :id => 'solid_view'
   \|
   = link_to '3d', '#', :id => '3d_view'
