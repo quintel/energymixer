@@ -166,12 +166,12 @@ function Mixer() {
   };
   
   self.block_interface = function() {
-    $("#results").fadeTo(1, 0.25);
+    $("#results .dashboard").fadeTo(1, 0.25);
     $(".answers input:radio").attr('disabled', true);
   };
   
   self.unblock_interface = function() {
-    $("#results").fadeTo(1, 1);
+    $("#results .dashboard").fadeTo(1, 1);
     $(".answers input:radio").attr('disabled', false);
   };
   
