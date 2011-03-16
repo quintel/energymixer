@@ -6,6 +6,7 @@ EnergyMixer::Application.routes.draw do
   resources :answers, :only => [:edit, :update, :show, :destroy]
 
   resources :questions
+  resources :dashboard_items
 
   match "/home" => "pages#home"
   match "/mix"  => "pages#mix"

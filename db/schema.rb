@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110311111008) do
+ActiveRecord::Schema.define(:version => 20110316151517) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20110311111008) do
 
   add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+
+  create_table "dashboard_items", :force => true do |t|
+    t.string   "gquery"
+    t.string   "label"
+    t.string   "steps"
+    t.integer  "ordering"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dashboard_items", ["ordering"], :name => "index_dashboard_items_on_ordering"
 
   create_table "inputs", :force => true do |t|
     t.decimal  "value",      :precision => 10, :scale => 2
