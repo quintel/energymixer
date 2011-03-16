@@ -21,6 +21,19 @@
 #
 
 class UserScenario < ActiveRecord::Base
+  
+  Outputs = {
+    output_0: "costs_share_of_coal",
+    output_1: "costs_share_of_gas",
+    output_2: "costs_share_of_oil",
+    output_3: "costs_share_of_uranium",
+    output_4: "costs_share_of_sustainable",
+    output_5: "co2_emission_final_demand_to_1990_in_percent",
+    output_6: "share_of_renewable_energy",
+    output_7: "area_footprint_per_nl",
+    output_8: "energy_dependence"
+  }
+  
   validates :name,  :presence => true
   validates :email, :presence => true
   validates :output_0, :presence => true
@@ -34,4 +47,5 @@ class UserScenario < ActiveRecord::Base
   validates :output_8, :presence => true
   
   scope :recent_first, order('created_at DESC')
+  scope :featured, where(:featured => true)
 end
