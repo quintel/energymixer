@@ -6,7 +6,13 @@
           %ul#mix
             - @results.each do |_, item|
               %li{:class => [item[:css_class], item[:gquery]]}= item[:label]
+      %td.money
+        .background
+          .coins
+    %tr
+      %td
         = link_to 'solid', '#', :id => 'solid_view'
         \|
         = link_to '3d', '#', :id => '3d_view'
+      %td
   
