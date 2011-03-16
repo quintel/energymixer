@@ -94,10 +94,6 @@ section#dashboard .item {
   box-shadow: 0 2px 3px 3px #eeeeee;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
-  background: #eeeeee;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
-  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
   text-align: center; }
   section#dashboard .item h3 {
     text-align: right;
@@ -113,6 +109,38 @@ section#dashboard .item {
     text-align: right;
     font-weight: bold;
     color: #073574; }
+  section#dashboard .item.energy_dependence_step_0 {
+    background-color: green; }
+  section#dashboard .item.energy_dependence_step_1 {
+    background-color: yellow; }
+  section#dashboard .item.energy_dependence_step_2 {
+    background-color: orange; }
+  section#dashboard .item.energy_dependence_step_3 {
+    background-color: red; }
+  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_0 {
+    background-color: green; }
+  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_1 {
+    background-color: yellow; }
+  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_2 {
+    background-color: orange; }
+  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_3 {
+    background-color: red; }
+  section#dashboard .item.share_of_renewable_energy_step_0 {
+    background-color: green; }
+  section#dashboard .item.share_of_renewable_energy_step_1 {
+    background-color: yellow; }
+  section#dashboard .item.share_of_renewable_energy_step_2 {
+    background-color: orange; }
+  section#dashboard .item.share_of_renewable_energy_step_3 {
+    background-color: red; }
+  section#dashboard .item.area_footprint_per_nl_step_0 {
+    background-color: green; }
+  section#dashboard .item.area_footprint_per_nl_step_1 {
+    background-color: yellow; }
+  section#dashboard .item.area_footprint_per_nl_step_2 {
+    background-color: orange; }
+  section#dashboard .item.area_footprint_per_nl_step_3 {
+    background-color: red; }
 
 section#questions {
   background: #eeeeee;

@@ -90,7 +90,7 @@ section#dashboard
     margin-bottom: 10px
     height: 80px
     @include shadow(#eee)
-    @include gradient(#fdfdfd, #eee)
+    // @include gradient(#fdfdfd, #eee)
     text-align: center
     h3
       text-align: right
@@ -106,6 +106,38 @@ section#dashboard
       text-align: right
       font-weight: bold
       color: #073574
+    &.energy_dependence_step_0
+      background-color: green
+    &.energy_dependence_step_1
+      background-color: yellow
+    &.energy_dependence_step_2
+      background-color: orange
+    &.energy_dependence_step_3
+      background-color: red
+    &.co2_emission_final_demand_to_1990_in_percent_step_0
+      background-color: green
+    &.co2_emission_final_demand_to_1990_in_percent_step_1
+      background-color: yellow
+    &.co2_emission_final_demand_to_1990_in_percent_step_2
+      background-color: orange
+    &.co2_emission_final_demand_to_1990_in_percent_step_3
+      background-color: red
+    &.share_of_renewable_energy_step_0
+      background-color: green
+    &.share_of_renewable_energy_step_1
+      background-color: yellow
+    &.share_of_renewable_energy_step_2
+      background-color: orange
+    &.share_of_renewable_energy_step_3
+      background-color: red
+    &.area_footprint_per_nl_step_0
+      background-color: green
+    &.area_footprint_per_nl_step_1
+      background-color: yellow
+    &.area_footprint_per_nl_step_2
+      background-color: orange
+    &.area_footprint_per_nl_step_3
+      background-color: red
 
 section#questions
   @include gradient(#fdfdfd, #eee)
