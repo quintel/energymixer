@@ -57,9 +57,33 @@ function Mixer() {
       $("#carriers ." + key).html(value);
     });
     $.each(self.dashboard_values, function(key, value){
-      $("#dashboard ." + key).html(value);
+      var formatted_value = self.format_dashboard_value(key, value);
+      $("#dashboard ." + key).html(formatted_value);
     });
     self.update_graph();
+  };
+  
+  // it would be nice to define these formats in the controller but the
+  // code would become a nightmare
+  // TODO: check whether the output values are right!!
+  self.format_dashboard_value = function(key, value) {
+    var out = "";
+    switch(key) {
+      case "co2_emission":
+        if (value > 0) out = "+";
+        out += sprintf("%.1f", value) + "%";
+        break;
+      case "area_footprint_per_nl":
+        out = sprintf("%.2f", value) + "xNL";
+        break;
+      case "share_of_renewable_energy":
+      case "energy_dependence":
+        out = sprintf("%.1f", value * 100) + "%";
+        break;
+      default:
+        out = value;
+    }
+    return out;
   };
   
   self.update_graph = function() {
@@ -84,7 +108,7 @@ function Mixer() {
     });
     $.each(self.dashboard, function(index, code){
       var value = results[code][1][1];
-      self.dashboard_values[code] = sprintf("%.1f", value * 100);
+      self.dashboard_values[code] = value;
     });
   };
   
