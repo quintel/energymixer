@@ -21,53 +21,68 @@ section#results
     h4
       font-weight: bold
   #graph_container
+    margin: 10px auto
     table
+      text-align: center
+      margin: 0 auto
       td
-        border: 1px solid red
+        padding: 3px
         &.carriers
           width: 110px
-    // width: 90px
-    margin: 30px auto
-    #graph
-      height: 320px
-      position: relative
-      background: #eee
-      ul
-        position: absolute
-        bottom: 0px
-        width: 90%
-        li
-          height: 60px
-          margin-bottom: 2px
-          text-decoration: none
-          color: white
-          font-size: 8px
-      &.cilinder
-        ul
-          li
-            &.oil
-              background: url('/images/texture_oil.png')
-            &.gas
-              background: url('/images/texture_gas.png')
-            &.coal
-              background: url('/images/texture_coal.png')
-            &.renewable
-              background: url('/images/texture_renewable.png')
-            &.nuclear
-              background: url('/images/texture_nuclear.png')
-      &.solid
-        ul
-          li
-            &.oil
-              background: #413E3D
-            &.gas
-              background: #7D9DDD
-            &.coal
-              background: #573403
-            &.nuclear
-              background: #FCDA0B
-            &.renewable
-              background: #39BF06
+          #graph
+            height: 320px
+            position: relative
+            background: #fff
+            ul
+              position: absolute
+              bottom: 0px
+              left: 10px
+              width: 90px
+              li
+                height: 60px
+                margin-bottom: 2px
+                text-decoration: none
+                color: white
+                font-size: 8px
+                font-weight: bold
+            &.cilinder
+              ul
+                li
+                  &.oil
+                    background: url('/images/texture_oil.png')
+                  &.gas
+                    background: url('/images/texture_gas.png')
+                  &.coal
+                    background: url('/images/texture_coal.png')
+                  &.renewable
+                    background: url('/images/texture_renewable.png')
+                  &.nuclear
+                    background: url('/images/texture_nuclear.png')
+            &.solid
+              ul
+                li
+                  &.oil
+                    background: #413E3D
+                  &.gas
+                    background: #7D9DDD
+                  &.coal
+                    background: #573403
+                  &.nuclear
+                    background: #FCDA0B
+                  &.renewable
+                    background: #39BF06          
+        &.money
+          .background
+            width: 20px
+            height: 320px
+            background: #eee
+            position: relative
+            .coins
+              width: 20px
+              background: #C7CB09
+              height: 50px
+              position: absolute
+              bottom: 0px
 
 
 section#dashboard

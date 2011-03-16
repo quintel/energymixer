@@ -97,6 +97,11 @@ function Mixer() {
       var new_height = val / current_sum * current_graph_height;
       $("#graph ." + code).animate({"height": new_height}, "slow");
     });
+    // update money column
+    var new_money_height = current_graph_height + 4 * 2; // margin..
+    $(".coins").animate({"height" : new_money_height}, "slow");
+    
+    // and top counter
     $("#total_amount span").html(current_sum / 1000);
   };
   
