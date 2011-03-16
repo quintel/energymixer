@@ -6,18 +6,35 @@ function Graph() {
 
   var self = this;
   
-  // assumes results have been stored  
+  // Main entry point.
+  // assumes results have been stored
   self.refresh = function() {
     // update carriers table
     $.each(mixer.carriers_values, function(key, value){
       $("#carriers ." + key).html(value);
     });
+    // dashboard items
     $.each(mixer.dashboard_values, function(key, value){
-      var formatted_value = self.format_dashboard_value(key, value);
-      console.log("setting image!");
-      $("#dashboard ." + key).html(formatted_value);
+      self.update_dashboard_item(key, value);
     });
-    self.update_graph();
+    // colourful animated bar
+    self.update_bar_chart();
+  };
+  
+  self.block_interface = function() {
+    $("#dashboard .item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
+  };
+  
+  self.unblock_interface = function() {
+    $("#dashboard .item .value, #total_amount, #carriers").busy("clear");
+  };
+    
+  // the following methods should not be called directly
+  //
+  self.update_dashboard_item = function(key, value) {
+    var formatted_value = self.format_dashboard_value(key, value);
+    console.log("setting image!");
+    $("#dashboard ." + key).html(formatted_value);
   };
   
   // it would be nice to define these formats in the controller but the
@@ -43,7 +60,7 @@ function Graph() {
     return out;
   };
   
-  self.update_graph = function() {
+  self.update_bar_chart = function() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
 
@@ -67,15 +84,7 @@ function Graph() {
     
     self.unblock_interface();
   };
-          
-  self.block_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
-  };
-  
-  self.unblock_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy("clear");
-  };
-  
+            
   self.setup_callbacks = function() {
     $("#solid_view").click(function(){
       $("#graph").removeClass("cilinder").addClass("solid");
