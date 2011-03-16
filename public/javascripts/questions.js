@@ -74,11 +74,11 @@ function Questions() {
   
   self.setup_graph_callbacks = function() {
     $("#solid_view").click(function(){
-      $("#mixholder").removeClass("cilinder").addClass("solid");
+      $("#graph").removeClass("cilinder").addClass("solid");
     });
 
     $("#3d_view").click(function(){
-      $("#mixholder").removeClass("solid").addClass("cilinder");
+      $("#graph").removeClass("solid").addClass("cilinder");
     });
   };
   

@@ -90,7 +90,7 @@ function Mixer() {
     var current_sum = 0.0;
     $.each(self.carriers_values, function(code, val) { current_sum += val });
 
-    var graph_max_height = 300;
+    var graph_max_height = 320;
     var max_amount       = 80000; // million euros
     var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(self.carriers_values, function(code, val) {
