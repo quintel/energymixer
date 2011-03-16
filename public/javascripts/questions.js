@@ -58,33 +58,16 @@ function Questions() {
       return false;
     });
 
-    /*
-    //  Changing labels
-    */
     $("input[type='radio']").change(function(){
       var id = $(this).attr('id');
       mixer.refresh();
       $(this).parent().parent().find("label").removeClass('active');
       $("label[for=" + id + "]").addClass('active');
     });
+  };
     
-    // Graph layout 
-    //
-  };
-  
-  self.setup_graph_callbacks = function() {
-    $("#solid_view").click(function(){
-      $("#graph").removeClass("cilinder").addClass("solid");
-    });
-
-    $("#3d_view").click(function(){
-      $("#graph").removeClass("solid").addClass("cilinder");
-    });
-  };
-  
   self.init = function() {
     self.setup_callbacks();
-    self.setup_graph_callbacks();
     self.show_right_question();
   };
   
@@ -92,6 +75,7 @@ function Questions() {
 };
 
 $(document).ready(function(){
+  graph = new Graph();
   mixer = new Mixer();
   q = new Questions();
 });

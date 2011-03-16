@@ -8,16 +8,16 @@ function Mixer() {
   
   self.base_path    = "http://testing.et-model.com/api/v1/api_scenarios/";
   self.session_id   = false;
-  self.parameters   = {};
-  self.results      = {};
-  self.user_answers = {};
-  self.carriers_values  = {};
-  self.dashboard_values = {};
+  self.parameters   = {}; // parameters set according to user answers
+  self.results      = {}; // semiraw response from the engine
+  self.user_answers = {}; // right from the form
+  self.carriers_values  = {}; // used by graph, too!
+  self.dashboard_values = {}; // idem
 
-  self.dashboard = globals.dashboard_items;
-  self.mix_table = globals.mix_table;
+  self.dashboard_items = globals.dashboard_items; // provided by the controller
+  self.mix_table       = globals.mix_table;       // idem
 
-  self.gqueries = self.mix_table.concat(self.dashboard);
+  self.gqueries = self.mix_table.concat(self.dashboard_items);
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -49,66 +49,7 @@ function Mixer() {
     var url = self.base_path_with_session_id() + ".json";
     return url;
   };
-  
-  // assumes results have been stored  
-  self.display_results = function() {
-    // update carriers table
-    $.each(self.carriers_values, function(key, value){
-      $("#carriers ." + key).html(value);
-    });
-    $.each(self.dashboard_values, function(key, value){
-      var formatted_value = self.format_dashboard_value(key, value);
-      $("#dashboard ." + key).html(formatted_value);
-    });
-    self.update_graph();
-  };
-  
-  // it would be nice to define these formats in the controller but the
-  // code would become a nightmare
-  // TODO: check whether the output values are right!!
-  self.format_dashboard_value = function(key, value) {
-    var out = "";
-    switch(key) {
-      case "co2_emission_final_demand_to_1990_in_percent":
-        if (value > 0) out = "+";
-        out += sprintf("%.1f", value * 100) + "%";
-        break;
-      case "area_footprint_per_nl":
-        out = sprintf("%.2f", value) + "xNL";
-        break;
-      case "share_of_renewable_energy":
-      case "energy_dependence":
-        out = sprintf("%.1f", value * 100) + "%";
-        break;
-      default:
-        out = value;
-    }
-    return out;
-  };
-  
-  self.update_graph = function() {
-    var current_sum = 0.0;
-    $.each(self.carriers_values, function(code, val) { current_sum += val });
-
-    var graph_max_height = 320;
-    var max_amount       = 80000; // million euros
-    var current_graph_height = current_sum / max_amount * graph_max_height;
-    $.each(self.carriers_values, function(code, val) {
-      var new_height = val / current_sum * current_graph_height;
-      var selector = "#graph ." + code;
-      $(selector).animate({"height": new_height}, "slow");
-      // hide text if there's no room
-      var label = $(selector + " span");
-      new_height > 5 ? label.show() : label.hide();
-    });
-    // update money column
-    var new_money_height = current_graph_height + 4 * 2; // margin..
-    $(".coins").animate({"height" : new_money_height}, "slow");
-    
-    // and top counter
-    $("#total_amount span").html(current_sum / 1000);
-  };
-  
+      
   // saving results to local variables in human readable format
   self.store_results = function() {
     var results = self.results.result    
@@ -117,7 +58,7 @@ function Mixer() {
       var value = Math.round(results[code][1][1]/1000000)
       self.carriers_values[code] = value;
     });
-    $.each(self.dashboard, function(index, code){
+    $.each(self.dashboard_items, function(index, code){
       var value = results[code][1][1];
       self.dashboard_values[code] = value;
     });
@@ -135,6 +76,7 @@ function Mixer() {
     // http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
     // if we're going back to vanilla jquery change the callback parameters,
     // add type: json and remove the '?callback=?' url suffix
+    graph.block_interface();    
     $.jsonp({      
       url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
@@ -142,11 +84,10 @@ function Mixer() {
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
         self.store_results();
-        self.display_results();
-        self.unblock_interface();
+        graph.refresh();
       },
       error: function(data, error){
-        self.unblock_interface();
+        graph.unblock_interface();
         console.log(error);
       }
     });
@@ -191,20 +132,10 @@ function Mixer() {
   // parses form, prepares parametes, makes ajax request and refreshes the graph
   // called every time the user selects an answer
   self.refresh = function() {
-    self.block_interface();
     self.process_form();
     self.make_request();
-    // the interface is released in the make_request method
   };
-  
-  self.block_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
-  };
-  
-  self.unblock_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy("clear");
-  };
-  
+    
   self.init = function() {
     self.fetch_session_id();
   };
