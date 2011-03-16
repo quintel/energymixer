@@ -17,5 +17,14 @@ module PagesHelper
     end
     out.to_json
   end
-
+  
+  # This array is used by mixer.js while querying the engine
+  def dashboard_items_json
+    @dashboard_items.map{|i| i[:gquery]}.to_json
+  end
+  
+  # As above
+  def mix_table_json
+    @results.keys.map{|k| @results[k][:gquery]}.to_json
+  end
 end

@@ -1,14 +1,16 @@
 %section#questions.grid_6.alpha
   = render :partial => 'questions'
 
-%section#results.grid_6.omega
-  .grid_3.alpha
-    %section{:class=>"output"}
-      = render :partial => 'graph'
-  .grid_3.omega.dashboard
-    %section{:class=>"output"}
-      = render :partial => 'boxes'
-.clear
+%section#results.grid_3
+  #total_amount
+    %h4 Scenario 2025
+    %span 46
+    Miljard
+  = render :partial => 'graph'
+
+%section#dashboard.grid_3.omega
+  = render :partial => 'dashboard'
+
 %section#bottom.grid_12.alpha.omega
   %section{:class=>"output"}
     = render :partial => 'debug_results'
@@ -17,7 +19,13 @@
 - content_for(:head) do
   = stylesheet_link_tag 'home'
   = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
+  = javascript_include_tag 'jquery.jsonp-2.1.4.min' # better error handling
+  = javascript_include_tag 'sprintf-0.7-beta1'
   = javascript_include_tag 'mixer'
   = javascript_include_tag 'questions'
   :javascript
-    answers = #{answers_json}
+    var globals = {
+      answers: #{answers_json},
+      dashboard_items: #{dashboard_items_json},
+      mix_table: #{mix_table_json}
+    }

@@ -15,8 +15,63 @@ section#bottom {
     padding: 3px;
     border: 1px solid #dddddd; }
 
-section#results .box {
-  margin: 10px;
+section#results #total_amount {
+  color: #0b3378;
+  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
+  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
+  box-shadow: 0 2px 3px 3px #eeeeee;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  text-align: center; }
+  section#results #total_amount h4 {
+    font-weight: bold; }
+section#results #graph_container {
+  width: 90px;
+  margin: 30px auto; }
+  section#results #graph_container #graph {
+    height: 320px;
+    position: relative;
+    background: #eeeeee; }
+    section#results #graph_container #graph ul {
+      position: absolute;
+      bottom: 0px;
+      width: 90px; }
+      section#results #graph_container #graph ul li {
+        height: 60px;
+        margin-bottom: 2px; }
+        section#results #graph_container #graph ul li .label {
+          position: absolute;
+          left: 100px;
+          text-decoration: none;
+          color: black;
+          font-size: 8px; }
+    section#results #graph_container #graph.cilinder ul li.oil {
+      background: url("/images/texture_oil.png"); }
+    section#results #graph_container #graph.cilinder ul li.gas {
+      background: url("/images/texture_gas.png"); }
+    section#results #graph_container #graph.cilinder ul li.coal {
+      background: url("/images/texture_coal.png"); }
+    section#results #graph_container #graph.cilinder ul li.renewable {
+      background: url("/images/texture_renewable.png"); }
+    section#results #graph_container #graph.cilinder ul li.nuclear {
+      background: url("/images/texture_nuclear.png"); }
+    section#results #graph_container #graph.solid ul li.oil {
+      background: #413e3d; }
+    section#results #graph_container #graph.solid ul li.gas {
+      background: #7d9ddd; }
+    section#results #graph_container #graph.solid ul li.coal {
+      background: #573403; }
+    section#results #graph_container #graph.solid ul li.nuclear {
+      background: #fcda0b; }
+    section#results #graph_container #graph.solid ul li.renewable {
+      background: #39bf06; }
+
+section#dashboard .item {
+  margin-bottom: 10px;
   height: 80px;
   -moz-box-shadow: 0 2px 3px 3px #eeeeee;
   -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
@@ -28,13 +83,13 @@ section#results .box {
   background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
   background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
   text-align: center; }
-  section#results .box h3 {
+  section#dashboard .item h3 {
     text-align: right;
     padding: 5px;
     font-weight: bold;
     font-size: 0.7em;
     color: #073571; }
-  section#results .box .value {
+  section#dashboard .item .value {
     overflow: hidden;
     font-size: 1.6em;
     padding: 5px;
@@ -110,76 +165,3 @@ section#questions {
         section#questions .question .answers .answer label.active {
           background: black;
           color: red; }
-
-#passepartout {
-  width: 90px;
-  margin: 50px auto; }
-  #passepartout #mixholder.cilinder {
-    height: 300px;
-    background: url("/images/mix_bg.png") repeat-y;
-    position: relative; }
-    #passepartout #mixholder.cilinder ul#mix {
-      position: absolute;
-      bottom: 0px;
-      width: 90px; }
-      #passepartout #mixholder.cilinder ul#mix li a {
-        outline: none;
-        text-indent: 10px;
-        display: block;
-        text-decoration: none;
-        color: white;
-        font-size: 9px; }
-      #passepartout #mixholder.cilinder ul#mix li.in_between, #passepartout #mixholder.cilinder ul#mix li#top {
-        height: 9px; }
-      #passepartout #mixholder.cilinder ul#mix li#top {
-        background: url("/images/top_of_oil.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_oil {
-        background: url("/images/texture_oil.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_natural_gas {
-        background: url("/images/texture_gas.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_coal {
-        background: url("/images/texture_coal.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_nuclear {
-        background: url("/images/texture_nuclear.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#graph_total_cost_of_primary_renewable {
-        background: url("/images/texture_renewable.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#between_oil_and_gas {
-        background: url("/images/between_oil_and_gas.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#between_gas_and_coal {
-        background: url("/images/between_gas_and_coal.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#between_coal_and_nuclear {
-        background: url("/images/between_coal_and_uranium.png"); }
-      #passepartout #mixholder.cilinder ul#mix li#between_nuclear_and_renewable {
-        background: url("/images/between_uranium_and_renewable.jpg"); }
-      #passepartout #mixholder.cilinder ul#mix li#bottom {
-        height: 7px;
-        background: url("/images/underneath_renewables.png") bottom center; }
-  #passepartout #mixholder.solid {
-    height: 300px;
-    background: #eeeeee;
-    position: relative; }
-    #passepartout #mixholder.solid ul#mix {
-      position: absolute;
-      bottom: 0px;
-      width: 90px; }
-      #passepartout #mixholder.solid ul#mix li a {
-        outline: none;
-        text-indent: 10px;
-        display: block;
-        text-decoration: none;
-        color: white;
-        font-size: 9px; }
-      #passepartout #mixholder.solid ul#mix li.in_between, #passepartout #mixholder.solid ul#mix li#top {
-        height: 9px; }
-      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_oil {
-        background: #413e3d; }
-      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_natural_gas {
-        background: #7d9ddd; }
-      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_coal {
-        background: #573403; }
-      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_nuclear {
-        background: #fcda0b; }
-      #passepartout #mixholder.solid ul#mix li#graph_total_cost_of_primary_renewable {
-        background: #39bf06; }
-      #passepartout #mixholder.solid ul#mix li#bottom {
-        height: 7px; }

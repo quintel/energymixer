@@ -11,10 +11,66 @@ section#bottom
       td
         padding: 3px
         border: 1px solid #ddd
-  
+
 section#results
-  .box
-    margin: 10px
+  #total_amount
+    color: #0B3378
+    @include shadow(#eee)
+    @include gradient(#fdfdfd, #eee)
+    text-align: center
+    h4
+      font-weight: bold
+  #graph_container
+    width: 90px
+    margin: 30px auto
+    #graph
+      height: 320px
+      position: relative
+      background: #eee
+      ul
+        position: absolute
+        bottom: 0px
+        width: 90px
+        li
+          height: 60px
+          margin-bottom: 2px
+          .label
+            position: absolute
+            left: 100px
+            text-decoration: none
+            color: black
+            font-size: 8px
+      &.cilinder
+        ul
+          li
+            &.oil
+              background: url('/images/texture_oil.png')
+            &.gas
+              background: url('/images/texture_gas.png')
+            &.coal
+              background: url('/images/texture_coal.png')
+            &.renewable
+              background: url('/images/texture_renewable.png')
+            &.nuclear
+              background: url('/images/texture_nuclear.png')
+      &.solid
+        ul
+          li
+            &.oil
+              background: #413E3D
+            &.gas
+              background: #7D9DDD
+            &.coal
+              background: #573403
+            &.nuclear
+              background: #FCDA0B
+            &.renewable
+              background: #39BF06
+
+
+section#dashboard
+  .item
+    margin-bottom: 10px
     height: 80px
     @include shadow(#eee)
     @include gradient(#fdfdfd, #eee)
@@ -49,8 +105,7 @@ section#questions
     a
       margin: 0 5px
       color: #bbb
-      font-weight: bold
-      
+      font-weight: bold      
     &#up
       a.active
         color: red
@@ -94,85 +149,3 @@ section#questions
         label.active
           background: #000
           color: #f00
-
-#passepartout
-  width: 90px
-  margin: 50px auto
-  #mixholder.cilinder
-    height: 300px
-    background: url('/images/mix_bg.png') repeat-y
-    position: relative
-    ul#mix
-      position: absolute
-      bottom: 0px
-      width: 90px
-      li
-        a
-          outline: none
-          text-indent: 10px
-          display: block
-          text-decoration: none
-          color: #fff
-          font-size: 9px
-        &.carrier
-        &.in_between, &#top
-          height: 9px
-        &#top
-          background: url('/images/top_of_oil.png')
-        &#graph_total_cost_of_primary_oil
-          background: url('/images/texture_oil.png')
-        &#graph_total_cost_of_primary_natural_gas
-          background: url('/images/texture_gas.png')
-        &#graph_total_cost_of_primary_coal
-          background: url('/images/texture_coal.png')
-        &#graph_total_cost_of_primary_nuclear
-          background: url('/images/texture_nuclear.png')
-        &#graph_total_cost_of_primary_renewable
-          background: url('/images/texture_renewable.png')
-        &#between_oil_and_gas
-          background: url('/images/between_oil_and_gas.png')
-        &#between_gas_and_coal
-          background: url('/images/between_gas_and_coal.png')
-        &#between_coal_and_nuclear
-          background: url('/images/between_coal_and_uranium.png')
-        &#between_nuclear_and_renewable
-          background: url('/images/between_uranium_and_renewable.jpg')
-        &#bottom
-          height: 7px
-          background: url('/images/underneath_renewables.png') bottom center
-  #mixholder.solid
-    height: 300px
-    background: #eee
-    position: relative    
-    ul#mix
-      position: absolute
-      bottom: 0px
-      width: 90px
-      li
-        a
-          outline: none
-          text-indent: 10px
-          display: block
-          text-decoration: none
-          color: #fff
-          font-size: 9px
-        &.carrier
-        &.in_between, &#top
-          height: 9px
-        &#top
-        &#graph_total_cost_of_primary_oil
-          background: #413E3D
-        &#graph_total_cost_of_primary_natural_gas
-          background: #7D9DDD
-        &#graph_total_cost_of_primary_coal
-          background: #573403
-        &#graph_total_cost_of_primary_nuclear
-          background: #FCDA0B
-        &#graph_total_cost_of_primary_renewable
-          background: #39BF06
-        &#between_oil_and_gas
-        &#between_gas_and_coal
-        &#between_coal_and_nuclear
-        &#between_nuclear_and_renewable
-        &#bottom
-          height: 7px

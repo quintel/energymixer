@@ -13,18 +13,9 @@ function Mixer() {
   self.user_answers = {};
   self.carriers_values  = {};
   self.dashboard_values = {};
-  
-  //TODO: get them dynamically from the database? Or even load them in environment, so one query per start-up of the server. DS
-  self.mix_table = ["total_cost_of_primary_coal",
-                  "total_cost_of_primary_natural_gas",
-                  "total_cost_of_primary_oil",
-                  "total_cost_of_primary_nuclear",
-                  "total_cost_of_primary_renewable"];
 
-  self.dashboard = ["co2_emission",
-                  "share_of_renewable_energy",
-                  "area_footprint_per_nl",
-                  "energy_dependence"];
+  self.dashboard = globals.dashboard_items;
+  self.mix_table = globals.mix_table;
 
   self.gqueries = self.mix_table.concat(self.dashboard);
 
@@ -42,8 +33,8 @@ function Mixer() {
         // show data for the first time
         self.make_request();
       },
-      error: function(){
-        alert('an error occured');
+      error: function(request, status, error){
+        console.log(error);
       }
     });
     return self.session_id;
@@ -61,25 +52,52 @@ function Mixer() {
   
   // assumes results have been stored  
   self.display_results = function() {
+    // update carriers table
     $.each(self.carriers_values, function(key, value){
-      $("#" + key).html(value);
+      $("#carriers ." + key).html(value);
     });
     $.each(self.dashboard_values, function(key, value){
-      $("#" + key).html(value);
+      var formatted_value = self.format_dashboard_value(key, value);
+      $("#dashboard ." + key).html(formatted_value);
     });
     self.update_graph();
   };
   
+  // it would be nice to define these formats in the controller but the
+  // code would become a nightmare
+  // TODO: check whether the output values are right!!
+  self.format_dashboard_value = function(key, value) {
+    var out = "";
+    switch(key) {
+      case "co2_emission":
+        if (value > 0) out = "+";
+        out += sprintf("%.1f", value) + "%";
+        break;
+      case "area_footprint_per_nl":
+        out = sprintf("%.2f", value) + "xNL";
+        break;
+      case "share_of_renewable_energy":
+      case "energy_dependence":
+        out = sprintf("%.1f", value * 100) + "%";
+        break;
+      default:
+        out = value;
+    }
+    return out;
+  };
+  
   self.update_graph = function() {
-    console.log("Updating graph");
-    var total_sum = 0.0;
-    var graph_height = 250;
-    $.each(self.carriers_values, function(code, val) { total_sum += val });
-    console.log("Total sum: " + total_sum);
+    var current_sum = 0.0;
+    $.each(self.carriers_values, function(code, val) { current_sum += val });
+
+    var graph_max_height = 320;
+    var max_amount       = 80000; // million euros
+    var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(self.carriers_values, function(code, val) {
-      var new_height = val / total_sum * graph_height;
-      $("#graph_" + code).animate({"height": new_height}, "slow");
+      var new_height = val / current_sum * current_graph_height;
+      $("#graph ." + code).animate({"height": new_height}, "slow");
     });
+    $("#total_amount span").html(current_sum / 1000);
   };
   
   // saving results to local variables in human readable format
@@ -102,10 +120,15 @@ function Mixer() {
     if(!hash) hash = self.parameters;
     var request_parameters = {result: self.gqueries, reset: 1};
     if(!$.isEmptyObject(hash)) request_parameters['input'] = hash;
-    $.ajax({
-      url: self.json_path_with_session_id(),
+    // Note that we're not using the standard jquery ajax call,
+    // but http://code.google.com/p/jquery-jsonp/
+    // for its better error handling.
+    // http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
+    // if we're going back to vanilla jquery change the callback parameters,
+    // add type: json and remove the '?callback=?' url suffix
+    $.jsonp({      
+      url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
-      dataType: 'jsonp',
       success: function(data){
         console.log("Got results:" + $.toJSON(data.result));
         self.results = data;
@@ -113,9 +136,9 @@ function Mixer() {
         self.display_results();
         self.unblock_interface();
       },
-      error: function(){
+      error: function(data, error){
         self.unblock_interface();
-        alert('an error occured');
+        console.log(error);
       }
     });
     return true;
@@ -131,8 +154,8 @@ function Mixer() {
   self.build_parameters = function() {
     self.parameters = {};
     $.each(self.user_answers, function(question_id, answer_id){
-      // console.log("Processing question #" + question_id);
-      $.each(answers[question_id][answer_id], function(param_key, val) {
+      // globals.answers is defined on the view!
+      $.each(globals.answers[question_id][answer_id], function(param_key, val) {
         self.set_parameter(param_key, val);
       });      
     });
