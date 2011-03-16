@@ -1,18 +1,16 @@
 %section#questions.grid_6.alpha
   = render :partial => 'questions'
 
-%section#results.grid_6.omega
-  .grid_3.alpha
-    %section{:class=>"output"}
-      #total_amount
-        %h4 Scenario 2025
-        %span 46
-        Miljard
-      = render :partial => 'graph'
-  .grid_3.omega.dashboard
-    %section{:class=>"output"}
-      = render :partial => 'dashboard'
-.clear
+%section#results.grid_3
+  #total_amount
+    %h4 Scenario 2025
+    %span 46
+    Miljard
+  = render :partial => 'graph'
+
+%section#dashboard.grid_3.omega
+  = render :partial => 'dashboard'
+
 %section#bottom.grid_12.alpha.omega
   %section{:class=>"output"}
     = render :partial => 'debug_results'

@@ -20,27 +20,75 @@ section#results
     text-align: center
     h4
       font-weight: bold
-  #dashboard
-    .item
-      margin: 10px
-      height: 80px
-      @include shadow(#eee)
-      @include gradient(#fdfdfd, #eee)
-      text-align: center
-      h3
-        text-align: right
-        padding: 5px
-        font-weight: bold
-        font-size: .7em
-        color: #073571
-      .value
-        overflow: hidden
-        font-size: 1.6em
-        padding: 5px
-        margin-top: 20px
-        text-align: right
-        font-weight: bold
-        color: #073574
+  #graph_container
+    width: 90px
+    margin: 30px auto
+    #graph
+      height: 320px
+      position: relative
+      background: #eee
+      ul
+        position: absolute
+        bottom: 0px
+        width: 90px
+        li
+          height: 60px
+          margin-bottom: 2px
+          .label
+            position: absolute
+            left: 100px
+            text-decoration: none
+            color: black
+            font-size: 8px
+      &.cilinder
+        ul
+          li
+            &.oil
+              background: url('/images/texture_oil.png')
+            &.gas
+              background: url('/images/texture_gas.png')
+            &.coal
+              background: url('/images/texture_coal.png')
+            &.renewable
+              background: url('/images/texture_renewable.png')
+            &.nuclear
+              background: url('/images/texture_nuclear.png')
+      &.solid
+        ul
+          li
+            &.oil
+              background: #413E3D
+            &.gas
+              background: #7D9DDD
+            &.coal
+              background: #573403
+            &.nuclear
+              background: #FCDA0B
+            &.renewable
+              background: #39BF06
+
+
+section#dashboard
+  .item
+    margin-bottom: 10px
+    height: 80px
+    @include shadow(#eee)
+    @include gradient(#fdfdfd, #eee)
+    text-align: center
+    h3
+      text-align: right
+      padding: 5px
+      font-weight: bold
+      font-size: .7em
+      color: #073571
+    .value
+      overflow: hidden
+      font-size: 1.6em
+      padding: 5px
+      margin-top: 20px
+      text-align: right
+      font-weight: bold
+      color: #073574
 
 section#questions
   @include gradient(#fdfdfd, #eee)
@@ -57,8 +105,7 @@ section#questions
     a
       margin: 0 5px
       color: #bbb
-      font-weight: bold
-      
+      font-weight: bold      
     &#up
       a.active
         color: red
@@ -102,50 +149,3 @@ section#questions
         label.active
           background: #000
           color: #f00
-
-#graph_container
-  width: 90px
-  margin: 30px auto
-  #graph
-    height: 320px
-    position: relative
-    background: #eee
-    ul
-      position: absolute
-      bottom: 0px
-      width: 90px
-      li
-        height: 60px
-        margin-bottom: 2px
-        .label
-          position: absolute
-          left: 100px
-          text-decoration: none
-          color: black
-          font-size: 8px
-    &.cilinder
-      ul
-        li
-          &.oil
-            background: url('/images/texture_oil.png')
-          &.gas
-            background: url('/images/texture_gas.png')
-          &.coal
-            background: url('/images/texture_coal.png')
-          &.renewable
-            background: url('/images/texture_renewable.png')
-          &.nuclear
-            background: url('/images/texture_nuclear.png')
-    &.solid
-      ul
-        li
-          &.oil
-            background: #413E3D
-          &.gas
-            background: #7D9DDD
-          &.coal
-            background: #573403
-          &.nuclear
-            background: #FCDA0B
-          &.renewable
-            background: #39BF06
