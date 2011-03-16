@@ -1,0 +1,45 @@
+%h2 User Scenarios
+
+%table.striped
+  %thead
+    %tr
+      %th Id
+      %th Name
+      %th Email
+      %th Age
+      %th Featured
+      %th Output_0
+      %th Output_1
+      %th Output_2
+      %th Output_3
+      %th Output_4
+      %th Output_5
+      %th Output_6
+      %th Output_7
+      %th Output_8
+      %th
+      %th
+      %th
+  %tbody
+    - @user_scenarios.each do |user_scenario|
+      %tr{:class => cycle('even', 'odd')}
+        %td= link_to user_scenario.id, user_scenario
+        %td= link_to user_scenario.name, user_scenario
+        %td= user_scenario.email
+        %td= user_scenario.age
+        %td= user_scenario.featured
+        %td= user_scenario.output_0
+        %td= user_scenario.output_1
+        %td= user_scenario.output_2
+        %td= user_scenario.output_3
+        %td= user_scenario.output_4
+        %td= user_scenario.output_5
+        %td= user_scenario.output_6
+        %td= user_scenario.output_7
+        %td= user_scenario.output_8
+        %td= link_to 'Show', user_scenario
+        %td= link_to 'Edit', edit_user_scenario_path(user_scenario)
+        %td= link_to 'Destroy', user_scenario, :confirm => 'Are you sure?', :method => :delete
+
+#actions
+  = link_to 'New User Scenario', new_user_scenario_path
