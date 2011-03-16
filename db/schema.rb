@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110316151517) do
+ActiveRecord::Schema.define(:version => 20110316161104) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -54,6 +54,26 @@ ActiveRecord::Schema.define(:version => 20110316151517) do
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
+
+  create_table "user_scenarios", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "age"
+    t.boolean  "featured"
+    t.float    "output_0"
+    t.float    "output_1"
+    t.float    "output_2"
+    t.float    "output_3"
+    t.float    "output_4"
+    t.float    "output_5"
+    t.float    "output_6"
+    t.float    "output_7"
+    t.float    "output_8"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
 
   create_table "users", :force => true do |t|
     t.string   "email",                             :default => "", :null => false

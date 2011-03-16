@@ -7,6 +7,7 @@ EnergyMixer::Application.routes.draw do
 
   resources :questions
   resources :dashboard_items
+  resources :user_scenarios
 
   match "/home" => "pages#home"
   match "/mix"  => "pages#mix"
