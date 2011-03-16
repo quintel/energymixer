@@ -80,8 +80,8 @@ section#results #graph_container {
         background: #eeeeee;
         position: relative; }
         section#results #graph_container table td.money .background .coins {
-          width: 20px;
-          background: #c7cb09;
+          width: 21px;
+          background: #c7cb09 url("images/coin_texture.png");
           height: 50px;
           position: absolute;
           bottom: 0px; }
