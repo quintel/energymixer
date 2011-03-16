@@ -198,13 +198,11 @@ function Mixer() {
   };
   
   self.block_interface = function() {
-    $("#results .dashboard").fadeTo(1, 0.25);
-    $(".answers input:radio").attr('disabled', true);
+    $("#dashboard .item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
   };
   
   self.unblock_interface = function() {
-    $("#results .dashboard").fadeTo(1, 1);
-    $(".answers input:radio").attr('disabled', false);
+    $("#dashboard .item .value, #total_amount, #carriers").busy("clear");
   };
   
   self.init = function() {
