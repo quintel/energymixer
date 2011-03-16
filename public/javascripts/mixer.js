@@ -69,9 +69,9 @@ function Mixer() {
   self.format_dashboard_value = function(key, value) {
     var out = "";
     switch(key) {
-      case "co2_emission":
+      case "co2_emission_final_demand_to_1990_in_percent":
         if (value > 0) out = "+";
-        out += sprintf("%.1f", value) + "%";
+        out += sprintf("%.1f", value * 100) + "%";
         break;
       case "area_footprint_per_nl":
         out = sprintf("%.2f", value) + "xNL";
