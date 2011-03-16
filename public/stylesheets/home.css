@@ -30,45 +30,61 @@ section#results #total_amount {
   section#results #total_amount h4 {
     font-weight: bold; }
 section#results #graph_container {
-  width: 90px;
-  margin: 30px auto; }
-  section#results #graph_container #graph {
-    height: 320px;
-    position: relative;
-    background: #eeeeee; }
-    section#results #graph_container #graph ul {
-      position: absolute;
-      bottom: 0px;
-      width: 90px; }
-      section#results #graph_container #graph ul li {
-        height: 60px;
-        margin-bottom: 2px; }
-        section#results #graph_container #graph ul li .label {
+  margin: 10px auto; }
+  section#results #graph_container table {
+    text-align: center;
+    margin: 0 auto; }
+    section#results #graph_container table td {
+      padding: 3px; }
+      section#results #graph_container table td.carriers {
+        width: 110px; }
+        section#results #graph_container table td.carriers #graph {
+          height: 320px;
+          position: relative;
+          background: white; }
+          section#results #graph_container table td.carriers #graph ul {
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+            width: 90px; }
+            section#results #graph_container table td.carriers #graph ul li {
+              height: 60px;
+              margin-bottom: 2px;
+              text-decoration: none;
+              color: white;
+              font-size: 8px;
+              font-weight: bold; }
+          section#results #graph_container table td.carriers #graph.cilinder ul li.oil {
+            background: url("/images/texture_oil.png"); }
+          section#results #graph_container table td.carriers #graph.cilinder ul li.gas {
+            background: url("/images/texture_gas.png"); }
+          section#results #graph_container table td.carriers #graph.cilinder ul li.coal {
+            background: url("/images/texture_coal.png"); }
+          section#results #graph_container table td.carriers #graph.cilinder ul li.renewable {
+            background: url("/images/texture_renewable.png"); }
+          section#results #graph_container table td.carriers #graph.cilinder ul li.nuclear {
+            background: url("/images/texture_nuclear.png"); }
+          section#results #graph_container table td.carriers #graph.solid ul li.oil {
+            background: #413e3d; }
+          section#results #graph_container table td.carriers #graph.solid ul li.gas {
+            background: #7d9ddd; }
+          section#results #graph_container table td.carriers #graph.solid ul li.coal {
+            background: #573403; }
+          section#results #graph_container table td.carriers #graph.solid ul li.nuclear {
+            background: #fcda0b; }
+          section#results #graph_container table td.carriers #graph.solid ul li.renewable {
+            background: #39bf06; }
+      section#results #graph_container table td.money .background {
+        width: 20px;
+        height: 320px;
+        background: #eeeeee;
+        position: relative; }
+        section#results #graph_container table td.money .background .coins {
+          width: 21px;
+          background: #c7cb09 url("images/coin_texture.png");
+          height: 50px;
           position: absolute;
-          left: 100px;
-          text-decoration: none;
-          color: black;
-          font-size: 8px; }
-    section#results #graph_container #graph.cilinder ul li.oil {
-      background: url("/images/texture_oil.png"); }
-    section#results #graph_container #graph.cilinder ul li.gas {
-      background: url("/images/texture_gas.png"); }
-    section#results #graph_container #graph.cilinder ul li.coal {
-      background: url("/images/texture_coal.png"); }
-    section#results #graph_container #graph.cilinder ul li.renewable {
-      background: url("/images/texture_renewable.png"); }
-    section#results #graph_container #graph.cilinder ul li.nuclear {
-      background: url("/images/texture_nuclear.png"); }
-    section#results #graph_container #graph.solid ul li.oil {
-      background: #413e3d; }
-    section#results #graph_container #graph.solid ul li.gas {
-      background: #7d9ddd; }
-    section#results #graph_container #graph.solid ul li.coal {
-      background: #573403; }
-    section#results #graph_container #graph.solid ul li.nuclear {
-      background: #fcda0b; }
-    section#results #graph_container #graph.solid ul li.renewable {
-      background: #39bf06; }
+          bottom: 0px; }
 
 section#dashboard .item {
   margin-bottom: 10px;
