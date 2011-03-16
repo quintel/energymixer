@@ -127,10 +127,11 @@ section#questions {
 
 #graph_container {
   width: 90px;
-  margin: 50px auto; }
+  margin: 30px auto; }
   #graph_container #graph {
-    height: 300px;
-    position: relative; }
+    height: 320px;
+    position: relative;
+    background: #eeeeee; }
     #graph_container #graph ul {
       position: absolute;
       bottom: 0px;
@@ -154,16 +155,13 @@ section#questions {
       background: url("/images/texture_renewable.png"); }
     #graph_container #graph.cilinder ul li.nuclear {
       background: url("/images/texture_nuclear.png"); }
-    #graph_container #graph.solid {
-      height: 300px;
-      background: #eeeeee; }
-      #graph_container #graph.solid ul li.oil {
-        background: #413e3d; }
-      #graph_container #graph.solid ul li.gas {
-        background: #7d9ddd; }
-      #graph_container #graph.solid ul li.coal {
-        background: #573403; }
-      #graph_container #graph.solid ul li.nuclear {
-        background: #fcda0b; }
-      #graph_container #graph.solid ul li.renewable {
-        background: #39bf06; }
+    #graph_container #graph.solid ul li.oil {
+      background: #413e3d; }
+    #graph_container #graph.solid ul li.gas {
+      background: #7d9ddd; }
+    #graph_container #graph.solid ul li.coal {
+      background: #573403; }
+    #graph_container #graph.solid ul li.nuclear {
+      background: #fcda0b; }
+    #graph_container #graph.solid ul li.renewable {
+      background: #39bf06; }
