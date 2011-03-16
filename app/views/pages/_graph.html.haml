@@ -1,10 +1,12 @@
 #graph_container
-  #graph.cilinder
-    %ul#mix
-      - @results.each do |_, item|
-        %li{:class => [item[:css_class], item[:gquery]]}
-          .label= item[:label]
-  = link_to 'solid', '#', :id => 'solid_view'
-  \|
-  = link_to '3d', '#', :id => '3d_view'
+  %table
+    %tr
+      %td.carriers
+        #graph.cilinder
+          %ul#mix
+            - @results.each do |_, item|
+              %li{:class => [item[:css_class], item[:gquery]]}= item[:label]
+        = link_to 'solid', '#', :id => 'solid_view'
+        \|
+        = link_to '3d', '#', :id => '3d_view'
   

@@ -21,7 +21,12 @@ section#results
     h4
       font-weight: bold
   #graph_container
-    width: 90px
+    table
+      td
+        border: 1px solid red
+        &.carriers
+          width: 110px
+    // width: 90px
     margin: 30px auto
     #graph
       height: 320px
@@ -30,16 +35,13 @@ section#results
       ul
         position: absolute
         bottom: 0px
-        width: 90px
+        width: 90%
         li
           height: 60px
           margin-bottom: 2px
-          .label
-            position: absolute
-            left: 100px
-            text-decoration: none
-            color: black
-            font-size: 8px
+          text-decoration: none
+          color: white
+          font-size: 8px
       &.cilinder
         ul
           li
