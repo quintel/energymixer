@@ -87,15 +87,17 @@ function Mixer() {
   };
   
   self.update_graph = function() {
-    console.log("Updating graph");
-    var total_sum = 0.0;
-    var graph_height = 300;
-    $.each(self.carriers_values, function(code, val) { total_sum += val });
+    var current_sum = 0.0;
+    $.each(self.carriers_values, function(code, val) { current_sum += val });
+
+    var graph_max_height = 300;
+    var max_amount       = 80000; // million euros
+    var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(self.carriers_values, function(code, val) {
-      var new_height = val / total_sum * graph_height;
+      var new_height = val / current_sum * current_graph_height;
       $("#graph ." + code).animate({"height": new_height}, "slow");
     });
-    $("#total_amount span").html(total_sum / 1000);
+    $("#total_amount span").html(current_sum / 1000);
   };
   
   // saving results to local variables in human readable format
