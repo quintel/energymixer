@@ -1,0 +1,8 @@
+= semantic_form_for @dashboard_item do |f|
+  = f.inputs do
+    = f.input :label
+    = f.input :gquery, :hint => 'Many things depend on this parameter, be careful'
+    = f.input :steps, :hint => 'Comma separated numeric values. Example: 0.0,0.1,0.5'
+    = f.input :ordering
+  = f.buttons
+    

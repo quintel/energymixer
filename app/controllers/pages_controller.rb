@@ -40,38 +40,6 @@ class PagesController < ApplicationController
       }
     }
     
-    # This hash keys will be used to create the dashboard items. Mixer.js uses this keys too
-    # to perform queries.
-    # A word about steps: a something like this [0.0, 0.25, 0.5, 0.75]
-    # is translated in the followin categories:
-    # * [-inf, 0.0]   css_suffix: _0 # boundary check
-    # * [0.0, 0.25]   css_suffix: _0
-    # * (0.25), 0.5]   css_suffix: _1
-    # * (0.5), 0.75]   css_suffix: _2
-    # * (0.75), +inf]  css_suffix: _3
-    # The CSS file should define classes named as the gquery + the suffix
-    @dashboard_items = [
-      { 
-        gquery: "co2_emission_final_demand_to_1990_in_percent",
-        label: "CO2 Emissions",
-        steps:  [0.0, 0.25, 0.5, 0.75]
-      },
-      { 
-        gquery: "share_of_renewable_energy",
-        label:  "Share of renewable energy",
-        steps:  [0.0, 0.25, 0.5, 0.75]
-      },
-      { 
-        gquery: "area_footprint_per_nl",
-        label:  "Area Footprint per NL",
-        steps:  [0.0, 0.25, 0.5, 0.75]
-      },
-      { 
-        gquery: "energy_dependence",
-        label:  "Energy Dependence",
-        steps:  [0.0, 0.25, 0.5, 0.75]
-      }
-    ]
+    @dashboard_items = DashboardItem.ordered.all    
   end
-
 end
