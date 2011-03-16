@@ -1,28 +1,9 @@
-#passepartout
-  #mixholder.solid
+#graph_container
+  #graph.cilinder
     %ul#mix
-      %li{:id=>"top"}
-      %li{:id=>"graph_total_cost_of_primary_oil",:class=> "carrier",:style=>"height:40px;"}
-        %a{:href=>"#"}
-          Olie
-      %li{:class=>"in_between", :id=>"between_oil_and_gas"}
-      %li{:id=>"graph_total_cost_of_primary_natural_gas",:class=> "carrier",:style=>"height:40px;"}
-        %a{:href=>"#"}
-          Aardgas
-      %li{:class=>"in_between", :id=>"between_gas_and_coal"}
-      %li{:id=>"graph_total_cost_of_primary_coal",:class=> "carrier",:style=>"height:40px;"}
-        %a{:href=>"#"}
-          Kolen
-      %li{:class=>"in_between", :id=>"between_coal_and_nuclear"}
-      %li{:id=>"graph_total_cost_of_primary_nuclear",:class=> "carrier",:style=>"height:40px;"}
-        %a{:href=>"#"}
-          Nuclear
-      %li{:class=>"in_between", :id=>"between_nuclear_and_renewable"}
-      %li{:id=>"graph_total_cost_of_primary_renewable",:class=> "carrier", :style=>"height:40px;"}
-        %a{:href=>"#"}
-          %span
-            Hernieuwbaar
-      %li{:id=>"bottom"}
+      - @results.each do |_, item|
+        %li{:class => [item[:css_class], item[:gquery]]}
+          .label= item[:label]
   = link_to 'solid', '#', :id => 'solid_view'
   \|
   = link_to '3d', '#', :id => '3d_view'

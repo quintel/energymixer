@@ -5,44 +5,49 @@ class PagesController < ApplicationController
   def home
     @questions = Question.ordered.all
     
+    # Be careful with this variable!
     @results = {    
-      mix: {
-        coal: {
-          gquery: "costs_share_of_coal",
-          unit: "Mln. Euro"
-        },
-        natural_gas: {
-          gquery: "costs_share_of_gas",
-          unit: "Mln. Euro"
-        }, 
-        total_cost_of_primary_oil: {
-          gquery: "costs_share_of_oil",
-          unit: "Mln. Euro"
-        },
-        total_cost_of_primary_nuclear: {
-          gquery: "costs_share_of_uranium",
-          unit: "Mln. Euro"
-        }, 
-        renewable: {
-          gquery: "costs_share_of_sustainable",
-          unit: "Mln. Euro"
-        }
+      coal: {
+       gquery: "costs_share_of_coal",
+       unit: "Mln. Euro",
+       label: "Coal",
+       css_class: "coal"
       },
-      dashboard: {
-        coal: "costs_share_of_coal", 
-        natural_gas: "costs_share_of_gas", 
-        total_cost_of_primary_oil: "costs_share_of_coal", 
-        total_cost_of_primary_nuclear: "costs_share_of_uranium", 
-        renewable: "costs_share_of_sustainable"
+      gas: {
+       gquery: "costs_share_of_gas",
+       unit: "Mln. Euro",
+       label: "Gas",
+       css_class: "gas"
+      }, 
+      oil: {
+       gquery: "costs_share_of_oil",
+       unit: "Mln. Euro",
+       label: "Oil",
+       css_class: "oil"
+      },
+      nuclear: {
+       gquery: "costs_share_of_uranium",
+       unit: "Mln. Euro",
+       label: "Uranium",
+       css_class: "nuclear"
+       
+      }, 
+      renewable: {
+       gquery: "costs_share_of_sustainable",
+       unit: "Mln. Euro",
+       label: "Sustainable",
+       css_class: "renewable"       
       }
     }
     
-    @boxes = {
-      CO2: "co2_emission",
-      sustainability: "share_of_renewable_energy",
-      bio_footprint: "area_footprint_per_nl",
-      net_energy_import: "energy_dependence"
-    }
+    # This hash keys will be used to create the dashboard items. Mixer.js uses this keys too
+    # to perform queries.
+    @dashboard_items = [
+      { gquery: "co2_emission", label: "CO2 Emissions"},
+      { gquery: "share_of_renewable_energy", label: "Share of renewable energy"},
+      { gquery: "area_footprint_per_nl", label: "Area Footprint per NL"},
+      { gquery: "energy_dependence", label: "Energy Dependence"}
+    ]
   end
 
 end
