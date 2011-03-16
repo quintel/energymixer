@@ -20,7 +20,7 @@ module PagesHelper
   
   # This array is used by mixer.js while querying the engine
   def dashboard_items_json
-    @dashboard_items.keys.to_json
+    @dashboard_items.map{|i| i[:gquery]}.to_json
   end
   
   # As above
