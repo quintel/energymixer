@@ -5,7 +5,8 @@
         #graph.cilinder
           %ul#mix
             - @results.each do |_, item|
-              %li{:class => [item[:css_class], item[:gquery]]}= item[:label]
+              %li{:class => [item[:css_class], item[:gquery]]}
+                %span= item[:label]
       %td.money
         .background
           .coins

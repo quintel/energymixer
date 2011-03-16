@@ -95,7 +95,11 @@ function Mixer() {
     var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(self.carriers_values, function(code, val) {
       var new_height = val / current_sum * current_graph_height;
-      $("#graph ." + code).animate({"height": new_height}, "slow");
+      var selector = "#graph ." + code;
+      $(selector).animate({"height": new_height}, "slow");
+      // hide text if there's no room
+      var label = $(selector + " span");
+      new_height > 5 ? label.show() : label.hide();
     });
     // update money column
     var new_money_height = current_graph_height + 4 * 2; // margin..
