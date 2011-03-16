@@ -30,8 +30,11 @@ section#results #total_amount {
   section#results #total_amount h4 {
     font-weight: bold; }
 section#results #graph_container {
-  width: 90px;
   margin: 30px auto; }
+  section#results #graph_container table td {
+    border: 1px solid red; }
+    section#results #graph_container table td.carriers {
+      width: 110px; }
   section#results #graph_container #graph {
     height: 320px;
     position: relative;
@@ -39,16 +42,13 @@ section#results #graph_container {
     section#results #graph_container #graph ul {
       position: absolute;
       bottom: 0px;
-      width: 90px; }
+      width: 90%; }
       section#results #graph_container #graph ul li {
         height: 60px;
-        margin-bottom: 2px; }
-        section#results #graph_container #graph ul li .label {
-          position: absolute;
-          left: 100px;
-          text-decoration: none;
-          color: black;
-          font-size: 8px; }
+        margin-bottom: 2px;
+        text-decoration: none;
+        color: white;
+        font-size: 8px; }
     section#results #graph_container #graph.cilinder ul li.oil {
       background: url("/images/texture_oil.png"); }
     section#results #graph_container #graph.cilinder ul li.gas {
