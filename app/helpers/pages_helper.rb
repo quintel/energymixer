@@ -27,4 +27,12 @@ module PagesHelper
   def mix_table_json
     @results.keys.map{|k| @results[k][:gquery]}.to_json
   end
+  
+  def dashboard_steps_json
+    out = {}
+    @dashboard_items.each do |i|
+      out[i[:gquery]] = i[:steps]
+    end
+    out.to_json
+  end
 end
