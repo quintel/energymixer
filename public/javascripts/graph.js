@@ -32,11 +32,23 @@ function Graph() {
   // the following methods should not be called directly
   //
   self.update_dashboard_item = function(key, value) {
+    var dashboard_selector = "#dashboard ." + key;
     var formatted_value = self.format_dashboard_value(key, value);
-    $("#dashboard ." + key + " .value").html(formatted_value);
+    $(dashboard_selector + " .value").html(formatted_value);
     // we have now to decide which image to show as background
     // let's first find the right step
-    var step = 0;
+    var step = self.find_step_for_dashboard_item(key, value);
+    // since we're doing everything through css classes, let's remove
+    // the existing background-related classes
+    var classes_to_remove = ''; // FIXME: ugly
+    for(var i = 0; i < 10; i++) { classes_to_remove += key +"_step_" + i + " "}
+    var class_to_add = key + "_step_" + step;
+    $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
+  };
+  
+  self.find_step_for_dashboard_item = function(key, value) {
+    // will add something useful later
+    return Math.floor(Math.random() * 4);
   };
   
   // it would be nice to define these formats in the controller but the
