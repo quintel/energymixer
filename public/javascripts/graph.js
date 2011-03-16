@@ -33,8 +33,10 @@ function Graph() {
   //
   self.update_dashboard_item = function(key, value) {
     var formatted_value = self.format_dashboard_value(key, value);
-    console.log("setting image!");
-    $("#dashboard ." + key).html(formatted_value);
+    $("#dashboard ." + key + " .value").html(formatted_value);
+    // we have now to decide which image to show as background
+    // let's first find the right step
+    var step = 0;
   };
   
   // it would be nice to define these formats in the controller but the

@@ -1,7 +1,6 @@
 #dashboard
   - @dashboard_items.each do |item|
-    .item
+    .item{:class => item[:gquery]}
       %h3= item[:label]
       .value
-        %span{:class => item[:gquery] }
-          loading...
+        loading...
