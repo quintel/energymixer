@@ -29,8 +29,49 @@ section#results #total_amount {
   text-align: center; }
   section#results #total_amount h4 {
     font-weight: bold; }
-section#results #dashboard .item {
-  margin: 10px;
+section#results #graph_container {
+  width: 90px;
+  margin: 30px auto; }
+  section#results #graph_container #graph {
+    height: 320px;
+    position: relative;
+    background: #eeeeee; }
+    section#results #graph_container #graph ul {
+      position: absolute;
+      bottom: 0px;
+      width: 90px; }
+      section#results #graph_container #graph ul li {
+        height: 60px;
+        margin-bottom: 2px; }
+        section#results #graph_container #graph ul li .label {
+          position: absolute;
+          left: 100px;
+          text-decoration: none;
+          color: black;
+          font-size: 8px; }
+    section#results #graph_container #graph.cilinder ul li.oil {
+      background: url("/images/texture_oil.png"); }
+    section#results #graph_container #graph.cilinder ul li.gas {
+      background: url("/images/texture_gas.png"); }
+    section#results #graph_container #graph.cilinder ul li.coal {
+      background: url("/images/texture_coal.png"); }
+    section#results #graph_container #graph.cilinder ul li.renewable {
+      background: url("/images/texture_renewable.png"); }
+    section#results #graph_container #graph.cilinder ul li.nuclear {
+      background: url("/images/texture_nuclear.png"); }
+    section#results #graph_container #graph.solid ul li.oil {
+      background: #413e3d; }
+    section#results #graph_container #graph.solid ul li.gas {
+      background: #7d9ddd; }
+    section#results #graph_container #graph.solid ul li.coal {
+      background: #573403; }
+    section#results #graph_container #graph.solid ul li.nuclear {
+      background: #fcda0b; }
+    section#results #graph_container #graph.solid ul li.renewable {
+      background: #39bf06; }
+
+section#dashboard .item {
+  margin-bottom: 10px;
   height: 80px;
   -moz-box-shadow: 0 2px 3px 3px #eeeeee;
   -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
@@ -42,13 +83,13 @@ section#results #dashboard .item {
   background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
   background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
   text-align: center; }
-  section#results #dashboard .item h3 {
+  section#dashboard .item h3 {
     text-align: right;
     padding: 5px;
     font-weight: bold;
     font-size: 0.7em;
     color: #073571; }
-  section#results #dashboard .item .value {
+  section#dashboard .item .value {
     overflow: hidden;
     font-size: 1.6em;
     padding: 5px;
@@ -124,44 +165,3 @@ section#questions {
         section#questions .question .answers .answer label.active {
           background: black;
           color: red; }
-
-#graph_container {
-  width: 90px;
-  margin: 30px auto; }
-  #graph_container #graph {
-    height: 320px;
-    position: relative;
-    background: #eeeeee; }
-    #graph_container #graph ul {
-      position: absolute;
-      bottom: 0px;
-      width: 90px; }
-      #graph_container #graph ul li {
-        height: 60px;
-        margin-bottom: 2px; }
-        #graph_container #graph ul li .label {
-          position: absolute;
-          left: 100px;
-          text-decoration: none;
-          color: black;
-          font-size: 8px; }
-    #graph_container #graph.cilinder ul li.oil {
-      background: url("/images/texture_oil.png"); }
-    #graph_container #graph.cilinder ul li.gas {
-      background: url("/images/texture_gas.png"); }
-    #graph_container #graph.cilinder ul li.coal {
-      background: url("/images/texture_coal.png"); }
-    #graph_container #graph.cilinder ul li.renewable {
-      background: url("/images/texture_renewable.png"); }
-    #graph_container #graph.cilinder ul li.nuclear {
-      background: url("/images/texture_nuclear.png"); }
-    #graph_container #graph.solid ul li.oil {
-      background: #413e3d; }
-    #graph_container #graph.solid ul li.gas {
-      background: #7d9ddd; }
-    #graph_container #graph.solid ul li.coal {
-      background: #573403; }
-    #graph_container #graph.solid ul li.nuclear {
-      background: #fcda0b; }
-    #graph_container #graph.solid ul li.renewable {
-      background: #39bf06; }
