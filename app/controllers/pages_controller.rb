@@ -42,12 +42,11 @@ class PagesController < ApplicationController
     
     # This hash keys will be used to create the dashboard items. Mixer.js uses this keys too
     # to perform queries.
-    @dashboard_items = {
-      co2_emission: "CO2 Emissions",
-      share_of_renewable_energy: "Share of renewable energy",
-      area_footprint_per_nl: "Area Footprint per NL",
-      energy_dependence: "Energy Dependence"
-    }
-
+    @dashboard_items = [
+      { gquery: "co2_emission", label: "CO2 Emissions"},
+      { gquery: "share_of_renewable_energy", label: "Share of renewable energy"},
+      { gquery: "area_footprint_per_nl", label: "Area Footprint per NL"},
+      { gquery: "energy_dependence", label: "Energy Dependence"}
+    ]
   end
 end
