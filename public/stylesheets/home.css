@@ -59,16 +59,17 @@
   width: 90px; }
 
 table.combined_graph {
+  width: 120px;
   text-align: center;
   margin: 0 auto; }
   table.combined_graph td {
-    border: 1px solid #eeeeee;
-    padding: 3px; }
+    padding: 4px; }
   table.combined_graph td.carriers {
+    width: 70%;
     vertical-align: bottom; }
     table.combined_graph td.carriers ul li {
       height: 60px;
-      width: 90px;
+      width: 90%;
       margin-bottom: 2px;
       text-decoration: none;
       color: white;
@@ -95,25 +96,21 @@ table.combined_graph {
     table.combined_graph td.carriers ul.solid li.renewable {
       background: #39bf06; }
   table.combined_graph td.money {
+    width: 30%;
     vertical-align: bottom; }
     table.combined_graph td.money .background {
-      width: 20px;
+      width: 80%;
       height: 320px;
       background: #eeeeee;
       position: relative; }
       table.combined_graph td.money .background .coins {
-        width: 21px;
+        width: 100%;
         background: #c7cb09 url("images/coin_texture.png");
         height: 50px;
         position: absolute;
         bottom: 0px; }
   table.combined_graph td.total_amount {
     color: #0b3378;
-    -moz-box-shadow: 0 2px 3px 3px #eeeeee;
-    -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
-    box-shadow: 0 2px 3px 3px #eeeeee;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
     background: #eeeeee;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
     background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
