@@ -1,7 +1,9 @@
+@import 'mixins'
+
 table.striped
   width: 100%
   td
-    padding: .5em
+    padding: .4em
   thead
     tr
       @include gradient(#555, #999)
@@ -13,12 +15,15 @@ table.striped
         font-weight: bold
         border: 1px solid #ddd
         font-weight: 300
+        &.small
+          font-size: .7em
   tbody
     tr
       td
         font-weight: 100
-        font-size: .9em
         border: 1px solid #ddd
+        &.small
+          font-size: .7em
     tr.even
       background-color: #eee
       // border-bottom: 1px solid #ddd
