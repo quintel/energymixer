@@ -1,0 +1,12 @@
+.question{:id => "question_#{Question.count + 1}"}
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :email
+    = f.text_field :email
+  %p
+    = f.label :age
+    = f.text_field :age
+  %p
+    = f.submit
