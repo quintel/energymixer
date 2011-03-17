@@ -2,8 +2,7 @@ class UserScenariosController < AdminController
   before_filter :find_user_scenario, :except => [:index, :new, :create]
 
   def index
-    # TODO: add pagination
-    @user_scenarios = UserScenario.recent_first.limit(20)
+    @user_scenarios = UserScenario.recent_first.page(params[:page])
   end
 
   def show

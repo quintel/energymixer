@@ -48,4 +48,6 @@ class UserScenario < ActiveRecord::Base
   
   scope :recent_first, order('created_at DESC')
   scope :featured, where(:featured => true)
+  
+  paginates_per 20
 end
