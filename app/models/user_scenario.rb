@@ -51,4 +51,22 @@ class UserScenario < ActiveRecord::Base
   scope :featured, where(:featured => true)
   
   paginates_per 20
+  
+  def carriers
+    {
+      coal:      { label: "Coal",      amount: output_0, ratio: output_0 / total_amount },
+      gas:       { label: "Gas",       amount: output_1, ratio: output_1 / total_amount },
+      oil:       { label: "Oil",       amount: output_2, ratio: output_2 / total_amount },
+      nuclear:   { label: "Nuclear",   amount: output_3, ratio: output_3 / total_amount },
+      renewable: { label: "Renewable", amount: output_4, ratio: output_4 / total_amount }
+    }
+  end
+  
+  def max_amount
+    80_000_000_000
+  end
+  
+  def total_amount
+    output_0 + output_1 + output_2 + output_3 + output_4
+  end
 end
