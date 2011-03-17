@@ -24,11 +24,11 @@ function Graph() {
   };
   
   self.block_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
+    $("#dashboard .dashboard_item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
   };
   
   self.unblock_interface = function() {
-    $("#dashboard .item .value, #total_amount, #carriers").busy("clear");
+    $("#dashboard .dashboard_item .value, #total_amount, #carriers").busy("clear");
   };
     
   // the following methods should not be called directly
