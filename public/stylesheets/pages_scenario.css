@@ -1,0 +1,23 @@
+#pages_scenario .top {
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  height: 80px; }
+#pages_scenario .text {
+  padding: 0.5em;
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee); }
+  #pages_scenario .text .title {
+    font-weight: bold; }
+#pages_scenario .boxes .box {
+  padding: 5px;
+  margin: 5px;
+  height: 70px;
+  width: 150px;
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee); }
