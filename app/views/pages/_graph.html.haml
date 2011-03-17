@@ -1,12 +1,16 @@
 #graph_container
-  %table
+  %table.combined_graph
+    %tr
+      %td.total_amount{:colspan => 2}        
+        %h4 Scenario 2025
+        %span ...
+        Miljard
     %tr
       %td.carriers
-        #graph
-          %ul.graph.cilinder
-            - @results.each do |_, item|
-              %li{:class => [item[:css_class], item[:gquery]]}
-                %span= item[:label]
+        %ul.cilinder
+          - @results.each do |_, item|
+            %li{:class => [item[:css_class], item[:gquery]]}
+              %span= item[:label]
       %td.money
         .background
           .coins
