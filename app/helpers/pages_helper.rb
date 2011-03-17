@@ -35,4 +35,8 @@ module PagesHelper
     end
     out.to_json
   end
+  
+  def label_for_output(i)
+    UserScenario::Outputs[i]
+  end
 end
