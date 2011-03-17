@@ -38,8 +38,8 @@
         %td= user_scenario.output_7
         %td= user_scenario.output_8
         %td= link_to 'Show', user_scenario
-        %td= link_to 'Edit', edit_user_scenario_path(user_scenario)
-        %td= link_to 'Destroy', user_scenario, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'Edit', edit_user_scenario_path(user_scenario), :class => 'fugue fugue-pencil'
+        %td= link_to 'Destroy', user_scenario, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
 
 #actions
-  = link_to 'New User Scenario', new_user_scenario_path
+  = link_to 'New User Scenario', new_user_scenario_path, :class => 'fugue fugue-plus'
