@@ -56,17 +56,19 @@
   width: 90px
 
 table.combined_graph
+  width: 120px
   text-align: center
   margin: 0 auto
   td
-    border: 1px solid #eee
-    padding: 3px
+    // border: 1px solid #eee
+    padding: 4px
   td.carriers
+    width: 70%
     vertical-align: bottom
     ul
       li
         height: 60px
-        width: 90px
+        width: 90%
         margin-bottom: 2px
         text-decoration: none
         color: white
@@ -97,21 +99,22 @@ table.combined_graph
           &.renewable
             background: #39BF06          
   td.money
+    width: 30%
     vertical-align: bottom  
     .background
-      width: 20px
+      width: 80%
       height: 320px
       background: #eee
       position: relative
       .coins
-        width: 21px
+        width: 100%
         background: #C7CB09 url('images/coin_texture.png')
         height: 50px
         position: absolute
         bottom: 0px
   td.total_amount
     color: #0B3378
-    @include shadow(#eee)
+    // @include shadow(#eee)
     @include gradient(#fdfdfd, #eee)
     text-align: center
     h4
