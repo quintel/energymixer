@@ -1,46 +1,50 @@
-%h2 scenario
+.grid_12.top
+  Bekijk de EnergyMixes
+.grid_6
+  .text
+    .title
+      De mix van #{@user_scenario.name}
+      - if @user_scenario.age
+        (#{@user_scenario.age} jaar)
+    .content
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .boxes
+    %table
+      %tr
+        %td
+          .box
+            %h3= label_for_output(:output_5)
+            .value= @user_scenario.output_5
+        %td
+          .box
+            %h3= label_for_output(:output_6)
+            .value= @user_scenario.output_6
+      %tr
+        %td
+          .box
+            %h3= label_for_output(:output_7)
+            .value= @user_scenario.output_7
+        %td
+          .box
+            %h3= label_for_output(:output_8)
+            .value= @user_scenario.output_8
+.grid_6.graph
+  %ul
+    %li
+      =label_for_output(:output_0)
+      = @user_scenario.output_0
+    %li
+      =label_for_output(:output_1)
+      = @user_scenario.output_1
+    %li
+      =label_for_output(:output_2)
+      = @user_scenario.output_2
+    %li
+      =label_for_output(:output_3)
+      = @user_scenario.output_3
+    %li
+      =label_for_output(:output_4)
+      = @user_scenario.output_4
 
-%p
-  Scenario created by
-  = @user_scenario.name
-
-%p
-  Email
-  = @user_scenario.email
-
-%p
-  Age
-  = @user_scenario.age
-
-%table
-  %tr
-    %th field
-    %th value
-  %tr
-    %td= label_for_output(:output_0)
-    %td= @user_scenario.output_0
-  %tr
-    %td= label_for_output(:output_1)
-    %td= @user_scenario.output_1
-  %tr
-    %td= label_for_output(:output_2)
-    %td= @user_scenario.output_2
-  %tr
-    %td= label_for_output(:output_3)
-    %td= @user_scenario.output_3
-  %tr
-    %td= label_for_output(:output_4)
-    %td= @user_scenario.output_4
-  %tr
-    %td= label_for_output(:output_5)
-    %td= @user_scenario.output_5
-  %tr
-    %td= label_for_output(:output_6)
-    %td= @user_scenario.output_6
-  %tr
-    %td= label_for_output(:output_7)
-    %td= @user_scenario.output_7
-  %tr
-    %td= label_for_output(:output_8)
-    %td= @user_scenario.output_8
-    
+- content_for :head do
+  = stylesheet_link_tag 'pages_scenario'
