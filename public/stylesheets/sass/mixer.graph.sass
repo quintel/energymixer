@@ -50,3 +50,40 @@
     background-color: orange
   &.area_footprint_per_nl_step_3
     background-color: red
+
+.static_graph
+  border:  1px solid red
+
+ul.graph
+  li
+    height: 60px
+    margin-bottom: 2px
+    text-decoration: none
+    color: white
+    font-size: 8px
+    font-weight: bold          
+  &.cilinder
+    li
+      &.oil
+        background: url('/images/texture_oil.png')
+      &.gas
+        background: url('/images/texture_gas.png')
+      &.coal
+        background: url('/images/texture_coal.png')
+      &.renewable
+        background: url('/images/texture_renewable.png')
+      &.nuclear
+        background: url('/images/texture_nuclear.png')
+  &.solid
+    li
+      &.oil
+        background: #413E3D
+      &.gas
+        background: #7D9DDD
+      &.coal
+        background: #573403
+      &.nuclear
+        background: #FCDA0B
+      &.renewable
+        background: #39BF06          
+  

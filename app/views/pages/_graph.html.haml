@@ -2,8 +2,8 @@
   %table
     %tr
       %td.carriers
-        #graph.cilinder
-          %ul#mix
+        #graph
+          %ul.graph.cilinder
             - @results.each do |_, item|
               %li{:class => [item[:css_class], item[:gquery]]}
                 %span= item[:label]

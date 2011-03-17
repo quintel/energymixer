@@ -29,22 +29,7 @@
             %h3= dashboard_label_for_output(:output_8)
             .value= format_dashboard_value(:output_8, @user_scenario.output_8)
 .grid_6.graph
-  %ul
-    %li
-      =gquery_for_output(:output_0)
-      = @user_scenario.output_0
-    %li
-      =gquery_for_output(:output_1)
-      = @user_scenario.output_1
-    %li
-      =gquery_for_output(:output_2)
-      = @user_scenario.output_2
-    %li
-      =gquery_for_output(:output_3)
-      = @user_scenario.output_3
-    %li
-      =gquery_for_output(:output_4)
-      = @user_scenario.output_4
+  = render :partial => 'static_graph', :locals => {:scenario => @user_scenario}
 
 - content_for :head do
   = stylesheet_link_tag 'pages_scenario'

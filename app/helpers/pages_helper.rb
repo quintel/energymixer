@@ -41,7 +41,7 @@ module PagesHelper
   end
   
   def dashboard_label_for_output(i)
-    DashboardItem.find_by_gquery(gquery_for_output(i)).label
+    DashboardItem.find_by_gquery(gquery_for_output(i)).label rescue nil
   end
   
   def set_class_for_output(i)
