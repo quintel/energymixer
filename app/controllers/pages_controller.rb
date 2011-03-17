@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  before_filter :find_scenario, :only => :scenario
   skip_before_filter :authenticate_user!
 
   def home
@@ -42,4 +42,15 @@ class PagesController < ApplicationController
     
     @dashboard_items = DashboardItem.ordered.all    
   end
+  
+  def scenario
+  end
+  
+  protected
+  
+    def find_scenario
+      @user_scenario = UserScenario.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, :alert => "Scenario not found"
+    end
 end
