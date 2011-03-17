@@ -24,15 +24,15 @@ function Graph() {
   };
   
   self.block_interface = function() {
-    $("#dashboard .dashboard_item .value, #total_amount, #carriers").busy({img: '/images/spinner.gif'});
+    $("#dashboard .dashboard_item .value, #graph_container .total_amount, #carriers").busy({img: '/images/spinner.gif'});
   };
   
   self.unblock_interface = function() {
-    $("#dashboard .dashboard_item .value, #total_amount, #carriers").busy("clear");
+    $("#dashboard .dashboard_item .value, #graph_container .total_amount, #carriers").busy("clear");
   };
     
   // the following methods should not be called directly
-  //
+  // You might only have to update the format_dashboard_value method
   self.update_dashboard_item = function(key, value) {
     var dashboard_selector = "#dashboard ." + key;
     var formatted_value = self.format_dashboard_value(key, value);
@@ -106,7 +106,7 @@ function Graph() {
     $(".coins").animate({"height" : new_money_height}, "slow");
     
     // and top counter
-    $("#total_amount span").html(current_sum / 1000);
+    $("#graph_container .total_amount span").html(current_sum / 1000);
     
     self.unblock_interface();
   };
