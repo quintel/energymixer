@@ -9,6 +9,6 @@ EnergyMixer::Application.routes.draw do
   resources :dashboard_items
   resources :user_scenarios
 
-  match "/home" => "pages#home"
-  match "/mix"  => "pages#mix"
+  match "/home"          => "pages#home"
+  match "/scenario/:id"  => "pages#scenario", :as => :scenario
 end
