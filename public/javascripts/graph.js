@@ -95,7 +95,7 @@ function Graph() {
     var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(mixer.carriers_values, function(code, val) {
       var new_height = val / current_sum * current_graph_height;
-      var selector = "#graph ." + code;
+      var selector = "#graph_container ." + code;
       $(selector).animate({"height": new_height}, "slow");
       // hide text if there's no room
       var label = $(selector + " span");
@@ -113,11 +113,11 @@ function Graph() {
             
   self.setup_callbacks = function() {
     $("#solid_view").click(function(){
-      $("ul.graph").removeClass("cilinder").addClass("solid");
+      $("#graph_container ul").removeClass("cilinder").addClass("solid");
     });
 
     $("#3d_view").click(function(){
-      $("ul.graph").removeClass("solid").addClass("cilinder");
+      $("#graph_container ul").removeClass("solid").addClass("cilinder");
     });
   }; 
   

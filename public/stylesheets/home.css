@@ -58,33 +58,69 @@
   border: 1px solid red;
   width: 90px; }
 
-ul.graph li {
-  height: 60px;
-  margin-bottom: 2px;
-  text-decoration: none;
-  color: white;
-  font-size: 8px;
-  font-weight: bold; }
-ul.graph.cilinder li.oil {
-  background: url("/images/texture_oil.png"); }
-ul.graph.cilinder li.gas {
-  background: url("/images/texture_gas.png"); }
-ul.graph.cilinder li.coal {
-  background: url("/images/texture_coal.png"); }
-ul.graph.cilinder li.renewable {
-  background: url("/images/texture_renewable.png"); }
-ul.graph.cilinder li.nuclear {
-  background: url("/images/texture_nuclear.png"); }
-ul.graph.solid li.oil {
-  background: #413e3d; }
-ul.graph.solid li.gas {
-  background: #7d9ddd; }
-ul.graph.solid li.coal {
-  background: #573403; }
-ul.graph.solid li.nuclear {
-  background: #fcda0b; }
-ul.graph.solid li.renewable {
-  background: #39bf06; }
+table.combined_graph {
+  text-align: center;
+  margin: 0 auto; }
+  table.combined_graph td {
+    border: 1px solid #eeeeee;
+    padding: 3px; }
+  table.combined_graph td.carriers {
+    vertical-align: bottom; }
+    table.combined_graph td.carriers ul li {
+      height: 60px;
+      width: 90px;
+      margin-bottom: 2px;
+      text-decoration: none;
+      color: white;
+      font-size: 8px;
+      font-weight: bold; }
+    table.combined_graph td.carriers ul.cilinder li.oil {
+      background: url("/images/texture_oil.png"); }
+    table.combined_graph td.carriers ul.cilinder li.gas {
+      background: url("/images/texture_gas.png"); }
+    table.combined_graph td.carriers ul.cilinder li.coal {
+      background: url("/images/texture_coal.png"); }
+    table.combined_graph td.carriers ul.cilinder li.renewable {
+      background: url("/images/texture_renewable.png"); }
+    table.combined_graph td.carriers ul.cilinder li.nuclear {
+      background: url("/images/texture_nuclear.png"); }
+    table.combined_graph td.carriers ul.solid li.oil {
+      background: #413e3d; }
+    table.combined_graph td.carriers ul.solid li.gas {
+      background: #7d9ddd; }
+    table.combined_graph td.carriers ul.solid li.coal {
+      background: #573403; }
+    table.combined_graph td.carriers ul.solid li.nuclear {
+      background: #fcda0b; }
+    table.combined_graph td.carriers ul.solid li.renewable {
+      background: #39bf06; }
+  table.combined_graph td.money {
+    vertical-align: bottom; }
+    table.combined_graph td.money .background {
+      width: 20px;
+      height: 320px;
+      background: #eeeeee;
+      position: relative; }
+      table.combined_graph td.money .background .coins {
+        width: 21px;
+        background: #c7cb09 url("images/coin_texture.png");
+        height: 50px;
+        position: absolute;
+        bottom: 0px; }
+  table.combined_graph td.total_amount {
+    color: #0b3378;
+    -moz-box-shadow: 0 2px 3px 3px #eeeeee;
+    -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
+    box-shadow: 0 2px 3px 3px #eeeeee;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+    background: #eeeeee;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+    background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+    text-align: center; }
+    table.combined_graph td.total_amount h4 {
+      font-weight: bold; }
 
 section#bottom {
   -moz-box-shadow: 0 2px 3px 3px #eeeeee;
@@ -102,50 +138,6 @@ section#bottom {
   section#bottom table#carriers tr td {
     padding: 3px;
     border: 1px solid #dddddd; }
-
-section#results #total_amount {
-  color: #0b3378;
-  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
-  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
-  box-shadow: 0 2px 3px 3px #eeeeee;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
-  background: #eeeeee;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
-  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
-  text-align: center; }
-  section#results #total_amount h4 {
-    font-weight: bold; }
-section#results #graph_container {
-  margin: 10px auto; }
-  section#results #graph_container table {
-    text-align: center;
-    margin: 0 auto; }
-    section#results #graph_container table td {
-      padding: 3px; }
-      section#results #graph_container table td.carriers {
-        width: 110px; }
-        section#results #graph_container table td.carriers #graph {
-          height: 320px;
-          position: relative;
-          background: white; }
-          section#results #graph_container table td.carriers #graph ul.graph {
-            position: absolute;
-            bottom: 0px;
-            left: 10px;
-            width: 90px; }
-      section#results #graph_container table td.money .background {
-        width: 20px;
-        height: 320px;
-        background: #eeeeee;
-        position: relative; }
-        section#results #graph_container table td.money .background .coins {
-          width: 21px;
-          background: #c7cb09 url("images/coin_texture.png");
-          height: 50px;
-          position: absolute;
-          bottom: 0px; }
 
 section#questions {
   background: #eeeeee;

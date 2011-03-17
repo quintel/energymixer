@@ -14,47 +14,9 @@ section#bottom
         border: 1px solid #ddd
 
 section#results
-  #total_amount
-    color: #0B3378
-    @include shadow(#eee)
-    @include gradient(#fdfdfd, #eee)
-    text-align: center
-    h4
-      font-weight: bold
-  #graph_container
-    margin: 10px auto
-    table
-      text-align: center
-      margin: 0 auto
-      td
-        padding: 3px
-        &.carriers
-          width: 110px
-          #graph
-            height: 320px
-            position: relative
-            background: #fff
-            ul.graph
-              position: absolute
-              bottom: 0px
-              left: 10px
-              width: 90px
-        &.money
-          .background
-            width: 20px
-            height: 320px
-            background: #eee
-            position: relative
-            .coins
-              width: 21px
-              background: #C7CB09 url('images/coin_texture.png')
-              height: 50px
-              position: absolute
-              bottom: 0px
-
-
 section#dashboard
-  // The dashboard items style is defined in mixer.graph.sass
+  // The graph and dashboard items style is defined in mixer.graph.sass
+
 section#questions
   @include gradient(#fdfdfd, #eee)
   @include shadow(#ddd)

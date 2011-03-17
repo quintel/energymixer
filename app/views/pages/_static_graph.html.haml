@@ -2,14 +2,25 @@
 - s = scenario
 - max_height= 300
 - sum = s.output_1 + s.output_2 + s.output_3 + s.output_4 + s.output_5
-%ul.static_graph.graph.cilinder
-  %li.coal{:style => "height: #{s.output_0 / sum * max_height}px"}
-    = gquery_for_output(:output_0)
-  %li.gas{:style => "height: #{s.output_1 / sum * max_height}px"}
-    = gquery_for_output(:output_1)
-  %li.oil{:style => "height: #{s.output_2 / sum * max_height}px"}
-    =gquery_for_output(:output_2)
-  %li.nuclear{:style => "height: #{s.output_3 / sum * max_height}px"}
-    =gquery_for_output(:output_3)
-  %li.renewable{:style => "height: #{s.output_4 / sum * max_height}px"}
-    = gquery_for_output(:output_4)
+%table.combined_graph
+  %tr
+    %td.total_amount{:colspan => 2}      
+      %h4 Scenario 2025
+      %span ...
+      Miljard      
+  %tr
+    %td.carriers
+      %ul.cilinder
+        %li.coal{:style => "height: #{s.output_0 / sum * max_height}px"}
+          Coal
+        %li.gas{:style => "height: #{s.output_1 / sum * max_height}px"}
+          Gas
+        %li.oil{:style => "height: #{s.output_2 / sum * max_height}px"}
+          Oil
+        %li.nuclear{:style => "height: #{s.output_3 / sum * max_height}px"}
+          Nuclear
+        %li.renewable{:style => "height: #{s.output_4 / sum * max_height}px"}
+          Renewable
+    %td.money
+      .background
+        .coins
