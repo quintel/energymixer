@@ -113,11 +113,11 @@ function Graph() {
             
   self.setup_callbacks = function() {
     $("#solid_view").click(function(){
-      $("#graph").removeClass("cilinder").addClass("solid");
+      $("ul.graph").removeClass("cilinder").addClass("solid");
     });
 
     $("#3d_view").click(function(){
-      $("#graph").removeClass("solid").addClass("cilinder");
+      $("ul.graph").removeClass("solid").addClass("cilinder");
     });
   }; 
   
