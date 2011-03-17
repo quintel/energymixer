@@ -1,3 +1,59 @@
+.dashboard_item {
+  margin-bottom: 10px;
+  height: 80px;
+  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
+  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
+  box-shadow: 0 2px 3px 3px #eeeeee;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  text-align: center; }
+  .dashboard_item h3 {
+    text-align: right;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: #073571; }
+  .dashboard_item .value {
+    overflow: hidden;
+    font-size: 1.6em;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #073574; }
+  .dashboard_item.energy_dependence_step_0 {
+    background-color: green; }
+  .dashboard_item.energy_dependence_step_1 {
+    background-color: yellow; }
+  .dashboard_item.energy_dependence_step_2 {
+    background-color: orange; }
+  .dashboard_item.energy_dependence_step_3 {
+    background-color: red; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
+    background-color: green; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
+    background-color: yellow; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
+    background-color: orange; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_0 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_1 {
+    background-color: orange; }
+  .dashboard_item.share_of_renewable_energy_step_2 {
+    background-color: yellow; }
+  .dashboard_item.share_of_renewable_energy_step_3 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_0 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_1 {
+    background-color: yellow; }
+  .dashboard_item.area_footprint_per_nl_step_2 {
+    background-color: orange; }
+  .dashboard_item.area_footprint_per_nl_step_3 {
+    background-color: red; }
+
 section#bottom {
   -moz-box-shadow: 0 2px 3px 3px #eeeeee;
   -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
@@ -85,62 +141,6 @@ section#results #graph_container {
           height: 50px;
           position: absolute;
           bottom: 0px; }
-
-section#dashboard .item {
-  margin-bottom: 10px;
-  height: 80px;
-  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
-  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
-  box-shadow: 0 2px 3px 3px #eeeeee;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
-  text-align: center; }
-  section#dashboard .item h3 {
-    text-align: right;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 0.7em;
-    color: #073571; }
-  section#dashboard .item .value {
-    overflow: hidden;
-    font-size: 1.6em;
-    padding: 5px;
-    margin-top: 20px;
-    text-align: right;
-    font-weight: bold;
-    color: #073574; }
-  section#dashboard .item.energy_dependence_step_0 {
-    background-color: green; }
-  section#dashboard .item.energy_dependence_step_1 {
-    background-color: yellow; }
-  section#dashboard .item.energy_dependence_step_2 {
-    background-color: orange; }
-  section#dashboard .item.energy_dependence_step_3 {
-    background-color: red; }
-  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_0 {
-    background-color: green; }
-  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_1 {
-    background-color: yellow; }
-  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_2 {
-    background-color: orange; }
-  section#dashboard .item.co2_emission_final_demand_to_1990_in_percent_step_3 {
-    background-color: red; }
-  section#dashboard .item.share_of_renewable_energy_step_0 {
-    background-color: red; }
-  section#dashboard .item.share_of_renewable_energy_step_1 {
-    background-color: orange; }
-  section#dashboard .item.share_of_renewable_energy_step_2 {
-    background-color: yellow; }
-  section#dashboard .item.share_of_renewable_energy_step_3 {
-    background-color: green; }
-  section#dashboard .item.area_footprint_per_nl_step_0 {
-    background-color: green; }
-  section#dashboard .item.area_footprint_per_nl_step_1 {
-    background-color: yellow; }
-  section#dashboard .item.area_footprint_per_nl_step_2 {
-    background-color: orange; }
-  section#dashboard .item.area_footprint_per_nl_step_3 {
-    background-color: red; }
 
 section#questions {
   background: #eeeeee;

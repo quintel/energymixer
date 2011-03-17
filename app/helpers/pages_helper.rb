@@ -39,4 +39,13 @@ module PagesHelper
   def gquery_for_output(i)
     UserScenario::Outputs[i]
   end
+  
+  def dashboard_label_for_output(i)
+    DashboardItem.find_by_gquery(gquery_for_output(i)).label
+  end
+  
+  def set_class_for_output(i)
+    # TODO
+    gquery_for_output(i) + "_step_0"
+  end
 end
