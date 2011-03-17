@@ -100,13 +100,14 @@ table.combined_graph {
     vertical-align: bottom; }
     table.combined_graph td.money .background {
       width: 80%;
-      height: 320px;
+      height: 308px;
       background: #eeeeee;
-      position: relative; }
+      position: relative;
+      margin-bottom: 2px; }
       table.combined_graph td.money .background .coins {
         width: 100%;
         background: #c7cb09 url("images/coin_texture.png");
-        height: 50px;
+        height: 308px;
         position: absolute;
         bottom: 0px; }
   table.combined_graph td.total_amount {

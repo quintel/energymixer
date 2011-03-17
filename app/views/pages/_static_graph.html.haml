@@ -1,26 +1,23 @@
 -# TODO: refactor
 - s = scenario
-- max_height= 290
-- sum = s.output_1 + s.output_2 + s.output_3 + s.output_4 + s.output_5
+- graph_max_height= 290
+- current_sum = s.output_1 + s.output_2 + s.output_3 + s.output_4 + s.output_5
+- max_amount = 80_000_000_000
+- current_graph_height = current_sum / max_amount * graph_max_height;
+- items = [{height: s.output_0 / current_sum * current_graph_height, css: "coal", label: "Coal"},{height: s.output_1 / current_sum * current_graph_height, css: "gas", label: "Gas"},{height: s.output_2 / current_sum * current_graph_height, css: "oil", label: "Oil"},{height: s.output_3 / current_sum * current_graph_height, css: "nuclear", label: "Nuclear"},{height: s.output_4 / current_sum * current_graph_height, css: "renewable", label: "Renewable"},]
+
 %table.combined_graph
   %tr
     %td.total_amount{:colspan => 2}      
       %h4 Scenario 2025
-      %span ...
+      %span= number_with_precision(current_sum / 1_000_000_000, :precision => 2)
       Miljard      
   %tr
     %td.carriers
       %ul.cilinder
-        %li.coal{:style => "height: #{s.output_0 / sum * max_height}px"}
-          Coal
-        %li.gas{:style => "height: #{s.output_1 / sum * max_height}px"}
-          Gas
-        %li.oil{:style => "height: #{s.output_2 / sum * max_height}px"}
-          Oil
-        %li.nuclear{:style => "height: #{s.output_3 / sum * max_height}px"}
-          Nuclear
-        %li.renewable{:style => "height: #{s.output_4 / sum * max_height}px"}
-          Renewable
+        - items.each do |i|
+          %li{:class => i[:css], :style => "height: #{i[:height]}px"}
+            = i[:label] if i[:height] > 5
     %td.money
       .background
-        .coins
+        .coins{:style => "height: #{current_graph_height + 4 * 4}px"}
