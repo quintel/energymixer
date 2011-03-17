@@ -55,7 +55,8 @@
     background-color: red; }
 
 .static_graph {
-  border: 1px solid red; }
+  border: 1px solid red;
+  width: 90px; }
 
 ul.graph li {
   height: 60px;

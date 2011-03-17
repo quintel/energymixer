@@ -1,16 +1,15 @@
-%ul.static_graph.graph
-  %li
-    =gquery_for_output(:output_0)
-    = scenario.output_0
-  %li
-    =gquery_for_output(:output_1)
-    = scenario.output_1
-  %li
+-# TODO: refactor
+- s = scenario
+- max_height= 300
+- sum = s.output_1 + s.output_2 + s.output_3 + s.output_4 + s.output_5
+%ul.static_graph.graph.cilinder
+  %li.coal{:style => "height: #{s.output_0 / sum * max_height}px"}
+    = gquery_for_output(:output_0)
+  %li.gas{:style => "height: #{s.output_1 / sum * max_height}px"}
+    = gquery_for_output(:output_1)
+  %li.oil{:style => "height: #{s.output_2 / sum * max_height}px"}
     =gquery_for_output(:output_2)
-    = scenario.output_2
-  %li
+  %li.nuclear{:style => "height: #{s.output_3 / sum * max_height}px"}
     =gquery_for_output(:output_3)
-    = scenario.output_3
-  %li
-    =gquery_for_output(:output_4)
-    = scenario.output_4
+  %li.renewable{:style => "height: #{s.output_4 / sum * max_height}px"}
+    = gquery_for_output(:output_4)
