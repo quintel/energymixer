@@ -11,6 +11,7 @@
       %th
       %th
       %th
+      %th
       %th.small= label_for_output(:output_0)
       %th.small= label_for_output(:output_1)
       %th.small= label_for_output(:output_2)
@@ -28,9 +29,10 @@
         %td= user_scenario.email
         %td= user_scenario.age
         %td= user_scenario.featured
-        %td= link_to 'Show', user_scenario
-        %td= link_to 'Edit', edit_user_scenario_path(user_scenario), :class => 'fugue fugue-pencil'
-        %td= link_to 'Destroy', user_scenario, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+        %td= link_to '', user_scenario, :class => 'fugue fugue-information'
+        %td= link_to '', scenario_path(user_scenario), :class => 'fugue fugue-chart'
+        %td= link_to '', edit_user_scenario_path(user_scenario), :class => 'fugue fugue-pencil'
+        %td= link_to '', user_scenario, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
         %td.small= user_scenario.output_0
         %td.small= user_scenario.output_1
         %td.small= user_scenario.output_2
