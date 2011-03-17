@@ -18,8 +18,8 @@
         %td= dashboard_item.steps
         %td= dashboard_item.ordering
         %td= link_to 'Show', dashboard_item
-        %td= link_to 'Edit', edit_dashboard_item_path(dashboard_item)
-        %td= link_to 'Destroy', dashboard_item, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'Edit', edit_dashboard_item_path(dashboard_item), :class => 'fugue fugue-pencil'
+        %td= link_to 'Destroy', dashboard_item, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
 
 #actions
-  = link_to 'New Question', new_dashboard_item_path
+  = link_to 'New Question', new_dashboard_item_path, :class => 'fugue fugue-plus'
