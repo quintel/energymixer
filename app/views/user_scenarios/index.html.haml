@@ -12,15 +12,15 @@
       %th
       %th
       %th
-      %th.small= label_for_output(:output_0)
-      %th.small= label_for_output(:output_1)
-      %th.small= label_for_output(:output_2)
-      %th.small= label_for_output(:output_3)
-      %th.small= label_for_output(:output_4)
-      %th.small= label_for_output(:output_5)
-      %th.small= label_for_output(:output_6)
-      %th.small= label_for_output(:output_7)
-      %th.small= label_for_output(:output_8)
+      %th.small= gquery_for_output(:output_0)
+      %th.small= gquery_for_output(:output_1)
+      %th.small= gquery_for_output(:output_2)
+      %th.small= gquery_for_output(:output_3)
+      %th.small= gquery_for_output(:output_4)
+      %th.small= gquery_for_output(:output_5)
+      %th.small= gquery_for_output(:output_6)
+      %th.small= gquery_for_output(:output_7)
+      %th.small= gquery_for_output(:output_8)
   %tbody
     - @user_scenarios.each do |user_scenario|
       %tr{:class => cycle('even', 'odd')}

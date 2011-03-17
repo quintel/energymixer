@@ -21,7 +21,8 @@
 #
 
 class UserScenario < ActiveRecord::Base
-  
+
+  # Be careful, these values must match the dashboard items
   Outputs = {
     output_0: "costs_share_of_coal",
     output_1: "costs_share_of_gas",
