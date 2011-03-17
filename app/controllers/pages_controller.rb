@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def home
+    @user_scenario = UserScenario.new
     @questions = Question.ordered.all
     
     # Be careful with this variable!
