@@ -36,7 +36,7 @@ module PagesHelper
     out.to_json
   end
   
-  def label_for_output(i)
+  def gquery_for_output(i)
     UserScenario::Outputs[i]
   end
 end
