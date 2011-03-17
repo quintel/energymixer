@@ -48,4 +48,20 @@ module PagesHelper
     # TODO
     gquery_for_output(i) + "_step_0"
   end
+  
+  # Check graph.js for similar method
+  def format_dashboard_value(input_id, value)
+    gquery = gquery_for_output(input_id)
+    case gquery
+    when "co2_emission_final_demand_to_1990_in_percent"
+      "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2)}%"
+    when "area_footprint_per_nl"
+      "#{number_with_precision(value, :precision => 2)}xNL"
+    when "share_of_renewable_energy", "energy_dependence"
+      "#{number_with_precision(value * 100, :precision => 2)}%"
+    else
+      value
+    end
+  end
+  
 end

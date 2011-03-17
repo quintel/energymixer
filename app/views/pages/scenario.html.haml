@@ -14,20 +14,20 @@
         %td
           .dashboard_item{:class => set_class_for_output(:output_5)}
             %h3= dashboard_label_for_output(:output_5)
-            .value= @user_scenario.output_5
+            .value= format_dashboard_value(:output_5, @user_scenario.output_5)
         %td
           .dashboard_item{:class => set_class_for_output(:output_6)}
             %h3= dashboard_label_for_output(:output_6)
-            .value= @user_scenario.output_6
+            .value= format_dashboard_value(:output_6, @user_scenario.output_6)
       %tr
         %td
           .dashboard_item{:class => set_class_for_output(:output_7)}
             %h3= dashboard_label_for_output(:output_7)
-            .value= @user_scenario.output_7
+            .value= format_dashboard_value(:output_7, @user_scenario.output_7)
         %td
           .dashboard_item{:class => set_class_for_output(:output_8)}
             %h3= dashboard_label_for_output(:output_8)
-            .value= @user_scenario.output_8
+            .value= format_dashboard_value(:output_8, @user_scenario.output_8)
 .grid_6.graph
   %ul
     %li
