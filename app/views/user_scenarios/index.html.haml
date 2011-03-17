@@ -8,18 +8,18 @@
       %th Email
       %th Age
       %th Featured
-      %th= label_for_output(:output_0)
-      %th= label_for_output(:output_1)
-      %th= label_for_output(:output_2)
-      %th= label_for_output(:output_3)
-      %th= label_for_output(:output_4)
-      %th= label_for_output(:output_5)
-      %th= label_for_output(:output_6)
-      %th= label_for_output(:output_7)
-      %th= label_for_output(:output_8)
       %th
       %th
       %th
+      %th.small= label_for_output(:output_0)
+      %th.small= label_for_output(:output_1)
+      %th.small= label_for_output(:output_2)
+      %th.small= label_for_output(:output_3)
+      %th.small= label_for_output(:output_4)
+      %th.small= label_for_output(:output_5)
+      %th.small= label_for_output(:output_6)
+      %th.small= label_for_output(:output_7)
+      %th.small= label_for_output(:output_8)
   %tbody
     - @user_scenarios.each do |user_scenario|
       %tr{:class => cycle('even', 'odd')}
@@ -28,18 +28,18 @@
         %td= user_scenario.email
         %td= user_scenario.age
         %td= user_scenario.featured
-        %td= user_scenario.output_0
-        %td= user_scenario.output_1
-        %td= user_scenario.output_2
-        %td= user_scenario.output_3
-        %td= user_scenario.output_4
-        %td= user_scenario.output_5
-        %td= user_scenario.output_6
-        %td= user_scenario.output_7
-        %td= user_scenario.output_8
         %td= link_to 'Show', user_scenario
         %td= link_to 'Edit', edit_user_scenario_path(user_scenario), :class => 'fugue fugue-pencil'
         %td= link_to 'Destroy', user_scenario, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+        %td.small= user_scenario.output_0
+        %td.small= user_scenario.output_1
+        %td.small= user_scenario.output_2
+        %td.small= user_scenario.output_3
+        %td.small= user_scenario.output_4
+        %td.small= user_scenario.output_5
+        %td.small= user_scenario.output_6
+        %td.small= user_scenario.output_7
+        %td.small= user_scenario.output_8
 
 #actions
   = link_to 'New User Scenario', new_user_scenario_path, :class => 'fugue fugue-plus'
