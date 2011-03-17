@@ -8,6 +8,7 @@ gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 0.2.7'
 gem 'formtastic',   '~> 1.2.3'
 gem 'httparty'
+gem 'kaminari', '~> 0.10.4'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'

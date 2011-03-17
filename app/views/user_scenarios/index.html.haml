@@ -41,5 +41,7 @@
         %td.small= user_scenario.output_7
         %td.small= user_scenario.output_8
 
+= paginate @user_scenarios
+
 #actions
   = link_to 'New User Scenario', new_user_scenario_path, :class => 'fugue fugue-plus'
