@@ -115,6 +115,11 @@ body.admin {
   body.admin .flash#notice {
     color: green;
     background-color: #7bff76; }
+  body.admin dl.admin dt {
+    font-weight: bold; }
+  body.admin dl.admin dd {
+    margin-left: 10px;
+    margin: 5px; }
 
 table.striped {
   width: 100%; }
