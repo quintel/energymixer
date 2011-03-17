@@ -27,8 +27,8 @@
                 %span.key= "#{i.key}"
                 %span.slider_id= "(##{i.slider_id}):"
                 %span.value= " #{i.value}"
-        %td= link_to 'edit', edit_answer_path(a)
-        %td= link_to 'delete', a, :method => :delete, :confirm => 'Are you sure?'
+        %td= link_to '', edit_answer_path(a), :class => 'fugue fugue-pencil'
+        %td= link_to '', a, :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
 
 #actions
   = link_to 'Edit', edit_question_path(@question), :class => 'fugue fugue-pencil'
