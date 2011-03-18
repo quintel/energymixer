@@ -51,16 +51,20 @@ function Mixer() {
   };
       
   // saving results to local variables in human readable format
+  // store data in hidden form inputs too
   self.store_results = function() {
     var results = self.results.result    
     $.each(self.mix_table, function(index, code){
       // TODO: refactor
-      var value = Math.round(results[code][1][1]/1000000)
+      var raw_value = results[code][1][1];
+      var value = Math.round(raw_value/1000000)
       self.carriers_values[code] = value;
+      $("input[type=hidden][data-label="+code+"]").val(raw_value);
     });
     $.each(self.dashboard_items, function(index, code){
       var value = results[code][1][1];
       self.dashboard_values[code] = value;
+      $("input[type=hidden][data-label="+code+"]").val(value);
     });
   };
   
