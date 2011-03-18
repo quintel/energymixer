@@ -6,9 +6,10 @@
        :'data-question_id' => question.number}
       =question.number
 
-= form_for @user_scenario, home_path, :method => :post do |f|
-  = render :partial => 'question', :collection => @questions, :locals => { :f => f}
-  = render :partial => 'user_details', :locals => { :f => f}
+= form_for @user_scenario, :url => save_scenario_path, :html => { :method => :post } do |scenario|
+  = scenario.fields_for :answers do |answer|
+    = render :partial => 'question', :locals => { :answer => answer}
+  = render :partial => 'user_details', :locals => { :scenario => scenario}
 .clear
 %nav#down
   %a{:href=>"#", :id=>"previous_question"}

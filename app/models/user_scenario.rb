@@ -21,7 +21,11 @@
 #
 
 class UserScenario < ActiveRecord::Base
+  
+  has_many :answers, :class_name => 'UserScenarioAnswer', :dependent => :destroy
 
+  accepts_nested_attributes_for :answers
+  
   # Be careful, these values must match the dashboard items
   Outputs = {
     output_0: "costs_share_of_coal",

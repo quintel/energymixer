@@ -3,8 +3,21 @@ class PagesController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def home
-    @user_scenario = UserScenario.new
+    @user_scenario = UserScenario.new(
+      :output_0 => 0,
+      :output_1 => 0,
+      :output_2 => 0,
+      :output_3 => 0,
+      :output_4 => 0,
+      :output_5 => 0,
+      :output_6 => 0,
+      :output_7 => 0,
+      :output_8 => 0
+    )
     @questions = Question.ordered.all
+    @questions.each do |q|
+      @user_scenario.answers.build(:question_id => q.id)
+    end
     
     # Be careful with this variable!
     @results = {    
@@ -45,6 +58,16 @@ class PagesController < ApplicationController
   end
   
   def scenario
+  end
+  
+  def save_scenario
+    @user_scenario = UserScenario.new(params[:user_scenario])
+    if @user_scenario.save
+      redirect_to scenario_path(@user_scenario), :notice => 'Scenario saved'
+    else
+      @questions = Question.ordered.all
+      render :home
+    end
   end
   
   protected

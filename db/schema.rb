@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318082751) do
+ActiveRecord::Schema.define(:version => 20110318090729) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(:version => 20110318082751) do
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
 
+  create_table "user_scenario_answers", :force => true do |t|
+    t.integer  "user_scenario_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_scenario_answers", ["question_id"], :name => "index_user_scenario_answers_on_question_id"
+  add_index "user_scenario_answers", ["user_scenario_id"], :name => "index_user_scenario_answers_on_user_scenario_id"
+
   create_table "user_scenarios", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -71,16 +82,6 @@ ActiveRecord::Schema.define(:version => 20110318082751) do
     t.float    "output_8"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "answer_0"
-    t.integer  "answer_1"
-    t.integer  "answer_2"
-    t.integer  "answer_3"
-    t.integer  "answer_4"
-    t.integer  "answer_5"
-    t.integer  "answer_6"
-    t.integer  "answer_7"
-    t.integer  "answer_8"
-    t.integer  "answer_9"
   end
 
   add_index "user_scenarios", ["featured"], :name => "index_user_scenarios_on_featured"

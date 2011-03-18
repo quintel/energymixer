@@ -60,36 +60,10 @@
               %td= user_scenario.output_8
         %td
           %table.small
-            %tr
-              %td Answer #0
-              %td= user_scenario.answer_0
-            %tr
-              %td Answer #1
-              %td= user_scenario.answer_1
-            %tr
-              %td Answer #2
-              %td= user_scenario.answer_2
-            %tr
-              %td Answer #3
-              %td= user_scenario.answer_3
-            %tr
-              %td Answer #4
-              %td= user_scenario.answer_4
-            %tr
-              %td Answer #5
-              %td= user_scenario.answer_5
-            %tr
-              %td Answer #6
-              %td= user_scenario.answer_6
-            %tr
-              %td Answer #7
-              %td= user_scenario.answer_7
-            %tr
-              %td Answer #8
-              %td= user_scenario.answer_8
-            %tr
-              %td Answer #9
-              %td= user_scenario.answer_9
+            - user_scenario.answers.each do |a|
+              %tr
+                %td= a.question_id
+                %td= a.answer_id
 
 = paginate @user_scenarios
 

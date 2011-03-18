@@ -11,4 +11,5 @@ EnergyMixer::Application.routes.draw do
 
   match "/home"          => "pages#home"
   match "/scenario/:id"  => "pages#scenario", :as => :scenario
+  match "/save_scenario" => "pages#save_scenario", :as => :save_scenario
 end
