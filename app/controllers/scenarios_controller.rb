@@ -34,8 +34,7 @@ class ScenariosController < ApplicationController
   end
   
   def index
-    # TODO: add filtering and pagination
-    @user_scenarios = UserScenario.all
+    @user_scenarios = UserScenario.recent_first.page(params[:page])
   end
   
   def compare

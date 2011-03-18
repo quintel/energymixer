@@ -13,10 +13,23 @@ body#scenarios_show
   .boxes
 
 body#scenarios_index
+  h2
+    font-size: 1.5em
   .scenario
+    position: relative
+    @include gradient(#fdfdfd, #eee)
+    width: 250px
     border:  1px solid #ccc
     padding: 5px
     margin: 5px
+    .actions
+      float: right
+    .name
+      font-weight: bold
+      margin-bottom: 4px
+    .age
+      font-style: italic
+      color: #777
 
 body#scenarios_compare
   .scenario
