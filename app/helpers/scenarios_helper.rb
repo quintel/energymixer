@@ -44,9 +44,18 @@ module ScenariosHelper
     DashboardItem.find_by_gquery(gquery_for_output(i)).label rescue nil
   end
   
-  def set_class_for_output(i)
-    # TODO
-    gquery_for_output(i) + "_step_0"
+  def set_class_for_output(i, value)
+    gquery = gquery_for_output(i)
+    dashboard_item = DashboardItem.find_by_gquery(gquery)
+    steps = dashboard_item.steps.split(",").map(&:to_f)
+    
+    step = 0
+    steps.each_with_index do |v, i|
+      step = i if value > v
+    end
+    "#{gquery}_step_#{step}"
+  rescue
+    nil
   end
   
   # Check graph.js for similar method

@@ -21,15 +21,15 @@
   - if defined?(inline_dashboard) && inline_dashboard
     %tr
       %td{:colspan => 2}
-        .dashboard_item{:class => set_class_for_output(:output_5)}
+        .dashboard_item{:class => set_class_for_output(:output_5, scenario.output_5)}
           %h3= dashboard_label_for_output(:output_5)
           .value= format_dashboard_value(:output_5, scenario.output_5)
-        .dashboard_item{:class => set_class_for_output(:output_6)}
+        .dashboard_item{:class => set_class_for_output(:output_6, scenario.output_6)}
           %h3= dashboard_label_for_output(:output_6)
           .value= format_dashboard_value(:output_6, scenario.output_6)
-        .dashboard_item{:class => set_class_for_output(:output_7)}
+        .dashboard_item{:class => set_class_for_output(:output_7, scenario.output_7)}
           %h3= dashboard_label_for_output(:output_7)
           .value= format_dashboard_value(:output_7, scenario.output_7)
-        .dashboard_item{:class => set_class_for_output(:output_8)}
+        .dashboard_item{:class => set_class_for_output(:output_8, scenario.output_8)}
           %h3= dashboard_label_for_output(:output_8)
           .value= format_dashboard_value(:output_8, scenario.output_8)
