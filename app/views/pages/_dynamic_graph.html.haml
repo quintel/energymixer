@@ -7,10 +7,10 @@
         Miljard
     %tr
       %td.carriers
-        %ul.cilinder
+        .graph.textured
           - @results.each do |_, item|
-            %li{:class => [item[:css_class], item[:gquery]]}
-              %span= item[:label]
+            .carrier{:class => [item[:css_class], item[:gquery]]}
+              .label= item[:label]
       %td.money
         .background
           .coins

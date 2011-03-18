@@ -64,17 +64,17 @@ table.combined_graph
   td.carriers
     width: 70%
     vertical-align: bottom
-    ul
-      li
-        height: 60px
+    .graph
+      .carrier
+        height: 20%
         width: 90%
         margin-bottom: 2px
         text-decoration: none
         color: white
         font-size: 8px
         font-weight: bold
-      &.cilinder
-        li
+      &.textured
+        .carrier
           &.oil
             background: url('/images/texture_oil.png')
           &.gas
@@ -86,7 +86,7 @@ table.combined_graph
           &.nuclear
             background: url('/images/texture_nuclear.png')
       &.solid
-        li
+        .carrier
           &.oil
             background: #413E3D
           &.gas
