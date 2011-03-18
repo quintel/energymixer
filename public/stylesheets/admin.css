@@ -129,7 +129,7 @@ nav.pagination {
 
 table.small tr td {
   font-size: 0.7em;
-  padding: 0;
+  padding: 1px;
   border: 0; }
 
 table.striped {
