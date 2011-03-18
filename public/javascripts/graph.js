@@ -98,7 +98,7 @@ function Graph() {
       var selector = "#graph_container ." + code;
       $(selector).animate({"height": new_height}, "slow");
       // hide text if there's no room
-      var label = $(selector + " span");
+      var label = $(selector + " .label");
       new_height > 5 ? label.show() : label.hide();
     });
     // update money column
@@ -113,11 +113,11 @@ function Graph() {
             
   self.setup_callbacks = function() {
     $("#solid_view").click(function(){
-      $("#graph_container ul").removeClass("cilinder").addClass("solid");
+      $(".carriers .graph").removeClass("textured").addClass("solid");
     });
 
     $("#3d_view").click(function(){
-      $("#graph_container ul").removeClass("solid").addClass("cilinder");
+      $(".carriers .graph").removeClass("solid").addClass("textured");
     });
   }; 
   

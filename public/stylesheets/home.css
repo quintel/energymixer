@@ -67,33 +67,33 @@ table.combined_graph {
   table.combined_graph td.carriers {
     width: 70%;
     vertical-align: bottom; }
-    table.combined_graph td.carriers ul li {
-      height: 60px;
+    table.combined_graph td.carriers .graph .carrier {
+      height: 20%;
       width: 90%;
       margin-bottom: 2px;
       text-decoration: none;
       color: white;
       font-size: 8px;
       font-weight: bold; }
-    table.combined_graph td.carriers ul.cilinder li.oil {
+    table.combined_graph td.carriers .graph.textured .carrier.oil {
       background: url("/images/texture_oil.png"); }
-    table.combined_graph td.carriers ul.cilinder li.gas {
+    table.combined_graph td.carriers .graph.textured .carrier.gas {
       background: url("/images/texture_gas.png"); }
-    table.combined_graph td.carriers ul.cilinder li.coal {
+    table.combined_graph td.carriers .graph.textured .carrier.coal {
       background: url("/images/texture_coal.png"); }
-    table.combined_graph td.carriers ul.cilinder li.renewable {
+    table.combined_graph td.carriers .graph.textured .carrier.renewable {
       background: url("/images/texture_renewable.png"); }
-    table.combined_graph td.carriers ul.cilinder li.nuclear {
+    table.combined_graph td.carriers .graph.textured .carrier.nuclear {
       background: url("/images/texture_nuclear.png"); }
-    table.combined_graph td.carriers ul.solid li.oil {
+    table.combined_graph td.carriers .graph.solid .carrier.oil {
       background: #413e3d; }
-    table.combined_graph td.carriers ul.solid li.gas {
+    table.combined_graph td.carriers .graph.solid .carrier.gas {
       background: #7d9ddd; }
-    table.combined_graph td.carriers ul.solid li.coal {
+    table.combined_graph td.carriers .graph.solid .carrier.coal {
       background: #573403; }
-    table.combined_graph td.carriers ul.solid li.nuclear {
+    table.combined_graph td.carriers .graph.solid .carrier.nuclear {
       background: #fcda0b; }
-    table.combined_graph td.carriers ul.solid li.renewable {
+    table.combined_graph td.carriers .graph.solid .carrier.renewable {
       background: #39bf06; }
   table.combined_graph td.money {
     width: 30%;
