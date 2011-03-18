@@ -6,3 +6,7 @@ body {
     margin-bottom: 20px; }
     body header h1 {
       font-weight: bold; }
+    body header nav {
+      padding: 1em; }
+      body header nav a {
+        font-size: 1.2em; }
