@@ -50,15 +50,11 @@ function Graph() {
   
   self.find_step_for_dashboard_item = function(key, value) {
     var steps = self.dashboard_steps[key];
-    var num_steps = steps.length;
-    if (value < steps[0]) return 0;
-    if (value > steps[num_steps - 1]) return num_steps - 1;
-    for(var i = 0; i < num_steps; i++) {
-      if (value >= steps[i] && value < steps[i+1]) return i;
+    var step = 0;
+    for(i in steps) {
+      if(value > steps[i]) step = i;
     }
-    return steps.length - 1;
-    // will add something useful later
-    // return Math.floor(Math.random() * 4);
+    return step;
   };
   
   // it would be nice to define these formats in the controller but the
