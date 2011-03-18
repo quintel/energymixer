@@ -27,6 +27,14 @@ describe ScenariosController do
   end
   
   describe "GET show" do
+    before do
+      # We're introducing some coupling here
+      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_5])
+      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_6])
+      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_7])
+      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_8])
+    end
+    
     it "should redirect invalid requests" do
       get :show, :id => 'foo'
       response.should be_redirect
