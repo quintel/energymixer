@@ -39,7 +39,8 @@ class ScenariosController < ApplicationController
   end
   
   def compare
-    @user_scenarios = UserScenario.find(params[:ids]) rescue []
+    ids = params[:ids].take(5) rescue []
+    @user_scenarios = UserScenario.find(ids)
   end
   
   protected
