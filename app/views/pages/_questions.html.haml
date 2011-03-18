@@ -1,5 +1,5 @@
 %nav#up
-  -@questions.each do |question|
+  - Question.ordered.each do |question|
     %a{:href  => "#",
        :rel   => "question_#{question.id}",
        :class => 'question_tab',
