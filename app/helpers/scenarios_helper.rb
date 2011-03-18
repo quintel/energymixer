@@ -31,7 +31,7 @@ module ScenariosHelper
   def dashboard_steps_json
     out = {}
     DashboardItem.ordered.each do |i|
-      out[i.gquery] = i.steps.split(",").map(&:to_f)
+      out[i.gquery] = i.steps.split(",").map(&:to_f) rescue []
     end
     out.to_json
   end
@@ -47,12 +47,7 @@ module ScenariosHelper
   def set_class_for_output(i, value)
     gquery = gquery_for_output(i)
     dashboard_item = DashboardItem.find_by_gquery(gquery)
-    steps = dashboard_item.steps.split(",").map(&:to_f)
-    
-    step = 0
-    steps.each_with_index do |v, i|
-      step = i if value > v
-    end
+    step = dashboard_item.corresponding_step(value)
     "#{gquery}_step_#{step}"
   rescue
     nil
