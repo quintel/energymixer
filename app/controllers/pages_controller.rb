@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :find_scenario, :only => :scenario
-  before_filter :setup_results, :only => [:home, :save_cenario]
+  before_filter :setup_results, :only => [:home, :save_scenario]
   skip_before_filter :authenticate_user!
 
   def home
