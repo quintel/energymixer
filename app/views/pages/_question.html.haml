@@ -13,7 +13,9 @@
         = answer.radio_button :answer_id, a.id, 
                               :id  => "answer_#{a.id}",
                               :'data-question_id' => question_object.id
-        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
+        %label{:for => "answer_#{a.id}",
+               :id => "label_#{a.id}",
+               :class => ('active' if answer.object.answer_id == a.id)}
           %span.letter
             = a.letter
           %span.answer_text
