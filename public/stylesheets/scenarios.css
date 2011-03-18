@@ -135,10 +135,26 @@ body#scenarios_show .text {
   body#scenarios_show .text .title {
     font-weight: bold; }
 
+body#scenarios_index h2 {
+  font-size: 1.5em; }
 body#scenarios_index .scenario {
+  position: relative;
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  width: 250px;
   border: 1px solid #cccccc;
   padding: 5px;
   margin: 5px; }
+  body#scenarios_index .scenario .actions {
+    float: right; }
+  body#scenarios_index .scenario .name {
+    font-weight: bold;
+    margin-bottom: 4px; }
+  body#scenarios_index .scenario .age {
+    font-style: italic;
+    color: #777777; }
 
 body#scenarios_compare .scenario {
   padding: 3px;

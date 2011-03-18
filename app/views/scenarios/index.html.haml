@@ -3,11 +3,19 @@
 = form_tag compare_scenarios_path do
   - @user_scenarios.each do |s|
     .scenario
+      .actions
+        = link_to 'show', scenario_path(s)
+        %br
+        = check_box_tag 'ids[]', s.id
+        Compare
       .name= s.name
-      .age- s.age
-      = link_to 'show', scenario_path(s)
-      = check_box_tag 'ids[]', s.id
-  = submit_tag
+      - if s.age
+        .age #{s.age} jaar
+      
+  = submit_tag "Compare"
+
+= paginate @user_scenarios
+
 
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
