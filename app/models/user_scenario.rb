@@ -20,13 +20,13 @@
 #  updated_at :datetime
 #
 
-class UserScenario < ActiveRecord::Base
-  
+class UserScenario < ActiveRecord::Base  
   has_many :answers, :class_name => 'UserScenarioAnswer', :dependent => :destroy
 
   accepts_nested_attributes_for :answers
   
   # Be careful, these values must match the dashboard items
+  # We could store this mapping in the db, but let's keep things simple
   Outputs = {
     output_0: "costs_share_of_coal",
     output_1: "costs_share_of_gas",
@@ -70,6 +70,7 @@ class UserScenario < ActiveRecord::Base
     80_000_000_000
   end
   
+  # Ugly
   def total_amount
     output_0 + output_1 + output_2 + output_3 + output_4
   end
