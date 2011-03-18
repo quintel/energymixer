@@ -1,5 +1,5 @@
 #dashboard
-  - @dashboard_items.each do |item|
+  - DashboardItem.ordered.each do |item|
     .dashboard_item{:class => item.gquery}
       %h3= item.label
       .value

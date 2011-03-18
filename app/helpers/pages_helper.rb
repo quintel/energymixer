@@ -20,7 +20,7 @@ module PagesHelper
   
   # This array is used by mixer.js while querying the engine
   def dashboard_items_json
-    @dashboard_items.map(&:gquery).to_json
+    DashboardItem.ordered.map(&:gquery).to_json
   end
   
   # As above
@@ -30,7 +30,7 @@ module PagesHelper
   
   def dashboard_steps_json
     out = {}
-    @dashboard_items.each do |i|
+    DashboardItem.ordered.each do |i|
       out[i.gquery] = i.steps.split(",").map(&:to_f)
     end
     out.to_json
