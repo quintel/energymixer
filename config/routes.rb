@@ -8,7 +8,7 @@ EnergyMixer::Application.routes.draw do
   resources :questions
   resources :dashboard_items
   resources :user_scenarios
-  resources :scenarios, :only => [:new, :create, :show] do
-    get :compare, :on => :collection
+  resources :scenarios, :only => [:new, :create, :show, :index] do
+    post :compare, :on => :collection
   end
 end
