@@ -53,7 +53,14 @@ describe PagesController do
         post :save_scenario, :user_scenario => @valid_attributes.merge(:name => '')
         response.should render_template(:home)
       }.should_not change(UserScenario, :count)
+    end    
+  end
+  
+  describe "GET compare_scenarios" do
+    it "should compare scenarios" do
+      @scenarios = Array.new(3).map { Factory :user_scenario }
+      get :compare_scenarios, :ids => @scenarios.map(&:id)
+      response.should be_success
     end
-    
   end
 end

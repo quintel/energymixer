@@ -1,0 +1,13 @@
+%h2 comparing scenarios
+
+- @user_scenarios.each do |s|
+  .scenario
+    De mix van:
+    .name= s.name
+    - if s.age
+      .age (#{s.age} jaar)
+    = render :partial => 'static_graph', :locals => { :scenario => s }
+
+- content_for :head do
+  = stylesheet_link_tag 'mixer.graph'
+  = stylesheet_link_tag 'compare'
