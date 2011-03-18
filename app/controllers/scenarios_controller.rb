@@ -33,6 +33,11 @@ class ScenariosController < ApplicationController
   def show
   end
   
+  def index
+    # TODO: add filtering and pagination
+    @user_scenarios = UserScenario.all
+  end
+  
   def compare
     @user_scenarios = UserScenario.find(params[:ids]) rescue []
   end

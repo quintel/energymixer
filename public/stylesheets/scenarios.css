@@ -120,22 +120,33 @@ table.combined_graph {
     table.combined_graph td.total_amount h4 {
       font-weight: bold; }
 
-#scenarios_show .top {
+body#scenarios_show .top {
   background: #eeeeee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
   background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
   background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
   height: 80px; }
-#scenarios_show .text {
+body#scenarios_show .text {
   padding: 0.5em;
   background: #eeeeee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
   background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
   background: -moz-linear-gradient(top, #fdfdfd, #eeeeee); }
-  #scenarios_show .text .title {
+  body#scenarios_show .text .title {
     font-weight: bold; }
 
-#scenarios_index .scenario {
+body#scenarios_index .scenario {
   border: 1px solid #cccccc;
   padding: 5px;
   margin: 5px; }
+
+body#scenarios_compare .scenario {
+  padding: 3px;
+  border: 1px solid #cccccc;
+  float: left;
+  margin: 5px; }
+  body#scenarios_compare .scenario .name {
+    font-weight: bold; }
+  body#scenarios_compare .scenario .age {
+    font-style: italic;
+    margin-bottom: 5px; }

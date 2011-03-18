@@ -1,0 +1,31 @@
+@import 'mixins'
+@import 'mixer.graph'
+
+body#scenarios_show
+  .top
+    @include gradient(#fdfdfd, #eee)
+    height: 80px
+  .text
+    padding: .5em
+    @include gradient(#fdfdfd, #eee)
+    .title
+      font-weight: bold
+  .boxes
+
+body#scenarios_index
+  .scenario
+    border:  1px solid #ccc
+    padding: 5px
+    margin: 5px
+
+body#scenarios_compare
+  .scenario
+    padding: 3px
+    border: 1px solid #ccc
+    float: left
+    margin: 5px
+    .name
+      font-weight: bold
+    .age
+      font-style: italic
+      margin-bottom: 5px

@@ -2,6 +2,17 @@ require 'spec_helper'
 
 describe ScenariosController do
   render_views
+
+  describe "GET index" do
+    before do
+      @scenarios = Array.new(3).map { Factory :user_scenario }
+    end
+    
+    it "should show a list of existing scenarios" do
+      get :index
+      response.should be_success
+    end
+  end
   
   describe "GET 'new'" do
     before do
