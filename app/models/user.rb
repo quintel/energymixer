@@ -19,7 +19,6 @@
 #
 
 class User < ActiveRecord::Base
-
   devise :database_authenticatable,
     # :registerable,
     # :recoverable,
@@ -31,6 +30,4 @@ class User < ActiveRecord::Base
     :timeoutable
 
   attr_accessible :email, :password, :password_confirmation
-
 end
-
