@@ -1,20 +1,20 @@
-.question{:id=>"question_#{question.number}"}
+- question_object = answer.object.question
+.question{:id=>"question_#{question_object.number}"}
   .information
-    = raw question.information
+    = raw question_object.information
   .number
-    = question.number
+    = question_object.number
   .question_text
-    = raw question.question
+    = raw question_object.question
   .answers
-    - question.answers.each do |answer|
+    - question_object.answers.each do |a|
       .answer
-        %input{:name  => "question_#{question.id}", 
-               :type  => "radio", 
-               :value => answer.id, 
-               :id    => "answer_#{answer.id}",
-               :'data-question_id' => question.id}
-        %label{:for => "answer_#{answer.id}", :id => "label_#{answer.id}"}
+        = answer.hidden_field :question_id
+        = answer.radio_button :answer_id, a.id, 
+                              :id  => "answer_#{a.id}",
+                              :'data-question_id' => question_object.id
+        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
           %span.letter
-            = answer.letter
+            = a.letter
           %span.answer_text
-            = raw answer.answer
+            = raw a.answer
