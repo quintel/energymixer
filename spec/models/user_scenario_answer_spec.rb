@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe UserScenarioAnswer do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :answer }
+  it { should belong_to :user_scenario }
+  it { should belong_to :question }
 end
