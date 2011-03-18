@@ -6,13 +6,14 @@
        :'data-question_id' => question.number}
       =question.number
 
-= form_for @user_scenario, :url => save_scenario_path, :html => { :method => :post } do |scenario|
+= form_for @user_scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
   = scenario.fields_for :answers do |answer|
     = render :partial => 'question', :locals => { :answer => answer}
   = render :partial => 'user_details', :locals => { :scenario => scenario}
 .clear
+
 %nav#down
-  %a{:href=>"#", :id=>"previous_question"}
+  %a{ :href => "#", :id => "previous_question"}
     previous        
-  %a{:href=>"#", :id=>"next_question"}
+  %a{ :href => "#", :id => "next_question"}
     next
