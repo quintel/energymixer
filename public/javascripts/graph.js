@@ -49,10 +49,11 @@ function Graph() {
   };
   
   self.find_step_for_dashboard_item = function(key, value) {
+    // see DashboardItem#corresponding_step
     var steps = self.dashboard_steps[key];
     var step = 0;
     for(i in steps) {
-      if(value > steps[i]) step = i;
+      if(value > steps[i]) step = parseInt(i) + 1;
     }
     return step;
   };

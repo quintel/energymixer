@@ -14,17 +14,17 @@
 class DashboardItem < ActiveRecord::Base
   validates :gquery, :presence => true
   validates :label, :presence => true
-  validates :steps, :presence => true
   
   scope :ordered, order('ordering, id')
-  
-  # A word about steps: something like this [0.0, 0.25, 0.5, 0.75]
-  # is translated in the following categories:
-  # * [-inf, 0.0]   css_suffix: _0 # boundary check
-  # * [0.0, 0.25]   css_suffix: _0
-  # * (0.25), 0.5]   css_suffix: _1
-  # * (0.5), 0.75]   css_suffix: _2
-  # * (0.75), +inf]  css_suffix: _3
-  # The CSS file should define classes named as the gquery + the suffix
-    
+
+  # If we're defining some steps in the object field we can use this
+  # method to check the step a value belongs to
+  def corresponding_step(value)
+    steps_array = steps.split(",").map(&:to_f) rescue []    
+    step = 0
+    steps_array.each_with_index do |v, i|
+      step = i + 1 if value > v
+    end
+    step
+  end
 end

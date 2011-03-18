@@ -411,22 +411,22 @@ def create_dashboard_items
     { 
       gquery: "co2_emission_final_demand_to_1990_in_percent",
       label: "CO2 Emissions",
-      steps:  [0.0, 0.25, 0.5, 0.75]
+      steps:  [0.0, 0.25, 0.5]
     },
     { 
       gquery: "share_of_renewable_energy",
       label:  "Share of renewable energy",
-      steps:  [0.0, 0.25, 0.5, 0.75]
+      steps:  [0.0, 0.25, 0.5]
     },
     { 
       gquery: "area_footprint_per_nl",
       label:  "Area Footprint per NL",
-      steps:  [0.0, 0.25, 0.5, 0.75]
+      steps:  [0.0, 0.25, 0.5]
     },
     { 
       gquery: "energy_dependence",
       label:  "Energy Dependence",
-      steps:  [0.0, 0.25, 0.5, 0.75]
+      steps:  [0.25, 0.5, 0.75]
     }
   ]
 
