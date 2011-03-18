@@ -8,7 +8,7 @@
     .name= s.name
     - if s.age
       .age (#{s.age} jaar)
-    = render :partial => 'static_graph', :locals => { :scenario => s }
+    = render :partial => 'static_graph', :locals => { :scenario => s, :inline_dashboard => true }
 
 - content_for :head do
   = stylesheet_link_tag 'mixer.graph'
