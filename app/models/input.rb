@@ -10,18 +10,14 @@
 #  slider_id  :integer(4)
 #
 
-# t.decimal  "value",      :precision => 10, :scale => 2
-# t.integer  "answer_id"
-# t.datetime "created_at"
-# t.datetime "updated_at"
-# t.integer  "slider_id"
-
 class Input < ActiveRecord::Base
   belongs_to :answer
   
   validates :slider_id, :presence => true
   
   validate :check_valid_key
+  
+  attr_accessible :value, :slider_id, :key
 
   def key
     KEYS[slider_id]
