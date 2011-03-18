@@ -19,6 +19,8 @@ class Question < ActiveRecord::Base
 
   scope :ordered, order('ordering, id')
   
+  attr_accessible :question, :ordering, :information, :answers_attributes
+  
   def number
     ordering + 1 rescue nil
   end
