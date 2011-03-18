@@ -1,86 +1,121 @@
-/*
-Syntax error: Undefined mixin 'shadow'.
-        on line 4 of /Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass, in `shadow'
-        from line 4 of /Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass
+.dashboard_item {
+  margin-bottom: 10px;
+  height: 80px;
+  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
+  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
+  box-shadow: 0 2px 3px 3px #eeeeee;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  text-align: center; }
+  .dashboard_item h3 {
+    text-align: right;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: #073571; }
+  .dashboard_item .value {
+    overflow: hidden;
+    font-size: 1.6em;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #073574; }
+  .dashboard_item.energy_dependence_step_0 {
+    background-color: green; }
+  .dashboard_item.energy_dependence_step_1 {
+    background-color: yellow; }
+  .dashboard_item.energy_dependence_step_2 {
+    background-color: orange; }
+  .dashboard_item.energy_dependence_step_3 {
+    background-color: red; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
+    background-color: green; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
+    background-color: yellow; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
+    background-color: orange; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_0 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_1 {
+    background-color: orange; }
+  .dashboard_item.share_of_renewable_energy_step_2 {
+    background-color: yellow; }
+  .dashboard_item.share_of_renewable_energy_step_3 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_0 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_1 {
+    background-color: yellow; }
+  .dashboard_item.area_footprint_per_nl_step_2 {
+    background-color: orange; }
+  .dashboard_item.area_footprint_per_nl_step_3 {
+    background-color: red; }
 
-1: .dashboard_item
-2:   margin-bottom: 10px
-3:   height: 80px
-4:   @include shadow(#eee)
-5:   // @include gradient(#fdfdfd, #eee)
-6:   text-align: center
-7:   h3
-8:     text-align: right
-9:     padding: 5px
+.static_graph {
+  border: 1px solid red;
+  width: 90px; }
 
-Backtrace:
-/Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass:4:in `shadow'
-/Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass:4
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/mixin_node.rb:62:in `perform!'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:305:in `_perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:213:in `perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `block in perform_children'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `map'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `perform_children'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:317:in `perform!'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/rule_node.rb:191:in `perform!'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:305:in `_perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:213:in `perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `block in perform_children'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `map'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `perform_children'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:317:in `perform!'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/root_node.rb:59:in `perform!'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:305:in `_perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/node.rb:213:in `perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/root_node.rb:37:in `perform'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/tree/root_node.rb:29:in `render'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:223:in `update_stylesheet'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:88:in `block (2 levels) in update_stylesheets'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:81:in `each'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:81:in `block in update_stylesheets'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:79:in `each'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:79:in `update_stylesheets'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin.rb:50:in `check_for_updates'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/haml-3.0.25/lib/sass/plugin/rack.rb:40:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/warden-1.0.3/lib/warden/manager.rb:35:in `block in call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `block in call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
-<internal:prelude>:10:in `synchronize'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/railties-3.0.5/lib/rails/rack/log_tailer.rb:14:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
-/Users/paozac/.rvm/gems/ruby-1.9.2-p180@energymixer/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
-/Users/paozac/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-/Users/paozac/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-/Users/paozac/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'shadow'.\A         on line 4 of /Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass, in `shadow'\A         from line 4 of /Users/paozac/Sites/energymixer/public/stylesheets/sass/mixer.graph.sass\A \A 1: .dashboard_item\A 2:   margin-bottom: 10px\A 3:   height: 80px\A 4:   @include shadow(#eee)\A 5:   // @include gradient(#fdfdfd, #eee)\A 6:   text-align: center\A 7:   h3\A 8:     text-align: right\A 9:     padding: 5px"; }
+table.combined_graph {
+  width: 120px;
+  text-align: center;
+  margin: 0 auto; }
+  table.combined_graph td {
+    padding: 4px; }
+  table.combined_graph td.carriers {
+    width: 70%;
+    vertical-align: bottom; }
+    table.combined_graph td.carriers .graph .carrier {
+      height: 20%;
+      width: 90%;
+      margin-bottom: 2px;
+      text-decoration: none;
+      color: white;
+      font-size: 8px;
+      font-weight: bold; }
+    table.combined_graph td.carriers .graph.textured .carrier.oil {
+      background: url("/images/texture_oil.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.gas {
+      background: url("/images/texture_gas.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.coal {
+      background: url("/images/texture_coal.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.renewable {
+      background: url("/images/texture_renewable.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.nuclear {
+      background: url("/images/texture_nuclear.png"); }
+    table.combined_graph td.carriers .graph.solid .carrier.oil {
+      background: #413e3d; }
+    table.combined_graph td.carriers .graph.solid .carrier.gas {
+      background: #7d9ddd; }
+    table.combined_graph td.carriers .graph.solid .carrier.coal {
+      background: #573403; }
+    table.combined_graph td.carriers .graph.solid .carrier.nuclear {
+      background: #fcda0b; }
+    table.combined_graph td.carriers .graph.solid .carrier.renewable {
+      background: #39bf06; }
+  table.combined_graph td.money {
+    width: 30%;
+    vertical-align: bottom; }
+    table.combined_graph td.money .background {
+      width: 80%;
+      height: 308px;
+      background: #eeeeee;
+      position: relative;
+      margin-bottom: 2px; }
+      table.combined_graph td.money .background .coins {
+        width: 100%;
+        background: #c7cb09 url("images/coin_texture.png");
+        height: 308px;
+        position: absolute;
+        bottom: 0px; }
+  table.combined_graph td.total_amount {
+    color: #0b3378;
+    background: #eeeeee;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+    background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+    text-align: center; }
+    table.combined_graph td.total_amount h4 {
+      font-weight: bold; }

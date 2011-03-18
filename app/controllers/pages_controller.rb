@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     end
   end
   
+  def compare_scenarios
+    @user_scenarios = UserScenario.find(params[:ids]) rescue []
+  end
+  
   protected
   
     def find_scenario

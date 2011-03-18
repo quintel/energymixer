@@ -1,0 +1,10 @@
+body#pages_compare_scenarios .scenario {
+  padding: 3px;
+  border: 1px solid #cccccc;
+  float: left;
+  margin: 5px; }
+  body#pages_compare_scenarios .scenario .name {
+    font-weight: bold; }
+  body#pages_compare_scenarios .scenario .age {
+    font-style: italic;
+    margin-bottom: 5px; }
