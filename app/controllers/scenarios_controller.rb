@@ -24,6 +24,7 @@ class ScenariosController < ApplicationController
     @user_scenario = UserScenario.new(params[:user_scenario])
     if @user_scenario.save
       redirect_to scenario_path(@user_scenario), :notice => 'Scenario saved'
+      MixerMailer.thankyou(@user_scenario).deliver
     else
       setup_results
       render :new
