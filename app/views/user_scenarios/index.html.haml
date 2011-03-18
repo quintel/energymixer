@@ -12,15 +12,9 @@
       %th
       %th
       %th
-      %th.small= gquery_for_output(:output_0)
-      %th.small= gquery_for_output(:output_1)
-      %th.small= gquery_for_output(:output_2)
-      %th.small= gquery_for_output(:output_3)
-      %th.small= gquery_for_output(:output_4)
-      %th.small= gquery_for_output(:output_5)
-      %th.small= gquery_for_output(:output_6)
-      %th.small= gquery_for_output(:output_7)
-      %th.small= gquery_for_output(:output_8)
+      %th Carriers
+      %th Dashboard Values
+      %th Answers
   %tbody
     - @user_scenarios.each do |user_scenario|
       %tr{:class => cycle('even', 'odd')}
@@ -33,15 +27,69 @@
         %td= link_to '', scenario_path(user_scenario), :class => 'fugue fugue-chart'
         %td= link_to '', edit_user_scenario_path(user_scenario), :class => 'fugue fugue-pencil'
         %td= link_to '', user_scenario, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
-        %td.small= user_scenario.output_0
-        %td.small= user_scenario.output_1
-        %td.small= user_scenario.output_2
-        %td.small= user_scenario.output_3
-        %td.small= user_scenario.output_4
-        %td.small= user_scenario.output_5
-        %td.small= user_scenario.output_6
-        %td.small= user_scenario.output_7
-        %td.small= user_scenario.output_8
+        %td
+          %table.small
+            %tr
+              %td= gquery_for_output(:output_0)
+              %td= user_scenario.output_0
+            %tr
+              %td= gquery_for_output(:output_1)
+              %td= user_scenario.output_1
+            %tr
+              %td= gquery_for_output(:output_2)
+              %td= user_scenario.output_2
+            %tr
+              %td= gquery_for_output(:output_3)
+              %td= user_scenario.output_3
+            %tr
+              %td= gquery_for_output(:output_4)
+              %td= user_scenario.output_4
+        %td
+          %table.small
+            %tr
+              %td= gquery_for_output(:output_5)
+              %td= user_scenario.output_5
+            %tr
+              %td= gquery_for_output(:output_6)
+              %td= user_scenario.output_6
+            %tr
+              %td= gquery_for_output(:output_7)
+              %td= user_scenario.output_7
+            %tr
+              %td= gquery_for_output(:output_8)
+              %td= user_scenario.output_8
+        %td
+          %table.small
+            %tr
+              %td Answer #0
+              %td= user_scenario.answer_0
+            %tr
+              %td Answer #1
+              %td= user_scenario.answer_1
+            %tr
+              %td Answer #2
+              %td= user_scenario.answer_2
+            %tr
+              %td Answer #3
+              %td= user_scenario.answer_3
+            %tr
+              %td Answer #4
+              %td= user_scenario.answer_4
+            %tr
+              %td Answer #5
+              %td= user_scenario.answer_5
+            %tr
+              %td Answer #6
+              %td= user_scenario.answer_6
+            %tr
+              %td Answer #7
+              %td= user_scenario.answer_7
+            %tr
+              %td Answer #8
+              %td= user_scenario.answer_8
+            %tr
+              %td Answer #9
+              %td= user_scenario.answer_9
 
 = paginate @user_scenarios
 

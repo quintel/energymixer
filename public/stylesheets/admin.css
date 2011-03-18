@@ -127,6 +127,11 @@ nav.pagination {
   padding: 0.5em;
   margin-top: 0.5em; }
 
+table.small tr td {
+  font-size: 0.7em;
+  padding: 0;
+  border: 0; }
+
 table.striped {
   width: 100%; }
   table.striped td {
