@@ -16,7 +16,7 @@
         = link_to 'Questions', admin_questions_path, :class => ('active' if controller_name == 'questions')
         = link_to 'Popups', admin_popups_path, :class => ('active' if controller_name == 'popups')
         = link_to 'Dashboard Items', admin_dashboard_items_path, :class => ('active' if controller_name == 'dashboard_items')
-        = link_to 'User Scenarios', admin_user_scenarios_path, :class => ('active' if controller_name == 'user_scenarios')
+        = link_to 'User Scenarios', admin_scenarios_path, :class => ('active' if controller_name == 'scenarios')
         .login_box
           - if user_signed_in?
             Logged in as

@@ -5,20 +5,20 @@ describe ScenariosController do
 
   describe "GET index" do
     before do
-      @scenarios = Array.new(3).map { Factory :user_scenario }
+      @scenarios = Array.new(3).map { Factory :scenario }
     end
     
     it "should show a list of existing scenarios" do
       get :index
       response.should be_success
-      assigns(:user_scenarios).to_set.should == @scenarios.to_set
+      assigns(:scenarios).to_set.should == @scenarios.to_set
       
     end
     
     it "should show a list of existing scenarios filtered by name" do
       get :index, :q => 'impossible'
       response.should be_success
-      assigns(:user_scenarios).should be_empty
+      assigns(:scenarios).should be_empty
     end
   end
   
@@ -37,10 +37,10 @@ describe ScenariosController do
   describe "GET show" do
     before do
       # We're introducing some coupling here
-      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_5])
-      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_6])
-      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_7])
-      Factory.create(:dashboard_item, :gquery => UserScenario::Outputs[:output_8])
+      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_5])
+      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_6])
+      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_7])
+      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_8])
     end
     
     it "should redirect invalid requests" do
@@ -49,16 +49,16 @@ describe ScenariosController do
     end
     
     it "should show an existing scenario" do
-      @user_scenario = Factory :user_scenario
-      get :show, :id => @user_scenario.id
+      @scenario = Factory :scenario
+      get :show, :id => @scenario.id
       response.should be_success
-      assigns(:user_scenario).should == @user_scenario
+      assigns(:scenario).should == @scenario
     end    
   end
   
   describe "POST create" do
     before do
-      @valid_attributes = Factory.attributes_for(:user_scenario)
+      @valid_attributes = Factory.attributes_for(:scenario)
       question = Factory :question
       @valid_attributes.merge(
         :answers_attributes => {
@@ -70,22 +70,22 @@ describe ScenariosController do
     
     it "should save a valid scenario" do
       lambda {
-        post :create, :user_scenario => @valid_attributes
-        response.should redirect_to(scenario_path(assigns(:user_scenario)))
-      }.should change(UserScenario, :count)
+        post :create, :scenario => @valid_attributes
+        response.should redirect_to(scenario_path(assigns(:scenario)))
+      }.should change(Scenario, :count)
     end
     
     it "should not save a scenario with invalid parameters" do
       lambda {
-        post :create, :user_scenario => @valid_attributes.merge(:name => '')
+        post :create, :scenario => @valid_attributes.merge(:name => '')
         response.should render_template(:new)
-      }.should_not change(UserScenario, :count)
+      }.should_not change(Scenario, :count)
     end    
   end
   
   describe "GET compare" do
     it "should compare scenarios" do
-      @scenarios = Array.new(3).map { Factory :user_scenario }
+      @scenarios = Array.new(3).map { Factory :scenario }
       get :compare, :ids => @scenarios.map(&:id)
       response.should be_success
     end

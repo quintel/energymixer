@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
   before_filter :setup_results, :only => :new
 
   def new
-    @user_scenario = UserScenario.new(
+    @scenario = Scenario.new(
       :output_0 => 0,
       :output_1 => 0,
       :output_2 => 0,
@@ -16,15 +16,15 @@ class ScenariosController < ApplicationController
     )
 
     Question.ordered.each do |q|
-      @user_scenario.answers.build(:question_id => q.id)
+      @scenario.answers.build(:question_id => q.id)
     end
   end
   
   def create
-    @user_scenario = UserScenario.new(params[:user_scenario])
-    if @user_scenario.save
-      redirect_to scenario_path(@user_scenario), :notice => 'Scenario saved'
-      MixerMailer.thankyou(@user_scenario).deliver
+    @scenario = Scenario.new(params[:scenario])
+    if @scenario.save
+      redirect_to scenario_path(@scenario), :notice => 'Scenario saved'
+      MixerMailer.thankyou(@scenario).deliver
     else
       setup_results
       render :new
@@ -35,20 +35,20 @@ class ScenariosController < ApplicationController
   end
   
   def index
-    scope = UserScenario.featured_first.recent_first
+    scope = Scenario.featured_first.recent_first
     scope = scope.by_user(params[:q]) unless params[:q].blank?
-    @user_scenarios = scope.page(params[:page])
+    @scenarios = scope.page(params[:page])
   end
   
   def compare
     ids = params[:ids].take(5) rescue []
-    @user_scenarios = UserScenario.find(ids)
+    @scenarios = Scenario.find(ids)
   end
   
   protected
   
     def find_scenario
-      @user_scenario = UserScenario.find(params[:id])
+      @scenario = Scenario.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path, :alert => "Scenario not found"
     end

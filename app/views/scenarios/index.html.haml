@@ -5,7 +5,7 @@
   = submit_tag "Search"
 
 = form_tag compare_scenarios_path do
-  - @user_scenarios.each do |s|
+  - @scenarios.each do |s|
     .scenario{:class => s.featured? ? 'featured' : '' }
       .actions
         = link_to 'show', scenario_path(s)
@@ -18,7 +18,7 @@
       
   = submit_tag "Compare"
 
-= paginate @user_scenarios
+= paginate @scenarios
 
 
 - content_for :head do

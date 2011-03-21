@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: user_scenarios
+# Table name: scenarios
 #
 #  id         :integer(4)      not null, primary key
 #  name       :string(255)
@@ -20,8 +20,8 @@
 #  updated_at :datetime
 #
 
-class UserScenario < ActiveRecord::Base  
-  has_many :answers, :class_name => 'UserScenarioAnswer', :dependent => :destroy
+class Scenario < ActiveRecord::Base  
+  has_many :answers, :class_name => 'ScenarioAnswer', :dependent => :destroy
 
   accepts_nested_attributes_for :answers
   
