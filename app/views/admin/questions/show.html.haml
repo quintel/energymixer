@@ -1,0 +1,31 @@
+%h2="Vraag #{@question.number}: #{@question.question}"
+.information
+  = @question.information
+
+%table.striped
+  %thead
+    %tr
+      %th #
+      %th Antwoord
+      %th Settings voor ETM
+      %th
+      %th
+  %tbody
+    - @question.answers.each do |a|
+      %tr{:class => cycle('even', 'odd')}
+        %td= a.letter
+        %td= a.answer
+        %td
+          %table.small
+            - a.inputs.each do |i|
+              %tr
+                %td= i.key
+                %td= "##{i.slider_id} "
+                %td= i.value
+        %td= link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
+        %td= link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
+
+#actions
+  = link_to 'Edit', edit_admin_question_path(@question), :class => 'fugue fugue-pencil'
+  = link_to 'Back', admin_questions_path
+  = link_to 'Destroy', admin_question_path(@question), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'
