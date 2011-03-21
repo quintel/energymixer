@@ -1,16 +1,101 @@
 @import 'mixins'
 @import 'mixer.graph'
 
+@import 'mixins'
+@import 'mixer.graph'
+
+body#scenarios_new, body#scenarios_create
+  section#results
+    width: 200px
+    float: left
+  section#dashboard
+    // The graph and dashboard items style is defined in mixer.graph.sass
+    width: 120px
+    float: left
+  section#questions
+    width: 430px
+    float: left
+    @include gradient(#fdfdfd, #eee)
+    @include shadow(#ddd)
+    line-height: 1.5em
+    background-color: #eee
+    nav
+      @include gradient(#fdfdfd, #eee)
+      display: block
+      text-align: center
+      height: 20px
+      padding: 4px
+      font-size: 10px
+      a
+        margin: 0 5px
+        color: #bbb
+        font-weight: bold      
+      &#up
+        a.active
+          color: red
+      &#down
+    .question
+      padding: 10px
+      .information
+        margin-bottom: 5px
+        strong
+          font-weight: bold
+        a
+          color: blue
+      .number
+        font-weight: bold
+        width: 5%
+        float: left
+      .question_text
+        font-weight: bold
+      .answers
+        border-top: 1px solid #ccc
+        margin-top: 5px
+        padding-top: 5px
+        .answer
+          width: 365px
+          margin-bottom: 10px
+          .letter
+            width: 5%
+            font-weight: bold
+          .answer_text
+            width: 95%
+          input[type=radio]
+            display: none
+          label.active
+            background: #000
+            color: #f00
+
+  .question_popup
+    h1
+      font-size: 1.5em
+      font-weight: bold
+      margin-bottom: .7em
+
 body#scenarios_show
   .top
     @include gradient(#fdfdfd, #eee)
     height: 80px
-  .text
-    padding: .5em
-    @include gradient(#fdfdfd, #eee)
-    .title
-      font-weight: bold
-  .boxes
+    margin-bottom: 10px
+  .left
+    width: 50%
+    float: left
+    .text
+      padding: 1.5em
+      font-size: 1.2em
+      @include gradient(#fdfdfd, #eee)
+      .title
+        font-weight: bold
+    .boxes
+      margin-top: 10px
+      width: 100%
+      td
+        width: 25%
+  .right
+    width: 40%
+    float: left
+    .combined_graph
+      width: 160px
 
 body#scenarios_index
   h2
