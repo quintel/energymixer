@@ -1,7 +1,8 @@
 = semantic_form_for @question do |f|
   = f.inputs do
     = f.input :question
-    = f.input :information
+    = f.input :information, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+    
     = f.input :ordering
     %h3 Answers
     = f.semantic_fields_for :answers do |a|
