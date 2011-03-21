@@ -6,10 +6,7 @@ require 'spec_helper'
 
 describe QuestionsController do
   render_views
-
-  before do
-    @question = Factory :question
-  end
+  let!(:question) { Factory :question }
 
   describe "GET index" do
     it "assigns all questions as @questions" do
@@ -20,8 +17,8 @@ describe QuestionsController do
 
   describe "GET show" do
     it "assigns the requested question as @question" do
-      get :show, :id => @question.id
-      assigns(:question).should == @question
+      get :show, :id => question.id
+      assigns(:question).should == question
       response.should be_success
     end
 
@@ -40,8 +37,8 @@ describe QuestionsController do
 
   describe "GET edit" do
     it "shows the edit question form" do
-      get :edit, :id => @question.id
-      assigns(:question).should == @question
+      get :edit, :id => question.id
+      assigns(:question).should == question
       response.should render_template('edit')
     end
   end
@@ -65,6 +62,10 @@ describe QuestionsController do
   end
 
   describe "PUT update" do
+    before do
+      @question = Factory :question
+    end
+
     describe "with valid params" do
       it "updates the requested question" do
         put :update, :id => @question.id, :question => { :question => 'hi there' }
@@ -82,6 +83,10 @@ describe QuestionsController do
   end
 
   describe "DELETE destroy" do
+    before do
+      @question = Factory :question
+    end
+
     it "destroys the requested question" do
       lambda {
         delete :destroy, :id => @question.id
