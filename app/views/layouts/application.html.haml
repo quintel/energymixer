@@ -14,9 +14,11 @@
     .container_12
       %header
         %nav
-          = link_to 'Admin', admin_questions_path
+          = link_to 'Home', root_path
           \::
           = link_to 'Scenarios', scenarios_path
+          \::
+          = link_to 'Admin', admin_questions_path
       - flash.each do |k,msg|
         .flash{:id => k}
           = msg
