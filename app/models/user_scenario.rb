@@ -53,9 +53,12 @@ class UserScenario < ActiveRecord::Base
   
   scope :recent_first, order('created_at DESC')
   scope :featured, where(:featured => true)
+  scope :featured_first, order('featured DESC')
+  # shall we use SOLR/TS/?
+  scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
   
   paginates_per 20
-  
+    
   def carriers
     {
       coal:      { label: "Coal",      amount: output_0, ratio: output_0 / total_amount },
