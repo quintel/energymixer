@@ -171,3 +171,5 @@ body#scenarios_compare .scenario {
   body#scenarios_compare .scenario .age {
     font-style: italic;
     margin-bottom: 5px; }
+  body#scenarios_compare .scenario .close_link {
+    float: right; }

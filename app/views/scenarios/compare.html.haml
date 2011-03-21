@@ -4,6 +4,7 @@
   Please select some scenarios first
 - @scenarios.each do |s|
   .scenario
+    .close_link= link_to "[x]", "#"
     De mix van:
     .name= s.name
     - if s.age
@@ -13,3 +14,9 @@
 - content_for :head do
   = stylesheet_link_tag 'mixer.graph'
   = stylesheet_link_tag 'scenarios'
+  :javascript
+    $(function(){
+      $(".scenario .close_link a").click(function(){
+        $(this).parent().parent().hide();
+      });
+    });
