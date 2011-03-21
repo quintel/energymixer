@@ -64,6 +64,13 @@ function Questions() {
       $(this).parent().parent().find("label").removeClass('active');
       $("label[for=" + id + "]").addClass('active');
     });
+    
+    // setup colorbox
+    $(".question a").colorbox({
+      width: "50%",
+      height: "50%",
+      opacity: 0.6
+    });
   };
     
   self.init = function() {

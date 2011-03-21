@@ -208,3 +208,8 @@ section#questions {
         section#questions .question .answers .answer label.active {
           background: black;
           color: red; }
+
+.question_popup h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.7em; }
