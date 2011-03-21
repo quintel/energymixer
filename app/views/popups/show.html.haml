@@ -1,0 +1,11 @@
+%h2= @popup.title
+
+.code
+  %strong= @popup.code
+.body
+  = @popup.body
+
+#actions
+  = link_to 'Edit', edit_popup_path(@popup), :class => 'fugue fugue-pencil'
+  = link_to 'Back', popups_path
+  = link_to 'Destroy', @popup, :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'

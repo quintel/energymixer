@@ -5,7 +5,7 @@ EnergyMixer::Application.routes.draw do
 
   resources :answers, :only => [:edit, :update, :show, :destroy]
 
-  resources :questions
+  resources :questions, :popups
   resources :dashboard_items
   resources :user_scenarios
   resources :scenarios, :only => [:new, :create, :show, :index] do
