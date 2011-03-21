@@ -11,4 +11,6 @@ EnergyMixer::Application.routes.draw do
   resources :scenarios, :only => [:new, :create, :show, :index] do
     post :compare, :on => :collection
   end
+  
+  match "/info/:code", :to => "pages#info"
 end
