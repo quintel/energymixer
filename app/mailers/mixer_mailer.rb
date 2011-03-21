@@ -1,7 +1,10 @@
 class MixerMailer < ActionMailer::Base
-  default :from => "no-reply@example.com"
+  layout 'mailer'
+  default :from => "no-reply@quintel.com"
+  default_url_options[:host] = "energymixer.quintel.com"
 
   def thankyou(scenario)
+    @scenario = scenario
     mail :to => scenario.email, :subject => "Your scenario"
   end
 end
