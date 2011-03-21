@@ -1,10 +1,11 @@
 class QuestionsController < AdminController
+  before_filter :find_question, :only => [:show, :edit, :update, :destroy]
+  
   def index
     @questions = Question.ordered.all
   end
 
   def show
-    @question = Question.find(params[:id])
   end
 
   def new
@@ -13,7 +14,6 @@ class QuestionsController < AdminController
   end
 
   def edit
-    @question = Question.find(params[:id])
     5.times{ @question.answers.build }
   end
 
@@ -28,7 +28,6 @@ class QuestionsController < AdminController
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update_attributes(params[:question])
       redirect_to(@question, :notice => 'Question was successfully updated.')
     else
@@ -37,8 +36,13 @@ class QuestionsController < AdminController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
     redirect_to(questions_url, :notice => 'Question deleted')
   end
+  
+  private
+  
+    def find_question
+      @question = Question.find(params[:id])
+    end
 end

@@ -1,10 +1,11 @@
 class PopupsController < AdminController
+  before_filter :find_popup, :only => [:show, :edit, :update, :destroy]
+  
   def index
     @popups = Popup.all
   end
 
   def show
-    @popup = Popup.find(params[:id])
   end
 
   def new
@@ -12,12 +13,10 @@ class PopupsController < AdminController
   end
 
   def edit
-    @popup = Popup.find(params[:id])
   end
 
   def create
     @popup = Popup.new(params[:popup])
-
     if @popup.save
       redirect_to(@popup, :notice => 'Popup was successfully created.')
     else
@@ -26,7 +25,6 @@ class PopupsController < AdminController
   end
 
   def update
-    @popup = Popup.find(params[:id])
     if @popup.update_attributes(params[:popup])
       redirect_to(@popup, :notice => 'Popup was successfully updated.')
     else
@@ -35,8 +33,13 @@ class PopupsController < AdminController
   end
 
   def destroy
-    @popup = Popup.find(params[:id])
     @popup.destroy
     redirect_to(popups_path, :notice => 'Popup deleted')
   end
+  
+  private
+  
+    def find_popup
+      @popup = Popup.find(params[:id])
+    end
 end
