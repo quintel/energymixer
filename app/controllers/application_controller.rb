@@ -11,8 +11,4 @@ class ApplicationController < ActionController::Base
     rescue
       redirect_to root_path
     end  
-    # Overridden to send admins to the questions index automatically
-    def after_sign_in_path_for(resource)
-      questions_path
-    end
 end
