@@ -36,6 +36,7 @@ GEM
       ZenTest (>= 4.4.1)
     awesome_print (0.3.2)
     bcrypt-ruby (2.1.4)
+    bluecloth (2.1.0)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -44,7 +45,6 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.0.0)
     columnize (0.3.2)
-    crack (0.1.8)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -67,8 +67,6 @@ GEM
       railties (~> 3.0)
     highline (1.6.1)
     hirb (0.4.0)
-    httparty (0.7.4)
-      crack (= 0.1.8)
     i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
@@ -153,13 +151,13 @@ DEPENDENCIES
   annotate
   autotest (~> 4.4.6)
   awesome_print
+  bluecloth (~> 2.1.0)
   capistrano
   devise (~> 1.1.7)
   factory_girl_rails (~> 1.0.1)
   formtastic (~> 1.2.3)
   haml-rails (~> 0.3.4)
   hirb
-  httparty
   jquery-rails (~> 0.2.7)
   kaminari (~> 0.10.4)
   mocha (~> 0.9.12)
