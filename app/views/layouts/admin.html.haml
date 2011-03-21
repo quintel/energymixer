@@ -14,6 +14,7 @@
       %nav
         = link_to 'Frontend', root_path
         = link_to 'Questions', questions_path, :class => ('active' if controller_name == 'questions')
+        = link_to 'Popups', popups_path, :class => ('active' if controller_name == 'popups')
         = link_to 'Dashboard Items', dashboard_items_path, :class => ('active' if controller_name == 'dashboard_items')
         = link_to 'User Scenarios', user_scenarios_path, :class => ('active' if controller_name == 'user_scenarios')
         .login_box

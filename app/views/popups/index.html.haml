@@ -1,0 +1,21 @@
+%h2 Popup Index
+
+%table.striped
+  %thead
+    %tr
+      %th Code
+      %th Title
+      %th
+      %th
+      %th
+  %tbody
+    - @popups.each do |popup|
+      %tr{:class => cycle('even', 'odd')}
+        %td= link_to popup.code, popup
+        %td= popup.title
+        %td= link_to '', popup, :class => 'fugue fugue-information'
+        %td= link_to '', edit_popup_path(popup), :class => 'fugue fugue-pencil'
+        %td= link_to '', popup, :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+
+#actions
+  = link_to 'New Popup', new_popup_path, :class => 'fugue fugue-plus'
