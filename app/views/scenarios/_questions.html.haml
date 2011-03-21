@@ -5,13 +5,11 @@
        :class => 'question_tab',
        :'data-question_id' => question.number}
       =question.number
-
-= form_for @scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
-  = scenario.fields_for :answers do |answer|
-    = render :partial => 'question', :locals => { :answer => answer}
-  = render :partial => 'user_details', :locals => { :scenario => scenario}
-.clear
-
+%div
+  = form_for @scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
+    = scenario.fields_for :answers do |answer|
+      = render :partial => 'question', :locals => { :answer => answer}
+    = render :partial => 'user_details', :locals => { :scenario => scenario}
 %nav#down
   %a{ :href => "#", :id => "previous_question"}
     previous        

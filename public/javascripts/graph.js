@@ -11,10 +11,6 @@ function Graph() {
   // Main entry point.
   // assumes results have been stored
   self.refresh = function() {
-    // update carriers table
-    $.each(mixer.carriers_values, function(key, value){
-      $("#carriers ." + key).html(value);
-    });
     // dashboard items
     $.each(mixer.dashboard_values, function(key, value){
       self.update_dashboard_item(key, value);

@@ -1,19 +1,14 @@
-%section#questions.grid_6.alpha
+%section#questions
   = render :partial => 'questions'
 
-%section#results.grid_3
+%section#results
   = render :partial => 'dynamic_graph'
 
-%section#dashboard.grid_3.omega
+%section#dashboard
   = render :partial => 'dashboard'
-
-%section#bottom.grid_12.alpha.omega
-  %section{:class=>"output"}
-    = render :partial => 'debug_results'
-    
             
 - content_for(:head) do
-  = stylesheet_link_tag 'home'
+  = stylesheet_link_tag 'scenarios'
   = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
   = javascript_include_tag 'jquery.jsonp-2.1.4.min' # better error handling
   = javascript_include_tag 'jquery.busy.min'

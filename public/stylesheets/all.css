@@ -48,15 +48,26 @@ a {
 body {
   font-family: verdana, helvetica;
   font-size: 11px; }
-  body header {
-    border-bottom: 1px solid #cccccc;
-    margin-bottom: 20px; }
-    body header h1 {
-      font-weight: bold; }
-    body header nav {
-      padding: 1em; }
-      body header nav a {
-        font-size: 1.2em; }
+  body header#shell {
+    margin-top: 30px;
+    height: 90px; }
+  body #sidebar {
+    float: left;
+    width: 240px;
+    margin-right: 10px;
+    margin-top: 30px; }
+  body #main {
+    width: 770px;
+    float: left; }
+    body #main header {
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 20px; }
+      body #main header h1 {
+        font-weight: bold; }
+      body #main header nav#top {
+        padding: 1em; }
+        body #main header nav#top a {
+          font-size: 1.2em; }
 
 table.striped {
   width: 100%; }
