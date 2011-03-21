@@ -35,7 +35,9 @@ class ScenariosController < ApplicationController
   end
   
   def index
-    @user_scenarios = UserScenario.recent_first.page(params[:page])
+    scope = UserScenario.featured_first.recent_first
+    scope = scope.by_user(params[:q]) unless params[:q].blank?
+    @user_scenarios = scope.page(params[:page])
   end
   
   def compare

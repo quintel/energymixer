@@ -147,6 +147,11 @@ body#scenarios_index .scenario {
   border: 1px solid #cccccc;
   padding: 5px;
   margin: 5px; }
+  body#scenarios_index .scenario.featured {
+    background: #e1ff0b;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#b9ff4d), to(#e1ff0b));
+    background: -moz-linear-gradient(top, #b9ff4d, #e1ff0b); }
   body#scenarios_index .scenario .actions {
     float: right; }
   body#scenarios_index .scenario .name {

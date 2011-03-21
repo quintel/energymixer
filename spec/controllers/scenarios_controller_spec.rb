@@ -11,6 +11,14 @@ describe ScenariosController do
     it "should show a list of existing scenarios" do
       get :index
       response.should be_success
+      assigns(:user_scenarios).to_set.should == @scenarios.to_set
+      
+    end
+    
+    it "should show a list of existing scenarios filtered by name" do
+      get :index, :q => 'impossible'
+      response.should be_success
+      assigns(:user_scenarios).should be_empty
     end
   end
   
