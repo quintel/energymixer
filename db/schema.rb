@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110318090729) do
+ActiveRecord::Schema.define(:version => 20110321095540) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20110318090729) do
   end
 
   add_index "inputs", ["answer_id"], :name => "index_inputs_on_answer_id"
+
+  create_table "popups", :force => true do |t|
+    t.string   "code"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "popups", ["code"], :name => "index_popups_on_code"
 
   create_table "questions", :force => true do |t|
     t.string   "question"
