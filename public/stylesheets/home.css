@@ -172,6 +172,10 @@ section#questions {
     width: 365px; }
     section#questions .question .information {
       margin-bottom: 5px; }
+      section#questions .question .information strong {
+        font-weight: bold; }
+      section#questions .question .information a {
+        color: blue; }
     section#questions .question .number {
       font-weight: bold;
       width: 5%;
