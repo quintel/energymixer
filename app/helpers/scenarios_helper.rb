@@ -37,7 +37,7 @@ module ScenariosHelper
   end
   
   def gquery_for_output(i)
-    UserScenario::Outputs[i]
+    Scenario::Outputs[i]
   end
   
   def dashboard_label_for_output(i)

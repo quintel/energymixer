@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110321095540) do
+ActiveRecord::Schema.define(:version => 20110321143545) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -65,18 +65,18 @@ ActiveRecord::Schema.define(:version => 20110321095540) do
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
 
-  create_table "user_scenario_answers", :force => true do |t|
-    t.integer  "user_scenario_id"
+  create_table "scenario_answers", :force => true do |t|
+    t.integer  "scenario_id"
     t.integer  "question_id"
     t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "user_scenario_answers", ["question_id"], :name => "index_user_scenario_answers_on_question_id"
-  add_index "user_scenario_answers", ["user_scenario_id"], :name => "index_user_scenario_answers_on_user_scenario_id"
+  add_index "scenario_answers", ["question_id"], :name => "index_user_scenario_answers_on_question_id"
+  add_index "scenario_answers", ["scenario_id"], :name => "index_user_scenario_answers_on_user_scenario_id"
 
-  create_table "user_scenarios", :force => true do |t|
+  create_table "scenarios", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "age"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20110321095540) do
     t.datetime "updated_at"
   end
 
-  add_index "user_scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
+  add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
 
   create_table "users", :force => true do |t|
     t.string   "email",                             :default => "", :null => false

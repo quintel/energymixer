@@ -1,0 +1,36 @@
+%h2 User Scenario
+
+%dl.admin
+  %dt Id
+  %dd= @scenario.id
+  %dt Name
+  %dd= @scenario.name
+  %dt Email
+  %dd= @scenario.email
+  %dt Age
+  %dd= @scenario.age
+  %dt Featured
+  %dd= @scenario.featured
+  %dt= gquery_for_output(:output_0)
+  %dd= @scenario.output_0
+  %dt= gquery_for_output(:output_1)
+  %dd= @scenario.output_1
+  %dt= gquery_for_output(:output_2)
+  %dd= @scenario.output_2
+  %dt= gquery_for_output(:output_3)
+  %dd= @scenario.output_3
+  %dt= gquery_for_output(:output_4)
+  %dd= @scenario.output_4
+  %dt= gquery_for_output(:output_5)
+  %dd= @scenario.output_5
+  %dt= gquery_for_output(:output_6)
+  %dd= @scenario.output_6
+  %dt= gquery_for_output(:output_7)
+  %dd= @scenario.output_7
+  %dt= gquery_for_output(:output_8)
+  %dd= @scenario.output_8
+
+#actions
+  = link_to 'Edit', edit_admin_scenario_path(@scenario), :class => 'fugue fugue-pencil'
+  = link_to 'Back', admin_scenarios_path
+  = link_to 'Destroy', admin_scenario_path(@scenario), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'

@@ -1,4 +1,4 @@
-Factory.define :user_scenario do |f|
+Factory.define :scenario do |f|
   f.name 'bill clinton'
   f.email 'test@quintel.com'
   f.age 99
@@ -14,6 +14,6 @@ Factory.define :user_scenario do |f|
   f.output_8 0.00
 end
 
-Factory.define :featured_user_scenario, :parent => :user_scenario do |f|
+Factory.define :featured_scenario, :parent => :scenario do |f|
   f.featured true
 end

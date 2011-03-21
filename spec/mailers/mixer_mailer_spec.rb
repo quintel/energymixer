@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe MixerMailer do
   describe "thankyou" do
-    let(:scenario) { Factory :user_scenario }
+    let(:scenario) { Factory :scenario }
     let(:mail) { MixerMailer.thankyou(scenario) }
 
     it "renders the headers" do
