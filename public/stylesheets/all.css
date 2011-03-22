@@ -81,6 +81,24 @@ body {
       color: green;
       background-color: #7bff76; }
 
+body.sessions #content h2, body.unlocks #content h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em; }
+body.sessions #content form, body.unlocks #content form {
+  margin-bottom: 1em; }
+  body.sessions #content form label, body.unlocks #content form label {
+    padding: 0.2em;
+    font-size: 1.4em;
+    display: block; }
+  body.sessions #content form input, body.unlocks #content form input {
+    padding: 0.2em;
+    font-size: 1.3em;
+    width: 300px; }
+  body.sessions #content form input[type=submit], body.unlocks #content form input[type=submit] {
+    margin-top: 1em; }
+body.sessions #content a, body.unlocks #content a {
+  padding: 1em; }
+
 table.striped {
   width: 100%; }
   table.striped td {
