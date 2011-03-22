@@ -60,10 +60,17 @@ function Questions() {
     });
     
     // setup colorbox popups
-    $(".question a").colorbox({
+    $(".question .text a").colorbox({
       width: "50%",
       height: "50%",
       opacity: 0.6
+    });
+    
+    $(".question a.text_toggler").click(function(){
+      var text_element = $(this).parent().find(".text");
+      text_element.toggle();
+      $(this).html(text_element.is(':visible') ? 'Lees minder' : 'Lees meer');
+      return false;
     });
   };
     
