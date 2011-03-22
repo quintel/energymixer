@@ -58,6 +58,7 @@ module ScenariosHelper
     gquery = gquery_for_output(input_id)
     case gquery
     when "co2_emission_final_demand_to_1990_in_percent"
+      value *= -1
       "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2)}%"
     when "area_footprint_per_nl"
       "#{number_with_precision(value, :precision => 2)}xNL"
