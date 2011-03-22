@@ -442,5 +442,13 @@ def create_dashboard_items
   end
 end
 
+def create_default_user
+  # TODO: remove later
+  User.destroy_all
+  user = User.new(:email => 'admin@quintel.com', :password => 'admin')
+end
+
 create_questions
 create_dashboard_items
+create_default_user
+
