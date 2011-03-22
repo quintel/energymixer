@@ -63,6 +63,7 @@ function Graph() {
     switch(key) {
       // TODO: check format of this gquery
       case "co2_emission_final_demand_to_1990_in_percent":
+        value *= -1;
         if (value > 0) out = "+";
         out += sprintf("%.1f", value * 100) + "%";
         break;
