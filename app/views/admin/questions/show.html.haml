@@ -19,7 +19,7 @@
           %table.small
             - a.inputs.each do |i|
               %tr
-                %td= i.key
+                %td= i.slider
                 %td= "##{i.slider_id} "
                 %td= i.value
         %td= link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
