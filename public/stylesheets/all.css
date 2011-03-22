@@ -68,6 +68,18 @@ body {
         padding: 1em; }
         body #main header nav#top a {
           font-size: 1.2em; }
+    body #main .flash {
+      text-align: center;
+      border: 1px solid;
+      padding: 1em;
+      font-weight: bold;
+      margin-bottom: 5px; }
+    body #main .flash#alert {
+      color: red;
+      background-color: #fdbbbc; }
+    body #main .flash#notice {
+      color: green;
+      background-color: #7bff76; }
 
 table.striped {
   width: 100%; }
