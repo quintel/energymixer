@@ -6,9 +6,9 @@
     = question_object.number
   .question_text
     = raw question_object.question
-  .answers
+  %ol.answers
     - question_object.answers.each do |a|
-      .answer
+      %li.answer
         = answer.hidden_field :question_id
         = answer.radio_button :answer_id, a.id, 
                               :id  => "answer_#{a.id}",
@@ -16,7 +16,5 @@
         %label{:for => "answer_#{a.id}",
                :id => "label_#{a.id}",
                :class => ('active' if answer.object.answer_id == a.id)}
-          %span.letter
-            = a.letter
-          %span.answer_text
+          .text
             = raw a.answer

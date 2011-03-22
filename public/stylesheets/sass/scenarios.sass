@@ -53,21 +53,28 @@ body#scenarios_new, body#scenarios_create
         float: left
       .question_text
         font-weight: bold
-      .answers
+      ol.answers
+        padding-left: 20px
+        margin-left: 0
         border-top: 1px solid #ccc
         margin-top: 5px
         padding-top: 5px
-        .answer
+        li.answer
+          margin-left: 0
+          font-weight: bold
+          list-style-type: upper-alpha
           width: 365px
-          margin-bottom: 10px
-          .letter
-            width: 5%
-            font-weight: bold
-          .answer_text
-            width: 95%
+          margin-bottom: 15px
+          clear: both
+          label
+            font-weight: normal
+            .text
+              float: right
+              width: 100%
+              margin-bottom: 15px
           input[type=radio]
             display: none
-          label.active
+          &.active
             color: #f00
       #user_details
         div

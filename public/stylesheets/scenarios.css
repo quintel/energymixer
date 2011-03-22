@@ -298,21 +298,28 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       float: left; }
     body#scenarios_new section#questions .question .question_text, body#scenarios_create section#questions .question .question_text {
       font-weight: bold; }
-    body#scenarios_new section#questions .question .answers, body#scenarios_create section#questions .question .answers {
+    body#scenarios_new section#questions .question ol.answers, body#scenarios_create section#questions .question ol.answers {
+      padding-left: 20px;
+      margin-left: 0;
       border-top: 1px solid #cccccc;
       margin-top: 5px;
       padding-top: 5px; }
-      body#scenarios_new section#questions .question .answers .answer, body#scenarios_create section#questions .question .answers .answer {
+      body#scenarios_new section#questions .question ol.answers li.answer, body#scenarios_create section#questions .question ol.answers li.answer {
+        margin-left: 0;
+        font-weight: bold;
+        list-style-type: upper-alpha;
         width: 365px;
-        margin-bottom: 10px; }
-        body#scenarios_new section#questions .question .answers .answer .letter, body#scenarios_create section#questions .question .answers .answer .letter {
-          width: 5%;
-          font-weight: bold; }
-        body#scenarios_new section#questions .question .answers .answer .answer_text, body#scenarios_create section#questions .question .answers .answer .answer_text {
-          width: 95%; }
-        body#scenarios_new section#questions .question .answers .answer input[type=radio], body#scenarios_create section#questions .question .answers .answer input[type=radio] {
+        margin-bottom: 15px;
+        clear: both; }
+        body#scenarios_new section#questions .question ol.answers li.answer label, body#scenarios_create section#questions .question ol.answers li.answer label {
+          font-weight: normal; }
+          body#scenarios_new section#questions .question ol.answers li.answer label .text, body#scenarios_create section#questions .question ol.answers li.answer label .text {
+            float: right;
+            width: 100%;
+            margin-bottom: 15px; }
+        body#scenarios_new section#questions .question ol.answers li.answer input[type=radio], body#scenarios_create section#questions .question ol.answers li.answer input[type=radio] {
           display: none; }
-        body#scenarios_new section#questions .question .answers .answer label.active, body#scenarios_create section#questions .question .answers .answer label.active {
+        body#scenarios_new section#questions .question ol.answers li.answer.active, body#scenarios_create section#questions .question ol.answers li.answer.active {
           color: red; }
     body#scenarios_new section#questions .question #user_details div, body#scenarios_create section#questions .question #user_details div {
       clear: both; }
