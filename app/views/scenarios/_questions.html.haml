@@ -1,10 +1,14 @@
 %nav#up
   - Question.ordered.each do |question|
     %a{:href  => "#",
-       :rel   => "question_#{question.id}",
        :class => 'question_tab',
        :'data-question_id' => question.number}
       =question.number
+  - last_question_number = Question.count + 1
+  %a{:href  => "#",
+     :class => 'question_tab',
+     :'data-question_id' => last_question_number}Submit
+      
 %div
   = form_for @scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
     = scenario.fields_for :answers do |answer|
