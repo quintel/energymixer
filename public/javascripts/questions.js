@@ -52,7 +52,7 @@ function Questions() {
     });
 
     $("#questions nav#up a").click(function(){
-      var question_id = $(this).attr('data-question_id');
+      var question_id = $(this).data('question_id');
       self.current_question = question_id;
       self.show_right_question();
       return false;

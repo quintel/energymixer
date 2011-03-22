@@ -120,7 +120,7 @@ function Mixer() {
   self.process_form = function() {
     self.user_answers = {};
     $("div.question input:checked").each(function(el) {
-      var question_id = $(this).attr('data-question_id');
+      var question_id = $(this).data('question_id');
       self.user_answers[question_id] = $(this).val();
     });
     console.log("User answers:" + $.toJSON(self.user_answers));
