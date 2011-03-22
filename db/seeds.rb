@@ -445,7 +445,7 @@ end
 def create_default_user
   # TODO: remove later
   User.destroy_all
-  user = User.new(:email => 'admin@quintel.com', :password => 'admin')
+  user = User.create!(:email => 'admin@quintel.com', :password => 'password')
 end
 
 create_questions
