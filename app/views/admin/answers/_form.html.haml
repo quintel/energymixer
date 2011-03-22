@@ -6,7 +6,7 @@
     %h3 Inputs
     = f.semantic_fields_for :inputs do |i|
       = i.inputs do
-        = i.input :key
+        = i.input :slider_id, :as => :select, :collection => Input::KEYS.invert.sort
         = i.input :value
         = i.input :_destroy, :as => :boolean unless i.object.new_record?
     = f.buttons

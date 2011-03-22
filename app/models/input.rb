@@ -15,22 +15,12 @@ class Input < ActiveRecord::Base
   
   validates :slider_id, :presence => true
   
-  validate :check_valid_key
-  
   attr_accessible :value, :slider_id, :key
-
-  def key
-    KEYS[slider_id]
-  end
   
-  def key=(value)
-    self.slider_id = KEYS.invert[value] rescue nil
+  def slider
+    KEYS[slider_id] rescue nil
   end
-  
-  def check_valid_key
-    errors.add(:key, 'invalid code') unless slider_id    
-  end
-  
+    
   KEYS = {
     1   => "households_replacement_of_existing_houses",
     6   => "households_efficiency_fridge_freezer",
