@@ -14,11 +14,9 @@ function Questions() {
   };
   
   self.show_right_question = function() {
-    console.log("Current question:" + self.current_question);
-    $(".active_question").removeClass('active_question');
     $(".question").hide();
     var question_id = "#question_" + self.current_question;
-    $(question_id).addClass('active_question').show();
+    $(question_id).show();
     // update top row
     $("a.question_tab").removeClass('active');
     var tab_selector = "a.question_tab[data-question_id=" + self.current_question + "]";
@@ -32,10 +30,6 @@ function Questions() {
   };
   
   self.setup_callbacks = function() {
-    // move this logic in markup and css
-    $(".question").not("#question_1").hide();
-    $("#question_1").addClass('active_question');
-
     $("#next_question").click(function(){
       self.current_question++;
       var last_question = self.count_questions();
@@ -58,14 +52,14 @@ function Questions() {
       return false;
     });
 
+    // when the users clicks on an answer
     $("input[type='radio']").change(function(){
-      var id = $(this).attr('id');
+      $(this).parent().parent().find("li.answer").removeClass('active');
+      $(this).parent().addClass('active');
       mixer.refresh();
-      $(this).parent().parent().find("label").removeClass('active');
-      $("label[for=" + id + "]").addClass('active');
     });
     
-    // setup colorbox
+    // setup colorbox popups
     $(".question a").colorbox({
       width: "50%",
       height: "50%",
@@ -74,6 +68,7 @@ function Questions() {
   };
     
   self.init = function() {
+    self.current_question = 1;
     self.setup_callbacks();
     self.show_right_question();
   };

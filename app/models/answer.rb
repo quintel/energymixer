@@ -21,10 +21,6 @@ class Answer < ActiveRecord::Base
   
   scope :ordered, order('ordering, id')
   
-  attr_accessible :inputs_attributes, :ordering, :answer, :description
-  
-  def letter
-    ('A'..'Z').to_a[ordering] rescue nil
-  end
+  attr_accessible :inputs_attributes, :ordering, :answer, :description  
 end
 

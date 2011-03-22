@@ -13,7 +13,7 @@
   %tbody
     - @question.answers.each do |a|
       %tr{:class => cycle('even', 'odd')}
-        %td= a.letter
+        %td= a.ordering
         %td= a.answer
         %td
           %table.small
