@@ -33,7 +33,12 @@ body#scenarios_new, body#scenarios_create
       &#up
         a.active
           color: red
+        a:hover
+          color: #D70000
       &#down
+        clear: both
+        a:hover
+          color: #D70000
     .question
       padding: 10px
       .information
@@ -63,9 +68,27 @@ body#scenarios_new, body#scenarios_create
           input[type=radio]
             display: none
           label.active
-            background: #000
             color: #f00
-
+      #user_details
+        div
+          clear: both
+          label
+            display: block
+            float: left
+            width: 60px
+            padding: 5px
+          input
+            display: block
+            float: left
+            padding: 5px
+            width: 200px
+          input[type=submit]  
+            margin-left: 70px
+            width: 214px
+            border: 1px solid #ccc
+            margin-bottom: 20px
+            &:hover
+              background-color: #F69409
   .question_popup
     h1
       font-size: 1.5em
