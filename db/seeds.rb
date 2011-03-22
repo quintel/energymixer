@@ -397,7 +397,7 @@ def create_questions
       act += 1
     
       a[:inputs].each do |i|
-        @a.inputs.create!(:key => i[:key], :value => i[:value], :slider_id => i[:id])
+        @a.inputs.create!(:value => i[:value], :slider_id => i[:id])
       end
     end
     qct += 1
