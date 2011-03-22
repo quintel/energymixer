@@ -26,6 +26,7 @@ function Mixer() {
     $.ajax({
       url: self.base_path + "new.json",
       dataType: 'jsonp',
+      data: { settings : { end_year : 2025 }},
       success: function(data){
         var key = data.api_scenario.api_session_key;
         self.session_id = key;
