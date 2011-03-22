@@ -278,6 +278,12 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       font-weight: bold; }
     body#scenarios_new section#questions nav#up a.active, body#scenarios_create section#questions nav#up a.active {
       color: red; }
+    body#scenarios_new section#questions nav#up a:hover, body#scenarios_create section#questions nav#up a:hover {
+      color: #d70000; }
+    body#scenarios_new section#questions nav#down, body#scenarios_create section#questions nav#down {
+      clear: both; }
+      body#scenarios_new section#questions nav#down a:hover, body#scenarios_create section#questions nav#down a:hover {
+        color: #d70000; }
   body#scenarios_new section#questions .question, body#scenarios_create section#questions .question {
     padding: 10px; }
     body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
@@ -307,8 +313,26 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         body#scenarios_new section#questions .question .answers .answer input[type=radio], body#scenarios_create section#questions .question .answers .answer input[type=radio] {
           display: none; }
         body#scenarios_new section#questions .question .answers .answer label.active, body#scenarios_create section#questions .question .answers .answer label.active {
-          background: black;
           color: red; }
+    body#scenarios_new section#questions .question #user_details div, body#scenarios_create section#questions .question #user_details div {
+      clear: both; }
+      body#scenarios_new section#questions .question #user_details div label, body#scenarios_create section#questions .question #user_details div label {
+        display: block;
+        float: left;
+        width: 60px;
+        padding: 5px; }
+      body#scenarios_new section#questions .question #user_details div input, body#scenarios_create section#questions .question #user_details div input {
+        display: block;
+        float: left;
+        padding: 5px;
+        width: 200px; }
+      body#scenarios_new section#questions .question #user_details div input[type=submit], body#scenarios_create section#questions .question #user_details div input[type=submit] {
+        margin-left: 70px;
+        width: 214px;
+        border: 1px solid #cccccc;
+        margin-bottom: 20px; }
+        body#scenarios_new section#questions .question #user_details div input[type=submit]:hover, body#scenarios_create section#questions .question #user_details div input[type=submit]:hover {
+          background-color: #f69409; }
 body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 {
   font-size: 1.5em;
   font-weight: bold;

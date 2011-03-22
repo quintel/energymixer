@@ -1,22 +1,23 @@
 .question{:id => "question_#{Question.count + 1}"}
-  %p
-    = scenario.label :name
-    = scenario.text_field :name
-  %p
-    = scenario.label :email
-    = scenario.text_field :email
-  %p
-    = scenario.label :age
-    = scenario.text_field :age
-  %p
-    = scenario.submit
+  #user_details
+    %div
+      = scenario.label :name
+      = scenario.text_field :name
+    %div
+      = scenario.label :email
+      = scenario.text_field :email
+    %div
+      = scenario.label :age
+      = scenario.text_field :age
+    %div
+      = scenario.submit
     
-    = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
-    = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
-    = scenario.hidden_field :output_2, :'data-label' => gquery_for_output(:output_2)
-    = scenario.hidden_field :output_3, :'data-label' => gquery_for_output(:output_3)
-    = scenario.hidden_field :output_4, :'data-label' => gquery_for_output(:output_4)
-    = scenario.hidden_field :output_5, :'data-label' => gquery_for_output(:output_5)
-    = scenario.hidden_field :output_6, :'data-label' => gquery_for_output(:output_6)
-    = scenario.hidden_field :output_7, :'data-label' => gquery_for_output(:output_7)
-    = scenario.hidden_field :output_8, :'data-label' => gquery_for_output(:output_8)
+      = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
+      = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
+      = scenario.hidden_field :output_2, :'data-label' => gquery_for_output(:output_2)
+      = scenario.hidden_field :output_3, :'data-label' => gquery_for_output(:output_3)
+      = scenario.hidden_field :output_4, :'data-label' => gquery_for_output(:output_4)
+      = scenario.hidden_field :output_5, :'data-label' => gquery_for_output(:output_5)
+      = scenario.hidden_field :output_6, :'data-label' => gquery_for_output(:output_6)
+      = scenario.hidden_field :output_7, :'data-label' => gquery_for_output(:output_7)
+      = scenario.hidden_field :output_8, :'data-label' => gquery_for_output(:output_8)
