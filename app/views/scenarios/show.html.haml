@@ -1,5 +1,5 @@
 .top
-  Bekijk de EnergyMixes
+  %h2 Bekijk de EnergyMixes
   = form_tag scenarios_path, :method => :get do
     Search
     = text_field_tag :q
@@ -14,25 +14,18 @@
     .content
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   .boxes
-    %table
-      %tr
-        %td
-          .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
-            %h3= dashboard_label_for_output(:output_5)
-            .value= format_dashboard_value(:output_5, @scenario.output_5)
-        %td
-          .dashboard_item{:class => set_class_for_output(:output_6, @scenario.output_6)}
-            %h3= dashboard_label_for_output(:output_6)
-            .value= format_dashboard_value(:output_6, @scenario.output_6)
-      %tr
-        %td
-          .dashboard_item{:class => set_class_for_output(:output_7, @scenario.output_7)}
-            %h3= dashboard_label_for_output(:output_7)
-            .value= format_dashboard_value(:output_7, @scenario.output_7)
-        %td
-          .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
-            %h3= dashboard_label_for_output(:output_8)
-            .value= format_dashboard_value(:output_8, @scenario.output_8)
+    .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
+      %h3= dashboard_label_for_output(:output_5)
+      .value= format_dashboard_value(:output_5, @scenario.output_5)
+    .dashboard_item{:class => set_class_for_output(:output_6, @scenario.output_6)}
+      %h3= dashboard_label_for_output(:output_6)
+      .value= format_dashboard_value(:output_6, @scenario.output_6)
+    .dashboard_item{:class => set_class_for_output(:output_7, @scenario.output_7)}
+      %h3= dashboard_label_for_output(:output_7)
+      .value= format_dashboard_value(:output_7, @scenario.output_7)
+    .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
+      %h3= dashboard_label_for_output(:output_8)
+      .value= format_dashboard_value(:output_8, @scenario.output_8)
 .right.graph
   = render :partial => 'static_graph', :locals => {:scenario => @scenario}
 
