@@ -2,12 +2,12 @@
 #
 # Table name: scenario_answers
 #
-#  id               :integer(4)      not null, primary key
+#  id          :integer(4)      not null, primary key
 #  scenario_id :integer(4)
-#  question_id      :integer(4)
-#  answer_id        :integer(4)
-#  created_at       :datetime
-#  updated_at       :datetime
+#  question_id :integer(4)
+#  answer_id   :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
 #
 
 class ScenarioAnswer < ActiveRecord::Base
