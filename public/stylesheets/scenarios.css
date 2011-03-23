@@ -243,13 +243,13 @@ table.combined_graph {
       font-weight: bold; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
-  width: 200px;
+  width: 180px;
   float: left; }
 body#scenarios_new section#dashboard, body#scenarios_create section#dashboard {
   width: 120px;
   float: left; }
 body#scenarios_new section#questions, body#scenarios_create section#questions {
-  width: 430px;
+  width: 420px;
   float: left;
   background: #eeeeee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
@@ -308,7 +308,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         margin-left: 0;
         font-weight: bold;
         list-style-type: upper-alpha;
-        width: 365px;
         margin-bottom: 15px;
         clear: both; }
         body#scenarios_new section#questions .question ol.answers li.answer label, body#scenarios_create section#questions .question ol.answers li.answer label {
@@ -317,6 +316,9 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
             float: right;
             width: 100%;
             margin-bottom: 15px; }
+          body#scenarios_new section#questions .question ol.answers li.answer label:hover, body#scenarios_create section#questions .question ol.answers li.answer label:hover {
+            color: #ff7f00;
+            cursor: pointer; }
         body#scenarios_new section#questions .question ol.answers li.answer input[type=radio], body#scenarios_create section#questions .question ol.answers li.answer input[type=radio] {
           display: none; }
         body#scenarios_new section#questions .question ol.answers li.answer.active, body#scenarios_create section#questions .question ol.answers li.answer.active {
