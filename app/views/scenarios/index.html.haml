@@ -1,19 +1,20 @@
-%h2 Existing scenarios
-= form_tag scenarios_path, :method => :get, :remote => true do
-  Search
-  = text_field_tag :q
-  = submit_tag "Search"
+#search_form
+  %h2 Existing scenarios
+  = form_tag scenarios_path, :method => :get, :remote => true do
+    Search
+    = text_field_tag :q
+    = submit_tag "Search"
 
 = form_tag compare_scenarios_path do
   #selectable
-    Choose
+    %h3 Choose
     .scenarios
       = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
   #selected
-    So far you've chosen
+    %h3 Selected
     .scenarios
-      
-  = submit_tag "Compare"
+  #form_footer
+    = submit_tag "Compare"
 
 = paginate @scenarios
 
@@ -22,10 +23,15 @@
   = stylesheet_link_tag 'scenarios'
   :javascript
     $(function(){
+      // let's deal with the back button
+      $("#selectable .scenario input").attr("checked", false);
+      $("#selected .scenario input").attr("checked", true);
+      // adding an element
       $("#selectable .scenario input").live('change', function(){
         $(this).attr('checked', true);
         $(this).parent().parent().appendTo("#selected .scenarios");
       });
+      // removing
       $("#selected .scenario input").live('change', function(){
       $(this).attr('checked', false);
         $(this).parent().parent().appendTo("#selectable .scenarios");
