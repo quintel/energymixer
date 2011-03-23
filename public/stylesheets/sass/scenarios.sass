@@ -1,9 +1,6 @@
 @import 'mixins'
 @import 'mixer.graph'
 
-@import 'mixins'
-@import 'mixer.graph'
-
 body#scenarios_new, body#scenarios_create
   section#results
     width: 180px
@@ -20,7 +17,7 @@ body#scenarios_new, body#scenarios_create
     line-height: 1.5em
     background-color: #eee
     nav
-      @include gradient(#fdfdfd, #eee)
+      @include shaded_box      
       display: block
       text-align: center
       height: 20px
@@ -106,23 +103,29 @@ body#scenarios_new, body#scenarios_create
 
 body#scenarios_show
   .top
-    @include gradient(#fdfdfd, #eee)
+    @include shaded_box
     height: 80px
     margin-bottom: 10px
+    padding: 5px
+    h2
+      font-size: 1.4em
+      font-weight: bold
+      margin-bottom: .4em      
   .left
     width: 50%
     float: left
     .text
+      @include shaded_box
       padding: 1.5em
       font-size: 1.2em
-      @include gradient(#fdfdfd, #eee)
       .title
         font-weight: bold
     .boxes
       margin-top: 10px
-      width: 100%
-      td
-        width: 25%
+      .dashboard_item
+        float: left
+        width: 150px
+        margin: 12px
   .right
     width: 40%
     float: left
@@ -133,10 +136,9 @@ body#scenarios_index
   h2
     font-size: 1.5em
   .scenario
+    @include shaded_box    
     position: relative
-    @include gradient(#fdfdfd, #eee)
     width: 250px
-    border:  1px solid #ccc
     padding: 5px
     margin: 5px
     &.featured
