@@ -275,6 +275,8 @@ body#scenarios_index #search_form {
   body#scenarios_index #search_form h2 {
     font-size: 1.5em;
     margin-bottom: 1em; }
+  body#scenarios_index #search_form p {
+    margin-bottom: 1em; }
 body#scenarios_index #selectable, body#scenarios_index #selected {
   background: #eeeeee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
