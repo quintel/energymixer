@@ -9,4 +9,14 @@
         = i.input :slider_id, :as => :select, :collection => Input::KEYS.invert.sort
         = i.input :value
         = i.input :_destroy, :as => :boolean unless i.object.new_record?
+    %h3 Conflicts
+    %ul
+      - Question.excluding([@answer.question_id]).each do |q|
+        %li
+          = q.question
+          %ol
+            - q.answers.each do |a|
+              %li
+                = check_box_tag "answer[conflicting_question_ids][]", a.id, @answer.conflicting_question_ids.include?(a.id)
+                = a.answer
     = f.buttons

@@ -21,12 +21,31 @@ function Questions() {
     $("a.question_tab").removeClass('active');
     var tab_selector = "a.question_tab[data-question_id=" + self.current_question + "]";
     $(tab_selector).addClass('active');
-    //update links
+    // update links
     self.current_question == 1 ? 
       $("#previous_question").hide() : $("#previous_question").show();
     self.current_question == self.count_questions() ? 
-      $("#next_question").hide() : $("#next_question").show();
-    
+      $("#next_question").hide() : $("#next_question").show();    
+  };
+  
+  self.currently_selected_answers = function() {
+    var answers = [];
+    $(".answers .active input[type=radio]").each(function(){
+      answers.push($(this).data("question_id"));
+    });
+    return answers;
+  };
+  
+  self.check_conflicting_answer = function(selected_answer_id) {
+    $.each(self.currently_selected_answers(), function(answer_id){
+      var conflicting_answers = globals.answers_conflicts[answer_id];
+      if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1) {
+        console.log("Conflicting answer!");
+        $("#questions #notice").show();
+      } else {
+        $("#questions #notice").hide();
+      }
+    });
   };
   
   self.setup_callbacks = function() {
@@ -56,6 +75,7 @@ function Questions() {
     $("input[type='radio']").change(function(){
       $(this).parent().parent().find("li.answer").removeClass('active');
       $(this).parent().addClass('active');
+      self.check_conflicting_answer($(this).val());
       mixer.refresh();
     });
     

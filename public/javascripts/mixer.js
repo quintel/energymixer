@@ -86,7 +86,7 @@ function Mixer() {
       url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
       success: function(data){
-        console.log("Got results:" + $.toJSON(data.result));
+        // console.log("Got results : " + $.toJSON(data.result));
         self.results = data;
         self.store_results();
         graph.refresh();
@@ -124,14 +124,14 @@ function Mixer() {
       var question_id = $(this).data('question_id');
       self.user_answers[question_id] = $(this).val();
     });
-    console.log("User answers:" + $.toJSON(self.user_answers));
+    console.log("User answers : " + $.toJSON(self.user_answers));
     self.build_parameters();
     self.debug_parameters();
     return self.parameters;
   };
 
   self.debug_parameters = function() {
-    console.log($.toJSON(self.parameters));
+    console.log("Current parameters : " + $.toJSON(self.parameters));
   };
   
   // parses form, prepares parametes, makes ajax request and refreshes the graph

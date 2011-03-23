@@ -222,6 +222,10 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         margin-bottom: 20px; }
         body#scenarios_new section#questions .question #user_details div input[type=submit]:hover, body#scenarios_create section#questions .question #user_details div input[type=submit]:hover {
           background-color: #f69409; }
+  body#scenarios_new section#questions #notice, body#scenarios_create section#questions #notice {
+    display: none;
+    text-align: center;
+    color: red; }
 body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 {
   font-size: 1.5em;
   font-weight: bold;

@@ -18,6 +18,14 @@ module ScenariosHelper
     out.to_json
   end
   
+  def answers_conflicts_json
+    out = {}
+    Answer.all.each do |a| 
+      out[a.id] = a.conflicting_question_ids if a.conflicting_question_ids
+    end
+    out.to_json
+  end
+  
   # This array is used by mixer.js while querying the engine
   def dashboard_items_json
     DashboardItem.ordered.map(&:gquery).to_json

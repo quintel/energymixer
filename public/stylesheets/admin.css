@@ -158,3 +158,11 @@ table.striped {
       font-size: 0.7em; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }
+
+body.answers form ul li {
+  font-weight: bold; }
+  body.answers form ul li ol {
+    margin: 1em 0; }
+    body.answers form ul li ol li {
+      font-weight: normal;
+      font-size: 0.9em; }
