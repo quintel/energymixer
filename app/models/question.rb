@@ -18,6 +18,7 @@ class Question < ActiveRecord::Base
   validates :question, :presence => true
 
   scope :ordered, order('ordering, id')
+  scope :excluding, lambda {|ids| where('id NOT IN (?)', ids) }
   
   attr_accessible :question, :ordering, :information, :answers_attributes
   

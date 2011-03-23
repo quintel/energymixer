@@ -21,6 +21,14 @@ class Answer < ActiveRecord::Base
   
   scope :ordered, order('ordering, id')
   
-  attr_accessible :inputs_attributes, :ordering, :answer, :description  
+  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_question_ids
+  
+  def conflicting_question_ids
+    conflicting_questions.split(",").map(&:to_i) rescue nil
+  end
+  
+  def conflicting_question_ids=(ids)
+    self.conflicting_questions = ids.join(",")
+  end
 end
 

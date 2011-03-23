@@ -9,6 +9,8 @@
       = a.inputs do
         = a.input :answer
         = a.input :ordering
-        = a.input :_destroy, :as => :boolean unless a.object.new_record?
+        - unless a.object.new_record?
+          = a.input :_destroy, :as => :boolean
+          = link_to 'edit', edit_admin_answer_path(a.object)
   = f.buttons
     
