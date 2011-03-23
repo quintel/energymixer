@@ -38,6 +38,11 @@ class ScenariosController < ApplicationController
     scope = Scenario.featured_first.recent_first
     scope = scope.by_user(params[:q]) unless params[:q].blank?
     @scenarios = scope.page(params[:page])
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def compare
