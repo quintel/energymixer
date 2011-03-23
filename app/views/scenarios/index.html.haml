@@ -1,5 +1,7 @@
 #search_form
   %h2 Existing scenarios
+  %p
+    Use this page to search scenarios and compare them (up to five).
   = form_tag scenarios_path, :method => :get, :remote => true do
     Search
     = text_field_tag :q
@@ -28,6 +30,11 @@
       $("#selected .scenario input").attr("checked", true);
       // adding an element
       $("#selectable .scenario input").live('change', function(){
+        if($("#selected .scenario input").length >= 4) {
+          $(this).attr('checked', false);
+          alert("You can select up to 5 scenarios");
+          return false;
+        }
         $(this).attr('checked', true);
         $(this).parent().parent().appendTo("#selected .scenarios");
       });
