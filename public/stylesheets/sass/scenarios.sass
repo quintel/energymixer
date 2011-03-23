@@ -6,14 +6,14 @@
 
 body#scenarios_new, body#scenarios_create
   section#results
-    width: 200px
+    width: 180px
     float: left
   section#dashboard
     // The graph and dashboard items style is defined in mixer.graph.sass
     width: 120px
     float: left
   section#questions
-    width: 430px
+    width: 420px
     float: left
     @include gradient(#fdfdfd, #eee)
     @include shadow(#ddd)
@@ -63,7 +63,6 @@ body#scenarios_new, body#scenarios_create
           margin-left: 0
           font-weight: bold
           list-style-type: upper-alpha
-          width: 365px
           margin-bottom: 15px
           clear: both
           label
@@ -72,6 +71,9 @@ body#scenarios_new, body#scenarios_create
               float: right
               width: 100%
               margin-bottom: 15px
+            &:hover
+              color: #FF7F00
+              cursor: pointer            
           input[type=radio]
             display: none
           &.active
