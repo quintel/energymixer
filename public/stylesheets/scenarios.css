@@ -265,8 +265,39 @@ body#scenarios_show .right {
   body#scenarios_show .right .combined_graph {
     width: 160px; }
 
-body#scenarios_index h2 {
-  font-size: 1.5em; }
+body#scenarios_index #search_form {
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  border: 1px solid #eee;
+  padding: 1em; }
+  body#scenarios_index #search_form h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em; }
+body#scenarios_index #selectable, body#scenarios_index #selected {
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  border: 1px solid #eee;
+  padding: 1em;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  float: left;
+  width: 330px; }
+  body#scenarios_index #selectable h3, body#scenarios_index #selected h3 {
+    font-size: 1.3em; }
+body#scenarios_index #selectable {
+  margin-right: 12px; }
+body#scenarios_index #form_footer {
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  border: 1px solid #eee;
+  clear: both;
+  padding: 1em; }
 body#scenarios_index .scenario {
   background: #eeeeee;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');

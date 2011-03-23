@@ -133,10 +133,29 @@ body#scenarios_show
       width: 160px
 
 body#scenarios_index
-  h2
-    font-size: 1.5em
+  #search_form
+    @include shaded_box
+    padding: 1em
+    h2
+      font-size: 1.5em
+      margin-bottom: 1em
+  #selectable, #selected
+    @include shaded_box
+    padding: 1em
+    margin-top: 12px
+    margin-bottom: 12px
+    float: left
+    width: 330px
+    h3
+      font-size: 1.3em
+  #selectable
+    margin-right: 12px
+  #form_footer
+    @include shaded_box
+    clear: both
+    padding: 1em
   .scenario
-    @include shaded_box    
+    @include shaded_box
     position: relative
     width: 250px
     padding: 5px
