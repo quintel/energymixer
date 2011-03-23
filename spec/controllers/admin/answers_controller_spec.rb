@@ -8,6 +8,11 @@ describe Admin::AnswersController do
   render_views
   
   let(:answer) { Factory :answer }
+  let(:user) { Factory :user }
+
+  before do
+    sign_in user
+  end
 
   describe "GET show" do
     it "assigns the requested answer as @answer" do

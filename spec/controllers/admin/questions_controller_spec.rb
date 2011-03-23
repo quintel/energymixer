@@ -7,6 +7,11 @@ require 'spec_helper'
 describe Admin::QuestionsController do
   render_views
   let!(:question) { Factory :question }
+  let(:user) { Factory :user }
+
+  before do
+    sign_in user
+  end
 
   describe "GET index" do
     it "assigns all questions as @questions" do

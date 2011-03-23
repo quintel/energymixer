@@ -6,6 +6,11 @@ require 'spec_helper'
 
 describe Admin::ScenariosController do
   render_views
+  let(:user) { Factory :user }
+
+  before do
+    sign_in user
+  end
 
   before do
     @scenario = Factory :scenario
