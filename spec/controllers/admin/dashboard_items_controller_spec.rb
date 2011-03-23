@@ -7,6 +7,11 @@ require 'spec_helper'
 describe Admin::DashboardItemsController do
   render_views  
   let!(:dashboard_item) { Factory :dashboard_item }
+  let(:user) { Factory :user }
+
+  before do
+    sign_in user
+  end
 
   describe "GET index" do
     it "assigns all dashboard_items as @dashboard_items" do

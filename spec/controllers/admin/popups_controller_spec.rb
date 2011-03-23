@@ -7,6 +7,11 @@ require 'spec_helper'
 describe Admin::PopupsController do
   render_views
   let!(:popup) { Factory :popup }
+  let(:user) { Factory :user }
+
+  before do
+    sign_in user
+  end
 
   describe "GET index" do
     it "assigns all popups as @popups" do
