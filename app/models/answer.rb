@@ -2,14 +2,14 @@
 #
 # Table name: answers
 #
-#  id                    :integer(4)      not null, primary key
-#  answer                :string(255)
-#  ordering              :integer(4)
-#  question_id           :integer(4)
-#  created_at            :datetime
-#  updated_at            :datetime
-#  description           :text
-#  conflicting_questions :string(255)
+#  id                            :integer(4)      not null, primary key
+#  answer                        :string(255)
+#  ordering                      :integer(4)
+#  question_id                   :integer(4)
+#  created_at                    :datetime
+#  updated_at                    :datetime
+#  description                   :text
+#  conflicting_answer_ids_string :string(255)
 #
 
 class Answer < ActiveRecord::Base
