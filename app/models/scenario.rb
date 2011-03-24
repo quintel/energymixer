@@ -21,7 +21,7 @@
 #
 
 class Scenario < ActiveRecord::Base
-  MaxAmount = 110_000_000_000
+  MaxAmount = 100_000_000_000
   
   has_many :answers, :class_name => 'ScenarioAnswer', :dependent => :destroy
 
