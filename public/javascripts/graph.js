@@ -85,7 +85,7 @@ function Graph() {
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
 
     var graph_max_height = 320;
-    var max_amount       = 80000; // million euros
+    var max_amount       = globals.graph_max_amount / 1000000; // million euros
     var current_graph_height = current_sum / max_amount * graph_max_height;
     $.each(mixer.carriers_values, function(code, val) {
       var new_height = val / current_sum * current_graph_height;
