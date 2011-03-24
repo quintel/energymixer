@@ -448,7 +448,9 @@ def create_default_user
   user = User.create!(:email => 'admin@quintel.com', :password => 'password')
 end
 
-create_questions
-create_dashboard_items
-create_default_user
+# create_questions
+# create_dashboard_items
+# create_default_user
 
+puts "We're not using the seeds file anymore. Please run"
+puts "rake db:data:load"
