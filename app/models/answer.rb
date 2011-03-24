@@ -22,14 +22,20 @@ class Answer < ActiveRecord::Base
   
   scope :ordered, order('ordering, id')
   
-  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_question_ids
+  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_answer_ids
   
-  def conflicting_question_ids
-    conflicting_questions.split(",").map(&:to_i) rescue []
+  # We are storing the conflicting answers as a comma separated list
+  # Let's keep things simple
+  def conflicting_answers
+    Answer.find(conflicting_answer_ids)
   end
   
-  def conflicting_question_ids=(ids)
-    self.conflicting_questions = ids.join(",")
+  def conflicting_answer_ids
+    conflicting_answer_ids_string.split(",").map(&:to_i) rescue []
+  end
+  
+  def conflicting_answer_ids=(ids)
+    self.conflicting_answer_ids_string = ids.join(",")
   end
 end
 

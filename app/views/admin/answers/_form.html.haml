@@ -18,6 +18,7 @@
           %ol
             - q.answers.each do |a|
               %li
-                = check_box_tag("answer[conflicting_question_ids][]", a.id, @answer.conflicting_question_ids.include?(a.id)) unless @answer.question_id == q.id
+                - unless @answer.question_id == q.id
+                  = check_box_tag("answer[conflicting_answer_ids][]", a.id, @answer.conflicting_answer_ids.include?(a.id))
                 = a.answer
     = f.buttons

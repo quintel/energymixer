@@ -25,7 +25,7 @@
                 %td= i.value
         %td
           %table.small
-            - Answer.find(a.conflicting_question_ids).each do |answer|
+            - a.conflicting_answers.each do |answer|
               %tr
                 %td= truncate(answer.question.question)
                 %td= link_to(truncate(answer.answer), edit_admin_answer_path(answer))
