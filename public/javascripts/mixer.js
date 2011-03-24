@@ -1,3 +1,7 @@
+// This objects handles the core mixer functionality.
+// For the output it depends on the Graph object and it
+// requires some parameters to be set in the globals hash,
+// namely api_base_path and api_session_settings
 function Mixer() {
   // Prevent calling the function without the new operator
   if ( !(this instanceof arguments.callee) ) {
@@ -6,7 +10,7 @@ function Mixer() {
 
   var self = this;
   
-  self.base_path    = "http://testing.et-model.com/api/v1/api_scenarios/";
+  self.base_path    = globals.api_base_path;
   self.session_id   = false;
   self.parameters   = {}; // parameters set according to user answers
   self.results      = {}; // semiraw response from the engine
@@ -26,7 +30,7 @@ function Mixer() {
     $.ajax({
       url: self.base_path + "new.json",
       dataType: 'jsonp',
-      data: { settings : { end_year : 2025 }},
+      data: { settings : globals.api_session_settings },
       success: function(data){
         var key = data.api_scenario.api_session_key;
         self.session_id = key;
