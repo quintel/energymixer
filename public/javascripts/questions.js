@@ -31,21 +31,34 @@ function Questions() {
   self.currently_selected_answers = function() {
     var answers = [];
     $(".answers .active input[type=radio]").each(function(){
-      answers.push($(this).data("question_id"));
+      answers.push(parseInt($(this).val()));
     });
     return answers;
   };
   
+  self.check_conflicts = function() {
+    var conflicts = false;    
+    $.each(self.currently_selected_answers(), function(index, answer_id){
+      if(self.check_conflicting_answer(answer_id)) conflicts = true;
+    });
+    
+    if (conflicts) {
+      $("#questions #notice").show();
+    } else {
+      $("#questions #notice").hide();
+    }
+  };
+  
   self.check_conflicting_answer = function(selected_answer_id) {
-    $.each(self.currently_selected_answers(), function(answer_id){
+    var conflict = false;
+    var currently_selected_answers = self.currently_selected_answers();
+    $.each(currently_selected_answers, function(index, answer_id){
       var conflicting_answers = globals.answers_conflicts[answer_id];
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1) {
-        console.log("Conflicting answer!");
-        $("#questions #notice").show();
-      } else {
-        $("#questions #notice").hide();
+        conflict = true;
       }
     });
+    return conflict;
   };
   
   self.setup_callbacks = function() {
@@ -75,7 +88,7 @@ function Questions() {
     $("input[type='radio']").change(function(){
       $(this).parent().parent().find("li.answer").removeClass('active');
       $(this).parent().addClass('active');
-      self.check_conflicting_answer($(this).val());
+      self.check_conflicts();
       mixer.refresh();
     });
     
