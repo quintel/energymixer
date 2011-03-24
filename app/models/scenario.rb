@@ -20,7 +20,9 @@
 #  updated_at :datetime
 #
 
-class Scenario < ActiveRecord::Base  
+class Scenario < ActiveRecord::Base
+  MaxAmount = 110_000_000_000
+  
   has_many :answers, :class_name => 'ScenarioAnswer', :dependent => :destroy
 
   accepts_nested_attributes_for :answers
@@ -67,10 +69,6 @@ class Scenario < ActiveRecord::Base
       nuclear:   { label: "Nuclear",   amount: output_3, ratio: output_3 / total_amount },
       renewable: { label: "Renewable", amount: output_4, ratio: output_4 / total_amount }
     }
-  end
-  
-  def max_amount
-    80_000_000_000
   end
   
   # Ugly
