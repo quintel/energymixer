@@ -23,3 +23,12 @@ namespace :rake do
     run("cd #{deploy_to}/current && /usr/bin/env rake db:reset RAILS_ENV=production")
   end
 end
+
+desc "Move db server to local db"
+task :db2local do
+  puts "Exporting db to yml file"
+  run("cd #{deploy_to}/current && /usr/bin/env rake db:data:dump RAILS_ENV=production")
+  file = "#{deploy_to}/current/db/data.yml"
+  get file, "db/data.yml"
+  puts "To import the dataset locally please run rake db:data:load"
+end
