@@ -9,6 +9,7 @@ answers:
   - created_at
   - updated_at
   - description
+  - conflicting_questions
   records: 
   - - 1
     - Even duur
@@ -17,6 +18,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - Het blijft even duur
+    - 
   - - 2
     - Het wordt duurder
     - 1
@@ -24,6 +26,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-24 09:06:37 Z
     - Fosiele brandstoffen worden 50% duurder
+    - 
   - - 3
     - Het wordt veel duurder
     - 2
@@ -31,6 +34,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - Fosiele brandstoffen worden 100% duurder
+    - 
   - - 4
     - Het wordt goedkoper
     - 3
@@ -38,6 +42,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - Fosiele brandstoffen worden 25% goedkoper
+    - 
   - - 5
     - Het wordt veel goedkoper
     - 4
@@ -45,6 +50,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - Fosiele brandstoffen worden 50% goedkoper
+    - 
   - - 6
     - Aardgas importeren, met name uit Rusland
     - 0
@@ -52,6 +58,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - Er verandert verder niets bij deze keuze
+    - 
   - - 7
     - Dit opvangen voor de helft met  aardgas import en de andere helft met besparingen
     - 1
@@ -59,6 +66,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - ""
+    - 
   - - 8
     - De helft opwekken met eigen energie uit biomassa, zon en wind en de helft uit energiebesparing halen
     - 2
@@ -66,6 +74,7 @@ answers:
     - 2011-03-23 10:26:52 Z
     - 2011-03-23 10:26:52 Z
     - "[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind"
+    - 
   - - 9
     - Het tekort aan aardgas (zonder energiebesparing) geheel uit andere, eigen energiebronnen  halen zoals biomassa, geothermie, zon en wind om afhankelijkheid van het buitenland zo klein mogelijk te houden.
     - 3
@@ -73,6 +82,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-24 09:36:23 Z
     - "[NOTE] Neem instellingen van vraag 1 over plus de instellingen van 2b + 2c en dan tevens deze instellingen"
+    - 
   - - 10
     - Niets. Ik betwijfel het verband tussen CO2-uitstoot en de opwarming van de aarde. Andere landen gaan toch door met de CO2 uitstoot, een actieve houding van Nederland zal weinig effect hebben.
     - 0
@@ -80,6 +90,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Er gebeurt niets."
+    - 
   - - 11
     - "Maximale inzet van hernieuwbare bronnen: zon, wind, waterkracht en schone biomassa"
     - 1
@@ -87,6 +98,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing geven dat de helft van het aardgas nog steeds wordt gebruikt"
+    - 
   - - 12
     - Maximale inzet van CO2-neutrale bronnen, dus hernieuwbare maar ook kernenergie
     - 2
@@ -94,6 +106,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe kerncentrale en schrap equivalente hoeveelheid wind"
+    - 
   - - 13
     - Alleen kolencentrales vervangen door CO2 arme bronnen zoals aardgascentrales
     - 3
@@ -101,6 +114,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Neem de instellingen over van 1.  En 2b maar halveer de duurzame energieopties aan de aanbodkant uit 2b en 2c. In aantal. Breng tevens het percentage huizen met zonnepanelen terug tot 50%."
+    - 
   - - 14
     - Vervangen van kolencentrales door CO2 arme bronnen zoals aardgascentrales
     - 4
@@ -108,6 +122,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Zou goed zijn om hier informatie te geven over verschil tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot"
+    - 
   - - 15
     - Alleen opvang en opslag van CO2 uit grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
     - 5
@@ -115,6 +130,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog bepaald worden HOEVEEL suppl"
+    - 
   - - 16
     - Hoofdzakelijk nog steeds benzine, diesel.
     - 0
@@ -122,6 +138,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - De brandstofmix is in de toekomst hetzelfde als nu.
+    - 
   - - 17
     - Benzine en diesel met een kwart biobrandstof bijgemengd
     - 1
@@ -129,6 +146,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 18
     - De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere helft op elektriciteit, waarbij de elektriciteit voornamelijk opgewekt is met fossiele brandstof.
     - 2
@@ -136,6 +154,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 19
     - De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere helft op elektriciteit, waarbij de elektriciteit geheel uit hernieuwbare bronnen komt.
     - 3
@@ -143,6 +162,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - "[NOTE] herniewbare bronnen moeten nog worden aangepast!"
+    - 
   - - 20
     - De energiebehoefte blijft ongeveer gelijk. De huizen worden wel steeds iets energiezuiniger maar de mensen gaan ook steeds luxer leven.
     - 0
@@ -150,6 +170,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - Er verandert hierdoor dus niets uit de uitkomsten.
+    - 
   - - 21
     - Nieuwe gebouwen zijn zo goed geisoleerd dat ze met de helft van het aardgas toe kunnen
     - 1
@@ -157,6 +178,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 22
     - "Nieuwe gebouwen hebben geen aardgas meer nodig voor verwarming "
     - 2
@@ -164,6 +186,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - (o.a. door toepassing van  hoogwaardige isolatie, gunstige zonligging en gebruik van nieuwe verwarmingstechnieken als warmtepompen)
+    - 
   - - 23
     - Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft minder aardgas toe.
     - 3
@@ -171,6 +194,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-24 09:52:43 Z
     - ""
+    - 
   - - 24
     - Snel groeien door een snel groeiende wereldeconomie en de behoefte aan energie stijgt navenant
     - 0
@@ -178,6 +202,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - De energievraag van de industrie groeit ieder jaar met 4%
+    - 
   - - 25
     - Snel groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie in energiegebruik
     - 1
@@ -185,6 +210,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 19:24:54 Z
     - De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert met 2% per jaar.
+    - 
   - - 26
     - Langzaam groeien, de energiebehoefte stijgt ook maar licht
     - 2
@@ -192,6 +218,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - De energievraag van de industrie stijgt met 2% per jaar.
+    - 
   - - 27
     - Langzaam groeien en door verregaande effici&euml;ntie stijgt de energiebehoefte niet of daalt zelfs licht
     - 3
@@ -199,6 +226,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - De energievraag van de industrie groeit ieder jaar met 1%, efficientie verbeterd met 2% per jaar.
+    - 
   - - 28
     - Langzaam krimpen (produktie is hier te duur), energiebehoefte neemt navenant af.
     - 4
@@ -206,6 +234,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - De energievraag van de industrie daalt met 2% per jaar.
+    - 
   - - 29
     - Onveranderlijk uit fossiele energiebronnen.
     - 0
@@ -213,6 +242,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 30
     - Voor een kwart uit zelf opgewekte energie uit biomassa en de rest uit fossiele energie.
     - 1
@@ -220,6 +250,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 31
     - Voor een kwart uit zelf opgewekte energie met biomassa, een kwart met geothermische energie en de helft met fossiele energie.
     - 2
@@ -227,6 +258,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 32
     - "Voor 100% uit eigen biomassa plus ge&#239;mporteerde biomassa en geothermie "
     - 3
@@ -234,6 +266,7 @@ answers:
     - 2011-03-23 10:26:53 Z
     - 2011-03-23 10:26:53 Z
     - ""
+    - 
   - - 33
     - De economie groeit langzaam
     - 1
@@ -241,6 +274,7 @@ answers:
     - 2011-03-23 19:02:55 Z
     - 2011-03-24 07:03:33 Z
     - De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025. Het energiegebruik stijgt met 1% per jaar.
+    - 
   - - 34
     - De economie groeit soms een beetje en krimpt soms een beetje
     - 2
@@ -248,6 +282,7 @@ answers:
     - 2011-03-23 19:02:55 Z
     - 2011-03-24 07:02:56 Z
     - De economie groeit gemiddeld met 0% per jaar
+    - 
   - - 35
     - De economie krimpt langzaam
     - 3
@@ -255,6 +290,7 @@ answers:
     - 2011-03-23 19:02:55 Z
     - 2011-03-24 07:04:57 Z
     - De economie krimpt met 1% per jaar. De energievraag neemt met een 0.5% per jaar af.
+    - 
 
 --- 
 dashboard_items: 
@@ -1380,10 +1416,10 @@ questions:
   - information
   records: 
   - - 1
-    - Wat is naar uw idee de prijs van fossiele brandstof(olie, gas en kolen) in 2025?
+    - Wat is naar uw idee de prijs van elektriciteit, gas, benzine en diesel in 2025?
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 19:06:50 Z
+    - 2011-03-24 10:17:16 Z
     - De prijsontwikkeling van energie is van veel factoren afhankelijk. Zo kan de prijs gaan stijgen als gevolg van vraagtoename (door groei wereldbevolking en toename welvaart), en doordat de winning van brandstof moeilijker en duurder wordt (olie uit dieper gelegen velden etc). Factoren die de prijs kunnen drukken zijn toenemende besparingen en het goedkoper worden van de winning van hernieuwbare energie.
   - - 2
     - Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben in Nederland in 2025, ervan uitgaande dat we wel een deel blijven exporteren?
@@ -1672,6 +1708,150 @@ scenario_answers:
     - 
     - 2011-03-24 08:29:20 Z
     - 2011-03-24 08:29:20 Z
+  - - 40
+    - 6
+    - 8
+    - 33
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 41
+    - 6
+    - 1
+    - 2
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 42
+    - 6
+    - 2
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 43
+    - 6
+    - 3
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 44
+    - 6
+    - 4
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 45
+    - 6
+    - 5
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 46
+    - 6
+    - 6
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 47
+    - 6
+    - 7
+    - 
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 48
+    - 7
+    - 8
+    - 33
+    - 2011-03-24 10:10:00 Z
+    - 2011-03-24 10:10:00 Z
+  - - 49
+    - 7
+    - 1
+    - 3
+    - 2011-03-24 10:10:00 Z
+    - 2011-03-24 10:10:00 Z
+  - - 50
+    - 7
+    - 2
+    - 8
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 51
+    - 7
+    - 3
+    - 11
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 52
+    - 7
+    - 4
+    - 18
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 53
+    - 7
+    - 5
+    - 21
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 54
+    - 7
+    - 6
+    - 27
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 55
+    - 7
+    - 7
+    - 29
+    - 2011-03-24 10:10:01 Z
+    - 2011-03-24 10:10:01 Z
+  - - 56
+    - 8
+    - 8
+    - 35
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 57
+    - 8
+    - 1
+    - 5
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 58
+    - 8
+    - 2
+    - 8
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 59
+    - 8
+    - 3
+    - 11
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 60
+    - 8
+    - 4
+    - 19
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 61
+    - 8
+    - 5
+    - 23
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 62
+    - 8
+    - 6
+    - 28
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
+  - - 63
+    - 8
+    - 7
+    - 29
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
 
 --- 
 scenarios: 
@@ -1773,6 +1953,54 @@ scenarios:
     - 0.0
     - 2011-03-24 08:29:20 Z
     - 2011-03-24 08:29:20 Z
+  - - 6
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 48
+    - false
+    - 5082780000.0
+    - 26001800000.0
+    - 23058500000.0
+    - 633262000.0
+    - 3230500000.0
+    - -0.18634
+    - 0.0527038
+    - 0.808448
+    - 0.724508
+    - 2011-03-24 10:09:39 Z
+    - 2011-03-24 10:09:39 Z
+  - - 7
+    - joris
+    - joris@greendreamproductions.nl
+    - 26
+    - false
+    - 6460840000.0
+    - 28211400000.0
+    - 19523800000.0
+    - 822577000.0
+    - 9233630000.0
+    - 0.178734
+    - 0.17611
+    - 1.8101
+    - 0.632178
+    - 2011-03-24 10:10:00 Z
+    - 2011-03-24 10:10:00 Z
+  - - 8
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 48
+    - false
+    - 1648460000.0
+    - 8920380000.0
+    - 4857910000.0
+    - 216638000.0
+    - 2831700000.0
+    - 0.385641
+    - 0.175276
+    - 1.52137
+    - 0.418925
+    - 2011-03-24 10:23:15 Z
+    - 2011-03-24 10:23:15 Z
 
 --- 
 users: 
@@ -1796,13 +2024,13 @@ users:
     - admin@quintel.com
     - $2a$10$nl0BjKW6G.mePRB3fvvAheHT9A9Xq51E/Fny1Zwj30f0fGdNFgc4C
     - $2a$10$nl0BjKW6G.mePRB3fvvAhe
-    - 4
+    - 5
+    - 2011-03-24 10:10:35 Z
     - 2011-03-24 08:20:29 Z
-    - 2011-03-24 08:20:13 Z
     - 62.194.161.249
-    - 77.168.118.215
+    - 62.194.161.249
     - 0
     - 
     - 
     - 2011-03-23 10:26:54 Z
-    - 2011-03-24 08:20:29 Z
+    - 2011-03-24 10:10:35 Z
