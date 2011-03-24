@@ -26,6 +26,9 @@ describe ScenariosController do
     before do
       2.times { Factory :question }
       2.times { Factory :dashboard_item }
+      a1 = Question.first.answers.first
+      a2 = Question.last.answers.first
+      a1.add_conflicting_answer(a2)
     end
 
     it "should be successful" do
