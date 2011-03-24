@@ -25,7 +25,7 @@ class Answer < ActiveRecord::Base
   attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_question_ids
   
   def conflicting_question_ids
-    conflicting_questions.split(",").map(&:to_i) rescue nil
+    conflicting_questions.split(",").map(&:to_i) rescue []
   end
   
   def conflicting_question_ids=(ids)
