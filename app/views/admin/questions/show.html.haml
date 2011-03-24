@@ -8,6 +8,7 @@
       %th #
       %th Antwoord
       %th Settings voor ETM
+      %th Conflicts with
       %th
       %th
   %tbody
@@ -22,6 +23,12 @@
                 %td= i.slider
                 %td= "##{i.slider_id} "
                 %td= i.value
+        %td
+          %table.small
+            - Answer.find(a.conflicting_question_ids).each do |answer|
+              %tr
+                %td= truncate(answer.question.question)
+                %td= link_to(truncate(answer.answer), edit_admin_answer_path(answer))
         %td= link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
         %td= link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
 
