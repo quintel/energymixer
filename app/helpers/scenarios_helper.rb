@@ -20,9 +20,18 @@ module ScenariosHelper
   
   def answers_conflicts_json
     out = {}
-    Answer.all.each do |a| 
-      out[a.id] = a.conflicting_question_ids if a.conflicting_question_ids
+    Answer.all.each do |a|
+      cqids = a.conflicting_question_ids
+      unless cqids.empty?
+        out[a.id] = cqids
+        # now let's update the opposite question
+        cqids.each do |q|
+          out[q] ||= []
+          out[q] << a.id
+        end
+      end
     end
+    out.each_pair{|k,v| v.uniq!}
     out.to_json
   end
   
