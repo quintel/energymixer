@@ -6,16 +6,14 @@
       %th Question Name
       %th Order
       %th
-      %th
-      %th
   %tbody
     - @questions.each do |question|
       %tr{:class => cycle('even', 'odd')}
         %td= link_to question.question, admin_question_path(question)
-        %td= question.ordering
-        %td= link_to '', admin_question_path(question), :class => 'fugue fugue-information'
-        %td= link_to '', edit_admin_question_path(question), :class => 'fugue fugue-pencil'
-        %td= link_to '', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+        %td= question.number
+        %td
+          = link_to '', edit_admin_question_path(question), :class => 'fugue fugue-pencil'
+          = link_to '', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
 
 #actions
   = link_to 'New Question', new_admin_question_path, :class => 'fugue fugue-plus'
