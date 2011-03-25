@@ -6,3 +6,4 @@ $("#selected .scenarios .scenario").each(function(){
   var scenario_id = $(this).data("scenario_id");
   $("#selectable .scenarios .scenario[data-scenario_id="+scenario_id+"]").hide();
 });
+$("#selectable").busy("clear");

@@ -162,6 +162,11 @@ body#scenarios_index
       font-size: 1.3em
   #selectable
     margin-right: 12px
+    #pagination
+      text-align: center
+      a
+        &:hover
+          color: red
   #form_footer
     @include shaded_box
     clear: both
@@ -169,7 +174,7 @@ body#scenarios_index
   .scenario
     @include shaded_box
     position: relative
-    width: 250px
+    width: 300
     padding: 5px
     margin: 5px
     &.featured
