@@ -25,6 +25,7 @@
 
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
+  = javascript_include_tag 'jquery.busy.min'
   :javascript
     $(function(){
       // let's deal with the back button
@@ -32,7 +33,7 @@
       $("#selected .scenario input").attr("checked", true);
       // adding an element
       $("#selectable .scenario input").live('change', function(){
-        if($("#selected .scenario input").length >= 4) {
+        if($("#selected .scenario input").length >= 5) {
           $(this).attr('checked', false);
           alert("You can select up to 5 scenarios");
           return false;
@@ -45,4 +46,10 @@
       $(this).attr('checked', false);
         $(this).parent().parent().appendTo("#selectable .scenarios");
       });
+      
+      $("body").ajaxStart(function(){
+        $("#selectable").busy({img: '/images/spinner.gif'});
+      });
     });
+    
+    

@@ -59,7 +59,7 @@ class Scenario < ActiveRecord::Base
   # shall we use SOLR/TS/?
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
   
-  paginates_per 20
+  paginates_per 10
     
   def carriers
     {
