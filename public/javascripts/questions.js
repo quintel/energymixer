@@ -36,29 +36,53 @@ function Questions() {
     return answers;
   };
   
+  // returns the question_number given the answer_id
+  // we're using this method to alert the user about
+  // conflicting answers
+  self.question_number_for_answer = function(answer_id) {
+    self.answers2questions = {};
+    $("div.question input:checked").each(function(el) {
+      self.answers2questions[$(this).val()] =  $(this).data('question_number');
+    });
+    return self.answers2questions[answer_id];
+  };
+  
   self.check_conflicts = function() {
-    var conflicts = false;    
+    var conflicts = false;
+    var conflicting_questions = [];
+        
     $.each(self.currently_selected_answers(), function(index, answer_id){
-      if(self.check_conflicting_answer(answer_id)) conflicts = true;
+      if(x = self.check_conflicting_answer(answer_id)) {
+        conflicts = true;
+        conflicting_questions.push(self.question_number_for_answer(answer_id));
+      }
     });
     
     if (conflicts) {
+      var text = conflicting_questions.join(" and ");
+      $("#questions #notice .conflicting_questions").html(text);
       $("#questions #notice").show();
     } else {
       $("#questions #notice").hide();
     }
   };
   
+  // returns false or the conflicting answer_id
   self.check_conflicting_answer = function(selected_answer_id) {
     var conflict = false;
     var currently_selected_answers = self.currently_selected_answers();
     $.each(currently_selected_answers, function(index, answer_id){
       var conflicting_answers = globals.answers_conflicts[answer_id];
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1) {
-        conflict = true;
+        conflict = selected_answer_id;
       }
     });
     return conflict;
+  };
+  
+  // return the question id given the answer id
+  self.get_answer_question_id = function(answer_id) {
+    
   };
   
   self.setup_callbacks = function() {
@@ -88,8 +112,8 @@ function Questions() {
     $("input[type='radio']").change(function(){
       $(this).parent().parent().find("li.answer").removeClass('active');
       $(this).parent().addClass('active');
-      self.check_conflicts();
       mixer.refresh();
+      self.check_conflicts();
     });
     
     // setup colorbox popups
@@ -109,6 +133,7 @@ function Questions() {
     
   self.init = function() {
     if($(".field_with_errors").length > 0) {
+      // show the final form tab
       self.current_question = self.count_questions();
     } else {
       self.current_question = 1;
