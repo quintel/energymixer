@@ -1,6 +1,7 @@
-%h2="Vraag #{@question.number}: #{@question.question}"
-.information
-  = @question.information
+.question
+  %h2="Vraag #{@question.number}: #{@question.question}"
+  .information
+    = markdown @question.information
 
 %table.striped
   %thead
@@ -9,7 +10,6 @@
       %th Antwoord
       %th Settings voor ETM
       %th Conflicts with
-      %th
       %th
   %tbody
     - @question.answers.ordered.each do |a|
@@ -29,8 +29,9 @@
               %tr
                 %td= truncate(answer.question.question)
                 %td= link_to(truncate(answer.answer), edit_admin_answer_path(answer))
-        %td= link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
-        %td= link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
+        %td
+          = link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
+          = link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
 
 #actions
   = link_to 'Edit', edit_admin_question_path(@question), :class => 'fugue fugue-pencil'
