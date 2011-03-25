@@ -9,7 +9,7 @@ answers:
   - created_at
   - updated_at
   - description
-  - conflicting_questions
+  - conflicting_answer_ids_string
   records: 
   - - 1
     - Even duur
