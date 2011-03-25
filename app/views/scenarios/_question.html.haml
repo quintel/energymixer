@@ -10,13 +10,11 @@
       = markdown(question_object.information)
   %ol.answers
     - question_object.answers.each do |a|
-      %li.answer
+      %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
         = answer.hidden_field :question_id
         = answer.radio_button :answer_id, a.id, 
                               :id  => "answer_#{a.id}",
                               :'data-question_id' => question_object.id
-        %label{:for => "answer_#{a.id}",
-               :id => "label_#{a.id}",
-               :class => ('active' if answer.object.answer_id == a.id)}
+        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
           .text
             = raw a.answer
