@@ -76,8 +76,13 @@ body#scenarios_new, body#scenarios_create
           &.active
             color: #f00
       #user_details
-        div
-          clear: both
+        .item
+          padding: 3px
+          .field_with_errors
+            background-color: #F6182C
+            float: left
+            position: relative
+            height: 36px
           label
             display: block
             float: left
@@ -88,8 +93,9 @@ body#scenarios_new, body#scenarios_create
             float: left
             padding: 5px
             width: 200px
+            margin: 4px
           input[type=submit]  
-            margin-left: 70px
+            margin-left: 74px
             width: 214px
             border: 1px solid #ccc
             margin-bottom: 20px

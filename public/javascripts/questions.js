@@ -108,7 +108,11 @@ function Questions() {
   };
     
   self.init = function() {
-    self.current_question = 1;
+    if($(".field_with_errors").length > 0) {
+      self.current_question = self.count_questions();
+    } else {
+      self.current_question = 1;
+    }
     self.setup_callbacks();
     self.show_right_question();
   };

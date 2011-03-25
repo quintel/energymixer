@@ -203,24 +203,30 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           display: none; }
         body#scenarios_new section#questions .question ol.answers li.answer.active, body#scenarios_create section#questions .question ol.answers li.answer.active {
           color: red; }
-    body#scenarios_new section#questions .question #user_details div, body#scenarios_create section#questions .question #user_details div {
-      clear: both; }
-      body#scenarios_new section#questions .question #user_details div label, body#scenarios_create section#questions .question #user_details div label {
+    body#scenarios_new section#questions .question #user_details .item, body#scenarios_create section#questions .question #user_details .item {
+      padding: 3px; }
+      body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
+        background-color: #f6182c;
+        float: left;
+        position: relative;
+        height: 36px; }
+      body#scenarios_new section#questions .question #user_details .item label, body#scenarios_create section#questions .question #user_details .item label {
         display: block;
         float: left;
         width: 60px;
         padding: 5px; }
-      body#scenarios_new section#questions .question #user_details div input, body#scenarios_create section#questions .question #user_details div input {
+      body#scenarios_new section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item input {
         display: block;
         float: left;
         padding: 5px;
-        width: 200px; }
-      body#scenarios_new section#questions .question #user_details div input[type=submit], body#scenarios_create section#questions .question #user_details div input[type=submit] {
-        margin-left: 70px;
+        width: 200px;
+        margin: 4px; }
+      body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
+        margin-left: 74px;
         width: 214px;
         border: 1px solid #cccccc;
         margin-bottom: 20px; }
-        body#scenarios_new section#questions .question #user_details div input[type=submit]:hover, body#scenarios_create section#questions .question #user_details div input[type=submit]:hover {
+        body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
           background-color: #f69409; }
   body#scenarios_new section#questions #notice, body#scenarios_create section#questions #notice {
     display: none;
