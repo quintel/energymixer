@@ -20,14 +20,14 @@ module ScenariosHelper
   
   def answers_conflicts_json
     out = {}
-    Answer.all.each do |a|
-      conf_ans_ids = a.conflicting_answer_ids
+    Answer.all.each do |answer|
+      conf_ans_ids = answer.conflicting_answer_ids
       unless conf_ans_ids.empty?
-        out[a.id] = conf_ans_ids
+        out[answer.id] = conf_ans_ids
         # now let's update the opposite question
         conf_ans_ids.each do |q|
           out[q] ||= []
-          out[q] << a.id
+          out[q] << answer.id
         end
       end
     end
