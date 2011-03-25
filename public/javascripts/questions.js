@@ -59,7 +59,7 @@ function Questions() {
     });
     
     if (conflicts) {
-      var text = conflicting_questions.join(" and ");
+      var text = unique(conflicting_questions).join(" and ");
       $("#questions #notice .conflicting_questions").html(text);
       $("#questions #notice").show();
     } else {
