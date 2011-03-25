@@ -12,13 +12,15 @@
     %h3 Choose
     .scenarios
       = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
+    #pagination
+      = paginate @scenarios, :remote => true
+    
   #selected
     %h3 Selected
     .scenarios
   #form_footer
     = submit_tag "Compare"
 
-= paginate @scenarios
 
 
 - content_for :head do
