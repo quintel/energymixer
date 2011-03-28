@@ -210,12 +210,13 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         display: block;
         float: left;
         width: 60px;
-        padding: 5px; }
+        padding: 5px;
+        text-align: right; }
       body#scenarios_new section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item input {
         display: block;
         float: left;
         padding: 5px;
-        width: 200px;
+        width: 270px;
         margin: 4px; }
       body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
         margin-left: 74px;
