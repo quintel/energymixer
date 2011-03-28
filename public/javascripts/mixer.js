@@ -34,12 +34,12 @@ function Mixer() {
       success: function(data){
         var key = data.api_scenario.api_session_key;
         self.session_id = key;
-        console.log("Fetched new session Key: " + key);
+        $.logThis("Fetched new session Key: " + key);
         // show data for the first time
         self.make_request();
       },
       error: function(request, status, error){
-        console.log(error);
+        $.logThis(error);
       }
     });
     return self.session_id;
@@ -90,14 +90,14 @@ function Mixer() {
       url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
       success: function(data){
-        // console.log("Got results : " + $.toJSON(data.result));
+        // $.logThis("Got results : " + $.toJSON(data.result));
         self.results = data;
         self.store_results();
         graph.refresh();
       },
       error: function(data, error){
         graph.unblock_interface();
-        console.log(error);
+        $.logThis(error);
       }
     });
     return true;
@@ -128,14 +128,14 @@ function Mixer() {
       var question_id = $(this).data('question_id');
       self.user_answers[question_id] = $(this).val();
     });
-    console.log("User answers : " + $.toJSON(self.user_answers));
+    $.logThis("User answers : " + $.toJSON(self.user_answers));
     self.build_parameters();
     self.debug_parameters();
     return self.parameters;
   };
 
   self.debug_parameters = function() {
-    console.log("Current parameters : " + $.toJSON(self.parameters));
+    $.logThis("Current parameters : " + $.toJSON(self.parameters));
   };
   
   // parses form, prepares parametes, makes ajax request and refreshes the graph
