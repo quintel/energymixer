@@ -7,16 +7,14 @@ body.admin
   padding: 0
   header
     margin: 0
-    background-color: #777
     @include gradient(#555555, #999999)
     h1
       margin: 0
       padding: .5em
-      color: white
+      color: #ffffff
     nav
       padding: .5em
       margin: 0
-      background-color: #ccc
       @include gradient(#eeeeee, #cccccc)
       a
         padding-right: 1em
@@ -24,7 +22,7 @@ body.admin
         border-right: 1px solid #ffffff
         text-decoration: none
         &.active
-          color: white
+          color: #ffffff
       .login_box
         font-size: .8em
         float: right
@@ -84,8 +82,6 @@ dl.small
   dt
     font-weight: bold
 
-@import "table.striped"
-
 body.answers
   form
     ul
@@ -96,8 +92,35 @@ body.answers
           li
             font-weight: normal
             font-size: .9em
+
 body#questions_show
   .question
     @include shaded_box
     padding: 1em
     margin-bottom: 1em
+
+table.striped
+  width: 100%
+  td
+    padding: .4em
+  thead
+    tr
+      @include gradient(#555555, #999999)
+      th
+        color: #ffffff
+        text-align: left
+        padding: .5em
+        font-weight: bold
+        border: 1px solid #ddd
+        font-weight: 300
+        &.small
+          font-size: .7em
+  tbody
+    tr
+      td
+        font-weight: 100
+        border: 1px solid #ddd
+        &.small
+          font-size: .7em
+    tr.even
+      background-color: #eee

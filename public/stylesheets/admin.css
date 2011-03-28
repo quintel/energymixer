@@ -51,9 +51,8 @@ body.admin {
   padding: 0; }
   body.admin header {
     margin: 0;
-    background-color: #777777;
     background-color: #555555;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#555555"}, endColorstr="#999999");
     background-image: -moz-linear-gradient(center top, #555555, #999999);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999)); }
     body.admin header h1 {
@@ -63,9 +62,8 @@ body.admin {
     body.admin header nav {
       padding: 0.5em;
       margin: 0;
-      background-color: #cccccc;
       background-color: #eeeeee;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#eeeeee"}, endColorstr="#cccccc");
       background-image: -moz-linear-gradient(center top, #eeeeee, #cccccc);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#cccccc)); }
       body.admin header nav a {
@@ -97,7 +95,7 @@ body.admin {
       border: 1px solid #eeeeee;
       padding: 1em 0.5em;
       background-color: #eeeeee;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#eeeeee"}, endColorstr="white");
       background-image: -moz-linear-gradient(center top, #eeeeee, white);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(white)); }
       body.admin #content #actions a {
@@ -135,16 +133,32 @@ dl.small {
   dl.small dt {
     font-weight: bold; }
 
+body.answers form ul li {
+  font-weight: bold; }
+  body.answers form ul li ol {
+    margin: 1em 0; }
+    body.answers form ul li ol li {
+      font-weight: normal;
+      font-size: 0.9em; }
+
+body#questions_show .question {
+  background-color: #fdfdfd;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
+  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
+  border: 1px solid #eee;
+  padding: 1em;
+  margin-bottom: 1em; }
+
 table.striped {
   width: 100%; }
   table.striped td {
     padding: 0.4em; }
   table.striped thead tr {
     background-color: #555555;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#555555"}, endColorstr="#999999");
     background-image: -moz-linear-gradient(center top, #555555, #999999);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999));
-    background-color: #aaaaaa; }
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999)); }
     table.striped thead tr th {
       color: white;
       text-align: left;
@@ -161,20 +175,3 @@ table.striped {
       font-size: 0.7em; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }
-
-body.answers form ul li {
-  font-weight: bold; }
-  body.answers form ul li ol {
-    margin: 1em 0; }
-    body.answers form ul li ol li {
-      font-weight: normal;
-      font-size: 0.9em; }
-
-body#questions_show .question {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
-  padding: 1em;
-  margin-bottom: 1em; }
