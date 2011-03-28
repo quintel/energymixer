@@ -14,10 +14,9 @@
       %td.money
         .background
           .coins
-    %tr
-      %td
-        = link_to 'solid', '#', :id => 'solid_view'
-        \|
-        = link_to '3d', '#', :id => '3d_view'
-      %td
+    %tr.footer
+      %td{:colspan => 2}
+        = link_to t('solid_view'), '#', :id => 'solid_view'
+        \-
+        = link_to t('3d_view'), '#', :id => '3d_view'
   

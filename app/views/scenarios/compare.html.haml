@@ -1,10 +1,11 @@
-%h2 comparing scenarios
+%h2= t('compare_scenarios')
 
 - if @scenarios.empty?
   Please select some scenarios first
 - @scenarios.each do |s|
   .scenario
-    .close_link= link_to "[x]", "#"
+    .close_link
+      = link_to "[x]", "#"
     De mix van:
     .name= s.name
     - if s.age
