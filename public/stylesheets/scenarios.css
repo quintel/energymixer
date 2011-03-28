@@ -271,6 +271,11 @@ body#scenarios_show .left {
     font-size: 1.2em; }
     body#scenarios_show .left .text .title {
       font-weight: bold; }
+    body#scenarios_show .left .text .link {
+      padding: 5px; }
+      body#scenarios_show .left .text .link a {
+        color: red;
+        font-size: 1.3em; }
   body#scenarios_show .left .boxes {
     margin-top: 10px; }
     body#scenarios_show .left .boxes .dashboard_item {

@@ -129,6 +129,10 @@ function Questions() {
       $(this).html(text_element.is(':visible') ? 'Lees minder' : 'Lees meer');
       return false;
     });
+    
+    $("form").submit(function(){
+      $("#scenario_id").val(mixer.scenario_id);
+    });
   };
     
   self.init = function() {
