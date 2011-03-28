@@ -23,8 +23,12 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
+      begin
+        MixerMailer.thankyou(@scenario).deliver
+      rescue
+        flash[:alert] = "There was an error sending the email"
+      end
       redirect_to scenario_path(@scenario), :notice => 'Scenario saved'
-      MixerMailer.thankyou(@scenario).deliver
     else
       setup_results
       render :new
