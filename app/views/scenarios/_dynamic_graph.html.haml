@@ -1,0 +1,23 @@
+#graph_container
+  %table.combined_graph
+    %tr
+      %td.total_amount{:colspan => 2}        
+        %h4 Scenario 2025
+        %span ...
+        Miljard
+    %tr
+      %td.carriers
+        .graph.textured
+          - @results.each do |_, item|
+            .carrier{:class => [item[:css_class], item[:gquery]]}
+              .label= item[:label]
+      %td.money
+        .background
+          .coins
+    %tr
+      %td
+        = link_to 'solid', '#', :id => 'solid_view'
+        \|
+        = link_to '3d', '#', :id => '3d_view'
+      %td
+  

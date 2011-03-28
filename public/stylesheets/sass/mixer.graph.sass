@@ -1,0 +1,122 @@
+@import "mixins"
+
+.dashboard_item
+  margin-bottom: 10px
+  height: 80px
+  @include shadow(#eee)
+  text-align: center
+  h3
+    text-align: right
+    padding: 5px
+    font-weight: bold
+    font-size: .7em
+    color: #073571
+  .value
+    overflow: hidden
+    font-size: 1.6em
+    padding: 5px
+    margin-top: 20px
+    text-align: right
+    font-weight: bold
+    color: #073574
+  &.energy_dependence_step_0
+    background-color: green
+  &.energy_dependence_step_1
+    background-color: yellow
+  &.energy_dependence_step_2
+    background-color: orange
+  &.energy_dependence_step_3
+    background-color: red
+  &.co2_emission_final_demand_to_1990_in_percent_step_0
+    background-color: green
+  &.co2_emission_final_demand_to_1990_in_percent_step_1
+    background-color: yellow
+  &.co2_emission_final_demand_to_1990_in_percent_step_2
+    background-color: orange
+  &.co2_emission_final_demand_to_1990_in_percent_step_3
+    background-color: red
+  &.share_of_renewable_energy_step_0
+    background-color: red
+  &.share_of_renewable_energy_step_1
+    background-color: orange
+  &.share_of_renewable_energy_step_2
+    background-color: yellow
+  &.share_of_renewable_energy_step_3
+    background-color: green
+  &.area_footprint_per_nl_step_0
+    background-color: green
+  &.area_footprint_per_nl_step_1
+    background-color: yellow
+  &.area_footprint_per_nl_step_2
+    background-color: orange
+  &.area_footprint_per_nl_step_3
+    background-color: red
+
+.static_graph
+  border:  1px solid red
+  width: 90px
+
+table.combined_graph
+  width: 120px
+  text-align: center
+  margin: 0 auto
+  td
+    padding: 4px
+  td.carriers
+    width: 70%
+    vertical-align: bottom
+    .graph
+      .carrier
+        height: 20%
+        width: 90%
+        margin-bottom: 2px
+        text-decoration: none
+        color: white
+        font-size: 8px
+        font-weight: bold
+      &.textured
+        .carrier
+          &.oil
+            background: url('/images/texture_oil.png')
+          &.gas
+            background: url('/images/texture_gas.png')
+          &.coal
+            background: url('/images/texture_coal.png')
+          &.renewable
+            background: url('/images/texture_renewable.png')
+          &.nuclear
+            background: url('/images/texture_nuclear.png')
+      &.solid
+        .carrier
+          &.oil
+            background: #413E3D
+          &.gas
+            background: #7D9DDD
+          &.coal
+            background: #573403
+          &.nuclear
+            background: #FCDA0B
+          &.renewable
+            background: #39BF06          
+  td.money
+    width: 30%
+    vertical-align: bottom  
+    .background
+      width: 80%
+      height: 308px
+      background: #eee
+      position: relative
+      margin-bottom: 2px
+      .coins
+        width: 100%
+        background: #C7CB09 url('images/coin_texture.png')
+        height: 308px
+        position: absolute
+        bottom: 0px
+  td.total_amount
+    @include shaded_box
+    color: #0B3378
+    text-align: center
+    h4
+      font-weight: bold
+

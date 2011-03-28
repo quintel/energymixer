@@ -1,0 +1,27 @@
+%nav#up
+  - Question.ordered.each do |question|
+    %a{:href  => "#",
+       :class => 'question_tab',
+       :'data-question_id' => question.number}
+      =question.number
+  - last_question_number = Question.count + 1
+  %a{:href  => "#",
+     :class => 'question_tab',
+     :'data-question_id' => last_question_number}Submit
+      
+%div
+  = form_for @scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
+    = scenario.fields_for :answers do |answer|
+      = render :partial => 'question', :locals => { :answer => answer}
+    = render :partial => 'user_details', :locals => { :scenario => scenario}
+%nav#down
+  %a{ :href => "#", :id => "previous_question"}
+    previous        
+  %a{ :href => "#", :id => "next_question"}
+    next
+#notice
+  The answers you gave on questions 
+  %span.conflicting_questions
+  are potentially conflicting.
+  %br
+  Are you sure this combination of answers will describe our future in 2025?

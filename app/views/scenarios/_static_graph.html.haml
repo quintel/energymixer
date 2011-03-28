@@ -1,0 +1,35 @@
+- graph_max_height = 290
+- current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height;
+
+%table.combined_graph
+  %tr
+    %td.total_amount{:colspan => 2}      
+      %h4 Scenario 2025
+      %span= number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 2)
+      Miljard      
+  %tr
+    %td.carriers
+      .graph.textured
+        - scenario.carriers.each_pair do |key, v|
+          - height = v[:ratio] * current_graph_height
+          .carrier{:class => key, :style => "height: #{height}px"}
+            .label= v[:label] if height > 5
+    %td.money
+      .background
+        .coins{:style => "height: #{current_graph_height + 6}px"}
+
+  - if defined?(inline_dashboard) && inline_dashboard
+    %tr
+      %td{:colspan => 2}
+        .dashboard_item{:class => set_class_for_output(:output_5, scenario.output_5)}
+          %h3= dashboard_label_for_output(:output_5)
+          .value= format_dashboard_value(:output_5, scenario.output_5)
+        .dashboard_item{:class => set_class_for_output(:output_6, scenario.output_6)}
+          %h3= dashboard_label_for_output(:output_6)
+          .value= format_dashboard_value(:output_6, scenario.output_6)
+        .dashboard_item{:class => set_class_for_output(:output_7, scenario.output_7)}
+          %h3= dashboard_label_for_output(:output_7)
+          .value= format_dashboard_value(:output_7, scenario.output_7)
+        .dashboard_item{:class => set_class_for_output(:output_8, scenario.output_8)}
+          %h3= dashboard_label_for_output(:output_8)
+          .value= format_dashboard_value(:output_8, scenario.output_8)

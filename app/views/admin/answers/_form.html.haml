@@ -1,0 +1,24 @@
+= semantic_form_for [:admin, @answer] do |f|
+  = f.inputs do
+    = f.input :answer
+    = f.input :description
+    = f.input :ordering
+    %h3 Inputs
+    = f.semantic_fields_for :inputs do |i|
+      = i.inputs do
+        = i.input :slider_id, :as => :select, :collection => Input::KEYS.invert.sort
+        = i.input :value
+        = i.input :_destroy, :as => :boolean unless i.object.new_record?
+    %h3 Conflicts
+    %ul
+      - Question.ordered.each do |q|
+        %li
+          \##{q.number}
+          = q.question
+          %ol
+            - q.answers.each do |a|
+              %li
+                - unless @answer.question_id == q.id
+                  = check_box_tag("answer[conflicting_answer_ids][]", a.id, @answer.conflicting_answer_ids.include?(a.id))
+                = a.answer
+    = f.buttons

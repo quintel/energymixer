@@ -1,0 +1,22 @@
+%h2 comparing scenarios
+
+- if @scenarios.empty?
+  Please select some scenarios first
+- @scenarios.each do |s|
+  .scenario
+    .close_link= link_to "[x]", "#"
+    De mix van:
+    .name= s.name
+    - if s.age
+      .age (#{s.age} jaar)
+    = render :partial => 'static_graph', :locals => { :scenario => s, :inline_dashboard => true }
+
+- content_for :head do
+  = stylesheet_link_tag 'mixer.graph'
+  = stylesheet_link_tag 'scenarios'
+  :javascript
+    $(function(){
+      $(".scenario .close_link a").click(function(){
+        $(this).parent().parent().hide();
+      });
+    });

@@ -1,0 +1,122 @@
+.dashboard_item {
+  margin-bottom: 10px;
+  height: 80px;
+  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
+  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
+  box-shadow: 0 2px 3px 3px #eeeeee;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  text-align: center; }
+  .dashboard_item h3 {
+    text-align: right;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: #073571; }
+  .dashboard_item .value {
+    overflow: hidden;
+    font-size: 1.6em;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #073574; }
+  .dashboard_item.energy_dependence_step_0 {
+    background-color: green; }
+  .dashboard_item.energy_dependence_step_1 {
+    background-color: yellow; }
+  .dashboard_item.energy_dependence_step_2 {
+    background-color: orange; }
+  .dashboard_item.energy_dependence_step_3 {
+    background-color: red; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
+    background-color: green; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
+    background-color: yellow; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
+    background-color: orange; }
+  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_0 {
+    background-color: red; }
+  .dashboard_item.share_of_renewable_energy_step_1 {
+    background-color: orange; }
+  .dashboard_item.share_of_renewable_energy_step_2 {
+    background-color: yellow; }
+  .dashboard_item.share_of_renewable_energy_step_3 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_0 {
+    background-color: green; }
+  .dashboard_item.area_footprint_per_nl_step_1 {
+    background-color: yellow; }
+  .dashboard_item.area_footprint_per_nl_step_2 {
+    background-color: orange; }
+  .dashboard_item.area_footprint_per_nl_step_3 {
+    background-color: red; }
+
+.static_graph {
+  border: 1px solid red;
+  width: 90px; }
+
+table.combined_graph {
+  width: 120px;
+  text-align: center;
+  margin: 0 auto; }
+  table.combined_graph td {
+    padding: 4px; }
+  table.combined_graph td.carriers {
+    width: 70%;
+    vertical-align: bottom; }
+    table.combined_graph td.carriers .graph .carrier {
+      height: 20%;
+      width: 90%;
+      margin-bottom: 2px;
+      text-decoration: none;
+      color: white;
+      font-size: 8px;
+      font-weight: bold; }
+    table.combined_graph td.carriers .graph.textured .carrier.oil {
+      background: url("/images/texture_oil.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.gas {
+      background: url("/images/texture_gas.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.coal {
+      background: url("/images/texture_coal.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.renewable {
+      background: url("/images/texture_renewable.png"); }
+    table.combined_graph td.carriers .graph.textured .carrier.nuclear {
+      background: url("/images/texture_nuclear.png"); }
+    table.combined_graph td.carriers .graph.solid .carrier.oil {
+      background: #413e3d; }
+    table.combined_graph td.carriers .graph.solid .carrier.gas {
+      background: #7d9ddd; }
+    table.combined_graph td.carriers .graph.solid .carrier.coal {
+      background: #573403; }
+    table.combined_graph td.carriers .graph.solid .carrier.nuclear {
+      background: #fcda0b; }
+    table.combined_graph td.carriers .graph.solid .carrier.renewable {
+      background: #39bf06; }
+  table.combined_graph td.money {
+    width: 30%;
+    vertical-align: bottom; }
+    table.combined_graph td.money .background {
+      width: 80%;
+      height: 308px;
+      background: #eeeeee;
+      position: relative;
+      margin-bottom: 2px; }
+      table.combined_graph td.money .background .coins {
+        width: 100%;
+        background: #c7cb09 url("images/coin_texture.png");
+        height: 308px;
+        position: absolute;
+        bottom: 0px; }
+  table.combined_graph td.total_amount {
+    background: #eeeeee;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+    background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+    background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+    border: 1px solid #eee;
+    color: #0b3378;
+    text-align: center; }
+    table.combined_graph td.total_amount h4 {
+      font-weight: bold; }

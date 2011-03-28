@@ -115,11 +115,27 @@ body.admin {
   body.admin .flash#notice {
     color: green;
     background-color: #7bff76; }
+  body.admin dl.admin dt {
+    font-weight: bold; }
+  body.admin dl.admin dd {
+    margin-left: 10px;
+    margin: 5px; }
+
+nav.pagination {
+  text-align: center;
+  border: 1px solid #eeeeee;
+  padding: 0.5em;
+  margin-top: 0.5em; }
+
+table.small tr td {
+  font-size: 0.7em;
+  padding: 1px;
+  border: 0; }
 
 table.striped {
   width: 100%; }
   table.striped td {
-    padding: 0.5em; }
+    padding: 0.4em; }
   table.striped thead tr {
     background: #999999;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
@@ -133,9 +149,29 @@ table.striped {
       font-weight: bold;
       border: 1px solid #dddddd;
       font-weight: 300; }
+      table.striped thead tr th.small {
+        font-size: 0.7em; }
   table.striped tbody tr td {
     font-weight: 100;
-    font-size: 0.9em;
     border: 1px solid #dddddd; }
+    table.striped tbody tr td.small {
+      font-size: 0.7em; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }
+
+body.answers form ul li {
+  font-weight: bold; }
+  body.answers form ul li ol {
+    margin: 1em 0; }
+    body.answers form ul li ol li {
+      font-weight: normal;
+      font-size: 0.9em; }
+
+body#questions_show .question {
+  background: #eeeeee;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#eeeeee));
+  background: -moz-linear-gradient(top, #fdfdfd, #eeeeee);
+  border: 1px solid #eee;
+  padding: 1em;
+  margin-bottom: 1em; }

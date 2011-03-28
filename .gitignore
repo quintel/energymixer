@@ -5,3 +5,7 @@ tmp/**/*
 coverage
 *.swp
 *.tmproj
+.DS_Store
+.tmtags
+.rvmrc
+
