@@ -3,9 +3,7 @@
   %head
     %title EnergyMixer
     = stylesheet_link_tag 'all', 'colorbox'
-    = javascript_include_tag :defaults
-    = javascript_include_tag 'jquery.colorbox-min'
-    = javascript_include_tag 'console'
+    = javascript_include_tag 'jquery.min', 'rails', 'jquery.colorbox-min', 'console', 'application'
     /[if lt IE 9]
       = javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js"
     = csrf_meta_tag
