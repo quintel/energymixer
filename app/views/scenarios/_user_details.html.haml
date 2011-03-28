@@ -1,5 +1,6 @@
 .question{:id => "question_#{Question.count + 1}"}
   #user_details
+    = scenario.error_messages
     %div.item
       = scenario.label :name
       = scenario.text_field :name

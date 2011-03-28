@@ -10,6 +10,7 @@ gem 'formtastic',   '~> 1.2.3'
 gem 'kaminari', '~> 0.10.4'
 gem 'bluecloth', '~> 2.1.0'
 gem 'yaml_db', '~> 0.2.0'
+gem 'dynamic_form', '~>1.1.3'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'

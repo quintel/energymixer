@@ -224,6 +224,18 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         margin-bottom: 20px; }
         body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
           background-color: #f69409; }
+    body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
+      border: 1px solid red;
+      margin: 3px 3px 20px 3px; }
+      body#scenarios_new section#questions .question #user_details #errorExplanation h2, body#scenarios_create section#questions .question #user_details #errorExplanation h2 {
+        padding: 5px;
+        background-color: red;
+        color: white;
+        font-size: 1.3em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid; }
+      body#scenarios_new section#questions .question #user_details #errorExplanation p, body#scenarios_new section#questions .question #user_details #errorExplanation ul, body#scenarios_create section#questions .question #user_details #errorExplanation p, body#scenarios_create section#questions .question #user_details #errorExplanation ul {
+        padding: 5px; }
   body#scenarios_new section#questions #notice, body#scenarios_create section#questions #notice {
     display: none;
     text-align: center;
