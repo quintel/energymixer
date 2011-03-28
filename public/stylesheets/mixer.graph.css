@@ -61,7 +61,8 @@
 table.combined_graph {
   width: 120px;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: 1px solid #eeeeee; }
   table.combined_graph td {
     padding: 4px; }
   table.combined_graph td.carriers {
@@ -120,3 +121,5 @@ table.combined_graph {
     text-align: center; }
     table.combined_graph td.total_amount h4 {
       font-weight: bold; }
+  table.combined_graph tr.footer {
+    color: #cccccc; }

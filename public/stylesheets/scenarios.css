@@ -61,7 +61,8 @@
 table.combined_graph {
   width: 120px;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: 1px solid #eeeeee; }
   table.combined_graph td {
     padding: 4px; }
   table.combined_graph td.carriers {
@@ -120,6 +121,8 @@ table.combined_graph {
     text-align: center; }
     table.combined_graph td.total_amount h4 {
       font-weight: bold; }
+  table.combined_graph tr.footer {
+    color: #cccccc; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 180px;
@@ -352,15 +355,21 @@ body#scenarios_index .scenario {
     font-style: italic;
     color: #777777; }
 
+body#scenarios_compare h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px; }
 body#scenarios_compare .scenario {
   padding: 3px;
-  border: 1px solid #cccccc;
+  border: 1px solid #eeeeee;
   float: left;
   margin: 5px; }
   body#scenarios_compare .scenario .name {
+    margin: 5px 0px;
     font-weight: bold; }
   body#scenarios_compare .scenario .age {
     font-style: italic;
-    margin-bottom: 5px; }
+    margin-bottom: 10px; }
   body#scenarios_compare .scenario .close_link {
-    float: right; }
+    text-align: right;
+    background-color: #fb6a6f;
+    padding: 3px; }
