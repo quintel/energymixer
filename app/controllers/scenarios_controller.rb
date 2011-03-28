@@ -23,6 +23,7 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
+      session[:scenario_id] = params[:scenario_id]
       begin
         MixerMailer.thankyou(@scenario).deliver
       rescue
@@ -36,6 +37,7 @@ class ScenariosController < ApplicationController
   end
   
   def show
+    @scenario_id = session.delete(:scenario_id)
   end
   
   def index

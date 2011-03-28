@@ -12,6 +12,7 @@ function Mixer() {
   
   self.base_path    = globals.api_base_path;
   self.session_id   = false;
+  self.scenario_id  = false;
   self.parameters   = {}; // parameters set according to user answers
   self.results      = {}; // semiraw response from the engine
   self.user_answers = {}; // right from the form
@@ -32,8 +33,10 @@ function Mixer() {
       dataType: 'jsonp',
       data: { settings : globals.api_session_settings },
       success: function(data){
-        var key = data.api_scenario.api_session_key;
-        self.session_id = key;
+        var key          = data.api_scenario.api_session_key;
+        var scenario_id  = data.api_scenario.id;
+        self.session_id  = key;
+        self.scenario_id = scenario_id;
         $.logThis("Fetched new session Key: " + key);
         // show data for the first time
         self.make_request();
