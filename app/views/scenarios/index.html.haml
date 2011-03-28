@@ -18,6 +18,8 @@
   #selected
     %h3 Selected
     .scenarios
+      - if @selected_scenario
+        = render :partial => 'select_scenario_box', :object => @selected_scenario, :as => :scenario
   #form_footer
     = submit_tag "Compare"
 
