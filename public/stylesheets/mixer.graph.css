@@ -4,7 +4,7 @@
   -moz-box-shadow: 0 2px 3px 3px #eeeeee;
   -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
   box-shadow: 0 2px 3px 3px #eeeeee;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#eeeeee')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
   text-align: center; }
   .dashboard_item h3 {
@@ -112,7 +112,7 @@ table.combined_graph {
         bottom: 0px; }
   table.combined_graph td.total_amount {
     background-color: #fdfdfd;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
     background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
     border: 1px solid #eee;
