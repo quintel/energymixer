@@ -6,14 +6,14 @@
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
 }
 
-@mixin gradient($first, $second) {
-  background: $second;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
-  background: -moz-linear-gradient(top,  $first,  $second);
+@mixin gradient($color1, $color2) {
+  background-color: $color1;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+  background-image: -moz-linear-gradient(center top, $color1, $color2);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
 }
 
 @mixin shaded_box {
-  @include gradient(#fdfdfd, #eee);
+  @include gradient(#fdfdfd, #eeeeee);
   border: 1px solid #eee;
 }
