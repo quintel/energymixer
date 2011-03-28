@@ -1,4 +1,5 @@
 development: &DEV
+  hostname: "localhost:3000"
   api_base_path: "http://staging.et-model.com/api/v1/api_scenarios/"
   api_session_settings:
     :country: 'nl'
@@ -8,3 +9,4 @@ test:
   <<: *DEV
 production:
   <<: *DEV
+  hostname: "mixer.et-model.com"
