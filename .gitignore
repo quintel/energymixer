@@ -7,3 +7,5 @@ coverage
 *.tmproj
 .DS_Store
 .tmtags
+.rvmrc
+
