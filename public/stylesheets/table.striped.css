@@ -3,10 +3,10 @@ table.striped {
   table.striped td {
     padding: 0.4em; }
   table.striped thead tr {
-    background: #999999;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-    background: -webkit-gradient(linear, left top, left bottom, from(#555555), to(#999999));
-    background: -moz-linear-gradient(top, #555555, #999999);
+    background-color: #555555;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='$color'}, endColorstr='$color2');
+    background-image: -moz-linear-gradient(center top, #555555, #999999);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999));
     background-color: #aaaaaa; }
     table.striped thead tr th {
       color: white;
