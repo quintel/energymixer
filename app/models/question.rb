@@ -16,8 +16,11 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :answers, :allow_destroy => true, :reject_if => proc {|attrs| attrs['answer'].blank? }
 
   validates :question, :presence => true
-  
+
   scope :ordered, order('ordering, id')
+  scope :excluding, lambda {|ids| where('id NOT IN (?)', ids) }
+  
+  attr_accessible :question, :ordering, :information, :answers_attributes
   
   def number
     ordering + 1 rescue nil

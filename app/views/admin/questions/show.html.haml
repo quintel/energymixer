@@ -1,0 +1,39 @@
+.question
+  %h2="Vraag #{@question.number}: #{@question.question}"
+  .information
+    = markdown @question.information
+
+%table.striped
+  %thead
+    %tr
+      %th #
+      %th Antwoord
+      %th Settings voor ETM
+      %th Conflicts with
+      %th
+  %tbody
+    - @question.answers.ordered.each do |a|
+      %tr{:class => cycle('even', 'odd')}
+        %td= a.ordering
+        %td= a.answer
+        %td
+          %table.small
+            - a.inputs.each do |i|
+              %tr
+                %td= i.slider
+                %td= "##{i.slider_id} "
+                %td= i.value
+        %td
+          %table.small
+            - a.conflicting_answers.each do |answer|
+              %tr
+                %td= truncate(answer.question.question)
+                %td= link_to(truncate(answer.answer), edit_admin_answer_path(answer))
+        %td
+          = link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
+          = link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
+
+#actions
+  = link_to 'Edit', edit_admin_question_path(@question), :class => 'fugue fugue-pencil'
+  = link_to 'Back', admin_questions_path
+  = link_to 'Destroy', admin_question_path(@question), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'

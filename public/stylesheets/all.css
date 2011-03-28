@@ -45,19 +45,69 @@ a {
   text-decoration: none;
   color: inherit; }
 
+.clear {
+  clear: both; }
+
 body {
+  width: 960px;
+  margin: 0 auto;
   font-family: verdana, helvetica;
   font-size: 11px; }
-  body header {
-    border-bottom: 1px solid #cccccc;
-    margin-bottom: 20px; }
-    body header h1 {
-      font-weight: bold; }
+  body header#shell {
+    margin-top: 30px;
+    height: 90px; }
+  body #sidebar {
+    float: left;
+    width: 230px;
+    margin-right: 10px;
+    margin-top: 30px; }
+  body #main {
+    width: 720px;
+    float: left; }
+    body #main header {
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 20px; }
+      body #main header h1 {
+        font-weight: bold; }
+      body #main header nav#top {
+        padding: 1em; }
+        body #main header nav#top a {
+          font-size: 1.2em; }
+    body #main .flash {
+      text-align: center;
+      border: 1px solid;
+      padding: 1em;
+      font-weight: bold;
+      margin-bottom: 5px; }
+    body #main .flash#alert {
+      color: red;
+      background-color: #fdbbbc; }
+    body #main .flash#notice {
+      color: green;
+      background-color: #7bff76; }
+
+body.sessions #content h2, body.unlocks #content h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em; }
+body.sessions #content form, body.unlocks #content form {
+  margin-bottom: 1em; }
+  body.sessions #content form label, body.unlocks #content form label {
+    padding: 0.2em;
+    font-size: 1.4em;
+    display: block; }
+  body.sessions #content form input, body.unlocks #content form input {
+    padding: 0.2em;
+    font-size: 1.3em;
+    width: 300px; }
+  body.sessions #content form input[type=submit], body.unlocks #content form input[type=submit] {
+    margin-top: 1em; }
+body.sessions #content a, body.unlocks #content a {
+  padding: 1em; }
 
 table.striped {
   width: 100%; }
   table.striped td {
-    padding: 0.5em; }
+    padding: 0.4em; }
   table.striped thead tr {
     background: #999999;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
@@ -71,9 +121,12 @@ table.striped {
       font-weight: bold;
       border: 1px solid #dddddd;
       font-weight: 300; }
+      table.striped thead tr th.small {
+        font-size: 0.7em; }
   table.striped tbody tr td {
     font-weight: 100;
-    font-size: 0.9em;
     border: 1px solid #dddddd; }
+    table.striped tbody tr td.small {
+      font-size: 0.7em; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }

@@ -1,0 +1,21 @@
+%h2 Answer details
+
+%p
+  %b Answer:
+  = @answer.answer
+%p
+  %b Order:
+  = @answer.ordering
+%p
+  %b Question:
+  = @answer.question_id
+
+%h2 Inputs
+%dl
+  - @answer.inputs.each do |i|
+    %dt= i.slider
+    %dd= i.value
+
+#actions
+  = link_to 'Edit', edit_admin_answer_path(@answer), :class => 'fugue fugue-pencil'
+  = link_to 'Back', admin_question_path(@answer.question)

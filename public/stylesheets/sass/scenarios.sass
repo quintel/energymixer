@@ -1,0 +1,211 @@
+@import 'mixins'
+@import 'mixer.graph'
+
+body#scenarios_new, body#scenarios_create
+  section#results
+    width: 180px
+    float: left
+  section#dashboard
+    // The graph and dashboard items style is defined in mixer.graph.sass
+    width: 120px
+    float: left
+  section#questions
+    width: 420px
+    float: left
+    @include gradient(#fdfdfd, #eee)
+    @include shadow(#ddd)
+    line-height: 1.5em
+    background-color: #eee
+    nav
+      @include shaded_box      
+      display: block
+      text-align: center
+      height: 20px
+      padding: 4px
+      font-size: 10px
+      a
+        margin: 0 5px
+        color: #bbb
+        font-weight: bold      
+      &#up
+        a.active
+          color: red
+        a:hover
+          color: #D70000
+      &#down
+        clear: both
+        a:hover
+          color: #D70000
+    .question
+      padding: 10px
+      .information
+        margin-bottom: 5px
+        strong
+          font-weight: bold
+        a
+          color: blue
+      .number
+        font-weight: bold
+        width: 5%
+        float: left
+      .question_text
+        font-weight: bold
+      ol.answers
+        padding-left: 20px
+        margin-left: 0
+        border-top: 1px solid #ccc
+        margin-top: 5px
+        padding-top: 5px
+        li.answer
+          margin-left: 0
+          font-weight: bold
+          list-style-type: upper-alpha
+          margin-bottom: 15px
+          clear: both
+          label
+            font-weight: normal
+            &:hover
+              color: #FF7F00
+              cursor: pointer            
+          input[type=radio]
+            display: none
+          &.active
+            color: #f00
+      #user_details
+        .item
+          padding: 3px
+          .field_with_errors
+            background-color: #F6182C
+            float: left
+            position: relative
+            height: 36px
+          label
+            display: block
+            float: left
+            width: 60px
+            padding: 5px
+          input
+            display: block
+            float: left
+            padding: 5px
+            width: 200px
+            margin: 4px
+          input[type=submit]  
+            margin-left: 74px
+            width: 214px
+            border: 1px solid #ccc
+            margin-bottom: 20px
+            &:hover
+              background-color: #F69409
+        #errorExplanation
+          border: 1px solid red
+          margin: 3px 3px 20px 3px
+          h2
+            padding: 5px
+            background-color: red
+            color: white
+            font-size: 1.3em
+            margin-bottom: .5em
+            border-bottom: 1px solid
+          p, ul
+            padding: 5px
+    #notice
+      display: none
+      text-align: center
+      color: red
+  .question_popup
+    h1
+      font-size: 1.5em
+      font-weight: bold
+      margin-bottom: .7em
+
+body#scenarios_show
+  .top
+    @include shaded_box
+    height: 80px
+    margin-bottom: 10px
+    padding: 10px
+    h2
+      font-size: 1.4em
+      font-weight: bold
+      margin-bottom: 1em
+  .left
+    width: 50%
+    float: left
+    .text
+      @include shaded_box
+      padding: 1.5em
+      font-size: 1.2em
+      .title
+        font-weight: bold
+    .boxes
+      margin-top: 10px
+      .dashboard_item
+        float: left
+        width: 150px
+        margin: 12px
+  .right
+    width: 40%
+    float: left
+    .combined_graph
+      width: 160px
+
+body#scenarios_index
+  #search_form
+    @include shaded_box
+    padding: 1em
+    h2
+      font-size: 1.5em
+      margin-bottom: 1em
+    p
+      margin-bottom: 1em
+  #selectable, #selected
+    @include shaded_box
+    padding: 1em
+    margin-top: 12px
+    margin-bottom: 12px
+    float: left
+    width: 330px
+    h3
+      font-size: 1.3em
+  #selectable
+    margin-right: 12px
+    #pagination
+      text-align: center
+      a
+        &:hover
+          color: red
+  #form_footer
+    @include shaded_box
+    clear: both
+    padding: 1em
+  .scenario
+    @include shaded_box
+    position: relative
+    width: 300
+    padding: 5px
+    margin: 5px
+    &.featured
+      @include gradient(#B9FF4D, #E1FF0B)
+    .actions
+      float: right
+    .name
+      font-weight: bold
+      margin-bottom: 4px
+    .age
+      font-style: italic
+      color: #777
+
+body#scenarios_compare
+  .scenario
+    padding: 3px
+    border: 1px solid #ccc
+    float: left
+    margin: 5px
+    .name
+      font-weight: bold
+    .age
+      font-style: italic
+      margin-bottom: 5px
+    .close_link
+      float: right

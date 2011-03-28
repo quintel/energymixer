@@ -18,6 +18,9 @@ form.formtastic fieldset {
       font-size: 0.8em;
       padding: 0.5em;
       border: 1px solid #dddddd; }
+    form.formtastic fieldset ol li p.inline-hints {
+      font-size: 0.7em;
+      margin-left: 15%; }
   form.formtastic fieldset h3 {
     padding: 0.2em 0.5em;
     font-size: 1.3em;

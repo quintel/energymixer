@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110311111008) do
+ActiveRecord::Schema.define(:version => 20110324145610) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -19,10 +19,22 @@ ActiveRecord::Schema.define(:version => 20110311111008) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.string   "conflicting_answer_ids_string"
   end
 
   add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+
+  create_table "dashboard_items", :force => true do |t|
+    t.string   "gquery"
+    t.string   "label"
+    t.string   "steps"
+    t.integer  "ordering"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dashboard_items", ["ordering"], :name => "index_dashboard_items_on_ordering"
 
   create_table "inputs", :force => true do |t|
     t.decimal  "value",      :precision => 10, :scale => 2
@@ -34,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20110311111008) do
 
   add_index "inputs", ["answer_id"], :name => "index_inputs_on_answer_id"
 
+  create_table "popups", :force => true do |t|
+    t.string   "code"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "popups", ["code"], :name => "index_popups_on_code"
+
   create_table "questions", :force => true do |t|
     t.string   "question"
     t.integer  "ordering"
@@ -43,6 +65,37 @@ ActiveRecord::Schema.define(:version => 20110311111008) do
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
+
+  create_table "scenario_answers", :force => true do |t|
+    t.integer  "scenario_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scenario_answers", ["question_id"], :name => "index_user_scenario_answers_on_question_id"
+  add_index "scenario_answers", ["scenario_id"], :name => "index_user_scenario_answers_on_user_scenario_id"
+
+  create_table "scenarios", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "age"
+    t.boolean  "featured"
+    t.float    "output_0"
+    t.float    "output_1"
+    t.float    "output_2"
+    t.float    "output_3"
+    t.float    "output_4"
+    t.float    "output_5"
+    t.float    "output_6"
+    t.float    "output_7"
+    t.float    "output_8"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
 
   create_table "users", :force => true do |t|
     t.string   "email",                             :default => "", :null => false

@@ -5,7 +5,6 @@ namespace :users do
     user = User.new(:email => 'admin@quintel.com', :password => password)
     if user.save
       puts 'Successfully created admin user.'
-
     else
       puts user.errors.full_messages.to_sentence
     end

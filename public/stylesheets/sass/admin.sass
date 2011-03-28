@@ -28,13 +28,11 @@ body.admin
       .login_box
         font-size: .8em
         float: right
-
   a
     color: #000066
     text-decoration: underline
     &:hover
       color: red
-
   #content
     padding: .5em
     h1
@@ -52,7 +50,6 @@ body.admin
       a
         text-decoration: none
         margin-right: 1em
-
   .flash
     text-align: center
     border: 1px solid
@@ -65,5 +62,40 @@ body.admin
   .flash#notice
     color: green
     background-color: #7BFF76
+  dl.admin
+    dt
+      font-weight: bold
+    dd
+      margin-left: 10px
+      margin: 5px
+
+nav.pagination
+  text-align: center
+  border: 1px solid #eee
+  padding: .5em
+  margin-top: .5em
+
+table.small
+  tr
+    td
+      font-size: .7em
+      padding: 1px
+      border: 0
 
 @import "table.striped"
+
+body.answers
+  form
+    ul
+      li
+        font-weight: bold
+        ol
+          margin: 1em 0
+          li
+            font-weight: normal
+            font-size: .9em
+body#questions_show
+  .question
+    @include shaded_box
+    padding: 1em
+    margin-bottom: 1em
