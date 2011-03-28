@@ -241,11 +241,11 @@ body#scenarios_show .top {
   border: 1px solid #eee;
   height: 80px;
   margin-bottom: 10px;
-  padding: 5px; }
+  padding: 10px; }
   body#scenarios_show .top h2 {
     font-size: 1.4em;
     font-weight: bold;
-    margin-bottom: 0.4em; }
+    margin-bottom: 1em; }
 body#scenarios_show .left {
   width: 50%;
   float: left; }
