@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.5.0)
     abstract (1.0.0)
     actionmailer (3.0.5)
       actionpack (= 3.0.5)
@@ -32,8 +31,6 @@ GEM
     annotate (2.4.0)
     archive-tar-minitar (0.5.2)
     arel (2.0.9)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
     awesome_print (0.3.2)
     bcrypt-ruby (2.1.4)
     bluecloth (2.1.0)
@@ -149,6 +146,7 @@ GEM
     tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
+    watchr (0.7)
     yaml_db (0.2.0)
 
 PLATFORMS
@@ -156,7 +154,6 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  autotest (~> 4.4.6)
   awesome_print
   bluecloth (~> 2.1.0)
   capistrano
@@ -175,4 +172,5 @@ DEPENDENCIES
   ruby-debug19 (~> 0.11.6)
   shoulda (~> 2.11.3)
   simplecov (~> 0.4.1)
+  watchr (~> 0.7)
   yaml_db (~> 0.2.0)
