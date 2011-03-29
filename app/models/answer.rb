@@ -57,4 +57,3 @@ class Answer < ActiveRecord::Base
     save
   end
 end
-

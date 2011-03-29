@@ -7,9 +7,9 @@ gem 'devise',       '~> 1.1.7'
 gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 0.2.7'
 gem 'formtastic',   '~> 1.2.3'
-gem 'kaminari', '~> 0.10.4'
-gem 'bluecloth', '~> 2.1.0'
-gem 'yaml_db', '~> 0.2.0'
+gem 'kaminari',     '~> 0.10.4'
+gem 'bluecloth',    '~> 2.1.0'
+gem 'yaml_db',      '~> 0.2.0'
 gem 'dynamic_form', '~>1.1.3'
 
 group :development, :test do
@@ -17,10 +17,10 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 1.0.1'
   gem 'mocha',              '~> 0.9.12'
   gem 'shoulda',            '~> 2.11.3'
+  gem 'watchr',             '~> 0.7'
 end
 
 group :development do
-  gem 'autotest',     '~> 4.4.6'
   gem 'ruby-debug19', '~> 0.11.6'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
