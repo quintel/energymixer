@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331091328) do
+ActiveRecord::Schema.define(:version => 20110331100703) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20110331091328) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.integer  "etm_scenario_id"
   end
 
   add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"

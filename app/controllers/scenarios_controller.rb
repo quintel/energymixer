@@ -23,7 +23,7 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
-      session[:scenario_id] = params[:scenario_id]
+      session[:scenario_id] = @scenario.etm_scenario_id
       begin
         MixerMailer.thankyou(@scenario).deliver
       rescue

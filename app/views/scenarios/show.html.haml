@@ -19,7 +19,7 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     - if @scenario_id
       .link
-        = link_to "Click here to load this scenario in the ET-Model", scenario_in_etm_url(@scenario_id), :target => '_new'
+        = link_to "Click here to load this scenario in the ET-Model", scenario_in_etm_url(@scenario), :target => '_new'
   .boxes
     .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
       %h3= dashboard_label_for_output(:output_5)
