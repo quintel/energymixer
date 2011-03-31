@@ -142,11 +142,6 @@ body.answers form ul li {
       font-size: 0.9em; }
 
 body#questions_show .question {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   padding: 1em;
   margin-bottom: 1em; }
 
