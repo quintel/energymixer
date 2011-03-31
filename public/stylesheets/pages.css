@@ -24,7 +24,13 @@ body#pages_home section#sectors {
     body#pages_home section#sectors .sector h2 {
       background: transparent url(images/link_arrow.png) center left no-repeat;
       padding-left: 16px;
-      font-weight: bold; }
+      font-weight: bold;
+      margin-left: 130px; }
+    body#pages_home section#sectors .sector img {
+      margin-top: 6px;
+      float: left; }
+    body#pages_home section#sectors .sector .content {
+      margin-left: 147px; }
 body#pages_home section#current_state {
   border: 1px solid red;
   float: left;
