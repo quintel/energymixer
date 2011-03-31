@@ -34,7 +34,7 @@
 %dl.admin
   - @scenario.answers.each do |a|
     %dt= a.question.question
-    %dd= a.answer.answer
+    %dd= a.answer.try(:answer)
 
 #actions
   = link_to 'Edit', edit_admin_scenario_path(@scenario), :class => 'fugue fugue-pencil'
