@@ -1,7 +1,7 @@
 EnergyMixer::Application.routes.draw do
   devise_for :users
 
-  root :to => "scenarios#new"
+  root :to => "pages#home"
   
   namespace :admin do
     resources :answers, :only => [:edit, :update, :show, :destroy]

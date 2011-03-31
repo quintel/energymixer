@@ -17,3 +17,8 @@
   @include gradient(#fdfdfd, #eeeeee);
   border: 1px solid #eee;
 }
+
+@mixin link_arrow_prefix {
+  background: transparent url(images/link_arrow.png) center left no-repeat;
+  padding-left: 16px;
+}
