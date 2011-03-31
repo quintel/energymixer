@@ -58,49 +58,35 @@
 
 table.combined_graph
   width: 120px
-  text-align: center
   margin: 0 auto
-  border: 1px solid #eeeeee
   td
     padding: 4px
   td.carriers
-    width: 70%
+    width: 75%
     vertical-align: bottom
     .graph
       .carrier
+        padding-left: 10px
+        text-align: left
         height: 20%
         width: 90%
-        margin-bottom: 2px
+        margin-bottom: 3px
         text-decoration: none
         color: #ffffff
         font-size: 8px
         font-weight: bold
-      &.textured
-        .carrier
-          &.oil
-            background: url('/images/texture_oil.png')
-          &.gas
-            background: url('/images/texture_gas.png')
-          &.coal
-            background: url('/images/texture_coal.png')
-          &.renewable
-            background: url('/images/texture_renewable.png')
-          &.nuclear
-            background: url('/images/texture_nuclear.png')
-      &.solid
-        .carrier
-          &.oil
-            background: #413E3D
-          &.gas
-            background: #7D9DDD
-          &.coal
-            background: #573403
-          &.nuclear
-            background: #FCDA0B
-          &.renewable
-            background: #39BF06          
+        &.oil
+          background: #57585A
+        &.gas
+          background: #2A9AC3
+        &.coal
+          background: #71362B
+        &.nuclear
+          background: #EE8208
+        &.renewable
+          background: #1E693B          
   td.money
-    width: 30%
+    width: 25%
     vertical-align: bottom  
     .background
       width: 80%
@@ -110,16 +96,13 @@ table.combined_graph
       margin-bottom: 2px
       .coins
         width: 100%
-        background: #C7CB09 url('images/coin_texture.png')
+        background: #BED509
         height: 308px
         position: absolute
         bottom: 0px
   td.total_amount
-    @include shaded_box
-    color: #0B3378
-    text-align: center
+    color: #342B0B
+    background-color: #FBD52C
+    padding: 5px
     h4
       font-weight: bold
-  tr.footer
-    color: #cccccc
-

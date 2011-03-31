@@ -9,7 +9,7 @@
       Miljard      
   %tr
     %td.carriers
-      .graph.textured
+      .graph
         - scenario.carriers.each_pair do |key, v|
           - height = v[:ratio] * current_graph_height
           .carrier{:class => key, :style => "height: #{height}px"}

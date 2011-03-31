@@ -93,7 +93,7 @@ function Graph() {
       $(selector).animate({"height": new_height}, "slow");
       // hide text if there's no room
       var label = $(selector + " .label");
-      new_height > 5 ? label.show() : label.hide();
+      new_height > 8 ? label.show() : label.hide();
     });
     // update money column
     var new_money_height = current_graph_height + 4 * 2; // margin..
@@ -105,15 +105,7 @@ function Graph() {
     self.unblock_interface();
   };
             
-  self.setup_callbacks = function() {
-    $("#solid_view").click(function(){
-      $(".carriers .graph").removeClass("textured").addClass("solid");
-    });
-
-    $("#3d_view").click(function(){
-      $(".carriers .graph").removeClass("solid").addClass("textured");
-    });
-  }; 
+  self.setup_callbacks = function() {}; 
   
   self.init = function() {
     self.setup_callbacks();

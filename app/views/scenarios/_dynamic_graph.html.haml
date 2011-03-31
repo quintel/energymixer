@@ -7,16 +7,11 @@
         Miljard
     %tr
       %td.carriers
-        .graph.textured
+        .graph
           - @results.each do |_, item|
             .carrier{:class => [item[:css_class], item[:gquery]]}
               .label= item[:label]
       %td.money
         .background
           .coins
-    %tr.footer
-      %td{:colspan => 2}
-        = link_to t('solid_view'), '#', :id => 'solid_view'
-        \-
-        = link_to t('3d_view'), '#', :id => '3d_view'
   
