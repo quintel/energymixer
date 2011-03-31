@@ -84,5 +84,9 @@ module ScenariosHelper
     else
       value
     end
-  end 
+  end
+  
+  def scenario_in_etm_url(scenario_id)
+    "#{APP_CONFIG['view_scenario_path']}#{scenario_id}/load"
+  end
 end
