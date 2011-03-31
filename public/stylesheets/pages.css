@@ -1,0 +1,31 @@
+body#pages_home section#intro_text {
+  background: #f2f2f2;
+  padding: 8px; }
+  body#pages_home section#intro_text h2 {
+    font-weight: bold;
+    margin-bottom: 10px; }
+  body#pages_home section#intro_text p {
+    padding: 10px 0; }
+  body#pages_home section#intro_text a {
+    background: transparent url(images/link_arrow.png) center left no-repeat;
+    padding-left: 16px;
+    font-weight: bold;
+    margin-right: 20px; }
+body#pages_home section#sectors {
+  padding: 5px;
+  float: left;
+  width: 580px; }
+  body#pages_home section#sectors h2 {
+    padding: 5px;
+    font-weight: bold; }
+  body#pages_home section#sectors .sector {
+    padding: 10px 5px;
+    border-bottom: 1px solid #cccccc; }
+    body#pages_home section#sectors .sector h2 {
+      background: transparent url(images/link_arrow.png) center left no-repeat;
+      padding-left: 16px;
+      font-weight: bold; }
+body#pages_home section#current_state {
+  border: 1px solid red;
+  float: left;
+  width: 130px; }

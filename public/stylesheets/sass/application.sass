@@ -1,46 +1,37 @@
 @import "reset"
-@import "mixins";
 
 .clear
   clear: both
 
 body
-  width: 960px
-  margin: 0 auto
+  width: 750px
+  margin: 10px auto
   font-family: verdana, helvetica
+  color: #303030
   font-size: 11px
-  header#shell
-    margin-top: 30px
-    height: 90px
-  #sidebar
-    float: left
-    width: 230px
-    margin-right: 10px
-    margin-top: 30px
-  #main
-    width: 720px
-    float: left
-    header
-      border-bottom: 1px solid #ccc
-      margin-bottom: 20px
-      h1
-        font-weight: bold
-      nav#top
-        padding: 1em
-        a
-          font-size: 1.2em
-    .flash
-      text-align: center
-      border: 1px solid
+  line-height: 13px
+  header
+    nav#top
       padding: 1em
-      font-weight: bold
-      margin-bottom: 5px
-    .flash#alert
-      color: red
-      background-color: #FDBBBC
-    .flash#notice
-      color: green
-      background-color: #7BFF76
+      a
+        font-size: 1.2em
+  .flash
+    text-align: center
+    border: 1px solid
+    padding: 1em
+    font-weight: bold
+    margin-bottom: 5px
+  .flash#alert
+    color: red
+    background-color: #FDBBBC
+  .flash#notice
+    color: green
+    background-color: #7BFF76
+  footer
+    padding: 5px
+    clear: both
+    text-align: right
+    color: #CCCCCC
 
 body.sessions, body.unlocks
   #content

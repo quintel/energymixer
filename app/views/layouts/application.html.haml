@@ -9,20 +9,11 @@
     = csrf_meta_tag
     = yield :head
   %body{:id => "#{controller.controller_name}_#{controller.action_name}", :class => controller.controller_name}
-    %header#shell
-      = image_tag 'shell_header.png'
-    #sidebar
-      = image_tag 'shell_sidebar.png'
-    #main
-      %header
-        %nav#top
-          = link_to 'Home', root_path
-          \::
-          = link_to 'Scenarios', scenarios_path
-          \::
-          = link_to 'Admin', admin_questions_path
-      - flash.each do |k,msg|
-        .flash{:id => k}
-          = msg
-      #content
-        = yield
+    - flash.each do |k,msg|
+      .flash{:id => k}
+        = msg
+    #content
+      = yield
+  %footer
+    De Future Energy Mixer id gebaseerd op het
+    = link_to "energietransitiemodel", "http://et-model.com/", :target => "_blank"

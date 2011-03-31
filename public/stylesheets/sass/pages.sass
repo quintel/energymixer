@@ -1,0 +1,33 @@
+@import "mixins"
+
+body#pages_home
+  section#intro_text
+    background: #F2F2F2
+    padding: 8px
+    h2
+      font-weight: bold
+      margin-bottom: 10px
+    p
+      padding: 10px 0
+    a
+      @include link_arrow_prefix
+      font-weight: bold
+      margin-right: 20px
+  section#sectors
+    padding: 5px
+    float: left
+    width: 580px
+    h2
+      padding: 5px
+      font-weight: bold
+    .sector
+      padding: 10px 5px
+      border-bottom: 1px solid #CCCCCC
+      h2
+        @include link_arrow_prefix
+        font-weight: bold
+  section#current_state
+    border: 1px solid red
+    float: left
+    width: 130px
+  
