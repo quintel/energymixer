@@ -10,7 +10,7 @@
      :'data-question_id' => last_question_number}Submit
       
 %div
-  = form_for @scenario, :url => scenarios_path, :html => { :method => :post } do |scenario|
+  = form_for @scenario, :url => scenarios_path, :validate => true, :html => { :method => :post } do |scenario|
     = scenario.fields_for :answers do |answer|
       = render :partial => 'question', :locals => { :answer => answer}
     = render :partial => 'user_details', :locals => { :scenario => scenario}
