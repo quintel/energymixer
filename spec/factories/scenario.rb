@@ -1,4 +1,5 @@
 Factory.define :scenario do |f|
+  f.title 'scenario title'
   f.name 'bill clinton'
   f.email 'test@quintel.com'
   f.age 99

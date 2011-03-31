@@ -2,6 +2,9 @@
   #user_details
     = scenario.error_messages
     %div.item
+      = scenario.label :title
+      = scenario.text_field :title
+    %div.item
       = scenario.label :name, :class => 'required'
       = scenario.text_field :name
     %div.item
