@@ -2,10 +2,10 @@
   #user_details
     = scenario.error_messages
     %div.item
-      = scenario.label :name
+      = scenario.label :name, :class => 'required'
       = scenario.text_field :name
     %div.item
-      = scenario.label :email
+      = scenario.label :email, :class => 'required'
       = scenario.text_field :email
     %div.item
       = scenario.label :age
