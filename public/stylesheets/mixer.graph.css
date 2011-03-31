@@ -1,11 +1,8 @@
 .dashboard_item {
   margin-bottom: 10px;
-  height: 80px;
-  -moz-box-shadow: 0 2px 3px 3px #eeeeee;
-  -webkit-box-shadow: 0 2px 3px 3px #eeeeee;
-  box-shadow: 0 2px 3px 3px #eeeeee;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#eeeeee')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  height: 100px;
+  width: 140px;
+  background: #f2f2f2;
   text-align: center; }
   .dashboard_item h3 {
     text-align: right;
@@ -21,38 +18,6 @@
     text-align: right;
     font-weight: bold;
     color: #073574; }
-  .dashboard_item.energy_dependence_step_0 {
-    background-color: green; }
-  .dashboard_item.energy_dependence_step_1 {
-    background-color: yellow; }
-  .dashboard_item.energy_dependence_step_2 {
-    background-color: orange; }
-  .dashboard_item.energy_dependence_step_3 {
-    background-color: red; }
-  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
-    background-color: green; }
-  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
-    background-color: yellow; }
-  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
-    background-color: orange; }
-  .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
-    background-color: red; }
-  .dashboard_item.share_of_renewable_energy_step_0 {
-    background-color: red; }
-  .dashboard_item.share_of_renewable_energy_step_1 {
-    background-color: orange; }
-  .dashboard_item.share_of_renewable_energy_step_2 {
-    background-color: yellow; }
-  .dashboard_item.share_of_renewable_energy_step_3 {
-    background-color: green; }
-  .dashboard_item.area_footprint_per_nl_step_0 {
-    background-color: green; }
-  .dashboard_item.area_footprint_per_nl_step_1 {
-    background-color: yellow; }
-  .dashboard_item.area_footprint_per_nl_step_2 {
-    background-color: orange; }
-  .dashboard_item.area_footprint_per_nl_step_3 {
-    background-color: red; }
 
 .static_graph {
   border: 1px solid red;
