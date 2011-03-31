@@ -2,22 +2,24 @@
 #
 # Table name: scenarios
 #
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  age        :integer(4)
-#  featured   :boolean(1)
-#  output_0   :float
-#  output_1   :float
-#  output_2   :float
-#  output_3   :float
-#  output_4   :float
-#  output_5   :float
-#  output_6   :float
-#  output_7   :float
-#  output_8   :float
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer(4)      not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  age             :integer(4)
+#  featured        :boolean(1)
+#  output_0        :float
+#  output_1        :float
+#  output_2        :float
+#  output_3        :float
+#  output_4        :float
+#  output_5        :float
+#  output_6        :float
+#  output_7        :float
+#  output_8        :float
+#  created_at      :datetime
+#  updated_at      :datetime
+#  title           :string(255)
+#  etm_scenario_id :integer(4)
 #
 
 class Scenario < ActiveRecord::Base

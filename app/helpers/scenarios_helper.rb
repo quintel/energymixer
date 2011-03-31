@@ -86,7 +86,9 @@ module ScenariosHelper
     end
   end
   
+  # Accepts as parameter a Scenario object or the id string
   def scenario_in_etm_url(scenario_id)
+    scenario_id = scenario_id.etm_scenario_id if scenario_id.is_a?(Scenario)
     "#{APP_CONFIG['view_scenario_path']}#{scenario_id}/load"
   end
 end

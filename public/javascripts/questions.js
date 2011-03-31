@@ -128,7 +128,7 @@ function Questions() {
     });
     
     $("form").submit(function(){
-      $("#scenario_id").val(mixer.scenario_id);
+      $("#scenario_etm_scenario_id").val(mixer.scenario_id);
     });
   };
     
