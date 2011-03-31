@@ -215,6 +215,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         width: 60px;
         padding: 5px;
         text-align: right; }
+        body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
+          font-weight: bold; }
       body#scenarios_new section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item input {
         display: block;
         float: left;
