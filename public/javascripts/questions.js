@@ -39,7 +39,7 @@ function Questions() {
   // returns the question_number given the answer_id
   // we're using this method to alert the user about
   // conflicting answers
-  self.question_number_for_answer = function(answer_id) {
+  self.get_question_id_from_answer = function(answer_id) {
     self.answers2questions = {};
     $("div.question input:checked").each(function(el) {
       self.answers2questions[$(this).val()] =  $(this).data('question_number');
@@ -51,10 +51,11 @@ function Questions() {
     var conflicts = false;
     var conflicting_questions = [];
         
-    $.each(self.currently_selected_answers(), function(index, answer_id){
-      if(x = self.check_conflicting_answer(answer_id)) {
+    $.each(self.currently_selected_answers(), function(index, current_answer_id){
+      if(conflicting_answer_id = self.check_conflicting_answer(current_answer_id)) {
         conflicts = true;
-        conflicting_questions.push(self.question_number_for_answer(answer_id));
+        conflicting_questions.push(self.get_question_id_from_answer(current_answer_id));
+        conflicting_questions.push(self.get_question_id_from_answer(conflicting_answer_id));
       }
     });
     
@@ -79,11 +80,6 @@ function Questions() {
       }
     });
     return conflict;
-  };
-  
-  // return the question id given the answer id
-  self.get_answer_question_id = function(answer_id) {
-    
   };
   
   self.setup_callbacks = function() {
