@@ -28,47 +28,47 @@ table.combined_graph {
   margin: 0 auto; }
   table.combined_graph td {
     padding: 4px; }
-  table.combined_graph td.carriers {
-    width: 75%;
-    vertical-align: bottom; }
-    table.combined_graph td.carriers .graph .carrier {
-      padding-left: 10px;
-      text-align: left;
-      height: 20%;
-      width: 90%;
-      margin-bottom: 3px;
-      text-decoration: none;
-      color: white;
-      font-size: 8px;
-      font-weight: bold; }
-      table.combined_graph td.carriers .graph .carrier.oil {
-        background: #57585a; }
-      table.combined_graph td.carriers .graph .carrier.gas {
-        background: #2a9ac3; }
-      table.combined_graph td.carriers .graph .carrier.coal {
-        background: #71362b; }
-      table.combined_graph td.carriers .graph .carrier.nuclear {
-        background: #ee8208; }
-      table.combined_graph td.carriers .graph .carrier.renewable {
-        background: #1e693b; }
-  table.combined_graph td.money {
-    width: 25%;
-    vertical-align: bottom; }
-    table.combined_graph td.money .background {
-      width: 80%;
-      height: 308px;
-      background: #eeeeee;
-      position: relative;
-      margin-bottom: 2px; }
-      table.combined_graph td.money .background .coins {
-        width: 100%;
-        background: #bed509;
+    table.combined_graph td.total_amount {
+      color: #342b0b;
+      background-color: #fbd52c;
+      padding: 5px; }
+      table.combined_graph td.total_amount h4 {
+        font-weight: bold; }
+    table.combined_graph td.carriers {
+      width: 75%;
+      vertical-align: bottom; }
+      table.combined_graph td.carriers .graph .carrier {
+        padding-left: 10px;
+        text-align: left;
+        height: 20%;
+        width: 90%;
+        margin-bottom: 3px;
+        text-decoration: none;
+        color: white;
+        font-size: 8px;
+        font-weight: bold; }
+        table.combined_graph td.carriers .graph .carrier.oil {
+          background: #57585a; }
+        table.combined_graph td.carriers .graph .carrier.gas {
+          background: #2a9ac3; }
+        table.combined_graph td.carriers .graph .carrier.coal {
+          background: #71362b; }
+        table.combined_graph td.carriers .graph .carrier.nuclear {
+          background: #ee8208; }
+        table.combined_graph td.carriers .graph .carrier.renewable {
+          background: #1e693b; }
+    table.combined_graph td.money {
+      width: 25%;
+      vertical-align: bottom; }
+      table.combined_graph td.money .background {
+        width: 80%;
         height: 308px;
-        position: absolute;
-        bottom: 0px; }
-  table.combined_graph td.total_amount {
-    color: #342b0b;
-    background-color: #fbd52c;
-    padding: 5px; }
-    table.combined_graph td.total_amount h4 {
-      font-weight: bold; }
+        background: #eeeeee;
+        position: relative;
+        margin-bottom: 2px; }
+        table.combined_graph td.money .background .coins {
+          width: 100%;
+          background: #bed509;
+          height: 308px;
+          position: absolute;
+          bottom: 0px; }

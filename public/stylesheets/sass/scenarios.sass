@@ -12,12 +12,9 @@ body#scenarios_new, body#scenarios_create
   section#questions
     width: 420px
     float: left
-    @include gradient(#fdfdfd, #eeeeee)
-    @include shadow(#ddd)
     line-height: 1.5em
     background-color: #eee
     nav
-      @include shaded_box      
       display: block
       text-align: center
       height: 20px
@@ -26,7 +23,7 @@ body#scenarios_new, body#scenarios_create
       a
         margin: 0 5px
         color: #bbb
-        font-weight: bold      
+        font-weight: bold
       &#up
         a.active
           color: red
@@ -124,7 +121,6 @@ body#scenarios_new, body#scenarios_create
 
 body#scenarios_show
   .top
-    @include shaded_box
     height: 80px
     margin-bottom: 10px
     padding: 10px
@@ -136,7 +132,6 @@ body#scenarios_show
     width: 50%
     float: left
     .text
-      @include shaded_box
       padding: 1.5em
       font-size: 1.2em
       .title
@@ -160,7 +155,6 @@ body#scenarios_show
 
 body#scenarios_index
   #search_form
-    @include shaded_box
     padding: 1em
     h2
       font-size: 1.5em
@@ -168,7 +162,6 @@ body#scenarios_index
     p
       margin-bottom: 1em
   #selectable, #selected
-    @include shaded_box
     padding: 1em
     margin-top: 12px
     margin-bottom: 12px
@@ -184,17 +177,14 @@ body#scenarios_index
         &:hover
           color: red
   #form_footer
-    @include shaded_box
     clear: both
     padding: 1em
   .scenario
-    @include shaded_box
     position: relative
     width: 300
     padding: 5px
     margin: 5px
     &.featured
-      @include gradient(#B9FF4D, #E1FF0B)
     .actions
       float: right
     .name

@@ -28,50 +28,50 @@ table.combined_graph {
   margin: 0 auto; }
   table.combined_graph td {
     padding: 4px; }
-  table.combined_graph td.carriers {
-    width: 75%;
-    vertical-align: bottom; }
-    table.combined_graph td.carriers .graph .carrier {
-      padding-left: 10px;
-      text-align: left;
-      height: 20%;
-      width: 90%;
-      margin-bottom: 3px;
-      text-decoration: none;
-      color: white;
-      font-size: 8px;
-      font-weight: bold; }
-      table.combined_graph td.carriers .graph .carrier.oil {
-        background: #57585a; }
-      table.combined_graph td.carriers .graph .carrier.gas {
-        background: #2a9ac3; }
-      table.combined_graph td.carriers .graph .carrier.coal {
-        background: #71362b; }
-      table.combined_graph td.carriers .graph .carrier.nuclear {
-        background: #ee8208; }
-      table.combined_graph td.carriers .graph .carrier.renewable {
-        background: #1e693b; }
-  table.combined_graph td.money {
-    width: 25%;
-    vertical-align: bottom; }
-    table.combined_graph td.money .background {
-      width: 80%;
-      height: 308px;
-      background: #eeeeee;
-      position: relative;
-      margin-bottom: 2px; }
-      table.combined_graph td.money .background .coins {
-        width: 100%;
-        background: #bed509;
+    table.combined_graph td.total_amount {
+      color: #342b0b;
+      background-color: #fbd52c;
+      padding: 5px; }
+      table.combined_graph td.total_amount h4 {
+        font-weight: bold; }
+    table.combined_graph td.carriers {
+      width: 75%;
+      vertical-align: bottom; }
+      table.combined_graph td.carriers .graph .carrier {
+        padding-left: 10px;
+        text-align: left;
+        height: 20%;
+        width: 90%;
+        margin-bottom: 3px;
+        text-decoration: none;
+        color: white;
+        font-size: 8px;
+        font-weight: bold; }
+        table.combined_graph td.carriers .graph .carrier.oil {
+          background: #57585a; }
+        table.combined_graph td.carriers .graph .carrier.gas {
+          background: #2a9ac3; }
+        table.combined_graph td.carriers .graph .carrier.coal {
+          background: #71362b; }
+        table.combined_graph td.carriers .graph .carrier.nuclear {
+          background: #ee8208; }
+        table.combined_graph td.carriers .graph .carrier.renewable {
+          background: #1e693b; }
+    table.combined_graph td.money {
+      width: 25%;
+      vertical-align: bottom; }
+      table.combined_graph td.money .background {
+        width: 80%;
         height: 308px;
-        position: absolute;
-        bottom: 0px; }
-  table.combined_graph td.total_amount {
-    color: #342b0b;
-    background-color: #fbd52c;
-    padding: 5px; }
-    table.combined_graph td.total_amount h4 {
-      font-weight: bold; }
+        background: #eeeeee;
+        position: relative;
+        margin-bottom: 2px; }
+        table.combined_graph td.money .background .coins {
+          width: 100%;
+          background: #bed509;
+          height: 308px;
+          position: absolute;
+          bottom: 0px; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 180px;
@@ -82,23 +82,9 @@ body#scenarios_new section#dashboard, body#scenarios_create section#dashboard {
 body#scenarios_new section#questions, body#scenarios_create section#questions {
   width: 420px;
   float: left;
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  -moz-box-shadow: 0 2px 3px 3px #dddddd;
-  -webkit-box-shadow: 0 2px 3px 3px #dddddd;
-  box-shadow: 0 2px 3px 3px #dddddd;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#dddddd')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
   line-height: 1.5em;
   background-color: #eeeeee; }
   body#scenarios_new section#questions nav, body#scenarios_create section#questions nav {
-    background-color: #fdfdfd;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-    background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-    border: 1px solid #eee;
     display: block;
     text-align: center;
     height: 20px;
@@ -201,11 +187,6 @@ body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 
   margin-bottom: 0.7em; }
 
 body#scenarios_show .top {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   height: 80px;
   margin-bottom: 10px;
   padding: 10px; }
@@ -217,11 +198,6 @@ body#scenarios_show .left {
   width: 50%;
   float: left; }
   body#scenarios_show .left .text {
-    background-color: #fdfdfd;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-    background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-    border: 1px solid #eee;
     padding: 1.5em;
     font-size: 1.2em; }
     body#scenarios_show .left .text .title {
@@ -244,11 +220,6 @@ body#scenarios_show .right {
     width: 160px; }
 
 body#scenarios_index #search_form {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   padding: 1em; }
   body#scenarios_index #search_form h2 {
     font-size: 1.5em;
@@ -256,11 +227,6 @@ body#scenarios_index #search_form {
   body#scenarios_index #search_form p {
     margin-bottom: 1em; }
 body#scenarios_index #selectable, body#scenarios_index #selected {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   padding: 1em;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -275,28 +241,13 @@ body#scenarios_index #selectable {
     body#scenarios_index #selectable #pagination a:hover {
       color: red; }
 body#scenarios_index #form_footer {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   clear: both;
   padding: 1em; }
 body#scenarios_index .scenario {
-  background-color: #fdfdfd;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-  background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-  border: 1px solid #eee;
   position: relative;
   width: 300;
   padding: 5px;
   margin: 5px; }
-  body#scenarios_index .scenario.featured {
-    background-color: #b9ff4d;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#b9ff4d"}, endColorstr="#e1ff0b");
-    background-image: -moz-linear-gradient(center top, #b9ff4d, #e1ff0b);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b9ff4d), to(#e1ff0b)); }
   body#scenarios_index .scenario .actions {
     float: right; }
   body#scenarios_index .scenario .name {
