@@ -14,7 +14,8 @@
 
 class Answer < ActiveRecord::Base
   belongs_to :question
-  has_many :inputs, :dependent => :destroy 
+  has_many :inputs, :dependent => :destroy
+  has_many :scenario_answers, :dependent => :destroy
   
   accepts_nested_attributes_for :inputs, :allow_destroy => true, :reject_if => proc {|attr| attr['key'].blank? && attr['value'].blank? }
   
