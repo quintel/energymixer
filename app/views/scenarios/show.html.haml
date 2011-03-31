@@ -8,7 +8,10 @@
 
 .left
   .text
-    .title
+    - if @scenario.title
+      .title
+        = @scenario.title
+    .name
       De mix van #{@scenario.name}
       - if @scenario.age
         (#{@scenario.age} jaar)

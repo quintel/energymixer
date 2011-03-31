@@ -2,6 +2,8 @@
   .actions
     = check_box_tag 'ids[]', scenario.id
     Compare
+  - if scenario.title
+    .title= link_to scenario.title, scenario_path(scenario)
   .name= link_to scenario.name, scenario_path(scenario)
   - if scenario.age
     .age #{scenario.age} jaar

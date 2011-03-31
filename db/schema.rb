@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110324145610) do
+ActiveRecord::Schema.define(:version => 20110331091328) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20110324145610) do
     t.float    "output_8"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
