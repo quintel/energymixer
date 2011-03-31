@@ -60,44 +60,34 @@
 
 table.combined_graph {
   width: 120px;
-  text-align: center;
-  margin: 0 auto;
-  border: 1px solid #eeeeee; }
+  margin: 0 auto; }
   table.combined_graph td {
     padding: 4px; }
   table.combined_graph td.carriers {
-    width: 70%;
+    width: 75%;
     vertical-align: bottom; }
     table.combined_graph td.carriers .graph .carrier {
+      padding-left: 10px;
+      text-align: left;
       height: 20%;
       width: 90%;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       text-decoration: none;
       color: white;
       font-size: 8px;
       font-weight: bold; }
-    table.combined_graph td.carriers .graph.textured .carrier.oil {
-      background: url("/images/texture_oil.png"); }
-    table.combined_graph td.carriers .graph.textured .carrier.gas {
-      background: url("/images/texture_gas.png"); }
-    table.combined_graph td.carriers .graph.textured .carrier.coal {
-      background: url("/images/texture_coal.png"); }
-    table.combined_graph td.carriers .graph.textured .carrier.renewable {
-      background: url("/images/texture_renewable.png"); }
-    table.combined_graph td.carriers .graph.textured .carrier.nuclear {
-      background: url("/images/texture_nuclear.png"); }
-    table.combined_graph td.carriers .graph.solid .carrier.oil {
-      background: #413e3d; }
-    table.combined_graph td.carriers .graph.solid .carrier.gas {
-      background: #7d9ddd; }
-    table.combined_graph td.carriers .graph.solid .carrier.coal {
-      background: #573403; }
-    table.combined_graph td.carriers .graph.solid .carrier.nuclear {
-      background: #fcda0b; }
-    table.combined_graph td.carriers .graph.solid .carrier.renewable {
-      background: #39bf06; }
+      table.combined_graph td.carriers .graph .carrier.oil {
+        background: #57585a; }
+      table.combined_graph td.carriers .graph .carrier.gas {
+        background: #2a9ac3; }
+      table.combined_graph td.carriers .graph .carrier.coal {
+        background: #71362b; }
+      table.combined_graph td.carriers .graph .carrier.nuclear {
+        background: #ee8208; }
+      table.combined_graph td.carriers .graph .carrier.renewable {
+        background: #1e693b; }
   table.combined_graph td.money {
-    width: 30%;
+    width: 25%;
     vertical-align: bottom; }
     table.combined_graph td.money .background {
       width: 80%;
@@ -107,22 +97,16 @@ table.combined_graph {
       margin-bottom: 2px; }
       table.combined_graph td.money .background .coins {
         width: 100%;
-        background: #c7cb09 url("images/coin_texture.png");
+        background: #bed509;
         height: 308px;
         position: absolute;
         bottom: 0px; }
   table.combined_graph td.total_amount {
-    background-color: #fdfdfd;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fdfdfd"}, endColorstr="#eeeeee");
-    background-image: -moz-linear-gradient(center top, #fdfdfd, #eeeeee);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fdfdfd), to(#eeeeee));
-    border: 1px solid #eee;
-    color: #0b3378;
-    text-align: center; }
+    color: #342b0b;
+    background-color: #fbd52c;
+    padding: 5px; }
     table.combined_graph td.total_amount h4 {
       font-weight: bold; }
-  table.combined_graph tr.footer {
-    color: #cccccc; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 180px;
