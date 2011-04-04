@@ -32,7 +32,7 @@ class ScenariosController < ApplicationController
       end
       redirect_to scenario_path(@scenario), :notice => 'Scenario saved'
     else
-      @current_scenario = Scenario.new            
+      setup_current_scenario
       setup_results
       render :new
     end
@@ -48,6 +48,8 @@ class ScenariosController < ApplicationController
     scope = Scenario.featured_first.recent_first
     scope = scope.by_user(params[:q]) unless params[:q].blank?
     @scenarios = scope.page(params[:page])
+    # TODO: fix
+    @featured_scenarios = @scenarios
     
     respond_to do |format|
       format.html
