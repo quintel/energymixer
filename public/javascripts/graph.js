@@ -100,7 +100,7 @@ function Graph() {
     $(".coins").animate({"height" : new_money_height}, "slow");
     
     // and top counter
-    $("#graph_container .total_amount span").html(current_sum / 1000);
+    $("#graph_container .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
     
     self.unblock_interface();
   };

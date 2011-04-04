@@ -341,23 +341,6 @@ body#scenarios_index section#top {
   body#scenarios_index section#top input[type=text] {
     padding: 5px;
     width: 320px; }
-body#scenarios_index section#scenarios #selectable, body#scenarios_index section#scenarios #selected {
-  padding: 1em;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  float: left;
-  width: 330px; }
-  body#scenarios_index section#scenarios #selectable h3, body#scenarios_index section#scenarios #selected h3 {
-    font-size: 1.3em; }
-body#scenarios_index section#scenarios #selectable {
-  margin-right: 12px; }
-  body#scenarios_index section#scenarios #selectable #pagination {
-    text-align: center; }
-    body#scenarios_index section#scenarios #selectable #pagination a:hover {
-      color: red; }
-body#scenarios_index section#scenarios #form_footer {
-  clear: both;
-  padding: 1em; }
 body#scenarios_index section#scenarios .scenario {
   position: relative;
   width: 350px;
@@ -380,6 +363,23 @@ body#scenarios_index section#scenarios .scenario {
     font-weight: bold;
     margin-bottom: 4px;
     margin-top: 15px; }
+body#scenarios_index section#scenarios section#left {
+  width: 360px;
+  float: left; }
+  body#scenarios_index section#scenarios section#left #selected {
+    padding: 1em; }
+    body#scenarios_index section#scenarios section#left #selected span.label {
+      font-weight: bold;
+      background: transparent url(images/link_arrow.png) center left no-repeat;
+      padding-left: 16px; }
+    body#scenarios_index section#scenarios section#left #selected span.compared {
+      color: #cccccc; }
+body#scenarios_index section#scenarios section#right {
+  width: 360px;
+  float: left; }
+  body#scenarios_index section#scenarios section#right h3 {
+    padding: 1em;
+    font-weight: bold; }
 
 body#scenarios_compare h2 {
   font-size: 1.5em;

@@ -203,24 +203,6 @@ body#scenarios_index
       padding: 5px
       width: 320px
   section#scenarios
-    #selectable, #selected
-      padding: 1em
-      margin-top: 12px
-      margin-bottom: 12px
-      float: left
-      width: 330px
-      h3
-        font-size: 1.3em
-    #selectable
-      margin-right: 12px
-      #pagination
-        text-align: center
-        a
-          &:hover
-            color: red
-    #form_footer
-      clear: both
-      padding: 1em
     .scenario
       position: relative
       width: 350px
@@ -241,7 +223,23 @@ body#scenarios_index
         font-size: 13px
         font-weight: bold
         margin-bottom: 4px
-        margin-top: 15px
+        margin-top: 15px    
+    section#left
+      width: 360px
+      float: left
+      #selected
+        padding: 1em
+        span.label
+          font-weight: bold
+          @include link_arrow_prefix
+        span.compared
+          color: #ccc
+    section#right
+      width: 360px
+      float: left
+      h3
+        padding: 1em
+        font-weight: bold
 
 body#scenarios_compare
   h2

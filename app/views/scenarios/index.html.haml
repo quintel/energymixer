@@ -11,21 +11,17 @@
 
 %section#scenarios
   = form_tag compare_scenarios_path do
-    #selectable
-      .scenarios
+    %section#left
+      #selected
+        %span.label Vergelijk:
+        %span.compared
+      #selectable
         = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
-      #pagination
-        = paginate @scenarios, :remote => true
-    
-    #selected
-      %h3 Selected
-      .scenarios
-        - if @selected_scenario
-          = render :partial => 'select_scenario_box', :object => @selected_scenario, :as => :scenario
-    #form_footer
-      = submit_tag "Compare"
-
-
+        #pagination
+          = paginate @scenarios, :remote => true
+    %section#right
+      %h3 Gemiddelde per leeftijcategorie
+      = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
 
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
