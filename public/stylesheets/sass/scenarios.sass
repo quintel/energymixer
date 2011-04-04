@@ -154,45 +154,57 @@ body#scenarios_show
       width: 160px
 
 body#scenarios_index
-  #search_form
+  section#top
+    background-color: #F2F2F2
     padding: 1em
     h2
-      font-size: 1.5em
-      margin-bottom: 1em
-    p
-      margin-bottom: 1em
-  #selectable, #selected
-    padding: 1em
-    margin-top: 12px
-    margin-bottom: 12px
-    float: left
-    width: 330px
-    h3
-      font-size: 1.3em
-  #selectable
-    margin-right: 12px
-    #pagination
-      text-align: center
-      a
-        &:hover
-          color: red
-  #form_footer
-    clear: both
-    padding: 1em
-  .scenario
-    position: relative
-    width: 300
-    padding: 5px
-    margin: 5px
-    &.featured
-    .actions
-      float: right
-    .name
+      color: #2F2F2F
       font-weight: bold
-      margin-bottom: 4px
-    .age
-      font-style: italic
-      color: #777
+      font-size: 1.1em
+      margin-bottom: 1em
+    input[type=text]
+      padding: 5px
+      width: 320px
+  section#scenarios
+    #selectable, #selected
+      padding: 1em
+      margin-top: 12px
+      margin-bottom: 12px
+      float: left
+      width: 330px
+      h3
+        font-size: 1.3em
+    #selectable
+      margin-right: 12px
+      #pagination
+        text-align: center
+        a
+          &:hover
+            color: red
+    #form_footer
+      clear: both
+      padding: 1em
+    .scenario
+      position: relative
+      width: 350px
+      padding: 5px 5px 5px 20px
+      margin: 5px
+      height: 40px
+      border-bottom: 1px solid #CCCCCC
+      background: transparent url(/images/graph_icon.png) center left no-repeat
+      .actions
+        width: 120px
+        float: right
+        font-weight: bold
+        .show
+          padding: 5px
+          a
+            @include link_arrow_prefix
+      .name
+        font-size: 13px
+        font-weight: bold
+        margin-bottom: 4px
+        margin-top: 15px
 
 body#scenarios_compare
   h2

@@ -218,43 +218,56 @@ body#scenarios_show .right {
   body#scenarios_show .right .combined_graph {
     width: 160px; }
 
-body#scenarios_index #search_form {
+body#scenarios_index section#top {
+  background-color: #f2f2f2;
   padding: 1em; }
-  body#scenarios_index #search_form h2 {
-    font-size: 1.5em;
+  body#scenarios_index section#top h2 {
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 1.1em;
     margin-bottom: 1em; }
-  body#scenarios_index #search_form p {
-    margin-bottom: 1em; }
-body#scenarios_index #selectable, body#scenarios_index #selected {
+  body#scenarios_index section#top input[type=text] {
+    padding: 5px;
+    width: 320px; }
+body#scenarios_index section#scenarios #selectable, body#scenarios_index section#scenarios #selected {
   padding: 1em;
   margin-top: 12px;
   margin-bottom: 12px;
   float: left;
   width: 330px; }
-  body#scenarios_index #selectable h3, body#scenarios_index #selected h3 {
+  body#scenarios_index section#scenarios #selectable h3, body#scenarios_index section#scenarios #selected h3 {
     font-size: 1.3em; }
-body#scenarios_index #selectable {
+body#scenarios_index section#scenarios #selectable {
   margin-right: 12px; }
-  body#scenarios_index #selectable #pagination {
+  body#scenarios_index section#scenarios #selectable #pagination {
     text-align: center; }
-    body#scenarios_index #selectable #pagination a:hover {
+    body#scenarios_index section#scenarios #selectable #pagination a:hover {
       color: red; }
-body#scenarios_index #form_footer {
+body#scenarios_index section#scenarios #form_footer {
   clear: both;
   padding: 1em; }
-body#scenarios_index .scenario {
+body#scenarios_index section#scenarios .scenario {
   position: relative;
-  width: 300;
-  padding: 5px;
-  margin: 5px; }
-  body#scenarios_index .scenario .actions {
-    float: right; }
-  body#scenarios_index .scenario .name {
+  width: 350px;
+  padding: 5px 5px 5px 20px;
+  margin: 5px;
+  height: 40px;
+  border-bottom: 1px solid #cccccc;
+  background: transparent url(/images/graph_icon.png) center left no-repeat; }
+  body#scenarios_index section#scenarios .scenario .actions {
+    width: 120px;
+    float: right;
+    font-weight: bold; }
+    body#scenarios_index section#scenarios .scenario .actions .show {
+      padding: 5px; }
+      body#scenarios_index section#scenarios .scenario .actions .show a {
+        background: transparent url(images/link_arrow.png) center left no-repeat;
+        padding-left: 16px; }
+  body#scenarios_index section#scenarios .scenario .name {
+    font-size: 13px;
     font-weight: bold;
-    margin-bottom: 4px; }
-  body#scenarios_index .scenario .age {
-    font-style: italic;
-    color: #777777; }
+    margin-bottom: 4px;
+    margin-top: 15px; }
 
 body#scenarios_compare h2 {
   font-size: 1.5em;

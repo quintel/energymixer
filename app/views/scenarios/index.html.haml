@@ -1,27 +1,29 @@
-#search_form
-  %h2 Existing scenarios
-  %p
-    Use this page to search scenarios and compare them (up to five).
-  = form_tag scenarios_path, :method => :get, :remote => true do
-    Search
-    = text_field_tag :q
-    = submit_tag "Search"
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    Bekijk de Mixes van anderen
 
-= form_tag compare_scenarios_path do
-  #selectable
-    %h3 Choose
-    .scenarios
-      = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
-    #pagination
-      = paginate @scenarios, :remote => true
+%section#top
+  %h2 Bekijk de EnergyMixes van anderen
+  = form_tag scenarios_path, :method => :get, :remote => true do
+    = text_field_tag :q, :hint => "Zoeken"
+
+%section#scenarios
+  = form_tag compare_scenarios_path do
+    #selectable
+      .scenarios
+        = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
+      #pagination
+        = paginate @scenarios, :remote => true
     
-  #selected
-    %h3 Selected
-    .scenarios
-      - if @selected_scenario
-        = render :partial => 'select_scenario_box', :object => @selected_scenario, :as => :scenario
-  #form_footer
-    = submit_tag "Compare"
+    #selected
+      %h3 Selected
+      .scenarios
+        - if @selected_scenario
+          = render :partial => 'select_scenario_box', :object => @selected_scenario, :as => :scenario
+    #form_footer
+      = submit_tag "Compare"
 
 
 
