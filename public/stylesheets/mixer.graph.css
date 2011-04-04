@@ -80,7 +80,6 @@
   width: 90px; }
 
 table.combined_graph {
-  width: 120px;
   margin: 0 auto; }
   table.combined_graph td {
     padding: 4px; }
@@ -127,3 +126,19 @@ table.combined_graph {
           height: 308px;
           position: absolute;
           bottom: 0px; }
+
+table.shaded td.total_amount {
+  background: #fff6d5 !important;
+  color: #7a7667; }
+table.shaded td.carriers .graph .carrier.oil {
+  background: #c8cac9 !important; }
+table.shaded td.carriers .graph .carrier.gas {
+  background: #a4deec !important; }
+table.shaded td.carriers .graph .carrier.coal {
+  background: #d2bcb8 !important; }
+table.shaded td.carriers .graph .carrier.nuclear {
+  background: #fbd5a8 !important; }
+table.shaded td.carriers .graph .carrier.renewable {
+  background: #a6cdbe !important; }
+table.shaded td.money .coins {
+  background: #ebf0a8 !important; }

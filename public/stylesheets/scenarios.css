@@ -80,7 +80,6 @@
   width: 90px; }
 
 table.combined_graph {
-  width: 120px;
   margin: 0 auto; }
   table.combined_graph td {
     padding: 4px; }
@@ -128,14 +127,38 @@ table.combined_graph {
           position: absolute;
           bottom: 0px; }
 
+table.shaded td.total_amount {
+  background: #fff6d5 !important;
+  color: #7a7667; }
+table.shaded td.carriers .graph .carrier.oil {
+  background: #c8cac9 !important; }
+table.shaded td.carriers .graph .carrier.gas {
+  background: #a4deec !important; }
+table.shaded td.carriers .graph .carrier.coal {
+  background: #d2bcb8 !important; }
+table.shaded td.carriers .graph .carrier.nuclear {
+  background: #fbd5a8 !important; }
+table.shaded td.carriers .graph .carrier.renewable {
+  background: #a6cdbe !important; }
+table.shaded td.money .coins {
+  background: #ebf0a8 !important; }
+
 body#scenarios_new section#results, body#scenarios_create section#results {
-  width: 180px;
+  width: 240px;
   float: left; }
+  body#scenarios_new section#results .current, body#scenarios_create section#results .current {
+    float: left;
+    width: 80px;
+    margin-left: 20px; }
+  body#scenarios_new section#results .user_created, body#scenarios_create section#results .user_created {
+    margin-left: 20px;
+    float: left;
+    width: 100px; }
 body#scenarios_new section#dashboard, body#scenarios_create section#dashboard {
   width: 120px;
   float: left; }
 body#scenarios_new section#questions, body#scenarios_create section#questions {
-  width: 420px;
+  width: 350px;
   float: left;
   line-height: 1.5em; }
   body#scenarios_new section#questions nav, body#scenarios_create section#questions nav {
