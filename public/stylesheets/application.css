@@ -71,6 +71,12 @@ body {
   body .flash#notice {
     color: green;
     background-color: #7bff76; }
+  body section#breadcrumbs nav {
+    font-size: 0.9em;
+    color: #999999;
+    padding: 10px; }
+    body section#breadcrumbs nav a:hover {
+      text-decoration: underline; }
   body footer {
     padding: 5px;
     clear: both;

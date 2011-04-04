@@ -1,9 +1,10 @@
 .scenario{:class => scenario.featured? ? 'featured' : '', :'data-scenario_id' => scenario.id }
   .actions
-    = check_box_tag 'ids[]', scenario.id
-    Compare
+    .show
+      = link_to 'Bekijk', scenario_path(scenario)
+    .compare
+      = check_box_tag 'ids[]', scenario.id
+      Vergelijk
   - if scenario.title
     .title= link_to scenario.title, scenario_path(scenario)
   .name= link_to scenario.name, scenario_path(scenario)
-  - if scenario.age
-    .age #{scenario.age} jaar
