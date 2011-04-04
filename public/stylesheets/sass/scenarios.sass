@@ -237,11 +237,20 @@ body#scenarios_compare
 section#search_scenarios_box
   background-color: #F2F2F2
   padding: 1em
-  h2
-    color: #2F2F2F
-    font-weight: bold
-    font-size: 1.1em
-    margin-bottom: 1em
-  input[type=text]
-    padding: 5px
-    width: 320px
+  margin-bottom: 10px
+  div.left
+    float: left
+    width: 350px
+    h2
+      color: #2F2F2F
+      font-weight: bold
+      font-size: 1.1em
+      margin-bottom: 1em
+    input[type=text]
+      padding: 5px
+      width: 320px
+  div.right
+    float: left
+    a
+      font-weight: bold
+      @include link_arrow_prefix
