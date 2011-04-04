@@ -2,13 +2,16 @@
   %nav
     = link_to "Home", root_path
     >
-    Bekijk de Mixes van anderen
+    Maak je eigen EnergyMix
 
 %section#questions
   = render :partial => 'questions'
 
 %section#results
-  = render :partial => 'dynamic_graph'
+  .current
+    = render :partial => 'static_graph', :locals => { :scenario => @current_scenario, :custom_class => 'shaded' }
+  .user_created
+    = render :partial => 'dynamic_graph'
 
 %section#dashboard
   = render :partial => 'dashboard'

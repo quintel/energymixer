@@ -1,11 +1,12 @@
-- graph_max_height = 290
+- graph_max_height     = defined?(height) ? height : 290
+- area_labels          = defined?(area_labels) ? area_labels : true
 - current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height;
 
-%table.combined_graph
+%table.combined_graph{:class => defined?(custom_class) ? custom_class : nil }
   %tr
     %td.total_amount{:colspan => 2}      
-      %h4 Scenario 2025
-      %span= number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 2)
+      %h4 Mix #{scenario.year || 2025}
+      %span= number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1)
       Miljard      
   %tr
     %td.carriers
@@ -13,7 +14,7 @@
         - scenario.carriers.each_pair do |key, v|
           - height = v[:ratio] * current_graph_height
           .carrier{:class => key, :style => "height: #{height}px"}
-            .label= v[:label] if height > 5
+            .label= v[:label] if area_labels && height > 8
     %td.money
       .background
         .coins{:style => "height: #{current_graph_height + 6}px"}
