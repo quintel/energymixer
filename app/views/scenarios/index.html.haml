@@ -7,7 +7,7 @@
 %section#top
   %h2 Bekijk de EnergyMixes van anderen
   = form_tag scenarios_path, :method => :get, :remote => true do
-    = text_field_tag :q, :hint => "Zoeken"
+    = text_field_tag :q, params[:q], :placeholder => "Zoeken"
 
 %section#scenarios
   = form_tag compare_scenarios_path do
