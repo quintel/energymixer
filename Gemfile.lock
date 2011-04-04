@@ -72,7 +72,7 @@ GEM
       railties (~> 3.0)
     highline (1.6.1)
     hirb (0.4.3)
-    hoptoad_notifier (2.4.2)
+    hoptoad_notifier (2.4.9)
       activesupport
       builder
     i18n (0.5.0)
@@ -169,7 +169,7 @@ DEPENDENCIES
   formtastic (~> 1.2.3)
   haml-rails (~> 0.3.4)
   hirb
-  hoptoad_notifier
+  hoptoad_notifier (~> 2.4.9)
   jquery-rails (~> 0.2.7)
   kaminari (~> 0.10.4)
   mocha (~> 0.9.12)
