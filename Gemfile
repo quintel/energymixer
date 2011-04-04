@@ -12,7 +12,7 @@ gem 'bluecloth',    '~> 2.1.0'
 gem 'yaml_db',      '~> 0.2.0'
 gem 'dynamic_form', '~>1.1.3'
 gem 'client_side_validations', '~> 3.0.0'
-gem 'hoptoad_notifier'
+gem 'hoptoad_notifier', '~> 2.4.9'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'
