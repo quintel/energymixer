@@ -82,6 +82,8 @@ body {
     clear: both;
     text-align: right;
     color: #cccccc; }
+    body footer a:hover {
+      text-decoration: underline; }
 
 body.sessions #content h2, body.unlocks #content h2 {
   font-size: 2.5em;
