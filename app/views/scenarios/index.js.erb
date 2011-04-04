@@ -1,9 +1,9 @@
-$("#selectable .scenarios").html("<%= escape_javascript(render :partial => 'select_scenario_box', 
+$("#user_scenarios").html("<%= escape_javascript(render :partial => 'select_scenario_box', 
                                 :collection => @scenarios, 
                                 :as => :scenario)%>")
-$("#selectable #pagination").html("<%= escape_javascript(paginate(@scenarios, :remote => true).to_s) %>");
+$("#user_scenarios #pagination").html("<%= escape_javascript(paginate(@scenarios, :remote => true).to_s) %>");
 $("#selected .scenarios .scenario").each(function(){
   var scenario_id = $(this).data("scenario_id");
   $("#selectable .scenarios .scenario[data-scenario_id="+scenario_id+"]").hide();
 });
-$("#selectable").busy("clear");
+$(".selectable").busy("clear");

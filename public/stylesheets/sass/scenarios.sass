@@ -229,11 +229,15 @@ body#scenarios_index
       float: left
       #selected
         padding: 1em
-        span.label
+        a
           font-weight: bold
           @include link_arrow_prefix
         span.compared
           color: #ccc
+        .scenarios
+          .scenario
+            display: none
+          
     section#right
       width: 360px
       float: left

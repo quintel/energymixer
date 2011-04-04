@@ -19,19 +19,19 @@
     font-weight: bold;
     color: #073574; }
   .dashboard_item.energy_dependence_step_0 {
-    background: #f2f2f2 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_6.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_1 {
-    background: #f2f2f2 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_5.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_2 {
-    background: #f2f2f2 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_4.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_3 {
     background: #f2f2f2 url(/images/layout/gauge_3.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_4 {
-    background: #f2f2f2 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_2.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_5 {
-    background: #f2f2f2 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_1.png) center left no-repeat; }
   .dashboard_item.energy_dependence_step_6 {
-    background: #f2f2f2 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f2f2f2 url(/images/layout/gauge_0.png) center left no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
     background: #f2f2f2 url(/images/layout/gauge_0.png) center left no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
@@ -368,12 +368,14 @@ body#scenarios_index section#scenarios section#left {
   float: left; }
   body#scenarios_index section#scenarios section#left #selected {
     padding: 1em; }
-    body#scenarios_index section#scenarios section#left #selected span.label {
+    body#scenarios_index section#scenarios section#left #selected a {
       font-weight: bold;
       background: transparent url(images/link_arrow.png) center left no-repeat;
       padding-left: 16px; }
     body#scenarios_index section#scenarios section#left #selected span.compared {
       color: #cccccc; }
+    body#scenarios_index section#scenarios section#left #selected .scenarios .scenario {
+      display: none; }
 body#scenarios_index section#scenarios section#right {
   width: 360px;
   float: left; }
