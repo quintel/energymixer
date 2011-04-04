@@ -17,3 +17,11 @@
   background: transparent url(images/link_arrow.png) center left no-repeat;
   padding-left: 16px;
 }
+
+@mixin gauge_0 { background: #F2F2F2 url(/images/layout/gauge_0.png) center left no-repeat; }
+@mixin gauge_1 { background: #F2F2F2 url(/images/layout/gauge_1.png) center left no-repeat; }
+@mixin gauge_2 { background: #F2F2F2 url(/images/layout/gauge_2.png) center left no-repeat; }
+@mixin gauge_3 { background: #F2F2F2 url(/images/layout/gauge_3.png) center left no-repeat; }
+@mixin gauge_4 { background: #F2F2F2 url(/images/layout/gauge_4.png) center left no-repeat; }
+@mixin gauge_5 { background: #F2F2F2 url(/images/layout/gauge_5.png) center left no-repeat; }
+@mixin gauge_6 { background: #F2F2F2 url(/images/layout/gauge_6.png) center left no-repeat; }
