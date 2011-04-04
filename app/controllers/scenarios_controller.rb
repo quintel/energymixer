@@ -112,12 +112,12 @@ class ScenariosController < ApplicationController
     
     def setup_current_scenario
       @current_scenario = Scenario.new(
-        :output_0  => 3948583406.649,
-        :output_1  => 19010942227.973732,
-        :output_2  => 14894948012.582876,
-        :output_3  => 2385593709.4479237,
-        :output_4  => 536620590.0778774,
-        :year => 2011
+        :output_0 => 3948583406.649,
+        :output_1 => 19010942227.973732,
+        :output_2 => 14894948012.582876,
+        :output_3 => 536620590.0778774,
+        :output_4 => 2385593709.4479237,
+        :year     => 2011
       )
     end
 end
