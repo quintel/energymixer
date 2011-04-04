@@ -2,19 +2,19 @@
   #user_details
     = scenario.error_messages
     %div.item
-      = scenario.label :title
-      = scenario.text_field :title
-    %div.item
-      = scenario.label :name, :class => 'required'
+      = scenario.label :name, "Naam", :class => 'required'
       = scenario.text_field :name
     %div.item
-      = scenario.label :email, :class => 'required'
+      = scenario.label :email, "E-mail", :class => 'required'
       = scenario.text_field :email
     %div.item
-      = scenario.label :age
+      = scenario.label :age, "Leeftijd"
       = scenario.text_field :age
     %div.item
-      = scenario.submit
+      = scenario.label :title, "Naam voor uw scenario"
+      = scenario.text_field :title
+    %div.item
+      = scenario.submit :value => "Bewaar mijn mix"
     
       = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
       = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
