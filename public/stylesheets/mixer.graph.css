@@ -84,12 +84,14 @@ table.combined_graph {
   table.combined_graph td {
     padding: 4px; }
     table.combined_graph td.total_amount {
+      height: 40px;
       color: #342b0b;
       background-color: #fbd52c;
       padding: 5px; }
       table.combined_graph td.total_amount h4 {
         font-weight: bold; }
     table.combined_graph td.carriers {
+      height: 90%;
       width: 75%;
       vertical-align: bottom; }
       table.combined_graph td.carriers .graph .carrier {
@@ -116,14 +118,14 @@ table.combined_graph {
       vertical-align: bottom; }
       table.combined_graph td.money .background {
         width: 80%;
-        height: 308px;
+        height: 90%;
         background: #eeeeee;
         position: relative;
         margin-bottom: 2px; }
         table.combined_graph td.money .background .coins {
           width: 100%;
           background: #bed509;
-          height: 308px;
+          height: 100%;
           position: absolute;
           bottom: 0px; }
 

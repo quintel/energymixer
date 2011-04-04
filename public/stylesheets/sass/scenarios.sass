@@ -5,6 +5,8 @@ body#scenarios_new, body#scenarios_create
   section#results
     width: 240px
     float: left
+    .combined_graph
+      height: 430px
     .current
       float: left
       width: 80px
@@ -50,7 +52,6 @@ body#scenarios_new, body#scenarios_create
             color: #D70000
           &#next_question
             @include link_arrow_prefix
-          
     .question
       font-size: 13px
       .information
@@ -142,20 +143,28 @@ body#scenarios_new, body#scenarios_create
       margin-bottom: .7em
 
 body#scenarios_show
-  .top
+  section#top
+    background-color: #F2F2F2
     height: 80px
     margin-bottom: 10px
     padding: 10px
     h2
-      font-size: 1.4em
+      font-size: 1.2em
       font-weight: bold
       margin-bottom: 1em
-  .left
+      color: #323232
+    input[type=text]
+      padding: 5px
+      width: 320px
+  section#left
     width: 50%
     float: left
     .text
       padding: 1.5em
       font-size: 1.2em
+      .name
+        font-weight: bold
+        margin-bottom: 10px
       .title
         font-weight: bold
       .link
@@ -169,11 +178,17 @@ body#scenarios_show
         float: left
         width: 150px
         margin: 12px
-  .right
+  section#right
     width: 40%
     float: left
-    .combined_graph
-      width: 160px
+    .user
+      float: left
+      width: 100px
+      margin-left: 10px
+    .current
+      float: left
+      width: 80px
+      margin-left: 10px
 
 body#scenarios_index
   section#top
