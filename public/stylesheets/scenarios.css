@@ -373,12 +373,22 @@ body#scenarios_compare .scenario {
 
 section#search_scenarios_box {
   background-color: #f2f2f2;
-  padding: 1em; }
-  section#search_scenarios_box h2 {
-    color: #2f2f2f;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 1em; }
-  section#search_scenarios_box input[type=text] {
-    padding: 5px;
-    width: 320px; }
+  padding: 1em;
+  margin-bottom: 10px; }
+  section#search_scenarios_box div.left {
+    float: left;
+    width: 350px; }
+    section#search_scenarios_box div.left h2 {
+      color: #2f2f2f;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 1em; }
+    section#search_scenarios_box div.left input[type=text] {
+      padding: 5px;
+      width: 320px; }
+  section#search_scenarios_box div.right {
+    float: left; }
+    section#search_scenarios_box div.right a {
+      font-weight: bold;
+      background: transparent url(images/link_arrow.png) center left no-repeat;
+      padding-left: 16px; }
