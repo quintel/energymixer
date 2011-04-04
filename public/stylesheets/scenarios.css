@@ -283,19 +283,6 @@ body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 
   font-weight: bold;
   margin-bottom: 0.7em; }
 
-body#scenarios_show section#top {
-  background-color: #f2f2f2;
-  height: 80px;
-  margin-bottom: 10px;
-  padding: 10px; }
-  body#scenarios_show section#top h2 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1em;
-    color: #323232; }
-  body#scenarios_show section#top input[type=text] {
-    padding: 5px;
-    width: 320px; }
 body#scenarios_show section#left {
   width: 50%;
   float: left; }
@@ -330,17 +317,6 @@ body#scenarios_show section#right {
     width: 80px;
     margin-left: 10px; }
 
-body#scenarios_index section#top {
-  background-color: #f2f2f2;
-  padding: 1em; }
-  body#scenarios_index section#top h2 {
-    color: #2f2f2f;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 1em; }
-  body#scenarios_index section#top input[type=text] {
-    padding: 5px;
-    width: 320px; }
 body#scenarios_index section#scenarios .scenario {
   position: relative;
   width: 350px;
@@ -394,10 +370,15 @@ body#scenarios_compare .scenario {
   body#scenarios_compare .scenario .name {
     margin: 5px 0px;
     font-weight: bold; }
-  body#scenarios_compare .scenario .age {
-    font-style: italic;
-    margin-bottom: 10px; }
-  body#scenarios_compare .scenario .close_link {
-    text-align: right;
-    background-color: #fb6a6f;
-    padding: 3px; }
+
+section#search_scenarios_box {
+  background-color: #f2f2f2;
+  padding: 1em; }
+  section#search_scenarios_box h2 {
+    color: #2f2f2f;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 1em; }
+  section#search_scenarios_box input[type=text] {
+    padding: 5px;
+    width: 320px; }
