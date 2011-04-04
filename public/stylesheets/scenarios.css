@@ -81,8 +81,7 @@ body#scenarios_new section#dashboard, body#scenarios_create section#dashboard {
 body#scenarios_new section#questions, body#scenarios_create section#questions {
   width: 420px;
   float: left;
-  line-height: 1.5em;
-  background-color: #eeeeee; }
+  line-height: 1.5em; }
   body#scenarios_new section#questions nav, body#scenarios_create section#questions nav {
     display: block;
     text-align: center;
@@ -93,18 +92,32 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       margin: 0 5px;
       color: #bbbbbb;
       font-weight: bold; }
-    body#scenarios_new section#questions nav#up a.active, body#scenarios_create section#questions nav#up a.active {
-      color: red; }
-    body#scenarios_new section#questions nav#up a:hover, body#scenarios_create section#questions nav#up a:hover {
-      color: #d70000; }
+    body#scenarios_new section#questions nav#up, body#scenarios_create section#questions nav#up {
+      background-color: #f2f2f2;
+      margin-bottom: 10px; }
+      body#scenarios_new section#questions nav#up a, body#scenarios_create section#questions nav#up a {
+        margin: 12px; }
+        body#scenarios_new section#questions nav#up a.active, body#scenarios_create section#questions nav#up a.active {
+          color: red; }
+        body#scenarios_new section#questions nav#up a:hover, body#scenarios_create section#questions nav#up a:hover {
+          color: #d70000; }
     body#scenarios_new section#questions nav#down, body#scenarios_create section#questions nav#down {
-      clear: both; }
-      body#scenarios_new section#questions nav#down a:hover, body#scenarios_create section#questions nav#down a:hover {
-        color: #d70000; }
+      clear: both;
+      border-top: 1px solid #989898; }
+      body#scenarios_new section#questions nav#down a, body#scenarios_create section#questions nav#down a {
+        font-weight: bold;
+        color: #323232; }
+        body#scenarios_new section#questions nav#down a:hover, body#scenarios_create section#questions nav#down a:hover {
+          color: #d70000; }
+        body#scenarios_new section#questions nav#down a#next_question, body#scenarios_create section#questions nav#down a#next_question {
+          background: transparent url(images/link_arrow.png) center left no-repeat;
+          padding-left: 16px; }
   body#scenarios_new section#questions .question, body#scenarios_create section#questions .question {
-    padding: 10px; }
+    font-size: 13px; }
     body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
-      margin-bottom: 5px; }
+      padding: 10px;
+      background-color: #f2f2f2;
+      margin-bottom: 10px; }
       body#scenarios_new section#questions .question .information strong, body#scenarios_create section#questions .question .information strong {
         font-weight: bold; }
       body#scenarios_new section#questions .question .information a, body#scenarios_create section#questions .question .information a {
@@ -112,15 +125,17 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     body#scenarios_new section#questions .question .number, body#scenarios_create section#questions .question .number {
       font-weight: bold;
       width: 5%;
-      float: left; }
-    body#scenarios_new section#questions .question .question_text, body#scenarios_create section#questions .question .question_text {
-      font-weight: bold; }
+      float: left;
+      padding-left: 7px; }
+    body#scenarios_new section#questions .question .text, body#scenarios_create section#questions .question .text {
+      float: left;
+      width: 90%;
+      line-height: 18px;
+      font-weight: bold;
+      margin-bottom: 18px; }
     body#scenarios_new section#questions .question ol.answers, body#scenarios_create section#questions .question ol.answers {
-      padding-left: 20px;
-      margin-left: 0;
-      border-top: 1px solid #cccccc;
-      margin-top: 5px;
-      padding-top: 5px; }
+      padding-left: 30px;
+      margin-left: 0; }
       body#scenarios_new section#questions .question ol.answers li.answer, body#scenarios_create section#questions .question ol.answers li.answer {
         margin-left: 0;
         font-weight: bold;
