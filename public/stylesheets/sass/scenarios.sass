@@ -13,7 +13,6 @@ body#scenarios_new, body#scenarios_create
     width: 420px
     float: left
     line-height: 1.5em
-    background-color: #eee
     nav
       display: block
       text-align: center
@@ -25,18 +24,31 @@ body#scenarios_new, body#scenarios_create
         color: #bbb
         font-weight: bold
       &#up
-        a.active
-          color: red
-        a:hover
-          color: #D70000
+        background-color: #F2F2F2
+        margin-bottom: 10px
+        a
+          margin: 12px
+          &.active
+            color: red
+          &:hover
+            color: #D70000
       &#down
         clear: both
-        a:hover
-          color: #D70000
+        border-top: 1px solid #989898
+        a
+          font-weight: bold
+          color: #323232
+          &:hover
+            color: #D70000
+          &#next_question
+            @include link_arrow_prefix
+          
     .question
-      padding: 10px
+      font-size: 13px
       .information
-        margin-bottom: 5px
+        padding: 10px
+        background-color: #F2F2F2
+        margin-bottom: 10px
         strong
           font-weight: bold
         a
@@ -45,14 +57,16 @@ body#scenarios_new, body#scenarios_create
         font-weight: bold
         width: 5%
         float: left
-      .question_text
+        padding-left: 7px
+      .text
+        float: left
+        width: 90%
+        line-height: 18px
         font-weight: bold
+        margin-bottom: 18px
       ol.answers
-        padding-left: 20px
+        padding-left: 30px
         margin-left: 0
-        border-top: 1px solid #ccc
-        margin-top: 5px
-        padding-top: 5px
         li.answer
           margin-left: 0
           font-weight: bold
