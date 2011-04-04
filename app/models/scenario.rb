@@ -56,7 +56,8 @@ class Scenario < ActiveRecord::Base
   validates :output_8, :presence => true
   
   scope :recent_first, order('created_at DESC')
-  scope :featured, where(:featured => true)
+  scope :featured,     where(:featured => true)
+  scope :user_created, where(:featured => false)
   scope :featured_first, order('featured DESC')
   # shall we use SOLR/TS/?
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
