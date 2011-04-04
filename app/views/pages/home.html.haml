@@ -30,7 +30,7 @@
       Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik door veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw is energieintensief. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in 2025?
     
 %section#current_state
-  123
-    
+  = render :partial => 'scenarios/static_graph', :locals => { :scenario => @current_scenario, :height => 410, :max_amount => @current_scenario.total_amount * 1.15 }
+  
 - content_for :head do
-  = stylesheet_link_tag 'pages'
+  = stylesheet_link_tag 'pages', 'mixer.graph'

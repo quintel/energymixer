@@ -32,6 +32,7 @@ body#pages_home section#sectors {
     body#pages_home section#sectors .sector .content {
       margin-left: 147px; }
 body#pages_home section#current_state {
-  border: 1px solid red;
+  margin-top: 20px;
   float: left;
-  width: 130px; }
+  width: 130px;
+  height: 450px; }

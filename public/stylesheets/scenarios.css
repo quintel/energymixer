@@ -84,12 +84,14 @@ table.combined_graph {
   table.combined_graph td {
     padding: 4px; }
     table.combined_graph td.total_amount {
+      height: 40px;
       color: #342b0b;
       background-color: #fbd52c;
       padding: 5px; }
       table.combined_graph td.total_amount h4 {
         font-weight: bold; }
     table.combined_graph td.carriers {
+      height: 90%;
       width: 75%;
       vertical-align: bottom; }
       table.combined_graph td.carriers .graph .carrier {
@@ -116,14 +118,14 @@ table.combined_graph {
       vertical-align: bottom; }
       table.combined_graph td.money .background {
         width: 80%;
-        height: 308px;
+        height: 90%;
         background: #eeeeee;
         position: relative;
         margin-bottom: 2px; }
         table.combined_graph td.money .background .coins {
           width: 100%;
           background: #bed509;
-          height: 308px;
+          height: 100%;
           position: absolute;
           bottom: 0px; }
 
@@ -146,6 +148,8 @@ table.shaded td.money .coins {
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
   float: left; }
+  body#scenarios_new section#results .combined_graph, body#scenarios_create section#results .combined_graph {
+    height: 430px; }
   body#scenarios_new section#results .current, body#scenarios_create section#results .current {
     float: left;
     width: 80px;
@@ -279,38 +283,52 @@ body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 
   font-weight: bold;
   margin-bottom: 0.7em; }
 
-body#scenarios_show .top {
+body#scenarios_show section#top {
+  background-color: #f2f2f2;
   height: 80px;
   margin-bottom: 10px;
   padding: 10px; }
-  body#scenarios_show .top h2 {
-    font-size: 1.4em;
+  body#scenarios_show section#top h2 {
+    font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 1em; }
-body#scenarios_show .left {
+    margin-bottom: 1em;
+    color: #323232; }
+  body#scenarios_show section#top input[type=text] {
+    padding: 5px;
+    width: 320px; }
+body#scenarios_show section#left {
   width: 50%;
   float: left; }
-  body#scenarios_show .left .text {
+  body#scenarios_show section#left .text {
     padding: 1.5em;
     font-size: 1.2em; }
-    body#scenarios_show .left .text .title {
+    body#scenarios_show section#left .text .name {
+      font-weight: bold;
+      margin-bottom: 10px; }
+    body#scenarios_show section#left .text .title {
       font-weight: bold; }
-    body#scenarios_show .left .text .link {
+    body#scenarios_show section#left .text .link {
       padding: 5px; }
-      body#scenarios_show .left .text .link a {
+      body#scenarios_show section#left .text .link a {
         color: red;
         font-size: 1.3em; }
-  body#scenarios_show .left .boxes {
+  body#scenarios_show section#left .boxes {
     margin-top: 10px; }
-    body#scenarios_show .left .boxes .dashboard_item {
+    body#scenarios_show section#left .boxes .dashboard_item {
       float: left;
       width: 150px;
       margin: 12px; }
-body#scenarios_show .right {
+body#scenarios_show section#right {
   width: 40%;
   float: left; }
-  body#scenarios_show .right .combined_graph {
-    width: 160px; }
+  body#scenarios_show section#right .user {
+    float: left;
+    width: 100px;
+    margin-left: 10px; }
+  body#scenarios_show section#right .current {
+    float: left;
+    width: 80px;
+    margin-left: 10px; }
 
 body#scenarios_index section#top {
   background-color: #f2f2f2;

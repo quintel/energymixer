@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => :show
   before_filter :setup_results, :only => :new
-  before_filter :setup_current_scenario, :only => :new
+  before_filter :setup_current_scenario, :only => [:new, :show]
 
   def new
     @scenario = Scenario.new(

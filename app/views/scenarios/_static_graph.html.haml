@@ -1,8 +1,12 @@
-- graph_max_height     = defined?(height) ? height : 290
-- area_labels          = defined?(area_labels) ? area_labels : true
-- current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height;
+-# External height
+- graph_max_height     = local_assigns.has_key?(:height) ? height : 290
+- show_area_labels     = local_assigns.has_key?(:area_labels) ? area_labels : true
+- custom_css_class     = local_assigns.has_key?(:custom_class) ? custom_class : nil
+- graph_max_amount     = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+-# Don't bother with this
+- current_graph_height = scenario.total_amount / graph_max_amount * graph_max_height;
 
-%table.combined_graph{:class => defined?(custom_class) ? custom_class : nil }
+%table.combined_graph{:class => custom_css_class, :style => "height: #{height}px" }
   %tr
     %td.total_amount{:colspan => 2}      
       %h4 Mix #{scenario.year || 2025}
@@ -14,12 +18,12 @@
         - scenario.carriers.each_pair do |key, v|
           - height = v[:ratio] * current_graph_height
           .carrier{:class => key, :style => "height: #{height}px"}
-            .label= v[:label] if area_labels && height > 8
+            .label= v[:label] if show_area_labels && height > 8
     %td.money
       .background
         .coins{:style => "height: #{current_graph_height + 6}px"}
 
-  - if defined?(inline_dashboard) && inline_dashboard
+  - if local_assigns.has_key?(:inline_dashboard) && inline_dashboard
     %tr
       %td{:colspan => 2}
         .dashboard_item{:class => set_class_for_output(:output_5, scenario.output_5)}

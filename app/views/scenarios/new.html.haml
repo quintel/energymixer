@@ -9,7 +9,7 @@
 
 %section#results
   .current
-    = render :partial => 'static_graph', :locals => { :scenario => @current_scenario, :custom_class => 'shaded' }
+    = render :partial => 'static_graph', :locals => { :scenario => @current_scenario, :custom_class => 'shaded', :height => 430 }
   .user_created
     = render :partial => 'dynamic_graph'
 

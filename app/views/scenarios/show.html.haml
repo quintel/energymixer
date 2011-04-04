@@ -1,12 +1,17 @@
-.top
-  %h2 Bekijk de EnergyMixes
-  = form_tag scenarios_path, :method => :get do
-    Search
-    = text_field_tag :q
-    = submit_tag "Search"
-    = link_to "Compare with other scenarios", scenarios_path(:selected => @scenario.id)
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    = link_to "Bekijk de Mixes van anderen", scenarios_path
+    >
+    = @scenario.name
 
-.left
+%section#top
+  %h2 Bekijk de EnergyMixes van anderen
+  = form_tag scenarios_path, :method => :get do
+    = text_field_tag :q
+
+%section#left
   .text
     - if @scenario.title
       .title
@@ -33,8 +38,11 @@
     .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
       %h3= dashboard_label_for_output(:output_8)
       .value= format_dashboard_value(:output_8, @scenario.output_8)
-.right.graph
-  = render :partial => 'static_graph', :locals => {:scenario => @scenario}
-
+%section#right.graph
+  .user
+    = render :partial => 'static_graph', :locals => {:scenario => @scenario}
+  .current
+    = render :partial => 'static_graph', :locals => { :scenario => @current_scenario, :custom_class => 'shaded', :height => 430, :area_labels => false }
+  
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
