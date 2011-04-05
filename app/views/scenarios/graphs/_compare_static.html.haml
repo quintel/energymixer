@@ -1,8 +1,8 @@
-- graph_max_height     = 380
+- graph_max_height     = 320
 - rounded_sum          = 0
 - current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height
 
-%table.graph_common.graph_normal.graph_compare
+%table.graph_common.graph_normal
   %tr
     %td{:colspan => 2}
   %tr
@@ -11,7 +11,7 @@
         - scenario.carriers.each_pair do |key, v|
           - height = v[:ratio] * current_graph_height
           .carrier{:class => key, :style => "height: #{height}px"}
-            .label= v[:label] if height > 8
+            .label= v[:label] if height > 11
     %td.money
       .background
         .coins{:style => "height: #{current_graph_height + 6}px"}

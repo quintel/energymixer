@@ -8,6 +8,16 @@ function Questions() {
   
   self.current_question = 1;
   
+  self.current_question_was_answered = function() {
+    var question_id = "#question_" + self.current_question;
+    var answer = $(question_id).find("input:checked");
+    return answer.length > 0;
+  };
+  
+  self.show_next_question_link_if_needed = function() {
+    self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
+  };
+  
   self.count_questions = function() {
     self.num_questions = self.num_questions || $(".question").size();
     return self.num_questions;
@@ -25,7 +35,8 @@ function Questions() {
     self.current_question == 1 ? 
       $("#previous_question").hide() : $("#previous_question").show();
     self.current_question == self.count_questions() ? 
-      $("#next_question").hide() : $("#next_question").show();    
+      $("#next_question").hide() : $("#next_question").show();
+    self.show_next_question_link_if_needed();
   };
   
   self.currently_selected_answers = function() {
@@ -111,6 +122,7 @@ function Questions() {
       $(this).parent().addClass('active');
       mixer.refresh();
       self.check_conflicts();
+      self.show_next_question_link_if_needed();
     });
     
     // setup colorbox popups
