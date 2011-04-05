@@ -15,8 +15,8 @@
         .scenarios
       #user_scenarios.selectable
         = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
-        #pagination
-          = paginate @scenarios, :remote => true
+      #pagination
+        = paginate @scenarios, :remote => true
     %section#right
       %h3 Gemiddelde per leeftijcategorie
       #featured_scenarios.selectable
