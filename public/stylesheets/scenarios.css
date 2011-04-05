@@ -204,7 +204,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       body#scenarios_new section#questions .question .information strong, body#scenarios_create section#questions .question .information strong {
         font-weight: bold; }
       body#scenarios_new section#questions .question .information a, body#scenarios_create section#questions .question .information a {
-        color: blue; }
+        text-decoration: underline; }
     body#scenarios_new section#questions .question .number, body#scenarios_create section#questions .question .number {
       font-weight: bold;
       width: 5%;
