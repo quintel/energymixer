@@ -43,6 +43,36 @@ class Scenario < ActiveRecord::Base
     output_8: "energy_dependence"
   }
   
+  Results = {
+    coal: {
+     gquery: "costs_share_of_coal",
+     unit: "Mln. Euro",
+     label: I18n.t('coal'),
+     css_class: "coal"
+    },
+    gas: {
+     gquery: "costs_share_of_gas",
+     label: I18n.t('gas'),
+     css_class: "gas"
+    }, 
+    oil: {
+     gquery: "costs_share_of_oil",
+     label: I18n.t('oil'),
+     css_class: "oil"
+    },
+    nuclear: {
+     gquery: "costs_share_of_uranium",
+     label: I18n.t('nuclear'),
+     css_class: "nuclear"
+
+    }, 
+    renewable: {
+     gquery: "costs_share_of_sustainable",
+     label: I18n.t('sustainable'),
+     css_class: "renewable"       
+    }
+  }
+  
   validates :name,  :presence => true
   validates :email, :presence => true
   validates :output_0, :presence => true
