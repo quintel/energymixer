@@ -11,7 +11,7 @@
         - scenario.carriers.each_pair do |key, v|
           - height = v[:ratio] * current_graph_height
           .carrier{:class => key, :style => "height: #{height}px"}
-            .label= v[:label] if height > 8
+            .label= v[:label] if height > 11
     %td.money
       .background
         .coins{:style => "height: #{current_graph_height + 6}px"}

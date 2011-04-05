@@ -118,6 +118,8 @@
   display: none; }
 .graph_shaded td.money .coins {
   background: #ebf0a8; }
+.graph_shaded td.dashboard .item h3, .graph_shaded td.dashboard .item .value {
+  color: #98aec8; }
 
 .graph_normal td.total_amount {
   color: #342b0b;
