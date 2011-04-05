@@ -1,6 +1,6 @@
 #dashboard
   - DashboardItem.ordered.each do |item|
     .dashboard_item{:class => item.gquery}
-      %h3= item.label
+      %h3= t(item.label).html_safe
       .value
         loading...
