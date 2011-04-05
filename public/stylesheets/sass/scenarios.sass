@@ -248,23 +248,30 @@ body#scenarios_index
         font-weight: bold
 
 body#scenarios_compare
-  h2
-    font-size: 1.5em
-    margin-bottom: 20px
   .scenario, .current_scenario
+    height: 690px
+    border: 1px solid red
     float: left
     padding: 20px
+    margin-top: 10px
     .name
       margin: 5px 0px 20px 0px
       font-weight: bold
   .scenario
-    width: 100px
-    border-right: 1px solid #CCCCCC
+    .holder
+      text-align: center
+      border: 1px solid blue
+      width: 90px
   .current_scenario
     width: 70px
     .name
       color: #ACACAC
-
+  .spacer
+    margin: 10px
+    width: 1px
+    height: 690px
+    float: left
+    background-color: #cccccc
 section#search_scenarios_box
   background-color: #F2F2F2
   padding: 1em
