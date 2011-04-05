@@ -68,11 +68,11 @@ class Scenario < ActiveRecord::Base
     
   def carriers
     {
-      coal:      { label: "Coal",      amount: output_0, ratio: output_0 / total_amount },
-      gas:       { label: "Gas",       amount: output_1, ratio: output_1 / total_amount },
-      oil:       { label: "Oil",       amount: output_2, ratio: output_2 / total_amount },
-      nuclear:   { label: "Nuclear",   amount: output_3, ratio: output_3 / total_amount },
-      renewable: { label: "Renewable", amount: output_4, ratio: output_4 / total_amount }
+      coal:      { label: I18n.t('coal'),      amount: output_0, ratio: output_0 / total_amount },
+      gas:       { label: I18n.t('gas'),       amount: output_1, ratio: output_1 / total_amount },
+      oil:       { label: I18n.t('oil'),       amount: output_2, ratio: output_2 / total_amount },
+      nuclear:   { label: I18n.t('nuclear'),   amount: output_3, ratio: output_3 / total_amount },
+      renewable: { label: I18n.t('renewable'), amount: output_4, ratio: output_4 / total_amount }
     }
   end
   
