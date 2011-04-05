@@ -84,11 +84,13 @@ function Graph() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
 
-    var graph_max_height = 390;
-    var max_amount       = globals.graph_max_amount / 1000000; // million euros
+    var graph_max_height     = 390;
+    var max_amount           = globals.graph_max_amount / 1000000; // million euros
     var current_graph_height = current_sum / max_amount * graph_max_height;
+    var rounded_sum          = 0;
     $.each(mixer.carriers_values, function(code, val) {
-      var new_height = val / current_sum * current_graph_height;
+      var new_height = Math.round(val / current_sum * current_graph_height);
+      rounded_sum += new_height;
       var selector = ".user_created ." + code;
       $(selector).animate({"height": new_height}, "slow");
       // hide text if there's no room
@@ -96,8 +98,8 @@ function Graph() {
       new_height > 10 ? label.show() : label.hide();
     });
     // update money column
-    var new_money_height = current_graph_height + 4 * 2; // margin..
-    $(".coins").animate({"height" : new_money_height}, "slow");
+    var new_money_height = rounded_sum + 4 * 2; // margin between layers
+    $(".user_created .coins").animate({"height" : new_money_height}, "slow");
     
     // and top counter
     $(".user_created .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
