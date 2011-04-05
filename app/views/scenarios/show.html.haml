@@ -39,7 +39,7 @@
   .user
     = render :partial => 'static_graph', :locals => {:scenario => @scenario}
   .current
-    = render :partial => 'static_graph', :locals => { :scenario => @current_scenario, :custom_class => 'shaded', :height => 430, :area_labels => false }
+    = render :partial => 'static_graph', :locals => { :scenario => Scenario.current, :custom_class => 'shaded', :height => 430, :area_labels => false }
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'

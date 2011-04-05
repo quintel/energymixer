@@ -1,7 +1,6 @@
 class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => :show
   before_filter :setup_results, :only => :new
-  before_filter :setup_current_scenario, :only => [:new, :show]
 
   def new
     @scenario = Scenario.new(
@@ -32,7 +31,6 @@ class ScenariosController < ApplicationController
       end
       redirect_to scenario_path(@scenario), :notice => 'Scenario saved'
     else
-      setup_current_scenario
       setup_results
       render :new
     end
@@ -105,16 +103,5 @@ class ScenariosController < ApplicationController
          css_class: "renewable"       
         }
       }      
-    end
-    
-    def setup_current_scenario
-      @current_scenario = Scenario.new(
-        :output_0 => 3948583406.649,
-        :output_1 => 19010942227.973732,
-        :output_2 => 14894948012.582876,
-        :output_3 => 536620590.0778774,
-        :output_4 => 2385593709.4479237,
-        :year     => 2011
-      )
     end
 end
