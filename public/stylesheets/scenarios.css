@@ -118,6 +118,8 @@
   display: none; }
 .graph_shaded td.money .coins {
   background: #ebf0a8; }
+.graph_shaded td.dashboard .item h3, .graph_shaded td.dashboard .item .value {
+  color: #98aec8; }
 
 .graph_normal td.total_amount {
   color: #342b0b;
@@ -167,7 +169,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     padding: 4px;
     font-size: 10px; }
     body#scenarios_new section#questions nav a, body#scenarios_create section#questions nav a {
-      cursor: default;
       margin: 0 5px;
       color: #bbbbbb;
       font-weight: bold; }
@@ -399,6 +400,7 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
     body#scenarios_compare .scenario table td.dashboard, body#scenarios_compare .current_scenario table td.dashboard {
       padding: 10px; }
       body#scenarios_compare .scenario table td.dashboard .item, body#scenarios_compare .current_scenario table td.dashboard .item {
+        height: 50px;
         padding: 10px;
         background: none;
         border-top: 1px solid #cccccc;
@@ -411,7 +413,7 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
           font-size: 16px;
           font-weight: bold; }
 body#scenarios_compare .scenario {
-  width: 90px; }
+  width: 130px; }
 body#scenarios_compare .current_scenario {
   width: 70px; }
   body#scenarios_compare .current_scenario .name {
