@@ -92,4 +92,62 @@ module ScenariosHelper
     scenario_id = scenario_id.etm_scenario_id if scenario_id.is_a?(Scenario)
     "#{APP_CONFIG['view_scenario_path']}#{scenario_id}/load"
   end
+  
+  def full_text(s)
+    out = []
+    # Total amount
+    out << if s.total_amount < 40_000_000_000
+      "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel aan energie."
+    elsif s.total_amount < 60_000_000_000
+      "De mix wordt langzaam duurder. Maar als onze economie blijft groeien kunnen we dat wel betalen."
+    elsif s.total_amount < 80_000_000_000
+      "De mix wordt behoorlijk duurder. Kunnen we dat wel blijven betalen?"
+    else
+      "De mix wordt veel duurder. Kunnen we dat betalen of groeien we onszelf uit de problemen?"
+    end
+    
+    # CO2
+    out << if s.output_5 < -0.25
+      "De CO2 van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
+    elsif s.output_5 < -0.01
+      "De CO2 uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2 reductie wereldwijd. Maar is het genoeg?"
+    elsif s.output_5 < 0.1
+      "De CO2 uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Maar hoe zit het met de opwarming van de aarde?"
+    else
+      "De CO2 uitstoot groeit sterk. De economie regeert.  En het klimaat; ach, weten  we wel zeker dat het verandert?"
+    end
+    
+    # Share of renewable energy
+    out << if s.output_6 < 0.05
+      "We blijven verslaafd aan fossiel en het lukt niet om duurzame energie in te zetten. Misschien is het ook wel niet nodig."
+    elsif s.output_6 < 0.1
+      "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en duurzame energie, maar hard gaat het niet."
+    elsif s.output_6 < 0.14
+      "We halen nog steeds de doelen voor duurzame energie die het kabinet in 2011 heeft gezet voor 2020 niet, maar we boeken vooruitgang."
+    else
+      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik."
+    end
+    
+    # Area footprint
+    out << if s.output_7 < 0.71
+      "Ons biomassa gebruik is min of meer gelijk aan dat in 2011. Best veel eigenlijk."
+    elsif s.output_7 <= 0.91
+      "We gaan steeds meer natuur en landbouwgronden inzetten voor de produktie van biomassa."
+    else
+      "Het gebruik van biomassa groeit sterk. Hoe gaan we de landbouwgronden en natuur vinden om al deze biomassa op te telen?"
+    end
+    
+    # Energy dependence
+    out << if s.output_8 < 0.45
+      "Terwijl onze eigen aargasreserves opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen enigszins te beperken."
+    elsif s.output_8 < 0.55
+      "Onze aardgasreserves raken op en we gaan steeds meer importeren maar de stijging valt nog mee."
+    elsif s.output_8 < 0.65
+      "Onze aardgasreserves raken op en we gaan steeds meer importeren. De importafhankelijkheid neemt met meer dan 100% toe in 15 jaar."
+    else
+      "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren."
+    end
+    
+    out.map{|x| "<p>#{x}</p>"}.join.html_safe
+  end
 end
