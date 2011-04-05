@@ -115,11 +115,16 @@ class Scenario < ActiveRecord::Base
   # TODO: fetch data from etmodel
   def self.current
     @current_scenario ||= new(
-      :output_0 => 4135606319.8158274,     # coal
-      :output_1 => 19712261358.58237, # gas
+      :output_0 => 4135606319.8158274, # coal
+      :output_1 => 19712261358.58237,  # gas
       :output_2 => 15600440661.944386, # oil
       :output_3 => 562037387.8724155,  # uranium
       :output_4 => 2695124317.5551677, # sustainable
+      
+      :output_5 => 0, #
+      :output_6 => 0, #
+      :output_7 => 0, #
+      :output_8 => 0, #
       :year     => 2011
     )
   end
