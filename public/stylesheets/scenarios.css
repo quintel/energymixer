@@ -78,6 +78,7 @@
 .graph_common {
   width: 100%; }
   .graph_common td.total_amount {
+    text-align: center;
     height: 30px;
     padding: 5px;
     font-size: 8px; }
