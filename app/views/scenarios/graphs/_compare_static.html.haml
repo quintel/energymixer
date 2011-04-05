@@ -6,7 +6,7 @@
 -# Don't bother with this
 - current_graph_height = scenario.total_amount / graph_max_amount * graph_max_height;
 
-%table.combined_graph{:class => custom_css_class, :style => "height: #{graph_max_height}px" }
+%table.graph_common.graph_shaded
   %tr
     %td.total_amount{:colspan => 2}      
       %h4 Mix #{scenario.year || 2025}

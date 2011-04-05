@@ -1,0 +1,16 @@
+%table.graph_common.graph_dynamic.graph_normal
+  %tr
+    %td.total_amount{:colspan => 2}        
+      %h4 Mix 2025
+      &euro;
+      %span ...
+      Miljard
+  %tr
+    %td.carriers
+      .graph
+        - Scenario::Results.each do |_, item|
+          .carrier{:class => [item[:css_class], item[:gquery]]}
+            .label= item[:label]
+    %td.money
+      .background
+        .coins
