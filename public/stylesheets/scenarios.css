@@ -191,111 +191,109 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         font-weight: bold;
         color: #323232; }
         body#scenarios_new section#questions nav#down a:hover, body#scenarios_create section#questions nav#down a:hover {
-          color: #d70000; }
+          text-decoration: underline; }
         body#scenarios_new section#questions nav#down a#next_question, body#scenarios_create section#questions nav#down a#next_question {
           background: transparent url(images/link_arrow.png) center left no-repeat;
           padding-left: 16px; }
-  body#scenarios_new section#questions .question, body#scenarios_create section#questions .question {
-    font-size: 13px; }
-    body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
-      padding: 10px;
-      background-color: #f2f2f2;
-      margin-bottom: 10px; }
-      body#scenarios_new section#questions .question .information strong, body#scenarios_create section#questions .question .information strong {
-        font-weight: bold; }
-      body#scenarios_new section#questions .question .information a, body#scenarios_create section#questions .question .information a {
-        text-decoration: underline; }
-    body#scenarios_new section#questions .question .number, body#scenarios_create section#questions .question .number {
-      font-weight: bold;
-      width: 5%;
-      float: left;
-      padding-left: 7px; }
-    body#scenarios_new section#questions .question .text, body#scenarios_create section#questions .question .text {
-      float: left;
-      width: 90%;
-      line-height: 18px;
-      font-weight: bold;
-      margin-bottom: 10px; }
-    body#scenarios_new section#questions .question ul.answers li.answer, body#scenarios_create section#questions .question ul.answers li.answer {
-      float: left;
+  body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 10px; }
+    body#scenarios_new section#questions .question .information strong, body#scenarios_create section#questions .question .information strong {
+      font-weight: bold; }
+    body#scenarios_new section#questions .question .information a, body#scenarios_create section#questions .question .information a {
+      text-decoration: underline; }
+  body#scenarios_new section#questions .question .number, body#scenarios_create section#questions .question .number {
+    font-weight: bold;
+    width: 5%;
+    float: left;
+    padding-left: 7px; }
+  body#scenarios_new section#questions .question .text, body#scenarios_create section#questions .question .text {
+    float: left;
+    width: 90%;
+    line-height: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  body#scenarios_new section#questions .question ul.answers li.answer, body#scenarios_create section#questions .question ul.answers li.answer {
+    float: left;
+    width: 100%;
+    margin-left: 0;
+    font-weight: bold;
+    list-style-type: none;
+    clear: both; }
+    body#scenarios_new section#questions .question ul.answers li.answer label, body#scenarios_create section#questions .question ul.answers li.answer label {
       width: 100%;
-      margin-left: 0;
-      font-weight: bold;
-      list-style-type: none;
-      clear: both; }
-      body#scenarios_new section#questions .question ul.answers li.answer label, body#scenarios_create section#questions .question ul.answers li.answer label {
-        width: 100%;
-        float: left;
-        padding: 5px 0;
-        margin-bottom: 4px;
-        font-weight: normal; }
-        body#scenarios_new section#questions .question ul.answers li.answer label .number, body#scenarios_create section#questions .question ul.answers li.answer label .number {
-          padding-top: 1px; }
-        body#scenarios_new section#questions .question ul.answers li.answer label .text, body#scenarios_create section#questions .question ul.answers li.answer label .text {
-          font-weight: normal;
-          margin: 0 0 0 0; }
-        body#scenarios_new section#questions .question ul.answers li.answer label a, body#scenarios_create section#questions .question ul.answers li.answer label a {
-          text-decoration: underline; }
-      body#scenarios_new section#questions .question ul.answers li.answer input[type=radio], body#scenarios_create section#questions .question ul.answers li.answer input[type=radio] {
-        display: none; }
-      body#scenarios_new section#questions .question ul.answers li.answer.active label, body#scenarios_new section#questions .question ul.answers li.answer:hover label, body#scenarios_create section#questions .question ul.answers li.answer.active label, body#scenarios_create section#questions .question ul.answers li.answer:hover label {
-        background-color: #fef6d7;
-        cursor: pointer; }
-      body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
-        text-decoration: underline; }
-    body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px; }
-    body#scenarios_new section#questions .question #user_details .text, body#scenarios_create section#questions .question #user_details .text {
-      padding: 10px;
-      background-color: #f2f2f2; }
-      body#scenarios_new section#questions .question #user_details .text p, body#scenarios_create section#questions .question #user_details .text p {
+      float: left;
+      padding: 5px 0;
+      margin-bottom: 4px;
+      font-weight: normal; }
+      body#scenarios_new section#questions .question ul.answers li.answer label .number, body#scenarios_create section#questions .question ul.answers li.answer label .number {
+        padding-top: 1px; }
+      body#scenarios_new section#questions .question ul.answers li.answer label .text, body#scenarios_create section#questions .question ul.answers li.answer label .text {
         font-weight: normal;
-        line-height: 14px; }
-    body#scenarios_new section#questions .question #user_details .item, body#scenarios_create section#questions .question #user_details .item {
+        margin: 0 0 0 0; }
+      body#scenarios_new section#questions .question ul.answers li.answer label a, body#scenarios_create section#questions .question ul.answers li.answer label a {
+        text-decoration: underline; }
+    body#scenarios_new section#questions .question ul.answers li.answer input[type=radio], body#scenarios_create section#questions .question ul.answers li.answer input[type=radio] {
+      display: none; }
+    body#scenarios_new section#questions .question ul.answers li.answer.active label, body#scenarios_new section#questions .question ul.answers li.answer:hover label, body#scenarios_create section#questions .question ul.answers li.answer.active label, body#scenarios_create section#questions .question ul.answers li.answer:hover label {
+      background-color: #fef6d7;
+      cursor: pointer; }
+    body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
+      text-decoration: underline; }
+  body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  body#scenarios_new section#questions .question #user_details .text, body#scenarios_create section#questions .question #user_details .text {
+    padding: 10px;
+    background-color: #f2f2f2; }
+    body#scenarios_new section#questions .question #user_details .text p, body#scenarios_create section#questions .question #user_details .text p {
+      font-weight: normal;
+      line-height: 14px; }
+  body#scenarios_new section#questions .question #user_details .item, body#scenarios_create section#questions .question #user_details .item {
+    padding: 3px;
+    clear: left; }
+    body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
+      background-color: #f6182c;
+      float: left;
+      position: relative;
+      height: 36px; }
+    body#scenarios_new section#questions .question #user_details .item label, body#scenarios_create section#questions .question #user_details .item label {
+      font-size: 11px;
+      display: block;
+      float: left;
+      width: 80px;
+      padding: 5px;
+      text-align: right; }
+      body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
+        font-weight: bold; }
+    body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
+      display: block;
+      float: left;
       padding: 3px;
-      clear: left; }
-      body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
-        background-color: #f6182c;
-        float: left;
-        position: relative;
-        height: 36px; }
-      body#scenarios_new section#questions .question #user_details .item label, body#scenarios_create section#questions .question #user_details .item label {
-        font-size: 11px;
-        display: block;
-        float: left;
-        width: 80px;
-        padding: 5px;
-        text-align: right; }
-        body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
-          font-weight: bold; }
-      body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
-        display: block;
-        float: left;
-        padding: 3px;
-        margin: 4px; }
-      body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
-        width: 220px; }
-      body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
-        margin-left: 74px;
-        width: 214px;
-        border: 1px solid #cccccc;
-        margin-bottom: 20px; }
-        body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
-          background-color: #f69409; }
-    body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
-      border: 1px solid red;
-      margin: 3px 3px 20px 3px; }
-      body#scenarios_new section#questions .question #user_details #errorExplanation h2, body#scenarios_create section#questions .question #user_details #errorExplanation h2 {
-        padding: 5px;
-        background-color: red;
-        color: white;
-        font-size: 1.3em;
-        margin-bottom: 0.5em;
-        border-bottom: 1px solid; }
-      body#scenarios_new section#questions .question #user_details #errorExplanation p, body#scenarios_new section#questions .question #user_details #errorExplanation ul, body#scenarios_create section#questions .question #user_details #errorExplanation p, body#scenarios_create section#questions .question #user_details #errorExplanation ul {
-        padding: 5px; }
+      margin: 4px; }
+    body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
+      width: 220px; }
+    body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
+      margin-left: 74px;
+      width: 214px;
+      border: 1px solid #cccccc;
+      margin-bottom: 20px; }
+      body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
+        background-color: #f69409; }
+  body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
+    border: 1px solid red;
+    margin: 3px 3px 20px 3px; }
+    body#scenarios_new section#questions .question #user_details #errorExplanation h2, body#scenarios_create section#questions .question #user_details #errorExplanation h2 {
+      padding: 5px;
+      background-color: red;
+      color: white;
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid; }
+    body#scenarios_new section#questions .question #user_details #errorExplanation p, body#scenarios_new section#questions .question #user_details #errorExplanation ul, body#scenarios_create section#questions .question #user_details #errorExplanation p, body#scenarios_create section#questions .question #user_details #errorExplanation ul {
+      padding: 5px; }
   body#scenarios_new section#questions #notice, body#scenarios_create section#questions #notice {
     display: none;
     text-align: center;
