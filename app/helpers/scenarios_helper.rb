@@ -77,11 +77,11 @@ module ScenariosHelper
     case gquery
     when "co2_emission_final_demand_to_1990_in_percent"
       value *= -1
-      "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2)}%"
+      "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2, :separator => ",")}%"
     when "area_footprint_per_nl"
-      "#{number_with_precision(value, :precision => 2)}xNL"
+      "#{number_with_precision(value, :precision => 2, :separator => ",")}xNL"
     when "share_of_renewable_energy", "energy_dependence"
-      "#{number_with_precision(value * 100, :precision => 2)}%"
+      "#{number_with_precision(value * 100, :precision => 2, :separator => ",")}%"
     else
       value
     end
