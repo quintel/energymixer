@@ -15,7 +15,7 @@ function Questions() {
   };
   
   self.show_next_question_link_if_needed = function() {
-    self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
+    //self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
   };
   
   self.count_questions = function() {
@@ -95,10 +95,15 @@ function Questions() {
   
   self.setup_callbacks = function() {
     $("#next_question").click(function(){
-      self.current_question++;
-      var last_question = self.count_questions();
-      if (self.current_question > last_question) self.current_question = last_question;
-      self.show_right_question();
+      if(!self.current_question_was_answered()) {
+        alert('Kies eerst een antwoord voor je verder gaat.');
+      }
+      else{
+        self.current_question++;
+        var last_question = self.count_questions();
+        if (self.current_question > last_question) self.current_question = last_question;
+        self.show_right_question();
+      }
       return false;
     });
 
@@ -143,6 +148,10 @@ function Questions() {
       $("#scenario_etm_scenario_id").val(mixer.scenario_id);
     });
   };
+  
+  self.clear_the_form = function(){
+    $('form')[0].reset(); //we need to force this when a user refreshes the page (browser wants to remember the values), DS
+  }
     
   self.init = function() {
     if($(".field_with_errors").length > 0) {
@@ -153,6 +162,7 @@ function Questions() {
     }
     self.setup_callbacks();
     self.show_right_question();
+    self.clear_the_form();
   };
   
   self.init();
