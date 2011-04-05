@@ -84,6 +84,7 @@ class Scenario < ActiveRecord::Base
   validates :output_6, :presence => true
   validates :output_7, :presence => true
   validates :output_8, :presence => true
+  validates :accept_terms, :acceptance => true
   
   scope :recent_first, order('created_at DESC')
   scope :featured,     where(:featured => true)
@@ -92,7 +93,7 @@ class Scenario < ActiveRecord::Base
   # shall we use SOLR/TS/?
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
   
-  attr_accessor :year
+  attr_accessor :year, :accept_terms
   
   paginates_per 10
     
