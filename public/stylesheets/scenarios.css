@@ -182,6 +182,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     padding: 4px;
     font-size: 10px; }
     body#scenarios_new section#questions nav a, body#scenarios_create section#questions nav a {
+      cursor: default;
       margin: 0 5px;
       color: #bbbbbb;
       font-weight: bold; }
@@ -194,6 +195,11 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           color: red; }
         body#scenarios_new section#questions nav#up a:hover, body#scenarios_create section#questions nav#up a:hover {
           color: #d70000; }
+    body#scenarios_new section#questions nav ol li, body#scenarios_create section#questions nav ol li {
+      float: left;
+      margin: 2px 12px; }
+      body#scenarios_new section#questions nav ol li.active, body#scenarios_create section#questions nav ol li.active {
+        color: red; }
     body#scenarios_new section#questions nav#down, body#scenarios_create section#questions nav#down {
       clear: both;
       border-top: 1px solid #989898; }
