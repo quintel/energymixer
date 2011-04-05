@@ -37,9 +37,9 @@
       .value= format_dashboard_value(:output_8, @scenario.output_8)
 %section#right.graph
   .user
-    = render :partial => 'static_graph', :locals => {:scenario => @scenario}
+    = render :partial => 'scenarios/graphs/show_static', :locals => {:scenario => @scenario}
   .current
-    = render :partial => 'static_graph', :locals => { :scenario => Scenario.current, :custom_class => 'shaded', :height => 430, :area_labels => false }
+    = render :partial => 'scenarios/graphs/show_shaded', :locals => { :scenario => Scenario.current }
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
