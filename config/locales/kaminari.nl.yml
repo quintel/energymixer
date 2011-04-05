@@ -1,0 +1,5 @@
+nl:
+  views:
+    pagination:
+      next: Volgende
+      previous: Vorige

@@ -140,20 +140,22 @@
 .graph_normal td.money .background .coins {
   background: #bed509; }
 
-.graph_compare td.dashboard {
+table td.carriers {
+  height: 320px; }
+table td.dashboard {
   padding: 10px; }
-.graph_compare .item {
-  padding: 10px;
-  background: none;
-  border-top: 1px solid #cccccc;
-  text-align: left;
-  color: #0b3476; }
-  .graph_compare .item h3 {
-    font-size: 10px;
-    font-weight: bold; }
-  .graph_compare .item .value {
-    font-size: 16px;
-    font-weight: bold; }
+  table td.dashboard .item {
+    padding: 10px;
+    background: none;
+    border-top: 1px solid #cccccc;
+    text-align: left;
+    color: #0b3476; }
+    table td.dashboard .item h3 {
+      font-size: 10px;
+      font-weight: bold; }
+    table td.dashboard .item .value {
+      font-size: 16px;
+      font-weight: bold; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
@@ -397,22 +399,29 @@ body#scenarios_index section#scenarios section#right {
     padding: 1em;
     font-weight: bold; }
 
-body#scenarios_compare h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px; }
 body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
+  height: 690px;
+  border: 1px solid red;
   float: left;
-  padding: 20px; }
+  padding: 20px;
+  margin-top: 10px; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
-body#scenarios_compare .scenario {
-  width: 100px;
-  border-right: 1px solid #cccccc; }
+body#scenarios_compare .scenario .holder {
+  text-align: center;
+  border: 1px solid blue;
+  width: 90px; }
 body#scenarios_compare .current_scenario {
   width: 70px; }
   body#scenarios_compare .current_scenario .name {
     color: #acacac; }
+body#scenarios_compare .spacer {
+  margin: 10px;
+  width: 1px;
+  height: 690px;
+  float: left;
+  background-color: #cccccc; }
 
 section#search_scenarios_box {
   background-color: #f2f2f2;
