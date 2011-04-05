@@ -9,9 +9,9 @@
 
 %section#results
   .current
-    = render :partial => 'static_graph', :locals => { :scenario => Scenario.current, :custom_class => 'shaded', :height => 430 }
+    = render :partial => 'scenarios/graphs/new_static', :locals => { :scenario => Scenario.current }
   .user_created
-    = render :partial => 'dynamic_graph'
+    = render :partial => 'scenarios/graphs/new_dynamic'
 
 %section#dashboard
   = render :partial => 'dashboard'

@@ -5,15 +5,16 @@ body#scenarios_new, body#scenarios_create
   section#results
     width: 240px
     float: left
-    .combined_graph
+    .current, .user_created
+      float: left
+      margin-left: 20px
       height: 430px
+      td.carriers
+        height: 390px
+        
     .current
-      float: left
       width: 80px
-      margin-left: 20px
     .user_created
-      margin-left: 20px
-      float: left
       width: 100px
   section#dashboard
     // The graph and dashboard items style is defined in mixer.graph.sass
