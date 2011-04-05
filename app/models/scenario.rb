@@ -80,4 +80,16 @@ class Scenario < ActiveRecord::Base
   def total_amount
     output_0 + output_1 + output_2 + output_3 + output_4
   end
+  
+  # TODO: fetch data from etmodel
+  def self.current
+    @current_scenario ||= new(
+      :output_0 => 3948583406.649,
+      :output_1 => 19010942227.973732,
+      :output_2 => 14894948012.582876,
+      :output_3 => 536620590.0778774,
+      :output_4 => 2385593709.4479237,
+      :year     => 2011
+    )
+  end
 end
