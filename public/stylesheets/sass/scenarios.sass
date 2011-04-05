@@ -5,15 +5,15 @@ body#scenarios_new, body#scenarios_create
   section#results
     width: 240px
     float: left
-    .combined_graph
+    .current, .user_created
+      float: left
+      margin-left: 20px
       height: 430px
+      td.carriers
+        height: 390px        
     .current
-      float: left
       width: 80px
-      margin-left: 20px
     .user_created
-      margin-left: 20px
-      float: left
       width: 100px
   section#dashboard
     // The graph and dashboard items style is defined in mixer.graph.sass
@@ -172,7 +172,7 @@ body#scenarios_show
     float: left
     .text
       padding: 1.5em
-      font-size: 1.2em
+      font-size: 1.0em
       .name
         font-weight: bold
         margin-bottom: 10px
@@ -192,14 +192,16 @@ body#scenarios_show
   section#right
     width: 40%
     float: left
-    .user
+    .user, .current
       float: left
-      width: 100px
+      td.carriers
+        height: 380px
+    .user
+      width: 120px
       margin-left: 10px
     .current
-      float: left
       width: 80px
-      margin-left: 10px
+      margin-left: 30px
 
 body#scenarios_index
   section#scenarios
@@ -249,14 +251,19 @@ body#scenarios_compare
   h2
     font-size: 1.5em
     margin-bottom: 20px
-  .scenario
-    padding: 3px
-    border: 1px solid #eee
+  .scenario, .current_scenario
     float: left
-    margin: 5px
+    padding: 20px
     .name
-      margin: 5px 0px
+      margin: 5px 0px 20px 0px
       font-weight: bold
+  .scenario
+    width: 100px
+    border-right: 1px solid #CCCCCC
+  .current_scenario
+    width: 70px
+    .name
+      color: #ACACAC
 
 section#search_scenarios_box
   background-color: #F2F2F2

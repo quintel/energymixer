@@ -20,11 +20,11 @@ function Graph() {
   };
   
   self.block_interface = function() {
-    $("#dashboard .dashboard_item .value, #graph_container .total_amount, #carriers").busy({img: '/images/spinner.gif'});
+    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({img: '/images/spinner.gif'});
   };
   
   self.unblock_interface = function() {
-    $("#dashboard .dashboard_item .value, #graph_container .total_amount, #carriers").busy("clear");
+    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear");
   };
     
   // the following methods should not be called directly
@@ -84,23 +84,25 @@ function Graph() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
 
-    var graph_max_height = 320;
-    var max_amount       = globals.graph_max_amount / 1000000; // million euros
+    var graph_max_height     = 390;
+    var max_amount           = globals.graph_max_amount / 1000000; // million euros
     var current_graph_height = current_sum / max_amount * graph_max_height;
+    var rounded_sum          = 0;
     $.each(mixer.carriers_values, function(code, val) {
-      var new_height = val / current_sum * current_graph_height;
-      var selector = "#graph_container ." + code;
+      var new_height = Math.round(val / current_sum * current_graph_height);
+      rounded_sum += new_height;
+      var selector = ".user_created ." + code;
       $(selector).animate({"height": new_height}, "slow");
       // hide text if there's no room
       var label = $(selector + " .label");
-      new_height > 8 ? label.show() : label.hide();
+      new_height > 10 ? label.show() : label.hide();
     });
     // update money column
-    var new_money_height = current_graph_height + 4 * 2; // margin..
-    $(".coins").animate({"height" : new_money_height}, "slow");
+    var new_money_height = rounded_sum + 4 * 2; // margin between layers
+    $(".user_created .coins").animate({"height" : new_money_height}, "slow");
     
     // and top counter
-    $("#graph_container .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
+    $(".user_created .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
     
     self.unblock_interface();
   };

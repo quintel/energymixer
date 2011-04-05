@@ -75,88 +75,98 @@
   .dashboard_item.area_footprint_per_nl_step_6 {
     background: #f2f2f2 url(/images/layout/gauge_0.png) center left no-repeat; }
 
-.static_graph {
-  border: 1px solid red;
-  width: 90px; }
+.graph_common {
+  width: 100%; }
+  .graph_common td.total_amount {
+    text-align: center;
+    height: 30px;
+    padding: 5px;
+    font-size: 8px; }
+    .graph_common td.total_amount h4 {
+      font-weight: bold; }
+  .graph_common td.carriers {
+    width: 80%;
+    vertical-align: bottom; }
+    .graph_common td.carriers .carrier {
+      margin-top: 2px; }
+  .graph_common td.money {
+    width: 20%;
+    vertical-align: bottom; }
+    .graph_common td.money .background {
+      margin-left: 40%;
+      position: relative; }
+      .graph_common td.money .background .coins {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px; }
 
-table.combined_graph {
-  margin: 0 auto; }
-  table.combined_graph td {
-    padding: 4px; }
-    table.combined_graph td.total_amount {
-      height: 40px;
-      color: #342b0b;
-      background-color: #fbd52c;
-      padding: 5px; }
-      table.combined_graph td.total_amount h4 {
-        font-weight: bold; }
-    table.combined_graph td.carriers {
-      height: 90%;
-      width: 75%;
-      vertical-align: bottom; }
-      table.combined_graph td.carriers .graph .carrier {
-        padding-left: 10px;
-        text-align: left;
-        height: 20%;
-        width: 90%;
-        margin-bottom: 2px;
-        text-decoration: none;
-        color: white;
-        font-size: 8px; }
-        table.combined_graph td.carriers .graph .carrier.oil {
-          background: #57585a; }
-        table.combined_graph td.carriers .graph .carrier.gas {
-          background: #2a9ac3; }
-        table.combined_graph td.carriers .graph .carrier.coal {
-          background: #71362b; }
-        table.combined_graph td.carriers .graph .carrier.nuclear {
-          background: #ee8208; }
-        table.combined_graph td.carriers .graph .carrier.renewable {
-          background: #1e693b; }
-    table.combined_graph td.money {
-      width: 25%;
-      vertical-align: bottom; }
-      table.combined_graph td.money .background {
-        width: 80%;
-        height: 90%;
-        background: #eeeeee;
-        position: relative;
-        margin-bottom: 2px; }
-        table.combined_graph td.money .background .coins {
-          width: 100%;
-          background: #bed509;
-          height: 100%;
-          position: absolute;
-          bottom: 0px; }
-
-table.shaded td.total_amount {
-  background: #fff6d5 !important;
+.graph_shaded td.total_amount {
+  background: #fff6d5;
   color: #7a7667; }
-table.shaded td.carriers .graph .carrier.oil {
-  background: #c8cac9 !important; }
-table.shaded td.carriers .graph .carrier.gas {
-  background: #a4deec !important; }
-table.shaded td.carriers .graph .carrier.coal {
-  background: #d2bcb8 !important; }
-table.shaded td.carriers .graph .carrier.nuclear {
-  background: #fbd5a8 !important; }
-table.shaded td.carriers .graph .carrier.renewable {
-  background: #a6cdbe !important; }
-table.shaded td.money .coins {
-  background: #ebf0a8 !important; }
+.graph_shaded td.carriers .carrier.oil {
+  background: #c8cac9; }
+.graph_shaded td.carriers .carrier.gas {
+  background: #a4deec; }
+.graph_shaded td.carriers .carrier.coal {
+  background: #d2bcb8; }
+.graph_shaded td.carriers .carrier.nuclear {
+  background: #fbd5a8; }
+.graph_shaded td.carriers .carrier.renewable {
+  background: #a6cdbe; }
+.graph_shaded td.carriers .carrier .label {
+  display: none; }
+.graph_shaded td.money .coins {
+  background: #ebf0a8; }
+
+.graph_normal td.total_amount {
+  color: #342b0b;
+  background-color: #fbd52c; }
+.graph_normal td.carriers .graph .carrier.oil {
+  background: #57585a; }
+.graph_normal td.carriers .graph .carrier.gas {
+  background: #2a9ac3; }
+.graph_normal td.carriers .graph .carrier.coal {
+  background: #71362b; }
+.graph_normal td.carriers .graph .carrier.nuclear {
+  background: #ee8208; }
+.graph_normal td.carriers .graph .carrier.renewable {
+  background: #1e693b; }
+.graph_normal td.carriers .graph .carrier .label {
+  text-decoration: none;
+  color: white;
+  font-size: 9px;
+  padding-left: 1px; }
+.graph_normal td.money .background .coins {
+  background: #bed509; }
+
+.graph_compare td.dashboard {
+  padding: 10px; }
+.graph_compare .item {
+  padding: 10px;
+  background: none;
+  border-top: 1px solid #cccccc;
+  text-align: left;
+  color: #0b3476; }
+  .graph_compare .item h3 {
+    font-size: 10px;
+    font-weight: bold; }
+  .graph_compare .item .value {
+    font-size: 16px;
+    font-weight: bold; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
   float: left; }
-  body#scenarios_new section#results .combined_graph, body#scenarios_create section#results .combined_graph {
-    height: 430px; }
-  body#scenarios_new section#results .current, body#scenarios_create section#results .current {
+  body#scenarios_new section#results .current, body#scenarios_new section#results .user_created, body#scenarios_create section#results .current, body#scenarios_create section#results .user_created {
     float: left;
-    width: 80px;
-    margin-left: 20px; }
-  body#scenarios_new section#results .user_created, body#scenarios_create section#results .user_created {
     margin-left: 20px;
-    float: left;
+    height: 430px; }
+    body#scenarios_new section#results .current td.carriers, body#scenarios_new section#results .user_created td.carriers, body#scenarios_create section#results .current td.carriers, body#scenarios_create section#results .user_created td.carriers {
+      height: 390px; }
+  body#scenarios_new section#results .current, body#scenarios_create section#results .current {
+    width: 80px; }
+  body#scenarios_new section#results .user_created, body#scenarios_create section#results .user_created {
     width: 100px; }
 body#scenarios_new section#dashboard, body#scenarios_create section#dashboard {
   width: 120px;
@@ -308,7 +318,7 @@ body#scenarios_show section#left {
   float: left; }
   body#scenarios_show section#left .text {
     padding: 1.5em;
-    font-size: 1.2em; }
+    font-size: 1em; }
     body#scenarios_show section#left .text .name {
       font-weight: bold;
       margin-bottom: 10px; }
@@ -328,14 +338,16 @@ body#scenarios_show section#left {
 body#scenarios_show section#right {
   width: 40%;
   float: left; }
+  body#scenarios_show section#right .user, body#scenarios_show section#right .current {
+    float: left; }
+    body#scenarios_show section#right .user td.carriers, body#scenarios_show section#right .current td.carriers {
+      height: 380px; }
   body#scenarios_show section#right .user {
-    float: left;
-    width: 100px;
+    width: 120px;
     margin-left: 10px; }
   body#scenarios_show section#right .current {
-    float: left;
     width: 80px;
-    margin-left: 10px; }
+    margin-left: 30px; }
 
 body#scenarios_index section#scenarios .scenario {
   position: relative;
@@ -382,14 +394,19 @@ body#scenarios_index section#scenarios section#right {
 body#scenarios_compare h2 {
   font-size: 1.5em;
   margin-bottom: 20px; }
-body#scenarios_compare .scenario {
-  padding: 3px;
-  border: 1px solid #eeeeee;
+body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
   float: left;
-  margin: 5px; }
-  body#scenarios_compare .scenario .name {
-    margin: 5px 0px;
+  padding: 20px; }
+  body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
+    margin: 5px 0px 20px 0px;
     font-weight: bold; }
+body#scenarios_compare .scenario {
+  width: 100px;
+  border-right: 1px solid #cccccc; }
+body#scenarios_compare .current_scenario {
+  width: 70px; }
+  body#scenarios_compare .current_scenario .name {
+    color: #acacac; }
 
 section#search_scenarios_box {
   background-color: #f2f2f2;

@@ -13,7 +13,10 @@
 - @scenarios.each do |s|
   .scenario
     .name= s.name
-    = render :partial => 'static_graph', :locals => { :scenario => s, :inline_dashboard => true }
+    = render :partial => 'scenarios/graphs/compare_static', :locals => { :scenario => s }
+.current_scenario
+  .name Mix 2011
+  = render :partial => 'scenarios/graphs/compare_shaded', :locals => { :scenario => Scenario.current }
 
 - content_for :head do
   = stylesheet_link_tag 'mixer.graph'
