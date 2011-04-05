@@ -9,7 +9,7 @@
     %tr
       %td.carriers
         .graph
-          - @results.each do |_, item|
+          - Scenario::Results.each do |_, item|
             .carrier{:class => [item[:css_class], item[:gquery]]}
               .label= item[:label]
       %td.money
