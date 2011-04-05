@@ -6,7 +6,7 @@ describe MixerMailer do
     let(:mail) { MixerMailer.thankyou(scenario) }
 
     it "renders the headers" do
-      mail.subject.should eq("Your scenario")
+      mail.subject.should eq("Jouw Future Energy Mix")
     end
 
     it "renders the body with a link to the scenario" do
