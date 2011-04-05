@@ -1,5 +1,5 @@
 body#pages_home section#intro_text {
-  background: #f2f2f2;
+  background: #f5f5f5;
   padding: 8px; }
   body#pages_home section#intro_text h2 {
     font-weight: bold;
@@ -35,6 +35,8 @@ body#pages_home section#sectors {
       float: left; }
     body#pages_home section#sectors .sector .content {
       margin-left: 147px; }
+    body#pages_home section#sectors .sector.active {
+      background-color: #f5f5f5; }
 body#pages_home section#current_state {
   margin-top: 20px;
   margin-left: 30px;
