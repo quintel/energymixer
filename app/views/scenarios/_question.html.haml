@@ -7,7 +7,7 @@
   .text
     = raw question_object.question
   %ul.answers
-    - question_object.answers.each_with_index do |a, index|
+    - question_object.answers.ordered.each_with_index do |a, index|
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
         = answer.hidden_field :question_id
         = answer.radio_button :answer_id, a.id, 
