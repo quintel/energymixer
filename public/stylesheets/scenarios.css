@@ -237,27 +237,40 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           display: none; }
         body#scenarios_new section#questions .question ol.answers li.answer.active, body#scenarios_create section#questions .question ol.answers li.answer.active {
           color: red; }
+    body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    body#scenarios_new section#questions .question #user_details .text, body#scenarios_create section#questions .question #user_details .text {
+      padding: 10px;
+      background-color: #f2f2f2; }
+      body#scenarios_new section#questions .question #user_details .text p, body#scenarios_create section#questions .question #user_details .text p {
+        font-weight: normal;
+        line-height: 14px; }
     body#scenarios_new section#questions .question #user_details .item, body#scenarios_create section#questions .question #user_details .item {
-      padding: 3px; }
+      padding: 3px;
+      clear: left; }
       body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
         background-color: #f6182c;
         float: left;
         position: relative;
         height: 36px; }
       body#scenarios_new section#questions .question #user_details .item label, body#scenarios_create section#questions .question #user_details .item label {
+        font-size: 11px;
         display: block;
         float: left;
-        width: 60px;
+        width: 80px;
         padding: 5px;
         text-align: right; }
         body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
           font-weight: bold; }
-      body#scenarios_new section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item input {
+      body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
         display: block;
         float: left;
-        padding: 5px;
-        width: 270px;
+        padding: 3px;
         margin: 4px; }
+      body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
+        width: 220px; }
       body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
         margin-left: 74px;
         width: 214px;
