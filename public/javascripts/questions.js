@@ -18,8 +18,8 @@ function Questions() {
     var question_id = "#question_" + self.current_question;
     $(question_id).show();
     // update top row
-    $("a.question_tab").removeClass('active');
-    var tab_selector = "a.question_tab[data-question_id=" + self.current_question + "]";
+    $(".question_tab").removeClass('active');
+    var tab_selector = ".question_tab[data-question_id=" + self.current_question + "]";
     $(tab_selector).addClass('active');
     // update links
     self.current_question == 1 ? 
