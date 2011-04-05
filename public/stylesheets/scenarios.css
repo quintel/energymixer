@@ -305,7 +305,7 @@ body#scenarios_show section#left {
   float: left; }
   body#scenarios_show section#left .text {
     padding: 1.5em;
-    font-size: 1.2em; }
+    font-size: 1em; }
     body#scenarios_show section#left .text .name {
       font-weight: bold;
       margin-bottom: 10px; }
@@ -325,14 +325,16 @@ body#scenarios_show section#left {
 body#scenarios_show section#right {
   width: 40%;
   float: left; }
+  body#scenarios_show section#right .user, body#scenarios_show section#right .current {
+    float: left; }
+    body#scenarios_show section#right .user td.carriers, body#scenarios_show section#right .current td.carriers {
+      height: 380px; }
   body#scenarios_show section#right .user {
-    float: left;
-    width: 100px;
+    width: 120px;
     margin-left: 10px; }
   body#scenarios_show section#right .current {
-    float: left;
     width: 80px;
-    margin-left: 10px; }
+    margin-left: 30px; }
 
 body#scenarios_index section#scenarios .scenario {
   position: relative;
