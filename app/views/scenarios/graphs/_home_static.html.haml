@@ -1,0 +1,16 @@
+- graph_max_height     = 380
+- rounded_sum          = 0
+- current_graph_height = 380 / 1.2
+
+%table.graph_common.graph_normal
+  %tr
+    %td.carriers
+      .graph
+        - scenario.carriers.each_pair do |key, v|
+          - height = (v[:ratio] * current_graph_height).round
+          - rounded_sum += height
+          .carrier{:class => key, :style => "height: #{height}px"}
+            .label= v[:label] if height > 10
+    %td.money
+      .background
+        .coins{:style => "height: #{rounded_sum + 8}px"}

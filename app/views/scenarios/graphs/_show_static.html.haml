@@ -1,0 +1,22 @@
+- graph_max_height     = 390
+- rounded_sum          = 0
+- current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height
+
+%table.graph_common.graph_normal
+  %tr
+    %td.total_amount{:colspan => 2}      
+      %h4 Mix #{scenario.year || 2025}
+      &euro;
+      %span= number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
+      Miljard
+  %tr
+    %td.carriers
+      .graph
+        - scenario.carriers.each_pair do |key, v|
+          - height = (v[:ratio] * current_graph_height).round rescue 0
+          - rounded_sum += height
+          .carrier{:class => key, :style => "height: #{height}px"}
+            .label= v[:label] if height > 10
+    %td.money
+      .background
+        .coins{:style => "height: #{rounded_sum + 8}px"}
