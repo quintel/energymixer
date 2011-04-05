@@ -80,32 +80,28 @@ class ScenariosController < ApplicationController
         coal: {
          gquery: "costs_share_of_coal",
          unit: "Mln. Euro",
-         label: "Coal",
+         label: I18n.t('coal'),
          css_class: "coal"
         },
         gas: {
          gquery: "costs_share_of_gas",
-         unit: "Mln. Euro",
-         label: "Gas",
+         label: I18n.t('gas'),
          css_class: "gas"
         }, 
         oil: {
          gquery: "costs_share_of_oil",
-         unit: "Mln. Euro",
-         label: "Oil",
+         label: I18n.t('oil'),
          css_class: "oil"
         },
         nuclear: {
          gquery: "costs_share_of_uranium",
-         unit: "Mln. Euro",
-         label: "Uranium",
+         label: I18n.t('nuclear'),
          css_class: "nuclear"
 
         }, 
         renewable: {
          gquery: "costs_share_of_sustainable",
-         unit: "Mln. Euro",
-         label: "Sustainable",
+         label: I18n.t('sustainable'),
          css_class: "renewable"       
         }
       }      
