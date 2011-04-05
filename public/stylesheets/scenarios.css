@@ -229,9 +229,10 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           font-weight: normal; }
           body#scenarios_new section#questions .question ol.answers li.answer label a, body#scenarios_create section#questions .question ol.answers li.answer label a {
             text-decoration: underline; }
-          body#scenarios_new section#questions .question ol.answers li.answer label:hover, body#scenarios_create section#questions .question ol.answers li.answer label:hover {
-            color: #ff7f00;
-            cursor: pointer; }
+        body#scenarios_new section#questions .question ol.answers li.answer:hover, body#scenarios_create section#questions .question ol.answers li.answer:hover {
+          color: #ff7f00;
+          cursor: pointer;
+          background-color: #fef4ca; }
         body#scenarios_new section#questions .question ol.answers li.answer input[type=radio], body#scenarios_create section#questions .question ol.answers li.answer input[type=radio] {
           display: none; }
         body#scenarios_new section#questions .question ol.answers li.answer.active, body#scenarios_create section#questions .question ol.answers li.answer.active {
