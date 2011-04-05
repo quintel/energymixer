@@ -73,24 +73,34 @@ body#scenarios_new, body#scenarios_create
         line-height: 18px
         font-weight: bold
         margin-bottom: 18px
-      ol.answers
-        padding-left: 30px
-        margin-left: 0
+      ul.answers
         li.answer
+          float: left
+          width: 100%
           margin-left: 0
           font-weight: bold
-          list-style-type: upper-alpha
-          margin-bottom: 15px
+          list-style-type: none
           clear: both
           label
+            width: 100%
+            float: left
+            padding: 5px 0
+            margin-bottom: 4px
             font-weight: normal
-            &:hover
-              color: #FF7F00
-              cursor: pointer            
+            .number
+              padding-top: 1px
+            .text
+              font-weight: normal
+              margin: 0 0 0 0
           input[type=radio]
             display: none
-          &.active
-            color: #f00
+          &.active, &:hover
+            label
+              background-color: #FEF6D7
+              cursor: pointer
+          &:hover label .text
+            text-decoration: underline
+            
       #user_details
         .item
           padding: 3px

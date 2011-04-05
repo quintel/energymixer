@@ -6,12 +6,14 @@
     = question_object.number
   .text
     = raw question_object.question
-  %ol.answers
-    - question_object.answers.each do |a|
+  %ul.answers
+    - question_object.answers.each_with_index do |a, index|
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
         = answer.hidden_field :question_id
         = answer.radio_button :answer_id, a.id, 
                               :id => "answer_#{a.id}",
                               :'data-question_id'     => question_object.id,
                               :'data-question_number' => question_object.number
-        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}= raw a.answer
+        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
+          .number= (index+65).chr
+          .text= raw a.answer
