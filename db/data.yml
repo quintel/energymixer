@@ -60,19 +60,19 @@ answers:
     - Er verandert verder niets bij deze keuze
     - "3,11,12,19,32"
   - - 7
-    - Dit opvangen voor de helft met  aardgas import en de andere helft met besparingen
+    - Dit opvangen voor de helft met aardgas import en de andere helft met besparingen
     - 1
     - 2
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 10:26:52 Z
+    - 2011-04-05 07:48:37 Z
     - ""
     - 
   - - 8
-    - De helft opwekken met eigen energie uit biomassa, zon en wind en de helft uit energiebesparing halen
+    - De helft opwekken met energie uit 'eigen' [biomassa](/info/biomass_energy), zon en wind en de helft uit energiebesparing halen
     - 2
     - 2
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 10:26:52 Z
+    - 2011-04-05 07:48:37 Z
     - "[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind"
     - 
   - - 9
@@ -306,31 +306,31 @@ dashboard_items:
   - - 1
     - co2_emission_final_demand_to_1990_in_percent
     - CO2 Emissions
-    - 0.0,0.25,0.5
+    - -0.30,-0.15,-0.05,0.05,0.15,0.3
     - 0
     - 2011-03-23 10:26:54 Z
-    - 2011-03-23 10:26:54 Z
+    - 2011-04-04 14:29:15 Z
   - - 2
     - share_of_renewable_energy
     - Share of renewable energy
-    - 0.0,0.25,0.5
+    - 0.01, 0.02, 0.03, 0.08, 0.14, 0.20
     - 1
     - 2011-03-23 10:26:54 Z
-    - 2011-03-23 10:26:54 Z
+    - 2011-04-04 14:37:54 Z
   - - 3
     - area_footprint_per_nl
     - Area Footprint per NL
-    - 0.0,0.25,0.5
+    - 0.0,0.2,0.4.,0.8,1.2,2.4
     - 2
     - 2011-03-23 10:26:54 Z
-    - 2011-03-23 10:26:54 Z
+    - 2011-04-04 14:41:29 Z
   - - 4
     - energy_dependence
     - Energy Dependence
-    - 0.25,0.5,0.75
+    - 0.54,0.58,0.62,0.66,0.70,0.74
     - 3
     - 2011-03-23 10:26:54 Z
-    - 2011-03-23 10:26:54 Z
+    - 2011-04-04 15:37:25 Z
 
 --- 
 inputs: 
@@ -1404,6 +1404,12 @@ inputs:
     - 2011-03-24 09:46:39 Z
     - 2011-03-24 09:46:39 Z
     - 315
+  - - 182
+    - 1.0
+    - 9
+    - 2011-04-04 14:43:18 Z
+    - 2011-04-04 14:43:18 Z
+    - 262
 
 --- 
 popups: 
@@ -1416,11 +1422,45 @@ popups:
   - updated_at
   records: 
   - - 1
-    - paolo
-    - Paolo
-    - <h1>From Italia!</h1>
+    - Test
+    - This is a test
+    - Testing.... 1.... 2..... 3.....
     - 2011-03-28 07:55:50 Z
-    - 2011-03-28 07:55:50 Z
+    - 2011-03-31 09:07:40 Z
+  - - 2
+    - unconventional_oil
+    - Moeilijk winbare olie
+    - "Als er nieuwe olievoorraden gevonden worden, is dat vaak op plaatsen die moeilijk te bereiken zijn, of waar de olie moeilijk te verwerken is. De 'makkelijke' olie is eigenlijk al gevonden. Deze moeilijke of 'onconventionele' olievelden liggen bijvoorbeeld vele kilometers onder de zee of in zeer onherbergzame gebieden als de Noordpool. Soms moet de olie juist uit teerzanden gehaald worden.\r\n\
+      <br/><br/>\r\n\
+      Oliemaatschappijen produceren in de toekomst dus waarschijnlijk meer onconventionele olie. De productie zal naar verwachting dan ook duurder worden. "
+    - 2011-03-31 12:27:35 Z
+    - 2011-04-04 15:36:46 Z
+  - - 3
+    - renewable
+    - Hernieuwbare energie
+    - Hernieuwbare energie is afkomstig uit bronnen die nooit opraken. Het gaat bijvoorbeeld om wind, zon, aardwarmte, getijdenenergie en sommige vormen van biomassa.
+    - 2011-03-31 12:57:35 Z
+    - 2011-03-31 12:57:35 Z
+  - - 4
+    - declining_gas_production
+    - Afnemende gasproductie
+    - |-
+      Energiebeheer Nederland (EBN) is de Nederlandse instantie die beslist hoe omgesprongen moet worden met het Nederlandse gas. EBN verwacht dat productie van aardgas uit Nederlandse gasvelden de komende 40 jaar zal afnemen tot nul. Dit komt natuurlijk doordat de gasvelden langzaam opraken. Bij deze voorspelling is rekening gehouden met de verplichtingen die Nederland al is aangegaan om gas aan het buitenland te leveren in de komende jaren.
+      <br/><br/>
+      Het gaat hier om 'conventioneel' gas. Dat is gas dat niet met gewone boortechnieken gewonnen kan worden. 'Onconventioneel' gas wordt gewonnen met andere technieken die in Europa nog niet beproefd zijn. Hiervan verwachten mensen soms veel voor Europa, omdat de Verenigde Staten er veel succes mee hebben gehad. Het is nog onduidelijk hoeveel er in Nederland gewonnen zou kunnen worden en hoe duur dat zou zijn.
+    - 2011-04-04 15:48:39 Z
+    - 2011-04-04 16:07:16 Z
+  - - 5
+    - biomass_energy
+    - Energie uit biomassa
+    - |-
+      Biomassa is een moeilijk woord voor biologische producten die de natuur maakt. Of ze nu plantaardig of dierlijk zijn, ze bevatten over het algemeen energie. Die energie kun je eruit halen. Je kunt speciaal biomassa telen voor energiewinning of je kunt allerlei afvalproducten gebruiken. Denk daarbij aan snoeihout of GFT afval of mest bijvoorbeeld.
+      <br/><br/>
+      Sommige soorten biomassa kun je het best verbranden. Van andere soorten kun je bijvoorbeeld biodiesel of bio-ethanol maken. Daar kunnen dan weer auto's op rijden. 
+      <br/><br/>
+      Als je biomassa in Nederland wilt verbouwen, betekent dat wel dat je minder voedsel kunt verbouwen. Je hebt heel veel landbouwgrond nodig om een beetje energie op te wekken.
+    - 2011-04-05 07:48:30 Z
+    - 2011-04-05 07:48:30 Z
 
 --- 
 questions: 
@@ -1436,19 +1476,22 @@ questions:
     - Wat is naar uw idee de prijs van elektriciteit, gas, benzine en diesel in 2025?
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-24 10:17:16 Z
-    - De prijsontwikkeling van energie is van veel factoren afhankelijk. Zo kan de prijs gaan stijgen als gevolg van vraagtoename (door groei wereldbevolking en toename welvaart), en doordat de winning van brandstof moeilijker en duurder wordt (olie uit dieper gelegen velden etc). Factoren die de prijs kunnen drukken zijn toenemende besparingen en het goedkoper worden van de winning van hernieuwbare energie.
+    - 2011-03-31 12:58:06 Z
+    - |-
+      De prijsontwikkeling van energie is van veel factoren afhankelijk. Zo kan de prijs gaan stijgen als gevolg van vraagtoename (door groei wereldbevolking en toename welvaart), en doordat de winning van brandstof moeilijker en duurder wordt (zoals [olie uit dieper gelegen velden](/info/unconventional_oil) etc).
+       
+      Factoren die de prijs kunnen drukken zijn toenemende besparingen en het goedkoper worden van de winning van [hernieuwbare energie](/info/renewable).
   - - 2
     - Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben in Nederland in 2025, ervan uitgaande dat we wel een deel blijven exporteren?
     - 2
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 19:06:36 Z
-    - Nederland is een aardgasproducerend land. Op dit moment gebruiken we ongeveer de helft zelf en de helft exporteren we. Omdat de velden leger worden, <a href='#'>neemt de productie af</a>, naar verwachting met 50% tot 2025.
+    - 2011-04-04 15:49:13 Z
+    - Nederland is een aardgasproducerend land. Op dit moment gebruiken we ongeveer de helft zelf en de helft exporteren we. Terwijl de velden leger worden, [neemt de productie af](/info/declining_gas_production), naar verwachting met 50% tot 2025.
   - - 3
     - Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas te laten dalen?
     - 3
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:06:18 Z
+    - 2011-03-31 12:41:01 Z
     - Bij de verbranding van fossiele brandstoffen (olie, kolen en gas) komt CO2 vrij. De concentratie hiervan in de atmosfeer loopt op, evenals de temperatuur op aarde. De veronderstelling is dat de CO2-uitstoot een negatieve invloed heeft op de opwarming van de aarde (broeikaseffect).
   - - 4
     - Welke 'brandstoffen' zullen we in 2025 naar uw verwachting gebruiken voor het Nederlandse wegverkeer?
@@ -1478,8 +1521,8 @@ questions:
     - "Wat denkt u dat onze economie gaat doen tussen 2011 en 2025? "
     - 0
     - 2011-03-23 19:02:55 Z
-    - 2011-03-28 07:56:49 Z
-    - Als de economie groeit neemt ook het energiegebruik toe. De afgelopen jaren was er  bij een groei van de economie met  2% een groei van 1% in het energieverbruik. We worden dan welvarender, krijgen meer apparaten, grotere huizen en gaan meer reizen. Om aan deze groeiende consumptie te voldoen gaat de industrie meer produceren. Soms groeit onze economie alleen vanwege de export. Onze landgenoten consumeren dan niet meer, maar de snel groeiende wereldbevolking wel.  Bij een krimp van de economie zijn de effecten precies andersom. [paolo](/info/paolo)
+    - 2011-04-05 07:37:56 Z
+    - "Als de economie groeit neemt ook het energiegebruik toe. De afgelopen jaren was er  bij een groei van de economie met  2% een groei van 1% in het energieverbruik. Als we welvarender worden, krijgen we meer apparaten, grotere huizen en gaan we meer reizen. Om aan deze groeiende consumptie te voldoen gaat de industrie meer produceren. Soms groeit onze economie alleen vanwege de export. Onze landgenoten consumeren dan niet meer, maar de snel groeiende wereldbevolking wel.  Bij een krimp van de economie zijn de effecten precies andersom. "
 
 --- 
 scenario_answers: 
@@ -2253,6 +2296,534 @@ scenario_answers:
     - 
     - 2011-03-28 13:56:52 Z
     - 2011-03-28 13:56:52 Z
+  - - 128
+    - 17
+    - 8
+    - 33
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 129
+    - 17
+    - 1
+    - 1
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 130
+    - 17
+    - 2
+    - 6
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 131
+    - 17
+    - 3
+    - 10
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 132
+    - 17
+    - 4
+    - 16
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 133
+    - 17
+    - 5
+    - 20
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 134
+    - 17
+    - 6
+    - 24
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 135
+    - 17
+    - 7
+    - 29
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+  - - 136
+    - 18
+    - 8
+    - 35
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 137
+    - 18
+    - 1
+    - 5
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 138
+    - 18
+    - 2
+    - 8
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 139
+    - 18
+    - 3
+    - 12
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 140
+    - 18
+    - 4
+    - 19
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 141
+    - 18
+    - 5
+    - 23
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 142
+    - 18
+    - 6
+    - 28
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 143
+    - 18
+    - 7
+    - 
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+  - - 144
+    - 19
+    - 8
+    - 33
+    - 2011-03-31 08:50:48 Z
+    - 2011-03-31 08:50:48 Z
+  - - 145
+    - 19
+    - 1
+    - 3
+    - 2011-03-31 08:50:48 Z
+    - 2011-03-31 08:50:48 Z
+  - - 146
+    - 19
+    - 2
+    - 6
+    - 2011-03-31 08:50:48 Z
+    - 2011-03-31 08:50:48 Z
+  - - 147
+    - 19
+    - 3
+    - 10
+    - 2011-03-31 08:50:49 Z
+    - 2011-03-31 08:50:49 Z
+  - - 148
+    - 19
+    - 4
+    - 16
+    - 2011-03-31 08:50:49 Z
+    - 2011-03-31 08:50:49 Z
+  - - 149
+    - 19
+    - 5
+    - 20
+    - 2011-03-31 08:50:49 Z
+    - 2011-03-31 08:50:49 Z
+  - - 150
+    - 19
+    - 6
+    - 24
+    - 2011-03-31 08:50:49 Z
+    - 2011-03-31 08:50:49 Z
+  - - 151
+    - 19
+    - 7
+    - 29
+    - 2011-03-31 08:50:49 Z
+    - 2011-03-31 08:50:49 Z
+  - - 152
+    - 20
+    - 8
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 153
+    - 20
+    - 1
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 154
+    - 20
+    - 2
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 155
+    - 20
+    - 3
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 156
+    - 20
+    - 4
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 157
+    - 20
+    - 5
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 158
+    - 20
+    - 6
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 159
+    - 20
+    - 7
+    - 
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+  - - 160
+    - 21
+    - 8
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 161
+    - 21
+    - 1
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 162
+    - 21
+    - 2
+    - 7
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 163
+    - 21
+    - 3
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 164
+    - 21
+    - 4
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 165
+    - 21
+    - 5
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 166
+    - 21
+    - 6
+    - 
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 167
+    - 21
+    - 7
+    - 29
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+  - - 168
+    - 22
+    - 8
+    - 33
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 169
+    - 22
+    - 1
+    - 5
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 170
+    - 22
+    - 2
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 171
+    - 22
+    - 3
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 172
+    - 22
+    - 4
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 173
+    - 22
+    - 5
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 174
+    - 22
+    - 6
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 175
+    - 22
+    - 7
+    - 
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+  - - 176
+    - 23
+    - 8
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 177
+    - 23
+    - 1
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 178
+    - 23
+    - 2
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 179
+    - 23
+    - 3
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 180
+    - 23
+    - 4
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 181
+    - 23
+    - 5
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 182
+    - 23
+    - 6
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 183
+    - 23
+    - 7
+    - 
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+  - - 184
+    - 24
+    - 8
+    - 33
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 185
+    - 24
+    - 1
+    - 5
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 186
+    - 24
+    - 2
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 187
+    - 24
+    - 3
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 188
+    - 24
+    - 4
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 189
+    - 24
+    - 5
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 190
+    - 24
+    - 6
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 191
+    - 24
+    - 7
+    - 
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+  - - 192
+    - 25
+    - 8
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 193
+    - 25
+    - 1
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 194
+    - 25
+    - 2
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 195
+    - 25
+    - 3
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 196
+    - 25
+    - 4
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 197
+    - 25
+    - 5
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 198
+    - 25
+    - 6
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 199
+    - 25
+    - 7
+    - 
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+  - - 200
+    - 26
+    - 8
+    - 33
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 201
+    - 26
+    - 1
+    - 2
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 202
+    - 26
+    - 2
+    - 7
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 203
+    - 26
+    - 3
+    - 13
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 204
+    - 26
+    - 4
+    - 18
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 205
+    - 26
+    - 5
+    - 21
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 206
+    - 26
+    - 6
+    - 26
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 207
+    - 26
+    - 7
+    - 31
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+  - - 208
+    - 27
+    - 8
+    - 33
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 209
+    - 27
+    - 1
+    - 3
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 210
+    - 27
+    - 2
+    - 9
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 211
+    - 27
+    - 3
+    - 12
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 212
+    - 27
+    - 4
+    - 19
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 213
+    - 27
+    - 5
+    - 23
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 214
+    - 27
+    - 6
+    - 24
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+  - - 215
+    - 27
+    - 7
+    - 32
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
 
 --- 
 scenarios: 
@@ -2273,6 +2844,8 @@ scenarios:
   - output_8
   - created_at
   - updated_at
+  - title
+  - etm_scenario_id
   records: 
   - - 1
     - Ivan Lendl
@@ -2290,6 +2863,8 @@ scenarios:
     - 0.657466
     - 2011-03-23 10:28:45 Z
     - 2011-03-23 10:28:45 Z
+    - 
+    - 
   - - 2
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2306,6 +2881,8 @@ scenarios:
     - 0.0
     - 2011-03-24 07:23:13 Z
     - 2011-03-24 07:23:13 Z
+    - 
+    - 
   - - 3
     - john
     - john.kerkhoven@quintel.com
@@ -2322,6 +2899,8 @@ scenarios:
     - 0.0
     - 2011-03-24 08:24:52 Z
     - 2011-03-24 08:24:52 Z
+    - 
+    - 
   - - 4
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2338,6 +2917,8 @@ scenarios:
     - 0.0
     - 2011-03-24 08:27:08 Z
     - 2011-03-24 08:27:08 Z
+    - 
+    - 
   - - 5
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2354,6 +2935,8 @@ scenarios:
     - 0.0
     - 2011-03-24 08:29:20 Z
     - 2011-03-24 08:29:20 Z
+    - 
+    - 
   - - 6
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2370,6 +2953,8 @@ scenarios:
     - 0.724508
     - 2011-03-24 10:09:39 Z
     - 2011-03-24 10:09:39 Z
+    - 
+    - 
   - - 7
     - joris
     - joris@greendreamproductions.nl
@@ -2386,6 +2971,8 @@ scenarios:
     - 0.632178
     - 2011-03-24 10:10:00 Z
     - 2011-03-24 10:10:00 Z
+    - 
+    - 
   - - 8
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2402,6 +2989,8 @@ scenarios:
     - 0.418925
     - 2011-03-24 10:23:15 Z
     - 2011-03-24 10:23:15 Z
+    - 
+    - 
   - - 9
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2418,6 +3007,8 @@ scenarios:
     - 0.724508
     - 2011-03-24 14:17:05 Z
     - 2011-03-24 14:17:05 Z
+    - 
+    - 
   - - 10
     - John Kerkhoven
     - john.kerkhoven@quintel.com
@@ -2434,6 +3025,8 @@ scenarios:
     - 0.611229
     - 2011-03-25 15:07:45 Z
     - 2011-03-25 15:07:45 Z
+    - 
+    - 
   - - 11
     - Dennis
     - dennis@quintel.com
@@ -2450,6 +3043,8 @@ scenarios:
     - 0.588808
     - 2011-03-28 08:06:41 Z
     - 2011-03-28 08:06:41 Z
+    - 
+    - 
   - - 12
     - paolo
     - paolo@quintel.com
@@ -2466,6 +3061,8 @@ scenarios:
     - 0.611222
     - 2011-03-28 09:36:02 Z
     - 2011-03-28 09:36:02 Z
+    - 
+    - 
   - - 13
     - paolo
     - paolo.zaccagnini@quintel.com
@@ -2482,6 +3079,8 @@ scenarios:
     - 0.724508
     - 2011-03-28 09:44:45 Z
     - 2011-03-28 09:44:45 Z
+    - 
+    - 
   - - 14
     - paolo
     - paolo.zaccagnini@quintel.com
@@ -2498,6 +3097,8 @@ scenarios:
     - 0.724508
     - 2011-03-28 10:01:34 Z
     - 2011-03-28 10:01:34 Z
+    - 
+    - 
   - - 15
     - paolo
     - paolo@quintel.com
@@ -2514,6 +3115,8 @@ scenarios:
     - 0.611222
     - 2011-03-28 11:47:53 Z
     - 2011-03-28 11:47:53 Z
+    - 
+    - 
   - - 16
     - Wouter
     - wouter.meyers@quintel.com
@@ -2530,6 +3133,206 @@ scenarios:
     - 0.724508
     - 2011-03-28 13:56:51 Z
     - 2011-03-28 13:56:51 Z
+    - 
+    - 
+  - - 17
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 48
+    - false
+    - 5088700000.0
+    - 26923000000.0
+    - 24795200000.0
+    - 571099000.0
+    - 2956610000.0
+    - -0.312808
+    - 0.0472383
+    - 0.830468
+    - 0.769043
+    - 2011-03-31 08:13:55 Z
+    - 2011-03-31 08:13:55 Z
+    - 
+    - 
+  - - 18
+    - john Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 1791750000.0
+    - 11265300000.0
+    - 6316650000.0
+    - 2009210000.0
+    - 3311700000.0
+    - 0.416843
+    - 0.160257
+    - 1.52137
+    - 0.389475
+    - 2011-03-31 08:44:05 Z
+    - 2011-03-31 08:44:05 Z
+    - 
+    - 
+  - - 19
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 8292440000.0
+    - 43873100000.0
+    - 40405700000.0
+    - 930651000.0
+    - 4818040000.0
+    - -0.312808
+    - 0.0472383
+    - 0.830468
+    - 0.769043
+    - 2011-03-31 08:50:48 Z
+    - 2011-03-31 08:50:48 Z
+    - 
+    - 
+  - - 20
+    - Dennis
+    - dennis@quintel.com
+    - 30
+    - false
+    - 4080610000.0
+    - 19450100000.0
+    - 15393000000.0
+    - 554563000.0
+    - 2659280000.0
+    - -0.000156313
+    - 0.0585272
+    - 0.711017
+    - 0.657466
+    - 2011-03-31 09:08:55 Z
+    - 2011-03-31 09:08:55 Z
+    - 
+    - 
+  - - 21
+    - Petra
+    - petra@brandbase.nl
+    - 20
+    - false
+    - 3867460000.0
+    - 17600500000.0
+    - 13998900000.0
+    - 519114000.0
+    - 2491500000.0
+    - 0.125185
+    - 0.0616037
+    - 0.656758
+    - 0.612532
+    - 2011-03-31 10:05:52 Z
+    - 2011-03-31 10:05:52 Z
+    - 
+    - 
+  - - 22
+    - paolo
+    - paolo@quintel.com
+    - 197
+    - false
+    - 3180620000.0
+    - 16271000000.0
+    - 14429200000.0
+    - 396273000.0
+    - 2021530000.0
+    - -0.18634
+    - 0.0527038
+    - 0.808448
+    - 0.724508
+    - 2011-03-31 12:24:06 Z
+    - 2011-03-31 12:24:06 Z
+    - title test
+    - 
+  - - 23
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4080610000.0
+    - 19450100000.0
+    - 15393000000.0
+    - 554563000.0
+    - 2659280000.0
+    - -0.000156313
+    - 0.0585272
+    - 0.711017
+    - 0.657466
+    - 2011-03-31 12:27:26 Z
+    - 2011-03-31 12:27:26 Z
+    - test
+    - 
+  - - 24
+    - foo
+    - paolo@quintel.com
+    - 123
+    - false
+    - 3180620000.0
+    - 16271000000.0
+    - 14429200000.0
+    - 396273000.0
+    - 2021530000.0
+    - -0.18634
+    - 0.0527038
+    - 0.808448
+    - 0.724508
+    - 2011-03-31 12:35:23 Z
+    - 2011-03-31 12:35:23 Z
+    - another title
+    - 
+  - - 25
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4080610000.0
+    - 19450100000.0
+    - 15393000000.0
+    - 554563000.0
+    - 2659280000.0
+    - -0.000156313
+    - 0.0585272
+    - 0.711017
+    - 0.657466
+    - 2011-03-31 15:36:27 Z
+    - 2011-03-31 15:36:27 Z
+    - test
+    - 
+  - - 26
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 6321350000.0
+    - 27481300000.0
+    - 22529100000.0
+    - 797432000.0
+    - 4644440000.0
+    - 0.0852649
+    - 0.0956777
+    - 0.836054
+    - 0.689398
+    - 2011-04-04 15:59:08 Z
+    - 2011-04-04 15:59:08 Z
+    - in de trein
+    - 
+  - - 27
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 7250050000.0
+    - 39294400000.0
+    - 27226800000.0
+    - 7137840000.0
+    - 10862300000.0
+    - 0.0529218
+    - 0.234969
+    - 1.15784
+    - 0.65963
+    - 2011-04-05 07:30:22 Z
+    - 2011-04-05 07:30:22 Z
+    - Gaat iets fout met tekst over tegenstrijdigheid
+    - 
 
 --- 
 users: 
@@ -2553,13 +3356,13 @@ users:
     - admin@quintel.com
     - $2a$10$nl0BjKW6G.mePRB3fvvAheHT9A9Xq51E/Fny1Zwj30f0fGdNFgc4C
     - $2a$10$nl0BjKW6G.mePRB3fvvAhe
-    - 11
-    - 2011-03-30 12:46:24 Z
-    - 2011-03-28 14:52:57 Z
+    - 24
+    - 2011-04-05 07:34:12 Z
+    - 2011-04-04 15:34:37 Z
     - 62.194.161.249
     - 62.194.161.249
     - 0
     - 
     - 
     - 2011-03-23 10:26:54 Z
-    - 2011-03-30 12:46:24 Z
+    - 2011-04-05 07:34:12 Z
