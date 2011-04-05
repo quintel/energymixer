@@ -114,7 +114,7 @@ function Questions() {
     });
     
     // setup colorbox popups
-    $(".question .text a").not(".no_popup").colorbox({
+    $(".question a").not(".no_popup").colorbox({
       width: "50%",
       height: "50%",
       opacity: 0.6

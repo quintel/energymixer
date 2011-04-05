@@ -14,4 +14,4 @@
                               :id => "answer_#{a.id}",
                               :'data-question_id'     => question_object.id,
                               :'data-question_number' => question_object.number
-        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}= raw a.answer
+        %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}= markdown(a.answer)

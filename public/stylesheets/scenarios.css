@@ -227,6 +227,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         clear: both; }
         body#scenarios_new section#questions .question ol.answers li.answer label, body#scenarios_create section#questions .question ol.answers li.answer label {
           font-weight: normal; }
+          body#scenarios_new section#questions .question ol.answers li.answer label a, body#scenarios_create section#questions .question ol.answers li.answer label a {
+            text-decoration: underline; }
           body#scenarios_new section#questions .question ol.answers li.answer label:hover, body#scenarios_create section#questions .question ol.answers li.answer label:hover {
             color: #ff7f00;
             cursor: pointer; }
