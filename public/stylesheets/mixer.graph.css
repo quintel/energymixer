@@ -118,6 +118,8 @@
   display: none; }
 .graph_shaded td.money .coins {
   background: #ebf0a8; }
+.graph_shaded td.dashboard .item h3, .graph_shaded td.dashboard .item .value {
+  color: #98aec8; }
 
 .graph_normal td.total_amount {
   color: #342b0b;
@@ -139,20 +141,3 @@
   padding-left: 1px; }
 .graph_normal td.money .background .coins {
   background: #bed509; }
-
-table td.carriers {
-  height: 320px; }
-table td.dashboard {
-  padding: 10px; }
-  table td.dashboard .item {
-    padding: 10px;
-    background: none;
-    border-top: 1px solid #cccccc;
-    text-align: left;
-    color: #0b3476; }
-    table td.dashboard .item h3 {
-      font-size: 10px;
-      font-weight: bold; }
-    table td.dashboard .item .value {
-      font-size: 16px;
-      font-weight: bold; }
