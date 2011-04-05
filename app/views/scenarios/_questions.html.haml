@@ -23,7 +23,7 @@
       = render :partial => 'question', :locals => { :answer => answer}
     = render :partial => 'user_details', :locals => { :scenario => scenario}
 %nav#down
-  -#%a{ :href => "#", :id => "previous_question"}= t('previous')
+  %a{ :href => "#", :id => "previous_question"}= t('previous')
   %a{ :href => "#", :id => "next_question"}= t('next')
 
 #notice
