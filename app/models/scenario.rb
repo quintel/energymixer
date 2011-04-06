@@ -75,6 +75,8 @@ class Scenario < ActiveRecord::Base
   
   validates :name,  :presence => true
   validates :email, :presence => true
+  # disabled, client_side_validations has some issues with this validation
+  # validates :age,   :numericality => true, :allow_blank => true
   validates :output_0, :presence => true
   validates :output_1, :presence => true
   validates :output_2, :presence => true
@@ -94,6 +96,7 @@ class Scenario < ActiveRecord::Base
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
   
   attr_accessor :year, :accept_terms
+  before_save :sanitize_age
   
   paginates_per 10
     
@@ -143,5 +146,9 @@ class Scenario < ActiveRecord::Base
       :output_8 => 0, #
       :year     => 2011
     )
+  end
+  
+  def sanitize_age
+    self.age = nil if self.age.to_i == 0
   end
 end
