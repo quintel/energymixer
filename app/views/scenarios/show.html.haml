@@ -12,7 +12,7 @@
   .text
     - if @scenario.title
       .title
-        = @scenario.title
+        %h1{:style=>"font-size:1.2em;"}= "'#{@scenario.title}'"
     .name
       De mix van #{@scenario.name}
       - if @scenario.age
@@ -24,16 +24,16 @@
     = link_to "Laad deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
   .boxes
     .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
-      %h3= dashboard_label_for_output(:output_5)
+      %h3= t(dashboard_label_for_output(:output_5)).html_safe
       .value= format_dashboard_value(:output_5, @scenario.output_5)
     .dashboard_item{:class => set_class_for_output(:output_6, @scenario.output_6)}
-      %h3= dashboard_label_for_output(:output_6)
+      %h3= t(dashboard_label_for_output(:output_6)).html_safe
       .value= format_dashboard_value(:output_6, @scenario.output_6)
     .dashboard_item{:class => set_class_for_output(:output_7, @scenario.output_7)}
-      %h3= dashboard_label_for_output(:output_7)
+      %h3= t(dashboard_label_for_output(:output_7)).html_safe
       .value= format_dashboard_value(:output_7, @scenario.output_7)
     .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
-      %h3= dashboard_label_for_output(:output_8)
+      %h3= t(dashboard_label_for_output(:output_8)).html_safe
       .value= format_dashboard_value(:output_8, @scenario.output_8)
 %section#right.graph
   .user.graph_normal
