@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/capistrano/capistrano.git
+  revision: e464e50e15d938ce705f5d41b86ab6d4fb7d857e
+  specs:
+    capistrano (2.5.20)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -35,17 +46,6 @@ GEM
     bcrypt-ruby (2.1.4)
     bluecloth (2.1.0)
     builder (2.1.2)
-    capistrano (2.5.20)
-      highline
-      highline
-      net-scp
-      net-scp (>= 1.0.0)
-      net-sftp
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh
-      net-ssh-gateway
-      net-ssh-gateway (>= 1.0.0)
     client_side_validations (3.0.0)
       activesupport (~> 3.0.0)
     columnize (0.3.2)
@@ -161,7 +161,7 @@ DEPENDENCIES
   annotate
   awesome_print
   bluecloth (~> 2.1.0)
-  capistrano
+  capistrano!
   client_side_validations (~> 3.0.0)
   devise (~> 1.1.7)
   dynamic_form (~> 1.1.3)
