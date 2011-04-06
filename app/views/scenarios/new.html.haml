@@ -8,10 +8,12 @@
   = render :partial => 'questions'
 
 %section#results
-  .current
-    = render :partial => 'scenarios/graphs/new_static', :locals => { :scenario => Scenario.current }
-  .user_created
-    = render :partial => 'scenarios/graphs/new_dynamic'
+  .current.graph_shaded
+    = render :partial => 'chart_top', :locals => {:scenario => Scenario.current}
+    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390}
+  .user_created.graph_normal
+    = render :partial => 'chart_top', :locals => {:scenario => @scenario}
+    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390}
 
 %section#dashboard
   = render :partial => 'dashboard'
