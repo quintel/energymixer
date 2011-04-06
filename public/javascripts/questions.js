@@ -140,7 +140,15 @@ function Questions() {
     // setup small tooltips
     $(".answers em").hover(
       function(){
-        $("#tooltip").html($(this).html());
+        if ($(this).attr('key')){
+          var key = $(this).attr('key');
+        }
+        else{
+          var key = $(this).html();
+        }
+        var text = globals.popups[key]
+        $("#tooltip h3").html(text.title);
+        $("#tooltip div").html(text.body);
         $("#tooltip").show("fast");
       },
       function(){

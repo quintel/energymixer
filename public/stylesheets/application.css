@@ -100,12 +100,18 @@ body.sessions #content form, body.unlocks #content form {
 body.sessions #content a, body.unlocks #content a {
   padding: 1em; }
 
+.answers .answer em {
+  text-decoration: underline; }
+
 #tooltip {
   display: none;
-  border: 1px solid black;
+  border: 1px solid #cccccc;
   background-color: white;
   position: absolute;
   left: 0;
   top: 0;
-  width: 200px;
-  padding: 4px; }
+  width: 300px;
+  padding: 6px; }
+  #tooltip h3 {
+    font-weight: bold;
+    margin-bottom: 3px; }
