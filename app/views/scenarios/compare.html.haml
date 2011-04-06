@@ -14,6 +14,7 @@
   - @scenarios.each do |s|
     .scenario.graph_normal
       .name= s.name
+      = render :partial => "chart_top", :locals => {:scenario => s}
       = render :partial => 'chart', :locals => { :scenario => s }
       = render :partial => 'compare_dashboard', :locals => { :scenario => s }
     .spacer

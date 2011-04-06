@@ -10,10 +10,10 @@
 %section#results
   .current.graph_shaded
     = render :partial => 'chart_top', :locals => {:scenario => Scenario.current}
-    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390}
+    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390, :width => 50}
   .user_created.graph_normal
     = render :partial => 'chart_top', :locals => {:scenario => @scenario}
-    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390}
+    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390, :width => 80}
 
 %section#dashboard
   = render :partial => 'dashboard'
