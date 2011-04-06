@@ -329,7 +329,11 @@ class Input < ActiveRecord::Base
     544 => "mw_of_heat_other_small_gas_chp",
     545 => "mw_of_heat_industry_gas_chp",
     546 => "mw_of_heat_industry_biomass_chp",
-    547 => "mw_of_heat_agriculture_mall_gas_chp"
+    547 => "mw_of_heat_agriculture_mall_gas_chp",
+    548 => "number_of_backup_burner_fixed",
+    549 => "buildings_cooling_cooling_network_share",
+    550 => "number_of_central_coal_chp_fixed",
+    551 => "number_of_central_coal_chp"
   }  
 end
 
