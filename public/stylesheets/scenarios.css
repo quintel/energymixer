@@ -124,7 +124,6 @@
     width: 100%; }
     .chart_canvas_mix ul.chart li.serie, .chart_canvas_money ul.chart li.serie {
       width: 100%;
-      height: 20px;
       margin-top: 2px;
       font-size: 10px; }
 
@@ -393,6 +392,8 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
   float: left;
   margin-top: 10px;
   position: relative; }
+  body#scenarios_compare .scenario .charts, body#scenarios_compare .current_scenario .charts {
+    margin-left: 20px; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
