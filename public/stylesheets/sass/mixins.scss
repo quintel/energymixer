@@ -18,6 +18,11 @@
   padding-left: 16px;
 }
 
+@mixin back_link_arrow_prefix {
+  background: transparent url(images/reverse_link_arrow.png) center left no-repeat;
+  padding-left: 16px;
+}
+
 @mixin gauge_0 { background: #F5F5F5 url(/images/layout/gauge_0.png) center left no-repeat; }
 @mixin gauge_1 { background: #F5F5F5 url(/images/layout/gauge_1.png) center left no-repeat; }
 @mixin gauge_2 { background: #F5F5F5 url(/images/layout/gauge_2.png) center left no-repeat; }
