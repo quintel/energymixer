@@ -41,7 +41,7 @@
     = render :partial => 'scenarios/chart', :locals => {:scenario => @scenario}
   .current.graph_shaded
     = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
-    = render :partial => 'scenarios/chart', :locals => { :scenario => Scenario.current}
+    = render :partial => 'scenarios/chart', :locals => { :scenario => Scenario.current, :width => 50}
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
