@@ -150,4 +150,10 @@ module ScenariosHelper
     
     out.map{|x| "<span>#{x}</span>"}.join.html_safe
   end
+  
+  def popup_json
+    out = {}
+    Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
+    out.to_json
+  end
 end
