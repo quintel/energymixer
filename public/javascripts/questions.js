@@ -114,13 +114,13 @@ function Questions() {
       return false;
     });
 
-    $("#questions nav#up a").click(function(){
+    $("#questions nav#up a, #admin_menu a").click(function(){
       var question_id = $(this).data('question_id');
       self.current_question = question_id;
       self.show_right_question();
       return false;
     });
-
+    
     // when the users clicks on an answer
     $("input[type='radio']").change(function(){
       $(this).parent().parent().find("li.answer").removeClass('active');

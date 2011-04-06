@@ -32,3 +32,15 @@
   lijken tegenstrijdig.
   %br
   Weet u zeker dat deze antwoorden de situatie in 2025 goed beschrijven?
+
+#admin_menu
+  %h2 TEST MENU
+  - Question.ordered.each do |question|
+    %a{:href  => "#",
+       :class => 'question_tab',
+       :'data-question_id' => question.number}
+      =question.number
+  - last_question_number = Question.count + 1
+  %a{:href  => "#",
+     :class => 'question_tab',
+     :'data-question_id' => last_question_number}Submit
