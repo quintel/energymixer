@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331100703) do
+ActiveRecord::Schema.define(:version => 20110406115525) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20110331100703) do
     t.string   "name"
     t.string   "email"
     t.integer  "age"
-    t.boolean  "featured"
+    t.boolean  "featured",        :default => false, :null => false
     t.float    "output_0"
     t.float    "output_1"
     t.float    "output_2"
