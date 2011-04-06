@@ -148,6 +148,6 @@ module ScenariosHelper
       "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren."
     end
     
-    out.map{|x| "<p>#{x}</p>"}.join.html_safe
+    out.map{|x| "<span>#{x}</span>"}.join.html_safe
   end
 end
