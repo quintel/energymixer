@@ -11,7 +11,8 @@ body#pages_home section#intro_text {
     background: transparent url(images/link_arrow.png) center left no-repeat;
     padding-left: 16px;
     font-weight: bold;
-    margin-right: 20px; }
+    margin-right: 20px;
+    color: #333333; }
     body#pages_home section#intro_text a:hover {
       text-decoration: underline; }
 body#pages_home section#sectors {
@@ -43,5 +44,3 @@ body#pages_home section#current_state {
   float: left;
   width: 100px;
   height: 450px; }
-  body#pages_home section#current_state td.carriers {
-    height: 380px; }

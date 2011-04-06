@@ -75,86 +75,65 @@
   &.area_footprint_per_nl_step_6
     @include gauge_0
 
-
-.graph_common
-  width: 100%
-  td
-    &.total_amount
-      text-align: center
-      height: 30px
-      padding: 5px
-      font-size: 8px
-      h4
-        font-weight: bold      
-    &.carriers
-      width: 80%    
-      vertical-align: bottom      
-      .carrier
-        margin-top: 2px
-    &.money
-      width: 20%
-      vertical-align: bottom
-      .background
-        margin-left: 40%
-        position: relative
-        .coins
-          width: 100%
-          height: 100%
-          position: absolute
-          bottom: 0px        
+.total_amount
+  padding: 5px
+  height: 30px
+  h4
+    font-weight: bold
 
 .graph_shaded
-  td
-    &.total_amount
-      background: #FFF6D5
-      color: #7A7667
-    &.carriers
-      .carrier
-        &.oil
-          background: #C8CAC9
-        &.gas
-          background: #A4DEEC
-        &.coal
-          background: #D2BCB8
-        &.nuclear
-          background: #FBD5A8
-        &.renewable
-          background: #A6CDBE
-        .label
-          display: none
+  .total_amount
+    background: #FEF4CB
+  ul.chart li
+    &.oil
+      background: #C8CAC9
+    &.gas
+      background: #A4DEEC
+    &.coal
+      background: #D2BCB8
+    &.nuclear
+      background: #FBD5A8
+    &.renewable
+      background: #A6CDBE
     &.money
-      .coins
-        background: #EBF0A8
-    &.dashboard
-      .item
-        h3, .value
-          color: #98AEC8
+      background: #E6EE97
+    span.label
+      display: none
 
 .graph_normal
-  td
-    &.total_amount
-      color: #342B0B
-      background-color: #FBD52C
-    &.carriers
-      .graph
-        .carrier
-          &.oil
-            background: #57585A
-          &.gas
-            background: #2A9AC3
-          &.coal
-            background: #71362B
-          &.nuclear
-            background: #EE8208
-          &.renewable
-            background: #1E693B
-          .label
-            text-decoration: none
-            color: #ffffff
-            font-size: 9px
-            padding-left: 1px          
+  .total_amount
+    background: #FDD52C
+  ul.chart li
+    &.oil
+      background: #57585A
+    &.gas
+      background: #2A9AC3
+    &.coal
+      background: #71362B
+    &.nuclear
+      background: #EE8208
+    &.renewable
+      background: #1E693B
     &.money
-      .background
-        .coins
-          background: #BED509
+      background: #BED509
+    span.label
+      color: white
 
+.chart_canvas_mix, .chart_canvas_money
+  float: left
+  height: 400px
+  margin-right: 5px
+  position: relative
+  ul.chart
+    position: absolute
+    bottom: 0
+    width: 100%
+    li.serie
+      width: 100%
+      margin-top: 2px
+      font-size: 10px
+.chart_canvas_mix
+  width: 50px
+.chart_canvas_money
+  width: 10px
+    

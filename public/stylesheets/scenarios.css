@@ -17,128 +17,121 @@
     font-weight: bold;
     color: #073574; }
   .dashboard_item.energy_dependence_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
 
-.graph_common {
-  width: 100%; }
-  .graph_common td.total_amount {
-    text-align: center;
-    height: 30px;
-    padding: 5px;
-    font-size: 8px; }
-    .graph_common td.total_amount h4 {
-      font-weight: bold; }
-  .graph_common td.carriers {
-    width: 80%;
-    vertical-align: bottom; }
-    .graph_common td.carriers .carrier {
-      margin-top: 2px; }
-  .graph_common td.money {
-    width: 20%;
-    vertical-align: bottom; }
-    .graph_common td.money .background {
-      margin-left: 40%;
-      position: relative; }
-      .graph_common td.money .background .coins {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        bottom: 0px; }
+.total_amount {
+  padding: 5px;
+  height: 30px; }
+  .total_amount h4 {
+    font-weight: bold; }
 
-.graph_shaded td.total_amount {
-  background: #fff6d5;
-  color: #7a7667; }
-.graph_shaded td.carriers .carrier.oil {
+.graph_shaded .total_amount {
+  background: #fef4cb; }
+.graph_shaded ul.chart li.oil {
   background: #c8cac9; }
-.graph_shaded td.carriers .carrier.gas {
+.graph_shaded ul.chart li.gas {
   background: #a4deec; }
-.graph_shaded td.carriers .carrier.coal {
+.graph_shaded ul.chart li.coal {
   background: #d2bcb8; }
-.graph_shaded td.carriers .carrier.nuclear {
+.graph_shaded ul.chart li.nuclear {
   background: #fbd5a8; }
-.graph_shaded td.carriers .carrier.renewable {
+.graph_shaded ul.chart li.renewable {
   background: #a6cdbe; }
-.graph_shaded td.carriers .carrier .label {
+.graph_shaded ul.chart li.money {
+  background: #e6ee97; }
+.graph_shaded ul.chart li span.label {
   display: none; }
-.graph_shaded td.money .coins {
-  background: #ebf0a8; }
-.graph_shaded td.dashboard .item h3, .graph_shaded td.dashboard .item .value {
-  color: #98aec8; }
 
-.graph_normal td.total_amount {
-  color: #342b0b;
-  background-color: #fbd52c; }
-.graph_normal td.carriers .graph .carrier.oil {
+.graph_normal .total_amount {
+  background: #fdd52c; }
+.graph_normal ul.chart li.oil {
   background: #57585a; }
-.graph_normal td.carriers .graph .carrier.gas {
+.graph_normal ul.chart li.gas {
   background: #2a9ac3; }
-.graph_normal td.carriers .graph .carrier.coal {
+.graph_normal ul.chart li.coal {
   background: #71362b; }
-.graph_normal td.carriers .graph .carrier.nuclear {
+.graph_normal ul.chart li.nuclear {
   background: #ee8208; }
-.graph_normal td.carriers .graph .carrier.renewable {
+.graph_normal ul.chart li.renewable {
   background: #1e693b; }
-.graph_normal td.carriers .graph .carrier .label {
-  text-decoration: none;
-  color: white;
-  font-size: 9px;
-  padding-left: 1px; }
-.graph_normal td.money .background .coins {
+.graph_normal ul.chart li.money {
   background: #bed509; }
+.graph_normal ul.chart li span.label {
+  color: white; }
+
+.chart_canvas_mix, .chart_canvas_money {
+  float: left;
+  height: 400px;
+  margin-right: 5px;
+  position: relative; }
+  .chart_canvas_mix ul.chart, .chart_canvas_money ul.chart {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+    .chart_canvas_mix ul.chart li.serie, .chart_canvas_money ul.chart li.serie {
+      width: 100%;
+      margin-top: 2px;
+      font-size: 10px; }
+
+.chart_canvas_mix {
+  width: 50px; }
+
+.chart_canvas_money {
+  width: 10px; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
@@ -147,8 +140,6 @@ body#scenarios_new section#results, body#scenarios_create section#results {
     float: left;
     margin-left: 20px;
     height: 430px; }
-    body#scenarios_new section#results .current td.carriers, body#scenarios_new section#results .user_created td.carriers, body#scenarios_create section#results .current td.carriers, body#scenarios_create section#results .user_created td.carriers {
-      height: 390px; }
   body#scenarios_new section#results .current, body#scenarios_create section#results .current {
     width: 80px; }
   body#scenarios_new section#results .user_created, body#scenarios_create section#results .user_created {
@@ -194,6 +185,9 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           text-decoration: underline; }
         body#scenarios_new section#questions nav#down a#next_question, body#scenarios_create section#questions nav#down a#next_question {
           background: transparent url(images/link_arrow.png) center left no-repeat;
+          padding-left: 16px; }
+        body#scenarios_new section#questions nav#down a#previous_question, body#scenarios_create section#questions nav#down a#previous_question {
+          background: transparent url(images/reverse_link_arrow.png) center left no-repeat;
           padding-left: 16px; }
   body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
     padding: 10px;
@@ -241,6 +235,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       cursor: pointer; }
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
+  body#scenarios_new section#questions .question #user_details a, body#scenarios_create section#questions .question #user_details a {
+    text-decoration: underline; }
   body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
     font-size: 12px;
     font-weight: bold;
@@ -255,7 +251,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     padding: 3px;
     clear: left; }
     body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
-      background-color: #f6182c;
+      color: red;
+      font-weight: bold;
       float: left;
       position: relative;
       height: 36px; }
@@ -266,8 +263,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       width: 80px;
       padding: 5px;
       text-align: right; }
-      body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
-        font-weight: bold; }
     body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
       display: block;
       float: left;
@@ -276,12 +271,9 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
       width: 220px; }
     body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
-      margin-left: 74px;
-      width: 214px;
-      border: 1px solid #cccccc;
+      float: right;
+      margin-right: 20px;
       margin-bottom: 20px; }
-      body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
-        background-color: #f69409; }
   body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
     border: 1px solid red;
     margin: 3px 3px 20px 3px; }
@@ -314,11 +306,17 @@ body#scenarios_show section#left {
       margin-bottom: 10px; }
     body#scenarios_show section#left .text .title {
       font-weight: bold; }
-    body#scenarios_show section#left .text .link {
-      padding: 5px; }
-      body#scenarios_show section#left .text .link a {
-        color: red;
-        font-size: 1.3em; }
+  body#scenarios_show section#left .links {
+    padding: 5px; }
+    body#scenarios_show section#left .links a {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      margin-left: 12px;
+      background: transparent url(images/link_arrow.png) center left no-repeat;
+      padding-left: 16px; }
+      body#scenarios_show section#left .links a:hover {
+        text-decoration: underline; }
   body#scenarios_show section#left .boxes {
     margin-top: 10px; }
     body#scenarios_show section#left .boxes .dashboard_item {
@@ -330,14 +328,22 @@ body#scenarios_show section#right {
   float: left; }
   body#scenarios_show section#right .user, body#scenarios_show section#right .current {
     float: left; }
-    body#scenarios_show section#right .user td.carriers, body#scenarios_show section#right .current td.carriers {
-      height: 380px; }
   body#scenarios_show section#right .user {
     width: 120px;
     margin-left: 10px; }
+    body#scenarios_show section#right .user .chart_canvas_mix {
+      width: 80px; }
+    body#scenarios_show section#right .user .chart_canvas_money {
+      width: 10px;
+      margin-left: 10px; }
   body#scenarios_show section#right .current {
     width: 80px;
     margin-left: 30px; }
+    body#scenarios_show section#right .current .chart_canvas_mix {
+      width: 50; }
+    body#scenarios_show section#right .current .chart_canvas_money {
+      width: 5px;
+      margin-left: 6px; }
 
 body#scenarios_index section#scenarios .scenario {
   position: relative;
@@ -382,46 +388,65 @@ body#scenarios_index section#scenarios section#right {
     font-weight: bold; }
 
 body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
-  height: 690px;
+  height: 790px;
   float: left;
   margin-top: 10px;
-  text-align: center;
   position: relative; }
+  body#scenarios_compare .scenario .charts, body#scenarios_compare .current_scenario .charts {
+    margin-left: 20px; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
-  body#scenarios_compare .scenario table, body#scenarios_compare .current_scenario table {
-    position: absolute;
-    top: 50px; }
-    body#scenarios_compare .scenario table td.carriers, body#scenarios_compare .current_scenario table td.carriers {
-      height: 328px; }
-    body#scenarios_compare .scenario table td.dashboard, body#scenarios_compare .current_scenario table td.dashboard {
-      padding: 10px; }
-      body#scenarios_compare .scenario table td.dashboard .item, body#scenarios_compare .current_scenario table td.dashboard .item {
-        height: 50px;
-        padding: 10px;
-        background: none;
-        border-top: 1px solid #cccccc;
-        text-align: left;
-        color: #0b3476; }
-        body#scenarios_compare .scenario table td.dashboard .item h3, body#scenarios_compare .current_scenario table td.dashboard .item h3 {
-          font-size: 10px;
-          font-weight: bold; }
-        body#scenarios_compare .scenario table td.dashboard .item .value, body#scenarios_compare .current_scenario table td.dashboard .item .value {
-          font-size: 16px;
-          font-weight: bold; }
+  body#scenarios_compare .scenario .dashboard, body#scenarios_compare .current_scenario .dashboard {
+    clear: left;
+    padding: 10px; }
+    body#scenarios_compare .scenario .dashboard .item, body#scenarios_compare .current_scenario .dashboard .item {
+      height: 50px;
+      padding: 10px;
+      background: none;
+      border-top: 1px solid #cccccc;
+      text-align: left;
+      color: #0b3476; }
+      body#scenarios_compare .scenario .dashboard .item h3, body#scenarios_compare .current_scenario .dashboard .item h3 {
+        font-size: 10px;
+        font-weight: bold; }
+      body#scenarios_compare .scenario .dashboard .item .value, body#scenarios_compare .current_scenario .dashboard .item .value {
+        font-size: 16px;
+        font-weight: bold; }
 body#scenarios_compare .scenario {
   width: 130px; }
+  body#scenarios_compare .scenario .chart_canvas_mix {
+    width: 80px; }
+  body#scenarios_compare .scenario .chart_canvas_money {
+    width: 10px; }
 body#scenarios_compare .current_scenario {
-  width: 70px; }
+  width: 130px; }
+  body#scenarios_compare .current_scenario .chart_canvas_mix {
+    width: 50px; }
+  body#scenarios_compare .current_scenario .chart_canvas_money {
+    width: 8px; }
   body#scenarios_compare .current_scenario .name {
     color: #acacac; }
+  body#scenarios_compare .current_scenario .dashboard .item {
+    color: #768eb9; }
 body#scenarios_compare .spacer {
   margin: 10px;
   width: 1px;
   height: 690px;
   float: left;
   background-color: #cccccc; }
+
+body#scenarios_answers h2, body#scenarios_show #colorbox h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1em; }
+body#scenarios_answers dl, body#scenarios_show #colorbox dl {
+  font-size: 1.1em;
+  line-height: 15px; }
+  body#scenarios_answers dl dt, body#scenarios_show #colorbox dl dt {
+    font-weight: bold; }
+  body#scenarios_answers dl dd, body#scenarios_show #colorbox dl dd {
+    margin-bottom: 1em; }
 
 section#search_scenarios_box {
   background-color: #f5f5f5;
