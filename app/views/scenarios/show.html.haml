@@ -38,10 +38,12 @@
       %h3= dashboard_label_for_output(:output_8)
       .value= format_dashboard_value(:output_8, @scenario.output_8)
 %section#right.graph
-  .user
-    = render :partial => 'scenarios/graphs/show_static', :locals => {:scenario => @scenario}
-  .current
-    = render :partial => 'scenarios/graphs/show_shaded', :locals => { :scenario => Scenario.current }
+  .user.graph_normal
+    = render :partial => 'scenarios/chart_top', :locals => {:scenario => @scenario}
+    = render :partial => 'scenarios/chart', :locals => {:scenario => @scenario}
+  .current.graph_shaded
+    = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
+    = render :partial => 'scenarios/chart', :locals => { :scenario => Scenario.current}
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
