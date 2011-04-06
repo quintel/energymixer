@@ -85,7 +85,7 @@ function Questions() {
     var conflict = false;
     var currently_selected_answers = self.currently_selected_answers();
     $.each(currently_selected_answers, function(index, answer_id){
-      var conflicting_answers = globals.answers_conflicts[answer_id];
+      var conflicting_answers = globals.answers_conflicts[answer_id] || [];
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1) {
         conflict = selected_answer_id;
       }
