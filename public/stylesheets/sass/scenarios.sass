@@ -256,42 +256,38 @@ body#scenarios_index
 
 body#scenarios_compare
   .scenario, .current_scenario
-    height: 690px
+    height: 790px
     float: left
     margin-top: 10px
-    text-align: center
     position: relative
     .name
       margin: 5px 0px 20px 0px
       font-weight: bold
-    table
-      position: absolute
-      top: 50px
-      height
-      td
-        &.carriers
-          height: 328px
-        &.dashboard
-          padding: 10px
-          .item
-            height: 50px
-            padding: 10px
-            background: none
-            border-top: 1px solid #CCCCCC
-            text-align: left
-            color: #0B3476
-            h3
-              font-size: 10px
-              font-weight: bold
-            .value
-              font-size: 16px
-              font-weight: bold  
+    .dashboard
+      clear: left
+      padding: 10px
+      .item
+        height: 50px
+        padding: 10px
+        background: none
+        border-top: 1px solid #CCCCCC
+        text-align: left
+        color: #0B3476
+        h3
+          font-size: 10px
+          font-weight: bold
+        .value
+          font-size: 16px
+          font-weight: bold  
   .scenario
     width: 130px
   .current_scenario
-    width: 70px
+    width: 90px
     .name
       color: #ACACAC
+    .dashboard
+      .item
+        color: #768EB9
   .spacer
     margin: 10px
     width: 1px

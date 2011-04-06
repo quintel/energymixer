@@ -356,40 +356,37 @@ body#scenarios_index section#scenarios section#right {
     font-weight: bold; }
 
 body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
-  height: 690px;
+  height: 790px;
   float: left;
   margin-top: 10px;
-  text-align: center;
   position: relative; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
-  body#scenarios_compare .scenario table, body#scenarios_compare .current_scenario table {
-    position: absolute;
-    top: 50px; }
-    body#scenarios_compare .scenario table td.carriers, body#scenarios_compare .current_scenario table td.carriers {
-      height: 328px; }
-    body#scenarios_compare .scenario table td.dashboard, body#scenarios_compare .current_scenario table td.dashboard {
-      padding: 10px; }
-      body#scenarios_compare .scenario table td.dashboard .item, body#scenarios_compare .current_scenario table td.dashboard .item {
-        height: 50px;
-        padding: 10px;
-        background: none;
-        border-top: 1px solid #cccccc;
-        text-align: left;
-        color: #0b3476; }
-        body#scenarios_compare .scenario table td.dashboard .item h3, body#scenarios_compare .current_scenario table td.dashboard .item h3 {
-          font-size: 10px;
-          font-weight: bold; }
-        body#scenarios_compare .scenario table td.dashboard .item .value, body#scenarios_compare .current_scenario table td.dashboard .item .value {
-          font-size: 16px;
-          font-weight: bold; }
+  body#scenarios_compare .scenario .dashboard, body#scenarios_compare .current_scenario .dashboard {
+    clear: left;
+    padding: 10px; }
+    body#scenarios_compare .scenario .dashboard .item, body#scenarios_compare .current_scenario .dashboard .item {
+      height: 50px;
+      padding: 10px;
+      background: none;
+      border-top: 1px solid #cccccc;
+      text-align: left;
+      color: #0b3476; }
+      body#scenarios_compare .scenario .dashboard .item h3, body#scenarios_compare .current_scenario .dashboard .item h3 {
+        font-size: 10px;
+        font-weight: bold; }
+      body#scenarios_compare .scenario .dashboard .item .value, body#scenarios_compare .current_scenario .dashboard .item .value {
+        font-size: 16px;
+        font-weight: bold; }
 body#scenarios_compare .scenario {
   width: 130px; }
 body#scenarios_compare .current_scenario {
-  width: 70px; }
+  width: 90px; }
   body#scenarios_compare .current_scenario .name {
     color: #acacac; }
+  body#scenarios_compare .current_scenario .dashboard .item {
+    color: #768eb9; }
 body#scenarios_compare .spacer {
   margin: 10px;
   width: 1px;
