@@ -18,4 +18,5 @@ EnergyMixer::Application.routes.draw do
   end
   
   match "/info/:code", :to => "pages#info"
+  match "/mix", :to => "pages#mix"
 end
