@@ -2,17 +2,7 @@ class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => [:show, :answers]
 
   def new
-    @scenario = Scenario.new(
-      :output_0 => 0,
-      :output_1 => 0,
-      :output_2 => 0,
-      :output_3 => 0,
-      :output_4 => 0,
-      :output_5 => 0,
-      :output_6 => 0,
-      :output_7 => 0,
-      :output_8 => 0
-    )
+    @scenario = Scenario.current.clone
 
     Question.ordered.each do |q|
       @scenario.answers.build(:question_id => q.id)
