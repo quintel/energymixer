@@ -13,7 +13,7 @@ EnergyMixer::Application.routes.draw do
     root :to => "questions#index"
   end
 
-  resources :scenarios, :only => [:new, :create, :show, :index] do
+  resources :scenarios, :path => 'mixes', :only => [:new, :create, :show, :index] do
     post :compare, :on => :collection
   end
   
