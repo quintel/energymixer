@@ -93,7 +93,9 @@ function Mixer() {
       url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
       success: function(data){
-        // $.logThis("Got results : " + $.toJSON(data.result));
+        // $.logThis("Got results : " + $.toJSON(data));
+        // TODO: remove this when live
+        if(data.errors.length > 0) { alert(data.errors); }
         self.results = data;
         self.store_results();
         graph.refresh();

@@ -9,8 +9,6 @@ body#scenarios_new, body#scenarios_create
       float: left
       margin-left: 20px
       height: 430px
-      td.carriers
-        height: 390px        
     .current
       width: 80px
     .user_created
@@ -58,6 +56,8 @@ body#scenarios_new, body#scenarios_create
             text-decoration: underline
           &#next_question
             @include link_arrow_prefix
+          &#previous_question
+            @include back_link_arrow_prefix
     .question
       .information
         padding: 10px
@@ -109,6 +109,9 @@ body#scenarios_new, body#scenarios_create
             text-decoration: underline
             
       #user_details
+        a 
+          text-decoration: underline
+          
         h2
           font-size: 12px
           font-weight: bold
@@ -123,7 +126,8 @@ body#scenarios_new, body#scenarios_create
           padding: 3px
           clear: left
           .field_with_errors
-            background-color: #F6182C
+            color: red
+            font-weight: bold
             float: left
             position: relative
             height: 36px
@@ -134,8 +138,6 @@ body#scenarios_new, body#scenarios_create
             width: 80px
             padding: 5px
             text-align: right
-            &.required
-              font-weight: bold
           input, select
             display: block
             float: left
@@ -143,13 +145,10 @@ body#scenarios_new, body#scenarios_create
             margin: 4px
           input[type=text]
             width: 220px          
-          input[type=submit]  
-            margin-left: 74px
-            width: 214px
-            border: 1px solid #ccc
+          input[type=submit]
+            float: right
+            margin-right: 20px
             margin-bottom: 20px
-            &:hover
-              background-color: #F69409
         #errorExplanation
           border: 1px solid red
           margin: 3px 3px 20px 3px
@@ -184,11 +183,17 @@ body#scenarios_show
         margin-bottom: 10px
       .title
         font-weight: bold
-      .link
-        padding: 5px
-        a
-          color: red
-          font-size: 1.3em
+    .links
+      padding: 5px
+      a
+        font-weight: bold
+        display: block
+        margin-bottom: 5px
+        margin-left: 12px
+        @include link_arrow_prefix
+        &:hover
+          text-decoration: underline
+        
     .boxes
       margin-top: 10px
       .dashboard_item
@@ -200,14 +205,24 @@ body#scenarios_show
     float: left
     .user, .current
       float: left
-      td.carriers
-        height: 380px
     .user
       width: 120px
       margin-left: 10px
+      .chart_canvas_mix
+        width: 80px
+      .chart_canvas_money
+        width: 10px
+        margin-left: 10px
+      
     .current
       width: 80px
       margin-left: 30px
+      .chart_canvas_mix
+        width: 50
+      .chart_canvas_money
+        width: 5px
+        margin-left: 6px
+      
 
 body#scenarios_index
   section#scenarios
@@ -255,42 +270,49 @@ body#scenarios_index
 
 body#scenarios_compare
   .scenario, .current_scenario
-    height: 690px
+    height: 790px
     float: left
     margin-top: 10px
-    text-align: center
     position: relative
+    .charts
+      margin-left: 20px
     .name
       margin: 5px 0px 20px 0px
       font-weight: bold
-    table
-      position: absolute
-      top: 50px
-      height
-      td
-        &.carriers
-          height: 328px
-        &.dashboard
-          padding: 10px
-          .item
-            height: 50px
-            padding: 10px
-            background: none
-            border-top: 1px solid #CCCCCC
-            text-align: left
-            color: #0B3476
-            h3
-              font-size: 10px
-              font-weight: bold
-            .value
-              font-size: 16px
-              font-weight: bold  
+    .dashboard
+      clear: left
+      padding: 10px
+      .item
+        height: 50px
+        padding: 10px
+        background: none
+        border-top: 1px solid #CCCCCC
+        text-align: left
+        color: #0B3476
+        h3
+          font-size: 10px
+          font-weight: bold
+        .value
+          font-size: 16px
+          font-weight: bold  
   .scenario
     width: 130px
+    .chart_canvas_mix
+      width: 80px
+    .chart_canvas_money
+      width: 10px
   .current_scenario
-    width: 70px
+    width: 130px
+    .chart_canvas_mix
+      width: 50px
+    .chart_canvas_money
+      width: 8px
+    
     .name
       color: #ACACAC
+    .dashboard
+      .item
+        color: #768EB9
   .spacer
     margin: 10px
     width: 1px
@@ -298,6 +320,18 @@ body#scenarios_compare
     float: left
     background-color: #cccccc
   
+body#scenarios_answers, body#scenarios_show #colorbox
+  h2
+    font-size: 1.8em
+    font-weight: bold
+    margin-bottom: 1em
+  dl
+    font-size: 1.1em
+    line-height: 15px
+    dt
+      font-weight: bold
+    dd
+      margin-bottom: 1em
 
 section#search_scenarios_box
   background-color: #F5F5F5

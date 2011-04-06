@@ -8,10 +8,12 @@
   = render :partial => 'questions'
 
 %section#results
-  .current
-    = render :partial => 'scenarios/graphs/new_static', :locals => { :scenario => Scenario.current }
-  .user_created
-    = render :partial => 'scenarios/graphs/new_dynamic'
+  .current.graph_shaded
+    = render :partial => 'chart_top', :locals => {:scenario => Scenario.current}
+    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390, :width => 50}
+  .user_created.graph_normal
+    = render :partial => 'chart_top', :locals => {:scenario => @scenario}
+    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390, :width => 80}
 
 %section#dashboard
   = render :partial => 'dashboard'
@@ -33,5 +35,10 @@
       mix_table: #{mix_table_json},
       graph_max_amount: #{Scenario::MaxAmount},
       api_base_path: #{APP_CONFIG["api_base_path"].to_json},
-      api_session_settings: #{APP_CONFIG["api_session_settings"].to_json}
+      api_session_settings: #{APP_CONFIG["api_session_settings"].to_json},
+      popups: #{popup_json}
     }
+
+%div#tooltip
+  %h3 Title
+  %div Hier komt de kleine tooltip (popup)!

@@ -1,10 +1,10 @@
 %section#intro_text
   %h2 Dit is het energieverbruik van Nederland in 2011
   %p
-    In Nederland komt bijna 92% van de energie die we gebruiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de energiemix van Nederland er over 15 jaar uit zal zien? Maak met de Future Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waar ook beleidsmakers mee werken.
+    In Nederland komt bijna 92% van de energie die we gebruiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de energiemix van Nederland er over 15 jaar uit zal zien? Maak met de Future Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers mee werken.
   %p
-    = link_to "Bekijk de EnergyMixes van anderen", scenarios_path
     = link_to "Maak je eigen EnergyMix", new_scenario_path
+    = link_to "Bekijk de EnergyMixes van anderen", scenarios_path
   
 %section#sectors
   %h2 Meer informatie over het energieverbruik in verschillende sectoren
@@ -30,7 +30,6 @@
       Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik door veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw is energieintensief. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in 2025?
     
 %section#current_state
-  -#= render :partial => 'scenarios/graphs/home_static', :locals => { :scenario => Scenario.current }
   %img{:src => "images/static_charts/nl_2010_mix_total.png"}
   
 - content_for :head do

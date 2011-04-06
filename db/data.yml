@@ -13,42 +13,42 @@ answers:
   records: 
   - - 1
     - Even duur
-    - 0
+    - 3
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 10:26:52 Z
+    - 2011-04-05 18:17:57 Z
     - Het blijft even duur
     - 
   - - 2
     - Het wordt duurder
-    - 1
+    - 2
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-24 09:06:37 Z
+    - 2011-04-05 18:17:57 Z
     - Fosiele brandstoffen worden 50% duurder
     - 
   - - 3
     - Het wordt veel duurder
-    - 2
+    - 1
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-30 12:49:04 Z
+    - 2011-04-05 18:17:57 Z
     - Fosiele brandstoffen worden 100% duurder
     - "6,20"
   - - 4
     - Het wordt goedkoper
-    - 3
+    - 4
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-23 10:26:52 Z
+    - 2011-04-05 18:17:57 Z
     - Fosiele brandstoffen worden 25% goedkoper
     - 
   - - 5
     - Het wordt veel goedkoper
-    - 4
+    - 5
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-03-30 12:50:01 Z
+    - 2011-04-05 18:17:57 Z
     - Fosiele brandstoffen worden 50% goedkoper
     - "33,9"
   - - 6
@@ -88,9 +88,9 @@ answers:
     - 0
     - 3
     - 2011-03-23 10:26:53 Z
-    - 2011-03-24 19:13:13 Z
+    - 2011-04-05 15:38:05 Z
     - "[NOTE] Er gebeurt niets."
-    - "9,19,22,23,32"
+    - "9,19,23,32"
   - - 11
     - "Maximale inzet van hernieuwbare bronnen: zon, wind, waterkracht en schone biomassa"
     - 1
@@ -116,11 +116,11 @@ answers:
     - "[NOTE] Zou goed zijn om hier informatie te geven over verschil tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot"
     - "9"
   - - 15
-    - Alleen opvang en opslag van CO2 uit grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
+    - Alleen [opvang en opslag van CO2](/info/carbon_capture_storage) uit grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
     - 5
     - 3
     - 2011-03-23 10:26:53 Z
-    - 2011-03-30 12:56:58 Z
+    - 2011-04-05 15:13:45 Z
     - "[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog bepaald worden HOEVEEL suppl"
     - "9"
   - - 16
@@ -171,36 +171,28 @@ answers:
     - 2011-03-23 10:26:53 Z
     - ""
     - 
-  - - 22
-    - "Nieuwe gebouwen hebben geen aardgas meer nodig voor verwarming "
+  - - 23
+    - Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft minder aardgas toe.
     - 2
     - 5
     - 2011-03-23 10:26:53 Z
-    - 2011-03-30 12:59:31 Z
-    - (o.a. door toepassing van  hoogwaardige isolatie, gunstige zonligging en gebruik van nieuwe verwarmingstechnieken als warmtepompen)
-    - "10"
-  - - 23
-    - Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft minder aardgas toe.
-    - 3
-    - 5
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-30 12:59:41 Z
+    - 2011-04-05 17:39:34 Z
     - ""
     - "10"
   - - 24
-    - Snel groeien door een snel groeiende wereldeconomie en de behoefte aan energie stijgt navenant
+    - Groeien door een snel groeiende wereldeconomie en de behoefte aan energie stijgt navenant
     - 0
     - 6
     - 2011-03-23 10:26:53 Z
-    - 2011-03-30 13:00:21 Z
+    - 2011-04-05 18:23:58 Z
     - De energievraag van de industrie groeit ieder jaar met 4%
     - "35"
   - - 25
-    - Snel groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie in energiegebruik
+    - Groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie in energiegebruik
     - 1
     - 6
     - 2011-03-23 10:26:53 Z
-    - 2011-03-30 13:00:33 Z
+    - 2011-04-05 18:24:26 Z
     - De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert met 2% per jaar.
     - "35"
   - - 26
@@ -261,28 +253,44 @@ answers:
     - "6,10"
   - - 33
     - De economie groeit langzaam
-    - 1
+    - 2
     - 8
     - 2011-03-23 19:02:55 Z
-    - 2011-03-30 12:47:20 Z
+    - 2011-04-05 18:16:33 Z
     - De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025. Het energiegebruik stijgt met 1% per jaar.
     - "5,28"
   - - 34
     - De economie groeit soms een beetje en krimpt soms een beetje
-    - 2
+    - 3
     - 8
     - 2011-03-23 19:02:55 Z
-    - 2011-03-24 07:02:56 Z
+    - 2011-04-05 18:16:33 Z
     - De economie groeit gemiddeld met 0% per jaar
     - 
   - - 35
     - De economie krimpt langzaam
-    - 3
+    - 4
     - 8
     - 2011-03-23 19:02:55 Z
-    - 2011-03-30 12:47:49 Z
+    - 2011-04-05 18:16:33 Z
     - De economie krimpt met 1% per jaar. De energievraag neemt met een 0.5% per jaar af.
     - "24,25"
+  - - 36
+    - Oude en nieuwe gebouwen zijn goed geisoleerd en maken gebruik van de nieuwste verwarmingstechnieken (HR-E, warmtepompen op gas of elektriciteit, hout-CV kachels en gas-brandstofcellen).
+    - 3
+    - 5
+    - 2011-04-05 17:39:06 Z
+    - 2011-04-05 17:55:49 Z
+    - ""
+    - "10"
+  - - 37
+    - De economie groeit snel
+    - 1
+    - 8
+    - 2011-04-05 18:08:13 Z
+    - 2011-04-05 18:16:33 Z
+    - ""
+    - "4,5,28"
 
 --- 
 dashboard_items: 
@@ -802,120 +810,6 @@ inputs:
     - 2011-03-23 10:26:53 Z
     - 2011-03-24 09:53:04 Z
     - 337
-  - - 80
-    - 2.0
-    - 21
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 381
-  - - 81
-    - 3.0
-    - 21
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 382
-  - - 82
-    - 6.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 337
-  - - 85
-    - 5.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-24 09:57:08 Z
-    - 338
-  - - 86
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 48
-  - - 88
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 52
-  - - 89
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 242
-  - - 90
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 248
-  - - 91
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 317
-  - - 92
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 333
-  - - 93
-    - 100.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-24 09:54:47 Z
-    - 420
-  - - 94
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 339
-  - - 95
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 340
-  - - 96
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 341
-  - - 97
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 343
-  - - 98
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 344
-  - - 99
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 375
-  - - 100
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 411
-  - - 101
-    - 0.0
-    - 22
-    - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
-    - 441
   - - 102
     - 3.0
     - 23
@@ -923,10 +817,10 @@ inputs:
     - 2011-03-23 10:26:53 Z
     - 336
   - - 103
-    - 6.0
+    - 5.0
     - 23
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 10:26:53 Z
+    - 2011-04-05 17:42:40 Z
     - 337
   - - 104
     - 2.0
@@ -941,52 +835,52 @@ inputs:
     - 2011-03-23 10:26:53 Z
     - 382
   - - 106
-    - 3.0
+    - 2.5
     - 24
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:07 Z
+    - 2011-04-05 18:23:58 Z
     - 213
   - - 107
-    - 3.0
+    - 2.5
     - 24
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:07 Z
+    - 2011-04-05 18:23:58 Z
     - 214
   - - 108
-    - 3.0
+    - 2.5
     - 24
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:07 Z
+    - 2011-04-05 18:23:58 Z
     - 205
   - - 109
-    - 3.0
+    - 2.5
     - 24
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:07 Z
+    - 2011-04-05 18:23:58 Z
     - 202
   - - 110
-    - 3.0
+    - 2.5
     - 25
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:54 Z
+    - 2011-04-05 18:24:26 Z
     - 213
   - - 111
-    - 3.0
+    - 2.5
     - 25
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:54 Z
+    - 2011-04-05 18:24:26 Z
     - 214
   - - 112
-    - 3.0
+    - 2.5
     - 25
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:54 Z
+    - 2011-04-05 18:24:26 Z
     - 205
   - - 113
-    - 3.0
+    - 2.5
     - 25
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:24:54 Z
+    - 2011-04-05 18:24:26 Z
     - 202
   - - 114
     - 2.0
@@ -1324,12 +1218,6 @@ inputs:
     - 2011-03-24 07:06:26 Z
     - 2011-03-24 07:06:26 Z
     - 229
-  - - 170
-    - -0.5
-    - 35
-    - 2011-03-24 07:07:17 Z
-    - 2011-03-24 07:07:17 Z
-    - 141
   - - 171
     - -0.5
     - 35
@@ -1390,18 +1278,456 @@ inputs:
     - 2011-03-24 09:44:35 Z
     - 2011-03-24 09:44:35 Z
     - 315
-  - - 181
-    - 0.6
-    - 9
-    - 2011-03-24 09:46:39 Z
-    - 2011-03-24 09:46:39 Z
-    - 315
   - - 182
     - -0.5
     - 35
     - 2011-04-05 14:13:38 Z
     - 2011-04-05 14:13:38 Z
     - 230
+  - - 183
+    - 500.0
+    - 19
+    - 2011-04-05 15:08:59 Z
+    - 2011-04-05 15:08:59 Z
+    - 264
+  - - 184
+    - 2000.0
+    - 19
+    - 2011-04-05 15:08:59 Z
+    - 2011-04-05 15:12:51 Z
+    - 263
+  - - 186
+    - 1000.0
+    - 11
+    - 2011-04-05 15:21:39 Z
+    - 2011-04-05 15:21:39 Z
+    - 263
+  - - 187
+    - 500.0
+    - 11
+    - 2011-04-05 15:21:39 Z
+    - 2011-04-05 15:21:39 Z
+    - 264
+  - - 188
+    - 4000.0
+    - 11
+    - 2011-04-05 15:21:39 Z
+    - 2011-04-05 15:21:39 Z
+    - 265
+  - - 189
+    - 50.0
+    - 11
+    - 2011-04-05 15:21:39 Z
+    - 2011-04-05 15:21:39 Z
+    - 47
+  - - 190
+    - 50.0
+    - 11
+    - 2011-04-05 15:23:34 Z
+    - 2011-04-05 15:23:34 Z
+    - 338
+  - - 191
+    - 50.0
+    - 11
+    - 2011-04-05 15:23:34 Z
+    - 2011-04-05 15:23:34 Z
+    - 405
+  - - 192
+    - 50.0
+    - 11
+    - 2011-04-05 15:23:34 Z
+    - 2011-04-05 15:23:34 Z
+    - 394
+  - - 193
+    - 50.0
+    - 11
+    - 2011-04-05 15:23:34 Z
+    - 2011-04-05 15:23:34 Z
+    - 390
+  - - 194
+    - 5.0
+    - 11
+    - 2011-04-05 15:25:12 Z
+    - 2011-04-05 15:25:12 Z
+    - 257
+  - - 195
+    - 3.0
+    - 11
+    - 2011-04-05 15:25:12 Z
+    - 2011-04-05 15:25:12 Z
+    - 256
+  - - 196
+    - 1.2
+    - 11
+    - 2011-04-05 15:25:12 Z
+    - 2011-04-05 15:25:12 Z
+    - 315
+  - - 197
+    - 1000.0
+    - 12
+    - 2011-04-05 15:27:26 Z
+    - 2011-04-05 15:27:26 Z
+    - 263
+  - - 198
+    - 500.0
+    - 12
+    - 2011-04-05 15:27:26 Z
+    - 2011-04-05 15:27:26 Z
+    - 264
+  - - 199
+    - 4000.0
+    - 12
+    - 2011-04-05 15:27:26 Z
+    - 2011-04-05 15:27:26 Z
+    - 265
+  - - 200
+    - 50.0
+    - 12
+    - 2011-04-05 15:27:26 Z
+    - 2011-04-05 15:27:26 Z
+    - 47
+  - - 201
+    - 50.0
+    - 12
+    - 2011-04-05 15:28:42 Z
+    - 2011-04-05 15:28:42 Z
+    - 338
+  - - 202
+    - 50.0
+    - 12
+    - 2011-04-05 15:28:42 Z
+    - 2011-04-05 15:28:42 Z
+    - 405
+  - - 203
+    - 50.0
+    - 12
+    - 2011-04-05 15:28:42 Z
+    - 2011-04-05 15:28:42 Z
+    - 394
+  - - 204
+    - 50.0
+    - 12
+    - 2011-04-05 15:28:42 Z
+    - 2011-04-05 15:28:42 Z
+    - 390
+  - - 205
+    - 5.0
+    - 12
+    - 2011-04-05 15:29:47 Z
+    - 2011-04-05 15:29:47 Z
+    - 257
+  - - 206
+    - 3.0
+    - 12
+    - 2011-04-05 15:29:47 Z
+    - 2011-04-05 15:29:47 Z
+    - 256
+  - - 207
+    - 1.2
+    - 12
+    - 2011-04-05 15:29:47 Z
+    - 2011-04-05 15:29:47 Z
+    - 315
+  - - 208
+    - 14.0
+    - 18
+    - 2011-04-05 15:46:43 Z
+    - 2011-04-05 15:46:43 Z
+    - 257
+  - - 209
+    - 5.0
+    - 36
+    - 2011-04-05 17:41:58 Z
+    - 2011-04-05 17:41:58 Z
+    - 337
+  - - 210
+    - 3.0
+    - 36
+    - 2011-04-05 17:41:58 Z
+    - 2011-04-05 17:41:58 Z
+    - 382
+  - - 211
+    - 2.0
+    - 36
+    - 2011-04-05 17:41:58 Z
+    - 2011-04-05 17:41:58 Z
+    - 381
+  - - 212
+    - 3.0
+    - 36
+    - 2011-04-05 17:41:58 Z
+    - 2011-04-05 17:41:58 Z
+    - 336
+  - - 213
+    - 0.0
+    - 36
+    - 2011-04-05 17:44:12 Z
+    - 2011-04-05 17:44:12 Z
+    - 343
+  - - 214
+    - 0.0
+    - 36
+    - 2011-04-05 17:44:12 Z
+    - 2011-04-05 17:44:12 Z
+    - 411
+  - - 215
+    - 0.0
+    - 36
+    - 2011-04-05 17:44:12 Z
+    - 2011-04-05 17:44:12 Z
+    - 52
+  - - 216
+    - 50.0
+    - 36
+    - 2011-04-05 17:44:12 Z
+    - 2011-04-05 17:44:12 Z
+    - 317
+  - - 217
+    - 0.0
+    - 36
+    - 2011-04-05 17:45:49 Z
+    - 2011-04-05 17:45:49 Z
+    - 441
+  - - 218
+    - 0.0
+    - 36
+    - 2011-04-05 17:45:49 Z
+    - 2011-04-05 17:45:49 Z
+    - 388
+  - - 219
+    - 10.0
+    - 36
+    - 2011-04-05 17:45:49 Z
+    - 2011-04-05 17:45:49 Z
+    - 394
+  - - 220
+    - 20.0
+    - 36
+    - 2011-04-05 17:45:49 Z
+    - 2011-04-05 17:45:49 Z
+    - 338
+  - - 221
+    - 20.0
+    - 36
+    - 2011-04-05 17:47:23 Z
+    - 2011-04-05 17:47:23 Z
+    - 51
+  - - 222
+    - 10.0
+    - 36
+    - 2011-04-05 17:47:23 Z
+    - 2011-04-05 17:47:23 Z
+    - 340
+  - - 223
+    - 0.0
+    - 36
+    - 2011-04-05 17:47:23 Z
+    - 2011-04-05 17:47:23 Z
+    - 333
+  - - 224
+    - 10.0
+    - 36
+    - 2011-04-05 17:47:23 Z
+    - 2011-04-05 17:47:23 Z
+    - 420
+  - - 225
+    - 10.0
+    - 36
+    - 2011-04-05 17:49:30 Z
+    - 2011-04-05 17:49:30 Z
+    - 439
+  - - 226
+    - 20.0
+    - 36
+    - 2011-04-05 17:49:30 Z
+    - 2011-04-05 17:49:30 Z
+    - 348
+  - - 227
+    - 20.0
+    - 36
+    - 2011-04-05 17:49:30 Z
+    - 2011-04-05 17:49:30 Z
+    - 445
+  - - 228
+    - 40.0
+    - 36
+    - 2011-04-05 17:49:30 Z
+    - 2011-04-05 17:49:30 Z
+    - 346
+  - - 229
+    - -50.0
+    - 3
+    - 2011-04-05 18:01:31 Z
+    - 2011-04-05 18:02:59 Z
+    - 133
+  - - 230
+    - -20.0
+    - 3
+    - 2011-04-05 18:01:31 Z
+    - 2011-04-05 18:02:59 Z
+    - 14
+  - - 231
+    - -10.0
+    - 3
+    - 2011-04-05 18:01:31 Z
+    - 2011-04-05 18:02:59 Z
+    - 12
+  - - 232
+    - -50.0
+    - 2
+    - 2011-04-05 18:04:00 Z
+    - 2011-04-05 18:04:00 Z
+    - 133
+  - - 233
+    - -20.0
+    - 2
+    - 2011-04-05 18:04:00 Z
+    - 2011-04-05 18:04:00 Z
+    - 14
+  - - 234
+    - -10.0
+    - 2
+    - 2011-04-05 18:04:00 Z
+    - 2011-04-05 18:04:00 Z
+    - 12
+  - - 235
+    - 1.5
+    - 37
+    - 2011-04-05 18:10:41 Z
+    - 2011-04-05 18:21:16 Z
+    - 220
+  - - 236
+    - 1.5
+    - 37
+    - 2011-04-05 18:10:41 Z
+    - 2011-04-05 18:21:16 Z
+    - 221
+  - - 237
+    - 1.5
+    - 37
+    - 2011-04-05 18:10:41 Z
+    - 2011-04-05 18:21:16 Z
+    - 376
+  - - 238
+    - 1.5
+    - 37
+    - 2011-04-05 18:10:41 Z
+    - 2011-04-05 18:21:16 Z
+    - 204
+  - - 239
+    - 1.5
+    - 37
+    - 2011-04-05 18:12:05 Z
+    - 2011-04-05 18:21:16 Z
+    - 335
+  - - 240
+    - 1.5
+    - 37
+    - 2011-04-05 18:12:05 Z
+    - 2011-04-05 18:21:16 Z
+    - 448
+  - - 241
+    - 1.5
+    - 37
+    - 2011-04-05 18:12:05 Z
+    - 2011-04-05 18:21:16 Z
+    - 214
+  - - 242
+    - 1.5
+    - 37
+    - 2011-04-05 18:12:05 Z
+    - 2011-04-05 18:21:16 Z
+    - 229
+  - - 243
+    - 1.5
+    - 37
+    - 2011-04-05 18:13:37 Z
+    - 2011-04-05 18:21:16 Z
+    - 230
+  - - 244
+    - 1.5
+    - 37
+    - 2011-04-05 18:13:37 Z
+    - 2011-04-05 18:21:16 Z
+    - 141
+  - - 245
+    - 1.5
+    - 37
+    - 2011-04-05 18:13:37 Z
+    - 2011-04-05 18:21:16 Z
+    - 143
+  - - 246
+    - 1.5
+    - 37
+    - 2011-04-05 18:13:37 Z
+    - 2011-04-05 18:21:16 Z
+    - 142
+  - - 247
+    - 1.5
+    - 37
+    - 2011-04-05 18:14:26 Z
+    - 2011-04-05 18:21:17 Z
+    - 205
+  - - 248
+    - 1.5
+    - 37
+    - 2011-04-05 18:14:26 Z
+    - 2011-04-05 18:21:17 Z
+    - 202
+  - - 249
+    - 0.5
+    - 37
+    - 2011-04-06 09:39:32 Z
+    - 2011-04-06 09:39:32 Z
+    - 1
+  - - 250
+    - 1.5
+    - 37
+    - 2011-04-06 09:39:32 Z
+    - 2011-04-06 09:39:32 Z
+    - 203
+  - - 251
+    - 0.25
+    - 33
+    - 2011-04-06 09:40:44 Z
+    - 2011-04-06 09:40:44 Z
+    - 1
+  - - 252
+    - 1.0
+    - 33
+    - 2011-04-06 09:40:44 Z
+    - 2011-04-06 09:40:44 Z
+    - 203
+  - - 253
+    - 0.2
+    - 35
+    - 2011-04-06 09:41:27 Z
+    - 2011-04-06 09:41:27 Z
+    - 1
+  - - 254
+    - 0.2
+    - 34
+    - 2011-04-06 09:42:04 Z
+    - 2011-04-06 09:42:04 Z
+    - 1
+  - - 255
+    - 1.5
+    - 37
+    - 2011-04-06 09:43:25 Z
+    - 2011-04-06 09:43:25 Z
+    - 145
+  - - 256
+    - 1.0
+    - 33
+    - 2011-04-06 09:43:57 Z
+    - 2011-04-06 09:43:57 Z
+    - 145
+  - - 257
+    - -0.5
+    - 35
+    - 2011-04-06 09:44:31 Z
+    - 2011-04-06 09:44:31 Z
+    - 145
 
 --- 
 popups: 
@@ -1430,10 +1756,9 @@ popups:
       Voor de industrie en om stroom te maken heb je aan de oppervlakte warmte nodig van meer dan 100 &#176;C en hoe warmer het water, hoe effici\xC3\xABnter je stroom kunt maken. In Nederland moet je daarvoor altijd dieper dan 3 km boren.\r\n\
       <br/><br/>\r\n\
       Gelukkig is tot op 4 km diepte redelijk goed bekend hoe de Nederlandse ondergrond eruit ziet, door alle (proef)boringen naar olie en gas. De condities lijken vrij gunstig voor geothermische warmte. Momenteel wordt er een plan gemaakt om te achterhalen hoeveel energie er in nog dieper gelegen aardlagen zit.  \r\n\
-      <br/><br/>\r\n\
-      <a href='http://geothermie.nl/geothermie/de-bron-van-de-energie/potentieel-nl/>Meer informatie over geothermie</a>\r\n"
+      \r\n"
     - 2011-04-05 12:46:24 Z
-    - 2011-04-05 14:00:34 Z
+    - 2011-04-05 15:08:52 Z
   - - 3
     - unconventional_oil
     - Moeilijk winbare olie
@@ -1493,11 +1818,25 @@ popups:
   - - 9
     - carbon_capture_storage
     - Afvang en opslag van CO2
-    - |-
-      De Engelse term voor het afvangen en ondergronds opslaan van CO2 is 'Carbon Capture and Storage' en het wordt daarom vaak aangeduid met de afkorting 'CCS'.
-      <br/><br/>
+    - "Als er op \xC3\xA9\xC3\xA9n plek veel CO2 wordt uitgestoten, is het een optie om die CO2 af te vangen en ergens op te slaan. Overal waar veel kolen of gas verbrand wordt, wordt veel CO2 uitgestoten. Kolen- en gascentrales, hoogovens, olieraffinaderijen zijn voorbeelden van zulke plekken. \r\n\
+      <br/><br/>\r\n\
+      De Engelse term voor het afvangen en ondergronds opslaan van CO2 is \xE2\x80\x98Carbon Capture and Storage' en daarom wordt deze techniek vaak aangeduid met de afkorting \xE2\x80\x98CCS'. CCS levert veel discussie op tussen voor- en tegenstanders. \r\n\
+      <br/><br/>\r\n\
+      Eigenlijk zijn er meerdere manieren om CO2 af te vangen. Al deze technieken kosten energie en dus moet bijvoorbeeld een elektriciteitscentrale met CCS bijna een derde meer kolen of gas verbranden voor dezelfde hoeveelheid elektriciteit als een gewone centrale. Daarmee ben je ook nog niet van alle CO2 uitstoot af. Per hoeveelheid stroom, stoot een CCS-centrale bijvoorbeeld nog ongeveer 15% uit van een gewone centrale."
     - 2011-04-05 14:24:52 Z
-    - 2011-04-05 14:24:52 Z
+    - 2011-04-05 15:15:11 Z
+  - - 10
+    - demand_growth
+    - De vraagtoename volgens Shell
+    - "Shell verwacht dat door een combinatie van groei van de wereldbevolking en groei van de welvaart de vraag in 2050 drie keer zo hoog kan zijn als in het jaar 2000. Lees bijvoorbeeld de Shell Scenario's <a class='no_popup' target='_blank'  href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'> Signals and Signposts </a>. "
+    - 2011-04-06 06:05:23 Z
+    - 2011-04-06 08:00:16 Z
+  - - 11
+    - Savings
+    - Besparingen en efficiency energiegebruik wereldwijd
+    - Shell verwacht dat de wereldbevolking pogingen zal blijven doen om minder energie te gebruiken en efficienter met het energie om te gaan. Desondanks kan er een groot gat tussen vraag en aanbod ontstaan de komende jaren doordat de energieproductie de snel groeiende vraag niet kan bijhouden.  Als je hier meer over wilt weten lees dan de Shell Scenario's  <a class='no_popup' target='_blank'  href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'> Signals and Signposts </a>.
+    - 2011-04-06 06:25:38 Z
+    - 2011-04-06 08:01:07 Z
 
 --- 
 questions: 
@@ -1513,8 +1852,10 @@ questions:
     - Wat is naar uw idee de prijs van elektriciteit, gas, benzine en diesel in 2025?
     - 1
     - 2011-03-23 10:26:52 Z
-    - 2011-04-05 13:26:39 Z
-    - De prijsontwikkeling van energie is van veel factoren afhankelijk. Zo kan de prijs gaan stijgen als gevolg van vraagtoename (door groei wereldbevolking en toename welvaart), en doordat de winning van brandstof moeilijker en duurder wordt (doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil) komt etc). Factoren die de prijs kunnen drukken zijn toenemende besparingen en het goedkoper worden van de winning van [hernieuwbare](/info/renewable) energie.
+    - 2011-04-06 06:26:18 Z
+    - "De prijsontwikkeling van energie is van veel factoren afhankelijk. Zo kan de prijs gaan stijgen als gevolg van [vraagtoename](/info/demand_growth) (door groei wereldbevolking en toename welvaart), en doordat de winning van brandstof moeilijker en duurder wordt (doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil) komt etc). Factoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings) en het goedkoper worden van de winning van [hernieuwbare](/info/renewable) energie. <br/><br/>\r\n\
+      \r\n\
+      <!-- De afgelopen 10 jaar is de gasnota (ex BTW) voor huishoudens gemiddeld met meer dan 5% gestegen per jaar. Voor elektriciteit is dat meer dan 2%. (Bron: <a class='no_popup' target='_blank'  href='http://senternovem.databank.nl/'>http://senternovem.databank.nl/</a>.) --> "
   - - 2
     - Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben in Nederland in 2025, ervan uitgaande dat we wel een deel blijven exporteren?
     - 2
@@ -1525,26 +1866,33 @@ questions:
     - Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas te laten dalen?
     - 3
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:06:18 Z
-    - Bij de verbranding van fossiele brandstoffen (olie, kolen en gas) komt CO2 vrij. De concentratie hiervan in de atmosfeer loopt op, evenals de temperatuur op aarde. De veronderstelling is dat de CO2-uitstoot een negatieve invloed heeft op de opwarming van de aarde (broeikaseffect).
+    - 2011-04-06 08:01:48 Z
+    - |
+      Bij de verbranding van fossiele brandstoffen (olie, kolen en gas) komt CO2 vrij. De concentratie hiervan in de atmosfeer loopt op, evenals de temperatuur op aarde. De veronderstelling is dat de CO2-uitstoot een negatieve invloed heeft op de opwarming van de aarde (broeikaseffect).<br/><br/>
+      Meer informatie over opwarming van de aarde op de site van <a class='no_popup' target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA</a>.  Meer informatie over het aantal grote natuurrampen wereldwijd kun je vinden in de statistieken die een grote (her-)verzekeraar als <a class='no_popup' target='_blank'  href='http://www.munichre.com/app_pages/www/@res/pdf/NatCatService/great_natural_catastrophes/NatCatSERVICE_Great_1950_2010_number_touch_en.pdf'>Munich Re</a>. al sinds 1974 nauwkeurig bijhoudt. 
+      
+
   - - 4
     - Welke 'brandstoffen' zullen we in 2025 naar uw verwachting gebruiken voor het Nederlandse wegverkeer?
     - 4
     - 2011-03-23 10:26:53 Z
-    - 2011-04-05 13:53:21 Z
-    - 18% van onze totale energievraag komt van het wegverkeer (auto's, bussen en vrachtwagens). Op dit moment rijden vrijwel alle vrachtwagens en bussen op diesel (voor 3% bijgemengd met [biodiesel](/info/biodiesel)), van de auto's rijdt nu 47% op diesel, 48% op benzine en 5% op LPG. Het aandeel [elektrische auto's](/info/electric_cars) is op dit moment nog verwaarloosbaar klein.
+    - 2011-04-06 08:13:57 Z
+    - "18% van onze totale energievraag komt van het wegverkeer (auto's, bussen en vrachtwagens). Op dit moment rijden vrijwel alle vrachtwagens en bussen op diesel (voor 3% bijgemengd met [biodiesel](/info/biodiesel)), van de auto's rijdt nu 47% op diesel, 48% op benzine en 5% op LPG. Het aandeel [elektrische auto's](/info/electric_cars) is op dit moment nog verwaarloosbaar klein, maar als het aan de <a class = 'no_popup' target = '_blank'  href='http://www.energieoverheid.nl/2011/03/eu-in-2050-geen-benzine-en-dieselauto\xE2\x80\x99s-van-de-weg/'>EU</a> ligt mogen auto's op benzine en diesel in 2050 niet meer in stedelijke gebieden rijden."
   - - 5
     - Wat verwacht u dat er in 2025 is veranderd in de energiebehoefte van huizen en gebouwen?
     - 5
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:05:14 Z
-    - Huizen en gebouwen gebruiken op dit moment 28% van alle energie in Nederland, waarbij ruim 72% op gaat aan verwarming. Die verwarming op haar beurt wordt bijna geheel door aardgas geleverd.
+    - 2011-04-06 08:23:53 Z
+    - "Huizen en gebouwen gebruiken op dit moment 28% van alle energie in Nederland, waarbij ruim 72% op gaat aan verwarming. Die verwarming op haar beurt wordt bijna geheel door aardgas geleverd. Het kan ook <a class = 'no_popup' target = '_blank' href='http://www.passiefhuis.nl/ph.html'>anders</a> en volgens de  <a class = 'no_popup' target = '_blank' href='http://duurzaamwonen.nu/alg/nieuws/energieneutraal-huis-bouwen-verplicht-na-2020.html'>EU</a> moet het ook anders. "
   - - 6
     - "Naar uw verwachting zal de industrie richting 2025:"
     - 6
     - 2011-03-23 10:26:53 Z
-    - 2011-03-23 19:04:59 Z
-    - "Nederland is een industrierijk land. De energiebehoefte van de industrie beslaat 47% van de totale vraag (in vergelijk: in Engeland is dit slechts 26%)."
+    - 2011-04-06 08:55:16 Z
+    - |-
+      Nederland is een industrierijk land. De energiebehoefte van de industrie beslaat 47% van de totale vraag (in vergelijk: in Engeland is dit slechts 26%). De groei van de industrie is een gevolg van wereldvaartgroei van de mensen in de wereld. Als je een paar minuten hebt en beter idee wilt krijgen van hoe de mens steeds rijker is geworden en steeds langer leeft kijk dan naar dit engelstalige filmpje.
+      
+       <iframe title="YouTube video player" width="640" height="28" src="http://www.youtube.com/embed/jbkSRLYSojo" frameborder="0" allowfullscreen></iframe>
   - - 7
     - Waar komt de benodigde energie voor tuinbouw vandaan in 2025?
     - 7
@@ -1555,8 +1903,1166 @@ questions:
     - "Wat denkt u dat onze economie gaat doen tussen 2011 en 2025? "
     - 0
     - 2011-03-23 19:02:55 Z
-    - 2011-04-05 14:40:19 Z
-    - Als de economie groeit neemt ook het energiegebruik toe. De afgelopen jaren was er  bij een groei van de economie met  2% een groei van 1% in het energieverbruik. Als we welvarender worden, krijgen we meer apparaten, grotere huizen en gaan we meer reizen. Om aan deze groeiende consumptie te voldoen gaat de industrie meer produceren. Soms groeit onze economie alleen vanwege de export. Onze landgenoten consumeren dan niet meer, maar de snel groeiende wereldbevolking wel.  Bij een krimp van de economie zijn de effecten precies andersom.
+    - 2011-04-06 08:47:11 Z
+    - |-
+      Als de economie groeit neemt ook het energiegebruik toe. De afgelopen jaren was er  bij een groei van de economie met  2% een groei van 1% in het energieverbruik. Als we welvarender worden, krijgen we meer apparaten, grotere huizen en gaan we meer reizen. Om aan deze groeiende consumptie te voldoen gaat de industrie meer produceren. Soms groeit onze economie alleen vanwege de export. Onze landgenoten consumeren dan niet meer, maar de snel groeiende wereldbevolking wel.  Bij een krimp van de economie zijn de effecten precies andersom. <!--  <br/><br/> 
+      Klik <a class = 'no_popup' target = '_blank'  href='http://www.shell.com/home/content/aboutshell/our_strategy/shell_global_scenarios/signals_signposts/'>hier</a> voor een beschrijving van hoe vraag en aanbod er in 2050 uit zouden kunnen zien volgens Shell. -->
+
+--- 
+scenario_answers: 
+  columns: 
+  - id
+  - scenario_id
+  - question_id
+  - answer_id
+  - created_at
+  - updated_at
+  records: 
+  - - 128
+    - 17
+    - 8
+    - 33
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 129
+    - 17
+    - 1
+    - 2
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 130
+    - 17
+    - 2
+    - 8
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 131
+    - 17
+    - 3
+    - 11
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 132
+    - 17
+    - 4
+    - 17
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 133
+    - 17
+    - 5
+    - 21
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 134
+    - 17
+    - 6
+    - 27
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 135
+    - 17
+    - 7
+    - 30
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+  - - 136
+    - 18
+    - 8
+    - 35
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 137
+    - 18
+    - 1
+    - 5
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 138
+    - 18
+    - 2
+    - 7
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 139
+    - 18
+    - 3
+    - 11
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 140
+    - 18
+    - 4
+    - 18
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 141
+    - 18
+    - 5
+    - 23
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 142
+    - 18
+    - 6
+    - 28
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 143
+    - 18
+    - 7
+    - 32
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+  - - 144
+    - 19
+    - 8
+    - 35
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 145
+    - 19
+    - 1
+    - 5
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 146
+    - 19
+    - 2
+    - 7
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 147
+    - 19
+    - 3
+    - 11
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 148
+    - 19
+    - 4
+    - 18
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 149
+    - 19
+    - 5
+    - 23
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 150
+    - 19
+    - 6
+    - 28
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 151
+    - 19
+    - 7
+    - 32
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+  - - 152
+    - 20
+    - 8
+    - 33
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 153
+    - 20
+    - 1
+    - 3
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 154
+    - 20
+    - 2
+    - 6
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 155
+    - 20
+    - 3
+    - 15
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 156
+    - 20
+    - 4
+    - 18
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 157
+    - 20
+    - 5
+    - 21
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 158
+    - 20
+    - 6
+    - 25
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 159
+    - 20
+    - 7
+    - 30
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+  - - 160
+    - 21
+    - 8
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 161
+    - 21
+    - 1
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 162
+    - 21
+    - 2
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 163
+    - 21
+    - 3
+    - 14
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 164
+    - 21
+    - 4
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 165
+    - 21
+    - 5
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 166
+    - 21
+    - 6
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 167
+    - 21
+    - 7
+    - 
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+  - - 168
+    - 22
+    - 8
+    - 33
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 169
+    - 22
+    - 1
+    - 3
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 170
+    - 22
+    - 2
+    - 6
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 171
+    - 22
+    - 3
+    - 10
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 172
+    - 22
+    - 4
+    - 16
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 173
+    - 22
+    - 5
+    - 20
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 174
+    - 22
+    - 6
+    - 24
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 175
+    - 22
+    - 7
+    - 29
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+  - - 176
+    - 23
+    - 8
+    - 35
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 177
+    - 23
+    - 1
+    - 4
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 178
+    - 23
+    - 2
+    - 9
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 179
+    - 23
+    - 3
+    - 11
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 180
+    - 23
+    - 4
+    - 19
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 181
+    - 23
+    - 5
+    - 23
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 182
+    - 23
+    - 6
+    - 28
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 183
+    - 23
+    - 7
+    - 31
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+  - - 184
+    - 24
+    - 8
+    - 33
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 185
+    - 24
+    - 1
+    - 2
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 186
+    - 24
+    - 2
+    - 6
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 187
+    - 24
+    - 3
+    - 15
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 188
+    - 24
+    - 4
+    - 16
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 189
+    - 24
+    - 5
+    - 21
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 190
+    - 24
+    - 6
+    - 25
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 191
+    - 24
+    - 7
+    - 30
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+  - - 192
+    - 25
+    - 8
+    - 35
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 193
+    - 25
+    - 1
+    - 5
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 194
+    - 25
+    - 2
+    - 8
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 195
+    - 25
+    - 3
+    - 12
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 196
+    - 25
+    - 4
+    - 19
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 197
+    - 25
+    - 5
+    - 36
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 198
+    - 25
+    - 6
+    - 28
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 199
+    - 25
+    - 7
+    - 32
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+  - - 200
+    - 26
+    - 8
+    - 37
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 201
+    - 26
+    - 1
+    - 3
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 202
+    - 26
+    - 2
+    - 6
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 203
+    - 26
+    - 3
+    - 10
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 204
+    - 26
+    - 4
+    - 16
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 205
+    - 26
+    - 5
+    - 20
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 206
+    - 26
+    - 6
+    - 24
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 207
+    - 26
+    - 7
+    - 29
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+  - - 208
+    - 27
+    - 8
+    - 33
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 209
+    - 27
+    - 1
+    - 2
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 210
+    - 27
+    - 2
+    - 6
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 211
+    - 27
+    - 3
+    - 15
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 212
+    - 27
+    - 4
+    - 17
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 213
+    - 27
+    - 5
+    - 21
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 214
+    - 27
+    - 6
+    - 25
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 215
+    - 27
+    - 7
+    - 30
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+  - - 216
+    - 28
+    - 8
+    - 34
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 217
+    - 28
+    - 1
+    - 2
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 218
+    - 28
+    - 2
+    - 8
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 219
+    - 28
+    - 3
+    - 11
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 220
+    - 28
+    - 4
+    - 19
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 221
+    - 28
+    - 5
+    - 36
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 222
+    - 28
+    - 6
+    - 26
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 223
+    - 28
+    - 7
+    - 31
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+  - - 224
+    - 29
+    - 8
+    - 37
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 225
+    - 29
+    - 1
+    - 1
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 226
+    - 29
+    - 2
+    - 7
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 227
+    - 29
+    - 3
+    - 10
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 228
+    - 29
+    - 4
+    - 18
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 229
+    - 29
+    - 5
+    - 21
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 230
+    - 29
+    - 6
+    - 27
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 231
+    - 29
+    - 7
+    - 31
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+  - - 232
+    - 30
+    - 8
+    - 33
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 233
+    - 30
+    - 1
+    - 2
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 234
+    - 30
+    - 2
+    - 6
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 235
+    - 30
+    - 3
+    - 14
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 236
+    - 30
+    - 4
+    - 18
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 237
+    - 30
+    - 5
+    - 36
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 238
+    - 30
+    - 6
+    - 25
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 239
+    - 30
+    - 7
+    - 30
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+  - - 240
+    - 31
+    - 8
+    - 37
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 241
+    - 31
+    - 1
+    - 1
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 242
+    - 31
+    - 2
+    - 6
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 243
+    - 31
+    - 3
+    - 10
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 244
+    - 31
+    - 4
+    - 16
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 245
+    - 31
+    - 5
+    - 20
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 246
+    - 31
+    - 6
+    - 26
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 247
+    - 31
+    - 7
+    - 29
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+  - - 248
+    - 32
+    - 8
+    - 34
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 249
+    - 32
+    - 1
+    - 3
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 250
+    - 32
+    - 2
+    - 6
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 251
+    - 32
+    - 3
+    - 10
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 252
+    - 32
+    - 4
+    - 16
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 253
+    - 32
+    - 5
+    - 20
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 254
+    - 32
+    - 6
+    - 26
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 255
+    - 32
+    - 7
+    - 29
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+  - - 256
+    - 33
+    - 8
+    - 34
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 257
+    - 33
+    - 1
+    - 1
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 258
+    - 33
+    - 2
+    - 9
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 259
+    - 33
+    - 3
+    - 10
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 260
+    - 33
+    - 4
+    - 16
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 261
+    - 33
+    - 5
+    - 20
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 262
+    - 33
+    - 6
+    - 26
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+  - - 263
+    - 33
+    - 7
+    - 29
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+
+--- 
+scenarios: 
+  columns: 
+  - id
+  - name
+  - email
+  - age
+  - featured
+  - output_0
+  - output_1
+  - output_2
+  - output_3
+  - output_4
+  - output_5
+  - output_6
+  - output_7
+  - output_8
+  - created_at
+  - updated_at
+  - title
+  - etm_scenario_id
+  records: 
+  - - 17
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 45
+    - false
+    - 5434350000.0
+    - 25709500000.0
+    - 20047900000.0
+    - 641120000.0
+    - 10869400000.0
+    - 0.196872
+    - 0.225128
+    - 3.36716
+    - 0.613604
+    - 2011-04-05 14:54:01 Z
+    - 2011-04-05 14:54:01 Z
+    - Test2
+    - 
+  - - 18
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 55
+    - false
+    - 2576510000.0
+    - 11803700000.0
+    - 5781390000.0
+    - 374890000.0
+    - 2475490000.0
+    - 0.321074
+    - 0.153176
+    - 0.846256
+    - 0.518575
+    - 2011-04-05 15:01:42 Z
+    - 2011-04-05 15:01:42 Z
+    - Test3
+    - 
+  - - 19
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 45
+    - false
+    - 2576510000.0
+    - 11803700000.0
+    - 5781390000.0
+    - 374890000.0
+    - 2475490000.0
+    - 0.321074
+    - 0.153176
+    - 0.846256
+    - 0.518575
+    - 2011-04-05 15:03:13 Z
+    - 2011-04-05 15:03:13 Z
+    - Test3
+    - 
+  - - 20
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 25
+    - false
+    - 11119200000.0
+    - 39892800000.0
+    - 32974000000.0
+    - 923172000.0
+    - 5610720000.0
+    - -0.0489919
+    - 0.0731164
+    - 0.910007
+    - 0.742438
+    - 2011-04-05 15:52:09 Z
+    - 2011-04-05 15:52:09 Z
+    - Test4
+    - 
+  - - 21
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 5
+    - false
+    - 4135610000.0
+    - 19712300000.0
+    - 15600400000.0
+    - 562037000.0
+    - 2695120000.0
+    - -0.000156313
+    - 0.0585272
+    - 0.711017
+    - 0.657466
+    - 2011-04-05 16:02:58 Z
+    - 2011-04-05 16:02:58 Z
+    - Test5
+    - 
+  - - 22
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 5
+    - false
+    - 8442770000.0
+    - 44668500000.0
+    - 41138300000.0
+    - 947522000.0
+    - 4905380000.0
+    - -0.312808
+    - 0.0472383
+    - 0.830468
+    - 0.769043
+    - 2011-04-05 16:23:37 Z
+    - 2011-04-05 16:23:37 Z
+    - Test5
+    - 
+  - - 23
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 5
+    - false
+    - 2829110000.0
+    - 16797300000.0
+    - 9936540000.0
+    - 322724000.0
+    - 5188020000.0
+    - 0.407817
+    - 0.256931
+    - 0.734774
+    - 0.330343
+    - 2011-04-05 16:26:07 Z
+    - 2011-04-05 16:26:07 Z
+    - Test6
+    - 
+  - - 24
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 5
+    - false
+    - 9029880000.0
+    - 29234600000.0
+    - 31002800000.0
+    - 749706000.0
+    - 4623570000.0
+    - -0.100984
+    - 0.0703183
+    - 0.956563
+    - 0.748734
+    - 2011-04-05 17:21:09 Z
+    - 2011-04-05 17:21:09 Z
+    - Test7
+    - 
+  - - 25
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 1946270000.0
+    - 12318900000.0
+    - 8366560000.0
+    - 1762290000.0
+    - 5992170000.0
+    - 0.517519
+    - 0.339392
+    - 1.67606
+    - 0.272695
+    - 2011-04-06 05:35:15 Z
+    - 2011-04-06 05:35:15 Z
+    - Test7
+    - 
+  - - 26
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 8451460000.0
+    - 45491900000.0
+    - 43130900000.0
+    - 948022000.0
+    - 5045840000.0
+    - -0.369197
+    - 0.0470067
+    - 0.878794
+    - 0.776932
+    - 2011-04-06 05:38:48 Z
+    - 2011-04-06 05:38:48 Z
+    - Test8
+    - 
+  - - 27
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 9048180000.0
+    - 28857500000.0
+    - 27982100000.0
+    - 765662000.0
+    - 7002120000.0
+    - -0.0134843
+    - 0.122803
+    - 2.62778
+    - 0.738592
+    - 2011-04-06 05:41:58 Z
+    - 2011-04-06 05:41:58 Z
+    - Test9
+    - 
+  - - 28
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4846040000.0
+    - 23880200000.0
+    - 17131200000.0
+    - 505454000.0
+    - 10201800000.0
+    - 0.365788
+    - 0.300192
+    - 1.77881
+    - 0.460784
+    - 2011-04-06 05:43:33 Z
+    - 2011-04-06 05:43:33 Z
+    - Test10
+    - 
+  - - 29
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4622000000.0
+    - 22170900000.0
+    - 17234800000.0
+    - 575693000.0
+    - 3507160000.0
+    - 0.019003
+    - 0.0992728
+    - 0.903753
+    - 0.698943
+    - 2011-04-06 07:56:59 Z
+    - 2011-04-06 07:56:59 Z
+    - Test10
+    - 1042
+  - - 30
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 5928680000.0
+    - 30329100000.0
+    - 26896000000.0
+    - 738653000.0
+    - 3768140000.0
+    - -0.18634
+    - 0.0527038
+    - 0.808448
+    - 0.724508
+    - 2011-04-06 09:30:48 Z
+    - 2011-04-06 09:30:48 Z
+    - Test11
+    - 1057
+  - - 31
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4790740000.0
+    - 25186300000.0
+    - 23317300000.0
+    - 582402000.0
+    - 3065470000.0
+    - -0.271408
+    - 0.0506078
+    - 0.861632
+    - 0.748111
+    - 2011-04-06 09:36:42 Z
+    - 2011-04-06 09:36:42 Z
+    - Test12
+    - 1059
+  - - 32
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 6852440000.0
+    - 33373400000.0
+    - 26989900000.0
+    - 893822000.0
+    - 3970830000.0
+    - -0.0457011
+    - 0.0514241
+    - 0.604124
+    - 0.681544
+    - 2011-04-06 09:47:03 Z
+    - 2011-04-06 09:47:03 Z
+    - Test13
+    - 1060
+  - - 33
+    - John Kerkhoven
+    - john.kerkhoven@quintel.com
+    - 49
+    - false
+    - 4187680000.0
+    - 21572400000.0
+    - 21192100000.0
+    - 446783000.0
+    - 5308980000.0
+    - 0.0987264
+    - 0.195196
+    - 0.604124
+    - 0.537677
+    - 2011-04-06 09:50:22 Z
+    - 2011-04-06 09:50:22 Z
+    - Test14
+    - 1063
 
 --- 
 users: 
@@ -1580,13 +3086,13 @@ users:
     - admin@quintel.com
     - $2a$10$nl0BjKW6G.mePRB3fvvAheHT9A9Xq51E/Fny1Zwj30f0fGdNFgc4C
     - $2a$10$nl0BjKW6G.mePRB3fvvAhe
-    - 14
-    - 2011-04-05 14:33:15 Z
-    - 2011-04-05 14:11:46 Z
+    - 19
+    - 2011-04-06 09:01:18 Z
+    - 2011-04-06 06:00:39 Z
     - 62.194.161.249
     - 77.168.118.215
     - 0
     - 
     - 
     - 2011-03-23 10:26:54 Z
-    - 2011-04-05 14:33:15 Z
+    - 2011-04-06 09:01:18 Z

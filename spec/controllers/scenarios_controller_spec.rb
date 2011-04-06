@@ -59,6 +59,15 @@ describe ScenariosController do
     end    
   end
   
+  describe "GET answers" do
+    it "should work" do
+      @scenario = Factory :scenario
+      get :show, :id => @scenario.id
+      response.should be_success
+      assigns(:scenario).should == @scenario
+    end
+  end
+  
   describe "POST create" do
     before do
       @valid_attributes = Factory.attributes_for(:scenario)

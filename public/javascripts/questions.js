@@ -85,7 +85,7 @@ function Questions() {
     var conflict = false;
     var currently_selected_answers = self.currently_selected_answers();
     $.each(currently_selected_answers, function(index, answer_id){
-      var conflicting_answers = globals.answers_conflicts[answer_id];
+      var conflicting_answers = globals.answers_conflicts[answer_id] || [];
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1) {
         conflict = selected_answer_id;
       }
@@ -114,13 +114,13 @@ function Questions() {
       return false;
     });
 
-    $("#questions nav#up a").click(function(){
+    $("#questions nav#up a, #admin_menu a").click(function(){
       var question_id = $(this).data('question_id');
       self.current_question = question_id;
       self.show_right_question();
       return false;
     });
-
+    
     // when the users clicks on an answer
     $("input[type='radio']").change(function(){
       $(this).parent().parent().find("li.answer").removeClass('active');
@@ -130,13 +130,46 @@ function Questions() {
       self.show_next_question_link_if_needed();
     });
     
-    // setup colorbox popups
-    $(".question a").not(".no_popup").colorbox({
-      width: "50%",
-      height: "50%",
+    // setup colorbox popups for below questions
+    $(".question .information a").not(".no_popup").not(".iframe").colorbox({
+      width: 600,
+      height: 300,
       opacity: 0.6
     });
     
+    // setup colorbox popups for below questions
+    $(".question .information a.iframe").colorbox({
+      width: 600,
+      height: 400,
+      opacity: 0.6,
+      iframe: true
+    });
+    
+    
+    // setup small tooltips
+    $(".answers em").hover(
+      function(){
+        if ($(this).attr('key')){
+          var key = $(this).attr('key');
+        }
+        else{
+          var key = $(this).html();
+        }
+        var text = globals.popups[key]
+        $("#tooltip h3").html(text.title);
+        $("#tooltip div").html(text.body);
+        $("#tooltip").show("fast");
+      },
+      function(){
+        $("#tooltip").hide();
+      }
+    ).mousemove(function(e){
+      var tipX = e.pageX - 0;
+      var tipY = e.pageY - 0;
+      var offset = $(this).offset();
+      $("#tooltip").css({"top": tipY + 20 , "left": tipX});
+    });
+        
     $(".question a.text_toggler").click(function(){
       var text_element = $(this).parent().find(".text");
       text_element.toggle();
