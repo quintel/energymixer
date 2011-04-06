@@ -185,11 +185,17 @@ body#scenarios_show
         margin-bottom: 10px
       .title
         font-weight: bold
-      .link
-        padding: 5px
-        a
-          color: red
-          font-size: 1.3em
+    .links
+      padding: 5px
+      a
+        font-weight: bold
+        display: block
+        margin-bottom: 5px
+        margin-left: 12px
+        @include link_arrow_prefix
+        &:hover
+          text-decoration: underline
+        
     .boxes
       margin-top: 10px
       .dashboard_item
