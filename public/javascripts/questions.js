@@ -131,11 +131,20 @@ function Questions() {
     });
     
     // setup colorbox popups for below questions
-    $(".question .information a").not(".no_popup").colorbox({
+    $(".question .information a").not(".no_popup").not(".iframe").colorbox({
       width: "50%",
       height: "50%",
       opacity: 0.6
     });
+    
+    // setup colorbox popups for below questions
+    $(".question .information a.iframe").colorbox({
+      width: "50%",
+      height: "50%",
+      opacity: 0.6,
+      iframe: true
+    });
+    
     
     // setup small tooltips
     $(".answers em").hover(
