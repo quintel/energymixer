@@ -79,7 +79,7 @@
     text-align: center;
     height: 30px;
     padding: 5px;
-    font-size: 8px; }
+    font-size: 10px; }
     .graph_common td.total_amount h4 {
       font-weight: bold; }
   .graph_common td.carriers {
@@ -426,6 +426,18 @@ body#scenarios_compare .spacer {
   height: 690px;
   float: left;
   background-color: #cccccc; }
+
+body#scenarios_answers h2, body#scenarios_show #colorbox h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1em; }
+body#scenarios_answers dl, body#scenarios_show #colorbox dl {
+  font-size: 1.1em;
+  line-height: 15px; }
+  body#scenarios_answers dl dt, body#scenarios_show #colorbox dl dt {
+    font-weight: bold; }
+  body#scenarios_answers dl dd, body#scenarios_show #colorbox dl dd {
+    margin-bottom: 1em; }
 
 section#search_scenarios_box {
   background-color: #f5f5f5;
