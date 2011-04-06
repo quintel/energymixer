@@ -8,10 +8,10 @@
     %h2 Vul uw gegevens in:
     = scenario.error_messages
     %div.item
-      = scenario.label :name, "Naam", :class => 'required'
+      = scenario.label :name, "Naam *", :class => 'required'
       = scenario.text_field :name
     %div.item
-      = scenario.label :email, "E-mail", :class => 'required'
+      = scenario.label :email, "E-mail *", :class => 'required'
       = scenario.text_field :email
     %div.item
       = scenario.label :age, "Leeftijd"

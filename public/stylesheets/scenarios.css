@@ -247,7 +247,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
   body#scenarios_new section#questions .question #user_details a, body#scenarios_create section#questions .question #user_details a {
-    color: #666666; }
+    text-decoration: underline; }
   body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
     font-size: 12px;
     font-weight: bold;
@@ -262,7 +262,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     padding: 3px;
     clear: left; }
     body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
-      background-color: #f6182c;
+      color: red;
+      font-weight: bold;
       float: left;
       position: relative;
       height: 36px; }
@@ -273,8 +274,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       width: 80px;
       padding: 5px;
       text-align: right; }
-      body#scenarios_new section#questions .question #user_details .item label.required, body#scenarios_create section#questions .question #user_details .item label.required {
-        font-weight: bold; }
     body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
       display: block;
       float: left;
@@ -283,12 +282,9 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
       width: 220px; }
     body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
-      margin-left: 74px;
-      width: 214px;
-      border: 1px solid #cccccc;
+      float: right;
+      margin-right: 20px;
       margin-bottom: 20px; }
-      body#scenarios_new section#questions .question #user_details .item input[type=submit]:hover, body#scenarios_create section#questions .question #user_details .item input[type=submit]:hover {
-        background-color: #f69409; }
   body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
     border: 1px solid red;
     margin: 3px 3px 20px 3px; }
