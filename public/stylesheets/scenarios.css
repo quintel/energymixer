@@ -333,9 +333,19 @@ body#scenarios_show section#right {
   body#scenarios_show section#right .user {
     width: 120px;
     margin-left: 10px; }
+    body#scenarios_show section#right .user .chart_canvas_mix {
+      width: 80px; }
+    body#scenarios_show section#right .user .chart_canvas_money {
+      width: 10px;
+      margin-left: 10px; }
   body#scenarios_show section#right .current {
     width: 80px;
     margin-left: 30px; }
+    body#scenarios_show section#right .current .chart_canvas_mix {
+      width: 50; }
+    body#scenarios_show section#right .current .chart_canvas_money {
+      width: 5px;
+      margin-left: 6px; }
 
 body#scenarios_index section#scenarios .scenario {
   position: relative;
@@ -405,8 +415,16 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
         font-weight: bold; }
 body#scenarios_compare .scenario {
   width: 130px; }
+  body#scenarios_compare .scenario .chart_canvas_mix {
+    width: 80px; }
+  body#scenarios_compare .scenario .chart_canvas_money {
+    width: 10px; }
 body#scenarios_compare .current_scenario {
   width: 90px; }
+  body#scenarios_compare .current_scenario .chart_canvas_mix {
+    width: 50px; }
+  body#scenarios_compare .current_scenario .chart_canvas_money {
+    width: 8px; }
   body#scenarios_compare .current_scenario .name {
     color: #acacac; }
   body#scenarios_compare .current_scenario .dashboard .item {
