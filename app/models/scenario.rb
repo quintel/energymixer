@@ -115,20 +115,18 @@ class Scenario < ActiveRecord::Base
     output_0 + output_1 + output_2 + output_3 + output_4
   end
   
-  # TODO: cache me
   def self.current
     c = ApiClient.new.current_situation
     @current_scenario ||= new(
-      :output_0 => c["costs_share_of_coal"],        # coal
-      :output_1 => c["costs_share_of_gas"],         # gas
-      :output_2 => c["costs_share_of_oil"],         # oil
-      :output_3 => c["costs_share_of_uranium"],     # uranium
-      :output_4 => c["costs_share_of_sustainable"], # sustainable
-      
-      :output_5 => 0, #
-      :output_6 => 0, #
-      :output_7 => 0, #
-      :output_8 => 0, #
+      :output_0 => c["costs_share_of_coal"],
+      :output_1 => c["costs_share_of_gas"],
+      :output_2 => c["costs_share_of_oil"],
+      :output_3 => c["costs_share_of_uranium"],
+      :output_4 => c["costs_share_of_sustainable"],
+      :output_5 => c["co2_emission_final_demand_to_1990_in_percent"],
+      :output_6 => c["share_of_renewable_energy"],
+      :output_7 => c["area_footprint_per_nl"],
+      :output_8 => c["energy_dependence"],
       :year     => 2011
     )
     
@@ -138,12 +136,11 @@ class Scenario < ActiveRecord::Base
       :output_1 => 19712261358.58237,  # gas
       :output_2 => 15600440661.944386, # oil
       :output_3 => 562037387.8724155,  # uranium
-      :output_4 => 2695124317.5551677, # sustainable
-      
-      :output_5 => 0, #
-      :output_6 => 0, #
-      :output_7 => 0, #
-      :output_8 => 0, #
+      :output_4 => 2695124317.5551677, # sustainable      
+      :output_5 => -0.005590499343000932, #
+      :output_6 => 0.05393912138004123, #
+      :output_7 => 0.6045053247669468, #
+      :output_8 => 0.2477505720053616, #
       :year     => 2011
     )
   end

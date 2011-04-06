@@ -8,7 +8,11 @@ class ApiClient
         "costs_share_of_gas",
         "costs_share_of_oil",
         "costs_share_of_uranium",
-        "costs_share_of_sustainable"
+        "costs_share_of_sustainable",
+        "co2_emission_final_demand_to_1990_in_percent",
+        "share_of_renewable_energy",
+        "area_footprint_per_nl",
+        "energy_dependence"
       ]
   
   def current_situation
