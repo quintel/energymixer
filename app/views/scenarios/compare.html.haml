@@ -20,6 +20,7 @@
     .spacer
   .current_scenario.graph_shaded
     .name Mix 2011
+    = render :partial => "chart_top", :locals => {:scenario => Scenario.current }
     = render :partial => 'chart', :locals => { :scenario => Scenario.current }
     = render :partial => 'compare_dashboard', :locals => { :scenario => Scenario.current }
 
