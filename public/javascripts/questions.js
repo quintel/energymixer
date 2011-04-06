@@ -130,13 +130,29 @@ function Questions() {
       self.show_next_question_link_if_needed();
     });
     
-    // setup colorbox popups
-    $(".question a").not(".no_popup").colorbox({
+    // setup colorbox popups for below questions
+    $(".question .information a").not(".no_popup").colorbox({
       width: "50%",
       height: "50%",
       opacity: 0.6
     });
     
+    // setup small tooltips
+    $(".answers em").hover(
+      function(){
+        $("#tooltip").html($(this).html());
+        $("#tooltip").show("fast");
+      },
+      function(){
+        $("#tooltip").hide();
+      }
+    ).mousemove(function(e){
+      var tipX = e.pageX - 0;
+      var tipY = e.pageY - 0;
+      var offset = $(this).offset();
+      $("#tooltip").css({"top": tipY + 20 , "left": tipX});
+    });
+        
     $(".question a.text_toggler").click(function(){
       var text_element = $(this).parent().find(".text");
       text_element.toggle();
