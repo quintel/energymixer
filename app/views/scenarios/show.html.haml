@@ -19,11 +19,9 @@
         (#{@scenario.age} jaar)
     .content
       = full_text(@scenario)
-      %br
-        = link_to "STYLE ME! see answers", answers_scenario_path(@scenario), :id => "show_answers"
-    - if @scenario_id
-      .link
-        = link_to "Click here to load this scenario in the ET-Model", scenario_in_etm_url(@scenario), :target => '_new'
+  .links
+    = link_to "Bekijk de antwoorden van deze mix", answers_scenario_path(@scenario), :id => "show_answers"
+    = link_to "Laad deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
   .boxes
     .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
       %h3= dashboard_label_for_output(:output_5)
