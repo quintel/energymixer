@@ -99,7 +99,7 @@ function Graph() {
     });
     // update money column
     var new_money_height = rounded_sum + 4 * 2; // margin between layers
-    $(".user_created .coins").animate({"height" : new_money_height}, "slow");
+    $(".user_created .money").animate({"height" : new_money_height}, "slow");
     
     // and top counter
     $(".user_created .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
