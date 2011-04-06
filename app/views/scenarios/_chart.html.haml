@@ -1,9 +1,10 @@
 - max_height = local_assigns.has_key?(:max_height) ? max_height : 360
+- width = local_assigns.has_key?(:width) ? width : 80
 - rounded_sum  = 0
 - current_graph_height = scenario.total_amount / Scenario::MaxAmount * max_height
 
 .charts
-  .chart_canvas_mix
+  .chart_canvas_mix{:style=>"width: #{width}px;"}
     %ul.chart
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_graph_height).round
