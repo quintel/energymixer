@@ -91,10 +91,12 @@
     width: 20%;
     vertical-align: bottom; }
     .graph_common td.money .background {
-      margin-left: 40%;
+      height: 100%;
+      width: 100%;
       position: relative; }
       .graph_common td.money .background .coins {
-        width: 100%;
+        margin-left: 60%;
+        width: 80%;
         height: 100%;
         position: absolute;
         bottom: 0px; }
@@ -241,6 +243,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       cursor: pointer; }
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
+  body#scenarios_new section#questions .question #user_details a, body#scenarios_create section#questions .question #user_details a {
+    color: #666666; }
   body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
     font-size: 12px;
     font-weight: bold;
