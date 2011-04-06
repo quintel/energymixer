@@ -79,7 +79,7 @@
     text-align: center;
     height: 30px;
     padding: 5px;
-    font-size: 8px; }
+    font-size: 10px; }
     .graph_common td.total_amount h4 {
       font-weight: bold; }
   .graph_common td.carriers {
@@ -91,10 +91,12 @@
     width: 20%;
     vertical-align: bottom; }
     .graph_common td.money .background {
-      margin-left: 40%;
+      height: 100%;
+      width: 100%;
       position: relative; }
       .graph_common td.money .background .coins {
-        width: 100%;
+        margin-left: 60%;
+        width: 80%;
         height: 100%;
         position: absolute;
         bottom: 0px; }
@@ -241,6 +243,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       cursor: pointer; }
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
+  body#scenarios_new section#questions .question #user_details a, body#scenarios_create section#questions .question #user_details a {
+    color: #666666; }
   body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
     font-size: 12px;
     font-weight: bold;
@@ -422,6 +426,18 @@ body#scenarios_compare .spacer {
   height: 690px;
   float: left;
   background-color: #cccccc; }
+
+body#scenarios_answers h2, body#scenarios_show #colorbox h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 1em; }
+body#scenarios_answers dl, body#scenarios_show #colorbox dl {
+  font-size: 1.1em;
+  line-height: 15px; }
+  body#scenarios_answers dl dt, body#scenarios_show #colorbox dl dt {
+    font-weight: bold; }
+  body#scenarios_answers dl dd, body#scenarios_show #colorbox dl dd {
+    margin-bottom: 1em; }
 
 section#search_scenarios_box {
   background-color: #f5f5f5;

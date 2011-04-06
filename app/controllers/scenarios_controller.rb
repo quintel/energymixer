@@ -1,5 +1,5 @@
 class ScenariosController < ApplicationController
-  before_filter :find_scenario, :only => :show
+  before_filter :find_scenario, :only => [:show, :answers]
 
   def new
     @scenario = Scenario.new(
@@ -36,6 +36,10 @@ class ScenariosController < ApplicationController
   
   def show
     @scenario_id = session.delete(:scenario_id)
+  end
+  
+  def answers
+    render :layout => false if request.xhr?
   end
   
   def index

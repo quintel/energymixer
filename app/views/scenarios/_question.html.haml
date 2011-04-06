@@ -15,5 +15,5 @@
                               :'data-question_id'     => question_object.id,
                               :'data-question_number' => question_object.number
         %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
-          .number= (index+65).chr
-          .text= markdown(a.answer)
+          %span.number= (index+65).chr
+          %span.text= markdown(a.answer)
