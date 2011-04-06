@@ -1,6 +1,6 @@
-- graph_max_height     = 360
-- rounded_sum          = 0
-- current_graph_height = scenario.total_amount / Scenario::MaxAmount * graph_max_height
+- max_height = local_assigns.has_key?(:max_height) ? max_height : 360
+- rounded_sum  = 0
+- current_graph_height = scenario.total_amount / Scenario::MaxAmount * max_height
 
 .charts
   .chart_canvas_mix
@@ -8,7 +8,7 @@
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_graph_height).round
         - rounded_sum += height
-        %li.serie{:class => key, :style => "height: #{height}px"}
+        %li.serie{:class => [key, Scenario::Results[key][:gquery]], :style => "height: #{height}px"}
           %span.label= v[:label] if height > 10
   .chart_canvas_money
     %ul.chart

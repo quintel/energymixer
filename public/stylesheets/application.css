@@ -128,25 +128,3 @@ body.sessions #content a, body.unlocks #content a {
     color: blue; }
   #admin_menu a:hover {
     text-decoration: underline; }
-
-.chart_canvas_mix, .chart_canvas_money {
-  float: left;
-  height: 400px;
-  background: #eeeeee;
-  width: 80px;
-  margin-right: 5px;
-  position: relative; }
-  .chart_canvas_mix ul.chart, .chart_canvas_money ul.chart {
-    position: absolute;
-    bottom: 0;
-    width: 100%; }
-    .chart_canvas_mix ul.chart li.serie, .chart_canvas_money ul.chart li.serie {
-      width: 100%;
-      height: 20px;
-      margin-top: 2px; }
-
-.chart_canvas_mix {
-  width: 50px; }
-
-.chart_canvas_money {
-  width: 10px; }

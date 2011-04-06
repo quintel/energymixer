@@ -113,6 +113,28 @@
 .graph_normal ul.chart li span.label {
   color: white; }
 
+.chart_canvas_mix, .chart_canvas_money {
+  float: left;
+  height: 400px;
+  background: #eeeeee;
+  width: 80px;
+  margin-right: 5px;
+  position: relative; }
+  .chart_canvas_mix ul.chart, .chart_canvas_money ul.chart {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+    .chart_canvas_mix ul.chart li.serie, .chart_canvas_money ul.chart li.serie {
+      width: 100%;
+      height: 20px;
+      margin-top: 2px; }
+
+.chart_canvas_mix {
+  width: 50px; }
+
+.chart_canvas_money {
+  width: 10px; }
+
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
   float: left; }
@@ -120,8 +142,6 @@ body#scenarios_new section#results, body#scenarios_create section#results {
     float: left;
     margin-left: 20px;
     height: 430px; }
-    body#scenarios_new section#results .current td.carriers, body#scenarios_new section#results .user_created td.carriers, body#scenarios_create section#results .current td.carriers, body#scenarios_create section#results .user_created td.carriers {
-      height: 390px; }
   body#scenarios_new section#results .current, body#scenarios_create section#results .current {
     width: 80px; }
   body#scenarios_new section#results .user_created, body#scenarios_create section#results .user_created {
@@ -304,8 +324,6 @@ body#scenarios_show section#right {
   float: left; }
   body#scenarios_show section#right .user, body#scenarios_show section#right .current {
     float: left; }
-    body#scenarios_show section#right .user td.carriers, body#scenarios_show section#right .current td.carriers {
-      height: 380px; }
   body#scenarios_show section#right .user {
     width: 120px;
     margin-left: 10px; }
