@@ -26,8 +26,7 @@ group :development do
   gem 'ruby-debug19', '~> 0.11.6'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
-  # switch back to official gem as soon as 2.5.21 is out
-  gem 'capistrano', :git => 'git://github.com/capistrano/capistrano.git'
+  gem 'capistrano'
   gem 'annotate', :require => false
 end
 

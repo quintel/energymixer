@@ -19,6 +19,8 @@
         (#{@scenario.age} jaar)
     .content
       = full_text(@scenario)
+      %br
+        = link_to "STYLE ME! see answers", answers_scenario_path(@scenario), :id => "show_answers"
     - if @scenario_id
       .link
         = link_to "Click here to load this scenario in the ET-Model", scenario_in_etm_url(@scenario), :target => '_new'
@@ -43,3 +45,11 @@
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
+  :javascript
+    $(function(){
+      $("#show_answers").colorbox({
+        width: "50%",
+        height: "80%",
+        opacity: 0.6
+      });
+    });

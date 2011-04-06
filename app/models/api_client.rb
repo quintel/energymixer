@@ -12,7 +12,9 @@ class ApiClient
       ]
   
   def current_situation
-    @current_situation ||= current_situation!
+    Rails.cache.fetch("current_situation") do
+      current_situation!
+    end
   end
   
   def current_situation!
