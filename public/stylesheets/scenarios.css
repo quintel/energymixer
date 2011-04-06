@@ -294,6 +294,8 @@ body#scenarios_new .question_popup h1, body#scenarios_create .question_popup h1 
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.7em; }
+body#scenarios_new .question_popup a, body#scenarios_create .question_popup a {
+  text-decoration: underline; }
 
 body#scenarios_show section#left {
   width: 50%;
