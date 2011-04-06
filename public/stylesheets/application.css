@@ -99,3 +99,13 @@ body.sessions #content form, body.unlocks #content form {
     margin-top: 1em; }
 body.sessions #content a, body.unlocks #content a {
   padding: 1em; }
+
+#tooltip {
+  display: none;
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  padding: 4px; }
