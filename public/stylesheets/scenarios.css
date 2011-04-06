@@ -197,6 +197,9 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         body#scenarios_new section#questions nav#down a#next_question, body#scenarios_create section#questions nav#down a#next_question {
           background: transparent url(images/link_arrow.png) center left no-repeat;
           padding-left: 16px; }
+        body#scenarios_new section#questions nav#down a#previous_question, body#scenarios_create section#questions nav#down a#previous_question {
+          background: transparent url(images/reverse_link_arrow.png) center left no-repeat;
+          padding-left: 16px; }
   body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
     padding: 10px;
     background-color: #f5f5f5;
