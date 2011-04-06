@@ -91,10 +91,12 @@
     width: 20%;
     vertical-align: bottom; }
     .graph_common td.money .background {
-      margin-left: 40%;
+      height: 100%;
+      width: 100%;
       position: relative; }
       .graph_common td.money .background .coins {
-        width: 100%;
+        margin-left: 60%;
+        width: 80%;
         height: 100%;
         position: absolute;
         bottom: 0px; }
