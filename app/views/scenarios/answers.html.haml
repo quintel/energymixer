@@ -1,0 +1,11 @@
+%h2 Antwoorden van deze mix
+
+%dl
+  - @scenario.answers.each do |a|
+    %dt
+      #{a.question.number}.
+      = a.question.question
+    %dd= a.answer.answer
+
+- content_for :head do
+  = stylesheet_link_tag 'scenarios'
