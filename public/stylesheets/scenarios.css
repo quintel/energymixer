@@ -419,7 +419,7 @@ body#scenarios_compare .scenario {
   body#scenarios_compare .scenario .chart_canvas_money {
     width: 10px; }
 body#scenarios_compare .current_scenario {
-  width: 90px; }
+  width: 130px; }
   body#scenarios_compare .current_scenario .chart_canvas_mix {
     width: 50px; }
   body#scenarios_compare .current_scenario .chart_canvas_money {
