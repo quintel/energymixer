@@ -5,7 +5,10 @@
     %dt
       #{a.question.number}.
       = a.question.question
-    %dd= a.answer.answer
+    -if a.answer
+      %dd= a.answer.answer 
+    -else
+      %dd **Geen antwoord gegeven**
 
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
