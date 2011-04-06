@@ -25,7 +25,6 @@ class ScenariosController < ApplicationController
   end
   
   def show
-    @scenario_id = session.delete(:scenario_id)
   end
   
   def answers

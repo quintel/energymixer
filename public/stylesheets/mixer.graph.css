@@ -17,61 +17,61 @@
     font-weight: bold;
     color: #073574; }
   .dashboard_item.energy_dependence_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.energy_dependence_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.co2_emission_final_demand_to_1990_in_percent_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.share_of_renewable_energy_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_0 {
-    background: #f5f5f5 url(/images/layout/gauge_6.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_6.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_1 {
-    background: #f5f5f5 url(/images/layout/gauge_5.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_5.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_2 {
-    background: #f5f5f5 url(/images/layout/gauge_4.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_4.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_3 {
-    background: #f5f5f5 url(/images/layout/gauge_3.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_3.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_4 {
-    background: #f5f5f5 url(/images/layout/gauge_2.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_2.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_5 {
-    background: #f5f5f5 url(/images/layout/gauge_1.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_1.png) 5px center no-repeat; }
   .dashboard_item.area_footprint_per_nl_step_6 {
-    background: #f5f5f5 url(/images/layout/gauge_0.png) center left no-repeat; }
+    background: #f5f5f5 url(/images/layout/gauge_0.png) 5px center no-repeat; }
 
 .total_amount {
   padding: 5px;
