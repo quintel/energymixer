@@ -112,8 +112,24 @@ class Scenario < ActiveRecord::Base
     output_0 + output_1 + output_2 + output_3 + output_4
   end
   
-  # TODO: fetch data from etmodel
+  # TODO: cache me
   def self.current
+    c = ApiClient.new.current_situation
+    @current_scenario ||= new(
+      :output_0 => c["costs_share_of_coal"],        # coal
+      :output_1 => c["costs_share_of_gas"],         # gas
+      :output_2 => c["costs_share_of_oil"],         # oil
+      :output_3 => c["costs_share_of_uranium"],     # uranium
+      :output_4 => c["costs_share_of_sustainable"], # sustainable
+      
+      :output_5 => 0, #
+      :output_6 => 0, #
+      :output_7 => 0, #
+      :output_8 => 0, #
+      :year     => 2011
+    )
+    
+  rescue
     @current_scenario ||= new(
       :output_0 => 4135606319.8158274, # coal
       :output_1 => 19712261358.58237,  # gas
