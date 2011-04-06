@@ -132,15 +132,15 @@ function Questions() {
     
     // setup colorbox popups for below questions
     $(".question .information a").not(".no_popup").not(".iframe").colorbox({
-      width: "50%",
-      height: "50%",
+      width: 600,
+      height: 300,
       opacity: 0.6
     });
     
     // setup colorbox popups for below questions
     $(".question .information a.iframe").colorbox({
-      width: "50%",
-      height: "50%",
+      width: 600,
+      height: 400,
       opacity: 0.6,
       iframe: true
     });
