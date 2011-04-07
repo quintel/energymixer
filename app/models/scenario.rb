@@ -49,7 +49,7 @@ class Scenario < ActiveRecord::Base
     output_11: "costs_share_of_sustainable_biomass"
   }
   
-  Results = {
+  PrimaryMixTable = {
     coal: {
      gquery: "costs_share_of_coal",
      unit: "Mln. Euro",
@@ -76,6 +76,24 @@ class Scenario < ActiveRecord::Base
      gquery: "costs_share_of_sustainable",
      label: I18n.t('sustainable'),
      css_class: "renewable"       
+    }
+  }
+  
+  SecondaryMixTable = {
+    wind: {
+      gquery: "costs_share_of_sustainable_wind",
+      label: I18n.t('wind'),
+      css_class: "wind"       
+    },
+    solar: {
+      gquery: "costs_share_of_sustainable_solar",
+      label: I18n.t('solar'),
+      css_class: "solar"       
+    },
+    biomass: {
+      gquery: "costs_share_of_sustainable_biomass",
+      label: I18n.t('biomass'),
+      css_class: "renewable"       
     }
   }
   

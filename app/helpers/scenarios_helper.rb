@@ -41,9 +41,12 @@ module ScenariosHelper
   end
   
   # As above
-  # TODO: cleanup
   def mix_table_json
-    Scenario::Results.keys.map{|k| Scenario::Results[k][:gquery]}.to_json
+    Scenario::PrimaryMixTable.keys.map{|k| Scenario::PrimaryMixTable[k][:gquery]}.to_json
+  end
+  
+  def secondary_mix_table_json
+    Scenario::SecondaryMixTable.keys.map{|k| Scenario::SecondaryMixTable[k][:gquery]}.to_json
   end
   
   def dashboard_steps_json
