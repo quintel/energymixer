@@ -12,7 +12,10 @@ class ApiClient
         "co2_emission_final_demand_to_1990_in_percent",
         "share_of_renewable_energy",
         "area_footprint_per_nl",
-        "energy_dependence"
+        "energy_dependence",
+        "costs_share_of_sustainable_wind",
+        "costs_share_of_sustainable_solar",
+        "costs_share_of_sustainable_biomass"
       ]
   
   def current_situation
