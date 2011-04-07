@@ -264,6 +264,10 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       width: 80px;
       padding: 5px;
       text-align: right; }
+      body#scenarios_new section#questions .question #user_details .item label#accept_terms, body#scenarios_create section#questions .question #user_details .item label#accept_terms {
+        width: 300px;
+        float: right;
+        text-align: left; }
     body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
       display: block;
       float: left;
