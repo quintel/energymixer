@@ -26,4 +26,9 @@ namespace :scenarios do
       s.save
     end
   end
+  
+  desc "Clear cache"
+  task :clear_cache => :environment do
+    Rails.cache.clear
+  end
 end
