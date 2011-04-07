@@ -37,10 +37,10 @@
       .value= format_dashboard_value(:output_8, @scenario.output_8)
 %section#right.graph
   .user.graph_normal
-    = render :partial => 'scenarios/chart_top', :locals => {:scenario => @scenario, :year => 2025}
+    = render :partial => 'scenarios/chart_top', :locals => {:scenario => @scenario}
     = render :partial => 'scenarios/chart', :locals => {:scenario => @scenario}
   .current.graph_shaded
-    = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current, :year => 2011}
+    = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
     = render :partial => 'scenarios/chart', :locals => { :scenario => Scenario.current, :width => 50}
   
 - content_for :head do
