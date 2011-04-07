@@ -169,18 +169,17 @@ nl:
       odd: "moet oneven zijn"
       even: "moet even zijn"
 
-  activerecord:
-    errors:
-      template:
-        header:
-          one:    "%{model} niet opgeslagen: 1 fout gevonden"
-          other:  "%{model} niet opgeslagen: %{count} fouten gevonden"
-        body: "Controleer de volgende velden:"
+  errors:
+    template:
+      header:
+        one:    "%{model} niet opgeslagen: 1 fout gevonden"
+        other:  "%{model} niet opgeslagen: %{count} fouten gevonden"
+      body: "Controleer de volgende velden:"
 
-      messages:
-        taken: "is al in gebruik"
-        record_invalid: "Validatie mislukt: %{errors}"
-        <<: *errors_messages
+    messages:
+      taken: "is al in gebruik"
+      record_invalid: "Validatie mislukt: %{errors}"
+      <<: *errors_messages
 
-      full_messages:
-        format: "%{attribute}%{message}"
+    full_messages:
+      format: "%{attribute}%{message}"
