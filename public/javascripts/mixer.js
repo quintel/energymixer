@@ -63,7 +63,6 @@ function Mixer() {
   self.store_results = function() {
     var results = self.results.result    
     $.each(self.mix_table, function(index, code){
-      // TODO: refactor
       var raw_value = results[code][1][1];
       var value = Math.round(raw_value/1000000)
       self.carriers_values[code] = value;

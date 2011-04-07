@@ -56,12 +56,10 @@ function Graph() {
   
   // it would be nice to define these formats in the controller but the
   // code would become a nightmare
-  // TODO: check whether the output values are right!!
   // This formatter has a ruby equivalent as a view helper
   self.format_dashboard_value = function(key, value) {
     var out = "";
     switch(key) {
-      // TODO: check format of this gquery
       case "co2_emission_final_demand_to_1990_in_percent":
         value *= -1;
         if (value > 0) out = "+";
