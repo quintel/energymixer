@@ -18,11 +18,13 @@ function Mixer() {
   self.user_answers = []; // right from the form
   self.carriers_values  = {}; // used by graph, too!
   self.dashboard_values = {}; // idem
+  self.secondary_carriers_values  = {};
 
-  self.dashboard_items = globals.dashboard_items; // provided by the controller
-  self.mix_table       = globals.mix_table;       // idem
+  self.dashboard_items     = globals.dashboard_items; // provided by the controller
+  self.mix_table           = globals.mix_table;       // idem
+  self.secondary_mix_table = globals.secondary_mix_table;       // idem
 
-  self.gqueries = self.mix_table.concat(self.dashboard_items);
+  self.gqueries = self.mix_table.concat(self.dashboard_items).concat(self.secondary_mix_table);
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -66,6 +68,12 @@ function Mixer() {
       var raw_value = results[code][1][1];
       var value = Math.round(raw_value/1000000)
       self.carriers_values[code] = value;
+      $("input[type=hidden][data-label="+code+"]").val(raw_value);
+    });
+    $.each(self.secondary_mix_table, function(index, code){
+      var raw_value = results[code][1][1];
+      var value = Math.round(raw_value/1000000)
+      self.secondary_carriers_values[code] = value;
       $("input[type=hidden][data-label="+code+"]").val(raw_value);
     });
     $.each(self.dashboard_items, function(index, code){

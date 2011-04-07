@@ -9,7 +9,7 @@
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_graph_height).round
         - rounded_sum += height
-        %li.serie{:class => [key, Scenario::Results[key][:gquery]], :style => "height: #{height}px"}
+        %li.serie{:class => [key, Scenario::PrimaryMixTable[key][:gquery]], :style => "height: #{height}px"}
           %span.label= v[:label] if height > 10 || local_assigns.has_key?(:dynamic_graph)
   .chart_canvas_money
     %ul.chart
