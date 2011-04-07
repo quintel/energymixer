@@ -21,8 +21,9 @@
       = scenario.text_field :title
     %div.item
       = scenario.check_box :accept_terms      
-      Ik ga akkoord met de
-      = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank"
+      %label#accept_terms{:for => "scenario_accept_terms"}
+        Ik ga akkoord met de
+        = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank"
     %div.item      
       = scenario.submit :value => "Bewaar mijn mix"
     
