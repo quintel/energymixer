@@ -1,7 +1,14 @@
-$("#user_scenarios").html("<%= escape_javascript(render :partial => 'select_scenario_box', 
-                                :collection => @scenarios, 
-                                :as => :scenario)%>");
+<%#- require 'ruby-debug'; debugger %>
+<% if @scenarios.size > 0 %>
+  // show the scenarios we've found
+  $("#user_scenarios").html("<%= escape_javascript(render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario)%>");
+<% else %>
+  $("#user_scenarios").html("Geen resultaten gevonden met '<%= params[:q]%>'!");
+<% end %>
+
+// update pagination links
 $("#pagination").html("<%= escape_javascript(paginate(@scenarios, :remote => true).to_s) %>");
+// prevent selected scenarios to appear twice
 $("#selected .scenarios .scenario").each(function(){
   var scenario_id = $(this).data("scenario_id");
   $("#selectable .scenarios .scenario[data-scenario_id="+scenario_id+"]").hide();

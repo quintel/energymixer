@@ -4,7 +4,14 @@
     >
     Bekijk de Mixes van anderen
 
-= render :partial => 'search_scenario_box'
+%section#search_scenarios_box
+  %div.left
+    %h2 Bekijk de EnergyMixes van anderen
+    = form_tag scenarios_path, :method => :get, :remote => true do
+      = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
+  %div.right
+    = link_to "Maak je eigen EnergyMix", new_scenario_path
+  .clear
 
 %section#scenarios
   = form_tag compare_scenarios_path do
