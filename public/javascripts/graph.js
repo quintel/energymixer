@@ -104,6 +104,15 @@ function Graph() {
     
     self.unblock_interface();
   };
+  
+  self.update_etm_link = function() {
+    $("footer a").click(function(){
+      if(confirm("Would you like to open the current scenario in the ET-Model application?")) {
+        $(this).attr("href", mixer.etm_scenario_url);
+      }
+    });
+    
+  };
             
   self.setup_callbacks = function() {}; 
   
