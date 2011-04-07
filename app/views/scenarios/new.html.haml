@@ -37,7 +37,8 @@
       graph_max_amount: #{Scenario::MaxAmount},
       api_base_path: #{APP_CONFIG["api_base_path"].to_json},
       api_session_settings: #{APP_CONFIG["api_session_settings"].to_json},
-      popups: #{popup_json}
+      popups: #{popup_json},
+      etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}"
     }
 
 %div#tooltip

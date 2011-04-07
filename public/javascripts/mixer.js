@@ -10,12 +10,13 @@ function Mixer() {
 
   var self = this;
   
-  self.base_path    = globals.api_base_path;
-  self.session_id   = false;
-  self.scenario_id  = false;
-  self.parameters   = {}; // parameters set according to user answers
-  self.results      = {}; // semiraw response from the engine
-  self.user_answers = []; // right from the form
+  self.base_path        = globals.api_base_path;
+  self.session_id       = false;
+  self.scenario_id      = false;
+  self.etm_scenario_url = false;
+  self.parameters       = {}; // parameters set according to user answers
+  self.results          = {}; // semiraw response from the engine
+  self.user_answers     = []; // right from the form
   self.carriers_values  = {}; // used by graph, too!
   self.dashboard_values = {}; // idem
   self.secondary_carriers_values  = {};
@@ -39,6 +40,7 @@ function Mixer() {
         var scenario_id  = data.api_scenario.id;
         self.session_id  = key;
         self.scenario_id = scenario_id;
+        self.etm_scenario_url = globals.etm_scenario_base_url + scenario_id + "/load?locale=nl";
         $.logThis("Fetched new session Key: " + key);
         // show data for the first time
         self.make_request();
