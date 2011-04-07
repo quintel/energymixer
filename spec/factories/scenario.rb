@@ -13,6 +13,9 @@ Factory.define :scenario do |f|
   f.output_6 1.00
   f.output_7 1.00
   f.output_8 1.00
+  f.output_9 1.00
+  f.output_10 1.00
+  f.output_11 1.00
 end
 
 Factory.define :featured_scenario, :parent => :scenario do |f|
