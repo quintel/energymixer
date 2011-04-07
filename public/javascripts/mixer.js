@@ -41,6 +41,7 @@ function Mixer() {
         self.session_id  = key;
         self.scenario_id = scenario_id;
         self.etm_scenario_url = globals.etm_scenario_base_url + scenario_id + "/load?locale=nl";
+        $("footer a").attr("href", self.etm_scenario_url);
         $.logThis("Fetched new session Key: " + key);
         // show data for the first time
         self.make_request();
