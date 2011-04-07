@@ -1,8 +1,7 @@
-require 'net/http'
-require 'uri'
-require 'json'
-
 class ApiClient
+  include HTTParty
+  base_uri APP_CONFIG['api_base_uri']
+  
   GQueries = [ 
         "costs_share_of_coal",
         "costs_share_of_gas",
@@ -17,43 +16,32 @@ class ApiClient
         "costs_share_of_sustainable_solar",
         "costs_share_of_sustainable_biomass"
       ]
-  
+
   def current_situation
     Rails.cache.fetch("current_situation") do
       current_situation!
     end
   end
-  
-  def current_situation!
-    url = APP_CONFIG['api_base_path'] + api_session_key.to_s + ".json"
-    uri = URI.parse(url)
-
-    # Silly net/http
-    params = ApiClient::GQueries.inject(''){|m, x| m += "result[]=#{x}&" } + "reset=1"
     
-    http    = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Get.new(uri.request_uri + "?" + params)
-    
-    response = http.request(request)    
-    data = JSON.parse(response.body)
-    out = {}
-    data["result"].each_pair{|k,v| out[k] = v[0][1]}
-    out
-  rescue
-    nil
-  end
-  
-  # caching version
   def api_session_key
     @api_session_key ||= api_session_key!
   end
   
+  def current_situation!
+    url   = "/api/v1/api_scenarios/#{api_session_key}.json"
+    query = { result: ApiClient::GQueries, reset: 1 }
+    
+    response = self.class.get(url, :query => query)
+    out = {}
+    response["result"].each_pair{|k,v| out[k] = v[0][1]}
+    out
+  rescue
+    nil
+  end
+
   def api_session_key!
-    url = APP_CONFIG['api_base_path'] + "new.json"
-    uri = URI.parse(url)
-    response = Net::HTTP.get_response(uri)
-    data = JSON.parse(response.body)
-    data["api_scenario"]["api_session_key"]
+    response = self.class.get("/api/v1/api_scenarios/new.json")
+    response["api_scenario"]["api_session_key"]
   rescue
     nil
   end  
