@@ -9,3 +9,5 @@
     = link_to scenario_path(scenario) do
       = scenario.name
       = " - #{scenario.title}" if scenario.title
+  .date
+    #{time_ago_in_words(scenario.created_at)} geleden aangemaakt

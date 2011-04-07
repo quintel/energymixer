@@ -374,6 +374,9 @@ body#scenarios_index section#scenarios .scenario {
     font-weight: bold;
     margin-bottom: 4px;
     margin-top: 15px; }
+  body#scenarios_index section#scenarios .scenario .date {
+    color: #777777;
+    font-size: 0.9em; }
 body#scenarios_index section#scenarios section#left {
   width: 360px;
   float: left; }
