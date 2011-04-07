@@ -13,7 +13,7 @@
     = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390, :width => 50}
   .user_created.graph_normal
     = render :partial => 'chart_top', :locals => {:scenario => @scenario, :year => 2025}
-    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390, :width => 80}
+    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390, :width => 80, :dynamic_graph => true}
 
 %section#dashboard
   = render :partial => 'dashboard'
