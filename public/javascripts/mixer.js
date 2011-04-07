@@ -15,7 +15,7 @@ function Mixer() {
   self.scenario_id  = false;
   self.parameters   = {}; // parameters set according to user answers
   self.results      = {}; // semiraw response from the engine
-  self.user_answers = {}; // right from the form
+  self.user_answers = []; // right from the form
   self.carriers_values  = {}; // used by graph, too!
   self.dashboard_values = {}; // idem
 
@@ -117,7 +117,9 @@ function Mixer() {
   // global answer hash.
   self.build_parameters = function() {
     self.parameters = {};
-    $.each(self.user_answers, function(question_id, answer_id){
+    $.each(self.user_answers, function(index, item){
+      var question_id = item[0];
+      var answer_id   = item[1];
       // globals.answers is defined on the view!
       $.each(globals.answers[question_id][answer_id], function(param_key, val) {
         self.set_parameter(param_key, val);
@@ -125,13 +127,13 @@ function Mixer() {
     });
   };
   
-  // makes a hash out of user answers in this format:
-  // { question_1_id : answer_1_id, question_2_id : answer_2_id }
+  // makes an array out of user answers in this format:
+  // [ [question_1_id, answer_1_id], [question_2_id, answer_2_id], ...]
   self.process_form = function() {
-    self.user_answers = {};
+    self.user_answers = [];
     $("div.question input:checked").each(function(el) {
       var question_id = $(this).data('question_id');
-      self.user_answers[question_id] = $(this).val();
+      self.user_answers.push([question_id, parseInt($(this).val())]);
     });
     $.logThis("User answers : " + $.toJSON(self.user_answers));
     self.build_parameters();
