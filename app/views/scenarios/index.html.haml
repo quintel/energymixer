@@ -15,7 +15,7 @@
 
 %section#scenarios
   = form_tag compare_scenarios_path do
-    %section#left
+    %section#top
       #selected
         = link_to_function "Vergelijk", "$('#scenarios form').submit()"
         - if session[:scenario_id]
@@ -23,6 +23,8 @@
           Vergelijk met mijn scenario
         %span.compared
         .scenarios
+    %section#left
+      %h3 Meest recent aangemaakte EnergyMixes
       #user_scenarios.selectable
         = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
       #pagination
