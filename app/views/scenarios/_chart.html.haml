@@ -17,6 +17,7 @@
       %li.serie.money{:style => "height: #{rounded_sum + 8}px"}
   .renewables_float
     %ul.chart
-      - scenario.renewable_carriers.each_pair do |key, v|    
-        %li.serie{:class => [key, Scenario::SecondaryMixTable[key][:gquery]], :style => "height: 20px"}
+      - scenario.renewable_carriers.each_pair do |key, v|
+        - height = v[:ratio] * 200
+        %li.serie{:class => [key, Scenario::SecondaryMixTable[key][:gquery]], :style => "height: #{height}px"}
           %span.label= v[:label]
