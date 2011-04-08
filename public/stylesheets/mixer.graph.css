@@ -124,12 +124,10 @@
   background: #389776; }
 
 .charts_container {
-  margin-left: 10px;
   color: white; }
   .charts_container .chart_canvas_mix, .charts_container .chart_canvas_money {
     float: left;
     height: 400px;
-    margin-right: 5px;
     position: relative; }
     .charts_container .chart_canvas_mix ul.chart, .charts_container .chart_canvas_money ul.chart {
       position: absolute;
@@ -141,6 +139,7 @@
         margin-top: 2px;
         font-size: 10px; }
   .charts_container .chart_canvas_mix {
+    margin-right: 5px;
     width: 50px; }
   .charts_container .chart_canvas_money {
     width: 10px; }
