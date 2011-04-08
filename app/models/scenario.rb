@@ -127,7 +127,7 @@ class Scenario < ActiveRecord::Base
   attr_accessor :year, :accept_terms
   before_save :sanitize_age
   
-  paginates_per 10
+  paginates_per 6
     
   def carriers
     {
