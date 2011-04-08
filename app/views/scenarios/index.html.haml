@@ -43,9 +43,9 @@
       
       // adding an element
       $(".selectable .scenario input").live('change', function(){
-        if($("#selected input:checked").length >= 4) {
+        if($("#selected input:checked").length >= 5) {
           $(this).attr('checked', false);
-          alert("Je kunt maximaal 4 scenario's kiezen");
+          alert("Je kunt maximaal 5 scenario's kiezen");
           return false;
         }
         $(this).attr('checked', true);

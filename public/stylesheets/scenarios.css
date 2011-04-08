@@ -405,7 +405,7 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
   margin-top: 10px;
   position: relative; }
   body#scenarios_compare .scenario .charts, body#scenarios_compare .current_scenario .charts {
-    margin-left: 20px; }
+    margin-left: 10px; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
@@ -426,13 +426,13 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
         font-size: 16px;
         font-weight: bold; }
 body#scenarios_compare .scenario {
-  width: 130px; }
+  width: 110px; }
   body#scenarios_compare .scenario .chart_canvas_mix {
     width: 80px; }
   body#scenarios_compare .scenario .chart_canvas_money {
     width: 10px; }
 body#scenarios_compare .current_scenario {
-  width: 130px; }
+  width: 110px; }
   body#scenarios_compare .current_scenario .chart_canvas_mix {
     width: 50px; }
   body#scenarios_compare .current_scenario .chart_canvas_money {
@@ -442,9 +442,9 @@ body#scenarios_compare .current_scenario {
   body#scenarios_compare .current_scenario .dashboard .item {
     color: #768eb9; }
 body#scenarios_compare .spacer {
-  margin: 10px;
+  margin: 8px;
   width: 1px;
-  height: 690px;
+  height: 720px;
   float: left;
   background-color: #cccccc; }
 
