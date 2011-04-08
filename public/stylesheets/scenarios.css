@@ -380,6 +380,8 @@ body#scenarios_index section#scenarios .scenario {
 body#scenarios_index section#scenarios section#left {
   width: 360px;
   float: left; }
+  body#scenarios_index section#scenarios section#left strong {
+    font-weight: bold; }
   body#scenarios_index section#scenarios section#left #selected {
     padding: 1em; }
     body#scenarios_index section#scenarios section#left #selected a {
