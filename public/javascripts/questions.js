@@ -71,7 +71,6 @@ function Questions() {
     });
     
     if (conflicts) {
-      // TODO: text format
       var text = unique(conflicting_questions).join(" en ");
       $("#questions #notice .conflicting_questions").html(text);
       $("#questions #notice").show();
