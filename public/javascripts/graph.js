@@ -78,10 +78,12 @@ function Graph() {
     return out;
   };
   
+  // TODO: refactor
   self.update_bar_chart = function() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
 
+    // main graph
     var graph_max_height     = 390;
     var max_amount           = globals.graph_max_amount / 1000000; // million euros
     var current_graph_height = current_sum / max_amount * graph_max_height;
@@ -95,6 +97,17 @@ function Graph() {
       var label = $(selector + " .label");
       new_height > 10 ? label.show() : label.hide();
     });
+    // renewable subgraph
+    var renewable_subgraph_height = 200;
+    var total_renewable_amount = mixer.carriers_values.costs_share_of_sustainable;
+    $.each(mixer.secondary_carriers_values, function(code, val) {
+      var new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height);
+      var selector = ".user_created ." + code;
+      $(selector).animate({"height": new_height}, "slow");
+      var label = $(selector + " .label");
+      new_height > 10 ? label.show() : label.hide();
+    });
+    
     // update money column
     var new_money_height = rounded_sum + 4 * 2; // margin between layers
     $(".user_created .money").animate({"height" : new_money_height}, "slow");
