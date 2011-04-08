@@ -8,39 +8,18 @@ function Questions() {
   
   self.current_question = 1;
   
+  // question methods
+  //
+  
   self.current_question_was_answered = function() {
     var question_id = "#question_" + self.current_question;
     var answer = $(question_id).find("input:checked");
     return answer.length > 0;
   };
   
-  self.show_next_question_link_if_needed = function() {
-    //self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
-  };
-  
   self.count_questions = function() {
     self.num_questions = self.num_questions || $(".question").size();
     return self.num_questions;
-  };
-  
-  self.show_right_question = function() {
-    $(".question").hide();
-    var question_id = "#question_" + self.current_question;
-    $(question_id).show();
-    // update top row
-    $(".question_tab").removeClass('active');
-    var tab_selector = ".question_tab[data-question_id=" + self.current_question + "]";
-    $(tab_selector).addClass('active');
-    // update links
-    self.current_question == 1 ? 
-      $("#previous_question").hide() : $("#previous_question").show();
-    self.current_question == self.count_questions() ? 
-      $("#next_question").hide() : $("#next_question").show();
-    self.show_next_question_link_if_needed();
-    
-    // GA
-    var question_text = $(question_id).find(".text").text();
-    self.track_event('opens_question', question_text, self.current_question);
   };
   
   self.currently_selected_answers = function() {
@@ -51,9 +30,8 @@ function Questions() {
     return answers;
   };
   
-  // returns the question_number given the answer_id
-  // we're using this method to alert the user about
-  // conflicting answers
+  // returns the question_number given the answer_id we're using 
+  // this method to alert the user about conflicting answers
   self.get_question_id_from_answer = function(answer_id) {
     self.answers2questions = {};
     $("div.question input:checked").each(function(el) {
@@ -96,7 +74,37 @@ function Questions() {
     return conflict;
   };
   
-  self.setup_callbacks = function() {
+  // interface methods
+  //
+  
+  self.show_next_question_link_if_needed = function() {
+    //self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
+  };
+  
+  self.show_right_question = function() {
+    $(".question").hide();
+    var question_id = "#question_" + self.current_question;
+    $(question_id).show();
+    // update top row
+    $(".question_tab").removeClass('active');
+    var tab_selector = ".question_tab[data-question_id=" + self.current_question + "]";
+    $(tab_selector).addClass('active');
+    // update links
+    self.current_question == 1 ? 
+      $("#previous_question").hide() : $("#previous_question").show();
+    self.current_question == self.count_questions() ? 
+      $("#next_question").hide() : $("#next_question").show();
+    self.show_next_question_link_if_needed();
+    
+    // GA
+    var question_text = $(question_id).find(".text").text();
+    self.track_event('opens_question', $.trim(question_text), self.current_question);
+  };
+  
+  // callbacks
+  //
+  
+  self.setup_navigation_callbacks = function() {
     $("#next_question").click(function(){
       if(!self.current_question_was_answered()) {
         alert('Kies eerst een antwoord voor je verder gaat.');
@@ -123,20 +131,9 @@ function Questions() {
       self.show_right_question();
       return false;
     });
-    
-    // when the users clicks on an answer
-    $("input[type='radio']").change(function(){
-      $(this).parent().parent().find("li.answer").removeClass('active');
-      $(this).parent().addClass('active');
-      mixer.refresh();
-      self.check_conflicts();
-      self.show_next_question_link_if_needed();
-
-      // GA
-      var answer_text = $(this).parent().find("label").text();      
-      self.track_event('selects_answer', answer_text, $(this).val());
-    });
-    
+  };
+  
+  self.setup_cosmetic_callbacks = function(){
     // setup colorbox popups for below questions
     $(".question .information a").not(".no_popup").not(".iframe").colorbox({
       width: 600,
@@ -151,8 +148,7 @@ function Questions() {
       opacity: 0.6,
       iframe: true
     });
-    
-    
+
     // setup small tooltips
     $(".answers em").hover(
       function(){
@@ -176,18 +172,33 @@ function Questions() {
       var offset = $(this).offset();
       $("#tooltip").css({"top": tipY + 20 , "left": tipX});
     });
-        
-    $(".question a.text_toggler").click(function(){
-      var text_element = $(this).parent().find(".text");
-      text_element.toggle();
-      $(this).html(text_element.is(':visible') ? 'Lees minder' : 'Lees meer');
-      return false;
+  };
+  
+  self.setup_callbacks = function() {
+    self.setup_navigation_callbacks();
+    self.setup_cosmetic_callbacks();
+    
+    // when the users clicks on an answer
+    $("input[type='radio']").change(function(){
+      $(this).parent().parent().find("li.answer").removeClass('active');
+      $(this).parent().addClass('active');
+      mixer.refresh();
+      self.check_conflicts();
+      self.show_next_question_link_if_needed();
+
+      // GA
+      var answer_text = $(this).parent().find("label").text();
+      self.track_event('selects_answer', $.trim(answer_text), $(this).val());
     });
     
     $("form").submit(function(){
+      // update the scenario id hidden field
       $("#scenario_etm_scenario_id").val(mixer.scenario_id);
     });
   };
+  
+  // utility methods
+  //
   
   self.clear_the_form = function(){
     $('form')[0].reset(); //we need to force this when a user refreshes the page (browser wants to remember the values), DS
@@ -213,6 +224,8 @@ function Questions() {
   
   self.init();
 };
+
+// main application initialization
 
 $(document).ready(function(){
   graph = new Graph();
