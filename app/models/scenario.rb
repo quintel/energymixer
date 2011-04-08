@@ -116,6 +116,7 @@ class Scenario < ActiveRecord::Base
   validates :accept_terms, :acceptance => true
   
   scope :recent_first, order('created_at DESC')
+  scope :public,       where(:public => true)
   scope :featured,     where(:featured => true)
   scope :user_created, where(:featured => false)
   scope :featured_first, order('featured DESC')
