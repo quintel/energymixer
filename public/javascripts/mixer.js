@@ -141,7 +141,7 @@ function Mixer() {
   // [ [question_1_id, answer_1_id], [question_2_id, answer_2_id], ...]
   self.process_form = function() {
     self.user_answers = [];
-    $("div.question input:checked").each(function(el) {
+    $("div.question ul.answers input:checked").each(function(el) {
       var question_id = $(this).data('question_id');
       self.user_answers.push([question_id, parseInt($(this).val())]);
     });
