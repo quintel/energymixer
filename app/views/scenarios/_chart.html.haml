@@ -1,7 +1,8 @@
 - max_height = local_assigns.has_key?(:max_height) ? max_height : 360
 - width = local_assigns.has_key?(:width) ? width : 80
+- max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
 - rounded_sum  = 0
-- current_graph_height = scenario.total_amount / Scenario::MaxAmount * max_height
+- current_graph_height = scenario.total_amount / max_amount.to_f * max_height
 
 .charts
   .chart_canvas_mix{:style=>"width: #{width}px;"}

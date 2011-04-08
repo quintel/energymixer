@@ -32,7 +32,7 @@
 %section#current_state
   .graph_normal
     = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
-    = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current}
+    = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
   
 - content_for :head do
   = stylesheet_link_tag 'pages', 'mixer.graph'
