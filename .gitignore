@@ -9,3 +9,4 @@ coverage
 .tmtags
 .rvmrc
 public/stylesheets/*.css
+.powrc
