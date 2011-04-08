@@ -232,6 +232,9 @@ body#scenarios_show
 
 body#scenarios_index
   section#scenarios
+    h3
+      padding: 1em
+      font-weight: bold  
     .scenario
       position: relative
       width: 350px
@@ -256,11 +259,7 @@ body#scenarios_index
       .date
         color: #777
         font-size: .9em
-    section#left
-      width: 360px
-      float: left
-      strong
-        font-weight: bold
+    section#top
       #selected
         padding: 1em
         a
@@ -270,14 +269,16 @@ body#scenarios_index
           color: #ccc
         .scenarios
           .scenario
-            display: none
-          
-    section#right
+            display: none          
+    section#left
       width: 360px
       float: left
-      h3
-        padding: 1em
+      strong
         font-weight: bold
+    section#right
+      margin-left: 10px
+      width: 360px
+      float: left
 
 body#scenarios_compare
   .scenario, .current_scenario

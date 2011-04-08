@@ -365,6 +365,9 @@ body#scenarios_show section#right {
       width: 5px;
       margin-left: 6px; }
 
+body#scenarios_index section#scenarios h3 {
+  padding: 1em;
+  font-weight: bold; }
 body#scenarios_index section#scenarios .scenario {
   position: relative;
   width: 350px;
@@ -390,27 +393,25 @@ body#scenarios_index section#scenarios .scenario {
   body#scenarios_index section#scenarios .scenario .date {
     color: #777777;
     font-size: 0.9em; }
+body#scenarios_index section#scenarios section#top #selected {
+  padding: 1em; }
+  body#scenarios_index section#scenarios section#top #selected a {
+    font-weight: bold;
+    background: transparent url(images/link_arrow.png) center left no-repeat;
+    padding-left: 16px; }
+  body#scenarios_index section#scenarios section#top #selected span.compared {
+    color: #cccccc; }
+  body#scenarios_index section#scenarios section#top #selected .scenarios .scenario {
+    display: none; }
 body#scenarios_index section#scenarios section#left {
   width: 360px;
   float: left; }
   body#scenarios_index section#scenarios section#left strong {
     font-weight: bold; }
-  body#scenarios_index section#scenarios section#left #selected {
-    padding: 1em; }
-    body#scenarios_index section#scenarios section#left #selected a {
-      font-weight: bold;
-      background: transparent url(images/link_arrow.png) center left no-repeat;
-      padding-left: 16px; }
-    body#scenarios_index section#scenarios section#left #selected span.compared {
-      color: #cccccc; }
-    body#scenarios_index section#scenarios section#left #selected .scenarios .scenario {
-      display: none; }
 body#scenarios_index section#scenarios section#right {
+  margin-left: 10px;
   width: 360px;
   float: left; }
-  body#scenarios_index section#scenarios section#right h3 {
-    padding: 1em;
-    font-weight: bold; }
 
 body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
   height: 790px;
