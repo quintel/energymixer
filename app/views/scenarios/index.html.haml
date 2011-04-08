@@ -18,6 +18,9 @@
     %section#left
       #selected
         = link_to_function "Vergelijk", "$('#scenarios form').submit()"
+        - if session[:scenario_id]
+          = check_box_tag 'ids[]', session[:scenario_id], false, :id => "compare_with_user_scenario"
+          Vergelijk met mijn scenario
         %span.compared
         .scenarios
       #user_scenarios.selectable
@@ -37,17 +40,26 @@
       // let's deal with the back button
       $(".selectable .scenario input").attr("checked", false);
       $("#selected .scenario input").attr("checked", true);
+      
       // adding an element
       $(".selectable .scenario input").live('change', function(){
-        if($("#selected .scenario input").length >= 4) {
+        if($("#selected input:checked").length >= 4) {
           $(this).attr('checked', false);
-          alert("You can select up to 4 scenarios");
+          alert("Je kunt maximaal 4 scenario's kiezen");
           return false;
         }
         $(this).attr('checked', true);
         var name = $(this).parent().parent().parent().find(".name a").html();
         $("#selected .compared").append(" " + name);
         $(this).parent().parent().parent().appendTo("#selected .scenarios");
+      });
+      
+      $("#compare_with_user_scenario").change(function(){
+        if($("#selected input:checked").length >= 4) {
+          $(this).attr('checked', false);
+          alert("Je kunt maximaal 4 scenario's kiezen");
+          return false;
+        }        
       });
       
       $("body").ajaxStart(function(){

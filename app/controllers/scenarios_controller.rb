@@ -13,7 +13,8 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
-      session[:scenario_id] = @scenario.etm_scenario_id
+      # We're using this session variable to compare the current scenario
+      session[:scenario_id] = @scenario.id
       begin
         MixerMailer.thankyou(@scenario).deliver
       rescue
@@ -35,9 +36,10 @@ class ScenariosController < ApplicationController
   def index
     @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]
     
-    scope               = Scenario.user_created.recent_first
-    scope               = scope.by_user(params[:q]) unless params[:q].blank?
-    @scenarios          = scope.page(params[:page])
+    scope      = Scenario.user_created.recent_first
+    scope      = scope.excluding(session[:scenario_id]) if session[:scenario_id]
+    scope      = scope.by_user(params[:q]) unless params[:q].blank?
+    @scenarios = scope.page(params[:page])
     @featured_scenarios = Scenario.featured.all
     
     respond_to do |format|
