@@ -38,7 +38,7 @@ function Questions() {
       $("#next_question").hide() : $("#next_question").show();
     self.show_next_question_link_if_needed();
     
-    self.track_event("show_question", self.current_question);
+    self.track_event("show", self.current_question);
   };
   
   self.currently_selected_answers = function() {
@@ -187,9 +187,9 @@ function Questions() {
     $('form')[0].reset(); //we need to force this when a user refreshes the page (browser wants to remember the values), DS
   };
   
-  self.track_event = function(key, value){
-    if (!_gaq) return;
-    _gaq.push(['_trackEvent', key, value]);
+  self.track_event = function(action, value){
+    if (typeof(_gaq) == "undefined") return;
+    _gaq.push(['_trackEvent', 'questions', action, value]);
   };
     
   self.init = function() {
