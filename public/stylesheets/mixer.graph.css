@@ -93,6 +93,12 @@
   background: #a6cdbe; }
 .graph_shaded ul.chart li.money {
   background: #e6ee97; }
+.graph_shaded ul.chart li.wind {
+  background: #a6cdbe; }
+.graph_shaded ul.chart li.solar {
+  background: #74b29c; }
+.graph_shaded ul.chart li.biomass {
+  background: #389776; }
 .graph_shaded ul.chart li span.label {
   display: none; }
 
@@ -110,26 +116,34 @@
   background: #1e693b; }
 .graph_normal ul.chart li.money {
   background: #bed509; }
-.graph_normal ul.chart li span.label {
+.graph_normal ul.chart li.wind {
+  background: #a6cdbe; }
+.graph_normal ul.chart li.solar {
+  background: #74b29c; }
+.graph_normal ul.chart li.biomass {
+  background: #389776; }
+
+.charts_container {
+  margin-left: 10px;
   color: white; }
-
-.chart_canvas_mix, .chart_canvas_money {
-  float: left;
-  height: 400px;
-  margin-right: 5px;
-  position: relative; }
-  .chart_canvas_mix ul.chart, .chart_canvas_money ul.chart {
+  .charts_container .chart_canvas_mix, .charts_container .chart_canvas_money {
+    float: left;
+    height: 400px;
+    margin-right: 5px;
+    position: relative; }
+    .charts_container .chart_canvas_mix ul.chart, .charts_container .chart_canvas_money ul.chart {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      .charts_container .chart_canvas_mix ul.chart li.serie, .charts_container .chart_canvas_money ul.chart li.serie {
+        float: left;
+        width: 100%;
+        margin-top: 2px;
+        font-size: 10px; }
+  .charts_container .chart_canvas_mix {
+    width: 50px; }
+  .charts_container .chart_canvas_money {
+    width: 10px; }
+  .charts_container .renewables_float {
     position: absolute;
-    bottom: 0;
-    width: 100%; }
-    .chart_canvas_mix ul.chart li.serie, .chart_canvas_money ul.chart li.serie {
-      float: left;
-      width: 100%;
-      margin-top: 2px;
-      font-size: 10px; }
-
-.chart_canvas_mix {
-  width: 50px; }
-
-.chart_canvas_money {
-  width: 10px; }
+    display: none; }

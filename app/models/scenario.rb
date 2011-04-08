@@ -138,6 +138,14 @@ class Scenario < ActiveRecord::Base
       renewable: { label: I18n.t('renewable'), amount: output_4, ratio: output_4 / total_amount }
     }
   end
+
+  def renewable_carriers
+    {
+      wind:      { label: I18n.t('wind'),      amount: output_9, ratio: output_9 / total_amount },
+      solar:     { label: I18n.t('solar'),     amount: output_10, ratio: output_10 / total_amount },
+      biomass:   { label: I18n.t('biomass'),   amount: output_11, ratio: output_11 / total_amount }
+    }
+  end
   
   # Ugly
   def total_amount

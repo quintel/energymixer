@@ -4,7 +4,7 @@
 - rounded_sum  = 0
 - current_graph_height = scenario.total_amount / max_amount.to_f * max_height
 
-.charts
+.charts_container
   .chart_canvas_mix{:style=>"width: #{width}px;"}
     %ul.chart
       - scenario.carriers.each_pair do |key, v|
@@ -15,3 +15,8 @@
   .chart_canvas_money
     %ul.chart
       %li.serie.money{:style => "height: #{rounded_sum + 8}px"}
+  .renewables_float
+    %ul.chart
+      - scenario.renewable_carriers.each_pair do |key, v|    
+        %li.serie{:class => [key, Scenario::SecondaryMixTable[key][:gquery]], :style => "height: 20px"}
+          %span.label= v[:label]

@@ -1,3 +1,6 @@
+//TODO REFACTOR: Separate Dashboard from Chart in different sass files
+//TODO REFACTOR: Graph should be chart...
+
 @import "mixins"
 
 .dashboard_item
@@ -97,6 +100,12 @@
       background: #A6CDBE
     &.money
       background: #E6EE97
+    &.wind
+      background: #A6CDBE
+    &.solar
+      background: #74B29C
+    &.biomass
+      background: #389776
     span.label
       display: none
 
@@ -116,25 +125,38 @@
       background: #1E693B
     &.money
       background: #BED509
-    span.label
-      color: white
+    &.wind
+      background: #A6CDBE
+    &.solar
+      background: #74B29C
+    &.biomass
+      background: #389776
+  
 
-.chart_canvas_mix, .chart_canvas_money
-  float: left
-  height: 400px
-  margin-right: 5px
-  position: relative
-  ul.chart
-    position: absolute
-    bottom: 0
-    width: 100%
-    li.serie
-      float: left
+
+.charts_container
+  margin-left: 10px
+  color: #ffffff
+  .chart_canvas_mix, .chart_canvas_money
+    float: left
+    height: 400px
+    margin-right: 5px
+    position: relative
+    ul.chart
+      position: absolute
+      bottom: 0
       width: 100%
-      margin-top: 2px
-      font-size: 10px
-.chart_canvas_mix
-  width: 50px
-.chart_canvas_money
-  width: 10px
-    
+      li.serie
+        float: left
+        width: 100%
+        margin-top: 2px
+        font-size: 10px
+  .chart_canvas_mix
+    width: 50px
+  .chart_canvas_money
+    width: 10px
+  .renewables_float
+    position: absolute
+    display: none
+
+
