@@ -36,7 +36,7 @@ class ScenariosController < ApplicationController
   def index
     @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]
     
-    scope      = Scenario.user_created.recent_first
+    scope      = Scenario.user_created.public.recent_first
     scope      = scope.excluding(session[:scenario_id]) if session[:scenario_id]
     scope      = scope.by_user(params[:q]) unless params[:q].blank?
     @scenarios = scope.page(params[:page])

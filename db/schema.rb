@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110407084642) do
+ActiveRecord::Schema.define(:version => 20110408091816) do
 
   create_table "answers", :force => true do |t|
     t.string   "answer"
@@ -98,9 +98,11 @@ ActiveRecord::Schema.define(:version => 20110407084642) do
     t.float    "output_9"
     t.float    "output_10"
     t.float    "output_11"
+    t.boolean  "public",          :default => true
   end
 
   add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
+  add_index "scenarios", ["public"], :name => "index_scenarios_on_public"
 
   create_table "users", :force => true do |t|
     t.string   "email",                             :default => "", :null => false

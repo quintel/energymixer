@@ -20,8 +20,11 @@
       = scenario.label :title, "Naam voor uw mix"
       = scenario.text_field :title
     %div.item
+      = scenario.check_box :public
+      = scenario.label :public, "Mijn EnergyMix is ook voor anderen toegankelijk", :class => 'check_box'
+    %div.item
       = scenario.check_box :accept_terms      
-      %label#accept_terms{:for => "scenario_accept_terms"}
+      %label.check_box{:for => "scenario_accept_terms"}
         Ik ga akkoord met de
         = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank"
     %div.item      

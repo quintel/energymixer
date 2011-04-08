@@ -4,6 +4,7 @@ Factory.define :scenario do |f|
   f.email 'test@quintel.com'
   f.age 99
   f.featured false
+  f.public true
   f.output_0 1.00
   f.output_1 1.00
   f.output_2 1.00
