@@ -129,6 +129,7 @@ function Questions() {
       mixer.refresh();
       self.check_conflicts();
       self.show_next_question_link_if_needed();
+      self.track_event('selects_answer', $(this).val());
     });
     
     // setup colorbox popups for below questions
