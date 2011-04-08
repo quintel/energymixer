@@ -47,7 +47,7 @@ class ScenariosController < ApplicationController
   end
   
   def compare
-    ids = params[:ids].take(5) rescue []
+    ids = params[:ids].take(4) rescue []
     @scenarios = Scenario.find(ids)
   end
   
