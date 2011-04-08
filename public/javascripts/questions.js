@@ -38,7 +38,9 @@ function Questions() {
       $("#next_question").hide() : $("#next_question").show();
     self.show_next_question_link_if_needed();
     
-    self.track_event("show", self.current_question);
+    // GA
+    var question_text = $(question_id).find(".text").text();
+    self.track_event('opens_question', question_text, self.current_question);
   };
   
   self.currently_selected_answers = function() {
@@ -129,7 +131,10 @@ function Questions() {
       mixer.refresh();
       self.check_conflicts();
       self.show_next_question_link_if_needed();
-      self.track_event('selects_answer', $(this).val());
+
+      // GA
+      var answer_text = $(this).parent().find("label").text();      
+      self.track_event('selects_answer', answer_text, $(this).val());
     });
     
     // setup colorbox popups for below questions
@@ -188,9 +193,10 @@ function Questions() {
     $('form')[0].reset(); //we need to force this when a user refreshes the page (browser wants to remember the values), DS
   };
   
-  self.track_event = function(action, value){
+  self.track_event = function(action, label, value){
     if (typeof(_gaq) == "undefined") return;
-    _gaq.push(['_trackEvent', 'questions', action, value]);
+    // http://code.google.com/apis/analytics/docs/tracking/asyncMigrationExamples.html#EventTracking
+    _gaq.push(['_trackEvent', 'questions', action, label, value]);
   };
     
   self.init = function() {
