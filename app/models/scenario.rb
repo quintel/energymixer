@@ -140,10 +140,14 @@ class Scenario < ActiveRecord::Base
   end
 
   def renewable_carriers
+    self.output_9  ||= 0
+    self.output_10 ||= 0
+    self.output_11 ||= 0
+    renewable_total = output_4 || 0.000001 # prevent division by zero
     {
-      wind:      { label: I18n.t('wind'),      amount: output_9, ratio: output_9 / total_amount },
-      solar:     { label: I18n.t('solar'),     amount: output_10, ratio: output_10 / total_amount },
-      biomass:   { label: I18n.t('biomass'),   amount: output_11, ratio: output_11 / total_amount }
+      wind:      { label: I18n.t('wind'),      amount: output_9, ratio: output_9 / renewable_total },
+      solar:     { label: I18n.t('solar'),     amount: output_10, ratio: output_10 / renewable_total },
+      biomass:   { label: I18n.t('biomass'),   amount: output_11, ratio: output_11 / renewable_total }
     }
   end
   
