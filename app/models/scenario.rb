@@ -121,6 +121,7 @@ class Scenario < ActiveRecord::Base
   scope :featured_first, order('featured DESC')
   # shall we use SOLR/TS/?
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
+  scope :excluding, lambda{|s| where('id != ?', s)}
   
   attr_accessor :year, :accept_terms
   before_save :sanitize_age

@@ -10,7 +10,7 @@
 
 %section#left
   .text
-    - if @scenario.title
+    - unless @scenario.title.blank?
       .title
         %h1{:style=>"font-size:1.2em;"}= "'#{@scenario.title}'"
     .name
