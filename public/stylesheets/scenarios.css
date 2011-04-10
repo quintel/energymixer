@@ -193,7 +193,8 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         font-weight: bold; }
     body#scenarios_new section#questions nav#down, body#scenarios_create section#questions nav#down {
       clear: both;
-      border-top: 1px solid #989898; }
+      border-top: 1px solid #989898;
+      padding: 4px 0; }
       body#scenarios_new section#questions nav#down a, body#scenarios_create section#questions nav#down a {
         font-weight: bold;
         color: #323232; }
@@ -201,10 +202,12 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
           text-decoration: underline; }
         body#scenarios_new section#questions nav#down a#next_question, body#scenarios_create section#questions nav#down a#next_question {
           background: transparent url(images/link_arrow.png) center left no-repeat;
-          padding-left: 16px; }
+          padding-left: 16px;
+          float: right; }
         body#scenarios_new section#questions nav#down a#previous_question, body#scenarios_create section#questions nav#down a#previous_question {
-          background: transparent url(images/reverse_link_arrow.png) center left no-repeat;
-          padding-left: 16px; }
+          background: transparent url(images/link_arrow.png) center left no-repeat;
+          padding-left: 16px;
+          float: left; }
   body#scenarios_new section#questions .question .information, body#scenarios_create section#questions .question .information {
     padding: 10px;
     background-color: #f5f5f5;
