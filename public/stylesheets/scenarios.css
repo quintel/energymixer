@@ -185,10 +185,12 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
         body#scenarios_new section#questions nav#up a:hover, body#scenarios_create section#questions nav#up a:hover {
           color: #d70000; }
     body#scenarios_new section#questions nav ol li, body#scenarios_create section#questions nav ol li {
+      color: #a5a5a5;
       float: left;
-      margin: 2px 12px; }
+      margin: 2px 18px; }
       body#scenarios_new section#questions nav ol li.active, body#scenarios_create section#questions nav ol li.active {
-        color: red; }
+        color: #404040;
+        font-weight: bold; }
     body#scenarios_new section#questions nav#down, body#scenarios_create section#questions nav#down {
       clear: both;
       border-top: 1px solid #989898; }
