@@ -78,7 +78,7 @@ function Questions() {
   //
   
   self.show_next_question_link_if_needed = function() {
-    //self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
+    self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
   };
   
   self.show_right_question = function() {
