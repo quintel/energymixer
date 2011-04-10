@@ -51,6 +51,7 @@ body#scenarios_new, body#scenarios_create
       &#down
         clear: both
         border-top: 1px solid #989898
+        padding: 4px 0
         a
           font-weight: bold
           color: #323232
@@ -58,8 +59,10 @@ body#scenarios_new, body#scenarios_create
             text-decoration: underline
           &#next_question
             @include link_arrow_prefix
+            float: right
           &#previous_question
-            @include back_link_arrow_prefix
+            @include link_arrow_prefix
+            float: left
     .question
       .information
         padding: 10px
