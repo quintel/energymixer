@@ -45,11 +45,12 @@
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
+  -#TODO: move this javascript to a js-file
   :javascript
     $(function(){
       $("#show_answers").colorbox({
-        width: "50%",
-        height: "80%",
+        width: "600px",
+        height: "650px",
         opacity: 0.6
       });
     });
