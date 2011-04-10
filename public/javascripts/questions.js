@@ -107,7 +107,7 @@ function Questions() {
   self.setup_navigation_callbacks = function() {
     $("#next_question").click(function(){
       if(!self.current_question_was_answered()) {
-        alert('Kies eerst een antwoord voor je verder gaat.');
+        alert('Kies eerst een antwoord voor u verder gaat.');
       }
       else{
         self.current_question++;

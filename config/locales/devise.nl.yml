@@ -7,8 +7,8 @@ nl:
 
   devise:
     failure:
-      unauthenticated: 'Je dient in te loggen of je in te schrijven.'
-      unconfirmed: 'Je dient eerst je account te bevestigen.'
+      unauthenticated: 'U dient in te loggen of u in te schrijven.'
+      unconfirmed: 'Je dient eerst uw account te bevestigen.'
       locked: 'Je account is gelocked.'
       invalid: 'Ongeldig e-mail of wachtwoord.'
       invalid_token: 'Invalide authenticiteit token.'
