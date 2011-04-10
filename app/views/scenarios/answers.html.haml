@@ -6,7 +6,7 @@
       #{a.question.number}.
       = a.question.question
     -if a.answer
-      %dd= a.answer.answer 
+      %dd= a.answer.answer.html_safe
     -else
       %dd **Geen antwoord gegeven**
 
