@@ -21,7 +21,7 @@
       = full_text(@scenario)
   .links
     = link_to "Bekijk de antwoorden van deze mix", answers_scenario_path(@scenario), :id => "show_answers"
-    = link_to "Laad deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
+    = link_to "Laadt deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
   .boxes
     .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
       %h3= t(dashboard_label_for_output(:output_5)).html_safe
