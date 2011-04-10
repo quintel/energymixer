@@ -7,28 +7,31 @@
         
     %h2 Vul uw gegevens in:
     = scenario.error_messages
-    %div.item
+    
+    .item
       = scenario.label :name, "Naam *", :class => 'required'
       = scenario.text_field :name
-    %div.item
+    .item
       = scenario.label :email, "E-mail *", :class => 'required'
       = scenario.text_field :email
-    %div.item
+    .item
       = scenario.label :age, "Leeftijd"
       = scenario.text_field :age
-    %div.item
+    .item
       = scenario.label :title, "Naam voor uw mix"
       = scenario.text_field :title
-    %div.item
+    .item
       = scenario.check_box :public
       = scenario.label :public, "Mijn EnergyMix is ook voor anderen toegankelijk", :class => 'check_box'
-    %div.item
+    .item
       = scenario.check_box :accept_terms      
       %label.check_box{:for => "scenario_accept_terms"}
         Ik ga akkoord met de
-        = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank"
-    %div.item      
+        = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank", :class => "normal"
+    .item      
       = scenario.submit :value => "Bewaar mijn mix"
+    -# .item
+    -#   = link_to "Bewaar mijn mix", "#", :class => "shell", :id => "submit", :onmouseclick => "this.form.submit();"
     
       = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
       = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
