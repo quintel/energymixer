@@ -94,6 +94,7 @@ module ScenariosHelper
   # Check graph.js for similar method
   def format_dashboard_value(input_id, value)
     gquery = gquery_for_output(input_id)
+    return if value.nil? #cope with curren values nil on testing server
     case gquery
     when "co2_emission_final_demand_to_1990_in_percent"
       value *= -1
