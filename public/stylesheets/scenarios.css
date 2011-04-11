@@ -421,8 +421,7 @@ body#scenarios_index section#scenarios section#right {
 body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
   height: 790px;
   float: left;
-  margin-top: 10px;
-  position: relative; }
+  margin-top: 10px; }
   body#scenarios_compare .scenario .name, body#scenarios_compare .current_scenario .name {
     margin: 5px 0px 20px 0px;
     font-weight: bold; }
