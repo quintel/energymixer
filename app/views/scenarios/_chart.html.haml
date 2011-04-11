@@ -1,5 +1,5 @@
 - max_height = local_assigns.has_key?(:max_height) ? max_height : 360
-- width = local_assigns.has_key?(:width) ? width : 80
+- width      = local_assigns.has_key?(:width) ? width : 80
 - max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
 - rounded_sum  = 0
 - current_graph_height = scenario.total_amount / max_amount.to_f * max_height
@@ -10,8 +10,8 @@
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_graph_height).round
         - rounded_sum += height
-        %li.serie{:class => [key, Scenario::PrimaryMixTable[key][:gquery]], :style => "height: #{height}px"}
-          %span.label= v[:label] if height > 10 || local_assigns.has_key?(:dynamic_graph)
+        %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px"}
+          %span.label= I18n.t(key) if height > 10 || local_assigns.has_key?(:dynamic_graph)
   .chart_canvas_money
     %ul.chart
       %li.serie.money{:style => "height: #{rounded_sum + 8}px"}
@@ -19,5 +19,5 @@
     %ul.chart
       - scenario.renewable_carriers.each_pair do |key, v|
         - height = v[:relative_ratio] * 200
-        %li.serie{:class => [key, Scenario::SecondaryMixTable[key][:gquery]], :style => "height: #{height}px"}
-          %span.label= v[:label]
+        %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px"}
+          %span.label= I18n.t(key)
