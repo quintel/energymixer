@@ -18,6 +18,6 @@
   .renewables_float
     %ul.chart
       - scenario.renewable_carriers.each_pair do |key, v|
-        - height = v[:ratio] * 200
+        - height = v[:relative_ratio] * 200
         %li.serie{:class => [key, Scenario::SecondaryMixTable[key][:gquery]], :style => "height: #{height}px"}
           %span.label= v[:label]
