@@ -36,7 +36,7 @@ body#pages_home section#sectors {
       float: left; }
     body#pages_home section#sectors .sector .content {
       margin-left: 147px; }
-    body#pages_home section#sectors .sector.active {
+    body#pages_home section#sectors .sector.active, body#pages_home section#sectors .sector:hover {
       background-color: #f5f5f5; }
 body#pages_home section#current_state {
   margin-top: 20px;

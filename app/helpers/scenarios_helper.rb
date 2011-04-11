@@ -57,6 +57,23 @@ module ScenariosHelper
     out.to_json
   end
   
+  def carriers_to_json
+    data = ApiClient.new.carrier_costs
+    out = {}
+    # TODO: ugly
+    data.each_pair do |key, value|
+      _,_,_,carrier,sector = key.split('_')
+      # TODO: rename gqueries
+      carrier = 'renewable' if carrier == 'sustainable'
+      carrier = 'nuclear' if carrier == 'uranium'
+      sector ||= 'total'
+      out[sector] ||= {}
+      out[sector][carrier] = value
+    end
+    
+    out.to_json
+  end
+
   def gquery_for_output(i)
     Scenario::Outputs[i]
   end
