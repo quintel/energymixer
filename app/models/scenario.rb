@@ -150,6 +150,11 @@ class Scenario < ActiveRecord::Base
       biomass:   { label: I18n.t('biomass'),   amount: output_11, ratio: output_11 / renewable_total }
     }
   end
+    
+  def combined_carriers
+    carriers.merge(renewable_carriers)
+  end
+  
   
   # Ugly
   def total_amount
