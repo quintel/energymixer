@@ -42,11 +42,11 @@ module ScenariosHelper
   
   # As above
   def mix_table_json
-    Scenario::PrimaryMixTable.keys.map{|k| Scenario::PrimaryMixTable[k][:gquery]}.to_json
+    Scenario::PrimaryMixTable.values.to_json
   end
   
   def secondary_mix_table_json
-    Scenario::SecondaryMixTable.keys.map{|k| Scenario::SecondaryMixTable[k][:gquery]}.to_json
+    Scenario::SecondaryMixTable.values.to_json
   end
   
   def dashboard_steps_json
