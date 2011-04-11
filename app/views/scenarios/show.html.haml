@@ -45,6 +45,8 @@
   
 - content_for :head do
   = stylesheet_link_tag 'scenarios'
+  = javascript_include_tag 'chart.common'
+  
   -#TODO: move this javascript to a js-file
   :javascript
     $(function(){

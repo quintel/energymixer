@@ -10,8 +10,9 @@
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_graph_height).round
         - rounded_sum += height
+        - label_hidden = height <= 10
         %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px"}
-          %span.label= I18n.t(key) if height > 10 || local_assigns.has_key?(:dynamic_graph)
+          %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
   .chart_canvas_money
     %ul.chart
       %li.serie.money{:style => "height: #{rounded_sum + 8}px"}
