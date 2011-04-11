@@ -146,7 +146,8 @@
   .charts_container .renewables_float {
     width: 80px;
     position: absolute;
-    display: none; }
+    display: none;
+    z-index: 2; }
 
 body#scenarios_new section#results, body#scenarios_create section#results {
   width: 240px;
@@ -173,6 +174,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     padding: 4px;
     font-size: 10px; }
     body#scenarios_new section#questions nav a, body#scenarios_create section#questions nav a {
+      font-size: 11.2px;
       margin: 0 5px;
       color: #bbbbbb;
       font-weight: bold; }
@@ -255,8 +257,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       cursor: pointer; }
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
-  body#scenarios_new section#questions .question #user_details a, body#scenarios_create section#questions .question #user_details a {
-    text-decoration: underline; }
   body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
     font-size: 12px;
     font-weight: bold;
@@ -284,7 +284,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       padding: 5px;
       text-align: right; }
       body#scenarios_new section#questions .question #user_details .item label.check_box, body#scenarios_create section#questions .question #user_details .item label.check_box {
-        width: 300px;
+        width: 312px;
         float: right;
         text-align: left; }
     body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
@@ -296,8 +296,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       width: 220px; }
     body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
       float: right;
-      margin-right: 20px;
-      margin-bottom: 20px; }
+      margin: 15px; }
   body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
     border: 1px solid red;
     margin: 3px 3px 20px 3px; }
@@ -429,7 +428,7 @@ body#scenarios_compare .scenario, body#scenarios_compare .current_scenario {
     font-weight: bold; }
   body#scenarios_compare .scenario .dashboard, body#scenarios_compare .current_scenario .dashboard {
     clear: left;
-    padding: 10px; }
+    padding: 10px 0; }
     body#scenarios_compare .scenario .dashboard .item, body#scenarios_compare .current_scenario .dashboard .item {
       height: 50px;
       padding: 10px;
