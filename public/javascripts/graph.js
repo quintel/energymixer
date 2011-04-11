@@ -98,14 +98,14 @@ function Graph() {
       new_height > 10 ? label.show() : label.hide();
     });
     // renewable subgraph
-    var renewable_subgraph_height = 200;
+    var renewable_subgraph_height = 100;
     var total_renewable_amount = mixer.carriers_values.costs_share_of_sustainable;
     $.each(mixer.secondary_carriers_values, function(code, val) {
       var new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height);
       var selector = ".user_created ." + code;
       $(selector).animate({"height": new_height}, "slow");
       var label = $(selector + " .label");
-      new_height > 10 ? label.show() : label.hide();
+      new_height > 5 ? label.show() : label.hide();
     });
     
     // update money column
