@@ -77,8 +77,22 @@ function Questions() {
   // interface methods
   //
   
-  self.show_next_question_link_if_needed = function() {
-    self.current_question_was_answered() ? $("#next_question").show() : $("#next_question").hide();
+  self.update_question_links = function() {
+    var first_question = self.current_question == 1;
+    var last_question  = self.current_question == self.count_questions();
+    
+    if (first_question) {
+      $("#previous_question").hide();
+    } else {
+      $("#previous_question").show();
+      if (last_question) { $("#next_question").hide(); }
+    }
+    
+    if (self.current_question_was_answered() && !last_question) { 
+      $("#next_question").show(); 
+    } else {
+      $("#next_question").hide();
+    }
   };
   
   self.show_right_question = function() {
@@ -89,12 +103,7 @@ function Questions() {
     $(".question_tab").removeClass('active');
     var tab_selector = ".question_tab[data-question_id=" + self.current_question + "]";
     $(tab_selector).addClass('active');
-    // update links
-    self.current_question == 1 ? 
-      $("#previous_question").hide() : $("#previous_question").show();
-    self.current_question == self.count_questions() ? 
-      $("#next_question").hide() : $("#next_question").show();
-    self.show_next_question_link_if_needed();
+    self.update_question_links();
     
     // GA
     var question_text = $(question_id).find(".text").text();
@@ -184,7 +193,7 @@ function Questions() {
       $(this).parent().addClass('active');
       mixer.refresh();
       self.check_conflicts();
-      self.show_next_question_link_if_needed();
+      self.update_question_links();
 
       // GA
       var answer_text = $(this).parent().find("label").text();
