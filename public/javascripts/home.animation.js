@@ -19,17 +19,25 @@ function Home() {
   };
   
   self._update_carriers = function (carrier_values, speed) {
+    var total_amount = 0;
+    var money_bar_height = 0;
     $.each(carrier_values, function(carrier, value){
+      total_amount += value;
       
       var original_height = self.original_height[carrier];
       var new_height = value / self.shares["total"][carrier] * original_height;
       
       var carrier_li = $("ul.chart").find("." + carrier);
-      carrier_li.stop(true);
-      carrier_li.animate({"height": new_height}, speed);
+      carrier_li.stop(true).animate({"height": new_height}, speed);
       var label = carrier_li.find(".label");
       new_height > 11 ? label.show() : label.hide();
+      money_bar_height += new_height;
     });
+    
+    
+    var formatted_amount = sprintf("%.1f", total_amount / 1000000000);
+    $(".total_amount span").html(formatted_amount);
+    $("ul.chart li.money").stop(true).animate({"height": money_bar_height + 8}, speed);
   };
   
   self._save_original_height = function() {
