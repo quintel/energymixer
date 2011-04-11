@@ -145,17 +145,16 @@ class Scenario < ActiveRecord::Base
     self.output_11 ||= 0
     renewable_total = output_4 || 0.000001 # prevent division by zero
     {
-      wind:      { label: I18n.t('wind'),      amount: output_9, ratio: output_9 / renewable_total },
-      solar:     { label: I18n.t('solar'),     amount: output_10, ratio: output_10 / renewable_total },
-      biomass:   { label: I18n.t('biomass'),   amount: output_11, ratio: output_11 / renewable_total }
+      wind:    { label: I18n.t('wind'),    amount: output_9,  ratio: output_9  / total_amount, relative_ratio: output_9  / renewable_total },
+      solar:   { label: I18n.t('solar'),   amount: output_10, ratio: output_10 / total_amount, relative_ratio: output_10 / renewable_total },
+      biomass: { label: I18n.t('biomass'), amount: output_11, ratio: output_11 / total_amount, relative_ratio: output_11 / renewable_total }
     }
   end
     
   def combined_carriers
     carriers.merge(renewable_carriers)
   end
-  
-  
+    
   # Ugly
   def total_amount
     output_0 + output_1 + output_2 + output_3 + output_4
