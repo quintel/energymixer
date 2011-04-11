@@ -30,9 +30,8 @@
         = link_to 'algemene voorwaarden', 'http://www.shell.com/algemene_voorwaarden', :target => "_blank", :class => "normal"
     .item      
       = scenario.submit :value => "Bewaar mijn mix"
-    -# .item
-    -#   = link_to "Bewaar mijn mix", "#", :class => "shell", :id => "submit", :onmouseclick => "this.form.submit();"
-    
+      -# .item
+      -#   = link_to "Bewaar mijn mix", "#", :class => "shell", :id => "submit", :onmouseclick => "this.form.submit();"    
       = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
       = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
       = scenario.hidden_field :output_2, :'data-label' => gquery_for_output(:output_2)
