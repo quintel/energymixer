@@ -25,7 +25,7 @@ function Home() {
       total_amount += value;
       
       var original_height = self.original_height[carrier];
-      var new_height = value / self.shares["total"][carrier] * original_height;
+      var new_height = Math.round(value / self.shares["total"][carrier] * original_height);
       
       var carrier_li = $("ul.chart").find("." + carrier);
       carrier_li.stop(true).animate({"height": new_height}, speed);
