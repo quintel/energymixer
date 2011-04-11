@@ -105,7 +105,7 @@ function Graph() {
       var selector = ".user_created ." + code;
       $(selector).animate({"height": new_height}, "slow");
       var label = $(selector + " .label");
-      new_height > 10 ? label.show() : label.hide();
+      new_height > 5 ? label.show() : label.hide();
     });
     
     // update money column

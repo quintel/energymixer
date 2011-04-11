@@ -21,4 +21,4 @@
       - scenario.renewable_carriers.each_pair do |key, v|
         - height = v[:relative_ratio] * 200
         %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
-          %span.label{:class => height <= 10 ? 'hidden' : ''}= I18n.t(key)
+          %span.label{:class => height <= 5 ? 'hidden' : ''}= I18n.t(key)
