@@ -146,4 +146,5 @@
   .charts_container .renewables_float {
     width: 80px;
     position: absolute;
-    display: none; }
+    display: none;
+    z-index: 2; }
