@@ -144,6 +144,7 @@
   .charts_container .chart_canvas_money {
     width: 10px; }
   .charts_container .renewables_float {
+    width: 80px;
     position: absolute;
     display: none; }
 
