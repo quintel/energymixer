@@ -11,7 +11,7 @@
         - height = (v[:ratio] * current_graph_height).round
         - rounded_sum += height
         - label_hidden = height <= 10
-        %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px"}
+        %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
           %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
   .chart_canvas_money
     %ul.chart
@@ -20,5 +20,5 @@
     %ul.chart
       - scenario.renewable_carriers.each_pair do |key, v|
         - height = v[:relative_ratio] * 200
-        %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px"}
+        %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
           %span.label= I18n.t(key)
