@@ -37,3 +37,7 @@
 - content_for :head do
   = stylesheet_link_tag 'pages', 'mixer.graph'
   = javascript_include_tag 'home', 'home.animation'
+  :javascript
+    var globals = {
+      carriers: #{carriers_to_json}
+    }
