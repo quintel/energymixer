@@ -48,6 +48,9 @@ a {
 .clear {
   clear: both; }
 
+.hidden {
+  display: none; }
+
 body {
   width: 750px;
   margin: 10px auto;
@@ -116,3 +119,14 @@ body.sessions #content a, body.unlocks #content a {
     color: blue; }
   #admin_menu a:hover {
     text-decoration: underline; }
+
+a.shell {
+  background: transparent url(images/link_arrow.png) center left no-repeat;
+  padding-left: 16px;
+  text-decoration: none;
+  font-weight: bold; }
+  a.shell:hover {
+    text-decoration: underline; }
+
+a.normal {
+  text-decoration: underline; }
