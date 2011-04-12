@@ -106,8 +106,11 @@ function Questions() {
     self.update_question_links();
     
     // GA
-    var question_text = $(question_id).find(".text").text();
-    self.track_event('opens_question', $.trim(question_text), self.current_question);
+    var question_text = $.trim($(question_id).find("div.text").text());
+    if (self.current_question == self.count_questions()) { question_text = "Saving scenario"; }
+    var event_label = "" + self.current_question + " : " + question_text;
+    console.log(event_label);
+    self.track_event('opens_question', question_text, self.current_question);
   };
   
   // callbacks
@@ -198,8 +201,9 @@ function Questions() {
       self.update_question_links();
 
       // GA
-      var answer_text = element.find("label").text();
-      self.track_event('selects_answer', $.trim(answer_text), $(this).val());
+      var answer_id   = $(this).val();
+      var answer_text = element.find("label .text").text();
+      self.track_event('selects_answer', answer_text, answer_id);
     });
     
     $("form").submit(function(){
