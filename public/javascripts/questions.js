@@ -189,14 +189,16 @@ function Questions() {
     
     // when the users clicks on an answer
     $("input[type='radio']").change(function(){
-      $(this).parent().parent().find("li.answer").removeClass('active');
-      $(this).parent().addClass('active');
+      var element = $(this).closest("li.answer");
+      // remove active class from other answer
+      element.parent().find("li.answer").removeClass('active');
+      element.addClass('active');
       mixer.refresh();
       self.check_conflicts();
       self.update_question_links();
 
       // GA
-      var answer_text = $(this).parent().find("label").text();
+      var answer_text = element.find("label").text();
       self.track_event('selects_answer', $.trim(answer_text), $(this).val());
     });
     
