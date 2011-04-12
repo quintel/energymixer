@@ -51,9 +51,10 @@
           return false;
         }
         $(this).attr('checked', true);
-        var name = $(this).parent().parent().parent().find(".name a").html();
+        var element = $(this).closest("div.scenario");
+        var name = element.find(".name a").html();
         $("#selected .compared").append(" " + name);
-        $(this).parent().parent().parent().appendTo("#selected .scenarios");
+        element.appendTo("#selected .scenarios");
       });
       
       $("#compare_with_user_scenario").change(function(){
