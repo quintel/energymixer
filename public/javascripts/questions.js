@@ -149,7 +149,6 @@ function Questions() {
     // setup colorbox popups for below questions
     $(".question .information a").not(".no_popup").not(".iframe").colorbox({
       width: 600,
-      height: 300,
       opacity: 0.6
     });
     
