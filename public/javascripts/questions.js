@@ -109,7 +109,6 @@ function Questions() {
     var question_text = $.trim($(question_id).find("div.text").text());
     if (self.current_question == self.count_questions()) { question_text = "Saving scenario"; }
     var event_label = "" + self.current_question + " : " + question_text;
-    console.log(event_label);
     self.track_event('opens_question', question_text, self.current_question);
   };
   
