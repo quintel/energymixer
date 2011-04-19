@@ -45,6 +45,23 @@ describe Admin::AnswersController do
       end
     end
 
+    describe "with valid params and a conflict" do
+      it "updates the requested answer" do
+        a1 = Factory :answer
+        a2 = Factory :answer
+        @answer.conflicting_answer_ids = [a1.id]
+        
+        @answer.reload.conflicting_answer_ids.should == [a1.id]
+        
+        put :update, :id => @answer.id, :answer => { :answer => 'Hi!', :conflicting_answer_ids => [a2.id]}
+        assigns(:answer).should == @answer
+        @answer.reload.answer.should == 'Hi!'
+        @answer.reload.conflicting_answer_ids.should == [a2.id]
+        
+        response.should redirect_to(admin_question_url(@question))
+      end
+    end
+
     describe "with invalid params" do
       it "assigns the answer as @answer" do
         put :update, :id => @answer.id, :answer => { :answer => '' }
