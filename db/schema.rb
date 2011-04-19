@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110414092149) do
+ActiveRecord::Schema.define(:version => 20110419085051) do
+
+  create_table "answer_conflicts", :force => true do |t|
+    t.integer "answer_id"
+    t.integer "other_answer_id"
+  end
+
+  add_index "answer_conflicts", ["answer_id"], :name => "index_answer_conflicts_on_answer_id"
+  add_index "answer_conflicts", ["other_answer_id"], :name => "index_answer_conflicts_on_other_answer_id"
 
   create_table "answers", :force => true do |t|
     t.text     "answer"
@@ -19,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20110414092149) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.string   "conflicting_answer_ids_string"
   end
 
   add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
