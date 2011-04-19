@@ -24,7 +24,7 @@ class Answer < ActiveRecord::Base
   
   scope :ordered, order('ordering, id')
   
-  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_answer_ids
+  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_answer_ids, :answer_conflicts
   
   def conflicting_answers
     Answer.find(conflicting_answer_ids)
@@ -37,7 +37,7 @@ class Answer < ActiveRecord::Base
   def conflicting_answer_ids=(ids)
     answer_conflicts.destroy_all
     inverse_answer_conflicts.destroy_all
-    ids.each{|i| answer_conflicts.create(:other_answer_id => i)}
+    ids.each{|i| answer_conflicts.build(:other_answer_id => i)}
   end
     
   def conflicts_with?(ans)

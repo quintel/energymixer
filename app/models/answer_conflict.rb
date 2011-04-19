@@ -16,6 +16,7 @@ class AnswerConflict < ActiveRecord::Base
   validates :answer_id,       :uniqueness => { :scope => :other_answer_id }
   validates :other_answer_id, :uniqueness => { :scope => :answer_id }
   validate :no_duplicates
+  validate :no_conflicts_with_the_same_question
   
   attr_accessible :answer_id, :other_answer_id
   
@@ -23,8 +24,13 @@ class AnswerConflict < ActiveRecord::Base
   
     def no_duplicates
       if AnswerConflict.exists?(:answer_id => answer_id, :other_answer_id => other_answer_id) || 
-         AnswerConflict.exists?(:other_answer_id => other_answer_id, :answer_id => answer_id)
+         AnswerConflict.exists?(:other_answer_id => answer_id, :answer_id => other_answer_id)
           errors.add(:base, "Conflict already defined")
       end
+    end
+    
+    def no_conflicts_with_the_same_question
+      return unless answer && other_answer
+      errors.add(:base, "Conflict within the same question") if answer.question_id == other_answer.question_id
     end
 end
