@@ -27,6 +27,11 @@ namespace :rake do
   task :average_scenarios do
     run("cd #{deploy_to}/current && /usr/bin/env rake scenarios:create_average RAILS_ENV=production")
   end
+
+  desc "Clears cache"
+  task :clear_cache do
+    run("cd #{deploy_to}/current && /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production")
+  end
 end
 
 desc "Move db server to local db"
