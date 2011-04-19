@@ -51,6 +51,7 @@ describe Admin::AnswersController do
         a1 = Factory :answer
         a2 = Factory :answer
         @answer.conflicting_answer_ids = [a1.id]
+        @answer.save
         
         @answer.reload.conflicting_answer_ids.should == [a1.id]
         
