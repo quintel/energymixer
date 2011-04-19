@@ -1,4 +1,6 @@
-%h2 Editing answer
+%h2 Editing Answer
+Question ##{@answer.question.number}
+= link_to @answer.question.question, admin_question_path(@answer.question)
 
 = render 'form'
 

@@ -7,7 +7,8 @@ require 'spec_helper'
 describe Admin::AnswersController do
   render_views
   
-  let(:answer) { Factory :answer }
+  let(:question) { Factory :question }
+  let(:answer) { Factory :answer, :question => question }
   let(:user) { Factory :user }
 
   before do
