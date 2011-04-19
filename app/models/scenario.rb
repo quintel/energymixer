@@ -23,6 +23,7 @@
 #  output_9        :float
 #  output_10       :float
 #  output_11       :float
+#  public          :boolean(1)      default(TRUE)
 #
 
 class Scenario < ActiveRecord::Base
