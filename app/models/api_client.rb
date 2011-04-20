@@ -49,15 +49,7 @@ class ApiClient
     "costs_share_of_sustainable_agriculture"
   ]
   
-  # TODO: DRY with caching, handle timeout and other errors
-
   def current_situation
-    Rails.cache.fetch("current_situation") do
-      current_situation!
-    end
-  end
-    
-  def current_situation!
     query(ApiClient::GQueries)
   end
 
