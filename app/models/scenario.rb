@@ -127,26 +127,45 @@ class Scenario < ActiveRecord::Base
     output_0 + output_1 + output_2 + output_3 + output_4
   end
   
-  def self.current
-    c = ApiClient.new.current_situation
-    @current_scenario ||= new(
-      :output_0  => c["costs_share_of_coal"],
-      :output_1  => c["costs_share_of_gas"],
-      :output_2  => c["costs_share_of_oil"],
-      :output_3  => c["costs_share_of_uranium"],
-      :output_4  => c["costs_share_of_sustainable"],
-      :output_5  => c["co2_emission_final_demand_to_1990_in_percent"],
-      :output_6  => c["share_of_renewable_energy"],
-      :output_7  => c["area_footprint_per_nl"],
-      :output_8  => c["energy_dependence"],
-      :output_9  => c["costs_share_of_sustainable_wind"],
-      :output_10 => c["costs_share_of_sustainable_solar"],
-      :output_11 => c["costs_share_of_sustainable_biomass"],
-      :year      => 2011
-    )
-    
+  # forces reload
+  def self.current!
+    current(true)
+  end
+  
+  # store in cache when needed
+  def self.current(force = false)
+    @current_scenario = Rails.cache.read('current_scenario')
+    if force || @current_scenario.nil?
+      c = ApiClient.new.current_situation
+      @current_scenario = new(
+        :output_0  => c["costs_share_of_coal"],
+        :output_1  => c["costs_share_of_gas"],
+        :output_2  => c["costs_share_of_oil"],
+        :output_3  => c["costs_share_of_uranium"],
+        :output_4  => c["costs_share_of_sustainable"],
+        :output_5  => c["co2_emission_final_demand_to_1990_in_percent"],
+        :output_6  => c["share_of_renewable_energy"],
+        :output_7  => c["area_footprint_per_nl"],
+        :output_8  => c["energy_dependence"],
+        :output_9  => c["costs_share_of_sustainable_wind"],
+        :output_10 => c["costs_share_of_sustainable_solar"],
+        :output_11 => c["costs_share_of_sustainable_biomass"],
+        :year      => 2011
+      )
+      Rails.cache.write('current_scenario', @current_scenario)
+    end
+    @current_scenario 
   rescue # some acceptable values, should the api request fail
-    @current_scenario ||= new(
+    @current_scenario = self.acceptable_scenario
+  end
+  
+  def sanitize_age
+    self.age = nil if self.age.to_i == 0
+  end
+  
+  # Returns plausible scenario if for any reason the API request fails
+  def self.acceptable_scenario
+    new(
       :output_0  => 4135606319.8158274,    # coal
       :output_1  => 19712261358.58237,     # gas
       :output_2  => 15600440661.944386,    # oil
@@ -161,9 +180,5 @@ class Scenario < ActiveRecord::Base
       :output_11 => 2170862923.8200254,    # costs_share_of_sustainable_biomass
       :year      => 2011
     )
-  end
-  
-  def sanitize_age
-    self.age = nil if self.age.to_i == 0
   end
 end
