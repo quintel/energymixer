@@ -197,11 +197,6 @@ function Questions() {
       mixer.refresh();
       self.check_conflicts();
       self.update_question_links();
-
-      // GA
-      var answer_id   = $(this).val();
-      var answer_text = element.find("label .text").text();
-      self.track_event('selects_answer', answer_text, answer_id);
     });
     
     $("form").submit(function(){
