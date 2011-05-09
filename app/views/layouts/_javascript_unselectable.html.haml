@@ -1,0 +1,2 @@
+- if session[:touchscreen]
+  =javascript_tag "$(window).load(function() { $(window.document.body).bind('selectstart', function() {  return false;});});"
