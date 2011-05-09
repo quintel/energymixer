@@ -9,6 +9,7 @@
       = javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js", "ie"
     = csrf_meta_tag
     = yield :head
+    = render "layouts/javascript_unselectable"
   %body{:id => "#{controller.controller_name}_#{controller.action_name}", :class => controller.controller_name}
     #content
       = yield
