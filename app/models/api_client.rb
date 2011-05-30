@@ -1,6 +1,6 @@
 class ApiClient
   include HTTParty
-  base_uri APP_CONFIG['api_base_uri']
+  base_uri APP_CONFIG['api_base_path']
   
   GQueries = [ 
         "costs_share_of_coal",
@@ -68,7 +68,7 @@ class ApiClient
   end
   
   def api_session_key!
-    response = self.class.get("/api/v1/api_scenarios/new.json")
+    response = self.class.get("/api_scenarios/new.json")
     response["api_scenario"]["api_session_key"]
   rescue
     nil
@@ -77,7 +77,7 @@ class ApiClient
   private
   
     def query(gqueries)
-        url   = "/api/v1/api_scenarios/#{api_session_key}.json"
+        url   = "/api_scenarios/#{api_session_key}.json"
         query = { result: gqueries, reset: 1 }
 
         response = self.class.get(url, :query => query)

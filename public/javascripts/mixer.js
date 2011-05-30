@@ -32,13 +32,13 @@ function Mixer() {
       return self.session_id;
     }
     $.ajax({
-      url: self.base_path + "new.json",
+      url: self.base_path + "/new.json",
       dataType: 'jsonp',
       data: { settings : globals.api_session_settings },
       success: function(data){
         var key = data.api_scenario.api_session_key;
         self.session_id = self.scenario_id = key;
-        self.etm_scenario_url = globals.etm_scenario_base_url + self.scenario_id + "/load?locale=nl";
+        self.etm_scenario_url = globals.etm_scenario_base_url + '/' + self.scenario_id + "/load?locale=nl";
         graph.update_etm_link();
         $.logThis("Fetched new session Key: " + key);
         // show data for the first time
@@ -52,7 +52,7 @@ function Mixer() {
   };
   
   self.base_path_with_session_id = function() {
-    var url = self.base_path + self.fetch_session_id();
+    var url = self.base_path + "/" + self.fetch_session_id();
     return url;
   };
   
@@ -106,9 +106,7 @@ function Mixer() {
       url: self.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
       success: function(data){
-        // $.logThis("Got results : " + $.toJSON(data));
-        // TODO: remove this when live
-        if(data.errors.length > 0) { alert(data.errors); }
+        // if(data.errors.length > 0) { alert(data.errors); }
         self.results = data;
         self.store_results();
         graph.refresh();
