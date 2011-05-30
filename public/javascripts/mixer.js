@@ -36,11 +36,9 @@ function Mixer() {
       dataType: 'jsonp',
       data: { settings : globals.api_session_settings },
       success: function(data){
-        var key          = data.api_scenario.api_session_key;
-        var scenario_id  = data.api_scenario.id;
-        self.session_id  = key;
-        self.scenario_id = scenario_id;
-        self.etm_scenario_url = globals.etm_scenario_base_url + scenario_id + "/load?locale=nl";
+        var key = data.api_scenario.api_session_key;
+        self.session_id = self.scenario_id = key;
+        self.etm_scenario_url = globals.etm_scenario_base_url + self.scenario_id + "/load?locale=nl";
         graph.update_etm_link();
         $.logThis("Fetched new session Key: " + key);
         // show data for the first time
