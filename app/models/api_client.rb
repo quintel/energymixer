@@ -8,7 +8,7 @@ class ApiClient
         "costs_share_of_oil",
         "costs_share_of_uranium",
         "costs_share_of_sustainable",
-        "co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import",
+        "co2_emission_percent_change_from_1990_corrected_for_electricity_import",
         "share_of_renewable_energy",
         "area_footprint_per_nl",
         "energy_dependence",

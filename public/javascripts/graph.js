@@ -60,7 +60,7 @@ function Graph() {
   self.format_dashboard_value = function(key, value) {
     var out = "";
     switch(key) {
-      case "co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import":
+      case "co2_emission_percent_change_from_1990_corrected_for_electricity_import":
         if (value > 0) out = "+";
         out += sprintf("%.1f", value * 100) + "%";
         break;
