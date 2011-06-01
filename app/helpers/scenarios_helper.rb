@@ -96,7 +96,7 @@ module ScenariosHelper
     gquery = gquery_for_output(input_id)
     return if value.nil? #cope with curren values nil on testing server
     case gquery
-    when "co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import"
+    when "co2_emission_percent_change_from_1990_corrected_for_electricity_import"
       "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2, :separator => ",")}%"
     when "area_footprint_per_nl"
       "#{number_with_precision(value, :precision => 2, :separator => ",")}xNL"
