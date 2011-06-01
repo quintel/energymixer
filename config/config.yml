@@ -2,9 +2,9 @@ development: &DEV
   hostname: "localhost:3000"
   # api_base_path:      "http://localhost:3001/api/v1/api_scenarios/"
   # view_scenario_path: "http://localhost:3001/scenarios/"
-  api_base_uri:       "http://www.energietransitiemodel.nl"
-  api_base_path:      "http://www.energietransitiemodel.nl/api/v1/api_scenarios/"
-  view_scenario_path: "http://www.energietransitiemodel.nl/scenarios/"
+  api_base_uri:       "http://testing.et-model.com"
+  api_base_path:      "http://testing.et-model.com/api/v1/api_scenarios/"
+  view_scenario_path: "http://testing.et-model.com/scenarios/"
   api_session_settings:
     :country: 'nl'
     :end_year: 2025

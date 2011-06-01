@@ -41,7 +41,7 @@ class Scenario < ActiveRecord::Base
     output_2:  "costs_share_of_oil",
     output_3:  "costs_share_of_uranium",
     output_4:  "costs_share_of_sustainable",
-    output_5:  "co2_emission_final_demand_to_1990_in_percent",
+    output_5:  "co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import",
     output_6:  "share_of_renewable_energy",
     output_7:  "area_footprint_per_nl",
     output_8:  "energy_dependence",
@@ -143,7 +143,7 @@ class Scenario < ActiveRecord::Base
         :output_2  => c["costs_share_of_oil"],
         :output_3  => c["costs_share_of_uranium"],
         :output_4  => c["costs_share_of_sustainable"],
-        :output_5  => c["co2_emission_final_demand_to_1990_in_percent"],
+        :output_5  => c["co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import"],
         :output_6  => c["share_of_renewable_energy"],
         :output_7  => c["area_footprint_per_nl"],
         :output_8  => c["energy_dependence"],
@@ -171,7 +171,7 @@ class Scenario < ActiveRecord::Base
       :output_2  => 15600440661.944386,    # oil
       :output_3  => 562037387.8724155,     # uranium
       :output_4  => 2695124317.5551677,    # sustainable      
-      :output_5  => -0.005590499343000932, # co2_emission_final_demand_to_1990_in_percent
+      :output_5  => -0.005590499343000932, # co2_reduction_from_1990_in_percent_with_co2_corrected_for_electricity_import
       :output_6  => 0.05393912138004123,   # share_of_renewable_energy
       :output_7  => 0.6045053247669468,    # area_footprint_per_nl
       :output_8  => 0.2477505720053616,    # energy_dependence
