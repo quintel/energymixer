@@ -5,6 +5,7 @@ development: &DEV
   api_base_uri:       "http://testing.et-model.com"
   api_base_path:      "http://testing.et-model.com/api/v1/api_scenarios/"
   view_scenario_path: "http://testing.et-model.com/scenarios/"
+  score: false
   api_session_settings:
     :country: 'nl'
     :end_year: 2025
