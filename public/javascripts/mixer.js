@@ -127,6 +127,10 @@ function Mixer() {
   self.update_score = function() {
     var s = score.calculate();
     $.logThis("Score: " + s);
+    if (s !== false) {
+      $("#dashboard #score .value").html(parseInt(s));
+      $("#dashboard #score").show();
+    }
   }
   
   self.set_parameter = function(id, value) {
