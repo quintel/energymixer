@@ -21,6 +21,10 @@
       %h3= t(item.label).html_safe
       .value
         loading...
+  - if APP_CONFIG['score']
+    #score
+      Score:
+      %span.value
             
 - content_for(:head) do
   = stylesheet_link_tag 'scenarios'
