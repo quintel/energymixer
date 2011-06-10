@@ -83,6 +83,11 @@ function Mixer() {
       var value = results[code][1][1];
       self.dashboard_values[code] = value;
       $("input[type=hidden][data-label="+code+"]").val(value);
+      // update scores object
+      score.values[code].current = value;
+      if (q.current_question == 2) {
+        score.values[code].mark = value;
+      }
     });
   };
   
@@ -109,6 +114,7 @@ function Mixer() {
         self.results = data;
         self.store_results();
         graph.refresh();
+        self.update_score();
       },
       error: function(data, error){
         graph.unblock_interface();
@@ -117,6 +123,11 @@ function Mixer() {
     });
     return true;
   };
+  
+  self.update_score = function() {
+    var s = score.calculate();
+    $.logThis("Score: " + s);
+  }
   
   self.set_parameter = function(id, value) {
     self.parameters[id] = value;
@@ -145,9 +156,9 @@ function Mixer() {
       var question_id = $(this).data('question_id');
       self.user_answers.push([question_id, parseInt($(this).val())]);
     });
-    $.logThis("User answers : " + $.toJSON(self.user_answers));
+    // $.logThis("User answers : " + $.toJSON(self.user_answers));
     self.build_parameters();
-    self.debug_parameters();
+    // self.debug_parameters();
     return self.parameters;
   };
 
