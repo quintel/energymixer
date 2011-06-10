@@ -81,6 +81,12 @@ function Graph() {
   self.update_bar_chart = function() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
+    
+    // update the score attribute
+    score.values.total_amount.current = current_sum;
+    if (q.current_question == 2) {
+      score.values.total_amount.mark = current_sum;
+    }
 
     // main graph
     var graph_max_height     = 390;
