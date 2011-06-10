@@ -10,3 +10,4 @@ coverage
 .rvmrc
 public/stylesheets/*.css
 .powrc
+config/config.yml
