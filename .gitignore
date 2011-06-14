@@ -11,3 +11,5 @@ coverage
 public/stylesheets/*.css
 .powrc
 config/config.yml
+config/database.yml
+tmp/restart.txt
