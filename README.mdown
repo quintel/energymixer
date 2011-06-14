@@ -1,3 +1,19 @@
+Deployment
+==========
+
+Currently we have two running instances of the application: mixer.et-model.com and gasmixer.et-model.com.
+To deploy run
+
+  cap to_shell deploy
+
+or
+
+  cap to_gasmixer deploy
+
+Be careful with configuration data: settings.yml and config.yml are stored in ~/config_files and capistrano takes care of copying them to the application config directory.
+
+Warning: the current dev branch requires the new ETE, while master is still using the traditional et-model. Be sure you know what you're doing before deploying.
+
 Caching
 =======
 
@@ -22,3 +38,4 @@ As a reference, this is the current script:
   # /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production
   # If we're using MemoryStore this is enough
   touch tmp/restart.txt
+  
