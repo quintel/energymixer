@@ -25,17 +25,22 @@ function Score() {
     if (a < 0) { a = 0; }
     
     v = self.values.co2_emission_percent_change_from_1990_corrected_for_electricity_import;
-    var b = (v.mark - v.current) / v.mark * 100;
-    if (b < 0) { b = 0; }
+    var b = 0;
+    if (v.mark > v.current) {
+      b = Math.abs((v.mark - v.current) / v.mark * 100);
+    }
     
     v = self.values.share_of_renewable_energy;
     var c = (v.current - v.mark) / v.mark * 100;
+    if (c < 0) { c = 0; }    
     
     v = self.values.area_footprint_per_nl;
     var d = (v.mark - v.current) / v.mark * 100;
+    if (d < 0) { d = 0; }
     
     v = self.values.energy_dependence;
     var e = (v.mark - v.current) / v.mark * 100;
+    if (e < 0) { e = 0; }
 
     return a + b + c + d + e;
   }
