@@ -85,7 +85,7 @@ function Mixer() {
       $("input[type=hidden][data-label="+code+"]").val(value);
       // update scores object
       score.values[code].current = value;
-      if (q.current_question == 2) {
+      if (q.current_question == 2 && score.values[code].mark === null) {
         score.values[code].mark = value;
       }
     });

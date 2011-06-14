@@ -84,7 +84,7 @@ function Graph() {
     
     // update the score attribute
     score.values.total_amount.current = current_sum;
-    if (q.current_question == 2) {
+    if (q.current_question == 2 && score.values.total_amount.mark === null) {
       score.values.total_amount.mark = current_sum;
     }
 
