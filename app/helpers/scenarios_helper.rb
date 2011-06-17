@@ -127,11 +127,11 @@ module ScenariosHelper
     end
     
     # CO2
-    out << if -s.output_5 < -0.25
+    out << if s.output_5 < -0.25
       "De CO2 van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
-    elsif -s.output_5 < -0.01
+    elsif s.output_5 < -0.01
       "De CO2 uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2 reductie wereldwijd. Maar is het genoeg?"
-    elsif -s.output_5 < 0.1
+    elsif s.output_5 < 0.1
       "De CO2 uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Maar hoe zit het met de opwarming van de aarde?"
     else
       "De CO2 uitstoot groeit sterk. De economie regeert.  En het klimaat; ach, weten  we wel zeker dat het verandert?"
