@@ -110,7 +110,7 @@ function Mixer() {
         self.results = data;
         self.store_results();
         graph.refresh();
-        self.update_score();
+        score.show();
       },
       error: function(data, error){
         graph.unblock_interface();
@@ -119,15 +119,6 @@ function Mixer() {
     });
     return true;
   };
-  
-  self.update_score = function() {
-    var s = score.calculate();
-    $.logThis("Score: " + s);
-    if (s !== false) {
-      $("#dashboard #score .value").html(parseInt(s));
-      $("#dashboard #score").show();
-    }
-  }
   
   self.set_parameter = function(id, value) {
     self.parameters[id] = value;
