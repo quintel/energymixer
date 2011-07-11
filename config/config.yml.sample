@@ -1,5 +1,5 @@
 development: &DEV
-  hostname: "localhost:3000"
+  hostname: "energymixer.dev"
   score: false
   api_base_path:      "http://etengine.dev/api/v2/api_scenarios"
   view_scenario_path: "http://etmodel.dev/scenarios"
@@ -12,6 +12,5 @@ test:
 production:
   <<: *DEV
   hostname: "mixer.et-model.com"
-  api_base_path:      "http://www.energietransitiemodel.nl/api/v1/api_scenarios"
-  api_base_uri:       "http://www.energietransitiemodel.nl"
-  view_scenario_path: "http://www.energietransitiemodel.nl/scenarios"
+  api_base_path:      "http://api.et-model.com/api/v2/api_scenarios"
+  view_scenario_path: "http://etm.et-model.com/scenarios"
