@@ -1,0 +1,22 @@
+%h2 Translations - Not ready yet!
+
+%table.striped
+  %thead
+    %tr
+      %th Locale
+      %th Key
+      %th Value
+      %th
+  %tbody
+    - @translations.each do |translation|
+      %tr{:class => cycle('even', 'odd')}
+        %td= translation.locale
+        %td= translation.key
+        %td= translation.value
+        %td
+          = link_to '', admin_translation_path(translation), :class => 'fugue fugue-information'
+          = link_to '', edit_admin_translation_path(translation), :class => 'fugue fugue-pencil'
+          = link_to '', admin_translation_path(translation), :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+
+#actions
+  = link_to 'New Translation', new_admin_translation_path, :class => 'fugue fugue-plus'
