@@ -14,6 +14,8 @@ class Admin::AnswersController < AdminController
   end
 
   def update
+    # otherwise we wouldn't be removing conflicts
+    params[:answer][:conflicting_answer_ids] ||= []
     if @answer.update_attributes(params[:answer])
       redirect_to(admin_question_path(@answer.question), :notice => 'Answer was successfully updated.')
     else
