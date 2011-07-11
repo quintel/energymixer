@@ -10,7 +10,7 @@ function Mixer() {
 
   var self = this;
   
-  self.base_path        = globals.api_base_path;
+  self.base_path        = globals.api_base_path + "/api_scenarios";
   self.session_id       = false;
   self.scenario_id      = false;
   self.etm_scenario_url = false;
