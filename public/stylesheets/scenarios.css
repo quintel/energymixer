@@ -197,7 +197,7 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
     body#scenarios_new section#questions nav ol li, body#scenarios_create section#questions nav ol li {
       color: #a5a5a5;
       float: left;
-      margin: 2px 18px; }
+      margin: 2px 11px; }
       body#scenarios_new section#questions nav ol li.active, body#scenarios_create section#questions nav ol li.active {
         color: #404040;
         font-weight: bold; }
