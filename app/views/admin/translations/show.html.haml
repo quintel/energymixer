@@ -1,0 +1,14 @@
+%h2 Translation
+
+%dl.admin
+  %dt Locale
+  %dd= @translation.locale
+  %dt Key
+  %dd= @translation.key
+  %dt Value
+  %dd= @translation.value
+
+#actions
+  = link_to 'Edit', edit_admin_translation_path(@translation), :class => 'fugue fugue-pencil'
+  = link_to 'Back', admin_translations_path
+  = link_to 'Destroy', admin_translation_path(@translation), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'
