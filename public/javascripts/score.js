@@ -43,6 +43,15 @@ function Score() {
     if (e < 0) { e = 0; }
 
     return a + b + c + d + e;
+  },
+  
+  self.show = function() {
+    var s = self.calculate();
+    $.logThis("Score: " + s);
+    if (s !== false && q.current_question > 2) {
+      $("#dashboard #score .value").html(parseInt(s));
+      $("#dashboard #score").show();
+    }
   }
   
 }
