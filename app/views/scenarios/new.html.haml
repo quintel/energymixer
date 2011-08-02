@@ -5,15 +5,15 @@
     Maak uw eigen EnergyMix
 
 %section#questions
-  = render :partial => 'questions'
+  = render 'questions'
 
 %section#results
   .current.graph_shaded
-    = render :partial => 'chart_top', :locals => {:scenario => Scenario.current, :year => 2011}
-    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_height => 390, :width => 50}
+    = render 'chart_top', :scenario => Scenario.current, :year => 2011
+    = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
   .user_created.graph_normal
-    = render :partial => 'chart_top', :locals => {:scenario => @scenario, :year => 2025}
-    = render :partial => 'chart', :locals => {:scenario => @scenario, :max_height => 390, :width => 80 }
+    = render 'chart_top', :scenario => @scenario, :year => APP_CONFIG['api_session_settings'][:end_year]
+    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
 
 %section#dashboard
   - DashboardItem.ordered.each do |item|
