@@ -25,6 +25,21 @@
     #score
       Score:
       %span.value
+      .subitems
+        CO2: 
+        %span.co2
+        %br
+        Renewables: 
+        %span.renewables
+        %br
+        AreaFP: 
+        %span.areafp
+        %br
+        Import: 
+        %span.import
+        %br
+        Cost: 
+        %span.cost
             
 - content_for(:head) do
   = stylesheet_link_tag 'scenarios'

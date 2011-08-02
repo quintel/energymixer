@@ -41,6 +41,12 @@ function Score() {
     v = self.values.energy_dependence;
     var e = (v.mark - v.current) * 100;
     if (e < 0) { e = 0; }
+    
+    $("#score .cost").html(sprintf("%.2f", a));
+    $("#score .co2").html(sprintf("%.2f", b));
+    $("#score .renewables").html(sprintf("%.2f", c));
+    $("#score .areafp").html(sprintf("%.2f", d));
+    $("#score .import").html(sprintf("%.2f", e));
 
     return a + b + c + d + e;
   },
