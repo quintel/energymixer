@@ -7,19 +7,18 @@ body.admin
   padding: 0
   header
     margin: 0
-    @include gradient(#555555, #999999)
-    h1
-      margin: 0
-      padding: .5em
-      color: #ffffff
     nav
-      padding: .5em
+      h1
+        display: inline
+        font-size: 1.2em
+      @include gradient(#6a7176, #4d5256)
+      padding: .6em
       margin: 0
-      @include gradient(#eeeeee, #cccccc)
+      color: #cdcdcd
       a
+        color: #cdcdcd
         padding-right: 1em
         margin-right: 1em
-        border-right: 1px solid #ffffff
         text-decoration: none
         &.active
           color: #ffffff
@@ -44,7 +43,7 @@ body.admin
       margin-top: .5em
       border: 1px solid #eeeeee
       padding: 1em 0.5em
-      @include gradient(#eeeeee, #ffffff)
+      @include gradient(#EFEFEF, #DFE1E2)
       a
         text-decoration: none
         margin-right: 1em
@@ -104,9 +103,9 @@ table.striped
     padding: .4em
   thead
     tr
-      @include gradient(#555555, #999999)
+      @include gradient(#e2e2e2, #d2d4d6)
       th
-        color: #ffffff
+        color: #5e6469
         text-align: left
         padding: .5em
         font-weight: bold
@@ -119,7 +118,11 @@ table.striped
       td
         font-weight: 100
         border: 1px solid #ddd
+        font-size: .9em
         &.small
           font-size: .7em
+        a
+          font-size: .9em
+          color: #38678B
     tr.even
       background-color: #eee

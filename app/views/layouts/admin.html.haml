@@ -10,8 +10,9 @@
   %body{:id => "#{controller_name}_#{controller.action_name}", 
         :class => [controller_name, "admin"]}
     %header
-      %h1 Energy Mixer > Admin
       %nav
+        %h1
+          = link_to 'EnergyMixer / Admin', admin_root_path
         = link_to 'Frontend', root_path
         = link_to 'Questions', admin_questions_path, :class => ('active' if controller_name == 'questions')
         = link_to 'Popups', admin_popups_path, :class => ('active' if controller_name == 'popups')
