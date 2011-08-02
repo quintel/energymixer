@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/svenfuchs/i18n-active_record.git
+  revision: 5121021650e8412350784274c47899b293d8669e
+  specs:
+    i18n-active_record (0.0.2)
+      i18n (>= 0.5.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -170,6 +177,7 @@ DEPENDENCIES
   hirb
   hoptoad_notifier (~> 2.4.9)
   httparty (~> 0.7.4)
+  i18n-active_record!
   jquery-rails (~> 0.2.7)
   kaminari (~> 0.12.1)
   mocha (~> 0.9.12)

@@ -15,6 +15,7 @@ gem 'client_side_validations', '~> 3.0.0'
 gem 'hoptoad_notifier', '~> 2.4.9'
 gem 'httparty', '~> 0.7.4'
 gem 'sass', '~> 3.1.1'
+gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'
