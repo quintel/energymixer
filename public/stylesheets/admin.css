@@ -50,26 +50,22 @@ body.admin {
   margin: 0;
   padding: 0; }
   body.admin header {
-    margin: 0;
-    background-color: #555555;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#555555"}, endColorstr="#999999");
-    background-image: -moz-linear-gradient(center top, #555555, #999999);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999)); }
-    body.admin header h1 {
-      margin: 0;
-      padding: 0.5em;
-      color: white; }
+    margin: 0; }
     body.admin header nav {
-      padding: 0.5em;
+      background-color: #6a7176;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#6a7176"}, endColorstr="#4d5256");
+      background-image: -moz-linear-gradient(center top, #6a7176, #4d5256);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6a7176), to(#4d5256));
+      padding: 0.6em;
       margin: 0;
-      background-color: #eeeeee;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#eeeeee"}, endColorstr="#cccccc");
-      background-image: -moz-linear-gradient(center top, #eeeeee, #cccccc);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(#cccccc)); }
+      color: #cdcdcd; }
+      body.admin header nav h1 {
+        display: inline;
+        font-size: 1.2em; }
       body.admin header nav a {
+        color: #cdcdcd;
         padding-right: 1em;
         margin-right: 1em;
-        border-right: 1px solid white;
         text-decoration: none; }
         body.admin header nav a.active {
           color: white; }
@@ -94,10 +90,10 @@ body.admin {
       margin-top: 0.5em;
       border: 1px solid #eeeeee;
       padding: 1em 0.5em;
-      background-color: #eeeeee;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#eeeeee"}, endColorstr="white");
-      background-image: -moz-linear-gradient(center top, #eeeeee, white);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eeeeee), to(white)); }
+      background-color: #efefef;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#efefef"}, endColorstr="#dfe1e2");
+      background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2)); }
       body.admin #content #actions a {
         text-decoration: none;
         margin-right: 1em; }
@@ -150,12 +146,12 @@ table.striped {
   table.striped td {
     padding: 0.4em; }
   table.striped thead tr {
-    background-color: #555555;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#555555"}, endColorstr="#999999");
-    background-image: -moz-linear-gradient(center top, #555555, #999999);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#999999)); }
+    background-color: #e2e2e2;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#e2e2e2"}, endColorstr="#d2d4d6");
+    background-image: -moz-linear-gradient(center top, #e2e2e2, #d2d4d6);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e2e2e2), to(#d2d4d6)); }
     table.striped thead tr th {
-      color: white;
+      color: #5e6469;
       text-align: left;
       padding: 0.5em;
       font-weight: bold;
@@ -165,8 +161,12 @@ table.striped {
         font-size: 0.7em; }
   table.striped tbody tr td {
     font-weight: 100;
-    border: 1px solid #dddddd; }
+    border: 1px solid #dddddd;
+    font-size: 0.9em; }
     table.striped tbody tr td.small {
       font-size: 0.7em; }
+    table.striped tbody tr td a {
+      font-size: 0.9em;
+      color: #38678b; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }
