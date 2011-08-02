@@ -82,7 +82,7 @@ function Graph() {
     var current_sum = 0.0;
     $.each(mixer.carriers_values, function(code, val) { current_sum += val });
     
-    // update the score attribute
+    // update the score attribute. DEBT: move to score exclusive method
     score.values.total_amount.current = current_sum;
     if (q.current_question == 2 && score.values.total_amount.mark === null) {
       score.values.total_amount.mark = current_sum;
@@ -130,13 +130,5 @@ function Graph() {
       }
     });
     
-  };
-            
-  self.setup_callbacks = function() {}; 
-  
-  self.init = function() {
-    self.setup_callbacks();
-  };
-  
-  self.init();
+  };            
 }
