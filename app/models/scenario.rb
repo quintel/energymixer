@@ -47,7 +47,8 @@ class Scenario < ActiveRecord::Base
     output_8:  "energy_dependence",
     output_9:  "costs_share_of_sustainable_wind",
     output_10: "costs_share_of_sustainable_solar",
-    output_11: "costs_share_of_sustainable_biomass"
+    output_11: "costs_share_of_sustainable_biomass",
+    output_11: "policy_total_energy_cost"
   }
   
   PrimaryMixTable = {
@@ -87,7 +88,6 @@ class Scenario < ActiveRecord::Base
   scope :featured,     where(:featured => true)
   scope :user_created, where(:featured => false)
   scope :featured_first, order('featured DESC')
-  # shall we use SOLR/TS/?
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
   scope :excluding, lambda{|s| where('id != ?', s)}
   
@@ -122,9 +122,8 @@ class Scenario < ActiveRecord::Base
     carriers.merge(renewable_carriers)
   end
     
-  # Ugly
   def total_amount
-    output_0 + output_1 + output_2 + output_3 + output_4
+    output_12
   end
   
   # forces reload
@@ -150,6 +149,7 @@ class Scenario < ActiveRecord::Base
         :output_9  => c["costs_share_of_sustainable_wind"],
         :output_10 => c["costs_share_of_sustainable_solar"],
         :output_11 => c["costs_share_of_sustainable_biomass"],
+        :output_12 => c["policy_total_energy_cost"],
         :year      => 2011
       )
       Rails.cache.write('current_scenario', @current_scenario)
@@ -178,6 +178,7 @@ class Scenario < ActiveRecord::Base
       :output_9  => 212589519.75315946,    # costs_share_of_sustainable_wind
       :output_10 => 2141265.8747384516,    # costs_share_of_sustainable_solar
       :output_11 => 2170862923.8200254,    # costs_share_of_sustainable_biomass
+      :output_12 => 42.420507732497605,    # policy_total_energy_cost
       :year      => 2011
     )
   end

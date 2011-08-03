@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711125433) do
+ActiveRecord::Schema.define(:version => 20110803090212) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20110711125433) do
     t.float    "output_10"
     t.float    "output_11"
     t.boolean  "public",          :default => true
+    t.float    "output_12"
   end
 
   add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
