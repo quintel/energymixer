@@ -79,8 +79,7 @@ function Graph() {
   
   // TODO: refactor
   self.update_bar_chart = function() {
-    var current_sum = 0.0;
-    $.each(mixer.carriers_values, function(code, val) { current_sum += val });
+    var current_sum = mixer.gquery_results["policy_total_energy_cost"] * 1000;
     
     // update the score attribute. DEBT: move to score exclusive method
     score.values.total_amount.current = current_sum;
@@ -102,6 +101,7 @@ function Graph() {
       var label = $(selector + " .label");
       new_height > 10 ? label.show() : label.hide();
     });
+    
     // renewable subgraph
     var renewable_subgraph_height = 100;
     var total_renewable_amount = mixer.carriers_values.costs_share_of_sustainable;
@@ -129,6 +129,5 @@ function Graph() {
         $(this).attr("href", mixer.etm_scenario_url);
       }
     });
-    
   };            
 }
