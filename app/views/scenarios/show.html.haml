@@ -18,11 +18,14 @@
       - if @scenario.age
         (#{@scenario.age} jaar)
     .content
-      = full_text(@scenario)
+      = full_text(@scenario)    
   .links
     = link_to "Bekijk de antwoorden van deze mix", answers_scenario_path(@scenario), :id => "show_answers"
     - if @scenario.etm_scenario_id.present?
       = link_to "Laadt deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
+  - if APP_CONFIG['score']
+    .score
+      Score: #{@scenario.score.to_i}
   .boxes
     .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
       %h3= t(dashboard_label_for_output(:output_5)).html_safe

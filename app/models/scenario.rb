@@ -126,7 +126,14 @@ class Scenario < ActiveRecord::Base
   end
     
   def total_amount
-    output_12
+    if output_12
+      # new attribute, not available on old records
+      output_12
+    else
+      (output_0 + output_1 + output_2 + output_3 + output_4) / 1_000_000_000
+    end
+  rescue
+    0
   end
   
   # forces reload
