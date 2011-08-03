@@ -21,10 +21,12 @@ function Graph() {
   
   self.block_interface = function() {
     $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({img: '/images/spinner.gif'});
+    q.hide_all_question_links();
   };
   
   self.unblock_interface = function() {
     $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear");
+    q.update_question_links();
   };
     
   // the following methods should not be called directly
