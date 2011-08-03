@@ -1,5 +1,5 @@
 .total_amount
   %h4 Mix #{scenario.year || APP_CONFIG['api_session_settings'][:end_year]}
   &euro;
-  %span= number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
+  %span= number_with_precision(scenario.total_amount, :precision => 1, :separator => ".")
   Mld
