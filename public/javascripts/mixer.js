@@ -20,12 +20,16 @@ function Mixer() {
   self.carriers_values  = {}; // used by graph, too!
   self.dashboard_values = {}; // idem
   self.secondary_carriers_values  = {};
+  self.gquery_results   = {}; // clean results hash
 
   self.dashboard_items     = globals.dashboard_items; // provided by the controller
   self.mix_table           = globals.mix_table;       // idem
   self.secondary_mix_table = globals.secondary_mix_table;       // idem
 
-  self.gqueries = self.mix_table.concat(self.dashboard_items).concat(self.secondary_mix_table);
+  self.gqueries = self.mix_table.
+    concat(self.dashboard_items).
+    concat(self.secondary_mix_table).
+    concat(["policy_total_energy_cost"]);
 
   self.fetch_session_id = function() {
     if (self.session_id) {
@@ -64,24 +68,36 @@ function Mixer() {
   // saving results to local variables in human readable format
   // store data in hidden form inputs too
   self.store_results = function() {
-    var results = self.results.result    
+    var results = self.results.result
+    console.log(results);
+    
+    // let's store all values in the corresponding hidden inputs
+    $.each(results, function(key, raw_results) {
+      var value = raw_results[1][1];
+      console.log(key + ": " + value);
+      $("input[type=hidden][data-label="+key+"]").val(value);
+      self.gquery_results[key] = value;
+    });
+    
+    // total cost is used fairly often, let's save it in the mixer object
+    self.total_cost = results["policy_total_energy_cost"][1][1]
+    
+    // now let's udpate the result collections
     $.each(self.mix_table, function(index, code){
-      var raw_value = results[code][1][1];
-      var value = Math.round(raw_value/1000000)
+      var value = Math.round(self.gquery_results[code]/1000000)
       self.carriers_values[code] = value;
-      $("input[type=hidden][data-label="+code+"]").val(raw_value);
     });
+
     $.each(self.secondary_mix_table, function(index, code){
-      var raw_value = results[code][1][1];
-      var value = Math.round(raw_value/1000000)
+      var value = Math.round(self.gquery_results[code]/1000000)
       self.secondary_carriers_values[code] = value;
-      $("input[type=hidden][data-label="+code+"]").val(raw_value);
     });
+
     $.each(self.dashboard_items, function(index, code){
-      var value = results[code][1][1];
+      var value = self.gquery_results[code];
       self.dashboard_values[code] = value;
-      $("input[type=hidden][data-label="+code+"]").val(value);
-      // update scores object
+      
+      // update scores object, which is based on dashboard values
       score.values[code].current = value;
       if (q.current_question == 2 && score.values[code].mark === null) {
         score.values[code].mark = value;

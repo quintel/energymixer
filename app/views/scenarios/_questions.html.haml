@@ -4,17 +4,6 @@
       - Question.ordered.each do |question|
         %td{:class=>"question_tab", :'data-question_id' => question.number}=question.number
   
-  -# UNCOMMENT THIS SECTION TO ENABLE CLICKABLE LINKS, DS, April 5th, 2011
-  -# - Question.ordered.each do |question|
-  -#   %a{:href  => "#",
-  -#      :class => 'question_tab',
-  -#      :'data-question_id' => question.number}
-  -#     =question.number
-  -# - last_question_number = Question.count + 1
-  -# %a{:href  => "#",
-  -#    :class => 'question_tab',
-  -#    :'data-question_id' => last_question_number}Submit
-      
 %div
   = form_for @scenario, :url => scenarios_path, :validate => true, :html => { :method => :post } do |scenario|
     = scenario.fields_for :answers do |answer|
