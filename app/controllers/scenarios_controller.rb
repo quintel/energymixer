@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
 
   def new
     @scenario = Scenario.current.clone
-    @scenario.year = 2025
+    @scenario.year = APP_CONFIG['api_session_settings'][:end_year]
 
     Question.ordered.each do |q|
       @scenario.answers.build(:question_id => q.id)
