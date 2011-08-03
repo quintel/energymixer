@@ -18,5 +18,5 @@ class ScenarioAnswer < ActiveRecord::Base
   
   validates :question_id, :presence => true
   
-  attr_accessible :question_id, :answer_id
+  attr_accessible :question_id, :answer_id, :score
 end

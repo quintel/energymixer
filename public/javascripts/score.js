@@ -58,6 +58,13 @@ function Score() {
       $("#dashboard #score .value").html(parseInt(s));
       $("#dashboard #score").show();
       $("input#scenario_score").val(s);
+      
+      // update subscore, too
+      // current_questions starts with 1, while rails nested attributes with 0
+      var current_question_dom_id = q.current_question - 1;
+      var input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
+      console.log(input_selector);
+      $(input_selector).val(s);
     }
   }
   
