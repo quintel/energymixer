@@ -77,6 +77,11 @@ function Questions() {
   // interface methods
   //
   
+  self.hide_all_question_links = function() {
+    $("#previous_question").hide();
+    $("#nex_question").hide();
+  }
+  
   self.update_question_links = function() {
     var first_question = self.current_question == 1;
     var last_question  = self.current_question == self.count_questions();
@@ -196,7 +201,6 @@ function Questions() {
       element.addClass('active');
       mixer.refresh();
       self.check_conflicts();
-      self.update_question_links();
     });
     
     $("form").submit(function(){
