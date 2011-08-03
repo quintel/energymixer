@@ -13,8 +13,7 @@
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
         = answer.radio_button :answer_id, a.id, 
                               :id => "answer_#{a.id}",
-                              :'data-question_id'     => question_object.id,
-                              :'data-question_number' => question_object.number
+                              :data => {:question_id => question_object.id, :question_number => question_object.number}
         %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
           %span.number= (index+65).chr
           %span.text= markdown(a.answer)
