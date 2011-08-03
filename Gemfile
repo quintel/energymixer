@@ -4,7 +4,7 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2',       '~> 0.2.6'
 gem 'devise',       '~> 1.1.7'
-gem 'jquery-rails', '~> 0.2.7'
+gem 'jquery-rails', '~> 1.0.12'
 gem 'formtastic',   '~> 1.2.3'
 gem 'kaminari',     '~> 0.12.1'
 gem 'bluecloth',    '~> 2.1.0'
