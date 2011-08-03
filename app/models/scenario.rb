@@ -48,7 +48,7 @@ class Scenario < ActiveRecord::Base
     output_9:  "costs_share_of_sustainable_wind",
     output_10: "costs_share_of_sustainable_solar",
     output_11: "costs_share_of_sustainable_biomass",
-    output_11: "policy_total_energy_cost"
+    output_12: "policy_total_energy_cost"
   }
   
   PrimaryMixTable = {
@@ -81,6 +81,7 @@ class Scenario < ActiveRecord::Base
   validates :output_9,  :presence => true
   validates :output_10, :presence => true
   validates :output_11, :presence => true
+  validates :output_12, :presence => true
   validates :accept_terms, :acceptance => true
   
   scope :recent_first, order('created_at DESC')
