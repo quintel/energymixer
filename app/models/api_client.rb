@@ -14,7 +14,8 @@ class ApiClient
         "energy_dependence",
         "costs_share_of_sustainable_wind",
         "costs_share_of_sustainable_solar",
-        "costs_share_of_sustainable_biomass"
+        "costs_share_of_sustainable_biomass",
+        "policy_total_energy_cost"
       ]
       
   CarrierCostsGQueries = [
