@@ -57,6 +57,7 @@ function Score() {
     if (s !== false && q.current_question > 2) {
       $("#dashboard #score .value").html(parseInt(s));
       $("#dashboard #score").show();
+      $("input#scenario_score").val(s);
     }
   }
   
