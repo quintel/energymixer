@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110803090212) do
+ActiveRecord::Schema.define(:version => 20110803100821) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20110803090212) do
     t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "score"
   end
 
   add_index "scenario_answers", ["question_id"], :name => "index_user_scenario_answers_on_question_id"
@@ -107,10 +108,12 @@ ActiveRecord::Schema.define(:version => 20110803090212) do
     t.float    "output_11"
     t.boolean  "public",          :default => true
     t.float    "output_12"
+    t.float    "score"
   end
 
   add_index "scenarios", ["featured"], :name => "index_user_scenarios_on_featured"
   add_index "scenarios", ["public"], :name => "index_scenarios_on_public"
+  add_index "scenarios", ["score"], :name => "index_scenarios_on_score"
 
   create_table "translations", :force => true do |t|
     t.string   "locale"
