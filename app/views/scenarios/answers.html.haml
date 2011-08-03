@@ -5,10 +5,13 @@
     %dt
       #{a.question.number}.
       = a.question.question
-    -if a.answer
-      %dd= a.answer.answer.html_safe
-    -else
-      %dd **Geen antwoord gegeven**
+    %dd
+      - if a.answer
+        = a.answer.answer.html_safe
+      - else
+        **Geen antwoord gegeven**
+      - if APP_CONFIG["score"] && a.score
+        (Score: #{a.score})
 
 - content_for :head do
   = stylesheet_link_tag 'scenarios'

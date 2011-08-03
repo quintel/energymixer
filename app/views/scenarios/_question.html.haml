@@ -1,5 +1,7 @@
 - question_object = answer.object.question
 .question{:id => "question_#{question_object.number}"}
+  = answer.hidden_field :score
+  = answer.hidden_field :question_id
   .information
     = markdown(question_object.information)
   .number
@@ -9,7 +11,6 @@
   %ul.answers
     - question_object.answers.ordered.each_with_index do |a, index|
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
-        = answer.hidden_field :question_id
         = answer.radio_button :answer_id, a.id, 
                               :id => "answer_#{a.id}",
                               :'data-question_id'     => question_object.id,
