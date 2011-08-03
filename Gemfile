@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.9'
 
 gem 'mysql2',       '~> 0.2.6'
 gem 'devise',       '~> 1.1.7'
-gem 'haml-rails',   '~> 0.3.4'
 gem 'jquery-rails', '~> 0.2.7'
 gem 'formtastic',   '~> 1.2.3'
 gem 'kaminari',     '~> 0.12.1'
@@ -14,6 +13,7 @@ gem 'dynamic_form', '~>1.1.3'
 gem 'client_side_validations', '~> 3.0.0'
 gem 'hoptoad_notifier', '~> 2.4.9'
 gem 'httparty', '~> 0.7.4'
+gem 'haml',   '~> 3.1.2'
 gem 'sass', '~> 3.1.1'
 gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
 
