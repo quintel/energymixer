@@ -53,7 +53,6 @@ function Score() {
   
   self.show = function() {
     var s = self.calculate();
-    $.logThis("Score: " + s);
     if (s !== false && q.current_question > 2) {
       $("#dashboard #score .value").html(parseInt(s));
       $("#dashboard #score").show();
@@ -63,7 +62,6 @@ function Score() {
       // current_questions starts with 1, while rails nested attributes with 0
       var current_question_dom_id = q.current_question - 1;
       var input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
-      console.log(input_selector);
       $(input_selector).val(s);
     }
   }
