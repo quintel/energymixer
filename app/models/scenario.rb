@@ -24,6 +24,8 @@
 #  output_10       :float
 #  output_11       :float
 #  public          :boolean(1)      default(TRUE)
+#  output_12       :float
+#  score           :float
 #
 
 class Scenario < ActiveRecord::Base
