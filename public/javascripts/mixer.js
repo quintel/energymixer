@@ -69,12 +69,10 @@ function Mixer() {
   // store data in hidden form inputs too
   self.store_results = function() {
     var results = self.results.result
-    console.log(results);
     
     // let's store all values in the corresponding hidden inputs
     $.each(results, function(key, raw_results) {
       var value = raw_results[1][1];
-      console.log(key + ": " + value);
       $("input[type=hidden][data-label="+key+"]").val(value);
       self.gquery_results[key] = value;
     });
