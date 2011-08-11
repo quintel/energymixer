@@ -1,5 +1,5 @@
 :javascript
-  var input_keys = #{Input.available_inputs.values.to_json}
+  var input_keys = #{Input.available_inputs.map{|i| {:label => i[1]}}.to_json}
   $(function(){
     $("input.autocomplete").autocomplete({ source: input_keys });
   });
