@@ -15,10 +15,15 @@ class Input < ActiveRecord::Base
   
   validates :slider_id, :presence => true
   
-  attr_accessible :value, :slider_id, :key
+  attr_accessible :value, :slider_id, :key, :slider_name
   
-  def slider
+  def slider_name
     KEYS[slider_id] rescue nil
+  end
+  alias_method :slider, :slider_name
+  
+  def slider_name=(s)
+    self.slider_id = KEYS.invert[s]
   end
     
   KEYS = {
