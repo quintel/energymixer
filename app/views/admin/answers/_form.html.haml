@@ -1,3 +1,8 @@
+:javascript
+  var input_keys = #{Input::KEYS.values.to_json}
+  $(function(){
+    $("input.autocomplete").autocomplete({ source: input_keys });
+  });
 = semantic_form_for [:admin, @answer] do |f|
   = f.inputs do
     = f.input :answer
@@ -6,7 +11,7 @@
     %h3 Inputs
     = f.semantic_fields_for :inputs do |i|
       = i.inputs do
-        = i.input :slider_id, :as => :select, :collection => Input::KEYS.invert.sort
+        = i.input :slider_name, :as => :string, :input_html => { :class => 'autocomplete'}
         = i.input :value
         = i.input :_destroy, :as => :boolean unless i.object.new_record?
     %h3 Conflicts
