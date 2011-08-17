@@ -1,5 +1,4 @@
 @import 'mixins'
-@import 'mixer.graph'
 
 body#scenarios_new, body#scenarios_create
   section#results
@@ -123,7 +122,7 @@ body#scenarios_new, body#scenarios_create
               cursor: pointer
           &:hover label .text
             text-decoration: underline
-            
+
       #user_details
         h2
           font-size: 12px
@@ -161,7 +160,7 @@ body#scenarios_new, body#scenarios_create
             padding: 3px
             margin: 4px
           input[type=text]
-            width: 220px          
+            width: 220px
           input[type=submit]
             float: right
             margin: 15px
@@ -212,7 +211,7 @@ body#scenarios_show
         @include link_arrow_prefix
         &:hover
           text-decoration: underline
-        
+
     .boxes
       margin-top: 10px
       .dashboard_item
@@ -232,7 +231,7 @@ body#scenarios_show
       .chart_canvas_money
         width: 10px
         margin-left: 10px
-      
+
     .current
       width: 80px
       margin-left: 30px
@@ -241,13 +240,13 @@ body#scenarios_show
       .chart_canvas_money
         width: 5px
         margin-left: 6px
-      
+
 
 body#scenarios_index
   section#scenarios
     h3
       padding: 1em
-      font-weight: bold  
+      font-weight: bold
     .scenario
       position: relative
       width: 350px
@@ -282,7 +281,7 @@ body#scenarios_index
           color: #ccc
         .scenarios
           .scenario
-            display: none          
+            display: none
     section#left
       width: 360px
       float: left
@@ -316,7 +315,7 @@ body#scenarios_compare
           font-weight: bold
         .value
           font-size: 16px
-          font-weight: bold  
+          font-weight: bold
   .scenario
     width: 110px
     .chart_canvas_mix
@@ -329,7 +328,7 @@ body#scenarios_compare
       width: 50px
     .chart_canvas_money
       width: 8px
-    
+
     .name
       color: #ACACAC
     .dashboard
@@ -341,7 +340,7 @@ body#scenarios_compare
     height: 720px
     float: left
     background-color: #cccccc
-  
+
 body#scenarios_answers, body#scenarios_show #colorbox
   h2
     font-size: 1.8em
