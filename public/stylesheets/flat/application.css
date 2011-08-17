@@ -108,34 +108,8 @@ body.sessions #content a, body.unlocks #content a {
     font-weight: bold;
     margin-bottom: 3px; }
 
-#admin_menu {
-  position: absolute;
-  top: 0;
-  border: 1px solid black;
-  left: 0; }
-  #admin_menu h2 {
-    font-weight: bold; }
-  #admin_menu a {
-    color: blue; }
-  #admin_menu a:hover {
-    text-decoration: underline; }
-
-body#sessions_new #content {
-  background-color: #dddddd;
-  border: 1px solid #cccccc; }
-  body#sessions_new #content h2 {
-    padding: 10px;
-    font-size: 18px;
-    background-color: white; }
-  body#sessions_new #content form {
-    padding: 10px; }
-body#sessions_new footer {
-  padding: 6px;
-  border: 1px solid #cccccc;
-  border-top: none; }
-
 a.shell {
-  background: transparent url(images/link_arrow.png) center left no-repeat;
+  background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
   padding-left: 16px;
   text-decoration: none;
   font-weight: bold; }
