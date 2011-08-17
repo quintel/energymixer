@@ -8,7 +8,7 @@ body#pages_home section#intro_text {
   body#pages_home section#intro_text p {
     padding: 10px 0; }
   body#pages_home section#intro_text a {
-    background: transparent url(images/link_arrow.png) center left no-repeat;
+    background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
     padding-left: 16px;
     font-weight: bold;
     margin-right: 20px;
@@ -27,7 +27,7 @@ body#pages_home section#sectors {
     padding: 10px 5px;
     border-bottom: 1px solid #cccccc; }
     body#pages_home section#sectors .sector h2 {
-      background: transparent url(images/link_arrow.png) center left no-repeat;
+      background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
       padding-left: 16px;
       font-weight: bold;
       margin-left: 130px; }
