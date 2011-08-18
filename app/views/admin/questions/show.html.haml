@@ -18,7 +18,7 @@
         %td= a.answer
         %td
           %table.small
-            - a.inputs.each do |i|
+            - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|
               %tr
                 %td= i.slider
                 %td= "##{i.slider_id} "
