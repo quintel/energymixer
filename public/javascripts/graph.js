@@ -127,7 +127,7 @@ function Graph() {
   
   self.update_etm_link = function() {
     $("footer a").click(function(){
-      if(confirm("Would you like to open the current scenario in the ET-Model application?")) {
+      if(confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
         $(this).attr("href", mixer.etm_scenario_url);
       }
     });
