@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title EnergyMixer
+    %title=t(:title)
     - current_style = '/stylesheets/flat/'
     = stylesheet_link_tag ['reset','application', 'pages','scenarios','stack', 'dashboard','colorbox'].map{|link| current_style + link}
     = hoptoad_javascript_notifier
