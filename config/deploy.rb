@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'hoptoad_notifier/capistrano'
 
 set :application, "energymixer"
 set :scm, :git
@@ -39,18 +40,12 @@ task :to_shell2050 do
 end
 
 namespace :deploy do
-  desc "Tell Passenger to restart the app."
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-  
-  task :create_symlinks do
+  task :copy_configuration_files do
     run "cp #{config_files}/database.yml #{release_path}/config/database.yml"
     run "cp #{config_files}/config.yml #{release_path}/config/config.yml"
   end
 end
 
-after 'deploy:update_code', 'deploy:create_symlinks'
+after 'deploy:update_code', 'deploy:copy_configuration_files'
 
 require './config/boot'
-require 'hoptoad_notifier/capistrano'
