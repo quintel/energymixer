@@ -35,7 +35,7 @@ task :to_shell2050 do
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
-  set :branch, "master"
+  set :branch, "mixer2050"
 end
 
 namespace :deploy do
