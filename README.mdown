@@ -1,18 +1,45 @@
+Configuration
+=============
+
+Check `~/config_files/config.yml`.
+
+  app_name: "gasmixer" # if you define a new key here then add the translation in `en.yml` and `nl.yml`
+  score: true
+  api_base_path:      "http://etengine.dev/api/v2"
+  view_scenario_path: "http://etmodel.dev/scenarios"
+  max_total_cost: 115000000000 # max height of the scenario column
+  api_session_settings:
+    :country: 'nl'
+    :end_year: 2025
+  
+
+
 Deployment
 ==========
 
-Currently we have two running instances of the application: mixer.et-model.com and gasmixer.et-model.com.
+Currently we have three running instances of the application
+
+* mixer.et-model.com
+
+  Instance embeded as iframe on shell
+  End Year: 2025
+
+* gasmixer.et-model.com
+  End Year: 2030
+
+* mixer2050.et-model.com
+  End Year: 2050
+
+
 To deploy run
 
-  cap to_shell deploy
+  cap XXXXX deploy
 
-or
+XXXXX might be `to_shell`, `to_gasmixer` or `to_shell2050`
 
-  cap to_gasmixer deploy
 
-Be careful with configuration data: settings.yml and config.yml are stored in ~/config_files and capistrano takes care of copying them to the application config directory.
-
-Warning: the current dev branch requires the new ETE, while master is still using the traditional et-model. Be sure you know what you're doing before deploying.
+Be careful with configuration data: settings.yml and config.yml are stored in ~/config_files and 
+capistrano takes care of copying them to the application config directory.
 
 Caching
 =======
