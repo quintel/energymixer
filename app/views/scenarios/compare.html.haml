@@ -23,8 +23,3 @@
     = render :partial => "chart_top", :locals => {:scenario => Scenario.current}
     = render :partial => 'chart', :locals => { :scenario => Scenario.current }
     = render :partial => 'compare_dashboard', :locals => { :scenario => Scenario.current }
-
-- content_for :head do
-  = stylesheet_link_tag 'stack'
-  = stylesheet_link_tag 'scenarios'
-  

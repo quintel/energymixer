@@ -3,14 +3,14 @@ Configuration
 
 Check `~/config_files/config.yml`.
 
-  app_name: "gasmixer" # if you define a new key here then add the translation in `en.yml` and `nl.yml`
-  score: true
-  api_base_path:      "http://etengine.dev/api/v2"
-  view_scenario_path: "http://etmodel.dev/scenarios"
-  max_total_cost: 115000000000 # max height of the scenario column
-  api_session_settings:
-    :country: 'nl'
-    :end_year: 2025
+	app_name: "gasmixer" # if you define a new key here then add the translation in `en.yml` and `nl.yml`
+	score: true
+	api_base_path:      "http://etengine.dev/api/v2"
+	view_scenario_path: "http://etmodel.dev/scenarios"
+	max_total_cost: 115000000000 # max height of the scenario column
+	api_session_settings:
+	  :country: 'nl'
+	  :end_year: 2025
   
 
 
@@ -22,20 +22,23 @@ Currently we have three running instances of the application
 * mixer.et-model.com
 
   Instance embeded as iframe on shell
+
   End Year: 2025
 
 * gasmixer.et-model.com
+
   End Year: 2030
 
 * mixer2050.et-model.com
+
   End Year: 2050
 
 
 To deploy run
 
-  cap XXXXX deploy
+	cap XXXXX deploy
 
-XXXXX might be `to_shell`, `to_gasmixer` or `to_shell2050`
+`XXXXX` might be `to_shell`, `to_gasmixer` or `to_shell2050`
 
 
 Be careful with configuration data: settings.yml and config.yml are stored in ~/config_files and 

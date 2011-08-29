@@ -48,8 +48,6 @@
     = render 'scenarios/chart', :scenario => Scenario.current, :width => 50
   
 - content_for :head do
-  = stylesheet_link_tag 'scenarios'
-  
   -#TODO: move this javascript to a js-file
   :javascript
     $(function(){
