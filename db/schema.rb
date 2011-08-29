@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110803100821) do
+ActiveRecord::Schema.define(:version => 20110829152012) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -63,12 +63,20 @@ ActiveRecord::Schema.define(:version => 20110803100821) do
 
   add_index "popups", ["code"], :name => "index_popups_on_code"
 
+  create_table "question_sets", :force => true do |t|
+    t.string   "name"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "question"
     t.integer  "ordering"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "information"
+    t.integer  "question_set_id"
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
