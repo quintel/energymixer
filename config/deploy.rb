@@ -1,5 +1,5 @@
 require 'bundler/capistrano'
-require 'hoptoad_notifier/capistrano'
+require 'airbrake/capistrano'
 
 set :application, "energymixer"
 set :scm, :git
