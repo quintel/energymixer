@@ -30,6 +30,14 @@ task :to_gasmixer do
   set :branch, "gasmixer"
 end
 
+task :to_shell2050 do
+  set :domain, "ec2-46-137-41-76.eu-west-1.compute.amazonaws.com"
+  role :web, domain # Your HTTP server, Apache/etc
+  role :app, domain # This may be the same as your `Web` server
+  role :db,  domain, :primary => true # This is where Rails migrations will run
+  set :branch, "master"
+end
+
 namespace :deploy do
   desc "Tell Passenger to restart the app."
   task :restart do
