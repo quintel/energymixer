@@ -64,7 +64,8 @@ body.admin {
         list-style-type: none;
         float: left;
         padding-right: 1em;
-        margin-right: 1em; }
+        margin-right: 1em;
+        text-shadow: black 0px 1px 0px; }
         body.admin header nav ul li.current {
           color: black; }
         body.admin header nav ul li a {
@@ -72,13 +73,24 @@ body.admin {
           text-decoration: none; }
           body.admin header nav ul li a.active {
             color: white; }
-    body.admin header .login_box {
+    body.admin header #subnav {
       background-color: #efefef;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#efefef"}, endColorstr="#dfe1e2");
       background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2));
-      padding: 5px;
-      font-size: 0.8em; }
+      height: 70px;
+      border-bottom: 1px solid #ededed;
+      text-shadow: white 0px 1px 0px; }
+      body.admin header #subnav .login_box {
+        padding: 10px 5px;
+        font-size: 0.8em;
+        float: right;
+        color: #5e6469; }
+      body.admin header #subnav h2 {
+        font-size: 30px;
+        color: #5e6469;
+        font-weight: bold;
+        padding: 10px 5px; }
   body.admin a {
     color: #000066;
     text-decoration: underline; }

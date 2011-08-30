@@ -19,6 +19,7 @@ body.admin
           float: left
           padding-right: 1em
           margin-right: 1em
+          text-shadow: black 0px 1px 0px
           &.current
             color: black
           a
@@ -26,10 +27,21 @@ body.admin
             text-decoration: none
             &.active
               color: #ffffff
-    .login_box
+    #subnav
       @include gradient(#EFEFEF, #DFE1E2)
-      padding: 5px
-      font-size: .8em
+      height: 70px
+      border-bottom: 1px solid #ededed
+      text-shadow: white 0px 1px 0px
+      .login_box
+        padding: 10px 5px
+        font-size: .8em
+        float: right
+        color: #5e6469
+      h2
+        font-size: 30px
+        color: #5e6469
+        font-weight: bold
+        padding: 10px 5px
   a
     color: #000066
     text-decoration: underline
