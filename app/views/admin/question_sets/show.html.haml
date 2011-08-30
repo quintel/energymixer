@@ -5,3 +5,5 @@
   %dd= @question_set.name
   %dt Possible combinations
   %dd=@question_set.combinations.size
+  
+  %pre=# @question_set.combinations.map{|x| x.join('-')}.join("\n")
