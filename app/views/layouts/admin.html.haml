@@ -22,11 +22,13 @@
           = tab.dashboard_items 'Dashboard Items',     admin_dashboard_items_path
           = tab.scenarios       'User Scenarios',      admin_scenarios_path
           = tab.translations    'Translations',        admin_translations_path
-      .login_box
-        - if user_signed_in?
-          Logged in as
-          = current_user.email
-          = link_to 'Sign out', destroy_user_session_path
+      #subnav
+        .login_box
+          - if user_signed_in?
+            Logged in as
+            = current_user.email
+            = link_to 'Sign out', destroy_user_session_path
+        %h2= yield :page_title
     - flash.each do |k,msg|
       .flash{:id => k}
         = msg
