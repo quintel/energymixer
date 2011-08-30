@@ -16,6 +16,7 @@ gem 'httparty', '~> 0.7.4'
 gem 'haml',   '~> 3.1.2'
 gem 'sass', '~> 3.1.1'
 gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
+gem 'tabs_on_rails'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.5.0'

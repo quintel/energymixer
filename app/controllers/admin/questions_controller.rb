@@ -1,4 +1,5 @@
 class Admin::QuestionsController < AdminController
+  set_tab :questions
   before_filter :find_question, :only => [:show, :edit, :update, :destroy]
   
   def index

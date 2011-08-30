@@ -1,4 +1,5 @@
 class Admin::DashboardItemsController < AdminController
+  set_tab :dashboard_items
   before_filter :find_dashboard_item, :except => [:index, :new, :create]
   
   def index

@@ -58,20 +58,27 @@ body.admin {
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6a7176), to(#4d5256));
       padding: 0.6em;
       margin: 0;
-      color: #cdcdcd; }
-      body.admin header nav h1 {
-        display: inline;
-        font-size: 1.2em; }
-      body.admin header nav a {
-        color: #cdcdcd;
+      color: #cdcdcd;
+      height: 22px; }
+      body.admin header nav ul li {
+        list-style-type: none;
+        float: left;
         padding-right: 1em;
-        margin-right: 1em;
-        text-decoration: none; }
-        body.admin header nav a.active {
-          color: white; }
-      body.admin header nav .login_box {
-        font-size: 0.8em;
-        float: right; }
+        margin-right: 1em; }
+        body.admin header nav ul li.current {
+          color: black; }
+        body.admin header nav ul li a {
+          color: #cdcdcd;
+          text-decoration: none; }
+          body.admin header nav ul li a.active {
+            color: white; }
+    body.admin header .login_box {
+      background-color: #efefef;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#efefef"}, endColorstr="#dfe1e2");
+      background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2));
+      padding: 5px;
+      font-size: 0.8em; }
   body.admin a {
     color: #000066;
     text-decoration: underline; }

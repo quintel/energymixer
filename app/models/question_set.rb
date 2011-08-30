@@ -3,15 +3,15 @@ class QuestionSet < ActiveRecord::Base
   
   has_many :questions
   
-  def self.combinations
-    questions = {}.tap{|x| Question.all.each{|q| x[q.id] = q.answer_ids + [nil] }}
-    answers = questions.values.take(11)
+  def combinations
+    qs = {}.tap{|x| questions.ordered.each{|q| x[q.id] = q.answer_ids + [nil] }}
+    answers = qs.values.take(11)
     cartesian(*answers)
   end
 
   private
 
-    def self.cartesian(*args)
+    def cartesian(*args)
       final_output= [[]]
       while [] != args
         t, final_output= final_output, []

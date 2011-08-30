@@ -13,19 +13,20 @@
         :class => [controller_name, "admin"]}
     %header
       %nav
-        %h1
-          = link_to 'EnergyMixer / Admin', admin_root_path
-        = link_to 'Frontend', root_path
-        = link_to 'Questions', admin_questions_path, :class => ('active' if controller_name == 'questions')
-        = link_to 'Popups', admin_popups_path, :class => ('active' if controller_name == 'popups')
-        = link_to 'Dashboard Items', admin_dashboard_items_path, :class => ('active' if controller_name == 'dashboard_items')
-        = link_to 'User Scenarios', admin_scenarios_path, :class => ('active' if controller_name == 'scenarios')
-        = link_to 'Translations', admin_translations_path, :class => ('active' if controller_name == 'translations')
-        .login_box
-          - if user_signed_in?
-            Logged in as
-            = current_user.email
-            = link_to 'Sign out', destroy_user_session_path
+        = tabs_tag do |tab|
+          = tab.admin           'EnergyMixer / Admin', admin_root_path
+          = tab.frontend        'Frontend',            root_path
+          = tab.question_sets   'Question Sets',       admin_question_sets_path
+          = tab.questions       'Questions',           admin_questions_path
+          = tab.popups          'Popups',              admin_popups_path
+          = tab.dashboard_items 'Dashboard Items',     admin_dashboard_items_path
+          = tab.scenarios       'User Scenarios',      admin_scenarios_path
+          = tab.translations    'Translations',        admin_translations_path
+      .login_box
+        - if user_signed_in?
+          Logged in as
+          = current_user.email
+          = link_to 'Sign out', destroy_user_session_path
     - flash.each do |k,msg|
       .flash{:id => k}
         = msg
