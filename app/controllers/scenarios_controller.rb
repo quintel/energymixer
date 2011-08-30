@@ -5,7 +5,11 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.current.clone
     @scenario.year = APP_CONFIG['api_session_settings'][:end_year]
 
-    Question.ordered.each do |q|
+    @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name'])
+    @questions    = @question_set.questions.ordered rescue []
+    @answers      = @questions.map{|q| q.answers}.flatten.uniq
+    
+    @questions.each do |q|
       @scenario.answers.build(:question_id => q.id)
     end
   end
