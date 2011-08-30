@@ -5,7 +5,7 @@ class QuestionSet < ActiveRecord::Base
   
   def combinations
     qs = {}.tap{|x| questions.ordered.each{|q| x[q.id] = q.answer_ids + [nil] }}
-    answers = qs.values.take(11)
+    answers = qs.values.take(2)
     cartesian(*answers)
   end
 
