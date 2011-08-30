@@ -1,5 +1,4 @@
-Configuration
-=============
+## Configuration
 
 Check `~/config_files/config.yml`.
 
@@ -14,24 +13,23 @@ Check `~/config_files/config.yml`.
   
 
 
-Deployment
-==========
+## Deployment
 
 Currently we have three running instances of the application
 
-* mixer.et-model.com
+### mixer.et-model.com
 
-  Instance embeded as iframe on shell
+Instance embeded as iframe on shell
 
-  End Year: 2025
+End Year: 2025
 
-* gasmixer.et-model.com
+### gasmixer.et-model.com
 
-  End Year: 2030
+End Year: 2030
 
-* mixer2050.et-model.com
+### mixer2050.et-model.com
 
-  End Year: 2050
+End Year: 2050
 
 
 To deploy run
@@ -41,25 +39,24 @@ To deploy run
 `XXXXX` might be `to_shell`, `to_gasmixer` or `to_shell2050`
 
 
-Be careful with configuration data: settings.yml and config.yml are stored in ~/config_files and 
+Be careful with configuration data: `settings.yml` and `config.yml` are stored in `~/config_files` and 
 capistrano takes care of copying them to the application config directory.
 
-Caching
-=======
+## Caching
 
 The application caches the current scenario. To clear the cache run
-/home/ubuntu/clear_rails_cache.sh. There's a cron job that does this
+`/home/ubuntu/clear_rails_cache.sh`. There's a cron job that does this
 every night.
 
 If we're using the default rails MemoryStore as backend we're actually just
-touching tmp/restart.txt, because it saves everything into the memory
+touching `tmp/restart.txt`, because it saves everything into the memory
 of the same process.
 
 When we will be using a shared cache (memcached, etc) we have to call
-Rails.cache.clear, too.
+`Rails.cache.clear`, too.
 
-The Scenario class has two methods related to this cache: Scenario.current
-(cached) and Scenario.current! (forces reload).
+The Scenario class has two methods related to this cache: `Scenario.current`
+(cached) and `Scenario.current!` (forces reload).
 
 As a reference, this is the current script:
 
@@ -68,4 +65,9 @@ As a reference, this is the current script:
   # /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production
   # If we're using MemoryStore this is enough
   touch tmp/restart.txt
-  
+ 
+## Themes
+
+The `theming.rb` initializer will prepend `app/views/APP_NAME` to the rendering view path. This means
+that any view (including layouts) in that directory will be rendered if available. Otherwise the default
+view will be used.
