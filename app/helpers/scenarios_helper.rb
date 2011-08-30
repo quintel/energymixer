@@ -3,8 +3,9 @@ module ScenariosHelper
   # user selections.
   # This could be rewritten as QuestionsController#index.json
   def answers_json
+    return false unless @questions
     out = {}
-    Question.all.each do |q|
+    @questions.each do |q|
       q_id = q.id
       out[q_id] = {}
       q.answers.each do |a|
@@ -19,8 +20,9 @@ module ScenariosHelper
   end
   
   def answers_conflicts_json
+    return false unless @answers
     out = {}
-    Answer.all.each do |answer|
+    @answers.each do |answer|
       conf_ans_ids = answer.conflicting_answer_ids
       unless conf_ans_ids.empty?
         out[answer.id] = conf_ans_ids
