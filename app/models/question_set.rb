@@ -4,6 +4,7 @@ class QuestionSet < ActiveRecord::Base
   has_many :questions
   
   def combinations
+    return [] if questions.count.zero?
     answers = questions.ordered.map{|q| q.answer_ids + [nil]}
     answers[0].compact!
     answers[0].product(*answers[1..-1]).select{|x| valid_combination?(x)}
