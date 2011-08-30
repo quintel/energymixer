@@ -8,23 +8,28 @@ body.admin
   header
     margin: 0
     nav
-      h1
-        display: inline
-        font-size: 1.2em
       @include gradient(#6a7176, #4d5256)
       padding: .6em
       margin: 0
       color: #cdcdcd
-      a
-        color: #cdcdcd
-        padding-right: 1em
-        margin-right: 1em
-        text-decoration: none
-        &.active
-          color: #ffffff
-      .login_box
-        font-size: .8em
-        float: right
+      height: 22px
+      ul
+        li
+          list-style-type: none
+          float: left
+          padding-right: 1em
+          margin-right: 1em
+          &.current
+            color: black
+          a
+            color: #cdcdcd
+            text-decoration: none
+            &.active
+              color: #ffffff
+    .login_box
+      @include gradient(#EFEFEF, #DFE1E2)
+      padding: 5px
+      font-size: .8em
   a
     color: #000066
     text-decoration: underline
