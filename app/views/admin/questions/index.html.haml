@@ -10,7 +10,7 @@
   %tbody
     - @questions.each do |question|
       %tr{:class => cycle('even', 'odd')}
-        %td= link_to question.question_set.try(:name), [:admin, question.question_set]
+        %td= link_to(question.question_set.try(:name), [:admin, question.question_set]) if question.question_set
         %td= link_to question.question, admin_question_path(question)
         %td= question.number
         %td
