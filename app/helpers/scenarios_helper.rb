@@ -118,11 +118,11 @@ module ScenariosHelper
   def full_text(s)
     out = []
     # Total amount
-    out << if s.total_amount < 40_000_000_000
+    out << if s.total_amount < 40
       "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel aan energie."
-    elsif s.total_amount < 60_000_000_000
+    elsif s.total_amount < 60
       "De mix wordt langzaam duurder. Maar als onze economie blijft groeien kunnen we dat wel betalen."
-    elsif s.total_amount < 80_000_000_000
+    elsif s.total_amount < 80
       "De mix wordt behoorlijk duurder. Kunnen we dat wel blijven betalen?"
     else
       "De mix wordt veel duurder. Kunnen we dat betalen of groeien we onszelf uit de problemen?"
