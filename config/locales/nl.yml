@@ -1,4 +1,5 @@
 nl:
+  mixer2050: EnergyMixer
   energymixer: EnergyMixer
   gasmixer: GasMixer
   3d_view: 3D
