@@ -83,6 +83,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcache-client (1.8.5)
     mime-types (1.16)
     mocha (0.9.12)
     mysql2 (0.2.13)
@@ -176,6 +177,7 @@ DEPENDENCIES
   i18n-active_record!
   jquery-rails (~> 1.0.12)
   kaminari (~> 0.12.1)
+  memcache-client
   mocha (~> 0.9.12)
   mysql2 (~> 0.2.6)
   rails (= 3.0.10)
