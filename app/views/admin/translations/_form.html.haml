@@ -1,4 +1,6 @@
-= semantic_form_for [:admin, @translation] do |f|
-  = f.inputs
-  = f.buttons
+= simple_form_for [:admin, @translation] do |f|
+  = f.input :locale
+  = f.input :key
+  = f.input :value
+  = f.button :submit
     

@@ -1,5 +1,4 @@
 class Admin::AnswersController < AdminController
-  set_tab :answers
   before_filter :find_answer
   
   def show

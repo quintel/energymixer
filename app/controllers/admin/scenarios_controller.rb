@@ -1,5 +1,4 @@
 class Admin::ScenariosController < AdminController
-  set_tab :scenarios  
   before_filter :find_scenario, :except => [:index, :new, :create]
 
   def index
