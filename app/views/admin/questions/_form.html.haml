@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @question] do |f|
+= simple_form_for [:admin, @question], :validate => true do |f|
   = f.association :question_set
   = f.input :question
   = f.input :information, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
