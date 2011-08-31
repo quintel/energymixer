@@ -21,7 +21,7 @@ class Question < ActiveRecord::Base
   scope :ordered, order('ordering, id')
   scope :excluding, lambda {|ids| where('id NOT IN (?)', ids) }
   
-  attr_accessible :question, :ordering, :information, :answers_attributes
+  attr_accessible :question_set_id, :question, :ordering, :information, :answers_attributes
   
   def number
     ordering + 1 rescue nil
