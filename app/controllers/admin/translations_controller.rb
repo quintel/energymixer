@@ -1,5 +1,4 @@
 class Admin::TranslationsController < AdminController
-  set_tab :translations
   before_filter :find_translation, :except => [:index, :new, :create]
   
   def index

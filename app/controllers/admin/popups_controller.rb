@@ -1,5 +1,4 @@
 class Admin::PopupsController < AdminController
-  set_tab :popups
   before_filter :find_popup, :only => [:show, :edit, :update, :destroy]
   
   def index
