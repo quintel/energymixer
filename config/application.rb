@@ -44,5 +44,7 @@ module EnergyMixer
     config.generators do |g|
       g.template_engine :haml
     end
+    
+    config.cache_store = :mem_cache_store
   end
 end
