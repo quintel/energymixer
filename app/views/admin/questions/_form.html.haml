@@ -1,17 +1,16 @@
-= semantic_form_for [:admin, @question] do |f|
-  = f.inputs do
-    = f.input :question_set
-    = f.input :question
-    = f.input :information, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
-    
-    = f.input :ordering
-    %h3 Answers
-    = f.semantic_fields_for :answers do |a|
-      = a.inputs do
+= simple_form_for [:admin, @question] do |f|
+  = f.association :question_set
+  = f.input :question
+  = f.input :information, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+  
+  = f.input :ordering
+  = field_set_tag 'Answers' do
+    = f.simple_fields_for :answers do |a|
+      = field_set_tag do
         = a.input :answer
         = a.input :ordering
         - unless a.object.new_record?
           = a.input :_destroy, :as => :boolean
           = link_to 'edit', edit_admin_answer_path(a.object)
-  = f.buttons
+  = f.button :submit
     

@@ -1,7 +1,6 @@
-= semantic_form_for [:admin, @popup] do |f|
-  = f.inputs do
-    = f.input :code
-    = f.input :title
-    = f.input :body
-  = f.buttons
+= simple_form_for [:admin, @popup] do |f|
+  = f.input :code
+  = f.input :title
+  = f.input :body
+  = f.button :submit
     
