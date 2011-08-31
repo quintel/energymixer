@@ -136,18 +136,20 @@ module ScenariosHelper
     elsif s.output_5 < 0.1
       "De CO2 uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Maar hoe zit het met de opwarming van de aarde?"
     else
-      "De CO2 uitstoot groeit sterk. De economie regeert.  En het klimaat; ach, weten  we wel zeker dat het verandert?"
+      "De CO2 uitstoot groeit sterk. De economie regeert. En hoe zat het ook alweer met ons klimaat?"
     end
     
     # Share of renewable energy
     out << if s.output_6 < 0.05
-      "We blijven verslaafd aan fossiel en het lukt niet om duurzame energie in te zetten. Misschien is het ook wel niet nodig."
+      "We blijven verslaafd aan fossiel en het lukt niet om hernieuwbare energie in te zetten. Misschien is het ook wel niet nodig."
     elsif s.output_6 < 0.1
-      "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en duurzame energie, maar hard gaat het niet."
+      "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en hernieuwbare energie, maar hard gaat het niet."
     elsif s.output_6 < 0.14
-      "We halen nog steeds de doelen voor duurzame energie die het kabinet in 2011 heeft gezet voor 2020 niet, maar we boeken vooruitgang."
+      "In 2050 halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
+    elsif s.output_6 < 0.50
+      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in 2050 uit hernieuwbare bronnen."
     else
-      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik."
+      "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen! Goed gedaan."
     end
     
     # Area footprint
@@ -160,14 +162,12 @@ module ScenariosHelper
     end
     
     # Energy dependence
-    out << if s.output_8 < 0.45
-      "Terwijl onze eigen aargasreserves opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen enigszins te beperken."
-    elsif s.output_8 < 0.55
-      "Onze aardgasreserves raken op en we gaan steeds meer importeren maar de stijging valt nog mee."
-    elsif s.output_8 < 0.65
-      "Onze aardgasreserves raken op en we gaan steeds meer importeren. De importafhankelijkheid neemt met meer dan 100% toe in 15 jaar."
+    out << if s.output_8 < 0.70
+      "Terwijl onze eigen aargasreserves in 2050 opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen relatief te beperken."
+    elsif s.output_8 < 0.9
+      "Onze aardgasreserves raken op en we gaan steeds meer importeren. In 2050 importeren we een groot deel van onze energie uit het buitenland."
     else
-      "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren."
+      "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren. We importeren meer dan 90% van onze energie uit het buitenland."
     end
     
     out.map{|x| "<span>#{x} </span>"}.join.html_safe
