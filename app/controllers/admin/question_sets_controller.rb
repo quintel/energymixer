@@ -1,6 +1,4 @@
-class Admin::QuestionSetsController < AdminController
-  set_tab :question_sets
-  
+class Admin::QuestionSetsController < AdminController  
   before_filter :find_question_set, :only => [:show, :edit, :update, :destroy]
   
   def index
