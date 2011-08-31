@@ -3,18 +3,17 @@
   $(function(){
     $("input.autocomplete").autocomplete({ source: input_keys });
   });
-= semantic_form_for [:admin, @answer] do |f|
-  = f.inputs do
-    = f.input :answer
-    = f.input :description
-    = f.input :ordering
-    %h3 Inputs
-    = f.semantic_fields_for :inputs do |i|
-      = i.inputs do
+= simple_form_for [:admin, @answer] do |f|
+  = f.input :answer
+  = f.input :description
+  = f.input :ordering
+  = field_set_tag "Inputs" do
+    = f.simple_fields_for :inputs do |i|
+      = field_set_tag do
         = i.input :slider_name, :as => :string, :input_html => { :class => 'autocomplete'}
         = i.input :value
         = i.input :_destroy, :as => :boolean unless i.object.new_record?
-    %h3 Conflicts
+  = field_set_tag "Conflicts" do
     %ul
       - Question.ordered.each do |q|
         %li
@@ -26,4 +25,4 @@
                 - unless @answer.question_id == q.id
                   = check_box_tag("answer[conflicting_answer_ids][]", a.id, @answer.conflicts_with?(a))
                 = a.answer
-    = f.buttons
+  = f.button :submit
