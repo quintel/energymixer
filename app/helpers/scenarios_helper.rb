@@ -119,24 +119,24 @@ module ScenariosHelper
     out = []
     # Total amount
     out << if s.total_amount < 40
-      "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel aan energie."
+      "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
     elsif s.total_amount < 60
-      "De mix wordt langzaam duurder. Maar als onze economie blijft groeien kunnen we dat wel betalen."
+      "De mix wordt langzaam duurder. Maar als onze economie blijft groeien kunnen we dat waarschijnlijk wel betalen."
     elsif s.total_amount < 80
-      "De mix wordt behoorlijk duurder. Kunnen we dat wel blijven betalen?"
+      "De mix wordt behoorlijk veel duurder. Kunnen we dat wel blijven betalen?"
     else
-      "De mix wordt veel duurder. Kunnen we dat betalen of groeien we onszelf uit de problemen?"
+      "De mix wordt veel duurder. Kunnen we dat niet meer betalen of groeien we onszelf uit de problemen?"
     end
     
     # CO2
     out << if s.output_5 < -0.25
-      "De CO2 van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
+      "De CO2-uitstoot van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
     elsif s.output_5 < -0.01
-      "De CO2 uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2 reductie wereldwijd. Maar is het genoeg?"
+      "De CO2-uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2-reductie wereldwijd. Maar is het genoeg?"
     elsif s.output_5 < 0.1
-      "De CO2 uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Maar hoe zit het met de opwarming van de aarde?"
+      "De CO2-uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Maar hoe zit het met de opwarming van de aarde?"
     else
-      "De CO2 uitstoot groeit sterk. De economie regeert. En hoe zat het ook alweer met ons klimaat?"
+      "De CO2-uitstoot groeit sterk. De economie regeert. En hoe zat het ook alweer met ons klimaat?"
     end
     
     # Share of renewable energy
@@ -149,7 +149,7 @@ module ScenariosHelper
     elsif s.output_6 < 0.50
       "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in 2050 uit hernieuwbare bronnen."
     else
-      "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen! Goed gedaan."
+      "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen!"
     end
     
     # Area footprint
