@@ -74,6 +74,8 @@ module ScenariosHelper
     end
     
     out.to_json
+  rescue
+    {}.to_json
   end
 
   def gquery_for_output(i)
