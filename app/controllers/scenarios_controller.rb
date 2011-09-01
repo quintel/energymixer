@@ -20,7 +20,7 @@ class ScenariosController < ApplicationController
       # We're using this session variable to compare the current scenario
       session[:scenario_id] = @scenario.id
       begin
-        MixerMailer.thankyou(@scenario).deliver
+        MixerMailer.thankyou(@scenario).deliver unless APP_CONFIG['standalone']
       rescue
         flash[:alert] = "There was an error sending the email"
       end
