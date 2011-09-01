@@ -21,7 +21,7 @@
       = full_text(@scenario)    
   .links
     = link_to "Bekijk de antwoorden van deze mix", answers_scenario_path(@scenario), :id => "show_answers"
-    - if @scenario.etm_scenario_id.present?
+    - if @scenario.etm_scenario_id.present? && !APP_CONFIG["standalone"]
       = link_to "Laadt deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
   - if APP_CONFIG['score']
     .score
