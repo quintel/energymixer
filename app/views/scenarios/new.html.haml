@@ -23,23 +23,26 @@
         loading...
   - if APP_CONFIG['score']
     #score
-      Score:
-      %span.value
-      .subitems
-        CO2: 
-        %span.co2
-        %br
-        Renewables: 
-        %span.renewables
-        %br
-        AreaFP: 
-        %span.areafp
-        %br
-        Import: 
-        %span.import
-        %br
-        Cost: 
-        %span.cost
+      %h3
+        Jouw score:
+      .value
+        n.n.b.
+      %ul#subscores
+        %li 
+          CO2: 
+          %span.co2
+        %li 
+          Renewables: 
+          %span.renewables
+        %li 
+          AreaFP: 
+          %span.areafp
+        %li 
+          Import: 
+          %span.import
+        %li 
+          Cost: 
+          %span.cost
             
 - content_for(:head) do
   = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
