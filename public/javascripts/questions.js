@@ -151,7 +151,7 @@ function Questions() {
   
   self.setup_cosmetic_callbacks = function(){
     // setup colorbox popups for below questions
-    $(".question .information a").not(".no_popup").not(".iframe").colorbox({
+    $(".question .information a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
       width: 600,
       opacity: 0.6
     });
