@@ -1,0 +1,48 @@
+.question{:id => "question_#{Question.count + 1}"}
+  #user_details
+    .text
+      %h2 Jouw Scenario van #{APP_CONFIG['api_session_settings'][:end_year]}
+      %p
+        Bedankt voor het invullen van de Energy Discoverer. Vul hieronder je gegevens in om de mix op te slaan en deze te vergelijken met anderen. Je ontvangt ook een email waarin je altijd later weer deze mix terug kunt vinden. 
+        
+    %h2 Vul je gegevens in:
+    = scenario.error_messages
+    
+    .item
+      = scenario.label :name, "Naam *", :class => 'required'
+      = scenario.text_field :name
+    .item
+      = scenario.label :email, "E-mail *", :class => 'required'
+      = scenario.text_field :email
+    .item
+      = scenario.label :age, "Leeftijd"
+      = scenario.text_field :age
+    .item
+      = scenario.label :title, "Naam voor je scenario"
+      = scenario.text_field :title
+    .item
+      = scenario.check_box :public
+      = scenario.label :public, "Mijn scenario is ook voor anderen toegankelijk", :class => 'check_box'
+    .item
+      = scenario.check_box :accept_terms, :checked => "checked"      
+      %label.check_box{:for => "scenario_accept_terms"}
+        Ik ga akkoord met de algemene voorwaarden
+    .item      
+      = scenario.submit :value => "Bewaar mijn mix"
+      -# .item
+      -#   = link_to "Bewaar mijn mix", "#", :class => "shell", :id => "submit", :onmouseclick => "this.form.submit();"    
+      = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
+      = scenario.hidden_field :output_1, :'data-label' => gquery_for_output(:output_1)
+      = scenario.hidden_field :output_2, :'data-label' => gquery_for_output(:output_2)
+      = scenario.hidden_field :output_3, :'data-label' => gquery_for_output(:output_3)
+      = scenario.hidden_field :output_4, :'data-label' => gquery_for_output(:output_4)
+      = scenario.hidden_field :output_5, :'data-label' => gquery_for_output(:output_5)
+      = scenario.hidden_field :output_6, :'data-label' => gquery_for_output(:output_6)
+      = scenario.hidden_field :output_7, :'data-label' => gquery_for_output(:output_7)
+      = scenario.hidden_field :output_8, :'data-label' => gquery_for_output(:output_8)
+      = scenario.hidden_field :output_9, :'data-label' => gquery_for_output(:output_9)
+      = scenario.hidden_field :output_10, :'data-label' => gquery_for_output(:output_10)
+      = scenario.hidden_field :output_11, :'data-label' => gquery_for_output(:output_11)
+      = scenario.hidden_field :output_12, :'data-label' => gquery_for_output(:output_12)
+      = scenario.hidden_field :score
+      = scenario.hidden_field :etm_scenario_id
