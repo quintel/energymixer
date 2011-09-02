@@ -12,7 +12,7 @@
     = render 'chart_top', :scenario => Scenario.current, :year => 2011
     = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
   .user_created.graph_normal
-    = render 'chart_top', :scenario => @scenario, :year => APP_CONFIG['api_session_settings'][:end_year]
+    = render 'chart_top', :scenario => @scenario, :year => END_YEAR
     = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
 
 %section#dashboard
