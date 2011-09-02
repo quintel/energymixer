@@ -27,22 +27,12 @@
         Jouw score:
       .value
         n.n.b.
-      %ul#subscores
-        %li 
-          CO2: 
-          %span.co2
-        %li 
-          Renewables: 
-          %span.renewables
-        %li 
-          AreaFP: 
-          %span.areafp
-        %li 
-          Import: 
-          %span.import
-        %li 
-          Cost: 
-          %span.cost
+      #show_info
+      %table#subscores
+        -{cost: "Kosten", co2: "Co2", renewables: "Hernieuwbaar", areafp: "Bio-voetafdruk", import: "Energie import"}.each do |key, value|
+          %tr{:class=>cycle("odd","even")}
+            %th=value
+            %td{:class=>key} 0
             
 - content_for(:head) do
   = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging

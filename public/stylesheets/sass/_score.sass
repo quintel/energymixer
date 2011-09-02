@@ -1,5 +1,6 @@
 section#dashboard
   #score
+    position: relative
     margin-top: 30px
     text-align: center
     h3
@@ -9,6 +10,30 @@ section#dashboard
       font-size: 30px
       line-height: 30px
       font-weight: bold
-  #subscores
+    #show_info
+      position: absolute
+      right: 4px
+      bottom: 2px
+      width: 20px
+      height: 20px
+      cursor: pointer
+      background: url(/images/icons/question_mark.png) no-repeat top left
+  table#subscores
     display: none
-  
+    position: absolute
+    left: 7px
+    top: 50px
+    width: 140px
+    border: 1px solid #ccc
+    tr.even
+      background-color: #e1e1e1
+    tr#total
+      font-weight: bold
+      border-top: 1px solid #ccc
+    th,td
+      padding: 2px 5px
+    th
+      text-align: left
+      border-right: 1px solid #ccc
+    td
+      text-align: right
