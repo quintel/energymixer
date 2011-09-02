@@ -1,0 +1,60 @@
+:ruby
+  def full_text(s)
+    out = []
+    # Total amount
+    out << if s.total_amount < 40
+      t(asdasdasd)
+      "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
+    elsif s.total_amount < 60
+      "De mix wordt langzaam duurder, maar als onze economie blijft groeien kunnen we dat waarschijnlijk wel betalen."
+    elsif s.total_amount < 80
+      "De mix wordt behoorlijk veel duurder. Kunnen we dat wel blijven betalen?"
+    else
+      "De mix wordt veel duurder. Kunnen we dat niet meer betalen of groeien we onszelf uit de problemen?"
+    end
+    
+    # CO2
+    out << if s.output_5 < -0.25
+      "De CO2-uitstoot van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
+    elsif s.output_5 < -0.01
+      "De CO2-uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2-reductie wereldwijd. Is het wel genoeg?"
+    elsif s.output_5 < 0.1
+      "De CO2-uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Hoe zit het met de opwarming van de aarde?"
+    else
+      "De CO2-uitstoot groeit sterk. De economie regeert. En hoe zat het ook alweer met ons klimaat?"
+    end
+    
+    # Share of renewable energy
+    out << if s.output_6 < 0.05
+      "We blijven verslaafd aan fossiel en het lukt niet om hernieuwbare energie in te zetten. Misschien is het ook wel niet nodig."
+    elsif s.output_6 < 0.1
+      "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en hernieuwbare energie, maar hard gaat het niet."
+    elsif s.output_6 < 0.14
+      "In #{END_YEAR} halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
+    elsif s.output_6 < 0.50
+      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in #{END_YEAR} uit hernieuwbare bronnen."
+    else
+      "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen!"
+    end
+    
+    # Area footprint
+    out << if s.output_7 < 0.71
+      "Ons biomassa gebruik is min of meer gelijk aan dat in 2011. Best veel eigenlijk."
+    elsif s.output_7 <= 0.91
+      "We gaan steeds meer natuur en landbouwgronden inzetten voor de produktie van biomassa."
+    else
+      "Het gebruik van biomassa groeit sterk. Hoe gaan we de landbouwgronden en natuur vinden om al deze biomassa op te telen?"
+    end
+    
+    # Energy dependence
+    out << if s.output_8 < 0.70
+      "Hoewel onze eigen aargasreserves in #{END_YEAR} opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen relatief te beperken."
+    elsif s.output_8 < 0.9
+      "Onze aardgasreserves raken op en we gaan steeds meer importeren. In #{END_YEAR} importeren we een groot deel van onze energie uit het buitenland."
+    else
+      "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren. We importeren meer dan 90% van onze energie uit het buitenland."
+    end
+    
+    out.map{|x| "<span>#{x} </span>"}.join.html_safe
+  end
+  
