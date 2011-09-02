@@ -147,9 +147,9 @@ module ScenariosHelper
     elsif s.output_6 < 0.1
       "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en hernieuwbare energie, maar hard gaat het niet."
     elsif s.output_6 < 0.14
-      "In 2050 halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
+      "In #{END_YEAR} halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
     elsif s.output_6 < 0.50
-      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in 2050 uit hernieuwbare bronnen."
+      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in #{END_YEAR} uit hernieuwbare bronnen."
     else
       "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen!"
     end
@@ -165,9 +165,9 @@ module ScenariosHelper
     
     # Energy dependence
     out << if s.output_8 < 0.70
-      "Hoewel onze eigen aargasreserves in 2050 opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen relatief te beperken."
+      "Hoewel onze eigen aargasreserves in #{END_YEAR} opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen relatief te beperken."
     elsif s.output_8 < 0.9
-      "Onze aardgasreserves raken op en we gaan steeds meer importeren. In 2050 importeren we een groot deel van onze energie uit het buitenland."
+      "Onze aardgasreserves raken op en we gaan steeds meer importeren. In #{END_YEAR} importeren we een groot deel van onze energie uit het buitenland."
     else
       "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren. We importeren meer dan 90% van onze energie uit het buitenland."
     end

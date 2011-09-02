@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
 
   def new
     @scenario = Scenario.current.clone
-    @scenario.year = APP_CONFIG['api_session_settings'][:end_year]
+    @scenario.year = END_YEAR
 
     @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name'])
     @questions    = @question_set.questions.ordered rescue []
