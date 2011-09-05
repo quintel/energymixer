@@ -35,11 +35,11 @@
             %td{:class=>key} 0
             
 - content_for(:head) do
-  = javascript_include_tag 'jquery.json-2.2.min' # for easier debugging
-  = javascript_include_tag 'jquery.jsonp-2.1.4.min' # better error handling
-  = javascript_include_tag 'jquery.busy.min'
-  = javascript_include_tag 'rails.validations'
-  = javascript_include_tag 'sprintf-0.7-beta1'
+  = javascript_include_tag 'vendor/jquery.json-2.2.min' # for easier debugging
+  = javascript_include_tag 'vendor/jquery.jsonp-2.1.4.min' # better error handling
+  = javascript_include_tag 'vendor/jquery.busy.min'
+  = javascript_include_tag 'vendor/rails.validations'
+  = javascript_include_tag 'vendor/sprintf-0.7-beta1'
   = javascript_include_tag 'mixer', 'graph', 'questions', 'score'
   :javascript
     var globals = {

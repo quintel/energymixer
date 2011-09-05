@@ -35,7 +35,7 @@
         = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
 
 - content_for :head do
-  = javascript_include_tag 'jquery.busy.min'
+  = javascript_include_tag 'vendor/jquery.busy.min'
   :javascript
     $(function(){
       // let's deal with the back button
