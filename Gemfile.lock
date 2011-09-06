@@ -35,7 +35,7 @@ GEM
       activemodel (= 3.0.10)
       activesupport (= 3.0.10)
     activesupport (3.0.10)
-    airbrake (3.0.2)
+    airbrake (3.0.3)
       activesupport
       builder
     annotate (2.4.0)
@@ -162,7 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake
+  airbrake (~> 3.0.3)
   annotate
   awesome_print
   bluecloth (~> 2.1.0)
