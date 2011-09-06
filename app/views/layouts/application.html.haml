@@ -18,5 +18,8 @@
     #content
       = yield
   %footer
-    = link_to_unless APP_CONFIG["standalone"], "http://www.energietransitiemodel.nl/", :target => "_blank" do
+    - if APP_CONFIG["standalone"]
       De #{t(APP_CONFIG['app_name'])} is gebaseerd op het Energietransitiemodel
+    - else
+      = link_to "http://www.energietransitiemodel.nl/", :target => "_blank" do
+        De #{t(APP_CONFIG['app_name'])} is gebaseerd op het Energietransitiemodel
