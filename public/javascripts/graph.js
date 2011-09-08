@@ -1,135 +1,142 @@
-function Graph() {
-  // Prevent calling the function without the new operator
-  if ( !(this instanceof arguments.callee) ) {
-    return new arguments.callee(arguments);
-  }
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:18:29 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/graph.coffee
+ */
 
-  var self = this;
-  
-  self.dashboard_steps = globals.dashboard_steps;
-  
-  // Main entry point.
-  // assumes results have been stored
-  self.refresh = function() {
-    // dashboard items
-    $.each(mixer.dashboard_values, function(key, value){
-      self.update_dashboard_item(key, value);
-    });
-    // colourful animated bar
-    self.update_bar_chart();
-  };
-  
-  self.block_interface = function() {
-    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({img: '/images/spinner.gif'});
-    q.hide_all_question_links();
-  };
-  
-  self.unblock_interface = function() {
-    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear");
-    q.update_question_links();
-  };
-    
-  // the following methods should not be called directly
-  // You might only have to update the format_dashboard_value method
-  self.update_dashboard_item = function(key, value) {
-    var dashboard_selector = "#dashboard ." + key;
-    var formatted_value = self.format_dashboard_value(key, value);
-    $(dashboard_selector + " .value").html(formatted_value);
-    // we have now to decide which image to show as background
-    // let's first find the right step
-    var step = self.find_step_for_dashboard_item(key, value);
-    // since we're doing everything through css classes, let's remove
-    // the existing background-related classes
-    var classes_to_remove = ''; // FIXME: ugly
-    for(var i = 0; i < 10; i++) { classes_to_remove += key +"_step_" + i + " "}
-    var class_to_add = key + "_step_" + step;
-    $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
-  };
-  
-  self.find_step_for_dashboard_item = function(key, value) {
-    // see DashboardItem#corresponding_step
-    var steps = self.dashboard_steps[key];
-    var step = 0;
-    for(i in steps) {
-      if(value > steps[i]) step = parseInt(i) + 1;
+(function() {
+  var __hasProp = Object.prototype.hasOwnProperty;
+  this.Graph = (function() {
+    function Graph(app) {
+      this.app = app;
+      this.dashboard_steps = window.globals.dashboard_steps;
+      this.mixer = this.app.mixer;
     }
-    return step;
-  };
-  
-  // it would be nice to define these formats in the controller but the
-  // code would become a nightmare
-  // This formatter has a ruby equivalent as a view helper
-  self.format_dashboard_value = function(key, value) {
-    var out = "";
-    switch(key) {
-      case "co2_emission_percent_change_from_1990_corrected_for_electricity_import":
-        if (value > 0) out = "+";
-        out += sprintf("%.1f", value * 100) + "%";
-        break;
-      case "area_footprint_per_nl":
-        out = sprintf("%.2f", value) + "xNL";
-        break;
-      case "share_of_renewable_energy":
-      case "energy_dependence":
-        out = sprintf("%.1f", value * 100) + "%";
-        break;
-      default:
-        out = value;
-    }
-    return out;
-  };
-  
-  // TODO: refactor
-  self.update_bar_chart = function() {
-    var current_sum = mixer.gquery_results["policy_total_energy_cost"] * 1000;
-    
-    // update the score attribute. DEBT: move to score exclusive method
-    score.values.total_amount.current = current_sum;
-    if (q.current_question == 2 && score.values.total_amount.mark === null) {
-      score.values.total_amount.mark = current_sum;
-    }
-
-    // main graph
-    var graph_max_height     = 390;
-    var max_amount           = globals.graph_max_amount / 1000000; // million euros
-    var current_graph_height = current_sum / max_amount * graph_max_height;
-    var rounded_sum          = 0;
-    $.each(mixer.carriers_values, function(code, val) {
-      var new_height = Math.round(val / current_sum * current_graph_height);
-      rounded_sum += new_height;
-      var selector = ".user_created ." + code;
-      $(selector).animate({"height": new_height}, "slow");
-      // hide text if there's no room
-      var label = $(selector + " .label");
-      new_height > 10 ? label.show() : label.hide();
-    });
-    
-    // renewable subgraph
-    var renewable_subgraph_height = 100;
-    var total_renewable_amount = mixer.carriers_values.costs_share_of_sustainable;
-    $.each(mixer.secondary_carriers_values, function(code, val) {
-      var new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height);
-      var selector = ".user_created ." + code;
-      $(selector).animate({"height": new_height}, "slow");
-      var label = $(selector + " .label");
-      new_height > 5 ? label.show() : label.hide();
-    });
-    
-    // update money column
-    var new_money_height = rounded_sum + 4 * 2; // margin between layers
-    $(".user_created .money").animate({"height" : new_money_height}, "slow");
-    
-    // and top counter
-    $(".user_created .total_amount span").html(sprintf("%.1f" ,current_sum / 1000));
-    
-    self.unblock_interface();
-  };
-  
-  self.update_etm_link = function() {
-    $("footer a").click(function(){
-      if(confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
-        $(this).attr("href", mixer.etm_scenario_url);
+    Graph.prototype.refresh = function() {
+      var key, value, _ref;
+      _ref = this.mixer.dashboard_values;
+      for (key in _ref) {
+        if (!__hasProp.call(_ref, key)) continue;
+        value = _ref[key];
+        this.update_dashboard_item(key, value);
       }
-    });
-  };            
-}
+      return this.update_bar_chart();
+    };
+    Graph.prototype.block_interface = function() {
+      $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({
+        img: '/images/spinner.gif'
+      });
+      return this.app.questions.hide_all_question_links();
+    };
+    Graph.prototype.unblock_interface = function() {
+      $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear");
+      return this.app.questions.update_question_links();
+    };
+    Graph.prototype.update_dashboard_item = function(key, value) {
+      var class_to_add, classes_to_remove, dashboard_selector, formatted_value, i, step;
+      dashboard_selector = "#dashboard ." + key;
+      formatted_value = this.format_dashboard_value(key, value);
+      $(dashboard_selector + " .value").html(formatted_value);
+      step = this.find_step_for_dashboard_item(key, value);
+      classes_to_remove = '';
+      for (i = 0; i <= 10; i++) {
+        classes_to_remove += key + "_step_" + i + " ";
+      }
+      class_to_add = key + "_step_" + step;
+      return $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
+    };
+    Graph.prototype.find_step_for_dashboard_item = function(key, value) {
+      var i, step, steps, _i, _len;
+      steps = this.dashboard_steps[key];
+      step = 0;
+      for (_i = 0, _len = steps.length; _i < _len; _i++) {
+        i = steps[_i];
+        if (value > steps[i]) {
+          step = parseInt(i) + 1;
+        }
+      }
+      return step;
+    };
+    Graph.prototype.format_dashboard_value = function(key, value) {
+      var out;
+      out = "";
+      switch (key) {
+        case "co2_emission_percent_change_from_1990_corrected_for_electricity_import":
+          if (value > 0) {
+            out = "+";
+          }
+          out += sprintf("%.1f", value * 100) + "%";
+          break;
+        case "area_footprint_per_nl":
+          out = sprintf("%.2f", value) + "xNL";
+          break;
+        case "share_of_renewable_energy":
+        case "energy_dependence":
+          out = sprintf("%.1f", value * 100) + "%";
+          break;
+        default:
+          out = value;
+      }
+      return out;
+    };
+    Graph.prototype.update_bar_chart = function() {
+      var code, current_graph_height, current_sum, graph_max_height, label, max_amount, new_height, new_money_height, renewable_subgraph_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
+      current_sum = this.mixer.gquery_results["policy_total_energy_cost"] * 1000;
+      this.app.score.values.total_amount.current = current_sum;
+      if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
+        this.app.score.values.total_amount.mark = current_sum;
+      }
+      graph_max_height = 390;
+      max_amount = globals.graph_max_amount / 1000000;
+      current_graph_height = current_sum / max_amount * graph_max_height;
+      rounded_sum = 0;
+      _ref = this.mixer.carriers_values;
+      for (code in _ref) {
+        if (!__hasProp.call(_ref, code)) continue;
+        val = _ref[code];
+        new_height = Math.round(val / current_sum * current_graph_height);
+        rounded_sum += new_height;
+        selector = ".user_created ." + code;
+        $(selector).animate({
+          "height": new_height
+        }, "slow");
+        label = $(selector + " .label");
+        if (new_height > 10) {
+          label.show();
+        } else {
+          label.hide();
+        }
+      }
+      renewable_subgraph_height = 100;
+      total_renewable_amount = this.app.mixer.carriers_values.costs_share_of_sustainable;
+      _ref2 = this.app.mixer.secondary_carriers_values;
+      for (code in _ref2) {
+        if (!__hasProp.call(_ref2, code)) continue;
+        val = _ref2[code];
+        new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height);
+        selector = ".user_created ." + code;
+        $(selector).animate({
+          "height": new_height
+        }, "slow");
+        label = $(selector + " .label");
+        if (new_height > 5) {
+          label.show();
+        } else {
+          label.hide();
+        }
+      }
+      new_money_height = rounded_sum + 4 * 2;
+      $(".user_created .money").animate({
+        "height": new_money_height
+      }, "slow");
+      $(".user_created .total_amount span").html(sprintf("%.1f", current_sum / 1000));
+      return this.unblock_interface();
+    };
+    Graph.prototype.update_etm_link = function() {
+      return $("footer a").click(function() {
+        if (confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
+          return $(this).attr("href", this.mixer.etm_scenario_url);
+        }
+      });
+    };
+    return Graph;
+  })();
+}).call(this);
