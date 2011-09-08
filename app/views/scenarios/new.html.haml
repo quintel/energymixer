@@ -28,11 +28,18 @@
       .value
         0
       #show_info
-      %table#subscores
-        -{cost: "Kosten", co2: "Co2", renewables: "Hernieuwbaar", areafp: "Bio-voetafdruk", import: "Energie import"}.each do |key, value|
-          %tr{:class=>cycle("odd","even")}
-            %th=value
-            %td{:class=>key} 0
+      .details
+        %table#subscores
+          -{cost: "Kosten", co2: "Co2", renewables: "Hernieuwbaar", areafp: "Bio-voetafdruk", import: "Energie import"}.each do |key, value|
+            %tr{:class=>cycle("odd","even")}
+              %th=value
+              %td{:class=>key} 0
+        .explanation
+          * je score is altijd nul
+          %br
+          als je vraag 1 en 2 nog
+          %br
+          niet hebt ingevuld
             
 - content_for(:head) do
   = javascript_include_tag 'vendor/jquery.json-2.2.min' # for easier debugging

@@ -14,8 +14,4 @@ $(document).ready(function(){
     $(".renewables_float").css({"top": tipY - height/2 , "left": tipX + 15});
   });
   
-  //show popup when user clicks question mark next to score
-  $("#score #show_info").click(function(){
-    $("#subscores").toggle();
-  });
 });

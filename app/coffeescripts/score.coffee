@@ -17,6 +17,7 @@ class @Score
       total_amount:
         mark: null
         current: null
+    this.setup_interface_callbacks()
   
   calculate: ->
     for own key, value of @values
@@ -52,14 +53,29 @@ class @Score
     return a + b + c + d + e
   
   show: ->
-    s = this.calculate()
-    if (s != false && @app.questions.current_question > 2)
-      $("#dashboard #score .value").html(parseInt(s))
+    @score = this.calculate()
+    if (@score != false && @app.questions.current_question > 2)
+      $("#dashboard #score .value").html(parseInt(@score))
       $("#dashboard #score").show()
-      $("input#scenario_score").val(s)
+      $("input#scenario_score").val(@score)
+      $("#score .explanation").hide() if !this.should_show_score_explanation()
       
       # update subscore, too
       # current_questions starts with 1, while rails nested attributes with 0
       current_question_dom_id = @app.questions.current_question - 1
       input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score"
-      $(input_selector).val(s)
+      $(input_selector).val(@score)
+  
+  setup_interface_callbacks: ->
+    # show popup when user clicks question mark next to score
+    $("#score #show_info").click =>
+      $("#score .details").toggle()
+      if this.should_show_score_explanation()
+        $("#score .explanation").show()
+      else
+        $("#score .explanation").hide()
+        
+  should_show_score_explanation: ->
+    console.log "Score: #{@score}"
+    console.log "question: #{@app.questions.current_question}"
+    @score == false && @app.questions.current_question <= 2
