@@ -37,7 +37,7 @@
     = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
   
 - content_for :head do
-  = javascript_include_tag 'home.animation', 'vendor/sprintf-0.7-beta1'
+  = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
   :javascript
     var globals = {
       carriers: #{carriers_to_json}
