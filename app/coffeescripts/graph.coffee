@@ -24,9 +24,9 @@ class @Graph
   # the following methods should not be called directly
   # You might only have to update the format_dashboard_value method
   update_dashboard_item: (key, value) ->
-    dashboard_selector = "#dashboard ." + key
+    dashboard_selector = "#dashboard .#{key}"
     formatted_value = this.format_dashboard_value(key, value)
-    $(dashboard_selector + " .value").html(formatted_value)
+    $("#{dashboard_selector} .value").html(formatted_value)
     # we have now to decide which image to show as background
     # let's first find the right step
     step = this.find_step_for_dashboard_item(key, value)
@@ -34,8 +34,8 @@ class @Graph
     # the existing background-related classes
     classes_to_remove = '' # FIXME: ugly
     for i in [0..10]
-      classes_to_remove += key + "_step_" + i + " "
-    class_to_add = key + "_step_" + step
+      classes_to_remove += "#{key}_step_#{i} "
+    class_to_add = "#{key}_step_#{step}"
     $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add)
   
   find_step_for_dashboard_item: (key, value) ->
@@ -43,7 +43,7 @@ class @Graph
     steps = @dashboard_steps[key];
     step = 0;
     for i in steps
-      step = (parseInt(i) + 1) if(value > steps[i])
+      step += 1 if (value > i)
     return step
   
   # it would be nice to define these formats in the controller but the
