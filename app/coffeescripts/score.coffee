@@ -76,6 +76,4 @@ class @Score
         $("#score .explanation").hide()
         
   should_show_score_explanation: ->
-    console.log "Score: #{@score}"
-    console.log "question: #{@app.questions.current_question}"
     @score == false && @app.questions.current_question <= 2

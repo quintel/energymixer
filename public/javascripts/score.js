@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 14:49:26 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:07:31 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -99,8 +99,6 @@
       }, this));
     };
     Score.prototype.should_show_score_explanation = function() {
-      console.log("Score: " + this.score);
-      console.log("question: " + this.app.questions.current_question);
       return this.score === false && this.app.questions.current_question <= 2;
     };
     return Score;

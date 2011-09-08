@@ -14,7 +14,7 @@ class @Questions
   # question methods
   #
   current_question_was_answered: ->
-    question_id = "#question_" + @current_question
+    question_id = "#question_#{@current_question}"
     answer = $(question_id).find("input:checked")
     return answer.length > 0
   
@@ -92,7 +92,7 @@ class @Questions
     $(question_id).show()
     # update top row
     $(".question_tab").removeClass('active')
-    tab_selector = ".question_tab[data-question_id=" + self.current_question + "]"
+    tab_selector = ".question_tab[data-question_id=#{@current_question}]"
     $(tab_selector).addClass('active')
     this.update_question_links()
     
@@ -100,7 +100,7 @@ class @Questions
     question_text = $.trim($(question_id).find("div.text").text())
     if (@current_question == this.count_questions())
       question_text = "Saving scenario"
-    event_label = "" + @current_question + " : " + question_text
+    event_label = "#{@current_question} : #{question_text}"
     this.track_event('opens_question', question_text, @current_question)
   
   # callbacks
