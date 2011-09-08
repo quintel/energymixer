@@ -40,7 +40,8 @@ function Mixer() {
       dataType: 'jsonp',
       data: { settings : globals.api_session_settings },
       success: function(data){
-        var key = data.api_scenario.api_session_key;
+        // the next ETE release will use id as key
+        var key = data.api_scenario.id || data.api_scenario.api_session_key;
         self.session_id = self.scenario_id = key;
         self.etm_scenario_url = globals.etm_scenario_base_url + '/' + self.scenario_id + "/load?locale=nl";
         graph.update_etm_link();
