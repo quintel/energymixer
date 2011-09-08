@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 14:10:15 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/graph.coffee
  */
 
@@ -12,7 +12,6 @@
     }
     Graph.prototype.refresh = function() {
       var key, value, _ref;
-      console.log("Refreshing");
       _ref = this.mixer.dashboard_values;
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
@@ -47,8 +46,6 @@
     Graph.prototype.find_step_for_dashboard_item = function(key, value) {
       var i, step, steps, _i, _len;
       steps = this.dashboard_steps[key];
-      console.log("" + value);
-      console.log(steps);
       step = 0;
       for (_i = 0, _len = steps.length; _i < _len; _i++) {
         i = steps[_i];
@@ -56,7 +53,6 @@
           step += 1;
         }
       }
-      console.log(step);
       return step;
     };
     Graph.prototype.format_dashboard_value = function(key, value) {
@@ -102,7 +98,7 @@
         $(selector).animate({
           "height": new_height
         }, "slow");
-        label = $(selector + " .label");
+        label = $("" + selector + " .label");
         if (new_height > 10) {
           label.show();
         } else {
@@ -120,7 +116,7 @@
         $(selector).animate({
           "height": new_height
         }, "slow");
-        label = $(selector + " .label");
+        label = $("" + selector + " .label");
         if (new_height > 5) {
           label.show();
         } else {

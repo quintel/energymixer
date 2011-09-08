@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 14:16:29 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -29,7 +29,7 @@
         return this.session_id;
       }
       $.ajax({
-        url: this.base_path + "/new.json",
+        url: "" + this.base_path + "/new.json",
         dataType: 'jsonp',
         data: {
           settings: globals.api_session_settings
@@ -38,7 +38,7 @@
           var key;
           key = data.api_scenario.id || data.api_scenario.api_session_key;
           this.session_id = this.scenario_id = key;
-          this.etm_scenario_url = globals.etm_scenario_base_url + '/' + this.scenario_id + "/load?locale=nl";
+          this.etm_scenario_url = "" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl";
           this.app.graph.update_etm_link();
           $.logThis("Fetched new session Key: " + key);
           return this.make_request();
@@ -50,10 +50,10 @@
       return this.session_id;
     };
     Mixer.prototype.base_path_with_session_id = function() {
-      return this.base_path + "/" + this.fetch_session_id();
+      return "" + this.base_path + "/" + (this.fetch_session_id());
     };
     Mixer.prototype.json_path_with_session_id = function() {
-      return this.base_path_with_session_id() + ".json";
+      return "" + (this.base_path_with_session_id()) + ".json";
     };
     Mixer.prototype.store_results = function() {
       var code, index, key, raw_results, results, value, _ref, _ref2, _ref3, _results;

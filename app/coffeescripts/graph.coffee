@@ -80,10 +80,10 @@ class @Graph
     for own code, val of @mixer.carriers_values
       new_height = Math.round(val / current_sum * current_graph_height)
       rounded_sum += new_height
-      selector = ".user_created ." + code
+      selector = ".user_created .#{code}"
       $(selector).animate({"height": new_height}, "slow")
       # hide text if there's no room
-      label = $(selector + " .label")
+      label = $("#{selector} .label")
       if (new_height > 10) then label.show() else label.hide()
     
     # renewable subgraph
@@ -91,9 +91,9 @@ class @Graph
     total_renewable_amount = @app.mixer.carriers_values.costs_share_of_sustainable
     for own code, val of @app.mixer.secondary_carriers_values
       new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height)
-      selector = ".user_created ." + code
+      selector = ".user_created .#{code}"
       $(selector).animate({"height": new_height}, "slow")
-      label = $(selector + " .label")
+      label = $("#{selector} .label")
       if (new_height > 5) then label.show() else label.hide()
     
     # update money column

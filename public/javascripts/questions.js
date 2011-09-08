@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:14:31 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -104,7 +104,7 @@
       question_id = "#question_" + this.current_question;
       $(question_id).show();
       $(".question_tab").removeClass('active');
-      tab_selector = ".question_tab[data-question_id=" + self.current_question + "]";
+      tab_selector = ".question_tab[data-question_id=" + this.current_question + "]";
       $(tab_selector).addClass('active');
       this.update_question_links();
       question_text = $.trim($(question_id).find("div.text").text());

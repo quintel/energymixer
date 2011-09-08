@@ -25,15 +25,15 @@ class @Mixer
   fetch_session_id: ->
     return @session_id if @session_id
     $.ajax(
-      url: @base_path + "/new.json"
+      url: "#{@base_path}/new.json"
       dataType: 'jsonp'
       data: { settings : globals.api_session_settings }
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @session_id = @scenario_id = key
-        @etm_scenario_url = globals.etm_scenario_base_url + '/' + @scenario_id + "/load?locale=nl"
+        @etm_scenario_url = "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
         @app.graph.update_etm_link()
-        $.logThis("Fetched new session Key: " + key)
+        $.logThis("Fetched new session Key: #{key}")
         # show data for the first time
         this.make_request()
       error: (request, status, error) -> 
@@ -42,10 +42,10 @@ class @Mixer
     return @session_id
   
   base_path_with_session_id: ->
-    @base_path + "/" + this.fetch_session_id()
+    "#{@base_path}/#{this.fetch_session_id()}"
   
   json_path_with_session_id: ->
-    this.base_path_with_session_id() + ".json"
+    "#{this.base_path_with_session_id()}.json"
       
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
@@ -56,7 +56,7 @@ class @Mixer
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
-      $("input[type=hidden][data-label="+key+"]").val(value)
+      $("input[type=hidden][data-label=#{key}]").val(value)
       @gquery_results[key] = value
 
     # total cost is used fairly often, let's save it in the mixer object
