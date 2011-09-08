@@ -1,9 +1,9 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:14:31 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 14:49:26 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
 (function() {
-  var __hasProp = Object.prototype.hasOwnProperty;
+  var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   this.Score = (function() {
     function Score(app) {
       this.app = app;
@@ -29,6 +29,7 @@
           current: null
         }
       };
+      this.setup_interface_callbacks();
     }
     Score.prototype.calculate = function() {
       var a, b, c, d, e, key, v, value, _ref;
@@ -73,16 +74,34 @@
       return a + b + c + d + e;
     };
     Score.prototype.show = function() {
-      var current_question_dom_id, input_selector, s;
-      s = this.calculate();
-      if (s !== false && this.app.questions.current_question > 2) {
-        $("#dashboard #score .value").html(parseInt(s));
+      var current_question_dom_id, input_selector;
+      this.score = this.calculate();
+      if (this.score !== false && this.app.questions.current_question > 2) {
+        $("#dashboard #score .value").html(parseInt(this.score));
         $("#dashboard #score").show();
-        $("input#scenario_score").val(s);
+        $("input#scenario_score").val(this.score);
+        if (!this.should_show_score_explanation()) {
+          $("#score .explanation").hide();
+        }
         current_question_dom_id = this.app.questions.current_question - 1;
         input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
-        return $(input_selector).val(s);
+        return $(input_selector).val(this.score);
       }
+    };
+    Score.prototype.setup_interface_callbacks = function() {
+      return $("#score #show_info").click(__bind(function() {
+        $("#score .details").toggle();
+        if (this.should_show_score_explanation()) {
+          return $("#score .explanation").show();
+        } else {
+          return $("#score .explanation").hide();
+        }
+      }, this));
+    };
+    Score.prototype.should_show_score_explanation = function() {
+      console.log("Score: " + this.score);
+      console.log("question: " + this.app.questions.current_question);
+      return this.score === false && this.app.questions.current_question <= 2;
     };
     return Score;
   })();

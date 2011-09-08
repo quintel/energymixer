@@ -20,22 +20,28 @@ body.score_enabled
         height: 20px
         cursor: pointer
         background: url(/images/icons/question_mark.png) no-repeat top left
-    table#subscores
-      display: none
-      position: absolute
-      left: 7px
-      top: 50px
-      width: 140px
-      border: 1px solid #ccc
-      tr.even
-        background-color: #e1e1e1
-      tr#total
-        font-weight: bold
-        border-top: 1px solid #ccc
-      th,td
-        padding: 2px 5px
-      th
-        text-align: left
-        border-right: 1px solid #ccc
-      td
-        text-align: right
+      .details
+        display: none
+        .explanation
+          position: absolute
+          left: 10px
+          top: 140px
+          text-align: left
+        table#subscores
+          position: absolute
+          left: 7px
+          top: 50px
+          width: 140px
+          border: 1px solid #ccc
+          tr.even
+            background-color: #e1e1e1
+          tr#total
+            font-weight: bold
+            border-top: 1px solid #ccc
+          th,td
+            padding: 2px 5px
+          th
+            text-align: left
+            border-right: 1px solid #ccc
+          td
+            text-align: right
