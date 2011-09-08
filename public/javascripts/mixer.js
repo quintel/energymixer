@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:17:39 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:38:22 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -161,9 +161,6 @@
       }
       this.build_parameters();
       return this.parameters;
-    };
-    Mixer.prototype.debug_parameters = function() {
-      return $.logThis("Current parameters : " + $.toJSON(this.parameters));
     };
     Mixer.prototype.refresh = function() {
       this.process_form();

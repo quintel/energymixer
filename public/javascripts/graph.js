@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 13:18:29 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 14:10:15 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/graph.coffee
  */
 
@@ -12,6 +12,7 @@
     }
     Graph.prototype.refresh = function() {
       var key, value, _ref;
+      console.log("Refreshing");
       _ref = this.mixer.dashboard_values;
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
@@ -34,25 +35,28 @@
       var class_to_add, classes_to_remove, dashboard_selector, formatted_value, i, step;
       dashboard_selector = "#dashboard ." + key;
       formatted_value = this.format_dashboard_value(key, value);
-      $(dashboard_selector + " .value").html(formatted_value);
+      $("" + dashboard_selector + " .value").html(formatted_value);
       step = this.find_step_for_dashboard_item(key, value);
       classes_to_remove = '';
       for (i = 0; i <= 10; i++) {
-        classes_to_remove += key + "_step_" + i + " ";
+        classes_to_remove += "" + key + "_step_" + i + " ";
       }
-      class_to_add = key + "_step_" + step;
+      class_to_add = "" + key + "_step_" + step;
       return $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
     };
     Graph.prototype.find_step_for_dashboard_item = function(key, value) {
       var i, step, steps, _i, _len;
       steps = this.dashboard_steps[key];
+      console.log("" + value);
+      console.log(steps);
       step = 0;
       for (_i = 0, _len = steps.length; _i < _len; _i++) {
         i = steps[_i];
-        if (value > steps[i]) {
-          step = parseInt(i) + 1;
+        if (value > i) {
+          step += 1;
         }
       }
+      console.log(step);
       return step;
     };
     Graph.prototype.format_dashboard_value = function(key, value) {

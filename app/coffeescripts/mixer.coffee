@@ -52,12 +52,13 @@ class @Mixer
   store_results: ->
     results = @results.result
     
+    
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
       $("input[type=hidden][data-label="+key+"]").val(value)
       @gquery_results[key] = value
-    
+
     # total cost is used fairly often, let's save it in the mixer object
     @total_cost = results["policy_total_energy_cost"][1][1]
     
@@ -78,7 +79,6 @@ class @Mixer
       @app.score.values[code].current = value
       if (@app.questions.current_question == 2 && @app.score.values[code].mark == null)
         @app.score.values[code].mark = value;
-  
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: (hash) ->
@@ -132,9 +132,6 @@ class @Mixer
       @user_answers.push([question_id, parseInt(obj.val())])
     this.build_parameters()
     return @parameters
-
-  debug_parameters: ->
-    $.logThis("Current parameters : " + $.toJSON(@parameters))
   
   # parses form, prepares parametes, makes ajax request and refreshes the graph
   # called every time the user selects an answer
