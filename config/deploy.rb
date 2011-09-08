@@ -28,7 +28,7 @@ task :to_gasmixer do
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
-  set :branch, "gasmixer"
+  set :branch, "gasmixer30"
 end
 
 task :to_shell2050 do
