@@ -1,7 +1,7 @@
 nl:
   mixer2050: EnergyMixer
   energymixer: EnergyMixer
-  gasmixer: GasMixer
+  gasmixer: NRG-Discovery
   3d_view: 3D
   coal: Steenkool
   compare_scenarios: Vergelijk scenarios
