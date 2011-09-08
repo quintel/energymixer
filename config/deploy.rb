@@ -15,7 +15,7 @@ ssh_options[:forward_agent] = true
 set :use_sudo, false
 set :rvm_ruby_string, '1.9.2'
 
-task :to_shell do
+task :shell do
   set :domain, "79.125.109.178"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
@@ -23,7 +23,7 @@ task :to_shell do
   set :branch, "shell"
 end
 
-task :to_gasmixer do
+task :gasmixer do
   set :domain, "46.137.111.149"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
@@ -31,7 +31,7 @@ task :to_gasmixer do
   set :branch, "gasmixer"
 end
 
-task :to_shell2050 do
+task :shell2050 do
   set :domain, "ec2-46-137-41-76.eu-west-1.compute.amazonaws.com"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
