@@ -177,7 +177,7 @@ class @Questions
       @app.mixer.refresh()
       this.check_conflicts()
     
-    $("form").submit ->
+    $("form").submit =>
       # update the scenario id hidden field
       $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
   

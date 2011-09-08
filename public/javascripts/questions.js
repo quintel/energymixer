@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:37:02 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -192,9 +192,9 @@
         this.app.mixer.refresh();
         return this.check_conflicts();
       }, this));
-      return $("form").submit(function() {
+      return $("form").submit(__bind(function() {
         return $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
-      });
+      }, this));
     };
     Questions.prototype.clear_the_form = function() {
       return $('form')[0].reset();
