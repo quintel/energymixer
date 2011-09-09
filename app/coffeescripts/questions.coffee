@@ -123,8 +123,8 @@ class @Questions
       this.show_right_question()
       return false
 
-    $("#questions nav#up a, #admin_menu a").click ->
-      question_id = $(this).data('question_id')
+    $("#questions nav#up a, #admin_menu a").click (e) =>
+      question_id = $(e.target).data('question_id')
       @current_question = question_id
       this.show_right_question()
       return false
