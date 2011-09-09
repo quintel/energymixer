@@ -14,7 +14,8 @@
     = csrf_meta_tag
     = yield :head
     = render "layouts/javascript_unselectable"
-  %body{:id => "#{controller.controller_name}_#{controller.action_name}", :class => [controller.controller_name, APP_CONFIG['score'] && 'score_enabled']}
+  %body{:id => "#{controller.controller_name}_#{controller.action_name}",
+        :class => [controller.controller_name, APP_CONFIG['app_name'], APP_CONFIG['score'] && 'score_enabled']}
     #content
       = yield
   %footer
