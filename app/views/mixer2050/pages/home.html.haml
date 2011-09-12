@@ -8,11 +8,11 @@
   = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
   
 %section#map
-  .intro
+  #intro
     %h3 Dit is het energieverbruik van Nederland in 2011
     %p
       In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkol. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkol. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de Energy Future Mix van Nederland er over 40 jaar uit zal zien? Maak met de Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
-  .graph
+  #graph
     .graph_normal
       = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
       = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}

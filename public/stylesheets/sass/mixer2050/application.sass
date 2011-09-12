@@ -3,12 +3,22 @@
 @mixin shell_gradient_layer
   @include gradient(#FEFFFE, #E9E9E9)
   border: 1px solid #FEFFFE
-  @include shadow(#EBEBEB)
+  @include shadow(#D8D8D8, 8px)
 
 body.mixer2050
+  .graph_normal
+    .total_amount
+      background: #0B3375
+      color: #fff
+      border: 1px solid #ffffff
+      @include shadow(#D8D8D8, 5px)
+  
   &#pages_home
     #intro_text
       @include shell_gradient_layer
+      h2
+        font-size: 30px
+        letter-spacing: -1px
     #actions
       padding: 15px 10px
       a
@@ -21,8 +31,8 @@ body.mixer2050
         font-weight: bold
         font-size: 14px
         margin: 10px 0
-      .intro
-      .graph
+      #intro
+      #graph
         float: right
       #sectors
         width: 220px
