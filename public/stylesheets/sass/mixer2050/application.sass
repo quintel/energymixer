@@ -101,4 +101,59 @@ body.mixer2050
         line-height: 28px
         text-align: center
         @include shell_gradient_layer
+
+
+  &#scenarios_index
+    section#left
+      width: 435px
+      float: left
+      margin-right: 10px
+      section#search
+        padding: 10px
+        @include shell_gradient_layer
+        h3
+          margin: 15px 0
+          font-weight: bold
+          font-size: 14px
+        input
+          width: 390px
+          padding: 5px
+    section#right
+      width: 435px
+      float: left
+      section#select
+        height: 300px
+        padding: 10px
+        @include shell_gradient_layer
+        h3
+          font-weight: bold
+          font-size: 14px
+          margin: 10px 0
+
+    .scenario
+      @include shell_gradient_layer
+      position: relative
+      width: 405px
+      padding: 5px 5px 5px 20px
+      margin: 5px 0
+      height: 49px
+      border-bottom: 1px solid #CCCCCC
+      // background: transparent url(/images/graph_icon.png) center left no-repeat
+      .actions
+        width: 120px
+        float: right
+        font-weight: bold
+        .show
+          padding: 5px
+          a
+            @include link_arrow_prefix
+      .name
+        font-size: 13px
+        font-weight: bold
+        margin-bottom: 4px
+        margin-top: 15px
+      .date
+        color: #777
+        font-size: .9em
+
 @import 'stack'
