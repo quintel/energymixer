@@ -6,7 +6,7 @@ class @Questions
       # show the final form tab
       @current_question = this.count_questions()
     else
-      @current_question = 1;
+      @current_question = 1
     this.setup_callbacks()
     this.show_right_question()
     this.clear_the_form()
@@ -32,8 +32,8 @@ class @Questions
   # this method to alert the user about conflicting answers
   get_question_id_from_answer: (answer_id) ->
     @answers2questions = {}
-    $("div.question input:checked").each (el) ->
-      @answers2questions[$(this).val()] = $(this).data('question_number');
+    for e in $("div.question input:checked")
+      @answers2questions[$(e).val()] = $(e).data('question_number')
     return @answers2questions[answer_id]
   
   check_conflicts: ->
