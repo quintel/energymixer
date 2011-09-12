@@ -49,18 +49,18 @@ body.mixer2050
       nav#up
         @include shell_gradient_layer
     #results
-      width: 380px
+      width: 360px
       height: 430px
+      margin-right: 10px
       @include shell_gradient_layer
       .header
-        height: 38px
+        height: 30px
         background: #0B3375
         color: #fff
         border: 1px solid #ffffff
         text-align: center
         font-weight: bold
         line-height: 28px
-        
       .subheader
         height: 30px
         color: #0B3375
@@ -71,17 +71,33 @@ body.mixer2050
       .user_created
         width: 210px
         float: left
-        border-left: 1px solid #D0D1D1
+        margin-left: 0
       #dashboard
-        width: 140px
+        width: 150px
         float: left
         .dashboard_items
           background-color: #CFD1D0
           .dashboard_item
-            background-color: transparent
+            background-color: #F8F8F8
             height: 88px
-            width: 146px
+            width: 148px
             margin: 1px
     #current_graph
       width: 75px
       float: left
+      height: 430px
+      @include shell_gradient_layer
+      .header
+        border: 1px solid #ffffff
+        height: 30px
+        color: #ffffff
+        text-align: center
+        @include gradient(#919191, #BABABA)
+        @include shadow(#D8D8D8, 8px)
+      .subheader
+        height: 30px
+        color: #A1A1A1
+        line-height: 28px
+        text-align: center
+        @include shell_gradient_layer
+@import 'stack'

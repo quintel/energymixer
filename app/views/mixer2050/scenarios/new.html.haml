@@ -25,8 +25,11 @@
             loading...
         
 %section#current_graph.graph_shaded
-  =# render 'chart_top', :scenario => Scenario.current, :year => 2011
-  =# render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
+  .header
+    Energy Mix 2011
+  .subheader
+    XXX Miljard
+  = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
 
 = render 'js_init'            
 
