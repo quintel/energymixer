@@ -1,0 +1,36 @@
+%section#intro_text
+  %h2 ENERGY MIXER
+  %p
+    De Energy Mixer is een online tool waarmee u uw kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op uw idee over de energiemix in 2050, kunt u zien wat de gevolgen zijn van uw beslissingen voor prijs, duurzazmheid en beschikbaarheid.
+
+%section#actions
+  = link_to "Bekijk de EnergyMixes van anderen", scenarios_path, :class => 'shell'
+  = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
+  
+%section#map
+  .intro
+    %h3 Dit is het energieverbruik van Nederland in 2011
+    %p
+      In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkol. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkol. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de Energy Future Mix van Nederland er over 40 jaar uit zal zien? Maak met de Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
+  .graph
+    .graph_normal
+      = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
+      = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
+  .sectors
+    %h3 Sectoren
+    .sector
+      %a.shell{:href => '#'} Vervoer
+    .sector
+      %a.shell{:href => '#'} Landbouw
+    .sector
+      %a.shell{:href => '#'} Industrie
+    .sector
+      %a.shell{:href => '#'} Gebouwen
+  .map
+  
+- content_for :head do
+  = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
+  :javascript
+    var globals = {
+      carriers: #{carriers_to_json}
+    }
