@@ -1,0 +1,32 @@
+@import '../mixins'
+
+@mixin shell_gradient_layer
+  @include gradient(#FEFFFE, #E9E9E9)
+  border: 1px solid #FEFFFE
+  @include shadow(#EBEBEB)
+
+body.mixer2050
+  &#pages_home
+    #intro_text
+      @include shell_gradient_layer
+    #actions
+      padding: 15px 10px
+      a
+        margin-right: 50px
+    #map
+      height: 509px
+      padding: 15px 10px
+      @include shell_gradient_layer
+      h3
+        font-weight: bold
+        font-size: 14px
+        margin: 10px 0
+      .intro
+      .graph
+        float: right
+      .sectors
+        width: 220px
+        .sector
+          margin: 2px 4px
+          width: 100px
+          float: left
