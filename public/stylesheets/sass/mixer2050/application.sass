@@ -6,6 +6,7 @@
   @include shadow(#D8D8D8, 8px)
 
 body.mixer2050
+  width: 890px
   .graph_normal
     .total_amount
       background: #0B3375
@@ -40,3 +41,47 @@ body.mixer2050
           margin: 2px 4px
           width: 100px
           float: left
+  &#scenarios_new
+    #questions
+      @include shell_gradient_layer
+      margin-right: 10px
+      height: 430px
+      nav#up
+        @include shell_gradient_layer
+    #results
+      width: 380px
+      height: 430px
+      @include shell_gradient_layer
+      .header
+        height: 38px
+        background: #0B3375
+        color: #fff
+        border: 1px solid #ffffff
+        text-align: center
+        font-weight: bold
+        line-height: 28px
+        
+      .subheader
+        height: 30px
+        color: #0B3375
+        line-height: 28px
+        text-align: center
+        font-weight: bold
+        @include shell_gradient_layer
+      .user_created
+        width: 210px
+        float: left
+        border-left: 1px solid #D0D1D1
+      #dashboard
+        width: 140px
+        float: left
+        .dashboard_items
+          background-color: #CFD1D0
+          .dashboard_item
+            background-color: transparent
+            height: 88px
+            width: 146px
+            margin: 1px
+    #current_graph
+      width: 75px
+      float: left

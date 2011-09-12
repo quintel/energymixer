@@ -1,0 +1,35 @@
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    Maak een eigen EnergyMix
+
+%section#questions
+  = render 'questions'
+
+%section#results
+  .header
+    Uw Energy Mix van #{END_YEAR}
+  .user_created.graph_normal
+    .subheader
+      Kosten XX Miljard
+    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
+  %section#dashboard
+    .subheader
+      Effect
+    .dashboard_items
+      - DashboardItem.ordered.each do |item|
+        .dashboard_item{:class => item.gquery}
+          %h3= t(item.label).html_safe
+          .value
+            loading...
+        
+%section#current_graph.graph_shaded
+  =# render 'chart_top', :scenario => Scenario.current, :year => 2011
+  =# render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
+
+= render 'js_init'            
+
+%div#tooltip
+  %h3 Title
+  %div Hier komt de kleine tooltip (popup)!
