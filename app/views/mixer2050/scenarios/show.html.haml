@@ -1,0 +1,73 @@
+= render 'scenario_text'
+
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    = link_to "Bekijk de Mixes van anderen", scenarios_path
+    >
+    = @scenario.name
+
+
+%section#left
+  = render 'search_scenario_box'
+  .text
+    - unless @scenario.title.blank?
+      .title
+        %h1{:style=>"font-size:1.2em;"}= "'#{@scenario.title}'"
+    .name
+      De mix van #{@scenario.name}
+      - if @scenario.age
+        (#{@scenario.age} jaar)
+    .content
+      = full_text(@scenario)
+  .links
+    = link_to "Bekijk de antwoorden van deze mix", answers_scenario_path(@scenario), :id => "show_answers"
+    - if @scenario.etm_scenario_id.present? && !APP_CONFIG["standalone"]
+      = link_to "Laadt deze mix in het Energietransitiemodel.nl", scenario_in_etm_url(@scenario), :target => '_new'
+
+
+%section#right.graph
+  .text
+    = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
+  .charts
+    .left
+      .header
+        = @scenario.name
+        \-
+        Energy Mix van #{END_YEAR}
+      .user.graph_normal
+        .subheader
+          Kosten &euro;XXXXX Miljard
+        = render 'scenarios/chart', :scenario => @scenario
+      .boxes
+        .subheader
+          Effect
+        .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
+          %h3= t(dashboard_label_for_output(:output_5)).html_safe
+          .value= format_dashboard_value(:output_5, @scenario.output_5)
+        .dashboard_item{:class => set_class_for_output(:output_6, @scenario.output_6)}
+          %h3= t(dashboard_label_for_output(:output_6)).html_safe
+          .value= format_dashboard_value(:output_6, @scenario.output_6)
+        .dashboard_item{:class => set_class_for_output(:output_7, @scenario.output_7)}
+          %h3= t(dashboard_label_for_output(:output_7)).html_safe
+          .value= format_dashboard_value(:output_7, @scenario.output_7)
+        .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
+          %h3= t(dashboard_label_for_output(:output_8)).html_safe
+          .value= format_dashboard_value(:output_8, @scenario.output_8)
+    .right
+      .current.graph_shaded
+        .header Energy Mix 2011
+        .subheader &euro;XXX Miljard
+        = render 'scenarios/chart', :scenario => Scenario.current, :width => 50
+
+- content_for :head do
+  -#TODO: move this javascript to a js-file
+  :javascript
+    $(function(){
+      $("#show_answers").colorbox({
+        width: "600px",
+        height: "650px",
+        opacity: 0.6
+      });
+    });
