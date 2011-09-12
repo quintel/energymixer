@@ -101,7 +101,8 @@ body.mixer2050 {
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
     margin-right: 10px;
     height: 430px;
-    width: 429px; }
+    width: 429px;
+    overflow: auto; }
     body.mixer2050#scenarios_new #questions nav#up {
       background-color: #fefffe;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
