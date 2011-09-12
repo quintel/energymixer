@@ -16,15 +16,15 @@
     .graph_normal
       = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
       = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
-  .sectors
+  #sectors
     %h3 Sectoren
-    .sector
+    .sector#transport
       %a.shell{:href => '#'} Vervoer
-    .sector
+    .sector#agriculture
       %a.shell{:href => '#'} Landbouw
-    .sector
+    .sector#industry
       %a.shell{:href => '#'} Industrie
-    .sector
+    .sector#buildings
       %a.shell{:href => '#'} Gebouwen
   .map
   
