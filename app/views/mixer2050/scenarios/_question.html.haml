@@ -8,6 +8,8 @@
     = question_object.number
   .text
     = raw question_object.question
+    = link_to_function '[INFO]', '$(this).parent().parent().find(".information").toggle()'
+    
   %ul.answers
     - question_object.answers.ordered.each_with_index do |a, index|
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}
