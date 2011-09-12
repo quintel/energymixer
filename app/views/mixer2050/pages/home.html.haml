@@ -7,7 +7,7 @@
   = link_to "Bekijk de EnergyMixes van anderen", scenarios_path, :class => 'shell'
   = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
   
-%section#map
+%section#main
   #intro
     %h3 Dit is het energieverbruik van Nederland in 2011
     %p
@@ -16,17 +16,22 @@
     .graph_normal
       = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
       = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
-  #sectors
-    %h3 Sectoren
-    .sector#transport
-      %a.shell{:href => '#'} Vervoer
-    .sector#agriculture
-      %a.shell{:href => '#'} Landbouw
-    .sector#industry
-      %a.shell{:href => '#'} Industrie
-    .sector#buildings
-      %a.shell{:href => '#'} Gebouwen
-  .map
+  #map
+    #sector_icons
+      #buildings
+      #industry
+      #transport
+      #agriculture
+    #sectors
+      %h3 Sectoren
+      .sector#transport
+        %a.shell{:href => '#'} Vervoer
+      .sector#agriculture
+        %a.shell{:href => '#'} Landbouw
+      .sector#industry
+        %a.shell{:href => '#'} Industrie
+      .sector#buildings
+        %a.shell{:href => '#'} Gebouwen
   
 - content_for :head do
   = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'

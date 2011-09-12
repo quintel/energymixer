@@ -24,7 +24,7 @@ body.mixer2050
       padding: 15px 10px
       a
         margin-right: 50px
-    #map
+    section#main
       height: 509px
       padding: 15px 10px
       @include shell_gradient_layer
@@ -35,12 +35,50 @@ body.mixer2050
       #intro
       #graph
         float: right
-      #sectors
-        width: 220px
-        .sector
-          margin: 2px 4px
-          width: 100px
+      #map
+        margin-top: 20px
+        position: relative
+        width: 672px
+        height: 386px
+        background: url("/images/layout/map_of_the_netherlands.png")
+        #sector_icons
+          div
+            position: absolute
+          #buildings
+            background: url("/images/layout/buildings_icon.png")
+            width: 102px
+            height: 75px
+            left: 500px
+            top: 20px
+          #agriculture
+            background: url("/images/layout/agriculture_icon.png")
+            width: 121px
+            height: 71px            
+            left: 300px
+            top: 202px
+          #industry
+            background: url("/images/layout/industry_icon.png")
+            width: 124px
+            height: 89px            
+            left: 168px
+            top: 110px
+          #transport
+            background: url("/images/layout/transport_icon.png")
+            width: 124px
+            height: 60px            
+            top: 110px
+            left: 319px
+        #sectors
+          position: absolute
+          left: 0
+          top: 0
+          width: 220px
           float: left
+          .sector
+            margin: 2px 4px
+            width: 100px
+            float: left
+        
   &#scenarios_new
     #questions
       @include shell_gradient_layer
