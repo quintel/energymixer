@@ -124,6 +124,7 @@ body.mixer2050
       section#select
         height: 300px
         padding: 10px
+        margin-bottom: 10px
         @include shell_gradient_layer
         h3
           font-weight: bold
@@ -136,11 +137,13 @@ body.mixer2050
     .scenario
       @include shell_gradient_layer
       position: relative
-      padding: 5px 5px 5px 20px
+      padding: 5px 5px 5px 10px
       margin: 5px 0
       height: 49px
       border-bottom: 1px solid #CCCCCC
-      // background: transparent url(/images/graph_icon.png) center left no-repeat
+      .image
+        float: left
+        margin: 10px 5px
       .actions
         width: 120px
         float: right

@@ -201,6 +201,7 @@ body.mixer2050 {
     body.mixer2050#scenarios_index section#right section#select {
       height: 300px;
       padding: 10px;
+      margin-bottom: 10px;
       background-color: #fefffe;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
       background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
@@ -239,10 +240,13 @@ body.mixer2050 {
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
     position: relative;
-    padding: 5px 5px 5px 20px;
+    padding: 5px 5px 5px 10px;
     margin: 5px 0;
     height: 49px;
     border-bottom: 1px solid #cccccc; }
+    body.mixer2050#scenarios_index .scenario .image {
+      float: left;
+      margin: 10px 5px; }
     body.mixer2050#scenarios_index .scenario .actions {
       width: 120px;
       float: right;

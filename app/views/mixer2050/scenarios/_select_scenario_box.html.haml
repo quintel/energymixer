@@ -1,0 +1,15 @@
+.scenario{:class => scenario.featured? ? 'featured' : '', :'data-scenario_id' => scenario.id }
+  .image
+    = image_tag 'graph_icon.png'
+  .actions
+    .show
+      = link_to 'Bekijk', scenario_path(scenario)
+    .compare
+      = check_box_tag 'ids[]', scenario.id
+      Vergelijk
+  .name
+    = link_to scenario_path(scenario) do
+      = scenario.name
+      = " - #{scenario.title}" if scenario.title
+  .date
+    #{time_ago_in_words(scenario.created_at)} geleden aangemaakt
