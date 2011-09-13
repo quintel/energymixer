@@ -126,12 +126,15 @@ body.mixer2050
       height: 430px
       @include shell_gradient_layer
       .header
-        @include header_dark
+        @include header_grey
       .subheader
-        @include subheader_gray
+        @include subheader_grey
 
   &#scenarios_index
     section#left
+      width: 435px
+      float: left
+      margin-right: 10px
       section#search
         padding: 10px
         @include shell_gradient_layer
@@ -143,6 +146,8 @@ body.mixer2050
           width: 390px
           padding: 5px
     section#right
+      width: 435px
+      float: left
       section#select
         height: 300px
         padding: 10px
@@ -184,8 +189,20 @@ body.mixer2050
         font-size: .9em
 
   &#scenarios_show
-    section#left
-    section#right
+    #left
+      width: 440px
+      float: left
+      margin-right: 10px
+      section#search_scenarios_box
+        @include shell_gradient_layer
+        height: 114px
+      .text
+        height: 400px
+        line-height: 20px
+        @include shell_gradient_layer
+    #right
+      float: left
+      width: 440px
       .text
         padding: 10px
         height: 114px
@@ -198,9 +215,20 @@ body.mixer2050
           float: left
           width: 356px
           .header
-            @include header_blue
+            border: 1px solid #0B3375
+            height: 30px
+            color: #ffffff
+            text-align: center
+            background-color: #0B3375
+            font-weight: bold
+            line-height: 28px
+            @include shadow(#D8D8D8, 8px)
           .subheader
-            @include subheader_blue
+            height: 30px
+            color: #0B327B
+            line-height: 28px
+            text-align: center
+            @include shell_gradient_layer
           .user
             float: left
             width: 210px
@@ -223,8 +251,17 @@ body.mixer2050
             margin-left: 10px
             @include shell_gradient_layer
             .header
-              @include header_dark
+              border: 1px solid #ffffff
+              height: 30px
+              color: #ffffff
+              text-align: center
+              @include gradient(#919191, #BABABA)
+              @include shadow(#D8D8D8, 8px)
             .subheader
-              @include subheader_gray
+              height: 30px
+              color: #A1A1A1
+              line-height: 28px
+              text-align: center
+              @include shell_gradient_layer
 
 @import 'stack'

@@ -4,51 +4,34 @@
   @include shadow(#D8D8D8, 8px)
 
 @mixin header_blue
-  border: 1px solid #0B3375
   height: 30px
-  color: #ffffff
+  background: #0B3375
+  color: #fff
+  border: 1px solid #ffffff
   text-align: center
-  background-color: #0B3375
   font-weight: bold
   line-height: 28px
-  @include shadow(#D8D8D8, 8px)
-  
+
 @mixin subheader_blue
   height: 30px
-  color: #0B327B
+  color: #0B3375
   line-height: 28px
   text-align: center
+  font-weight: bold
   @include shell_gradient_layer
-
-@mixin subheader_gray
-  height: 30px
-  color: #A1A1A1
-  line-height: 28px
-  text-align: center
-  @include shell_gradient_layer
-
-@mixin header_dark
+  
+@mixin header_grey
   border: 1px solid #ffffff
   height: 30px
   color: #ffffff
   text-align: center
   @include gradient(#919191, #BABABA)
   @include shadow(#D8D8D8, 8px)
-    
-body.mixer2050
-  section#left
-    width: 436px
-    float: left
-    margin-right: 10px
-  section#right
-    float: left
-    width: 440px
   
-  section#search_scenarios_box
-    @include shell_gradient_layer
-    height: 114px
-  .text
-    height: 400px
-    line-height: 20px
-    @include shell_gradient_layer
+@mixin subheader_grey
+  height: 30px
+  color: #A1A1A1
+  line-height: 28px
+  text-align: center
+  @include shell_gradient_layer
   
