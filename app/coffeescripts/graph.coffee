@@ -106,6 +106,6 @@ class @Graph
     this.unblock_interface()
   
   update_etm_link: ->
-    $("footer a").click ->
+    $("footer a").click (e) =>
       if(confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)"))
-        $(this).attr("href", @mixer.etm_scenario_url)
+        $(e.target).attr("href", @mixer.etm_scenario_url)
