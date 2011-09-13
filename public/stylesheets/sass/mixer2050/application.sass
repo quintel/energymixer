@@ -6,46 +6,31 @@
 body.mixer2050
   width: 890px
   &#scenarios_new
-    #questions
-      @include shell_gradient_layer
+    section#left
+      width: 440px
       margin-right: 10px
-      height: 430px
-      width: 429px
-      overflow: auto
-      nav#up
-        @include shell_gradient_layer
-    #results
-      width: 360px
-      height: 430px
-      margin-right: 10px
-      @include shell_gradient_layer
-      .header
-        @include header_blue
-      .subheader
-        @include subheader_blue
-      .user_created
-        width: 210px
-        float: left
-        margin-left: 0
-      #dashboard
-        width: 150px
-        float: left
-        .dashboard_items
-          background-color: #CFD1D0
-          .dashboard_item
-            background-color: #F8F8F8
-            height: 88px
-            width: 148px
-            margin: 1px
-    #current_graph
-      width: 75px
       float: left
-      height: 430px
-      @include shell_gradient_layer
-      .header
-        @include header_grey
-      .subheader
-        @include subheader_grey
+      #questions
+        width: auto
+        @include shell_gradient_layer
+        height: 430px
+        overflow: auto
+        nav#up
+          @include shell_gradient_layer
+    section#right
+      float: left
+      width: 440px
+      section#user_chart
+        float: left
+      section#current_chart
+        width: 75px
+        float: left
+        height: 430px
+        @include shell_gradient_layer
+        .header
+          @include header_grey
+        .subheader
+          @include subheader_grey
 
   &#scenarios_index
     section#left

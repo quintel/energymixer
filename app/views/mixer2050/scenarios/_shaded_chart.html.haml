@@ -1,0 +1,27 @@
+.shaded_chart
+  %header Energy Mix 2011
+  %header.sub XXX Miljard
+  :ruby
+    max_height = local_assigns.has_key?(:max_height) ? max_height : 390
+    width      = local_assigns.has_key?(:width) ? width : 50
+    labels     = local_assigns.has_key?(:labels) ? labels : false
+    max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+    rounded_sum = 0
+    current_graph_height = scenario.total_amount / max_amount.to_f * max_height
+
+  .charts_container
+    .chart_canvas_mix{:style=>"width: #{width}px;"}
+      %ul.chart
+        - scenario.carriers.each_pair do |key, v|
+          - height = (v[:ratio] * current_graph_height).round
+          - rounded_sum += height
+          - label_hidden = height <= 10
+          %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+            - if labels
+              %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
+    .renewables_float
+      %ul.chart
+        - scenario.renewable_carriers.each_pair do |key, v|
+          - height = v[:relative_ratio] * 200
+          %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+            %span.label{:class => height <= 5 ? 'hidden' : ''}= I18n.t(key)
