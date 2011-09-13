@@ -1,0 +1,22 @@
+@mixin shell_gradient_layer
+  @include gradient(#FEFFFE, #E9E9E9)
+  border: 1px solid #FEFFFE
+  @include shadow(#D8D8D8, 8px)
+
+body.mixer2050
+  section#left
+    width: 440px
+    float: left
+    margin-right: 10px
+  section#right
+    float: left
+    width: 440px
+  
+  section#search_scenarios_box
+    @include shell_gradient_layer
+    height: 114px
+  .text
+    height: 400px
+    line-height: 20px
+    @include shell_gradient_layer
+  

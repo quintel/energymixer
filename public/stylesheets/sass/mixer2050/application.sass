@@ -1,9 +1,6 @@
 @import '../mixins'
+@import 'shared'
 
-@mixin shell_gradient_layer
-  @include gradient(#FEFFFE, #E9E9E9)
-  border: 1px solid #FEFFFE
-  @include shadow(#D8D8D8, 8px)
 
 body.mixer2050
   width: 890px
@@ -156,9 +153,6 @@ body.mixer2050
 
   &#scenarios_index
     section#left
-      width: 435px
-      float: left
-      margin-right: 10px
       section#search
         padding: 10px
         @include shell_gradient_layer
@@ -170,8 +164,6 @@ body.mixer2050
           width: 390px
           padding: 5px
     section#right
-      width: 435px
-      float: left
       section#select
         height: 300px
         padding: 10px
@@ -213,20 +205,8 @@ body.mixer2050
         font-size: .9em
 
   &#scenarios_show
-    #left
-      width: 440px
-      float: left
-      margin-right: 10px
-      section#search_scenarios_box
-        @include shell_gradient_layer
-        height: 114px
-      .text
-        height: 400px
-        line-height: 20px
-        @include shell_gradient_layer
-    #right
-      float: left
-      width: 440px
+    section#left
+    section#right
       .text
         padding: 10px
         height: 114px

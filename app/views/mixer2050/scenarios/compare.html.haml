@@ -1,0 +1,24 @@
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    = link_to "Bekijk de Mixes van anderen", scenarios_path
+    >
+    Vergelijk
+
+%section#left
+
+  = render :partial => 'search_scenario_box'
+
+  - if @scenarios.empty?
+    Please select some scenarios first
+  - else
+    - @scenarios.each do |s|
+      .scenario.graph_normal
+        .name= s.name
+        = render :partial => "chart_top", :locals => {:scenario => s}
+        = render :partial => 'chart', :locals => { :scenario => s }
+        = render :partial => 'compare_dashboard', :locals => { :scenario => s }
+      .spacer
+
+%section#right
