@@ -25,5 +25,7 @@ class QuestionSet < ActiveRecord::Base
         return false if nil_found && x[i]
       end
       return true
+      # DEBT: one-liner
+      # x[0...-1].none?(&:nil?)
     end
 end

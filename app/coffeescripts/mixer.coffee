@@ -52,7 +52,6 @@ class @Mixer
   store_results: ->
     results = @results.result
     
-    
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
@@ -79,12 +78,14 @@ class @Mixer
       @app.score.values[code].current = value
       if (@app.questions.current_question == 2 && @app.score.values[code].mark == null)
         @app.score.values[code].mark = value;
+  
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: (hash) ->
     hash = @parameters if !hash
     request_parameters = {result: @gqueries, reset: 1}
     request_parameters['input'] = hash if(!$.isEmptyObject(hash))
+    
     # Note that we're not using the standard jquery ajax call,
     # but http:#code.google.com/p/jquery-jsonp/
     # for its better error handling.
