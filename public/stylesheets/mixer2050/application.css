@@ -18,118 +18,110 @@ body.mixer2050 section#search_scenarios_box {
     width: 390px;
     padding: 5px; }
 
+body.mixer2050#pages_home #intro_text {
+  background-color: #fefffe;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+  background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+  border: 1px solid #fefffe;
+  -moz-box-shadow: 0px 2px 8px #d8d8d8;
+  -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+  box-shadow: 0px 2px 8px #d8d8d8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+  body.mixer2050#pages_home #intro_text h2 {
+    font-size: 30px;
+    letter-spacing: -1px; }
+body.mixer2050#pages_home #actions {
+  padding: 15px 10px; }
+  body.mixer2050#pages_home #actions a {
+    margin-right: 50px; }
+body.mixer2050#pages_home section#main {
+  height: 509px;
+  padding: 15px 10px;
+  background-color: #fefffe;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+  background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+  border: 1px solid #fefffe;
+  -moz-box-shadow: 0px 2px 8px #d8d8d8;
+  -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+  box-shadow: 0px 2px 8px #d8d8d8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+  body.mixer2050#pages_home section#main h3 {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px 0; }
+  body.mixer2050#pages_home section#main #graph {
+    float: right; }
+  body.mixer2050#pages_home section#main #map {
+    margin-top: 20px;
+    position: relative;
+    width: 672px;
+    height: 386px;
+    background: url("/images/layout/map_of_the_netherlands.png"); }
+    body.mixer2050#pages_home section#main #map #sector_icons div {
+      position: absolute; }
+      body.mixer2050#pages_home section#main #map #sector_icons div a.description {
+        opacity: 0.9;
+        background-color: white;
+        position: absolute;
+        bottom: -20px;
+        padding: 5px;
+        color: #003478;
+        font-weight: bold;
+        padding-right: 25px;
+        background-color: #fefffe;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+        background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+        border: 1px solid #fefffe;
+        -moz-box-shadow: 0px 2px 8px #d8d8d8;
+        -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+        box-shadow: 0px 2px 8px #d8d8d8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+        background-image: url("/images/icons/i.png");
+        background-repeat: no-repeat;
+        background-position: 95% center; }
+    body.mixer2050#pages_home section#main #map #sector_icons #buildings {
+      background: url("/images/layout/buildings_icon.png");
+      width: 102px;
+      height: 75px;
+      left: 500px;
+      top: 20px; }
+    body.mixer2050#pages_home section#main #map #sector_icons #agriculture {
+      background: url("/images/layout/agriculture_icon.png");
+      width: 121px;
+      height: 71px;
+      left: 300px;
+      top: 202px; }
+    body.mixer2050#pages_home section#main #map #sector_icons #industry {
+      background: url("/images/layout/industry_icon.png");
+      width: 124px;
+      height: 89px;
+      left: 168px;
+      top: 110px; }
+    body.mixer2050#pages_home section#main #map #sector_icons #transport {
+      background: url("/images/layout/transport_icon.png");
+      width: 124px;
+      height: 60px;
+      top: 110px;
+      left: 319px; }
+    body.mixer2050#pages_home section#main #map #sectors {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 220px;
+      float: left; }
+      body.mixer2050#pages_home section#main #map #sectors .sector {
+        margin: 2px 4px;
+        width: 100px;
+        float: left; }
+
 body.mixer2050 {
   width: 890px; }
-  body.mixer2050 .graph_normal .total_amount {
-    background: #0b3375;
-    color: white;
-    border: 1px solid white;
-    -moz-box-shadow: 0px 2px 5px #d8d8d8;
-    -webkit-box-shadow: 0px 2px 5px #d8d8d8;
-    box-shadow: 0px 2px 5px #d8d8d8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-  body.mixer2050#pages_home #intro_text {
-    background-color: #fefffe;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
-    background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
-    border: 1px solid #fefffe;
-    -moz-box-shadow: 0px 2px 8px #d8d8d8;
-    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-    box-shadow: 0px 2px 8px #d8d8d8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-    body.mixer2050#pages_home #intro_text h2 {
-      font-size: 30px;
-      letter-spacing: -1px; }
-  body.mixer2050#pages_home #actions {
-    padding: 15px 10px; }
-    body.mixer2050#pages_home #actions a {
-      margin-right: 50px; }
-  body.mixer2050#pages_home section#main {
-    height: 509px;
-    padding: 15px 10px;
-    background-color: #fefffe;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
-    background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
-    border: 1px solid #fefffe;
-    -moz-box-shadow: 0px 2px 8px #d8d8d8;
-    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-    box-shadow: 0px 2px 8px #d8d8d8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-    body.mixer2050#pages_home section#main h3 {
-      font-weight: bold;
-      font-size: 14px;
-      margin: 10px 0; }
-    body.mixer2050#pages_home section#main #graph {
-      float: right; }
-    body.mixer2050#pages_home section#main #map {
-      margin-top: 20px;
-      position: relative;
-      width: 672px;
-      height: 386px;
-      background: url("/images/layout/map_of_the_netherlands.png"); }
-      body.mixer2050#pages_home section#main #map #sector_icons div {
-        position: absolute; }
-        body.mixer2050#pages_home section#main #map #sector_icons div a.description {
-          opacity: 0.9;
-          background-color: white;
-          position: absolute;
-          bottom: -20px;
-          padding: 5px;
-          color: #003478;
-          font-weight: bold;
-          padding-right: 25px;
-          background-color: #fefffe;
-          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
-          background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
-          background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
-          border: 1px solid #fefffe;
-          -moz-box-shadow: 0px 2px 8px #d8d8d8;
-          -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-          box-shadow: 0px 2px 8px #d8d8d8;
-          -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-          filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
-          background-image: url("/images/icons/i.png");
-          background-repeat: no-repeat;
-          background-position: 95% center; }
-      body.mixer2050#pages_home section#main #map #sector_icons #buildings {
-        background: url("/images/layout/buildings_icon.png");
-        width: 102px;
-        height: 75px;
-        left: 500px;
-        top: 20px; }
-      body.mixer2050#pages_home section#main #map #sector_icons #agriculture {
-        background: url("/images/layout/agriculture_icon.png");
-        width: 121px;
-        height: 71px;
-        left: 300px;
-        top: 202px; }
-      body.mixer2050#pages_home section#main #map #sector_icons #industry {
-        background: url("/images/layout/industry_icon.png");
-        width: 124px;
-        height: 89px;
-        left: 168px;
-        top: 110px; }
-      body.mixer2050#pages_home section#main #map #sector_icons #transport {
-        background: url("/images/layout/transport_icon.png");
-        width: 124px;
-        height: 60px;
-        top: 110px;
-        left: 319px; }
-      body.mixer2050#pages_home section#main #map #sectors {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 220px;
-        float: left; }
-        body.mixer2050#pages_home section#main #map #sectors .sector {
-          margin: 2px 4px;
-          width: 100px;
-          float: left; }
   body.mixer2050#scenarios_new #questions {
     background-color: #fefffe;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
@@ -470,6 +462,15 @@ body.mixer2050 {
   body.mixer2050#scenarios_compare section#main {
     text-align: center; }
 
+body.mixer2050 .graph_normal .total_amount {
+  background: #0b3375;
+  color: white;
+  border: 1px solid white;
+  -moz-box-shadow: 0px 2px 5px #d8d8d8;
+  -webkit-box-shadow: 0px 2px 5px #d8d8d8;
+  box-shadow: 0px 2px 5px #d8d8d8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
 body.mixer2050 .charts_container .chart_canvas_mix {
   height: 350px;
   float: right;
