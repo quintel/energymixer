@@ -1,9 +1,9 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 13 Sep 2011 08:56:45 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/graph.coffee
  */
 
 (function() {
-  var __hasProp = Object.prototype.hasOwnProperty;
+  var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   this.Graph = (function() {
     function Graph(app) {
       this.app = app;
@@ -131,11 +131,11 @@
       return this.unblock_interface();
     };
     Graph.prototype.update_etm_link = function() {
-      return $("footer a").click(function() {
+      return $("footer a").click(__bind(function(e) {
         if (confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
-          return $(this).attr("href", this.mixer.etm_scenario_url);
+          return $(e.target).attr("href", this.mixer.etm_scenario_url);
         }
-      });
+      }, this));
     };
     return Graph;
   })();
