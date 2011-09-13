@@ -18,10 +18,18 @@
       = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
   #map
     #sector_icons
-      #buildings{:data-percentage=>27%}
-      #industry{:data-percentage=>47%}
-      #transport{:data-percentage=>18%}
-      #agriculture{:data-percentage=>6%}
+      .sector#buildings
+        %a.description{:href=>"#"}
+          Gebouwen 27%
+      .sector#industry
+        %a.description{:href=>"#"}
+          Industrie 47%
+      .sector#transport
+        %a.description{:href=>"#"}
+          Vervoer 18%
+      .sector#agriculture
+        %a.description{:href=>"#"}
+          Landbouw 6%
     #sectors
       %h3 Sectoren
       .sector#transport
