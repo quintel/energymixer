@@ -27,29 +27,7 @@
     = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
   .charts
     .left
-      .header
-        = @scenario.name
-        \-
-        Energy Mix van #{END_YEAR}
-      .user.graph_normal
-        .subheader
-          Kosten &euro;XXXXX Miljard
-        = render 'scenarios/chart', :scenario => @scenario
-      .boxes
-        .subheader
-          Effect
-        .dashboard_item{:class => set_class_for_output(:output_5, @scenario.output_5)}
-          %h3= t(dashboard_label_for_output(:output_5)).html_safe
-          .value= format_dashboard_value(:output_5, @scenario.output_5)
-        .dashboard_item{:class => set_class_for_output(:output_6, @scenario.output_6)}
-          %h3= t(dashboard_label_for_output(:output_6)).html_safe
-          .value= format_dashboard_value(:output_6, @scenario.output_6)
-        .dashboard_item{:class => set_class_for_output(:output_7, @scenario.output_7)}
-          %h3= t(dashboard_label_for_output(:output_7)).html_safe
-          .value= format_dashboard_value(:output_7, @scenario.output_7)
-        .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
-          %h3= t(dashboard_label_for_output(:output_8)).html_safe
-          .value= format_dashboard_value(:output_8, @scenario.output_8)
+      = render 'full_chart', :scenario => @scenario
     .right
       .current.graph_shaded
         .header Energy Mix 2011
