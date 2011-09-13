@@ -4,34 +4,17 @@
     >
     Maak een eigen EnergyMix
 
-%section#questions
-  = render 'questions'
+%section#left
+  %section#questions
+    = render 'questions'
 
-%section#results
-  .header
-    Jouw Energy Mix van #{END_YEAR}
-  .user_created.graph_normal
-    .subheader
-      Kosten XX Miljard
-    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 86
-  %section#dashboard
-    .subheader
-      Effect
-    .dashboard_items
-      - DashboardItem.ordered.each do |item|
-        .dashboard_item{:class => item.gquery}
-          %h3= t(item.label).html_safe
-          .value
-            loading...
-        
-%section#current_graph.graph_shaded
-  .header
-    Energy Mix 2011
-  .subheader
-    XXX Miljard
-  = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50, :labels => false
+%section#right
+  %section#user_chart
+    = render 'full_chart', :scenario => @scenario
+  %section#current_chart
+    = render 'shaded_chart', :scenario => Scenario.current
 
-= render 'js_init'            
+  = render 'js_init'            
 
 %div#tooltip
   %h3 Title
