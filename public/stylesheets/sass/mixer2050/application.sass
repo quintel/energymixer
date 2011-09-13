@@ -96,16 +96,23 @@ body.mixer2050
         font-size: .9em
 
   &#scenarios_show
-    #left
+    section#left
       width: 440px
       float: left
       margin-right: 10px
-    #right
+      section#description
+        padding: 10px
+        // height: 114px
+        @include shell_gradient_layer
+        margin-bottom: 10px
+        height: 415px
+        line-height: 20px
+    section#right
       float: left
       width: 440px
       .text
         padding: 10px
-        height: 114px
+        height: 88px
         @include shell_gradient_layer
         margin-bottom: 10px
       .charts
