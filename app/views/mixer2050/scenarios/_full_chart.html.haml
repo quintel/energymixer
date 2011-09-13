@@ -1,0 +1,43 @@
+:ruby
+  max_height = local_assigns.has_key?(:max_height) ? max_height : 360
+  width      = local_assigns.has_key?(:width) ? width : 80
+  labels     = local_assigns.has_key?(:labels) ? labels : true
+  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+  rounded_sum = 0
+  current_graph_height = scenario.total_amount / max_amount.to_f * max_height
+.full_chart
+  %header
+    #{scenario.name} - Energy Mix van #{END_YEAR}
+  %section.chart
+    %header
+      Kosten &euro;XXXXX Miljard    
+    .charts_container
+      .chart_canvas_mix{:style=>"width: #{width}px;"}
+        %ul.chart
+          - scenario.carriers.each_pair do |key, v|
+            - height = (v[:ratio] * current_graph_height).round
+            - rounded_sum += height
+            - label_hidden = height <= 10
+            %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+              - if labels
+                %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
+      .renewables_float
+        %ul.chart
+          - scenario.renewable_carriers.each_pair do |key, v|
+            - height = v[:relative_ratio] * 200
+            %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+              %span.label{:class => height <= 5 ? 'hidden' : ''}= I18n.t(key)
+  %section.boxes
+    %header Effect
+    .dashboard_item{:class => set_class_for_output(:output_5, scenario.output_5)}
+      %h3= t(dashboard_label_for_output(:output_5)).html_safe
+      .value= format_dashboard_value(:output_5, scenario.output_5)
+    .dashboard_item{:class => set_class_for_output(:output_6, scenario.output_6)}
+      %h3= t(dashboard_label_for_output(:output_6)).html_safe
+      .value= format_dashboard_value(:output_6, scenario.output_6)
+    .dashboard_item{:class => set_class_for_output(:output_7, scenario.output_7)}
+      %h3= t(dashboard_label_for_output(:output_7)).html_safe
+      .value= format_dashboard_value(:output_7, scenario.output_7)
+    .dashboard_item{:class => set_class_for_output(:output_8, scenario.output_8)}
+      %h3= t(dashboard_label_for_output(:output_8)).html_safe
+  .clear
