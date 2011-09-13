@@ -13,7 +13,7 @@
   .user_created.graph_normal
     .subheader
       Kosten XX Miljard
-    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
+    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 86
   %section#dashboard
     .subheader
       Effect
@@ -29,7 +29,7 @@
     Energy Mix 2011
   .subheader
     XXX Miljard
-  = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
+  = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50, :labels => false
 
 = render 'js_init'            
 
