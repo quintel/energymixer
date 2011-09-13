@@ -31,6 +31,8 @@ class Input < ActiveRecord::Base
       hash = {}
       Api::Input.all.sort{|a,b| a.key <=> b.key }.each{|i| hash[i.id] = i.key}
       hash
+      # DEBT: one-liner
+      # Api::Input.all.sort_by(:key).inject({}) {|hsh,i| hsh.merge i.id => i.key}
     end
   end    
 end

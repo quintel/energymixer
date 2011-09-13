@@ -1,3 +1,4 @@
+# DEBT: Graph is a bit an ambigous term. Do you mean chart
 class @Graph
   constructor: (app) ->
     @app = app
@@ -14,6 +15,7 @@ class @Graph
     this.update_bar_chart()
   
   block_interface: ->
+    # DEBT: wow this is very specific
     $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({img: '/images/spinner.gif'})
     @app.questions.hide_all_question_links();
   
@@ -27,9 +29,11 @@ class @Graph
     dashboard_selector = "#dashboard .#{key}"
     formatted_value = this.format_dashboard_value(key, value)
     $("#{dashboard_selector} .value").html(formatted_value)
-    # we have now to decide which image to show as background
-    # let's first find the right step
+    
+    # Decide which image to show as background.
+    # Find the right step first.
     step = this.find_step_for_dashboard_item(key, value)
+    
     # since we're doing everything through css classes, let's remove
     # the existing background-related classes
     classes_to_remove = '' # FIXME: ugly

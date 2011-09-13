@@ -23,6 +23,7 @@ class @Score
     for own key, value of @values
       return false if (value.mark == null || value.current == null)
     
+    # DEBT: this should really be refactored into individual methods
     v = @values.total_amount
     a = (v.mark - v.current) / 1000
     a = 0 if (a < 0)
