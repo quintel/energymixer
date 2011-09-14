@@ -1,5 +1,4 @@
-# DEBT: Graph is a bit an ambigous term. Do you mean chart
-class @Graph
+class @Chart
   constructor: (app) ->
     @app = app
     @dashboard_steps = window.globals.dashboard_steps
@@ -76,13 +75,13 @@ class @Graph
     if (@app.questions.current_question == 2 && @app.score.values.total_amount.mark == null)
       @app.score.values.total_amount.mark = current_sum
 
-    # main graph
-    graph_max_height     = 390
-    max_amount           = globals.graph_max_amount / 1000000 # million euros
-    current_graph_height = current_sum / max_amount * graph_max_height
+    # main chart
+    chart_max_height     = 390
+    max_amount           = globals.chart_max_amount / 1000000 # million euros
+    current_chart_height = current_sum / max_amount * chart_max_height
     rounded_sum          = 0
     for own code, val of @mixer.carriers_values
-      new_height = Math.round(val / current_sum * current_graph_height)
+      new_height = Math.round(val / current_sum * current_chart_height)
       rounded_sum += new_height
       selector = ".user_created .#{code}"
       $(selector).animate({"height": new_height}, "slow")
@@ -90,11 +89,11 @@ class @Graph
       label = $("#{selector} .label")
       if (new_height > 10) then label.show() else label.hide()
     
-    # renewable subgraph
-    renewable_subgraph_height = 100
+    # renewable subchart
+    renewable_subchart_height = 100
     total_renewable_amount = @app.mixer.carriers_values.costs_share_of_sustainable
     for own code, val of @app.mixer.secondary_carriers_values
-      new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height)
+      new_height = Math.round(val / total_renewable_amount * renewable_subchart_height)
       selector = ".user_created .#{code}"
       $(selector).animate({"height": new_height}, "slow")
       label = $("#{selector} .label")

@@ -8,10 +8,10 @@
   = render 'questions'
 
 %section#results
-  .current.graph_shaded
+  .current.chart_shaded
     = render 'chart_top', :scenario => Scenario.current, :year => 2011
     = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
-  .user_created.graph_normal
+  .user_created.chart_normal
     = render 'chart_top', :scenario => @scenario, :year => END_YEAR
     = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
 
