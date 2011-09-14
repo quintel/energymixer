@@ -8,16 +8,17 @@
   = render 'questions'
 
 %section#results
-  .current.graph_shaded
+  .current.chart_shaded
     = render 'chart_top', :scenario => Scenario.current, :year => 2011
-    = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50
-  .user_created.graph_normal
-    = render 'chart_top', :scenario => @scenario, :year => END_YEAR
-    = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
+    = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50, :static => true
+  .user_created.chart_normal
+    .chart
+      = render 'chart_top', :scenario => @scenario, :year => END_YEAR
+      = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
 
 %section#dashboard
   - DashboardItem.ordered.each do |item|
-    .dashboard_item{:class => item.gquery}
+    .dashboard_item{:id => item.gquery}
       %h3= t(item.label).html_safe
       .value
         loading...
@@ -40,29 +41,8 @@
           als je vraag 1 en 2 nog
           %br
           niet hebt ingevuld
-            
-- content_for(:head) do
-  = javascript_include_tag 'vendor/jquery.json-2.2.min' # for easier debugging
-  = javascript_include_tag 'vendor/jquery.jsonp-2.1.4.min' # better error handling
-  = javascript_include_tag 'vendor/jquery.busy.min'
-  = javascript_include_tag 'rails.validations'
-  = javascript_include_tag 'vendor/sprintf-0.7-beta1'
-  = javascript_include_tag 'mixer', 'graph', 'questions', 'score', 'mixer_application'
-  :javascript
-    var globals = {
-      answers: #{answers_json},
-      answers_conflicts: #{answers_conflicts_json},
-      dashboard_items: #{dashboard_items_json},
-      dashboard_steps: #{dashboard_steps_json},
-      mix_table: #{mix_table_json},
-      secondary_mix_table: #{secondary_mix_table_json},
-      graph_max_amount: #{Scenario::MaxAmount},
-      api_base_path: #{APP_CONFIG["api_base_path"].to_json},
-      api_session_settings: #{APP_CONFIG["api_session_settings"].to_json},
-      popups: #{popup_json},
-      etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}",
-      current_situation: #{Scenario.current.combined_carriers.to_json}
-    }
+
+= render 'js_init'            
 
 %div#tooltip
   %h3 Title

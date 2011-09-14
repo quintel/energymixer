@@ -41,11 +41,11 @@
     .dashboard_item{:class => set_class_for_output(:output_8, @scenario.output_8)}
       %h3= t(dashboard_label_for_output(:output_8)).html_safe
       .value= format_dashboard_value(:output_8, @scenario.output_8)
-%section#right.graph
-  .user.graph_normal
+%section#right.chart
+  .user.chart_normal
     = render 'scenarios/chart_top', :scenario => @scenario
     = render 'scenarios/chart', :scenario => @scenario
-  .current.graph_shaded
+  .current.chart_shaded
     = render 'scenarios/chart_top', :scenario => Scenario.current
     = render 'scenarios/chart', :scenario => Scenario.current, :width => 50
   

@@ -22,11 +22,13 @@ class DashboardItem < ActiveRecord::Base
   # If we're defining some steps in the object field we can use this
   # method to check the step a value belongs to
   def corresponding_step(value)
-    steps_array = steps.split(",").map(&:to_f) rescue []    
+    steps_array = steps.split(",").map(&:to_f) rescue []
     step = 0
     steps_array.each_with_index do |v, i|
       step = i + 1 if value > v
     end
     step
   end
+
+
 end

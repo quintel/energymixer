@@ -1,14 +1,10 @@
-//TODO REFACTOR: Separate Dashboard from Chart in different sass files
-//TODO REFACTOR: Graph should be chart...
-.total_amount
-  padding: 5px
-  height: 30px
-  h4
-    font-weight: bold
-
-.graph_shaded
-  .total_amount
+.chart_shaded
+  header
     background: #FEF4CB
+    padding: 5px
+    height: 30px
+    h4
+      font-weight: bold
   ul.chart li
     &.oil
       background: #C8CAC9
@@ -31,9 +27,13 @@
     span.label
       display: none
 
-.graph_normal
-  .total_amount
+.chart_normal
+  header
     background: #FDD52C
+    padding: 5px
+    height: 30px
+    h4
+      font-weight: bold
   ul.chart li
     &.oil
       background: #57585A

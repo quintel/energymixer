@@ -1,0 +1,22 @@
+- content_for(:head) do
+  = javascript_include_tag 'vendor/jquery.json-2.2.min' # for easier debugging
+  = javascript_include_tag 'vendor/jquery.jsonp-2.1.4.min' # better error handling
+  = javascript_include_tag 'vendor/jquery.busy.min'
+  = javascript_include_tag 'rails.validations'
+  = javascript_include_tag 'vendor/sprintf-0.7-beta1'
+  = javascript_include_tag 'mixer', 'chart', 'questions', 'score', 'mixer_application'
+  :javascript
+    var globals = {
+      answers: #{answers_json},
+      answers_conflicts: #{answers_conflicts_json},
+      dashboard_items: #{dashboard_items_json},
+      dashboard_steps: #{dashboard_steps_json},
+      mix_table: #{mix_table_json},
+      secondary_mix_table: #{secondary_mix_table_json},
+      chart_max_amount: #{Scenario::MaxAmount},
+      api_base_path: #{APP_CONFIG["api_base_path"].to_json},
+      api_session_settings: #{APP_CONFIG["api_session_settings"].to_json},
+      popups: #{popup_json},
+      etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}",
+      current_situation: #{Scenario.current.combined_carriers.to_json}
+    }

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 08 Sep 2011 15:06:31 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 08:25:43 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -39,7 +39,7 @@
           key = data.api_scenario.id || data.api_scenario.api_session_key;
           this.session_id = this.scenario_id = key;
           this.etm_scenario_url = "" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl";
-          this.app.graph.update_etm_link();
+          this.app.chart.update_etm_link();
           $.logThis("Fetched new session Key: " + key);
           return this.make_request();
         }, this),
@@ -104,18 +104,18 @@
       if (!$.isEmptyObject(hash)) {
         request_parameters['input'] = hash;
       }
-      this.app.graph.block_interface();
+      this.app.chart.block_interface();
       $.jsonp({
         url: this.json_path_with_session_id() + '?callback=?',
         data: request_parameters,
         success: __bind(function(data) {
           this.results = data;
           this.store_results();
-          this.app.graph.refresh();
+          this.app.chart.refresh();
           return this.app.score.show();
         }, this),
         error: function(data, error) {
-          this.app.graph.unblock_interface();
+          this.app.chart.unblock_interface();
           return $.logThis(error);
         }
       });

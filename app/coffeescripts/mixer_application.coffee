@@ -1,7 +1,7 @@
 class @App
   constructor: ->
     @mixer = new Mixer(this)
-    @graph = new Graph(this)
+    @chart = new Chart(this)
     @questions = new Questions(this)
     @score = new Score(this)
 

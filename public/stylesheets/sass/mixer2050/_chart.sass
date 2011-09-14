@@ -1,0 +1,64 @@
+body.mixer2050
+  .full_chart
+    height: 432px
+    width: 360px
+    @include shell_gradient_layer
+    header
+      @include header_blue
+    section.chart
+      float: left
+      width: 210px
+      border-right: 1px solid #D0D1D2
+      header
+        @include subheader_blue
+    section.boxes
+      float: left
+      width: 149px
+      header
+        @include subheader_blue
+      .dashboard_item
+        height: 90px
+        border-bottom: 1px solid #D0D1D1
+        margin: 0 0 0 8px
+        background: transparent
+  .shaded_chart
+    header
+      @include header_grey
+    header.sub
+      @include subheader_grey
+  .chart_normal
+    .total_amount
+      background: #0B3375
+      color: #fff
+      border: 1px solid #ffffff
+      @include shadow(#D8D8D8, 5px)  
+  .charts_container
+    .chart_canvas_mix
+      height: 350px
+      float: right
+      margin-right: 10px
+      ul.chart
+        position: absolute
+        bottom: 0
+        width: 100%
+        li.serie
+          border: none
+          margin: 0 0 0 0
+          position: relative
+          span
+            display: block
+            margin: auto 0
+            position: absolute
+            font-weight: bold
+            right: 100px
+            color: #000
+        li.gas
+          background: url("/images/layout/textures/gas.png")
+        li.oil
+          background: url("/images/layout/textures/oil.png")
+        li.coal
+          background: url("/images/layout/textures/coal.png")
+        li.nuclear
+          background: url("/images/layout/textures/nuclear.png")
+        li.renewable
+          background: url("/images/layout/textures/renewable.png")

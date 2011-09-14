@@ -1,0 +1,38 @@
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    Bekijk de Mixes van anderen
+
+%section#left
+  %section#search_scenarios_box
+    = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
+    %h3 Bekijk de EnergyMixes van anderen
+    = form_tag scenarios_path, :method => :get, :remote => true do
+      = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
+  .clear
+
+  %section.scenarios
+    #user_scenarios.selectable
+      = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
+    #pagination
+      = paginate @scenarios, :remote => true
+
+%section#right
+  %section#select
+    %h3 Vergelijk verschillende mixen met elkaar
+    %p
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    = form_tag compare_scenarios_path do
+      %section#selected_scenarios
+      = submit_tag "Vergelijk"
+      
+  %section.scenarios
+    %h3 Gemiddelde per leeftijcategorie
+    #featured_scenarios.selectable
+      = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
+
+
+- content_for :head do
+  = javascript_include_tag 'vendor/jquery.busy.min'
+  = javascript_include_tag 'scenario_picker'
