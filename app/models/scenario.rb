@@ -71,6 +71,9 @@ class Scenario < ActiveRecord::Base
   validates :email, :presence => true
   # disabled, client_side_validations has some issues with this validation
   # validates :age,   :numericality => true, :allow_blank => true
+  
+  # DEBT: one-liner
+  # Outputs.keys.each {|key| validates key, :presence => true }
   validates :output_0,  :presence => true
   validates :output_1,  :presence => true
   validates :output_2,  :presence => true
@@ -97,7 +100,7 @@ class Scenario < ActiveRecord::Base
   attr_accessor :year, :accept_terms
   before_save :sanitize_age
   
-  paginates_per 6
+  paginates_per 10
     
   def carriers
     {
@@ -143,9 +146,18 @@ class Scenario < ActiveRecord::Base
   
   # store in cache when needed
   def self.current(force = false)
+    # DEBT: 
+    # Rails.cache.delete('current_scenario') if force
+    # @current_scenario = Rails.cache.fetch('current_scenario) do
+    #   client = ApiClient.new.current_situation
+    #   attributes = Options.inject({:year => 2011}) {|hsh, arr| key,val = arr; hsh.merge key => client[val]}
+    #   new(attributes)
+    # end
     @current_scenario = Rails.cache.read('current_scenario')
     if force || @current_scenario.nil?
       c = ApiClient.new.current_situation
+      # DEBT: one-liner
+      # settings = Options.inject({:year => 2011}) {|hsh, arr| key,val = arr; hsh.merge key => c[val]}
       @current_scenario = new(
         :output_0  => c["costs_share_of_coal"],
         :output_1  => c["costs_share_of_gas"],
@@ -175,6 +187,7 @@ class Scenario < ActiveRecord::Base
   
   # Returns plausible scenario if for any reason the API request fails
   def self.acceptable_scenario
+    # DEBT: shouldn't this belong in Api::Client?
     new(
       :output_0  => 4135606319.8158274,    # coal
       :output_1  => 19712261358.58237,     # gas

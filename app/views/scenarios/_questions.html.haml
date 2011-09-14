@@ -3,7 +3,7 @@
     %tr
       - Question.ordered.each do |question|
         %td.question_tab{:'data-question_id' => question.number}=question.number
-%div
+%div.questions
   = form_for @scenario, :url => scenarios_path, :validate => true, :html => { :method => :post } do |scenario|
     = scenario.fields_for :answers do |answer|
       = render 'question', :answer => answer

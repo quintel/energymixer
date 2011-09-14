@@ -1,0 +1,21 @@
+%section#breadcrumbs
+  %nav
+    = link_to "Home", root_path
+    >
+    Maak een eigen EnergyMix
+
+%section#left
+  %section#questions
+    = render 'questions'
+
+%section#right
+  %section#user_chart
+    = render 'full_chart', :scenario => @scenario
+  %section#current_chart
+    = render 'shaded_chart', :scenario => Scenario.current
+
+  = render 'js_init'            
+
+%div#tooltip
+  %h3 Title
+  %div Hier komt de kleine tooltip (popup)!

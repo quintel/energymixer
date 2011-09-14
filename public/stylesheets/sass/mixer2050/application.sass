@@ -1,0 +1,144 @@
+@import '../mixins'
+@import 'shared'
+
+@import 'pages_home'
+
+body.mixer2050
+  width: 890px
+  &#scenarios_new
+    section#left
+      width: 440px
+      margin-right: 10px
+      float: left
+      #questions
+        width: auto
+        @include shell_gradient_layer
+        height: 430px
+        overflow: auto
+        nav#up
+          @include shell_gradient_layer
+    section#right
+      float: left
+      width: 440px
+      section#user_chart
+        float: left
+      section#current_chart
+        width: 75px
+        float: left
+        height: 430px
+        @include shell_gradient_layer
+        .header
+          @include header_grey
+        .subheader
+          @include subheader_grey
+
+  &#scenarios_index
+    section#left
+      width: 435px
+      float: left
+      margin-right: 10px
+    section#right
+      width: 435px
+      float: left
+      section#select
+        height: 300px
+        padding: 10px
+        margin-bottom: 10px
+        @include shell_gradient_layer
+        h3
+          font-weight: bold
+          font-size: 14px
+          margin: 10px 0
+      section.scenarios
+        @include shell_gradient_layer
+        padding: 10px
+
+    .scenario
+      @include shell_gradient_layer
+      position: relative
+      padding: 5px 5px 5px 10px
+      margin: 5px 0
+      height: 49px
+      border-bottom: 1px solid #CCCCCC
+      .image
+        float: left
+        margin: 10px 5px
+      .actions
+        width: 120px
+        float: right
+        font-weight: bold
+        .show
+          padding: 5px
+          a
+            @include link_arrow_prefix
+      .name
+        font-size: 13px
+        font-weight: bold
+        margin-bottom: 4px
+        margin-top: 15px
+      .date
+        color: #777
+        font-size: .9em
+
+  &#scenarios_show
+    section#left
+      width: 440px
+      float: left
+      margin-right: 10px
+      section#description
+        padding: 10px
+        // height: 114px
+        @include shell_gradient_layer
+        margin-bottom: 10px
+        height: 415px
+        line-height: 20px
+    section#right
+      float: left
+      width: 440px
+      .text
+        padding: 10px
+        height: 88px
+        @include shell_gradient_layer
+        margin-bottom: 10px
+      .charts
+        .left
+          float: left
+          width: 356px
+        .right
+          float: left
+          .current
+            width: 70px
+            margin-left: 10px
+            @include shell_gradient_layer
+            .header
+              border: 1px solid #ffffff
+              height: 30px
+              color: #ffffff
+              text-align: center
+              @include gradient(#919191, #BABABA)
+              @include shadow(#D8D8D8, 8px)
+            .subheader
+              height: 30px
+              color: #A1A1A1
+              line-height: 28px
+              text-align: center
+              @include shell_gradient_layer
+  &#scenarios_compare
+    section#left
+      float: left
+      width: 440px
+      margin-right: 10px
+      .full_chart
+        float: right
+    section#right
+      float: left
+      width: 440px
+      section#select
+        height: 88px
+        padding: 10px
+        margin-bottom: 10px
+        @include shell_gradient_layer
+    section#main
+      text-align: center
+      
+@import 'chart'

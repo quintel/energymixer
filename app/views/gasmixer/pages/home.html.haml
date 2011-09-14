@@ -1,5 +1,5 @@
 %section#intro_text
-  %h2="Welkom bij de #{t('gasmixer')}!"
+  %h2="Welkom bij de #{t(APP_CONFIG['app_name'])}!"
   %p
     Willen we dat Nederland in #{END_YEAR} zijn energie nog steeds voor bijna 92% uit aardolie, aardgas en steenkool haalt?
   %p
@@ -32,7 +32,7 @@
       Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik door veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw is energieintensief. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in #{END_YEAR}?
     
 %section#current_state
-  .graph_normal
+  .chart_normal
     = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
     = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
   

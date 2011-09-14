@@ -1,16 +1,16 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Sep 2011 08:56:45 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/graph.coffee
+/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:18:09 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
 (function() {
   var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-  this.Graph = (function() {
-    function Graph(app) {
+  this.Chart = (function() {
+    function Chart(app) {
       this.app = app;
       this.dashboard_steps = window.globals.dashboard_steps;
       this.mixer = this.app.mixer;
     }
-    Graph.prototype.refresh = function() {
+    Chart.prototype.refresh = function() {
       var key, value, _ref;
       _ref = this.mixer.dashboard_values;
       for (key in _ref) {
@@ -20,19 +20,19 @@
       }
       return this.update_bar_chart();
     };
-    Graph.prototype.block_interface = function() {
-      $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({
+    Chart.prototype.block_interface = function() {
+      $(".dashboard_item .value, .chart header, #carriers").busy({
         img: '/images/spinner.gif'
       });
       return this.app.questions.hide_all_question_links();
     };
-    Graph.prototype.unblock_interface = function() {
-      $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear");
+    Chart.prototype.unblock_interface = function() {
+      $(".dashboard_item .value, .chart header, #carriers").busy("clear");
       return this.app.questions.update_question_links();
     };
-    Graph.prototype.update_dashboard_item = function(key, value) {
+    Chart.prototype.update_dashboard_item = function(key, value) {
       var class_to_add, classes_to_remove, dashboard_selector, formatted_value, i, step;
-      dashboard_selector = "#dashboard ." + key;
+      dashboard_selector = ".dashboard_item#" + key;
       formatted_value = this.format_dashboard_value(key, value);
       $("" + dashboard_selector + " .value").html(formatted_value);
       step = this.find_step_for_dashboard_item(key, value);
@@ -43,7 +43,7 @@
       class_to_add = "" + key + "_step_" + step;
       return $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
     };
-    Graph.prototype.find_step_for_dashboard_item = function(key, value) {
+    Chart.prototype.find_step_for_dashboard_item = function(key, value) {
       var i, step, steps, _i, _len;
       steps = this.dashboard_steps[key];
       step = 0;
@@ -55,7 +55,7 @@
       }
       return step;
     };
-    Graph.prototype.format_dashboard_value = function(key, value) {
+    Chart.prototype.format_dashboard_value = function(key, value) {
       var out;
       out = "";
       switch (key) {
@@ -77,42 +77,43 @@
       }
       return out;
     };
-    Graph.prototype.update_bar_chart = function() {
-      var code, current_graph_height, current_sum, graph_max_height, label, max_amount, new_height, new_money_height, renewable_subgraph_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
+    Chart.prototype.update_bar_chart = function() {
+      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, label, max_amount, new_height, new_money_height, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
       current_sum = this.mixer.gquery_results["policy_total_energy_cost"] * 1000;
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
         this.app.score.values.total_amount.mark = current_sum;
       }
-      graph_max_height = 390;
-      max_amount = globals.graph_max_amount / 1000000;
-      current_graph_height = current_sum / max_amount * graph_max_height;
+      chart_max_height = 390;
+      max_amount = globals.chart_max_amount / 1000000;
+      current_chart_height = current_sum / max_amount * chart_max_height;
       rounded_sum = 0;
       _ref = this.mixer.carriers_values;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
         val = _ref[code];
-        new_height = Math.round(val / current_sum * current_graph_height);
+        new_height = Math.round(val / current_sum * current_chart_height);
         rounded_sum += new_height;
-        selector = ".user_created ." + code;
-        $(selector).animate({
+        active_charts = $("ul.chart").not('.static');
+        item = active_charts.find("." + code);
+        item.animate({
           "height": new_height
         }, "slow");
-        label = $("" + selector + " .label");
+        label = item.find(".label");
         if (new_height > 10) {
           label.show();
         } else {
           label.hide();
         }
       }
-      renewable_subgraph_height = 100;
+      renewable_subchart_height = 100;
       total_renewable_amount = this.app.mixer.carriers_values.costs_share_of_sustainable;
       _ref2 = this.app.mixer.secondary_carriers_values;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;
         val = _ref2[code];
-        new_height = Math.round(val / total_renewable_amount * renewable_subgraph_height);
-        selector = ".user_created ." + code;
+        new_height = Math.round(val / total_renewable_amount * renewable_subchart_height);
+        selector = "ul.chart ." + code;
         $(selector).animate({
           "height": new_height
         }, "slow");
@@ -127,16 +128,16 @@
       $(".user_created .money").animate({
         "height": new_money_height
       }, "slow");
-      $(".user_created .total_amount span").html(sprintf("%.1f", current_sum / 1000));
+      $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000));
       return this.unblock_interface();
     };
-    Graph.prototype.update_etm_link = function() {
+    Chart.prototype.update_etm_link = function() {
       return $("footer a").click(__bind(function(e) {
         if (confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
           return $(e.target).attr("href", this.mixer.etm_scenario_url);
         }
       }, this));
     };
-    return Graph;
+    return Chart;
   })();
 }).call(this);

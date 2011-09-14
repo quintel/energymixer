@@ -41,6 +41,7 @@ class ScenariosController < ApplicationController
     @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]
     
     scope      = Scenario.user_created.public.recent_first
+    # DEBT: following checks can be moved into the scope definitions
     scope      = scope.excluding(session[:scenario_id]) if session[:scenario_id]
     scope      = scope.by_user(params[:q]) unless params[:q].blank?
     @scenarios = scope.page(params[:page])

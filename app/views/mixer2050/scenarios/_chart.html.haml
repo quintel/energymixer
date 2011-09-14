@@ -1,24 +1,21 @@
 :ruby
   max_height = local_assigns.has_key?(:max_height) ? max_height : 360
-  # set static to true if you don't want js to update the chart
-  static     = local_assigns.has_key?(:static) ? true : false
   width      = local_assigns.has_key?(:width) ? width : 80
+  labels     = local_assigns.has_key?(:labels) ? labels : true
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   rounded_sum = 0
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
 
 .charts_container
   .chart_canvas_mix{:style=>"width: #{width}px;"}
-    %ul.chart{:class => static && 'static'}
+    %ul.chart
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_chart_height).round
         - rounded_sum += height
         - label_hidden = height <= 10
         %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
-          %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
-  .chart_canvas_money
-    %ul.chart
-      %li.serie.money{:style => "height: #{rounded_sum + 8}px"}
+          - if labels
+            %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
   .renewables_float
     %ul.chart
       - scenario.renewable_carriers.each_pair do |key, v|
