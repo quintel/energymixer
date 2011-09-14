@@ -5,7 +5,7 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.current.clone
     @scenario.year = END_YEAR
 
-    @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name'])
+    @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name']) || QuestionSet.first
     @questions    = @question_set.questions.ordered rescue []
     @answers      = @questions.map{|q| q.answers}.flatten.uniq
     
