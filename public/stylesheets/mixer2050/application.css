@@ -55,6 +55,26 @@ body.mixer2050#pages_home section#main {
     margin: 10px 0; }
   body.mixer2050#pages_home section#main #chart {
     float: right; }
+    body.mixer2050#pages_home section#main #chart header {
+      font-size: 9px;
+      height: 30px;
+      background: #0b3375;
+      color: white;
+      border: 1px solid white;
+      text-align: center;
+      font-weight: bold;
+      line-height: 28px;
+      -moz-box-shadow: 0px 2px 8px #d8d8d8;
+      -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+      box-shadow: 0px 2px 8px #d8d8d8;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+      font-weight: normal;
+      line-height: 12px;
+      width: 121px;
+      padding: 4px 0; }
+      body.mixer2050#pages_home section#main #chart header strong {
+        font-weight: bold; }
   body.mixer2050#pages_home section#main #map {
     margin-top: 20px;
     position: relative;
@@ -343,7 +363,12 @@ body.mixer2050 .full_chart {
     border: 1px solid white;
     text-align: center;
     font-weight: bold;
-    line-height: 28px; }
+    line-height: 28px;
+    -moz-box-shadow: 0px 2px 8px #d8d8d8;
+    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+    box-shadow: 0px 2px 8px #d8d8d8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
   body.mixer2050 .full_chart section.chart {
     float: left;
     width: 210px;
