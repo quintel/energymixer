@@ -11,7 +11,7 @@
 
   .charts_container
     .chart_canvas_mix{:style=>"width: #{width}px;"}
-      %ul.chart
+      %ul.chart.static
         - scenario.carriers.each_pair do |key, v|
           - height = (v[:ratio] * current_chart_height).round
           - rounded_sum += height
