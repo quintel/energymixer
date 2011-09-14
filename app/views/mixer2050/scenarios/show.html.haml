@@ -22,14 +22,14 @@
     .content
       = full_text(@scenario)
 
-%section#right.graph
+%section#right.chart
   .text
     = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
   .charts
     .left
       = render 'full_chart', :scenario => @scenario
     .right
-      .current.graph_shaded
+      .current.chart_shaded
         .header Energy Mix 2011
         .subheader &euro;XXX Miljard
         = render 'scenarios/chart', :scenario => Scenario.current, :width => 50

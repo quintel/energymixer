@@ -12,7 +12,7 @@ class @Mixer
     @parameters       = {} # parameters set according to user answers
     @results          = {} # semiraw response from the engine
     @user_answers     = [] # right from the form
-    @carriers_values  = {} # used by graph, too!
+    @carriers_values  = {} # used by chart, too!
     @dashboard_values = {} # idem
     @secondary_carriers_values  = {}
     @gquery_results   = {} # clean results hash
@@ -32,7 +32,7 @@ class @Mixer
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @session_id = @scenario_id = key
         @etm_scenario_url = "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
-        @app.graph.update_etm_link()
+        @app.chart.update_etm_link()
         $.logThis("Fetched new session Key: #{key}")
         # show data for the first time
         this.make_request()
@@ -92,7 +92,7 @@ class @Mixer
     # http:#stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
     # if we're going back to vanilla jquery change the callback parameters,
     # add type: json and remove the '?callback=?' url suffix
-    @app.graph.block_interface()
+    @app.chart.block_interface()
     $.jsonp(
       url: this.json_path_with_session_id() + '?callback=?',
       data: request_parameters,
@@ -100,10 +100,10 @@ class @Mixer
         # if(data.errors.length > 0) { alert(data.errors); }
         @results = data
         this.store_results()
-        @app.graph.refresh()
+        @app.chart.refresh()
         @app.score.show()
       error: (data, error) ->
-        @app.graph.unblock_interface()
+        @app.chart.unblock_interface()
         $.logThis(error)
     )
     return true;
@@ -134,7 +134,7 @@ class @Mixer
     this.build_parameters()
     return @parameters
   
-  # parses form, prepares parametes, makes ajax request and refreshes the graph
+  # parses form, prepares parametes, makes ajax request and refreshes the chart
   # called every time the user selects an answer
   refresh: ->
     this.process_form()

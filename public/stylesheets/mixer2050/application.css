@@ -53,7 +53,7 @@ body.mixer2050#pages_home section#main {
     font-weight: bold;
     font-size: 14px;
     margin: 10px 0; }
-  body.mixer2050#pages_home section#main #graph {
+  body.mixer2050#pages_home section#main #chart {
     float: right; }
   body.mixer2050#pages_home section#main #map {
     margin-top: 20px;
@@ -475,7 +475,7 @@ body.mixer2050 .shaded_chart header.sub {
   box-shadow: 0px 2px 8px #d8d8d8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-body.mixer2050 .graph_normal .total_amount {
+body.mixer2050 .chart_normal .total_amount {
   background: #0b3375;
   color: white;
   border: 1px solid white;
