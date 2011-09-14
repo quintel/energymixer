@@ -14,18 +14,17 @@ class @Chart
     this.update_bar_chart()
   
   block_interface: ->
-    # DEBT: wow this is very specific
-    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy({img: '/images/spinner.gif'})
+    $(".dashboard_item .value, .chart header, #carriers").busy({img: '/images/spinner.gif'})
     @app.questions.hide_all_question_links();
   
   unblock_interface: ->
-    $("#dashboard .dashboard_item .value, .user_created .total_amount, #carriers").busy("clear")
+    $(".dashboard_item .value, .chart header, #carriers").busy("clear")
     @app.questions.update_question_links()
-    
+  
   # the following methods should not be called directly
   # You might only have to update the format_dashboard_value method
   update_dashboard_item: (key, value) ->
-    dashboard_selector = "#dashboard .#{key}"
+    dashboard_selector = ".dashboard_item##{key}"
     formatted_value = this.format_dashboard_value(key, value)
     $("#{dashboard_selector} .value").html(formatted_value)
     
@@ -83,10 +82,12 @@ class @Chart
     for own code, val of @mixer.carriers_values
       new_height = Math.round(val / current_sum * current_chart_height)
       rounded_sum += new_height
-      selector = ".user_created .#{code}"
-      $(selector).animate({"height": new_height}, "slow")
+      active_charts = $("ul.chart").not('.static')
+      item = active_charts.find(".#{code}")
+      # selector = "ul.chart .#{code}"
+      item.animate({"height": new_height}, "slow")
       # hide text if there's no room
-      label = $("#{selector} .label")
+      label = item.find(".label")
       if (new_height > 10) then label.show() else label.hide()
     
     # renewable subchart
@@ -94,7 +95,7 @@ class @Chart
     total_renewable_amount = @app.mixer.carriers_values.costs_share_of_sustainable
     for own code, val of @app.mixer.secondary_carriers_values
       new_height = Math.round(val / total_renewable_amount * renewable_subchart_height)
-      selector = ".user_created .#{code}"
+      selector = "ul.chart .#{code}"
       $(selector).animate({"height": new_height}, "slow")
       label = $("#{selector} .label")
       if (new_height > 5) then label.show() else label.hide()
@@ -104,7 +105,7 @@ class @Chart
     $(".user_created .money").animate({"height" : new_money_height}, "slow")
     
     # and top counter
-    $(".user_created .total_amount span").html(sprintf("%.1f" ,current_sum / 1000))
+    $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000))
     
     this.unblock_interface()
   

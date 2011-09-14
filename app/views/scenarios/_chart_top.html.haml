@@ -1,5 +1,5 @@
-.total_amount
+%header
   %h4 Mix #{scenario.year || END_YEAR}
   &euro;
-  %span= number_with_precision(scenario.total_amount, :precision => 1, :separator => ".")
+  %span.total_amount= number_with_precision(scenario.total_amount, :precision => 1, :separator => ".")
   Mld
