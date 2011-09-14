@@ -1,5 +1,7 @@
 :ruby
   max_height = local_assigns.has_key?(:max_height) ? max_height : 360
+  # set static to true if you don't want js to update the chart
+  static     = local_assigns.has_key?(:static) ? true : false
   width      = local_assigns.has_key?(:width) ? width : 80
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   rounded_sum = 0
@@ -7,7 +9,7 @@
 
 .charts_container
   .chart_canvas_mix{:style=>"width: #{width}px;"}
-    %ul.chart
+    %ul.chart{:class => static && 'static'}
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_chart_height).round
         - rounded_sum += height
