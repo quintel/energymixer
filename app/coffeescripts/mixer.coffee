@@ -8,7 +8,6 @@ class @Mixer
     @base_path        = globals.api_base_path + "/api_scenarios"
     @session_id       = false
     @scenario_id      = false
-    @etm_scenario_url = false
     @parameters       = {} # parameters set according to user answers
     @results          = {} # semiraw response from the engine
     @user_answers     = [] # right from the form
@@ -31,8 +30,7 @@ class @Mixer
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @session_id = @scenario_id = key
-        @etm_scenario_url = "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
-        @app.chart.update_etm_link()
+        @app.chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
         $.logThis("Fetched new session Key: #{key}")
         # show data for the first time
         this.make_request()
@@ -41,11 +39,8 @@ class @Mixer
       )
     return @session_id
   
-  base_path_with_session_id: ->
-    "#{@base_path}/#{this.fetch_session_id()}"
-  
   json_path_with_session_id: ->
-    "#{this.base_path_with_session_id()}.json"
+    "#{@base_path}/#{this.fetch_session_id()}.json"
       
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
