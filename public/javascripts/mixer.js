@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:42:06 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 12:05:19 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -8,7 +8,6 @@
     function Mixer(app) {
       this.app = app;
       this.base_path = globals.api_base_path + "/api_scenarios";
-      this.session_id = false;
       this.scenario_id = false;
       this.parameters = {};
       this.results = {};
@@ -21,11 +20,11 @@
       this.mix_table = globals.mix_table;
       this.secondary_mix_table = globals.secondary_mix_table;
       this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["policy_total_energy_cost"]);
-      this.fetch_session_id();
+      this.fetch_scenario_id();
     }
-    Mixer.prototype.fetch_session_id = function() {
-      if (this.session_id) {
-        return this.session_id;
+    Mixer.prototype.fetch_scenario_id = function() {
+      if (this.scenario_id) {
+        return this.scenario_id;
       }
       $.ajax({
         url: "" + this.base_path + "/new.json",
@@ -36,19 +35,16 @@
         success: __bind(function(data) {
           var key;
           key = data.api_scenario.id || data.api_scenario.api_session_key;
-          this.session_id = this.scenario_id = key;
+          this.scenario_id = key;
           this.app.chart.update_etm_link("" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl");
-          $.logThis("Fetched new session Key: " + key);
+          $.logThis("New scenario id: " + key);
           return this.make_request();
         }, this),
         error: function(request, status, error) {
           return $.logThis(error);
         }
       });
-      return this.session_id;
-    };
-    Mixer.prototype.json_path_with_session_id = function() {
-      return "" + this.base_path + "/" + (this.fetch_session_id()) + ".json";
+      return this.scenario_id;
     };
     Mixer.prototype.store_results = function() {
       var code, index, key, raw_results, results, value, _ref, _ref2, _ref3, _results;
@@ -87,21 +83,19 @@
       }
       return _results;
     };
-    Mixer.prototype.make_request = function(hash) {
-      var request_parameters;
-      if (!hash) {
-        hash = this.parameters;
-      }
+    Mixer.prototype.make_request = function() {
+      var api_url, request_parameters;
       request_parameters = {
         result: this.gqueries,
         reset: 1
       };
-      if (!$.isEmptyObject(hash)) {
-        request_parameters['input'] = hash;
+      if (!$.isEmptyObject(this.parameters)) {
+        request_parameters['input'] = this.parameters;
       }
+      api_url = "" + this.base_path + "/" + (this.fetch_scenario_id()) + ".json?callback=?";
       this.app.chart.block_interface();
       $.jsonp({
-        url: this.json_path_with_session_id() + '?callback=?',
+        url: api_url,
         data: request_parameters,
         success: __bind(function(data) {
           this.results = data;
