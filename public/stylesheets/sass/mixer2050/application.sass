@@ -26,12 +26,8 @@ body.mixer2050
       section#current_chart
         width: 68px
         float: left
-        height: 430px
+        height: 432px
         @include shell_gradient_layer
-        .header
-          @include header_grey
-        .subheader
-          @include subheader_grey
 
   &#scenarios_index
     section#left
@@ -85,45 +81,31 @@ body.mixer2050
     section#left
       width: 440px
       float: left
-      margin-right: 10px
+      margin-right: 8px
       section#description
         padding: 10px
-        // height: 114px
         @include shell_gradient_layer
-        margin-bottom: 10px
+        margin-bottom: 8px
         height: 415px
         line-height: 20px
     section#right
       float: left
       width: 440px
-      .text
-        padding: 10px
-        height: 88px
+      section#text
+        padding: 8px
+        height: 92px
         @include shell_gradient_layer
-        margin-bottom: 10px
-      .charts
-        .left
+        margin-bottom: 8px
+      section#charts
+        section#user_chart
           float: left
-          width: 356px
-        .right
+          margin-right: 8px
+        section#current_chart
+          height: 432px
+          width: 65px
           float: left
-          .current
-            width: 70px
-            margin-left: 10px
-            @include shell_gradient_layer
-            .header
-              border: 1px solid #ffffff
-              height: 30px
-              color: #ffffff
-              text-align: center
-              @include gradient(#919191, #BABABA)
-              @include shadow(#D8D8D8, 8px)
-            .subheader
-              height: 30px
-              color: #A1A1A1
-              line-height: 28px
-              text-align: center
-              @include shell_gradient_layer
+          @include shell_gradient_layer
+
   &#scenarios_compare
     section#left
       float: left
