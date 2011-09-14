@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:18:09 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:42:06 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -131,10 +131,10 @@
       $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000));
       return this.unblock_interface();
     };
-    Chart.prototype.update_etm_link = function() {
+    Chart.prototype.update_etm_link = function(url) {
       return $("footer a").click(__bind(function(e) {
         if (confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)")) {
-          return $(e.target).attr("href", this.mixer.etm_scenario_url);
+          return $(e.target).attr("href", url);
         }
       }, this));
     };
