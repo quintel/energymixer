@@ -6,7 +6,6 @@ class @Mixer
   constructor: (app) ->
     @app = app
     @base_path        = globals.api_base_path + "/api_scenarios"
-    @session_id       = false
     @scenario_id      = false
     @parameters       = {} # parameters set according to user answers
     @results          = {} # semiraw response from the engine
@@ -19,29 +18,26 @@ class @Mixer
     @mix_table           = globals.mix_table       # idem
     @secondary_mix_table = globals.secondary_mix_table # idem
     @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["policy_total_energy_cost"])
-    this.fetch_session_id()
+    this.fetch_scenario_id()
 
-  fetch_session_id: ->
-    return @session_id if @session_id
+  fetch_scenario_id: ->
+    return @scenario_id if @scenario_id
     $.ajax(
       url: "#{@base_path}/new.json"
       dataType: 'jsonp'
       data: { settings : globals.api_session_settings }
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
-        @session_id = @scenario_id = key
+        @scenario_id = key
         @app.chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
-        $.logThis("Fetched new session Key: #{key}")
+        $.logThis("New scenario id: #{key}")
         # show data for the first time
         this.make_request()
       error: (request, status, error) -> 
         $.logThis(error)
       )
-    return @session_id
+    return @scenario_id
   
-  json_path_with_session_id: ->
-    "#{@base_path}/#{this.fetch_session_id()}.json"
-      
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
   store_results: ->
@@ -76,20 +72,21 @@ class @Mixer
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
-  make_request: (hash) ->
-    hash = @parameters if !hash
+  make_request: ->
     request_parameters = {result: @gqueries, reset: 1}
-    request_parameters['input'] = hash if(!$.isEmptyObject(hash))
+    request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
     # Note that we're not using the standard jquery ajax call,
     # but http:#code.google.com/p/jquery-jsonp/
     # for its better error handling.
-    # http:#stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
+    # http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
     # if we're going back to vanilla jquery change the callback parameters,
     # add type: json and remove the '?callback=?' url suffix
+    api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json?callback=?"
+    
     @app.chart.block_interface()
     $.jsonp(
-      url: this.json_path_with_session_id() + '?callback=?',
+      url: api_url,
       data: request_parameters,
       success: (data) =>
         # if(data.errors.length > 0) { alert(data.errors); }

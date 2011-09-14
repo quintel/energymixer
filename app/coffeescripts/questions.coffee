@@ -164,10 +164,7 @@ class @Questions
       offset = $(this).offset()
       $("#tooltip").css({"top": tipY + 20 , "left": tipX})
   
-  setup_callbacks: ->
-    this.setup_navigation_callbacks()
-    this.setup_cosmetic_callbacks()
-    
+  setup_question_callbacks: ->
     # when the users clicks on an answer
     $("input[type='radio']").change (e) =>
       element = $(e.target).closest("li.answer")
@@ -180,6 +177,11 @@ class @Questions
     $("form").submit =>
       # update the scenario id hidden field
       $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
+    
+  setup_callbacks: ->
+    this.setup_navigation_callbacks()
+    this.setup_question_callbacks()
+    this.setup_cosmetic_callbacks()
   
   # utility methods
   #

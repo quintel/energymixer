@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 12 Sep 2011 08:45:38 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 12:02:26 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -37,7 +37,6 @@
     };
     Questions.prototype.get_question_id_from_answer = function(answer_id) {
       var e, _i, _len, _ref;
-      console.log('Yo!');
       this.answers2questions = {};
       _ref = $("div.question input:checked");
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -185,9 +184,7 @@
         });
       });
     };
-    Questions.prototype.setup_callbacks = function() {
-      this.setup_navigation_callbacks();
-      this.setup_cosmetic_callbacks();
+    Questions.prototype.setup_question_callbacks = function() {
       $("input[type='radio']").change(__bind(function(e) {
         var element;
         element = $(e.target).closest("li.answer");
@@ -199,6 +196,11 @@
       return $("form").submit(__bind(function() {
         return $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
       }, this));
+    };
+    Questions.prototype.setup_callbacks = function() {
+      this.setup_navigation_callbacks();
+      this.setup_question_callbacks();
+      return this.setup_cosmetic_callbacks();
     };
     Questions.prototype.clear_the_form = function() {
       return $('form')[0].reset();
