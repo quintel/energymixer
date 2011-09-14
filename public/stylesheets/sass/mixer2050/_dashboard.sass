@@ -1,0 +1,56 @@
+@mixin gauge_0
+  background: transparent url(/images/layout/flat/gauge_0.png) 112px center no-repeat
+@mixin gauge_1
+  background: transparent url(/images/layout/flat/gauge_1.png) 112px center no-repeat
+@mixin gauge_2
+  background: transparent url(/images/layout/flat/gauge_2.png) 112px center no-repeat
+@mixin gauge_3
+  background: transparent url(/images/layout/flat/gauge_3.png) 112px center no-repeat
+@mixin gauge_4
+  background: transparent url(/images/layout/flat/gauge_4.png) 112px center no-repeat
+@mixin gauge_5
+  background: transparent url(/images/layout/flat/gauge_5.png) 112px center no-repeat
+@mixin gauge_6
+  background: transparent url(/images/layout/flat/gauge_6.png) 112px center no-repeat
+
+body.mixer2050
+  .full_chart
+    section.boxes
+      float: left
+      width: 149px
+      header
+        @include subheader_blue
+      .dashboard_item
+        height: 90px
+        border-bottom: 1px solid #D0D1D1
+        margin: 0 0 0 8px
+        background: transparent
+        h3
+          padding-top: 30px
+          margin-right: 30px
+          text-align: right
+          color: #000000
+          font-weight: bold
+        .value
+          padding-top: 0
+          margin-right: 30px
+          overflow: hidden
+          font-size: 1.6em
+          margin-top: 0
+          text-align: right
+          font-weight: bold
+          color: #000000
+        &.energy_dependence_step_0, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_0, &.share_of_renewable_energy_step_6, &.area_footprint_per_nl_step_0
+          @include gauge_6
+        &.energy_dependence_step_1, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_1, &.share_of_renewable_energy_step_5, &.area_footprint_per_nl_step_1
+          @include gauge_5
+        &.energy_dependence_step_2, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_2, &.share_of_renewable_energy_step_4, &.area_footprint_per_nl_step_2
+          @include gauge_4
+        &.energy_dependence_step_3, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_3, &.share_of_renewable_energy_step_3, &.area_footprint_per_nl_step_3
+          @include gauge_3
+        &.energy_dependence_step_4, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_4, &.share_of_renewable_energy_step_2, &.area_footprint_per_nl_step_4
+          @include gauge_2
+        &.energy_dependence_step_5, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_5, &.share_of_renewable_energy_step_1, &.area_footprint_per_nl_step_5
+          @include gauge_1
+        &.energy_dependence_step_6, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, &.share_of_renewable_energy_step_0, &.area_footprint_per_nl_step_6
+          @include gauge_0

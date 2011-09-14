@@ -14,13 +14,7 @@ body.mixer2050
     section.boxes
       float: left
       width: 149px
-      header
-        @include subheader_blue
-      .dashboard_item
-        height: 90px
-        border-bottom: 1px solid #D0D1D1
-        margin: 0 0 0 8px
-        background: transparent
+      // see _dashboard.sass for the other properties
   .shaded_chart
     header
       @include header_grey
@@ -62,3 +56,5 @@ body.mixer2050
           background: url("/images/layout/textures/nuclear.png")
         li.renewable
           background: url("/images/layout/textures/renewable.png")
+
+@import 'dashboard'
