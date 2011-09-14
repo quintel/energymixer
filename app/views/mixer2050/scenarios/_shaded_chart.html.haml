@@ -1,6 +1,8 @@
 .shaded_chart
   %header Energy Mix 2011
-  %header.sub XXX Miljard
+  %header.sub
+    = number_with_precision(scenario.total_amount, :precision => 1, :separator => ".")
+    Mld
   :ruby
     max_height = local_assigns.has_key?(:max_height) ? max_height : 390
     width      = local_assigns.has_key?(:width) ? width : 50

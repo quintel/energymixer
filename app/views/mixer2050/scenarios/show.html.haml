@@ -22,17 +22,15 @@
     .content
       = full_text(@scenario)
 
-%section#right.chart
-  .text
+%section#right
+  %section#text
     = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
-  .charts
-    .left
+  %section#charts
+    %section#user_chart
       = render 'full_chart', :scenario => @scenario
-    .right
-      .current.chart_shaded
-        .header Energy Mix 2011
-        .subheader &euro;XXX Miljard
-        = render 'scenarios/chart', :scenario => Scenario.current, :width => 50
+    %section#current_chart
+      = render 'shaded_chart', :scenario => Scenario.current
+
 
 - content_for :head do
   -#TODO: move this javascript to a js-file
