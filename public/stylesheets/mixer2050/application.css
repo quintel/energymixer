@@ -140,47 +140,25 @@ body.mixer2050#pages_home section#main {
         width: 100px;
         float: left; }
 
-body.mixer2050 {
-  width: 890px; }
-  body.mixer2050#scenarios_new section#left {
-    width: 440px;
-    margin-right: 8px;
-    float: left; }
-    body.mixer2050#scenarios_new section#left #questions {
-      width: auto;
-      background-color: #fefffe;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
-      background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
-      border: 1px solid #fefffe;
-      -moz-box-shadow: 0px 2px 8px #d8d8d8;
-      -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-      box-shadow: 0px 2px 8px #d8d8d8;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
-      height: 430px;
-      overflow: auto; }
-      body.mixer2050#scenarios_new section#left #questions nav#up {
-        background-color: #fefffe;
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
-        background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
-        border: 1px solid #fefffe;
-        -moz-box-shadow: 0px 2px 8px #d8d8d8;
-        -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-        box-shadow: 0px 2px 8px #d8d8d8;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-  body.mixer2050#scenarios_new section#right {
-    float: left;
-    width: 440px; }
-    body.mixer2050#scenarios_new section#right section#user_chart {
-      float: left;
-      margin-right: 8px; }
-    body.mixer2050#scenarios_new section#right section#current_chart {
-      width: 68px;
-      float: left;
-      height: 432px;
+body.mixer2050#scenarios_new section#left {
+  width: 440px;
+  margin-right: 8px;
+  float: left; }
+  body.mixer2050#scenarios_new section#left section#questions {
+    width: auto;
+    background-color: #fefffe;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+    background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+    border: 1px solid #fefffe;
+    -moz-box-shadow: 0px 2px 8px #d8d8d8;
+    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+    box-shadow: 0px 2px 8px #d8d8d8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+    height: 430px;
+    overflow: auto; }
+    body.mixer2050#scenarios_new section#left section#questions nav#up {
       background-color: #fefffe;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
       background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
@@ -191,6 +169,54 @@ body.mixer2050 {
       box-shadow: 0px 2px 8px #d8d8d8;
       -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
       filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+    body.mixer2050#scenarios_new section#left section#questions .question .info {
+      padding-left: 3px;
+      position: relative; }
+      body.mixer2050#scenarios_new section#left section#questions .question .info .information {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-color: #fefffe;
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+        background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+        border: 1px solid #fefffe;
+        -moz-box-shadow: 0px 2px 8px #d8d8d8;
+        -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+        box-shadow: 0px 2px 8px #d8d8d8;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+        body.mixer2050#scenarios_new section#left section#questions .question .info .information h3 {
+          font-size: 13px;
+          font-weight: bold;
+          color: #0c3473;
+          margin-bottom: 10px; }
+        body.mixer2050#scenarios_new section#left section#questions .question .info .information .close_button {
+          float: right; }
+body.mixer2050#scenarios_new section#right {
+  float: left;
+  width: 440px; }
+  body.mixer2050#scenarios_new section#right section#user_chart {
+    float: left;
+    margin-right: 8px; }
+  body.mixer2050#scenarios_new section#right section#current_chart {
+    width: 68px;
+    float: left;
+    height: 432px;
+    background-color: #fefffe;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
+    background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefffe), to(#e9e9e9));
+    border: 1px solid #fefffe;
+    -moz-box-shadow: 0px 2px 8px #d8d8d8;
+    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+    box-shadow: 0px 2px 8px #d8d8d8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+
+body.mixer2050 {
+  width: 890px; }
   body.mixer2050#scenarios_index section#left {
     width: 435px;
     float: left;

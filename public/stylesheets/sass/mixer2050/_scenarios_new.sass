@@ -1,0 +1,41 @@
+body.mixer2050
+  &#scenarios_new
+    section#left
+      width: 440px
+      margin-right: 8px
+      float: left
+      section#questions
+        width: auto
+        @include shell_gradient_layer
+        height: 430px
+        overflow: auto
+        nav#up
+          @include shell_gradient_layer
+        .question
+          .info
+            padding-left: 3px
+            position: relative
+            .information
+              display: none
+              position: absolute
+              top: 30px
+              left: 0
+              @include shell_gradient_layer
+              h3
+                font-size: 13px
+                font-weight: bold
+                color: #0C3473
+                margin-bottom: 10px
+              .close_button
+                float: right
+    section#right
+      float: left
+      width: 440px
+      section#user_chart
+        float: left
+        margin-right: 8px
+      section#current_chart
+        width: 68px
+        float: left
+        height: 432px
+        @include shell_gradient_layer
