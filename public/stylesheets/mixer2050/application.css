@@ -502,11 +502,13 @@ body.mixer2050 .charts_container .chart_canvas_mix {
       position: relative; }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span {
         display: block;
-        margin: auto 0;
+        margin: auto;
         position: absolute;
         font-weight: bold;
         right: 100px;
         color: black; }
+        body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span.hidden {
+          display: none; }
     body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.gas {
       background: url("/images/layout/textures/gas.png"); }
     body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.oil {
