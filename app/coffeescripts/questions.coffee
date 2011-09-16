@@ -49,10 +49,10 @@ class @Questions
     
     if conflicts
       text = unique(conflicting_questions).join(" en ")
-      $("#questions #notice .conflicting_questions").html(text)
-      $("#questions #notice").show()
+      $("section#conflicts .conflicting_questions").html(text)
+      $("section#conflicts").show()
     else
-      $("#questions #notice").hide()
+      $("section#conflicts").hide()
   
   # returns false or the conflicting answer_id
   check_conflicting_answer: (selected_answer_id) ->

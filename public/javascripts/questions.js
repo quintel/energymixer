@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 16 Sep 2011 10:12:34 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 16 Sep 2011 12:15:58 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -59,10 +59,10 @@
       }, this));
       if (conflicts) {
         text = unique(conflicting_questions).join(" en ");
-        $("#questions #notice .conflicting_questions").html(text);
-        return $("#questions #notice").show();
+        $("section#conflicts .conflicting_questions").html(text);
+        return $("section#conflicts").show();
       } else {
-        return $("#questions #notice").hide();
+        return $("section#conflicts").hide();
       }
     };
     Questions.prototype.check_conflicting_answer = function(selected_answer_id) {
