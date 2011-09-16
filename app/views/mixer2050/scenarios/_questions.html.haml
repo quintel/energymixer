@@ -1,0 +1,26 @@
+%nav#up
+  %table
+    %tr
+      - Question.ordered.each do |question|
+        %td.question_tab{:'data-question_id' => question.number}=question.number
+%div.questions
+  = form_for @scenario, :url => scenarios_path, :validate => true, :html => { :method => :post } do |scenario|
+    = scenario.fields_for :answers do |answer|
+      = render 'question', :answer => answer
+    = render 'user_details', :scenario => scenario
+
+#notice
+  De antwoorden op de vragen  
+  %span.conflicting_questions
+  lijken tegenstrijdig.
+  %br
+  Weet u zeker dat deze antwoorden de situatie in #{END_YEAR} goed beschrijven?
+
+#admin_menu
+  -if params[:test]
+    %h2 TEST MENU
+    - Question.ordered.each do |question|
+      %a.question_tab{:href  => "#", :'data-question_id' => question.number}
+        =question.number
+    - last_question_number = Question.count + 1
+    %a.question_tab{:href  => "#",:'data-question_id' => last_question_number}Submit
