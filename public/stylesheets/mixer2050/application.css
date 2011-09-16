@@ -525,6 +525,9 @@ body.mixer2050 .full_chart section.boxes {
       text-align: right;
       font-weight: bold;
       color: black; }
+    body.mixer2050 .full_chart section.boxes .dashboard_item .info_icon {
+      float: left;
+      margin-top: 10px; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_0 {
       background: transparent url(/images/layout/flat/gauge_6.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_1 {
@@ -579,6 +582,9 @@ body.mixer2050 .full_chart section.boxes {
       text-align: right;
       font-weight: bold;
       color: black; }
+    body.mixer2050 .full_chart section.boxes .dashboard_item .info_icon {
+      float: left;
+      margin-top: 10px; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_0 {
       background: transparent url(/images/layout/flat/gauge_6.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_1 {
