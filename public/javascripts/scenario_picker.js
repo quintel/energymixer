@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 13 Sep 2011 10:14:29 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 16 Sep 2011 13:55:21 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/scenario_picker.coffee
  */
 
@@ -16,7 +16,16 @@
       $(this).attr('checked', true);
       element = $(this).closest("div.scenario");
       element.appendTo("#selected_scenarios");
-      return element.find(".actions").hide();
+      element.find(".actions").hide();
+      return element.find(".remove_from_list").show();
+    });
+    $(".scenario .remove_from_list a").live('click', function() {
+      var item;
+      item = $(this).parents(".scenario");
+      item.find(".actions").show();
+      item.find(".remove_from_list").hide();
+      item.find("input").attr('checked', false);
+      return item.appendTo('#user_scenarios');
     });
     $("#compare_with_user_scenario").change(function() {
       if ($("#selected input:checked").length >= 1) {
