@@ -1,7 +1,6 @@
 :ruby
   max_height = local_assigns.has_key?(:max_height) ? max_height : 360
   width      = local_assigns.has_key?(:width) ? width : 80
-  labels     = local_assigns.has_key?(:labels) ? labels : true
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   rounded_sum = 0
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
@@ -28,8 +27,7 @@
             - rounded_sum += height
             - label_hidden = height <= 10
             %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
-              - if labels
-                %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
+              %span.label{:class => label_hidden && 'hidden'}= I18n.t(key)
       .renewables_float
         %ul.chart
           - scenario.renewable_carriers.each_pair do |key, v|
