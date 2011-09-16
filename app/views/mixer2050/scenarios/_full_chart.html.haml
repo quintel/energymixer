@@ -12,7 +12,11 @@
   }
 .full_chart
   %header
-    #{scenario.name} - Energy Mix van #{END_YEAR}
+    - if scenario.name
+      #{scenario.name} - 
+    - else
+      Uw
+    Energy Mix van #{END_YEAR}
   %section.chart
     %header
       Kosten &euro;
