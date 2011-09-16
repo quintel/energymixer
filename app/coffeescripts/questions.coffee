@@ -163,6 +163,15 @@ class @Questions
       tipY = e.pageY - 0
       offset = $(this).offset()
       $("#tooltip").css({"top": tipY + 20 , "left": tipX})
+    
+    # show / hide question info box
+    $("section#questions .question a.close_info_popup").click ->
+      $(this).parent().parent().hide()
+      return false
+  
+    $("section#questions .question a.show_info").click ->
+      $(this).parent().find(".information").toggle()
+      return false
   
   setup_question_callbacks: ->
     # when the users clicks on an answer
