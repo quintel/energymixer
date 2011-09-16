@@ -321,6 +321,9 @@ body.mixer2050 {
         body.mixer2050#scenarios_index .scenario .actions .show a {
           background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
           padding-left: 16px; }
+    body.mixer2050#scenarios_index .scenario .remove_from_list {
+      display: none;
+      float: right; }
     body.mixer2050#scenarios_index .scenario .name {
       font-size: 13px;
       font-weight: bold;

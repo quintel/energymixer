@@ -14,7 +14,17 @@ $ ->
     # name = element.find(".name a").html()
     # $("#selected .compared").append(" " + name)
     element.appendTo("#selected_scenarios")
+    
     element.find(".actions").hide()
+    element.find(".remove_from_list").show()
+  
+  # user must be able to remove a scenario, too
+  $(".scenario .remove_from_list a").live 'click', ->
+    item = $(this).parents(".scenario")
+    item.find(".actions").show()
+    item.find(".remove_from_list").hide()
+    item.find("input").attr('checked', false)
+    item.appendTo('#user_scenarios')
   
   $("#compare_with_user_scenario").change ->
     if($("#selected input:checked").length >= 1)
