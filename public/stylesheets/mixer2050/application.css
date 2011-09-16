@@ -253,6 +253,13 @@ body.mixer2050 {
     width: 435px;
     float: left;
     margin-right: 10px; }
+    body.mixer2050#scenarios_index section#left #pagination {
+      padding: 10px;
+      text-align: center; }
+      body.mixer2050#scenarios_index section#left #pagination span {
+        padding: 10px; }
+        body.mixer2050#scenarios_index section#left #pagination span a {
+          font-weight: bold; }
   body.mixer2050#scenarios_index section#right {
     width: 435px;
     float: left; }
