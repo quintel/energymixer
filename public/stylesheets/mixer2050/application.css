@@ -194,6 +194,16 @@ body.mixer2050#scenarios_new section#left {
           margin-bottom: 10px; }
         body.mixer2050#scenarios_new section#left section#questions .question .info .information .close_button {
           float: right; }
+  body.mixer2050#scenarios_new section#left nav#down {
+    margin-top: 10px; }
+    body.mixer2050#scenarios_new section#left nav#down a {
+      color: #313131;
+      font-weight: bold;
+      margin: 15px; }
+      body.mixer2050#scenarios_new section#left nav#down a#previous_question {
+        float: left; }
+      body.mixer2050#scenarios_new section#left nav#down a#next_question {
+        float: right; }
 body.mixer2050#scenarios_new section#right {
   float: left;
   width: 440px; }
