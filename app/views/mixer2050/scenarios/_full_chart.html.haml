@@ -40,6 +40,8 @@
     %header Effect
     - dashboard_items.each_pair do |o, gquery|
       .dashboard_item{:id => gquery, :class => set_class_for_output(o, scenario.send(o))}
+        .info_icon
+          = image_tag('icons/i.png')
         %h3= raw t(dashboard_label_for_output(o))
         .value= format_dashboard_value o, scenario.send(o)
   .clear
