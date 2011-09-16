@@ -446,7 +446,7 @@ body.mixer2050 .full_chart {
       color: #0b3375;
       line-height: 28px;
       text-align: center;
-      font-weight: bold;
+      font-weight: normal;
       background-color: #fefffe;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
       background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
@@ -538,7 +538,7 @@ body.mixer2050 .full_chart section.boxes {
     color: #0b3375;
     line-height: 28px;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
     background-color: #fefffe;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
     background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
@@ -595,7 +595,7 @@ body.mixer2050 .full_chart section.boxes {
     color: #0b3375;
     line-height: 28px;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
     background-color: #fefffe;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#fefffe"}, endColorstr="#e9e9e9");
     background-image: -moz-linear-gradient(center top, #fefffe, #e9e9e9);
