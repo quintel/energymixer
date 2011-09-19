@@ -45,3 +45,7 @@ $ ->
     ,
     () -> h.reset_carriers();
   )
+  
+  $("#sector_icons a").click (e) ->
+    e.preventDefault()
+    $(this).parent().find(".text").toggle()

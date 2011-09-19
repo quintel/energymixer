@@ -81,9 +81,9 @@ body.mixer2050#pages_home section#main {
     width: 672px;
     height: 386px;
     background: url("/images/layout/map_of_the_netherlands.png"); }
-    body.mixer2050#pages_home section#main #map #sector_icons div {
+    body.mixer2050#pages_home section#main #map #sector_icons div.sector {
       position: absolute; }
-      body.mixer2050#pages_home section#main #map #sector_icons div a.description {
+      body.mixer2050#pages_home section#main #map #sector_icons div.sector a.description {
         opacity: 0.9;
         background-color: white;
         position: absolute;
@@ -129,6 +129,14 @@ body.mixer2050#pages_home section#main {
       height: 60px;
       top: 110px;
       left: 319px; }
+    body.mixer2050#pages_home section#main #map #sector_icons .text {
+      position: relative;
+      background-color: white;
+      opacity: 0.9;
+      width: 300px;
+      top: 95px;
+      padding: 10px;
+      z-index: 10; }
     body.mixer2050#pages_home section#main #map #sectors {
       position: absolute;
       left: 0;
