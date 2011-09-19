@@ -46,6 +46,14 @@ $ ->
     () -> h.reset_carriers();
   )
   
+  $("#sector_icons .sector").hover(
+    () ->
+      $(this).find(".popup").show()
+    ,
+    () ->
+      $(this).find(".popup").hide()
+  )
+  
   $("#sector_icons a").click (e) ->
     e.preventDefault()
     container = $(this).parent()
