@@ -111,30 +111,37 @@ body.mixer2050#pages_home section#main {
       height: 75px;
       left: 500px;
       top: 20px; }
+      body.mixer2050#pages_home section#main #map #sector_icons #buildings .text {
+        top: 96px; }
     body.mixer2050#pages_home section#main #map #sector_icons #agriculture {
       background: url("/images/layout/agriculture_icon.png");
       width: 121px;
       height: 71px;
       left: 300px;
       top: 202px; }
+      body.mixer2050#pages_home section#main #map #sector_icons #agriculture .text {
+        top: 92px; }
     body.mixer2050#pages_home section#main #map #sector_icons #industry {
       background: url("/images/layout/industry_icon.png");
       width: 124px;
       height: 89px;
       left: 168px;
       top: 110px; }
+      body.mixer2050#pages_home section#main #map #sector_icons #industry .text {
+        top: 110px; }
     body.mixer2050#pages_home section#main #map #sector_icons #transport {
       background: url("/images/layout/transport_icon.png");
       width: 124px;
       height: 60px;
       top: 110px;
       left: 319px; }
+      body.mixer2050#pages_home section#main #map #sector_icons #transport .text {
+        top: 81px; }
     body.mixer2050#pages_home section#main #map #sector_icons .text {
-      position: relative;
+      position: absolute;
       background-color: white;
       opacity: 0.9;
       width: 300px;
-      top: 95px;
       padding: 10px;
       z-index: 10; }
     body.mixer2050#pages_home section#main #map #sectors {

@@ -48,4 +48,6 @@ $ ->
   
   $("#sector_icons a").click (e) ->
     e.preventDefault()
-    $(this).parent().find(".text").toggle()
+    container = $(this).parent()
+    container.css("width: 300px; height: auto")
+    container.find(".text").toggle()
