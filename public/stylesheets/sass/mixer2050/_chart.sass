@@ -27,6 +27,7 @@ body.mixer2050
       border: 1px solid #ffffff
       @include shadow(#D8D8D8, 5px)  
   .charts_container
+    position: relative
     .chart_canvas_mix
       height: 350px
       float: right
@@ -61,6 +62,8 @@ body.mixer2050
     .renewables_float
       width: 208px
       position: absolute
+      top: 200px
+      left: -100px
       display: none
       background-color: white
       color: #000000
@@ -68,6 +71,7 @@ body.mixer2050
       @include shadow
       text-align:center
       h3
+        font-weight: bold
         border-bottom: 1px solid #ccc
         padding: 10px
       ul.chart
