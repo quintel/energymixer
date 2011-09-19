@@ -289,6 +289,15 @@ body.mixer2050 {
         font-weight: bold;
         font-size: 14px;
         margin: 10px 0; }
+      body.mixer2050#scenarios_index section#right section#select a.enabled {
+        font-weight: bold;
+        background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
+        padding-left: 16px; }
+      body.mixer2050#scenarios_index section#right section#select a.disabled {
+        font-weight: bold;
+        background: transparent url(/images/layout/flat/link_arrow_shaded.png) center left no-repeat;
+        padding-left: 16px;
+        color: #494949; }
       body.mixer2050#scenarios_index section#right section#select #selected_scenarios {
         margin-top: 10px;
         height: 130px;
