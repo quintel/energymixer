@@ -29,9 +29,6 @@ body.mixer2050#pages_home #intro_text {
   box-shadow: 0px 2px 8px #d8d8d8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-  body.mixer2050#pages_home #intro_text h2 {
-    font-size: 30px;
-    letter-spacing: -1px; }
 body.mixer2050#pages_home #actions {
   padding: 15px 10px; }
   body.mixer2050#pages_home #actions a {
