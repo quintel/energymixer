@@ -28,9 +28,11 @@
       = link_to "Vergelijk", '#', :class => 'submit_form shell'
       
   %section.scenarios
-    %h3 Gemiddelde per leeftijcategorie
-    #featured_scenarios.selectable
-      = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
+    %nav.tabs
+      = link_to 'Gemiddelde per leeftijcategorie', '#', :class => 'scenario_tab_picker'
+    .tab
+      #featured_scenarios.selectable
+        = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
 
 
 - content_for :head do
