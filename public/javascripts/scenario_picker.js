@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 11:51:01 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 12:18:02 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/scenario_picker.coffee
  */
 
@@ -48,10 +48,19 @@
           return $("section#select form").submit();
         }
       }, this));
-      return $("body").ajaxStart(function() {
+      $("body").ajaxStart(function() {
         return $("#user_scenarios").busy({
           img: '/images/spinner.gif'
         });
+      });
+      return $("a.scenario_tab_picker").click(function(e) {
+        var tab_selector;
+        e.preventDefault();
+        tab_selector = $(this).attr('href');
+        $("a.scenario_tab_picker").removeClass('active');
+        $(this).addClass('active');
+        $(".tab").hide();
+        return $(tab_selector).parent().show();
       });
     };
     ScenarioPicker.prototype.selected_scenarios_count = function() {

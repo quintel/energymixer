@@ -15,10 +15,7 @@ class ScenarioPicker
         return false
       $(e.target).attr('checked', true)
       element = $(e.target).closest("div.scenario")    
-      # name = element.find(".name a").html()
-      # $("#selected .compared").append(" " + name)
-      element.appendTo("#selected_scenarios")
-      
+      element.appendTo("#selected_scenarios")      
       element.find(".actions").hide()
       element.find(".remove_from_list").show()
       this.update_submit_link()
@@ -45,7 +42,16 @@ class ScenarioPicker
         $("section#select form").submit()
     
     $("body").ajaxStart ->
-      $("#user_scenarios").busy({img: '/images/spinner.gif'})    
+      $("#user_scenarios").busy({img: '/images/spinner.gif'})
+    
+    # featured/averages tabs
+    $("a.scenario_tab_picker").click (e) ->
+      e.preventDefault()
+      tab_selector = $(this).attr('href')
+      $("a.scenario_tab_picker").removeClass('active')
+      $(this).addClass('active')
+      $(".tab").hide()
+      $(tab_selector).parent().show()
   
   selected_scenarios_count: ->
     $("#selected_scenarios input:checked").length
