@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 11:56:39 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 12:51:40 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -67,6 +67,11 @@
       return h.update_carriers(sector_id);
     }, function() {
       return h.reset_carriers();
+    });
+    $("#sector_icons .sector").hover(function() {
+      return $(this).find(".popup").show();
+    }, function() {
+      return $(this).find(".popup").hide();
     });
     return $("#sector_icons a").click(function(e) {
       var container;
