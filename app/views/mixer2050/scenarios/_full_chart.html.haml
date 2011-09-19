@@ -3,7 +3,7 @@
   width      = local_assigns.has_key?(:width) ? width : 80
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   rounded_sum = 0
-  current_chart_height = scenario.total_amount / max_amount.to_f * max_height
+  current_chart_height = scenario.total_amount / max_amount * 1_000_000_000 * max_height
   dashboard_items = {
     output_5: "co2_emission_percent_change_from_1990_corrected_for_electricity_import",
     output_6: "share_of_renewable_energy",
@@ -27,26 +27,11 @@
       .legend
         %h4 Legenda
         %table
-          %tr
-            %td= image_tag "layout/textures/oil.png"
-            %td Olie
-            %td.oil 30%
-          %tr
-            %td= image_tag "layout/textures/gas.png"
-            %td Aardgas
-            %td.gas 30%
-          %tr
-            %td= image_tag "layout/textures/coal.png"
-            %td Kolen
-            %td.coal 30%
-          %tr
-            %td= image_tag "layout/textures/nuclear.png"
-            %td Nucleair
-            %td.nuclear 30%
-          %tr
-            %td= image_tag "layout/textures/renewable.png"
-            %td Hernieuwbaar
-            %td.renewable 24%
+          - scenario.carriers.each_pair do |key, value|
+            %tr{:class => key}
+              %td= image_tag "layout/textures/#{key}.png"
+              %td= t(key)
+              %td.value= number_to_percentage value[:ratio] * 100, :precision => 0
           
       .chart_canvas_mix{:style=>"width: #{width}px;"}
         %ul.chart
