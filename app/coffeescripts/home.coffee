@@ -57,5 +57,5 @@ $ ->
   $("#sector_icons a").click (e) ->
     e.preventDefault()
     container = $(this).parent()
-    container.css("width: 300px; height: auto")
     container.find(".text").toggle()
+    $(this).css("background-image", "url('/images/icons/close.png')")

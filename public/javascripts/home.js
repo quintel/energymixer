@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 12:51:40 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 13:51:03 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -77,8 +77,8 @@
       var container;
       e.preventDefault();
       container = $(this).parent();
-      container.css("width: 300px; height: auto");
-      return container.find(".text").toggle();
+      container.find(".text").toggle();
+      return $(this).css("background-image", "url('/images/icons/close.png')");
     });
   });
 }).call(this);
