@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:42:06 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 14:52:31 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -78,7 +78,7 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, label, max_amount, new_height, new_money_height, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
+      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, label, max_amount, new_height, new_money_height, percentage, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
       current_sum = this.mixer.gquery_results["policy_total_energy_cost"] * 1000;
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
@@ -105,6 +105,9 @@
         } else {
           label.hide();
         }
+        percentage = Math.round(val / current_sum * 100);
+        selector = ".legend tr." + code + " td.value";
+        $(selector).html("" + percentage + "%");
       }
       renewable_subchart_height = 100;
       total_renewable_amount = this.app.mixer.carriers_values.costs_share_of_sustainable;
