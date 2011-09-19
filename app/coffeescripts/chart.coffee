@@ -89,6 +89,11 @@ class @Chart
       # hide text if there's no room
       label = item.find(".label")
       if (new_height > 10) then label.show() else label.hide()
+      # update the legend
+      percentage = Math.round(val / current_sum * 100)
+      selector = ".legend tr.#{code} td.value"
+      $(selector).html("#{percentage}%")
+
     
     # renewable subchart
     renewable_subchart_height = 100
