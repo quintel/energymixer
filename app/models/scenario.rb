@@ -26,6 +26,7 @@
 #  public          :boolean(1)      default(TRUE)
 #  output_12       :float
 #  score           :float
+#  average         :boolean(1)      default(FALSE)
 #
 
 class Scenario < ActiveRecord::Base
@@ -92,6 +93,7 @@ class Scenario < ActiveRecord::Base
   scope :recent_first, order('created_at DESC')
   scope :public,       where(:public => true)
   scope :featured,     where(:featured => true)
+  scope :averages,     where(:average => true)
   scope :user_created, where(:featured => false)
   scope :featured_first, order('featured DESC')
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}

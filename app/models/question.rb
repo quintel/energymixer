@@ -2,12 +2,13 @@
 #
 # Table name: questions
 #
-#  id          :integer(4)      not null, primary key
-#  question    :string(255)
-#  ordering    :integer(4)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  information :text
+#  id              :integer(4)      not null, primary key
+#  question        :string(255)
+#  ordering        :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  information     :text
+#  question_set_id :integer(4)
 #
 
 class Question < ActiveRecord::Base
