@@ -1,40 +1,60 @@
-$ ->
-  # let's deal with the back button
-  $(".selectable .scenario input").attr("checked", false)
-  $("#selected .scenario input").attr("checked", true)
+class ScenarioPicker
+  constructor: ->
+    this.setup_callbacks()
   
-  # adding an element
-  $(".selectable .scenario input").live 'change', ->
-    if $("#selected_scenarios input:checked").length >= 2
-      $(this).attr('checked', false)
-      alert("Je kunt maximaal 2 scenario's kiezen")
-      return false
-    $(this).attr('checked', true)
-    element = $(this).closest("div.scenario")    
-    # name = element.find(".name a").html()
-    # $("#selected .compared").append(" " + name)
-    element.appendTo("#selected_scenarios")
+  setup_callbacks: ->
+    # let's deal with the back button
+    $(".selectable .scenario input").attr("checked", false)
+    $("#selected .scenario input").attr("checked", true)
     
-    element.find(".actions").hide()
-    element.find(".remove_from_list").show()
+    # adding an element
+    $(".selectable .scenario input").live 'change', (e) =>
+      if this.selected_scenarios_count() >= 2
+        $(e.target).attr('checked', false)
+        alert("Je kunt maximaal 2 scenario's kiezen")
+        return false
+      $(e.target).attr('checked', true)
+      element = $(e.target).closest("div.scenario")    
+      # name = element.find(".name a").html()
+      # $("#selected .compared").append(" " + name)
+      element.appendTo("#selected_scenarios")
+      
+      element.find(".actions").hide()
+      element.find(".remove_from_list").show()
+      this.update_submit_link()
+      
+    # user must be able to remove a scenario, too
+    $(".scenario .remove_from_list a").live 'click', (e) =>
+      item = $(e.target).parents(".scenario")
+      item.find(".actions").show()
+      item.find(".remove_from_list").hide()
+      item.find("input").attr('checked', false)
+      item.appendTo('#user_scenarios')
+      this.update_submit_link()
+    
+    # the new interface isn't using this anymore
+    $("#compare_with_user_scenario").change (e) =>
+      if this.selected_scenarios_count() >= 1
+        $(e.target).attr('checked', false)
+        alert("Je kunt maximaal 1 scenario's kiezen")
+        return false
+    
+    $("a.submit_form").click (e) =>
+      e.preventDefault()
+      if this.selected_scenarios_count() == 2
+        $("section#select form").submit()
+    
+    $("body").ajaxStart ->
+      $("#user_scenarios").busy({img: '/images/spinner.gif'})    
   
-  # user must be able to remove a scenario, too
-  $(".scenario .remove_from_list a").live 'click', ->
-    item = $(this).parents(".scenario")
-    item.find(".actions").show()
-    item.find(".remove_from_list").hide()
-    item.find("input").attr('checked', false)
-    item.appendTo('#user_scenarios')
+  selected_scenarios_count: ->
+    $("#selected_scenarios input:checked").length
   
-  $("#compare_with_user_scenario").change ->
-    if($("#selected input:checked").length >= 1)
-      $(this).attr('checked', false)
-      alert("Je kunt maximaal 1 scenario's kiezen")
-      return false
+  update_submit_link: ->
+    if this.selected_scenarios_count() < 2
+      $("a.submit_form").removeClass('enabled').addClass('disabled')
+    else
+      $("a.submit_form").removeClass('disabled').addClass('enabled')
   
-  $("a.submit_form").click (e) ->
-    e.preventDefault()
-    $("section#select form").submit()
-  
-  $("body").ajaxStart ->
-    $("#user_scenarios").busy({img: '/images/spinner.gif'})
+$ ->
+  new ScenarioPicker()

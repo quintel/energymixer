@@ -31,6 +31,14 @@ body.mixer2050
           font-weight: bold
           font-size: 14px
           margin: 10px 0
+        a.enabled
+          font-weight: bold
+          @include link_arrow_prefix
+        a.disabled
+          font-weight: bold
+          background: transparent url(/images/layout/flat/link_arrow_shaded.png) center left no-repeat
+          padding-left: 16px
+          color: #494949
         #selected_scenarios
           margin-top: 10px
           height: 130px
