@@ -15,7 +15,7 @@ namespace :scenarios do
       next if records.count == 0
 
       s = Scenario.new
-      s.featured = true
+      s.average = true
       s.email = "foobar@quintel.com"
       s.name  = scenario[:title]
       0.upto(11) do |i|
