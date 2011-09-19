@@ -18,6 +18,7 @@
           - rounded_sum += height
           %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
     .renewables_float
+      %h3 Hernieuwbaar
       %ul.chart
         - scenario.renewable_carriers.each_pair do |key, v|
           - height = v[:relative_ratio] * 200
