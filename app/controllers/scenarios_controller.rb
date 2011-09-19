@@ -45,7 +45,8 @@ class ScenariosController < ApplicationController
     scope      = scope.excluding(session[:scenario_id]) if session[:scenario_id]
     scope      = scope.by_user(params[:q]) unless params[:q].blank?
     @scenarios = scope.page(params[:page])
-    @featured_scenarios = Scenario.featured.all
+    @featured_scenarios = Scenario.featured
+    @average_scenarios = Scenario.averages
     
     respond_to do |format|
       format.html

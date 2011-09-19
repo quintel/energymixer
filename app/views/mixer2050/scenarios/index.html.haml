@@ -29,10 +29,15 @@
       
   %section.scenarios
     %nav.tabs
-      = link_to 'Gemiddelde per leeftijcategorie', '#', :class => 'scenario_tab_picker'
+      = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
+      = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'
+      .clear
     .tab
       #featured_scenarios.selectable
         = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
+    .tab.hidden
+      #average_scenarios.selectable
+        = render :partial => 'select_scenario_box', :collection => @average_scenarios, :as => :scenario
 
 
 - content_for :head do

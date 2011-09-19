@@ -326,9 +326,16 @@ body.mixer2050 {
         padding: 10px;
         margin-bottom: 10px; }
         body.mixer2050#scenarios_index section#right section.scenarios nav.tabs a.scenario_tab_picker {
-          background-color: #0b3378;
-          color: white;
-          padding: 10px; }
+          display: block;
+          background-color: transparent;
+          color: #434343;
+          padding: 10px;
+          width: 180px;
+          float: left;
+          font-weight: bold; }
+          body.mixer2050#scenarios_index section#right section.scenarios nav.tabs a.scenario_tab_picker.active {
+            background-color: #0b3378;
+            color: white; }
       body.mixer2050#scenarios_index section#right section.scenarios .tab {
         padding-left: 10px; }
       body.mixer2050#scenarios_index section#right section.scenarios .scenario {
