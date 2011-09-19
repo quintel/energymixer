@@ -58,5 +58,39 @@ body.mixer2050
           background: url("/images/layout/textures/nuclear.png")
         li.renewable
           background: url("/images/layout/textures/renewable.png")
-
+    .renewables_float
+      width: 208px
+      position: absolute
+      display: none
+      background-color: white
+      color: #000000
+      z-index: 2
+      @include shadow
+      text-align:center
+      h3
+        border-bottom: 1px solid #ccc
+        padding: 10px
+      ul.chart
+        float: right
+        margin-right: 10px
+        margin-bottom: 10px
+        li.serie
+          width: 80px
+          &.solar
+            background-color: yellow
+          &.wind
+            background-color: orange
+          &.biomass
+            background-color: red
+          span
+            display: block
+            margin: auto
+            position: absolute
+            font-weight: bold
+            right: 100px
+            color: #000
+            &.hidden
+              display: none
+            
+    
 @import 'dashboard'

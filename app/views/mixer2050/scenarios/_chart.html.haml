@@ -17,6 +17,7 @@
           - if labels
             %span.label{:class => label_hidden ? 'hidden' : ''}= I18n.t(key)
   .renewables_float
+    %h3 Hernieuwbaar  
     %ul.chart
       - scenario.renewable_carriers.each_pair do |key, v|
         - height = v[:relative_ratio] * 200
