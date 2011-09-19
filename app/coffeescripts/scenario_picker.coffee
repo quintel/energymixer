@@ -32,5 +32,9 @@ $ ->
       alert("Je kunt maximaal 1 scenario's kiezen")
       return false
   
+  $("a.submit_form").click (e) ->
+    e.preventDefault()
+    $("section#select form").submit()
+  
   $("body").ajaxStart ->
     $("#user_scenarios").busy({img: '/images/spinner.gif'})

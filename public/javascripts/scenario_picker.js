@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 16 Sep 2011 13:55:21 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 09:26:09 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/scenario_picker.coffee
  */
 
@@ -33,6 +33,10 @@
         alert("Je kunt maximaal 1 scenario's kiezen");
         return false;
       }
+    });
+    $("a.submit_form").click(function(e) {
+      e.preventDefault();
+      return $("section#select form").submit();
     });
     return $("body").ajaxStart(function() {
       return $("#user_scenarios").busy({
