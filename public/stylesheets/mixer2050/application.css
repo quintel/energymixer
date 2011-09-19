@@ -536,73 +536,78 @@ body.mixer2050 .chart_normal .total_amount {
   box-shadow: 0px 2px 5px #d8d8d8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-body.mixer2050 .charts_container .chart_canvas_mix {
-  height: 350px;
-  float: right;
-  margin-right: 10px; }
-  body.mixer2050 .charts_container .chart_canvas_mix ul.chart {
-    position: absolute;
-    bottom: 0;
-    width: 100%; }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie {
-      border: none;
-      margin: 0 0 0 0;
-      position: relative; }
-      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span {
-        display: block;
-        margin: auto;
-        position: absolute;
-        font-weight: bold;
-        right: 100px;
-        color: black; }
-        body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span.hidden {
-          display: none; }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.gas {
-      background: url("/images/layout/textures/gas.png"); }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.oil {
-      background: url("/images/layout/textures/oil.png"); }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.coal {
-      background: url("/images/layout/textures/coal.png"); }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.nuclear {
-      background: url("/images/layout/textures/nuclear.png"); }
-    body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.renewable {
-      background: url("/images/layout/textures/renewable.png"); }
-body.mixer2050 .charts_container .renewables_float {
-  width: 208px;
-  position: absolute;
-  display: none;
-  background-color: white;
-  color: black;
-  z-index: 2;
-  -moz-box-shadow: 0px 2px 5px #333333;
-  -webkit-box-shadow: 0px 2px 5px #333333;
-  box-shadow: 0px 2px 5px #333333;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
-  body.mixer2050 .charts_container .renewables_float h3 {
-    border-bottom: 1px solid #cccccc;
-    padding: 10px; }
-  body.mixer2050 .charts_container .renewables_float ul.chart {
+body.mixer2050 .charts_container {
+  position: relative; }
+  body.mixer2050 .charts_container .chart_canvas_mix {
+    height: 350px;
     float: right;
-    margin-right: 10px;
-    margin-bottom: 10px; }
-    body.mixer2050 .charts_container .renewables_float ul.chart li.serie {
-      width: 80px; }
-      body.mixer2050 .charts_container .renewables_float ul.chart li.serie.solar {
-        background-color: yellow; }
-      body.mixer2050 .charts_container .renewables_float ul.chart li.serie.wind {
-        background-color: orange; }
-      body.mixer2050 .charts_container .renewables_float ul.chart li.serie.biomass {
-        background-color: red; }
-      body.mixer2050 .charts_container .renewables_float ul.chart li.serie span {
-        display: block;
-        margin: auto;
-        position: absolute;
-        font-weight: bold;
-        right: 100px;
-        color: black; }
-        body.mixer2050 .charts_container .renewables_float ul.chart li.serie span.hidden {
-          display: none; }
+    margin-right: 10px; }
+    body.mixer2050 .charts_container .chart_canvas_mix ul.chart {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie {
+        border: none;
+        margin: 0 0 0 0;
+        position: relative; }
+        body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span {
+          display: block;
+          margin: auto;
+          position: absolute;
+          font-weight: bold;
+          right: 100px;
+          color: black; }
+          body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie span.hidden {
+            display: none; }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.gas {
+        background: url("/images/layout/textures/gas.png"); }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.oil {
+        background: url("/images/layout/textures/oil.png"); }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.coal {
+        background: url("/images/layout/textures/coal.png"); }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.nuclear {
+        background: url("/images/layout/textures/nuclear.png"); }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.renewable {
+        background: url("/images/layout/textures/renewable.png"); }
+  body.mixer2050 .charts_container .renewables_float {
+    width: 208px;
+    position: absolute;
+    top: 200px;
+    left: -100px;
+    display: none;
+    background-color: white;
+    color: black;
+    z-index: 2;
+    -moz-box-shadow: 0px 2px 5px #333333;
+    -webkit-box-shadow: 0px 2px 5px #333333;
+    box-shadow: 0px 2px 5px #333333;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+    body.mixer2050 .charts_container .renewables_float h3 {
+      font-weight: bold;
+      border-bottom: 1px solid #cccccc;
+      padding: 10px; }
+    body.mixer2050 .charts_container .renewables_float ul.chart {
+      float: right;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+      body.mixer2050 .charts_container .renewables_float ul.chart li.serie {
+        width: 80px; }
+        body.mixer2050 .charts_container .renewables_float ul.chart li.serie.solar {
+          background-color: yellow; }
+        body.mixer2050 .charts_container .renewables_float ul.chart li.serie.wind {
+          background-color: orange; }
+        body.mixer2050 .charts_container .renewables_float ul.chart li.serie.biomass {
+          background-color: red; }
+        body.mixer2050 .charts_container .renewables_float ul.chart li.serie span {
+          display: block;
+          margin: auto;
+          position: absolute;
+          font-weight: bold;
+          right: 100px;
+          color: black; }
+          body.mixer2050 .charts_container .renewables_float ul.chart li.serie span.hidden {
+            display: none; }
 
 body.mixer2050 .full_chart section.boxes {
   float: left;
