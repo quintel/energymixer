@@ -58,7 +58,7 @@ class Home
       e.preventDefault()
       container = $(this).parent()
       container.find(".text").toggle()
-      $(this).css("background-image", "url('/images/icons/close.png')")
+      $(this).toggleClass("close_description")
 
 $ ->
   h = new Home
