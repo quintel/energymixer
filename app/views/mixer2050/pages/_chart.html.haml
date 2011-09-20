@@ -1,12 +1,11 @@
 :ruby
   max_height = local_assigns.has_key?(:max_height) ? max_height : 360
-  width      = local_assigns.has_key?(:width) ? width : 80
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   rounded_sum = 0
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
 
 .charts_container
-  .chart_canvas_mix{:style=>"width: #{width}px;"}
+  .chart_canvas_mix
     %ul.chart
       - scenario.carriers.each_pair do |key, v|
         - height = (v[:ratio] * current_chart_height * 1_000_000_000).round
@@ -18,4 +17,3 @@
       - scenario.renewable_carriers.each_pair do |key, v|
         - height = v[:relative_ratio] * 200
         %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
-          %span.label{:class => height <= 5 ? 'hidden' : ''}= I18n.t(key)
