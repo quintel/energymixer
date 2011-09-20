@@ -670,6 +670,26 @@ body.mixer2050 .full_chart section.boxes {
       background: transparent url(/images/layout/gauge_1.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_6 {
       background: transparent url(/images/layout/gauge_0.png) 112px center no-repeat; }
+body.mixer2050 section#dashboard_popups .dashboard_popup {
+  position: relative;
+  top: -350px;
+  left: 0;
+  width: 250px;
+  display: none;
+  -moz-box-shadow: 0px 2px 5px #333333;
+  -webkit-box-shadow: 0px 2px 5px #333333;
+  box-shadow: 0px 2px 5px #333333;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  background-color: white;
+  opacity: 0.9;
+  padding: 10px; }
+  body.mixer2050 section#dashboard_popups .dashboard_popup a {
+    display: block;
+    float: right; }
+  body.mixer2050 section#dashboard_popups .dashboard_popup .title {
+    font-size: 1.2em;
+    margin-bottom: 10px; }
 
 body.mixer2050 .full_chart section.boxes {
   float: left;
@@ -727,3 +747,23 @@ body.mixer2050 .full_chart section.boxes {
       background: transparent url(/images/layout/gauge_1.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_6 {
       background: transparent url(/images/layout/gauge_0.png) 112px center no-repeat; }
+body.mixer2050 section#dashboard_popups .dashboard_popup {
+  position: relative;
+  top: -350px;
+  left: 0;
+  width: 250px;
+  display: none;
+  -moz-box-shadow: 0px 2px 5px #333333;
+  -webkit-box-shadow: 0px 2px 5px #333333;
+  box-shadow: 0px 2px 5px #333333;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
+  background-color: white;
+  opacity: 0.9;
+  padding: 10px; }
+  body.mixer2050 section#dashboard_popups .dashboard_popup a {
+    display: block;
+    float: right; }
+  body.mixer2050 section#dashboard_popups .dashboard_popup .title {
+    font-size: 1.2em;
+    margin-bottom: 10px; }
