@@ -538,6 +538,11 @@ body.mixer2050 .chart_normal .total_amount {
 body.mixer2050 .charts_container {
   position: relative; }
   body.mixer2050 .charts_container .legend {
+    -moz-box-shadow: 0px 2px 5px #333333;
+    -webkit-box-shadow: 0px 2px 5px #333333;
+    box-shadow: 0px 2px 5px #333333;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color');
     background-color: white;
     z-index: 7;
     opacity: 0.7;
