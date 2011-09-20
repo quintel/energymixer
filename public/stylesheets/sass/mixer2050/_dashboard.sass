@@ -57,3 +57,21 @@ body.mixer2050
           @include gauge_1
         &.energy_dependence_step_6, &.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, &.share_of_renewable_energy_step_0, &.area_footprint_per_nl_step_6
           @include gauge_0
+
+  section#dashboard_popups
+    .dashboard_popup
+      position: relative
+      top: -350px
+      left: 0
+      width: 250px
+      display: none
+      @include shadow
+      background-color: #ffffff
+      opacity: 0.9
+      padding: 10px
+      a
+        display: block
+        float: right
+      .title
+        font-size: 1.2em
+        margin-bottom: 10px
