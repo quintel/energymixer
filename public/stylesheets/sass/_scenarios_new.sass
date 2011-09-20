@@ -9,8 +9,35 @@ body#scenarios_new, body#scenario_create
       height: 430px
       overflow: auto
       nav#up
+        height: 20px
+        display: block
+        text-align: center
         @include shell_gradient_layer
+        a
+          font-size: 11.2px
+        table
+          width: 100%
+          table-layout : fixed
+          td
+            color: #A5A5A5
+            margin: 2px auto
+            &.active
+              color: #404040
+              font-weight: bold
+      
       .question
+        .number
+          font-weight: bold
+          width: 5%
+          float: left
+          padding-left: 7px
+        .text
+          float: left
+          width: 90%
+          line-height: 18px
+          font-weight: bold
+          margin-bottom: 10px
+      
         .info
           padding-left: 3px
           position: relative
@@ -27,6 +54,36 @@ body#scenarios_new, body#scenario_create
               margin-bottom: 10px
             .close_button
               float: right
+        ul.answers
+          li.answer
+            float: left
+            width: 100%
+            margin-left: 0
+            font-weight: bold
+            list-style-type: none
+            clear: both
+            label
+              width: 100%
+              float: left
+              padding: 5px 0
+              margin-bottom: 4px
+              font-weight: normal
+              .number
+                padding-top: 1px
+              .text
+                font-weight: normal
+                margin: 0 0 0 0
+              a
+                text-decoration: underline
+            input[type=radio]
+              display: none
+            &.active, &:hover
+              label
+                background-color: #FEF6D7
+                cursor: pointer
+            &:hover label .text
+              text-decoration: underline
+      
     nav#down
       margin-top: 10px
       a
