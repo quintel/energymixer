@@ -1,0 +1,95 @@
+body#pages_home
+  #intro_text
+    @include shell_gradient_layer
+    padding: 10px
+  #actions
+    padding: 25px 10px
+    a
+      margin-right: 50px
+  section#main
+    height: 509px
+    padding: 10px 10px
+    @include shell_gradient_layer
+    h3
+      font-weight: bold
+      font-size: 14px
+      margin: 10px 0
+    #intro
+    #chart
+      float: right
+      header
+        font-size: 9px
+        @include header_blue
+        font-weight: normal
+        line-height: 12px
+        width: 121px
+        padding: 4px 0
+        strong
+          font-weight: bold
+      .chart_canvas_mix
+        width: 80px
+    #map
+      margin-top: 20px
+      position: relative
+      width: 672px
+      height: 386px
+      background: url("/images/layout/map_of_the_netherlands.png")
+      #sector_icons
+        div.sector
+          position: absolute
+          .popup
+            opacity: 0.9
+            background-color: #fff
+            position: absolute
+            z-index: 10
+            @include shell_gradient_layer
+            a.description
+              display: block
+              bottom: -10px
+              padding: 5px
+              color: #003478
+              font-weight: bold
+              padding-right: 25px
+              background-image: url("/images/icons/i.png")
+              background-repeat: no-repeat
+              background-position: 95% center
+            a.close_description
+              background-image: url("/images/icons/close.png")
+            .text
+              width: 300px
+              padding: 10px
+
+        #buildings
+          background: url("/images/layout/buildings_icon.png")
+          width: 102px
+          height: 75px
+          left: 500px
+          top: 20px
+        #agriculture
+          background: url("/images/layout/agriculture_icon.png")
+          width: 121px
+          height: 71px            
+          left: 300px
+          top: 202px
+        #industry
+          background: url("/images/layout/industry_icon.png")
+          width: 124px
+          height: 89px            
+          left: 168px
+          top: 110px
+        #transport
+          background: url("/images/layout/transport_icon.png")
+          width: 124px
+          height: 60px            
+          top: 110px
+          left: 319px
+      #sectors
+        position: absolute
+        left: 0
+        top: 0
+        width: 220px
+        float: left
+        .sector
+          margin: 2px 4px
+          width: 100px
+          float: left
