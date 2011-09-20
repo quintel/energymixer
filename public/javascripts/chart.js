@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 08:36:36 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 09:48:52 GMT from
  * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/chart.coffee
  */
 
@@ -88,7 +88,7 @@
       max_amount = globals.chart_max_amount / 1000000;
       current_chart_height = current_sum / max_amount * chart_max_height;
       rounded_sum = 0;
-      extra_height_for_roundness = 3;
+      extra_height_for_roundness = 0;
       _ref = this.mixer.carriers_values;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
