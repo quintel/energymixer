@@ -2,12 +2,18 @@
 .question{:id => "question_#{question_object.number}"}
   = answer.hidden_field :score
   = answer.hidden_field :question_id
-  .information
-    = markdown(question_object.information)
+  .info
+    = link_to image_tag('icons/i.png'), '#', :class => "show_info"
+    .information
+      .close_button
+        = link_to image_tag('icons/close.png'), "#", :class => "close_info_popup"
+      %h3 Info
+      = markdown(question_object.information)
   .number
     = question_object.number
   .text
     = raw question_object.question
+    
   %ul.answers
     - question_object.answers.ordered.each_with_index do |a, index|
       %li.answer{:class => ('active' if answer.object.answer_id == a.id)}

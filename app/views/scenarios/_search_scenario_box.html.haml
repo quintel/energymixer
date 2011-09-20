@@ -1,8 +1,6 @@
 %section#search_scenarios_box
-  %div.left
-    %h2 Bekijk de EnergyMixes van anderen
-    = form_tag scenarios_path, :method => :get do
-      = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
-  %div.right
-    = link_to "Maak een nieuwe EnergyMix", new_scenario_path
-  .clear
+  = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
+  %h3 Bekijk de EnergyMixes van anderen
+  = form_tag scenarios_path, :method => :get do
+    = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
+.clear

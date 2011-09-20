@@ -1,38 +1,59 @@
 %section#intro_text
-  %h2 Dit is het energieverbruik van Nederland in 2011
+  = image_tag 'layout/energy_mixer_header.png'
   %p
-    In Nederland komt bijna 92% van de energie die we gebruiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de EnergyMix van Nederland er over 15 jaar uit zal zien? Maak met de Future Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
-  %p
-    = link_to "Maak uw eigen EnergyMix", new_scenario_path
-    = link_to "Bekijk de EnergyMixes van anderen", scenarios_path
+    De Energy Mixer is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op uw idee over de energiemix in 2050, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, duurzazmheid en beschikbaarheid.
+
+%section#actions
+  = link_to "Bekijk de EnergyMixes van anderen", scenarios_path, :class => 'shell'
+  = link_to "Maak je eigen EnergyMix", new_scenario_path, :class => 'shell'
   
-%section#sectors
-  %h2 Meer informatie over het energieverbruik in verschillende sectoren
-  .sector#industry
-    = image_tag 'home_industrie.png'
-    %h2 Industrie (47%)
-    .content
-      De industrie is de grootse gebruiker van aardolie, -gas en steenkool. De industrie levert de basis voor onze economie maar tegelijkertijd consumeert hij ook veel schaarse grondstoffen. Wat gebeurt er met het energiegebruik van onze industrie in #{END_YEAR}?
-  .sector#transport
-    = image_tag 'home_vervoer.png'
-    %h2 Vervoer (18%)
-    .content
-      Vervoer per auto, vrachtwagen, trein of binnenvaartschip is energieintensief. In deze mixer beperken we ons tot het binnenlands vervoer. Als we het energiegebruik van de internationale lucht- en scheepvaart er bij zouden optellen dan zou dit percentage veel hoger zijn. Kunnen we onszelf en onze goederen niet slimmer vervoeren in #{END_YEAR}?
-  .sector#buildings
-    = image_tag 'home_gebouwen.png'
-    %h2 Gebouwen (28%)
-    .content
-      Ruim 70% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit relatief iets meer. Maar hebben we die energie ook nog nodig in #{END_YEAR}?
-  .sector#agriculture
-    = image_tag 'home_landbouw.png'
-    %h2 Landbouw (7%)
-    .content
-      Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik door veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw is energieintensief. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in #{END_YEAR}?
-    
-%section#current_state
-  .chart_normal
-    = render :partial => 'scenarios/chart_top', :locals => {:scenario => Scenario.current}
-    = render :partial => 'scenarios/chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
+%section#main
+  #intro
+    %h3 Dit is het energieverbruik van Nederland in 2011
+    %p
+      In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkol. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkol. Maar willen we dit en kan dit zo blijven? Hoe denkt u dat de Energy Future Mix van Nederland er over 40 jaar uit zal zien? Maak met de Energy Mixer eenvoudig uw eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
+  #chart
+    %header
+      %strong Energy Mix 2011
+      %br
+      Kosten &euro; #{number_with_precision(Scenario.current.total_amount, :precision => 1, :separator => ".")} Miljard    
+    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
+  #map
+    #sector_icons
+      .sector#buildings
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Gebouwen 27%
+          .text.hidden
+            Ruim 70% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit relatief iets meer. Maar hebben we die energie ook nog nodig?
+      .sector#industry
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Industrie 47%
+          .text.hidden
+            De industrie is de grootse gebruiker van aardolie, -gas en steenkool. De industrie levert de basis voor onze economie maar tegelijkertijd consumeert hij ook veel schaarse grondstoffen. Wat gebeurt er met het energiegebruik van onze industrie?
+      .sector#transport
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Vervoer 18%
+          .text.hidden
+            Vervoer per auto, vrachtwagen, trein of binnenvaartschip is energieintensief. In deze mixer beperken we ons tot het binnenlands vervoer. Als we het energiegebruik van de internationale lucht- en scheepvaart er bij zouden optellen dan zou dit percentage veel hoger zijn. Kunnen we onszelf en onze goederen niet slimmer vervoeren?
+      .sector#agriculture
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Landbouw 6%
+          .text.hidden
+            Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik door veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw is energieintensief. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders?
+    #sectors
+      %h3 Sectoren
+      .sector#transport
+        %a.shell{:href => '#'} Vervoer
+      .sector#agriculture
+        %a.shell{:href => '#'} Landbouw
+      .sector#industry
+        %a.shell{:href => '#'} Industrie
+      .sector#buildings
+        %a.shell{:href => '#'} Gebouwen
   
 - content_for :head do
   = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'

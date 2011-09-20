@@ -6,20 +6,15 @@
     >
     Vergelijk
 
-= render :partial => 'search_scenario_box'
+%section#left
+  = render :partial => 'search_scenario_box'
+  - if @scenarios.first
+    = render 'full_chart', :scenario => @scenarios.first
 
-- if @scenarios.empty?
-  Please select some scenarios first
-- else
-  - @scenarios.each do |s|
-    .scenario.chart_normal
-      .name= s.name
-      = render :partial => "chart_top", :locals => {:scenario => s}
-      = render :partial => 'chart', :locals => { :scenario => s }
-      = render :partial => 'compare_dashboard', :locals => { :scenario => s }
-    .spacer
-  .current_scenario.chart_shaded
-    .name Mix 2011
-    = render :partial => "chart_top", :locals => {:scenario => Scenario.current}
-    = render :partial => 'chart', :locals => { :scenario => Scenario.current }
-    = render :partial => 'compare_dashboard', :locals => { :scenario => Scenario.current }
+%section#right
+  %section#select
+    = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
+    %p
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  - if @scenarios.last
+    = render 'full_chart', :scenario => @scenarios.last

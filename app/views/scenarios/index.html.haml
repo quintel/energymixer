@@ -4,69 +4,42 @@
     >
     Bekijk de Mixes van anderen
 
-%section#search_scenarios_box
-  %div.left
-    %h2 Bekijk de EnergyMixes van anderen
+%section#left
+  %section#search_scenarios_box
+    = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
+    %h3 Bekijk de EnergyMixes van anderen
     = form_tag scenarios_path, :method => :get, :remote => true do
       = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
-  %div.right
-    = link_to "Maak uw eigen EnergyMix", new_scenario_path
   .clear
 
-%section#scenarios
-  = form_tag compare_scenarios_path do
-    %section#top
-      #selected
-        = link_to_function "Vergelijk", "$('#scenarios form').submit()"
-        - if session[:scenario_id]
-          = check_box_tag 'ids[]', session[:scenario_id], false, :id => "compare_with_user_scenario"
-          Vergelijk met mijn scenario
-        %span.compared
-        .scenarios
-    %section#left
-      %h3 Meest recent aangemaakte EnergyMixes
-      #user_scenarios.selectable
-        = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
-      #pagination
-        = paginate @scenarios, :remote => true
-    %section#right
-      %h3 Gemiddelde per leeftijcategorie
+  %section.scenarios
+    #user_scenarios.selectable
+      = render :partial => 'select_scenario_box', :collection => @scenarios, :as => :scenario
+    #pagination
+      = paginate @scenarios, :remote => true
+
+%section#right
+  %section#select
+    %h3 Vergelijk verschillende mixen met elkaar
+    %p
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    = form_tag compare_scenarios_path do
+      %section#selected_scenarios
+      = link_to "Vergelijk", '#', :class => 'submit_form disabled'
+      
+  %section.scenarios
+    %nav.tabs
+      = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
+      = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'
+      .clear
+    .tab
       #featured_scenarios.selectable
         = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
+    .tab.hidden
+      #average_scenarios.selectable
+        = render :partial => 'select_scenario_box', :collection => @average_scenarios, :as => :scenario
+
 
 - content_for :head do
   = javascript_include_tag 'vendor/jquery.busy.min'
-  :javascript
-    $(function(){
-      // let's deal with the back button
-      $(".selectable .scenario input").attr("checked", false);
-      $("#selected .scenario input").attr("checked", true);
-      
-      // adding an element
-      $(".selectable .scenario input").live('change', function(){
-        if($("#selected input:checked").length >= 5) {
-          $(this).attr('checked', false);
-          alert("Je kunt maximaal 5 scenario's kiezen");
-          return false;
-        }
-        $(this).attr('checked', true);
-        var element = $(this).closest("div.scenario");
-        var name = element.find(".name a").html();
-        $("#selected .compared").append(" " + name);
-        element.appendTo("#selected .scenarios");
-      });
-      
-      $("#compare_with_user_scenario").change(function(){
-        if($("#selected input:checked").length >= 4) {
-          $(this).attr('checked', false);
-          alert("Je kunt maximaal 4 scenario's kiezen");
-          return false;
-        }        
-      });
-      
-      $("body").ajaxStart(function(){
-        $("#user_scenarios").busy({img: '/images/spinner.gif'});
-      });
-    });
-    
-    
+  = javascript_include_tag 'scenario_picker'
