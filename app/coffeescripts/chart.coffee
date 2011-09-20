@@ -75,12 +75,13 @@ class @Chart
       @app.score.values.total_amount.mark = current_sum
 
     # main chart
-    chart_max_height     = 390
-    max_amount           = globals.chart_max_amount / 1000000 # million euros
-    current_chart_height = current_sum / max_amount * chart_max_height
-    rounded_sum          = 0
+    chart_max_height           = 390
+    max_amount                 = globals.chart_max_amount / 1000000 # million euros
+    current_chart_height       = current_sum / max_amount * chart_max_height
+    rounded_sum                = 0
+    extra_height_for_roundness = 3
     for own code, val of @mixer.carriers_values
-      new_height = Math.round(val / current_sum * current_chart_height)
+      new_height = Math.round(val / current_sum * current_chart_height) + extra_height_for_roundness
       rounded_sum += new_height
       active_charts = $("ul.chart").not('.static')
       item = active_charts.find(".#{code}")

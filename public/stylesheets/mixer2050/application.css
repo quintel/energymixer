@@ -539,7 +539,7 @@ body.mixer2050 .charts_container {
   position: relative; }
   body.mixer2050 .charts_container .legend {
     background-color: white;
-    z-index: 3;
+    z-index: 7;
     opacity: 0.7;
     position: absolute;
     top: 255px;
@@ -562,18 +562,26 @@ body.mixer2050 .charts_container {
       bottom: 0;
       width: 100%; }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.serie {
-        border: none;
-        margin: 0 0 0 0;
-        position: relative; }
+        position: relative;
+        margin: 0 0 -3px 0;
+        border-bottom-left-radius: 50% 3px;
+        border-bottom-right-radius: 50% 3px; }
+      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.coal {
+        z-index: 5;
+        background: url("/images/layout/textures/coal.png");
+        border-top-left-radius: 50% 3px;
+        border-top-right-radius: 50% 3px; }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.gas {
+        z-index: 4;
         background: url("/images/layout/textures/gas.png"); }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.oil {
+        z-index: 3;
         background: url("/images/layout/textures/oil.png"); }
-      body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.coal {
-        background: url("/images/layout/textures/coal.png"); }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.nuclear {
+        z-index: 2;
         background: url("/images/layout/textures/nuclear.png"); }
       body.mixer2050 .charts_container .chart_canvas_mix ul.chart li.renewable {
+        z-index: 1;
         background: url("/images/layout/textures/renewable.png"); }
   body.mixer2050 .charts_container .renewables_float {
     width: 208px;
