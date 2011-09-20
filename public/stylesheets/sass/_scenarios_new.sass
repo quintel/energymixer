@@ -1,5 +1,5 @@
 body.mixer2050
-  &#scenarios_new
+  &#scenarios_new, &#scenario_create
     section#left
       width: 440px
       margin-right: 8px
@@ -39,6 +39,60 @@ body.mixer2050
             float: left
           &#next_question
             float: right
+
+      #user_details
+        h2
+          font-size: 12px
+          font-weight: bold
+          margin-bottom: 10px
+          padding: 10px
+        p
+          padding: 10px
+          font-weight: normal
+          line-height: 14px
+        .item
+          padding: 3px
+          clear: left
+          .field_with_errors
+            color: red
+            font-weight: bold
+            float: left
+            position: relative
+            height: 36px
+          label
+            font-size: 11px
+            display: block
+            float: left
+            width: 80px
+            padding: 5px
+            text-align: right
+            &.check_box
+              width: 312px
+              float: right
+              text-align: left
+          input, select
+            display: block
+            float: left
+            padding: 3px
+            margin: 4px
+          input[type=text]
+            width: 220px
+          input[type=submit]
+            float: right
+            margin: 15px
+        #errorExplanation
+          border: 1px solid red
+          margin: 3px 3px 20px 3px
+          h2
+            padding: 5px
+            background-color: red
+            color: #ffffff
+            font-size: 1.3em
+            margin-bottom: .5em
+            border-bottom: 1px solid
+          p, ul
+            padding: 5px
+
     section#right
       float: left
       width: 440px
