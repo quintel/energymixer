@@ -2,9 +2,8 @@
 %html
   %head
     %title= t(APP_CONFIG['app_name'])
-    = stylesheet_link_tag 'application' # Use something different for theming
+    = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'vendor/colorbox'
-    = javascript_include_tag 'old/application'
     = javascript_include_tag :defaults
     = javascript_include_tag 'vendor/jquery.colorbox-min', 'console', 'popups'
     - unless APP_CONFIG["standalone"]
