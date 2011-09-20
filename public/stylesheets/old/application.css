@@ -356,58 +356,6 @@ body#scenarios_new section#questions, body#scenarios_create section#questions {
       cursor: pointer; }
     body#scenarios_new section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#questions .question ul.answers li.answer:hover label .text {
       text-decoration: underline; }
-  body#scenarios_new section#questions .question #user_details h2, body#scenarios_create section#questions .question #user_details h2 {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 10px; }
-  body#scenarios_new section#questions .question #user_details .text, body#scenarios_create section#questions .question #user_details .text {
-    padding: 10px;
-    background-color: #f5f5f5; }
-    body#scenarios_new section#questions .question #user_details .text p, body#scenarios_create section#questions .question #user_details .text p {
-      font-weight: normal;
-      line-height: 14px; }
-  body#scenarios_new section#questions .question #user_details .item, body#scenarios_create section#questions .question #user_details .item {
-    padding: 3px;
-    clear: left; }
-    body#scenarios_new section#questions .question #user_details .item .field_with_errors, body#scenarios_create section#questions .question #user_details .item .field_with_errors {
-      color: red;
-      font-weight: bold;
-      float: left;
-      position: relative;
-      height: 36px; }
-    body#scenarios_new section#questions .question #user_details .item label, body#scenarios_create section#questions .question #user_details .item label {
-      font-size: 11px;
-      display: block;
-      float: left;
-      width: 80px;
-      padding: 5px;
-      text-align: right; }
-      body#scenarios_new section#questions .question #user_details .item label.check_box, body#scenarios_create section#questions .question #user_details .item label.check_box {
-        width: 312px;
-        float: right;
-        text-align: left; }
-    body#scenarios_new section#questions .question #user_details .item input, body#scenarios_new section#questions .question #user_details .item select, body#scenarios_create section#questions .question #user_details .item input, body#scenarios_create section#questions .question #user_details .item select {
-      display: block;
-      float: left;
-      padding: 3px;
-      margin: 4px; }
-    body#scenarios_new section#questions .question #user_details .item input[type=text], body#scenarios_create section#questions .question #user_details .item input[type=text] {
-      width: 220px; }
-    body#scenarios_new section#questions .question #user_details .item input[type=submit], body#scenarios_create section#questions .question #user_details .item input[type=submit] {
-      float: right;
-      margin: 15px; }
-  body#scenarios_new section#questions .question #user_details #errorExplanation, body#scenarios_create section#questions .question #user_details #errorExplanation {
-    border: 1px solid red;
-    margin: 3px 3px 20px 3px; }
-    body#scenarios_new section#questions .question #user_details #errorExplanation h2, body#scenarios_create section#questions .question #user_details #errorExplanation h2 {
-      padding: 5px;
-      background-color: red;
-      color: white;
-      font-size: 1.3em;
-      margin-bottom: 0.5em;
-      border-bottom: 1px solid; }
-    body#scenarios_new section#questions .question #user_details #errorExplanation p, body#scenarios_new section#questions .question #user_details #errorExplanation ul, body#scenarios_create section#questions .question #user_details #errorExplanation p, body#scenarios_create section#questions .question #user_details #errorExplanation ul {
-      padding: 5px; }
   body#scenarios_new section#questions section#conflicts, body#scenarios_create section#questions section#conflicts {
     display: none;
     text-align: center;
@@ -673,18 +621,6 @@ body#sessions_new footer {
   padding: 6px;
   border: 1px solid #cccccc;
   border-top: none; }
-
-#admin_menu {
-  position: absolute;
-  top: 0;
-  border: 1px solid black;
-  left: 0; }
-  #admin_menu h2 {
-    font-weight: bold; }
-  #admin_menu a {
-    color: blue; }
-  #admin_menu a:hover {
-    text-decoration: underline; }
 
 .clear {
   clear: both; }
