@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 14:52:31 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
+/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 08:36:36 GMT from
+ * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/chart.coffee
  */
 
 (function() {
@@ -78,7 +78,7 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, label, max_amount, new_height, new_money_height, percentage, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
+      var active_charts, chart_max_height, code, current_chart_height, current_sum, extra_height_for_roundness, item, label, max_amount, new_height, new_money_height, percentage, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
       current_sum = this.mixer.gquery_results["policy_total_energy_cost"] * 1000;
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
@@ -88,11 +88,12 @@
       max_amount = globals.chart_max_amount / 1000000;
       current_chart_height = current_sum / max_amount * chart_max_height;
       rounded_sum = 0;
+      extra_height_for_roundness = 3;
       _ref = this.mixer.carriers_values;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
         val = _ref[code];
-        new_height = Math.round(val / current_sum * current_chart_height);
+        new_height = Math.round(val / current_sum * current_chart_height) + extra_height_for_roundness;
         rounded_sum += new_height;
         active_charts = $("ul.chart").not('.static');
         item = active_charts.find("." + code);

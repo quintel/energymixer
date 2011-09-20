@@ -33,7 +33,7 @@ body.mixer2050
         font-weight: bold
         margin-bottom: 5px
       background-color: #ffffff
-      z-index: 3
+      z-index: 7
       opacity: 0.7
       position: absolute
       top: 255px
@@ -54,18 +54,26 @@ body.mixer2050
         bottom: 0
         width: 100%
         li.serie
-          border: none
-          margin: 0 0 0 0
           position: relative
+          margin: 0 0 -3px 0
+          border-bottom-left-radius: 50% 3px
+          border-bottom-right-radius: 50% 3px
+        li.coal
+          z-index: 5
+          background: url("/images/layout/textures/coal.png")
+          border-top-left-radius: 50% 3px
+          border-top-right-radius: 50% 3px
         li.gas
+          z-index: 4
           background: url("/images/layout/textures/gas.png")
         li.oil
+          z-index: 3
           background: url("/images/layout/textures/oil.png")
-        li.coal
-          background: url("/images/layout/textures/coal.png")
         li.nuclear
+          z-index: 2
           background: url("/images/layout/textures/nuclear.png")
         li.renewable
+          z-index: 1
           background: url("/images/layout/textures/renewable.png")
     .renewables_float
       width: 208px
