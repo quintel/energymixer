@@ -1,14 +1,15 @@
-/* DO NOT MODIFY. This file was compiled Mon, 19 Sep 2011 13:51:03 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 09:33:54 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
 (function() {
   var Home;
-  var __hasProp = Object.prototype.hasOwnProperty;
+  var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   Home = (function() {
     function Home() {
       this.shares = globals.carriers;
       this._save_original_height();
+      this.setup_callbacks();
     }
     Home.prototype.reset_carriers = function() {
       return this.update_carriers('total', 1000);
@@ -56,29 +57,31 @@
         renewable: $("ul.chart li.renewable").height()
       };
     };
+    Home.prototype.setup_callbacks = function() {
+      $("#sectors .sector").hover(__bind(function(e) {
+        var sector_id;
+        sector_id = $(e.target).parent().attr("id");
+        return this.update_carriers(sector_id);
+      }, this), __bind(function() {
+        return this.reset_carriers();
+      }, this));
+      $("#sector_icons .sector").hover(function() {
+        return $(this).find(".popup").show();
+      }, function() {
+        return $(this).find(".popup").hide();
+      });
+      return $("#sector_icons a").click(function(e) {
+        var container;
+        e.preventDefault();
+        container = $(this).parent();
+        container.find(".text").toggle();
+        return $(this).css("background-image", "url('/images/icons/close.png')");
+      });
+    };
     return Home;
   })();
   $(function() {
     var h;
-    h = new Home;
-    $("#sectors .sector").hover(function() {
-      var sector_id;
-      sector_id = $(this).attr("id");
-      return h.update_carriers(sector_id);
-    }, function() {
-      return h.reset_carriers();
-    });
-    $("#sector_icons .sector").hover(function() {
-      return $(this).find(".popup").show();
-    }, function() {
-      return $(this).find(".popup").hide();
-    });
-    return $("#sector_icons a").click(function(e) {
-      var container;
-      e.preventDefault();
-      container = $(this).parent();
-      container.find(".text").toggle();
-      return $(this).css("background-image", "url('/images/icons/close.png')");
-    });
+    return h = new Home;
   });
 }).call(this);
