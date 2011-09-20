@@ -1,0 +1,106 @@
+.full_chart
+  height: 432px
+  width: 360px
+  @include shell_gradient_layer
+  header
+    @include header_blue
+  section.chart
+    float: left
+    width: 210px
+    border-right: 1px solid #D0D1D2
+    header
+      @include subheader_blue
+  section.boxes
+    float: left
+    width: 149px
+    // see _dashboard.sass for the other properties
+.shaded_chart
+  header
+    @include header_grey
+  header.sub
+    @include subheader_grey
+.chart_normal
+  .total_amount
+    background: #0B3375
+    color: #fff
+    border: 1px solid #ffffff
+    @include shadow(#D8D8D8, 5px)
+.charts_container
+  position: relative
+  .legend
+    @include shadow
+    padding: 3px 6px
+    h4
+      font-weight: bold
+      margin-bottom: 5px
+    background-color: #ffffff
+    z-index: 7
+    opacity: 0.7
+    position: absolute
+    top: 255px
+    left: 10px
+    color: black
+    table
+      td
+        padding: 0px 4px
+      img
+        width: 10px
+        height: 10px
+  .chart_canvas_mix
+    height: 350px
+    float: right
+    margin-right: 10px
+    ul.chart
+      position: absolute
+      bottom: 0
+      width: 100%
+      li.serie
+        position: relative
+        margin: 0 0 -3px 0
+        min-height: 4px
+        border-bottom-left-radius: 50% 3px
+        border-bottom-right-radius: 50% 3px
+      li.coal
+        z-index: 5
+        background: url("/images/layout/textures/coal.png")
+        border-top-left-radius: 50% 3px
+        border-top-right-radius: 50% 3px
+      li.gas
+        z-index: 4
+        background: url("/images/layout/textures/gas.png")
+      li.oil
+        z-index: 3
+        background: url("/images/layout/textures/oil.png")
+      li.nuclear
+        z-index: 2
+        background: url("/images/layout/textures/nuclear.png")
+      li.renewable
+        z-index: 1
+        background: url("/images/layout/textures/renewable.png")
+  .renewables_float
+    width: 208px
+    position: absolute
+    top: 200px
+    left: -100px
+    display: none
+    background-color: white
+    color: #000000
+    z-index: 20
+    @include shadow
+    text-align:center
+    h3
+      font-weight: bold
+      border-bottom: 1px solid #ccc
+      padding: 10px
+    ul.chart
+      float: right
+      margin-right: 10px
+      margin-bottom: 10px
+      li.serie
+        width: 80px
+        &.solar
+          background-color: yellow
+        &.wind
+          background-color: orange
+        &.biomass
+          background-color: red

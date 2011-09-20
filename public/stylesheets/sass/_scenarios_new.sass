@@ -1,0 +1,115 @@
+body#scenarios_new, body#scenario_create
+  section#left
+    width: 440px
+    margin-right: 8px
+    float: left
+    section#questions
+      width: 440px
+      @include shell_gradient_layer
+      height: 430px
+      overflow: auto
+      nav#up
+        @include shell_gradient_layer
+      .question
+        .info
+          padding-left: 3px
+          position: relative
+          .information
+            display: none
+            position: absolute
+            top: 30px
+            left: 0
+            @include shell_gradient_layer
+            h3
+              font-size: 13px
+              font-weight: bold
+              color: #0C3473
+              margin-bottom: 10px
+            .close_button
+              float: right
+    nav#down
+      margin-top: 10px
+      a
+        color: #313131
+        font-weight: bold
+        margin: 15px
+        &#previous_question
+          float: left
+        &#next_question
+          float: right
+    #user_details
+      h2
+        font-size: 12px
+        font-weight: bold
+        margin-bottom: 10px
+        padding: 10px
+      p
+        padding: 10px
+        font-weight: normal
+        line-height: 14px
+      .item
+        padding: 3px
+        clear: left
+        .field_with_errors
+          color: red
+          font-weight: bold
+          float: left
+          position: relative
+          height: 36px
+        label
+          font-size: 11px
+          display: block
+          float: left
+          width: 80px
+          padding: 5px
+          text-align: right
+          &.check_box
+            width: 312px
+            float: right
+            text-align: left
+        input, select
+          display: block
+          float: left
+          padding: 3px
+          margin: 4px
+        input[type=text]
+          width: 220px
+        input[type=submit]
+          float: right
+          margin: 15px
+      #errorExplanation
+        border: 1px solid red
+        margin: 3px 3px 20px 3px
+        h2
+          padding: 5px
+          background-color: red
+          color: #ffffff
+          font-size: 1.3em
+          margin-bottom: .5em
+          border-bottom: 1px solid
+        p, ul
+          padding: 5px
+  section#right
+    float: left
+    width: 440px
+    section#user_chart
+      float: left
+      margin-right: 8px
+    section#current_chart
+      width: 68px
+      float: left
+      height: 432px
+      @include shell_gradient_layer
+  section#conflicts
+    display: none
+    clear: both
+    padding: 15px 40px
+    margin-top: 10px
+    line-height: 20px
+    text-align: left
+    color: #000000
+    @include shell_gradient_layer
+    span.warning
+      color: red
+      font-weight: bold
+      font-size: 1.1em
