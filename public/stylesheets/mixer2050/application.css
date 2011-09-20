@@ -108,6 +108,8 @@ body.mixer2050#pages_home section#main {
           background-image: url("/images/icons/i.png");
           background-repeat: no-repeat;
           background-position: 95% center; }
+        body.mixer2050#pages_home section#main #map #sector_icons div.sector .popup a.close_description {
+          background-image: url("/images/icons/close.png"); }
         body.mixer2050#pages_home section#main #map #sector_icons div.sector .popup .text {
           width: 300px;
           padding: 10px; }
