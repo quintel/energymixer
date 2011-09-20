@@ -626,7 +626,7 @@ body.mixer2050 .full_chart section.boxes {
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
   body.mixer2050 .full_chart section.boxes .dashboard_item {
-    height: 90px;
+    height: 91px;
     border-bottom: 1px solid #d0d1d1;
     margin: 0 0 0 8px;
     background: transparent; }
@@ -649,19 +649,19 @@ body.mixer2050 .full_chart section.boxes {
       float: left;
       margin-top: 10px; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_0 {
-      background: transparent url(/images/layout/flat/gauge_6.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_6.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_1 {
-      background: transparent url(/images/layout/flat/gauge_5.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_5.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_2 {
-      background: transparent url(/images/layout/flat/gauge_4.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_4.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_3 {
-      background: transparent url(/images/layout/flat/gauge_3.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_3.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_4 {
-      background: transparent url(/images/layout/flat/gauge_2.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_2.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_5 {
-      background: transparent url(/images/layout/flat/gauge_1.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_1.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_6 {
-      background: transparent url(/images/layout/flat/gauge_0.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_0.png) 112px center no-repeat; }
 
 body.mixer2050 .full_chart section.boxes {
   float: left;
@@ -683,7 +683,7 @@ body.mixer2050 .full_chart section.boxes {
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
   body.mixer2050 .full_chart section.boxes .dashboard_item {
-    height: 90px;
+    height: 91px;
     border-bottom: 1px solid #d0d1d1;
     margin: 0 0 0 8px;
     background: transparent; }
@@ -706,16 +706,16 @@ body.mixer2050 .full_chart section.boxes {
       float: left;
       margin-top: 10px; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_0 {
-      background: transparent url(/images/layout/flat/gauge_6.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_6.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_1 {
-      background: transparent url(/images/layout/flat/gauge_5.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_5.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_2 {
-      background: transparent url(/images/layout/flat/gauge_4.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_4.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_3, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_3 {
-      background: transparent url(/images/layout/flat/gauge_3.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_3.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_4, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_2, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_4 {
-      background: transparent url(/images/layout/flat/gauge_2.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_2.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_5, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_1, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_5 {
-      background: transparent url(/images/layout/flat/gauge_1.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_1.png) 112px center no-repeat; }
     body.mixer2050 .full_chart section.boxes .dashboard_item.energy_dependence_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.co2_emission_percent_change_from_1990_corrected_for_electricity_import_step_6, body.mixer2050 .full_chart section.boxes .dashboard_item.share_of_renewable_energy_step_0, body.mixer2050 .full_chart section.boxes .dashboard_item.area_footprint_per_nl_step_6 {
-      background: transparent url(/images/layout/flat/gauge_0.png) 112px center no-repeat; }
+      background: transparent url(/images/layout/gauge_0.png) 112px center no-repeat; }
