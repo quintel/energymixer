@@ -8,16 +8,6 @@
     = scenario.fields_for :answers do |answer|
       = render 'question', :answer => answer
     = render 'user_details', :scenario => scenario
-%nav#down
-  %a{ :href => "#", :id => "previous_question"}= t('previous')
-  %a{ :href => "#", :id => "next_question"}= t('next')
-
-%section#conflicts
-  De antwoorden op de vragen  
-  %span.conflicting_questions
-  lijken tegenstrijdig.
-  %br
-  Weet u zeker dat deze antwoorden de situatie in #{END_YEAR} goed beschrijven?
 
 #admin_menu
   -if params[:test]

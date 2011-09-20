@@ -4,45 +4,32 @@
     >
     Maak een eigen EnergyMix
 
-%section#questions
-  = render 'questions'
+%section#left
+  %section#questions
+    = render 'questions'
+  %nav#down
+    %a#previous_question{:href => "#"}
+      << #{t('previous')}
+    %a#next_question{:href => "#"}
+      #{t('next')} >>
+    .clear
 
-%section#results
-  .current.chart_shaded
-    = render 'chart_top', :scenario => Scenario.current, :year => 2011
-    = render 'chart',     :scenario => Scenario.current, :max_height => 390, :width => 50, :static => true
-  .user_created.chart_normal
-    .chart
-      = render 'chart_top', :scenario => @scenario, :year => END_YEAR
-      = render 'chart',     :scenario => @scenario, :max_height => 390, :width => 80
 
-%section#dashboard
-  - DashboardItem.ordered.each do |item|
-    .dashboard_item{:id => item.gquery}
-      %h3= t(item.label).html_safe
-      .value
-        loading...
-  - if APP_CONFIG['score']
-    #score
-      %h3
-        Jouw score:
-      .value
-        0
-      #show_info
-      .details
-        %table#subscores
-          -{cost: "Kosten", co2: "Co2", renewables: "Hernieuwbaar", areafp: "Bio-voetafdruk", import: "Energie import"}.each do |key, value|
-            %tr{:class=>cycle("odd","even")}
-              %th=value
-              %td{:class=>key} 0
-        .explanation
-          * je score is altijd nul
-          %br
-          als je vraag 1 en 2 nog
-          %br
-          niet hebt ingevuld
+%section#right
+  %section#user_chart
+    = render 'full_chart', :scenario => @scenario
+  %section#current_chart
+    = render 'shaded_chart', :scenario => Scenario.current
 
-= render 'js_init'            
+  = render 'js_init'            
+
+%section#conflicts
+  %span.warning Let op!
+  De antwoorden op de vragen  
+  %span.conflicting_questions
+  lijken tegenstrijdig.
+  %br
+  Weet u zeker dat deze antwoorden de situatie in #{END_YEAR} goed beschrijven?
 
 %div#tooltip
   %h3 Title
