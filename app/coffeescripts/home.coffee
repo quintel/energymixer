@@ -2,6 +2,7 @@ class Home
   constructor: ->
     @shares = globals.carriers
     this._save_original_height()
+    this.setup_callbacks()
   
   reset_carriers: ->
     this.update_carriers('total', 1000)
@@ -35,27 +36,29 @@ class Home
       oil:       $("ul.chart li.oil").height()
       nuclear:   $("ul.chart li.nuclear").height()
       renewable: $("ul.chart li.renewable").height()
+  
+  setup_callbacks: ->
+    $("#sectors .sector").hover(
+      (e) => 
+        sector_id = $(e.target).parent().attr("id")
+        this.update_carriers(sector_id)
+      ,
+      () => this.reset_carriers()
+    )
+
+    $("#sector_icons .sector").hover(
+      () ->
+        $(this).find(".popup").show()
+      ,
+      () ->
+        $(this).find(".popup").hide()
+    )
+
+    $("#sector_icons a").click (e) ->
+      e.preventDefault()
+      container = $(this).parent()
+      container.find(".text").toggle()
+      $(this).css("background-image", "url('/images/icons/close.png')")
 
 $ ->
   h = new Home
-  $("#sectors .sector").hover(
-    () -> 
-      sector_id = $(this).attr("id")
-      h.update_carriers(sector_id)
-    ,
-    () -> h.reset_carriers();
-  )
-  
-  $("#sector_icons .sector").hover(
-    () ->
-      $(this).find(".popup").show()
-    ,
-    () ->
-      $(this).find(".popup").hide()
-  )
-  
-  $("#sector_icons a").click (e) ->
-    e.preventDefault()
-    container = $(this).parent()
-    container.find(".text").toggle()
-    $(this).css("background-image", "url('/images/icons/close.png')")
