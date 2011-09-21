@@ -1,0 +1,88 @@
+body#scenarios_index
+  section#left
+    width: 435px
+    float: left
+    margin-right: 10px
+    #pagination
+      padding: 10px
+      text-align: center
+      span
+        padding: 10px
+        a
+          font-weight: bold
+  section#right
+    width: 435px
+    float: left
+    section#select
+      height: 280px
+      padding: 10px
+      margin-bottom: 10px
+      @include shell_gradient_layer
+      h3
+        font-weight: bold
+        font-size: 14px
+        margin: 10px 0
+      a.enabled
+        font-weight: bold
+        @include link_arrow_prefix
+      a.disabled
+        font-weight: bold
+        background: transparent url(/images/layout/flat/link_arrow_shaded.png) center left no-repeat
+        padding-left: 16px
+        color: #494949
+      #selected_scenarios
+        margin-top: 10px
+        height: 130px
+        background-image: url('/images/placeholders.png')
+        background-repeat: no-repeat
+    section.scenarios
+      @include shell_gradient_layer
+      padding: 10px 0px
+      nav.tabs
+        padding: 10px
+        margin-bottom: 10px
+        a.scenario_tab_picker
+          display: block
+          background-color: transparent
+          color: #434343
+          padding: 10px
+          width: 180px
+          float: left
+          font-weight: bold
+          &.active
+            background-color: #0B3378
+            color: white
+      .tab
+        padding-left: 10px
+      .scenario
+        width: 390px
+  .scenario
+    @include shell_gradient_layer
+    position: relative
+    padding: 5px 5px 5px 10px
+    margin: 5px 0
+    height: 46px
+    border-bottom: 1px solid #CCCCCC
+    .image
+      float: left
+      margin: 10px 5px
+    .actions
+      width: 120px
+      float: right
+      font-weight: bold
+      .show
+        padding: 5px
+        a
+          @include link_arrow_prefix
+    .remove_from_list
+      display: none
+      float: right
+    .name
+      font-size: 13px
+      font-weight: bold
+      margin-bottom: 4px
+      margin-top: 15px
+    .date
+      color: #777
+      font-size: .9em
+
