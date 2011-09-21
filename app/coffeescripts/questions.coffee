@@ -92,8 +92,9 @@ class @Questions
     $(question_id).show()
     # update top row
     $(".question_tab").removeClass('active')
-    tab_selector = ".question_tab[data-question_id=#{@current_question}]"
-    $(tab_selector).addClass('active')
+    for i in [1..@current_question]
+      tab_selector = ".question_tab[data-question_id=#{i}]"
+      $(tab_selector).addClass('active')      
     this.update_question_links()
     
     # GA

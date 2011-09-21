@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 16 Sep 2011 12:15:58 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 09:24:06 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -102,13 +102,15 @@
       }
     };
     Questions.prototype.show_right_question = function() {
-      var event_label, question_id, question_text, tab_selector;
+      var event_label, i, question_id, question_text, tab_selector, _ref;
       $(".question").hide();
       question_id = "#question_" + this.current_question;
       $(question_id).show();
       $(".question_tab").removeClass('active');
-      tab_selector = ".question_tab[data-question_id=" + this.current_question + "]";
-      $(tab_selector).addClass('active');
+      for (i = 1, _ref = this.current_question; 1 <= _ref ? i <= _ref : i >= _ref; 1 <= _ref ? i++ : i--) {
+        tab_selector = ".question_tab[data-question_id=" + i + "]";
+        $(tab_selector).addClass('active');
+      }
       this.update_question_links();
       question_text = $.trim($(question_id).find("div.text").text());
       if (this.current_question === this.count_questions()) {
