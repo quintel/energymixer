@@ -38,7 +38,7 @@ class @Chart
     for i in [0..10]
       classes_to_remove += "#{key}_step_#{i} "
     class_to_add = "#{key}_step_#{step}"
-    $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add)
+    $("#{dashboard_selector} .gauge_icon").removeClass(classes_to_remove).addClass(class_to_add)
   
   find_step_for_dashboard_item: (key, value) ->
     # see DashboardItem#corresponding_step
