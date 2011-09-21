@@ -1,4 +1,4 @@
-body#scenarios_new, body#scenario_create
+body#scenarios_new, body#scenarios_create
   section#left
     section#questions
       @include shell_gradient_layer
@@ -107,9 +107,9 @@ body#scenarios_new, body#scenario_create
         .field_with_errors
           color: red
           font-weight: bold
-          float: left
-          position: relative
-          height: 36px
+          // float: left
+          // position: relative
+          // height: 36px
         label
           font-size: 11px
           display: block
@@ -118,16 +118,18 @@ body#scenarios_new, body#scenario_create
           padding: 5px
           text-align: right
           &.check_box
-            width: 312px
+            width: 306px
             float: right
             text-align: left
-        input, select
+        input
           display: block
           float: left
           padding: 3px
           margin: 4px
         input[type=text]
           width: 220px
+        input[type=checkbox]
+          margin-left: 94px
         input[type=submit]
           float: right
           margin: 15px

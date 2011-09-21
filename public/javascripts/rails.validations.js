@@ -1,5 +1,5 @@
 /*!
- * Rails 3 Client Side Validations - v3.1.0
+ * Rails 3 Client Side Validations - v3.0.12
  * https://github.com/bcardarlela/client_side_validations
  *
  * Copyright (c) 2011 Brian Cardarella
@@ -300,7 +300,7 @@ var clientSideValidations = {
         data[name] = element.val();
 
         if (jQuery.ajax({
-          url: '/validators/uniqueness',
+          url: '/validators/uniqueness.json',
           data: data,
           async: false
         }).status == 200) {
@@ -360,7 +360,7 @@ var clientSideValidations = {
       }
 
     },
-    'Formtastic::FormBuilder': {
+    'Formtastic::SemanticFormBuilder': {
       add: function(element, settings, message) {
         if (element.data('valid') !== false) {
           var wrapper = element.closest('li');
@@ -401,4 +401,4 @@ var clientSideValidations = {
       pass:   function(form, eventData) { }
     }
   }
-};
+}
