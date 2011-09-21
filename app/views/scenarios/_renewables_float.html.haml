@@ -1,0 +1,14 @@
+.renewables_float
+  %h3 Hernieuwbaar
+  %ul.chart
+    - scenario.renewable_carriers.each_pair do |key, v|
+      - height = v[:relative_ratio] * 200
+      %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+  .legend
+    %h4 Legenda
+    %table
+      - scenario.renewable_carriers.each_pair do |key, value|
+        %tr{:class => [key, "costs_share_of_#{key}"]}
+          %td= image_tag "layout/textures/#{key}.png"
+          %td= t(key)
+          %td.value= number_to_percentage value[:relative_ratio] * 100, :precision => 0
