@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 09:43:05 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:22:08 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -43,7 +43,7 @@
         money_bar_height += new_height;
       }
       formatted_amount = sprintf("%.1f", total_amount / 1000000000);
-      $(".total_amount span").html(formatted_amount);
+      $("#chart header span.amount").html(formatted_amount);
       return $("ul.chart li.money").stop(true).animate({
         "height": money_bar_height + 8
       }, speed);

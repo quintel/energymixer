@@ -26,7 +26,7 @@ class Home
       money_bar_height += new_height
     
     formatted_amount = sprintf("%.1f", total_amount / 1000000000)
-    $(".total_amount span").html(formatted_amount)
+    $("#chart header span.amount").html(formatted_amount)
     $("ul.chart li.money").stop(true).animate({"height": money_bar_height + 8}, speed)
   
   _save_original_height: ->
