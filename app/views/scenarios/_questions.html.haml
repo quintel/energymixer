@@ -9,8 +9,8 @@
       = render 'question', :answer => answer
     = render 'user_details', :scenario => scenario
 
-#admin_menu
-  -if params[:test]
+- if params[:test]
+  #admin_menu
     %h2 TEST MENU
     - Question.ordered.each do |question|
       %a.question_tab{:href  => "#", :'data-question_id' => question.number}
