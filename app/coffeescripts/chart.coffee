@@ -54,12 +54,12 @@ class @Chart
   format_dashboard_value: (key, value) ->
     out = ""
     switch key
-      when "co2_emission_percent_change_from_1990_corrected_for_electricity_import"
+      when "mixer_co2_reduction_from_1990"
         out = "+" if (value > 0) 
         out += sprintf("%.1f", value * 100) + "%"
-      when "area_footprint_per_nl"
+      when "mixer_bio_footprint"
         out = sprintf("%.2f", value) + "xNL"
-      when "share_of_renewable_energy", "energy_dependence"
+      when "mixer_renewability", "mixer_net_energy_import"
         out = sprintf("%.1f", value * 100) + "%"
       else
         out = value
@@ -67,7 +67,7 @@ class @Chart
   
   # TODO: refactor
   update_bar_chart: ->
-    current_sum = @mixer.gquery_results["policy_total_energy_cost"] * 1000
+    current_sum = @mixer.gquery_results["mixer_total_costs"] * 1000
     
     # update the score attribute. DEBT: move to score exclusive method
     @app.score.values.total_amount.current = current_sum
@@ -98,7 +98,7 @@ class @Chart
     
     # renewable subchart
     renewable_subchart_height = 100
-    total_renewable_amount = @app.mixer.carriers_values.costs_share_of_sustainable
+    total_renewable_amount = @app.mixer.carriers_values.share_of_total_costs_assigned_to_sustainable
     for own code, val of @app.mixer.secondary_carriers_values
       new_height = Math.round(val / total_renewable_amount * renewable_subchart_height)
       selector = "ul.chart .#{code}"

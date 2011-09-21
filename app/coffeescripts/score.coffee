@@ -2,16 +2,16 @@ class @Score
   constructor: (app) ->
     @app = app
     @values =
-      co2_emission_percent_change_from_1990_corrected_for_electricity_import:
+      mixer_co2_reduction_from_1990:
         mark: null
         current : null
-      share_of_renewable_energy:
+      mixer_renewability:
         mark: null
         current: null
-      area_footprint_per_nl:
+      mixer_bio_footprint:
         mark: null
         current: null
-      energy_dependence:
+      mixer_net_energy_import:
         mark: null
         current: null
       total_amount:
@@ -28,20 +28,20 @@ class @Score
     a = (v.mark - v.current) / 1000
     a = 0 if (a < 0)
     
-    v = @values.co2_emission_percent_change_from_1990_corrected_for_electricity_import
+    v = @values.mixer_co2_reduction_from_1990
     b = 0
     if (v.mark > v.current)
       b = Math.abs((v.mark - v.current) * 100)
     
-    v = @values.share_of_renewable_energy
+    v = @values.mixer_renewability
     c = (v.current - v.mark) * 100
     c = 0 if (c < 0)
     
-    v = @values.area_footprint_per_nl
+    v = @values.mixer_bio_footprint
     d = (v.mark - v.current) * 100
     d = 0 if (d < 0)
     
-    v = @values.energy_dependence
+    v = @values.mixer_net_energy_import
     e = (v.mark - v.current) * 100
     e = 0 if (e < 0)
     

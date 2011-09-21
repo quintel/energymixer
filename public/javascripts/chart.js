@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 13:45:02 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:24:51 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -59,17 +59,17 @@
       var out;
       out = "";
       switch (key) {
-        case "co2_emission_percent_change_from_1990_corrected_for_electricity_import":
+        case "mixer_co2_reduction_from_1990":
           if (value > 0) {
             out = "+";
           }
           out += sprintf("%.1f", value * 100) + "%";
           break;
-        case "area_footprint_per_nl":
+        case "mixer_bio_footprint":
           out = sprintf("%.2f", value) + "xNL";
           break;
-        case "share_of_renewable_energy":
-        case "energy_dependence":
+        case "mixer_renewability":
+        case "mixer_net_energy_import":
           out = sprintf("%.1f", value * 100) + "%";
           break;
         default:
@@ -79,7 +79,7 @@
     };
     Chart.prototype.update_bar_chart = function() {
       var active_charts, chart_max_height, code, current_chart_height, current_sum, extra_height_for_roundness, item, label, max_amount, new_height, new_money_height, percentage, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
-      current_sum = this.mixer.gquery_results["policy_total_energy_cost"] * 1000;
+      current_sum = this.mixer.gquery_results["mixer_total_costs"] * 1000;
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
         this.app.score.values.total_amount.mark = current_sum;
@@ -111,7 +111,7 @@
         $(selector).html("" + percentage + "%");
       }
       renewable_subchart_height = 100;
-      total_renewable_amount = this.app.mixer.carriers_values.costs_share_of_sustainable;
+      total_renewable_amount = this.app.mixer.carriers_values.share_of_total_costs_assigned_to_sustainable;
       _ref2 = this.app.mixer.secondary_carriers_values;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;

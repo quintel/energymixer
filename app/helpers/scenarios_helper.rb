@@ -60,22 +60,8 @@ module ScenariosHelper
   end
   
   def carriers_to_json
-    data = ApiClient.new.carrier_costs
-    out = {}
-    # TODO: ugly
-    data.each_pair do |key, value|
-      _,_,_,carrier,sector = key.split('_')
-      # TODO: rename gqueries
-      carrier = 'renewable' if carrier == 'sustainable'
-      carrier = 'nuclear' if carrier == 'uranium'
-      sector ||= 'total'
-      out[sector] ||= {}
-      out[sector][carrier] = value
-    end
-    
-    out.to_json
-  rescue
-    {}.to_json
+    data = ApiClient.new.intro_page_data
+    data.to_json
   end
 
   def gquery_for_output(i)
@@ -100,11 +86,11 @@ module ScenariosHelper
     gquery = gquery_for_output(input_id)
     return if value.nil? #cope with curren values nil on testing server
     case gquery
-    when "co2_emission_percent_change_from_1990_corrected_for_electricity_import"
+    when "mixer_co2_reduction_from_1990"
       "#{'+' if value > 0}#{number_with_precision(value * 100, :precision => 2, :separator => ",")}%"
-    when "area_footprint_per_nl"
+    when "mixer_bio_footprint"
       "#{number_with_precision(value, :precision => 2, :separator => ",")}xNL"
-    when "share_of_renewable_energy", "energy_dependence"
+    when "mixer_renewability", "mixer_net_energy_import"
       "#{number_with_precision(value * 100, :precision => 2, :separator => ",")}%"
     else
       value

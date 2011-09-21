@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 10:18:09 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:22:34 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -8,19 +8,19 @@
     function Score(app) {
       this.app = app;
       this.values = {
-        co2_emission_percent_change_from_1990_corrected_for_electricity_import: {
+        mixer_co2_reduction_from_1990: {
           mark: null,
           current: null
         },
-        share_of_renewable_energy: {
+        mixer_renewability: {
           mark: null,
           current: null
         },
-        area_footprint_per_nl: {
+        mixer_bio_footprint: {
           mark: null,
           current: null
         },
-        energy_dependence: {
+        mixer_net_energy_import: {
           mark: null,
           current: null
         },
@@ -46,22 +46,22 @@
       if (a < 0) {
         a = 0;
       }
-      v = this.values.co2_emission_percent_change_from_1990_corrected_for_electricity_import;
+      v = this.values.mixer_co2_reduction_from_1990;
       b = 0;
       if (v.mark > v.current) {
         b = Math.abs((v.mark - v.current) * 100);
       }
-      v = this.values.share_of_renewable_energy;
+      v = this.values.mixer_renewability;
       c = (v.current - v.mark) * 100;
       if (c < 0) {
         c = 0;
       }
-      v = this.values.area_footprint_per_nl;
+      v = this.values.mixer_bio_footprint;
       d = (v.mark - v.current) * 100;
       if (d < 0) {
         d = 0;
       }
-      v = this.values.energy_dependence;
+      v = this.values.mixer_net_energy_import;
       e = (v.mark - v.current) * 100;
       if (e < 0) {
         e = 0;

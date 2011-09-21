@@ -1,6 +1,6 @@
 = simple_form_for [:admin, @dashboard_item] do |f|
   = f.input :label
-  = f.input :gquery, :input_html => { :readonly => true }
+  = f.input :gquery, :hint => "Don't change me unless you know what you're doing"
   = f.input :steps, :hint => 'Comma separated numeric values. Example: 0.0,0.1,0.5'
   = f.input :ordering
   = f.button :submit

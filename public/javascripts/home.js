@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 13:23:45 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 15:48:53 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -11,43 +11,6 @@
       this._save_original_height();
       this.setup_callbacks();
     }
-    Home.prototype.reset_carriers = function() {
-      return this.update_carriers('total', 1000);
-    };
-    Home.prototype.update_carriers = function(key, speed) {
-      if (typeof speed === "undefined") {
-        speed = 350;
-      }
-      return this._update_carriers(this.shares[key], speed);
-    };
-    Home.prototype._update_carriers = function(carrier_values, speed) {
-      var carrier, carrier_li, formatted_amount, label, money_bar_height, new_height, original_height, total_amount, value;
-      total_amount = 0;
-      money_bar_height = 0;
-      for (carrier in carrier_values) {
-        if (!__hasProp.call(carrier_values, carrier)) continue;
-        value = carrier_values[carrier];
-        total_amount += value;
-        original_height = this.original_height[carrier];
-        new_height = Math.round(value / this.shares["total"][carrier] * original_height);
-        carrier_li = $("ul.chart").find("." + carrier);
-        carrier_li.stop(true).animate({
-          "height": new_height
-        }, speed);
-        label = carrier_li.find(".label");
-        if (new_height > 11) {
-          label.show();
-        } else {
-          label.hide();
-        }
-        money_bar_height += new_height;
-      }
-      formatted_amount = sprintf("%.1f", total_amount / 1000000000);
-      $("#chart header span.amount").html(formatted_amount);
-      return $("ul.chart li.money").stop(true).animate({
-        "height": money_bar_height + 8
-      }, speed);
-    };
     Home.prototype._save_original_height = function() {
       return this.original_height = {
         coal: $("ul.chart li.coal").height(),
@@ -57,22 +20,58 @@
         renewable: $("ul.chart li.renewable").height()
       };
     };
+    Home.prototype._set_price = function(x) {
+      var formatted_amount;
+      formatted_amount = sprintf("%.1f", x / 1000000000);
+      return $("#chart header span.amount").html(formatted_amount);
+    };
+    Home.prototype.update_price = function() {
+      var amount;
+      amount = this.shares.sectors[this.current_sector].total * this.shares.total.amount;
+      return this._set_price(amount);
+    };
+    Home.prototype.update_chart = function() {
+      var carrier, carrier_li, new_height, ratio, _ref, _results;
+      _ref = this.shares.sectors[this.current_sector].carriers;
+      _results = [];
+      for (carrier in _ref) {
+        if (!__hasProp.call(_ref, carrier)) continue;
+        ratio = _ref[carrier];
+        console.log("" + carrier + ": " + ratio);
+        new_height = this.original_height[this.current_sector] * ratio / 1;
+        carrier_li = $("ul.chart").find("." + carrier);
+        _results.push(carrier_li.stop(true).animate({
+          "height": new_height
+        }, 500));
+      }
+      return _results;
+    };
+    Home.prototype.reset_map = function() {
+      this.current_sector = null;
+      return this._set_price(this.shares.total.amount);
+    };
+    Home.prototype.update_map = function() {
+      this.update_price();
+      return this.update_chart();
+    };
     Home.prototype.setup_callbacks = function() {
       $("#sector_links .sector").hover(__bind(function(e) {
         var sector_id;
         sector_id = $(e.target).parent().attr("id");
-        return this.update_carriers(sector_id);
+        this.current_sector = sector_id;
+        return this.update_map();
       }, this), __bind(function() {
-        return this.reset_carriers();
+        return this.reset_map();
       }, this));
       $("#sector_icons .sector").hover(__bind(function(e) {
         var sector_id;
         $(e.target).find(".popup").show();
         sector_id = $(e.target).attr("id");
-        return this.update_carriers(sector_id);
+        this.current_sector = sector_id;
+        return this.update_map();
       }, this), __bind(function(e) {
         $(".popup").hide();
-        return this.reset_carriers();
+        return this.reset_map();
       }, this));
       return $("#sector_icons a").click(function(e) {
         var container;
