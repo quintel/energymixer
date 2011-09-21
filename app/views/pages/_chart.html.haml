@@ -1,14 +1,15 @@
 :ruby
-  max_height = local_assigns.has_key?(:max_height) ? max_height : 360
+  max_height = 360
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
-  rounded_sum = 0
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
+  Rails.logger.debug "HEIGHT: #{current_chart_height}"
 
 .charts_container
   .legend
     %h4 Legenda
     %table
       - scenario.carriers.each_pair do |key, value|
+        - Rails.logger.debug "*** #{key}: #{value}"
         %tr{:class => [key, "costs_share_of_#{key}"]}
           %td= image_tag "layout/textures/#{key}.png"
           %td= t(key)
@@ -16,7 +17,6 @@
   .chart_canvas_mix
     %ul.chart
       - scenario.carriers.each_pair do |key, v|
-        - height = (v[:ratio] * current_chart_height * 1_000_000_000).round
-        - rounded_sum += height
+        - height = (v[:ratio] * current_chart_height).round
         %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
   = render 'scenarios/renewables_float', :scenario => scenario

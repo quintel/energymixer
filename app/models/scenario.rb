@@ -39,33 +39,33 @@ class Scenario < ActiveRecord::Base
   # Be careful, these values must match the dashboard items
   # We could store this mapping in the db, but let's keep things simple
   Outputs = {
-    output_0:  "costs_share_of_coal",
-    output_1:  "costs_share_of_gas",
-    output_2:  "costs_share_of_oil",
-    output_3:  "costs_share_of_uranium",
-    output_4:  "costs_share_of_sustainable",
-    output_5:  "co2_emission_percent_change_from_1990_corrected_for_electricity_import",
-    output_6:  "share_of_renewable_energy",
-    output_7:  "area_footprint_per_nl",
-    output_8:  "energy_dependence",
-    output_9:  "costs_share_of_sustainable_wind",
-    output_10: "costs_share_of_sustainable_solar",
-    output_11: "costs_share_of_sustainable_biomass",
-    output_12: "policy_total_energy_cost"
+    output_0:  "share_of_total_costs_assigned_to_coal",
+    output_1:  "share_of_total_costs_assigned_to_gas",
+    output_2:  "share_of_total_costs_assigned_to_oil",
+    output_3:  "share_of_total_costs_assigned_to_uranium",
+    output_4:  "share_of_total_costs_assigned_to_sustainable",
+    output_5:  "mixer_co2_reduction_from_1990",
+    output_6:  "mixer_renewability",
+    output_7:  "mixer_bio_footprint",
+    output_8:  "mixer_net_energy_import",
+    output_9:  "share_of_total_costs_assigned_to_sustainable_wind",
+    output_10: "share_of_total_costs_assigned_to_sustainable_solar",
+    output_11: "share_of_total_costs_assigned_to_sustainable_biomass",
+    output_12: "mixer_total_costs"
   }
   
   PrimaryMixTable = {
-    coal:      "costs_share_of_coal",
-    gas:       "costs_share_of_gas",
-    oil:       "costs_share_of_oil",
-    nuclear:   "costs_share_of_uranium",
-    renewable: "costs_share_of_sustainable"
+    coal:      "share_of_total_costs_assigned_to_coal",
+    gas:       "share_of_total_costs_assigned_to_gas",
+    oil:       "share_of_total_costs_assigned_to_oil",
+    nuclear:   "share_of_total_costs_assigned_to_uranium",
+    renewable: "share_of_total_costs_assigned_to_sustainable"
   }
   
   SecondaryMixTable = {
-    wind:    "costs_share_of_sustainable_wind",
-    solar:   "costs_share_of_sustainable_solar",
-    biomass: "costs_share_of_sustainable_biomass"
+    wind:    "share_of_total_costs_assigned_to_sustainable_wind",
+    solar:   "share_of_total_costs_assigned_to_sustainable_solar",
+    biomass: "share_of_total_costs_assigned_to_sustainable_biomass"
   }
   
   validates :name,  :presence => true
@@ -106,11 +106,11 @@ class Scenario < ActiveRecord::Base
     
   def carriers
     {
-      coal:      { amount: output_0, ratio: output_0 / total_amount / 1_000_000_000},
-      gas:       { amount: output_1, ratio: output_1 / total_amount / 1_000_000_000},
-      oil:       { amount: output_2, ratio: output_2 / total_amount / 1_000_000_000},
-      nuclear:   { amount: output_3, ratio: output_3 / total_amount / 1_000_000_000},
-      renewable: { amount: output_4, ratio: output_4 / total_amount / 1_000_000_000}
+      coal:      { ratio: output_0},
+      gas:       { ratio: output_1},
+      oil:       { ratio: output_2},
+      nuclear:   { ratio: output_3},
+      renewable: { ratio: output_4}
     }
   end
 
@@ -120,9 +120,9 @@ class Scenario < ActiveRecord::Base
     self.output_11 ||= 0
     renewable_total = output_4 || 0.000001 # prevent division by zero
     {
-      wind:    { amount: output_9,  ratio: output_9  / total_amount, relative_ratio: output_9  / renewable_total },
-      solar:   { amount: output_10, ratio: output_10 / total_amount, relative_ratio: output_10 / renewable_total },
-      biomass: { amount: output_11, ratio: output_11 / total_amount, relative_ratio: output_11 / renewable_total }
+      wind:    { ratio: output_9  },
+      solar:   { ratio: output_10 },
+      biomass: { ratio: output_11 }
     }
   end
     
@@ -131,14 +131,7 @@ class Scenario < ActiveRecord::Base
   end
     
   def total_amount
-    if output_12
-      # new attribute, not available on old records
-      output_12
-    else
-      (output_0 + output_1 + output_2 + output_3 + output_4) / 1_000_000_000
-    end
-  rescue
-    0
+    output_12
   end
   
   # forces reload
@@ -161,19 +154,19 @@ class Scenario < ActiveRecord::Base
       # DEBT: one-liner
       # settings = Options.inject({:year => 2011}) {|hsh, arr| key,val = arr; hsh.merge key => c[val]}
       @current_scenario = new(
-        :output_0  => c["costs_share_of_coal"],
-        :output_1  => c["costs_share_of_gas"],
-        :output_2  => c["costs_share_of_oil"],
-        :output_3  => c["costs_share_of_uranium"],
-        :output_4  => c["costs_share_of_sustainable"],
-        :output_5  => c["co2_emission_percent_change_from_1990_corrected_for_electricity_import"],
-        :output_6  => c["share_of_renewable_energy"],
-        :output_7  => c["area_footprint_per_nl"],
-        :output_8  => c["energy_dependence"],
-        :output_9  => c["costs_share_of_sustainable_wind"],
-        :output_10 => c["costs_share_of_sustainable_solar"],
-        :output_11 => c["costs_share_of_sustainable_biomass"],
-        :output_12 => c["policy_total_energy_cost"],
+        :output_0  => c["share_of_total_costs_assigned_to_coal"],
+        :output_1  => c["share_of_total_costs_assigned_to_gas"],
+        :output_2  => c["share_of_total_costs_assigned_to_oil"],
+        :output_3  => c["share_of_total_costs_assigned_to_uranium"],
+        :output_4  => c["share_of_total_costs_assigned_to_sustainable"],
+        :output_5  => c["mixer_co2_reduction_from_1990"],
+        :output_6  => c["mixer_renewability"],
+        :output_7  => c["mixer_bio_footprint"],
+        :output_8  => c["mixer_net_energy_import"],
+        :output_9  => c["share_of_total_costs_assigned_to_sustainable_wind"],
+        :output_10 => c["share_of_total_costs_assigned_to_sustainable_solar"],
+        :output_11 => c["share_of_total_costs_assigned_to_sustainable_biomass"],
+        :output_12 => c["mixer_total_costs"],
         :year      => 2011
       )
       Rails.cache.write('current_scenario', @current_scenario)
@@ -196,14 +189,14 @@ class Scenario < ActiveRecord::Base
       :output_2  => 15600440661.944386,    # oil
       :output_3  => 562037387.8724155,     # uranium
       :output_4  => 2695124317.5551677,    # sustainable      
-      :output_5  => -0.005590499343000932, # co2_emission_percent_change_from_1990_corrected_for_electricity_import
-      :output_6  => 0.05393912138004123,   # share_of_renewable_energy
-      :output_7  => 0.6045053247669468,    # area_footprint_per_nl
-      :output_8  => 0.2477505720053616,    # energy_dependence
-      :output_9  => 212589519.75315946,    # costs_share_of_sustainable_wind
-      :output_10 => 2141265.8747384516,    # costs_share_of_sustainable_solar
-      :output_11 => 2170862923.8200254,    # costs_share_of_sustainable_biomass
-      :output_12 => 42.420507732497605,    # policy_total_energy_cost
+      :output_5  => -0.005590499343000932, # mixer_co2_reduction_from_1990
+      :output_6  => 0.05393912138004123,   # mixer_renewability
+      :output_7  => 0.6045053247669468,    # mixer_bio_footprint
+      :output_8  => 0.2477505720053616,    # mixer_net_energy_import
+      :output_9  => 212589519.75315946,    # share_of_total_costs_assigned_to_sustainable_wind
+      :output_10 => 2141265.8747384516,    # share_of_total_costs_assigned_to_sustainable_solar
+      :output_11 => 2170862923.8200254,    # share_of_total_costs_assigned_to_sustainable_biomass
+      :output_12 => 42.420507732497605,    # mixer_total_costs
       :year      => 2011
     )
   end

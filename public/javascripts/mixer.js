@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 14 Sep 2011 12:05:19 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:22:34 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -19,7 +19,7 @@
       this.dashboard_items = globals.dashboard_items;
       this.mix_table = globals.mix_table;
       this.secondary_mix_table = globals.secondary_mix_table;
-      this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["policy_total_energy_cost"]);
+      this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["mixer_total_costs"]);
       this.fetch_scenario_id();
     }
     Mixer.prototype.fetch_scenario_id = function() {
@@ -56,7 +56,7 @@
         $("input[type=hidden][data-label=" + key + "]").val(value);
         this.gquery_results[key] = value;
       }
-      this.total_cost = results["policy_total_energy_cost"][1][1];
+      this.total_cost = results["mixer_total_costs"][1][1];
       _ref = this.mix_table;
       for (index in _ref) {
         if (!__hasProp.call(_ref, index)) continue;

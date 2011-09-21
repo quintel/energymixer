@@ -17,7 +17,7 @@ class @Mixer
     @dashboard_items     = globals.dashboard_items # provided by the controller
     @mix_table           = globals.mix_table       # idem
     @secondary_mix_table = globals.secondary_mix_table # idem
-    @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["policy_total_energy_cost"])
+    @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["mixer_total_costs"])
     this.fetch_scenario_id()
 
   fetch_scenario_id: ->
@@ -50,7 +50,7 @@ class @Mixer
       @gquery_results[key] = value
 
     # total cost is used fairly often, let's save it in the mixer object
-    @total_cost = results["policy_total_energy_cost"][1][1]
+    @total_cost = results["mixer_total_costs"][1][1]
     
     # now let's udpate the result collections
     for own index, code of @mix_table
