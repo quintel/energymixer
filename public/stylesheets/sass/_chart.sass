@@ -80,7 +80,7 @@
         z-index: 1
         background: url("/images/layout/textures/renewable.png")
   .renewables_float
-    width: 208px
+    width: 225px
     position: absolute
     top: 200px
     left: -100px
@@ -89,20 +89,53 @@
     color: #000000
     z-index: 20
     @include shadow
-    text-align:center
+    padding: 10px
+    opacity: 0.9
     h3
+      text-align: center
+      font-size: 1.2em
       font-weight: bold
       border-bottom: 1px solid #ccc
       padding: 10px
+      margin-bottom: 10px
     ul.chart
       float: right
       margin-right: 10px
       margin-bottom: 10px
       li.serie
+        position: relative
+        margin: 0 0 -3px 0
+        min-height: 4px
+        border-bottom-left-radius: 50% 3px
+        border-bottom-right-radius: 50% 3px      
         width: 80px
+        &.wind
+          border-top-left-radius: 50% 3px
+          border-top-right-radius: 50% 3px
+          background-color: orange
+          z-index: 25
         &.solar
           background-color: yellow
-        &.wind
-          background-color: orange
+          z-index: 24
         &.biomass
-          background-color: red
+          background: url("/images/layout/textures/renewable.png")
+          z-index: 23
+    .legend
+      @include shadow
+      padding: 3px 6px
+      h4
+        font-weight: bold
+        margin-bottom: 5px
+      background-color: #ffffff
+      z-index: 30
+      opacity: 0.7
+      position: absolute
+      top: 185px
+      left: 10px
+      color: black
+      table
+        td
+          padding: 0px 4px
+        img
+          width: 10px
+          height: 10px
