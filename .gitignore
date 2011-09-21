@@ -8,7 +8,6 @@ coverage
 .DS_Store
 .tmtags
 .rvmrc
-public/stylesheets/*.css
 .powrc
 config/config.yml
 config/database.yml
