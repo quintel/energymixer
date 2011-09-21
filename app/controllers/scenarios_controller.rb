@@ -1,11 +1,11 @@
 class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => [:show, :answers]
-
+  before_filter :load_question_set
+  
   def new
     @scenario = Scenario.current.clone
-    @scenario.year = END_YEAR
+    @scenario.year = @question_set.try(:end_year)
 
-    @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name']) || QuestionSet.first
     @questions    = @question_set.questions.ordered rescue []
     @answers      = @questions.map{|q| q.answers}.flatten.uniq
     

@@ -26,5 +26,10 @@ class ApplicationController < ActionController::Base
       redirect_to :back
     rescue
       redirect_to root_path
-    end  
+    end
+    
+    def load_question_set
+      @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name']) || QuestionSet.first
+      @end_year = @question_set.try(:end_year)
+    end
 end

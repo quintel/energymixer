@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110919120632) do
+ActiveRecord::Schema.define(:version => 20110921120008) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110919120632) do
     t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "end_year"
   end
 
   create_table "questions", :force => true do |t|

@@ -8,7 +8,6 @@ development: &DEV
   standalone: false
   api_session_settings:
     :country: 'nl'
-    :end_year: 2025
   
 test:
   <<: *DEV
