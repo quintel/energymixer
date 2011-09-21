@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:41:34 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 13:45:02 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -41,7 +41,7 @@
         classes_to_remove += "" + key + "_step_" + i + " ";
       }
       class_to_add = "" + key + "_step_" + step;
-      return $(dashboard_selector).removeClass(classes_to_remove).addClass(class_to_add);
+      return $("" + dashboard_selector + " .gauge_icon").removeClass(classes_to_remove).addClass(class_to_add);
     };
     Chart.prototype.find_step_for_dashboard_item = function(key, value) {
       var i, step, steps, _i, _len;
