@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 09:48:52 GMT from
- * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/chart.coffee
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:41:34 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
 (function() {
@@ -24,7 +24,7 @@
       $(".dashboard_item .value, .chart header, #carriers").busy({
         img: '/images/spinner.gif'
       });
-      return this.app.questions.hide_all_question_links();
+      return this.app.questions.disable_all_question_links();
     };
     Chart.prototype.unblock_interface = function() {
       $(".dashboard_item .value, .chart header, #carriers").busy("clear");

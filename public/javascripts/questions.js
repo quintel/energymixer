@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 09:24:06 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:44:32 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -79,26 +79,46 @@
       }
       return conflict;
     };
-    Questions.prototype.hide_all_question_links = function() {
-      $("#previous_question").hide();
-      return $("#nex_question").hide();
+    Questions.prototype._disable_link = function(e) {
+      e.preventDefault();
+      return false;
+    };
+    Questions.prototype.disable_prev_link = function() {
+      $("#previous_question").addClass('link_disabled');
+      return $("#previous_question").bind('click', this._disable_link);
+    };
+    Questions.prototype.enable_prev_link = function() {
+      $("#previous_question").removeClass('link_disabled');
+      return $("#previous_question").unbind('click', this._disable_link);
+    };
+    Questions.prototype.disable_next_link = function() {
+      $("#next_question").addClass('link_disabled');
+      return $("#next_question").bind('click', this._disable_link);
+    };
+    Questions.prototype.enable_next_link = function() {
+      $("#next_question").removeClass('link_disabled');
+      return $("#next_question").unbind('click', this._disable_link);
+    };
+    Questions.prototype.disable_all_question_links = function() {
+      this.disable_next_link();
+      return this.disable_prev_link();
     };
     Questions.prototype.update_question_links = function() {
       var first_question, last_question;
       first_question = this.current_question === 1;
       last_question = this.current_question === this.count_questions();
       if (first_question) {
-        $("#previous_question").hide();
+        this.disable_prev_link();
       } else {
-        $("#previous_question").show();
+        this.enable_prev_link();
         if (last_question) {
-          $("#next_question").hide();
+          this.disable_next_link();
         }
       }
       if (this.current_question_was_answered() && !last_question) {
-        return $("#next_question").show();
+        return this.enable_next_link();
       } else {
-        return $("#next_question").hide();
+        return this.disable_next_link();
       }
     };
     Questions.prototype.show_right_question = function() {
@@ -122,9 +142,7 @@
     Questions.prototype.setup_navigation_callbacks = function() {
       $("#next_question").click(__bind(function() {
         var last_question;
-        if (!this.current_question_was_answered()) {
-          alert('Kies eerst een antwoord voor u verder gaat.');
-        } else {
+        if (this.current_question_was_answered()) {
           this.current_question++;
           last_question = this.count_questions();
           if (this.current_question > last_question) {
