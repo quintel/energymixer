@@ -16,7 +16,9 @@
     %header
       %strong Energy Mix 2011
       %br
-      Kosten &euro; #{number_with_precision(Scenario.current.total_amount, :precision => 1, :separator => ".")} Miljard    
+      Kosten &euro; 
+      %span.amount= number_with_precision(Scenario.current.total_amount, :precision => 1, :separator => ".")
+      Miljard    
     = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
   #map
     #sector_icons
