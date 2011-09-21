@@ -15,7 +15,7 @@ class @Chart
   
   block_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy({img: '/images/spinner.gif'})
-    @app.questions.hide_all_question_links();
+    @app.questions.disable_all_question_links();
   
   unblock_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy("clear")

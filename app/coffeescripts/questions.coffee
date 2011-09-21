@@ -67,24 +67,46 @@ class @Questions
   # interface methods
   #
   
-  hide_all_question_links: ->
-    $("#previous_question").hide()
-    $("#nex_question").hide()
+  # TODO: refactor
+  _disable_link: (e) ->
+    e.preventDefault()
+    return false
+  
+  disable_prev_link: ->
+    $("#previous_question").addClass('link_disabled')
+    $("#previous_question").bind 'click', this._disable_link
+  
+  enable_prev_link: ->
+    $("#previous_question").removeClass('link_disabled')
+    $("#previous_question").unbind 'click', this._disable_link
+  
+  disable_next_link: ->
+    $("#next_question").addClass('link_disabled')
+    $("#next_question").bind 'click', this._disable_link
+  
+  enable_next_link: ->
+    $("#next_question").removeClass('link_disabled')
+    $("#next_question").unbind 'click', this._disable_link
+  
+
+  disable_all_question_links: ->
+    this.disable_next_link()
+    this.disable_prev_link()
   
   update_question_links: ->
     first_question = @current_question == 1
     last_question  = @current_question == this.count_questions()
     
     if (first_question)
-      $("#previous_question").hide()
+      this.disable_prev_link()
     else
-      $("#previous_question").show()
-      $("#next_question").hide() if last_question
+      this.enable_prev_link()
+      this.disable_next_link() if last_question
     
     if (this.current_question_was_answered() && !last_question)
-      $("#next_question").show()
+      this.enable_next_link()
     else
-      $("#next_question").hide()
+      this.disable_next_link()
   
   show_right_question: ->
     $(".question").hide()
@@ -108,9 +130,7 @@ class @Questions
   #
   setup_navigation_callbacks: ->
     $("#next_question").click =>
-      if(!this.current_question_was_answered())
-        alert('Kies eerst een antwoord voor u verder gaat.')
-      else
+      if this.current_question_was_answered()
         @current_question++
         last_question = this.count_questions()
         if (@current_question > last_question)
