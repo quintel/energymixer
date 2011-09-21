@@ -5,7 +5,7 @@ body#scenarios_new, body#scenario_create
       height: 430px
       overflow: auto
       nav#up
-        height: 20px
+        height: 30px
         display: block
         text-align: center
         @include shell_gradient_layer
@@ -17,10 +17,10 @@ body#scenarios_new, body#scenario_create
           td
             color: #A5A5A5
             margin: 2px auto
+            padding: 7px
             &.active
               color: #404040
               font-weight: bold
-      
       .question
         .number
           font-weight: bold
@@ -33,21 +33,22 @@ body#scenarios_new, body#scenario_create
           line-height: 18px
           font-weight: bold
           margin-bottom: 10px
-      
         .info
-          padding-left: 3px
+          padding: 20px 10px 10px 3px
           position: relative
           .information
             display: none
             position: absolute
             top: 30px
             left: 0
+            padding: 10px
+            line-height: 15px
             @include shell_gradient_layer
             h3
               font-size: 13px
               font-weight: bold
               color: #0C3473
-              margin-bottom: 10px
+              margin: 5px 0 10px 0
             .close_button
               float: right
         ul.answers
