@@ -38,7 +38,7 @@ class Home
       renewable: $("ul.chart li.renewable").height()
   
   setup_callbacks: ->
-    $("#sectors .sector").hover(
+    $("#sector_links .sector").hover(
       (e) => 
         sector_id = $(e.target).parent().attr("id")
         this.update_carriers(sector_id)
@@ -47,11 +47,14 @@ class Home
     )
 
     $("#sector_icons .sector").hover(
-      () ->
-        $(this).find(".popup").show()
+      (e) =>
+        $(e.target).find(".popup").show()
+        sector_id = $(e.target).attr("id")
+        this.update_carriers(sector_id)
       ,
-      () ->
-        $(this).find(".popup").hide()
+      (e) =>
+        $(".popup").hide()
+        this.reset_carriers()
     )
 
     $("#sector_icons a").click (e) ->

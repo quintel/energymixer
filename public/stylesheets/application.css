@@ -265,13 +265,13 @@ body#pages_home section#main {
       height: 60px;
       top: 110px;
       left: 319px; }
-    body#pages_home section#main #map #sectors {
+    body#pages_home section#main #map #sector_links {
       position: absolute;
       left: 0;
       top: 0;
       width: 220px;
       float: left; }
-      body#pages_home section#main #map #sectors .sector {
+      body#pages_home section#main #map #sector_links .sector {
         margin: 2px 4px;
         width: 100px;
         float: left; }

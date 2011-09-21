@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:22:08 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 13:23:45 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -58,18 +58,22 @@
       };
     };
     Home.prototype.setup_callbacks = function() {
-      $("#sectors .sector").hover(__bind(function(e) {
+      $("#sector_links .sector").hover(__bind(function(e) {
         var sector_id;
         sector_id = $(e.target).parent().attr("id");
         return this.update_carriers(sector_id);
       }, this), __bind(function() {
         return this.reset_carriers();
       }, this));
-      $("#sector_icons .sector").hover(function() {
-        return $(this).find(".popup").show();
-      }, function() {
-        return $(this).find(".popup").hide();
-      });
+      $("#sector_icons .sector").hover(__bind(function(e) {
+        var sector_id;
+        $(e.target).find(".popup").show();
+        sector_id = $(e.target).attr("id");
+        return this.update_carriers(sector_id);
+      }, this), __bind(function(e) {
+        $(".popup").hide();
+        return this.reset_carriers();
+      }, this));
       return $("#sector_icons a").click(function(e) {
         var container;
         e.preventDefault();
