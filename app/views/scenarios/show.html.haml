@@ -13,9 +13,8 @@
   = render 'search_scenario_box'
   %section#description
     - unless @scenario.title.blank?
-      .title
-        %h1{:style=>"font-size:1.2em;"}= "'#{@scenario.title}'"
-    .name
+      %h1= @scenario.title
+    %h2
       De mix van #{@scenario.name}
       - if @scenario.age
         (#{@scenario.age} jaar)
