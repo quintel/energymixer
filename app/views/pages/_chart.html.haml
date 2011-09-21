@@ -5,6 +5,14 @@
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
 
 .charts_container
+  .legend
+    %h4 Legenda
+    %table
+      - scenario.carriers.each_pair do |key, value|
+        %tr{:class => [key, "costs_share_of_#{key}"]}
+          %td= image_tag "layout/textures/#{key}.png"
+          %td= t(key)
+          %td.value= number_to_percentage value[:ratio] * 100, :precision => 0
   .chart_canvas_mix
     %ul.chart
       - scenario.carriers.each_pair do |key, v|
