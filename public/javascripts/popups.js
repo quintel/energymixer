@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 20 Sep 2011 09:21:12 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 09:53:20 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/popups.coffee
  */
 
@@ -12,7 +12,7 @@
     $(".full_chart .dashboard_item .info_icon").click(function() {
       var key;
       key = $(this).parent().attr('id');
-      return console.log($(this).parents(".full_chart").find("#dashboard_popups ." + key).show());
+      return $(this).parents(".full_chart").find("#dashboard_popups ." + key).toggle();
     });
     return $(".full_chart #dashboard_popups a.close_popup").click(function() {
       return $(this).parent().hide();

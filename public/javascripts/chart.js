@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 08:42:09 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 09:51:09 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -78,8 +78,9 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, renewable_subchart_height, selector, total_renewable_amount, _ref, _ref2;
+      var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
       current_sum = this.mixer.gquery_results["mixer_total_costs"];
+      charts_to_be_updated = $(".charts_container").not('.static');
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
         this.app.score.values.total_amount.mark = current_sum;
@@ -92,8 +93,7 @@
         if (!__hasProp.call(_ref, code)) continue;
         ratio = _ref[code];
         new_height = Math.round(ratio * current_chart_height);
-        active_charts = $("ul.chart").not('.static');
-        item = active_charts.find("." + code);
+        item = charts_to_be_updated.find("li." + code);
         item.animate({
           "height": new_height
         }, "slow");
@@ -101,17 +101,20 @@
         selector = ".legend tr." + code + " td.value";
         $(selector).html("" + percentage + "%");
       }
-      renewable_subchart_height = 100;
-      total_renewable_amount = this.app.mixer.carriers_values.share_of_total_costs_assigned_to_sustainable;
+      chart_max_height = 160;
+      total_renewables_ratio = this.app.mixer.gquery_results.mixer_renewability;
       _ref2 = this.app.mixer.secondary_carriers_values;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;
         ratio = _ref2[code];
-        new_height = Math.round(ratio * renewable_subchart_height);
-        selector = "ul.chart ." + code;
-        $(selector).animate({
+        new_height = Math.round(ratio / total_renewables_ratio * chart_max_height);
+        item = charts_to_be_updated.find("ul.chart ." + code);
+        item.animate({
           "height": new_height
         }, "slow");
+        percentage = Math.round(ratio * 100);
+        selector = ".legend tr." + code + " td.value";
+        $(selector).html("" + percentage + "%");
       }
       $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000000000));
       return this.unblock_interface();

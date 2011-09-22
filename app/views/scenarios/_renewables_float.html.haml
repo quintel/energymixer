@@ -1,4 +1,4 @@
-- max_height = 200
+- max_height = 160
 - cumulative_ratio = scenario.renewable_carrier_ratios.values.sum
 .renewables_float
   %h3 Hernieuwbaar
@@ -13,4 +13,4 @@
         %tr{:class => [carrier, "costs_share_of_#{carrier}"]}
           %td= image_tag "layout/textures/#{carrier}.png"
           %td= t(carrier)
-          %td.value= number_to_percentage value * 100, :precision => 0
+          %td.value= number_to_percentage value * 100, :precision => 1

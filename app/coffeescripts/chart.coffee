@@ -66,6 +66,7 @@ class @Chart
   # TODO: refactor
   update_bar_chart: ->
     current_sum = @mixer.gquery_results["mixer_total_costs"]
+    charts_to_be_updated = $(".charts_container").not('.static')
     
     # update the score attribute.
     # DEBT: move to score exclusive method
@@ -74,14 +75,12 @@ class @Chart
       @app.score.values.total_amount.mark = current_sum
 
     # main chart
-    chart_max_height     = 360
-    max_amount           = globals.chart_max_amount
+    chart_max_height = 360
+    max_amount = globals.chart_max_amount
     current_chart_height = current_sum / max_amount * chart_max_height
     for own code, ratio of @mixer.carriers_values
       new_height = Math.round(ratio * current_chart_height)
-      # We shouldn't update the shaded chart
-      active_charts = $("ul.chart").not('.static')
-      item = active_charts.find(".#{code}")
+      item = charts_to_be_updated.find("li.#{code}")
       item.animate({"height": new_height}, "slow")
       # update the legend
       percentage = Math.round(ratio * 100)
@@ -89,13 +88,17 @@ class @Chart
       $(selector).html("#{percentage}%")
     
     # renewable subchart
-    renewable_subchart_height = 100
-    total_renewable_amount = @app.mixer.carriers_values.share_of_total_costs_assigned_to_sustainable
+    chart_max_height = 160
+    total_renewables_ratio = @app.mixer.gquery_results.mixer_renewability
     for own code, ratio of @app.mixer.secondary_carriers_values
-      new_height = Math.round(ratio * renewable_subchart_height)
-      selector = "ul.chart .#{code}"
-      $(selector).animate({"height": new_height}, "slow")
-      # TODO: update legend, too
+      new_height = Math.round(ratio / total_renewables_ratio * chart_max_height)
+      item = charts_to_be_updated.find("ul.chart .#{code}")
+      item.animate({"height": new_height}, "slow")
+      # legend
+      percentage = Math.round(ratio * 100)
+      selector = ".legend tr.#{code} td.value"
+      $(selector).html("#{percentage}%")
+
     
     # and top counter
     $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
