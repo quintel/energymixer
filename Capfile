@@ -1,6 +1,6 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
-
+load 'lib/capistrano/db_recipes'
 load 'config/deploy' # remove this line to skip loading any of the default tasks
 
 namespace :deploy do
@@ -28,13 +28,4 @@ namespace :rake_tasks do
   task :clear_cache do
     run("cd #{deploy_to}/current && /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production")
   end
-end
-
-desc "Move db server to local db"
-task :db2local do
-  puts "Exporting db to yml file"
-  run("cd #{deploy_to}/current && bundle exec rake db:data:dump RAILS_ENV=production")
-  file = "#{deploy_to}/current/db/data.yml"
-  get file, "db/data.yml"
-  puts "To import the dataset locally please run rake db:data:load"
 end

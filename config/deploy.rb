@@ -29,6 +29,11 @@ task :gasmixer do
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "gasmixer"
+
+  set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+  set :db_pass, "quintel"
+  set :db_name, "gasmixer"
+  set :db_user, "root"
 end
 
 task :shell2050 do
@@ -38,6 +43,8 @@ task :shell2050 do
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "mixer2050"
 end
+
+set :local_db_name, 'energymixer_dev'
 
 namespace :deploy do
   task :copy_configuration_files do

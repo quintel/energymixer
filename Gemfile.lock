@@ -165,7 +165,6 @@ GEM
     warden (1.0.5)
       rack (>= 1.0)
     watchr (0.7)
-    yaml_db (0.2.1)
 
 PLATFORMS
   ruby
@@ -199,4 +198,3 @@ DEPENDENCIES
   tabs_on_rails
   therubyracer
   watchr (~> 0.7)
-  yaml_db (~> 0.2.0)
