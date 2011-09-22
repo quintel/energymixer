@@ -1,22 +1,16 @@
-:ruby
-  max_height = 360
-  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
-  current_chart_height = scenario.total_amount / max_amount.to_f * max_height
-  Rails.logger.debug "HEIGHT: #{current_chart_height}"
-
+- max_height = 360
 .charts_container
   .legend
     %h4 Legenda
     %table
-      - scenario.carriers.each_pair do |key, value|
-        - Rails.logger.debug "*** #{key}: #{value}"
-        %tr{:class => [key, "costs_share_of_#{key}"]}
-          %td= image_tag "layout/textures/#{key}.png"
-          %td= t(key)
-          %td.value= number_to_percentage value[:ratio] * 100, :precision => 0
+      - scenario.carrier_ratios.each_pair do |sector, value|
+        %tr{:class => [sector, "costs_share_of_#{sector}"]}
+          %td= image_tag "layout/textures/#{sector}.png"
+          %td= t(sector)
+          %td.value= number_to_percentage(value * 100, :precision => 0)
   .chart_canvas_mix
     %ul.chart
-      - scenario.carriers.each_pair do |key, v|
-        - height = (v[:ratio] * current_chart_height).round
-        %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+      - scenario.carrier_ratios.each_pair do |sector, value|
+        - height = (value * max_height).round
+        %li.serie{:class => [sector, Scenario::PrimaryMixTable[sector]], :style => "height: #{height}px", :title => I18n.t(sector)}
   = render 'scenarios/renewables_float', :scenario => scenario
