@@ -110,7 +110,7 @@ body.admin {
     margin: 0; }
     body.admin header nav {
       background-color: #6a7176;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#6a7176", endColorstr="#4d5256");
+      -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#6a7176, endColorstr=#4d5256)";
       background-image: -moz-linear-gradient(center top, #6a7176, #4d5256);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6a7176), to(#4d5256));
       padding: 0.6em;
@@ -132,7 +132,7 @@ body.admin {
             color: white; }
     body.admin header #subnav {
       background-color: #efefef;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#efefef", endColorstr="#dfe1e2");
+      -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#efefef, endColorstr=#dfe1e2)";
       background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2));
       height: 70px;
@@ -167,7 +167,7 @@ body.admin {
       border: 1px solid #eeeeee;
       padding: 1em 0.5em;
       background-color: #efefef;
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#efefef", endColorstr="#dfe1e2");
+      -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#efefef, endColorstr=#dfe1e2)";
       background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2)); }
       body.admin #content #actions a {
@@ -223,7 +223,7 @@ table.striped {
     padding: 0.4em; }
   table.striped thead tr {
     background-color: #e2e2e2;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#e2e2e2", endColorstr="#d2d4d6");
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#e2e2e2, endColorstr=#d2d4d6)";
     background-image: -moz-linear-gradient(center top, #e2e2e2, #d2d4d6);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e2e2e2), to(#d2d4d6)); }
     table.striped thead tr th {
