@@ -1,11 +1,13 @@
 class Home
   constructor: ->
+    @current_sector = false
     @max_height = 360
     @shares = globals.carriers
     this.setup_callbacks()
   
   _update_price: ->
     if @current_sector
+      console.log "CS: #{@current_sector}" unless @shares.sectors[@current_sector]
       amount = @shares.sectors[@current_sector].total * @shares.total.amount
     else
       amount = @shares.total.amount
@@ -24,7 +26,7 @@ class Home
       carrier_li.stop(true).animate({"height": new_height}, 500)
 
   reset_map: ->
-    @current_sector = null
+    @current_sector = false
     this.update_map()
 
   update_map: ->
@@ -32,9 +34,9 @@ class Home
     this._update_chart()
 
   setup_callbacks: ->
-    $("#sector_links .sector").hover(
+    $("#sector_links .sector a").hover(
       (e) => 
-        sector_id = $(e.target).parent().attr("id")
+        sector_id = $(e.target).attr("rel")
         @current_sector = sector_id
         this.update_map()
       ,
@@ -44,7 +46,7 @@ class Home
     $("#sector_icons .sector").hover(
       (e) =>
         $(e.target).find(".popup").show()
-        sector_id = $(e.target).attr("id")
+        sector_id = $(e.target).attr("rel")
         @current_sector = sector_id
         this.update_map()
       ,
