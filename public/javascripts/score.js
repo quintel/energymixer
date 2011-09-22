@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:22:34 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 15:33:35 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -66,19 +66,19 @@
       if (e < 0) {
         e = 0;
       }
-      $("#score .cost").html(sprintf("%.2f", a));
-      $("#score .co2").html(sprintf("%.2f", b));
-      $("#score .renewables").html(sprintf("%.2f", c));
-      $("#score .areafp").html(sprintf("%.2f", d));
-      $("#score .import").html(sprintf("%.2f", e));
+      $("#score table .cost").html(sprintf("%.2f", a));
+      $("#score table .co2").html(sprintf("%.2f", b));
+      $("#score table .renewables").html(sprintf("%.2f", c));
+      $("#score table .areafp").html(sprintf("%.2f", d));
+      $("#score table .import").html(sprintf("%.2f", e));
       return a + b + c + d + e;
     };
     Score.prototype.show = function() {
       var current_question_dom_id, input_selector;
       this.score = this.calculate();
       if (this.score !== false && this.app.questions.current_question > 2) {
-        $("#dashboard #score .value").html(parseInt(this.score));
-        $("#dashboard #score").show();
+        $("#score .value").html(parseInt(this.score));
+        $("#score").show();
         $("input#scenario_score").val(this.score);
         if (!this.should_show_score_explanation()) {
           $("#score .explanation").hide();

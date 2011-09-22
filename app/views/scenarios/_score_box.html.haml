@@ -1,0 +1,20 @@
+:ruby
+  score_items = {
+    cost: "Kosten", 
+    co2: "Co2", 
+    renewables: "Hernieuwbaar", 
+    areafp: "Bio-voetafdruk", 
+    import: "Energie import"
+  }
+%section#score.shaded_gradient
+  %h3 Jouw score:
+  .value 0
+  #show_info
+  .details
+    %table
+      - score_items.each do |key, label|
+        %tr{:class => cycle("odd","even")}
+          %td= label
+          %td{:class => key} 0
+    %p.explanation
+      * je score is altijd nul als je vraag 1 en 2 nog niet hebt ingevuld
