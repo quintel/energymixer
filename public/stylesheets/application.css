@@ -99,6 +99,46 @@ div#tooltip {
   -webkit-box-shadow: 0px 2px 8px #d8d8d8;
   box-shadow: 0px 2px 8px #d8d8d8; }
 
+.header_blue {
+  height: 30px;
+  background: #0b3375;
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+  font-weight: bold;
+  line-height: 28px;
+  -moz-box-shadow: 0px 2px 8px #d8d8d8;
+  -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+  box-shadow: 0px 2px 8px #d8d8d8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8'); }
+
+.subheader_blue {
+  height: 30px;
+  color: #0b3375;
+  line-height: 28px;
+  text-align: center;
+  font-weight: normal; }
+
+.header_grey {
+  border: 1px solid white;
+  height: 30px;
+  color: white;
+  text-align: center;
+  background-color: #919191;
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#919191, endColorstr=#bababa) progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8');
+  background-image: -moz-linear-gradient(center top, #919191, #bababa);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#919191), to(#bababa));
+  -moz-box-shadow: 0px 2px 8px #d8d8d8;
+  -webkit-box-shadow: 0px 2px 8px #d8d8d8;
+  box-shadow: 0px 2px 8px #d8d8d8; }
+
+.subheader_grey {
+  height: 30px;
+  color: #a1a1a1;
+  line-height: 28px;
+  text-align: center; }
+
 body {
   width: 890px;
   margin: 10px auto; }
@@ -154,18 +194,6 @@ body#pages_home section#main {
     float: right; }
     body#pages_home section#main #chart header {
       font-size: 9px;
-      height: 30px;
-      background: #0b3375;
-      color: white;
-      border: 1px solid white;
-      text-align: center;
-      font-weight: bold;
-      line-height: 28px;
-      -moz-box-shadow: 0px 2px 8px #d8d8d8;
-      -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-      box-shadow: 0px 2px 8px #d8d8d8;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8');
       -moz-box-shadow: 0px 2px 5px #333333;
       -webkit-box-shadow: 0px 2px 5px #333333;
       box-shadow: 0px 2px 5px #333333;
@@ -518,29 +546,10 @@ body#scenarios_index .scenario {
 .full_chart {
   height: 432px;
   width: 360px; }
-  .full_chart header {
-    height: 30px;
-    background: #0b3375;
-    color: white;
-    border: 1px solid white;
-    text-align: center;
-    font-weight: bold;
-    line-height: 28px;
-    -moz-box-shadow: 0px 2px 8px #d8d8d8;
-    -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-    box-shadow: 0px 2px 8px #d8d8d8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8'); }
   .full_chart section.chart {
     float: left;
     width: 210px;
     border-right: 1px solid #d0d1d2; }
-    .full_chart section.chart header {
-      height: 30px;
-      color: #0b3375;
-      line-height: 28px;
-      text-align: center;
-      font-weight: normal; }
   .full_chart section.boxes {
     float: left;
     width: 149px; }
@@ -548,25 +557,6 @@ body#scenarios_index .scenario {
     top: 255px;
     left: 10px; }
 
-.shaded_chart header {
-  border: 1px solid white;
-  height: 30px;
-  color: white;
-  text-align: center;
-  background-color: #919191;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#919191, endColorstr=#bababa)";
-  background-image: -moz-linear-gradient(center top, #919191, #bababa);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#919191), to(#bababa));
-  -moz-box-shadow: 0px 2px 8px #d8d8d8;
-  -webkit-box-shadow: 0px 2px 8px #d8d8d8;
-  box-shadow: 0px 2px 8px #d8d8d8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8'); }
-.shaded_chart header.sub {
-  height: 30px;
-  color: #a1a1a1;
-  line-height: 28px;
-  text-align: center; }
 .shaded_chart .chart_container .chart_canvas_mix {
   width: 60px; }
 
@@ -696,12 +686,6 @@ body#scenarios_index .scenario {
 .full_chart section.boxes {
   float: left;
   width: 149px; }
-  .full_chart section.boxes header {
-    height: 30px;
-    color: #0b3375;
-    line-height: 28px;
-    text-align: center;
-    font-weight: normal; }
   .full_chart section.boxes .dashboard_item {
     height: 91px;
     border-bottom: 1px solid #d0d1d1;

@@ -10,14 +10,14 @@
     output_8: "mixer_net_energy_import",
   }
 .full_chart.shaded_gradient
-  %header
+  %header.header_blue
     - if scenario.name
       #{scenario.name} - 
     - else
       Uw
     Energy Mix van #{@end_year}
   %section.chart
-    %header
+    %header.subheader_blue.shaded_gradient
       Kosten &euro;
       %span.total_amount 
         = number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
@@ -40,7 +40,7 @@
       = render 'renewables_float', :scenario => scenario    
 
   %section.boxes
-    %header Effect
+    %header.subheader_blue.shaded_gradient Effect
     - dashboard_items.each_pair do |o, gquery|
       .dashboard_item{:id => gquery}
         .gauge_icon{:class => set_class_for_output(o, scenario.send(o))}
