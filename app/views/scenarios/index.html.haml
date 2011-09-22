@@ -5,7 +5,7 @@
     Bekijk de Mixes van anderen
 
 %section#left
-  %section#search_scenarios_box
+  %section#search_scenarios_box.shaded_gradient
     = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
     %h3 Bekijk de EnergyMixes van anderen
     = form_tag scenarios_path, :method => :get, :remote => true do
@@ -19,7 +19,7 @@
       = paginate @scenarios, :remote => true
 
 %section#right
-  %section#select
+  %section#select.shaded_gradient
     %h3 Vergelijk verschillende mixen met elkaar
     %p
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -27,7 +27,7 @@
       %section#selected_scenarios
       = link_to "Vergelijk", '#', :class => 'submit_form disabled'
       
-  %section.scenarios
+  %section.scenarios.shaded_gradient
     %nav.tabs
       = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
       = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'

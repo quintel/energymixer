@@ -5,7 +5,7 @@
     Maak een eigen EnergyMix
 
 %section#left
-  %section#questions
+  %section#questions.shaded_gradient
     = render 'questions'
   %nav#down
     %a#previous_question{:href => "#"}
@@ -14,16 +14,15 @@
       #{t('next')} >>
     .clear
 
-
 %section#right
   %section#user_chart
     = render 'full_chart', :scenario => @scenario
-  %section#current_chart
+  %section#current_chart.shaded_gradient
     = render 'shaded_chart', :scenario => Scenario.current
 
   = render 'js_init'            
 
-%section#conflicts
+%section#conflicts.shaded_gradient
   %span.warning Let op!
   De antwoorden op de vragen  
   %span.conflicting_questions

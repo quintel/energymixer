@@ -11,7 +11,7 @@
 
 %section#left
   = render 'search_scenario_box'
-  %section#description
+  %section#description.shaded_gradient
     - unless @scenario.title.blank?
       %h1= @scenario.title
     %h2
@@ -22,12 +22,12 @@
       = full_text(@scenario)
 
 %section#right
-  %section#text
+  %section#text.shaded_gradient
     = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
   %section#charts
     %section#user_chart
       = render 'full_chart', :scenario => @scenario
-    %section#current_chart
+    %section#current_chart.shaded_gradient
       = render 'shaded_chart', :scenario => Scenario.current
 
 
