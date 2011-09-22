@@ -1,16 +1,16 @@
 - max_height = 200
-- cumulative_ratio = scenario.renewable_carriers.values.map{|x| x[:ratio]}.sum
+- cumulative_ratio = scenario.renewable_carrier_ratios.values.sum
 .renewables_float
   %h3 Hernieuwbaar
   %ul.chart
-    - scenario.renewable_carriers.each_pair do |key, v|
-      - height = v[:ratio] / cumulative_ratio * max_height
-      %li.serie{:class => [key, Scenario::SecondaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+    - scenario.renewable_carrier_ratios.each_pair do |carrier, value|
+      - height = value / cumulative_ratio * max_height
+      %li.serie{:class => [carrier, Scenario::SecondaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
   .legend
     %h4 Legenda
     %table
-      - scenario.renewable_carriers.each_pair do |key, value|
-        %tr{:class => [key, "costs_share_of_#{key}"]}
-          %td= image_tag "layout/textures/#{key}.png"
-          %td= t(key)
-          %td.value= number_to_percentage value[:ratio] * 100, :precision => 0
+      - scenario.renewable_carrier_ratios.each_pair do |carrier, value|
+        %tr{:class => [carrier, "costs_share_of_#{carrier}"]}
+          %td= image_tag "layout/textures/#{carrier}.png"
+          %td= t(carrier)
+          %td.value= number_to_percentage value * 100, :precision => 0

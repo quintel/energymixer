@@ -747,6 +747,8 @@ body#scenarios_index .scenario {
   box-shadow: 0px 2px 8px #d8d8d8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='$color'); }
+.shaded_chart .chart_container .chart_canvas_mix {
+  width: 60px; }
 
 .chart_normal .total_amount {
   background: #0b3375;

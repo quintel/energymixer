@@ -114,20 +114,16 @@ class Scenario < ActiveRecord::Base
     }
   end
 
-  def renewable_carriers
-    self.output_9  ||= 0
-    self.output_10 ||= 0
-    self.output_11 ||= 0
-    renewable_total = output_4 || 0.000001 # prevent division by zero
+  def renewable_carrier_ratios
     {
-      wind:    { ratio: output_9  },
-      solar:   { ratio: output_10 },
-      biomass: { ratio: output_11 }
+      wind: output_9,
+      solar: output_10,
+      biomass: output_11
     }
   end
     
   def combined_carriers
-    carriers.merge(renewable_carriers)
+    carrier_ratios.merge(renewable_carrier_ratios)
   end
     
   def total_amount

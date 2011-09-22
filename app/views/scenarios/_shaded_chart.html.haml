@@ -1,20 +1,20 @@
+:ruby
+  max_height = local_assigns.has_key?(:max_height) ? max_height : 390
+  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+  width = 50
+  rounded_sum = 0
+  current_chart_height = scenario.total_amount / max_amount.to_f * max_height
+
 .shaded_chart
   %header Energy Mix 2011
   %header.sub
-    = number_with_precision(scenario.total_amount, :precision => 1, :separator => ".")
+    = number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
     Mld
-  :ruby
-    max_height = local_assigns.has_key?(:max_height) ? max_height : 390
-    width      = local_assigns.has_key?(:width) ? width : 50
-    max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
-    rounded_sum = 0
-    current_chart_height = scenario.total_amount / max_amount.to_f * max_height * 1_000_000_000
 
   .charts_container
-    .chart_canvas_mix{:style=>"width: #{width}px;"}
+    .chart_canvas_mix{:style => "width: #{width}px"}
       %ul.chart.static
-        - scenario.carriers.each_pair do |key, v|
-          - height = (v[:ratio] * current_chart_height).round
-          - rounded_sum += height
-          %li.serie{:class => [key, Scenario::PrimaryMixTable[key]], :style => "height: #{height}px", :title => I18n.t(key)}
+        - scenario.carrier_ratios.each_pair do |carrier, value|
+          - height = (value * current_chart_height).round
+          %li.serie{:class => [carrier, Scenario::PrimaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
     = render 'renewables_float', :scenario => scenario
