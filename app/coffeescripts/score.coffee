@@ -45,19 +45,19 @@ class @Score
     e = (v.mark - v.current) * 100
     e = 0 if (e < 0)
     
-    $("#score .cost").html(sprintf("%.2f", a))
-    $("#score .co2").html(sprintf("%.2f", b))
-    $("#score .renewables").html(sprintf("%.2f", c))
-    $("#score .areafp").html(sprintf("%.2f", d))
-    $("#score .import").html(sprintf("%.2f", e))
+    $("#score table .cost").html(sprintf("%.2f", a))
+    $("#score table .co2").html(sprintf("%.2f", b))
+    $("#score table .renewables").html(sprintf("%.2f", c))
+    $("#score table .areafp").html(sprintf("%.2f", d))
+    $("#score table .import").html(sprintf("%.2f", e))
 
     return a + b + c + d + e
   
   show: ->
     @score = this.calculate()
     if (@score != false && @app.questions.current_question > 2)
-      $("#dashboard #score .value").html(parseInt(@score))
-      $("#dashboard #score").show()
+      $("#score .value").html(parseInt(@score))
+      $("#score").show()
       $("input#scenario_score").val(@score)
       $("#score .explanation").hide() if !this.should_show_score_explanation()
       
