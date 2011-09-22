@@ -241,25 +241,25 @@ body#pages_home section#main {
         body#pages_home section#main #map #sector_icons div.sector .popup .text {
           width: 300px;
           padding: 10px; }
-    body#pages_home section#main #map #sector_icons #buildings {
+    body#pages_home section#main #map #sector_icons #icon_buildings {
       background: url("/images/layout/buildings_icon.png");
       width: 102px;
       height: 75px;
       left: 500px;
       top: 20px; }
-    body#pages_home section#main #map #sector_icons #agriculture {
+    body#pages_home section#main #map #sector_icons #icon_agriculture {
       background: url("/images/layout/agriculture_icon.png");
       width: 121px;
       height: 71px;
       left: 300px;
       top: 202px; }
-    body#pages_home section#main #map #sector_icons #industry {
+    body#pages_home section#main #map #sector_icons #icon_industry {
       background: url("/images/layout/industry_icon.png");
       width: 124px;
       height: 89px;
       left: 168px;
       top: 110px; }
-    body#pages_home section#main #map #sector_icons #transport {
+    body#pages_home section#main #map #sector_icons #icon_transport {
       background: url("/images/layout/transport_icon.png");
       width: 124px;
       height: 60px;

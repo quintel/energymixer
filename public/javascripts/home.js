@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 08:05:11 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 12:04:54 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -7,6 +7,7 @@
   var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   Home = (function() {
     function Home() {
+      this.current_sector = false;
       this.max_height = 360;
       this.shares = globals.carriers;
       this.setup_callbacks();
@@ -14,6 +15,9 @@
     Home.prototype._update_price = function() {
       var amount, formatted_amount;
       if (this.current_sector) {
+        if (!this.shares.sectors[this.current_sector]) {
+          console.log("CS: " + this.current_sector);
+        }
         amount = this.shares.sectors[this.current_sector].total * this.shares.total.amount;
       } else {
         amount = this.shares.total.amount;
@@ -41,7 +45,7 @@
       return _results;
     };
     Home.prototype.reset_map = function() {
-      this.current_sector = null;
+      this.current_sector = false;
       return this.update_map();
     };
     Home.prototype.update_map = function() {
@@ -49,9 +53,9 @@
       return this._update_chart();
     };
     Home.prototype.setup_callbacks = function() {
-      $("#sector_links .sector").hover(__bind(function(e) {
+      $("#sector_links .sector a").hover(__bind(function(e) {
         var sector_id;
-        sector_id = $(e.target).parent().attr("id");
+        sector_id = $(e.target).attr("rel");
         this.current_sector = sector_id;
         return this.update_map();
       }, this), __bind(function() {
@@ -60,7 +64,7 @@
       $("#sector_icons .sector").hover(__bind(function(e) {
         var sector_id;
         $(e.target).find(".popup").show();
-        sector_id = $(e.target).attr("id");
+        sector_id = $(e.target).attr("rel");
         this.current_sector = sector_id;
         return this.update_map();
       }, this), __bind(function(e) {
