@@ -127,7 +127,9 @@ class Scenario < ActiveRecord::Base
   end
     
   def total_amount
-    output_12
+    val = output_12 || (output_0 + output_1 + output_2 + output_3 + output_4)
+    val *= 1_000_000_000 if val < 1_000_000_000
+    val
   end
   
   # forces reload
