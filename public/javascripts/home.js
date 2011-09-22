@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 15:48:53 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 08:01:33 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -7,38 +7,32 @@
   var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   Home = (function() {
     function Home() {
+      this.max_height = 360;
       this.shares = globals.carriers;
-      this._save_original_height();
       this.setup_callbacks();
     }
-    Home.prototype._save_original_height = function() {
-      return this.original_height = {
-        coal: $("ul.chart li.coal").height(),
-        gas: $("ul.chart li.gas").height(),
-        oil: $("ul.chart li.oil").height(),
-        nuclear: $("ul.chart li.nuclear").height(),
-        renewable: $("ul.chart li.renewable").height()
-      };
-    };
-    Home.prototype._set_price = function(x) {
-      var formatted_amount;
-      formatted_amount = sprintf("%.1f", x / 1000000000);
+    Home.prototype._update_price = function() {
+      var amount, formatted_amount;
+      if (this.current_sector) {
+        amount = this.shares.sectors[this.current_sector].total * this.shares.total.amount;
+      } else {
+        amount = this.shares.total.amount;
+      }
+      formatted_amount = sprintf("%.1f", amount / 1000000000);
       return $("#chart header span.amount").html(formatted_amount);
     };
-    Home.prototype.update_price = function() {
-      var amount;
-      amount = this.shares.sectors[this.current_sector].total * this.shares.total.amount;
-      return this._set_price(amount);
-    };
-    Home.prototype.update_chart = function() {
-      var carrier, carrier_li, new_height, ratio, _ref, _results;
-      _ref = this.shares.sectors[this.current_sector].carriers;
+    Home.prototype._update_chart = function() {
+      var carrier, carrier_li, new_height, ratio, ratios, _results;
+      if (this.current_sector) {
+        ratios = this.shares.sectors[this.current_sector].carriers;
+      } else {
+        ratios = this.shares.total;
+      }
       _results = [];
-      for (carrier in _ref) {
-        if (!__hasProp.call(_ref, carrier)) continue;
-        ratio = _ref[carrier];
-        console.log("" + carrier + ": " + ratio);
-        new_height = this.original_height[this.current_sector] * ratio / 1;
+      for (carrier in ratios) {
+        if (!__hasProp.call(ratios, carrier)) continue;
+        ratio = ratios[carrier];
+        new_height = this.max_height * ratio;
         carrier_li = $("ul.chart").find("." + carrier);
         _results.push(carrier_li.stop(true).animate({
           "height": new_height
@@ -48,11 +42,11 @@
     };
     Home.prototype.reset_map = function() {
       this.current_sector = null;
-      return this._set_price(this.shares.total.amount);
+      return this.update_map();
     };
     Home.prototype.update_map = function() {
-      this.update_price();
-      return this.update_chart();
+      this._update_price();
+      return this._update_chart();
     };
     Home.prototype.setup_callbacks = function() {
       $("#sector_links .sector").hover(__bind(function(e) {

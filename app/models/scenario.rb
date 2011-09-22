@@ -104,13 +104,13 @@ class Scenario < ActiveRecord::Base
   
   paginates_per 10
     
-  def carriers
+  def carrier_ratios
     {
-      coal:      { ratio: output_0},
-      gas:       { ratio: output_1},
-      oil:       { ratio: output_2},
-      nuclear:   { ratio: output_3},
-      renewable: { ratio: output_4}
+      coal: output_0,
+      gas: output_1,
+      oil: output_2,
+      nuclear: output_3,
+      renewable: output_4
     }
   end
 

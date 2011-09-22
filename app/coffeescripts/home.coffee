@@ -1,63 +1,35 @@
 class Home
   constructor: ->
+    @max_height = 360
     @shares = globals.carriers
-    this._save_original_height()
     this.setup_callbacks()
   
-  # reset_carriers: ->
-  #   this.update_carriers('total', 1000)
-  #
-  # update_carriers: (key, speed) ->
-  #   speed = 350 if(typeof(speed) == "undefined")
-  #   this._update_carriers(@shares[key], speed)
-  #
-  # _update_carriers: (carrier_values, speed) ->
-  #   total_amount = @shares.total.amount
-    
-
-    # for own carrier, value of carrier_values
-    #   total_amount += value
-    #   original_height = @original_height[carrier]
-    #   new_height = Math.round(value / @shares["total"][carrier] * original_height)
-    #
-    #   carrier_li = $("ul.chart").find(".#{carrier}")
-    #   carrier_li.stop(true).animate({"height": new_height}, speed)
-    #
-    # formatted_amount = sprintf("%.1f", total_amount / 1000000000)
-    # $("#chart header span.amount").html(formatted_amount)
-  
-  _save_original_height: ->
-    @original_height =
-      coal:      $("ul.chart li.coal").height()
-      gas:       $("ul.chart li.gas").height()
-      oil:       $("ul.chart li.oil").height()
-      nuclear:   $("ul.chart li.nuclear").height()
-      renewable: $("ul.chart li.renewable").height()
-  
-  _set_price: (x) ->
-    formatted_amount = sprintf("%.1f", x / 1000000000)
+  _update_price: ->
+    if @current_sector
+      amount = @shares.sectors[@current_sector].total * @shares.total.amount
+    else
+      amount = @shares.total.amount
+    formatted_amount = sprintf("%.1f", amount / 1000000000)
     $("#chart header span.amount").html(formatted_amount)
 
 
-  update_price: ->
-    amount = @shares.sectors[@current_sector].total * @shares.total.amount
-    this._set_price(amount)
-
-  update_chart: ->
-    for own carrier, ratio of @shares.sectors[@current_sector].carriers
-      console.log "#{carrier}: #{ratio}"
-      new_height = @original_height[@current_sector] * ratio / 1
+  _update_chart: ->
+    if @current_sector
+      ratios = @shares.sectors[@current_sector].carriers
+    else
+      ratios = @shares.total
+    for own carrier, ratio of ratios
+      new_height = @max_height * ratio
       carrier_li = $("ul.chart").find(".#{carrier}")
       carrier_li.stop(true).animate({"height": new_height}, 500)
 
-
   reset_map: ->
     @current_sector = null
-    this._set_price(@shares.total.amount)
+    this.update_map()
 
   update_map: ->
-    this.update_price()
-    this.update_chart()
+    this._update_price()
+    this._update_chart()
 
   setup_callbacks: ->
     $("#sector_links .sector").hover(
