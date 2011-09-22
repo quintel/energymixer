@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:22:34 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 08:39:28 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -61,23 +61,20 @@
       for (index in _ref) {
         if (!__hasProp.call(_ref, index)) continue;
         code = _ref[index];
-        value = Math.round(this.gquery_results[code] / 1000000);
-        this.carriers_values[code] = value;
+        this.carriers_values[code] = this.gquery_results[code];
       }
       _ref2 = this.secondary_mix_table;
       for (index in _ref2) {
         if (!__hasProp.call(_ref2, index)) continue;
         code = _ref2[index];
-        value = Math.round(this.gquery_results[code] / 1000000);
-        this.secondary_carriers_values[code] = value;
+        this.secondary_carriers_values[code] = this.gquery_results[code];
       }
       _ref3 = this.dashboard_items;
       _results = [];
       for (index in _ref3) {
         if (!__hasProp.call(_ref3, index)) continue;
         code = _ref3[index];
-        value = this.gquery_results[code];
-        this.dashboard_values[code] = value;
+        this.dashboard_values[code] = this.gquery_results[code];
         this.app.score.values[code].current = value;
         _results.push(this.app.questions.current_question === 2 && this.app.score.values[code].mark === null ? this.app.score.values[code].mark = value : void 0);
       }

@@ -7,10 +7,8 @@ class @Chart
   # Main entry point.
   # assumes results have been stored
   refresh: ->
-    # dashboard items
     for own key, value of @mixer.dashboard_values
       this.update_dashboard_item(key, value)
-    # colourful animated bar
     this.update_bar_chart()
   
   block_interface: ->
@@ -67,51 +65,40 @@ class @Chart
   
   # TODO: refactor
   update_bar_chart: ->
-    current_sum = @mixer.gquery_results["mixer_total_costs"] * 1000
+    current_sum = @mixer.gquery_results["mixer_total_costs"]
     
-    # update the score attribute. DEBT: move to score exclusive method
+    # update the score attribute.
+    # DEBT: move to score exclusive method
     @app.score.values.total_amount.current = current_sum
     if (@app.questions.current_question == 2 && @app.score.values.total_amount.mark == null)
       @app.score.values.total_amount.mark = current_sum
 
     # main chart
-    chart_max_height           = 390
-    max_amount                 = globals.chart_max_amount / 1000000 # million euros
-    current_chart_height       = current_sum / max_amount * chart_max_height
-    rounded_sum                = 0
-    extra_height_for_roundness = 0
-    for own code, val of @mixer.carriers_values
-      new_height = Math.round(val / current_sum * current_chart_height) + extra_height_for_roundness
-      rounded_sum += new_height
+    chart_max_height     = 360
+    max_amount           = globals.chart_max_amount
+    current_chart_height = current_sum / max_amount * chart_max_height
+    for own code, ratio of @mixer.carriers_values
+      new_height = Math.round(ratio * current_chart_height)
+      # We shouldn't update the shaded chart
       active_charts = $("ul.chart").not('.static')
       item = active_charts.find(".#{code}")
-      # selector = "ul.chart .#{code}"
       item.animate({"height": new_height}, "slow")
-      # hide text if there's no room
-      label = item.find(".label")
-      if (new_height > 10) then label.show() else label.hide()
       # update the legend
-      percentage = Math.round(val / current_sum * 100)
+      percentage = Math.round(ratio * 100)
       selector = ".legend tr.#{code} td.value"
       $(selector).html("#{percentage}%")
-
     
     # renewable subchart
     renewable_subchart_height = 100
     total_renewable_amount = @app.mixer.carriers_values.share_of_total_costs_assigned_to_sustainable
-    for own code, val of @app.mixer.secondary_carriers_values
-      new_height = Math.round(val / total_renewable_amount * renewable_subchart_height)
+    for own code, ratio of @app.mixer.secondary_carriers_values
+      new_height = Math.round(ratio * renewable_subchart_height)
       selector = "ul.chart .#{code}"
       $(selector).animate({"height": new_height}, "slow")
-      label = $("#{selector} .label")
-      if (new_height > 5) then label.show() else label.hide()
-    
-    # update money column
-    new_money_height = rounded_sum + 4 * 2 # margin between layers
-    $(".user_created .money").animate({"height" : new_money_height}, "slow")
+      # TODO: update legend, too
     
     # and top counter
-    $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000))
+    $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
     
     this.unblock_interface()
   

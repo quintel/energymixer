@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 14:24:51 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 08:42:09 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -78,35 +78,26 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var active_charts, chart_max_height, code, current_chart_height, current_sum, extra_height_for_roundness, item, label, max_amount, new_height, new_money_height, percentage, renewable_subchart_height, rounded_sum, selector, total_renewable_amount, val, _ref, _ref2;
-      current_sum = this.mixer.gquery_results["mixer_total_costs"] * 1000;
+      var active_charts, chart_max_height, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, renewable_subchart_height, selector, total_renewable_amount, _ref, _ref2;
+      current_sum = this.mixer.gquery_results["mixer_total_costs"];
       this.app.score.values.total_amount.current = current_sum;
       if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
         this.app.score.values.total_amount.mark = current_sum;
       }
-      chart_max_height = 390;
-      max_amount = globals.chart_max_amount / 1000000;
+      chart_max_height = 360;
+      max_amount = globals.chart_max_amount;
       current_chart_height = current_sum / max_amount * chart_max_height;
-      rounded_sum = 0;
-      extra_height_for_roundness = 0;
       _ref = this.mixer.carriers_values;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
-        val = _ref[code];
-        new_height = Math.round(val / current_sum * current_chart_height) + extra_height_for_roundness;
-        rounded_sum += new_height;
+        ratio = _ref[code];
+        new_height = Math.round(ratio * current_chart_height);
         active_charts = $("ul.chart").not('.static');
         item = active_charts.find("." + code);
         item.animate({
           "height": new_height
         }, "slow");
-        label = item.find(".label");
-        if (new_height > 10) {
-          label.show();
-        } else {
-          label.hide();
-        }
-        percentage = Math.round(val / current_sum * 100);
+        percentage = Math.round(ratio * 100);
         selector = ".legend tr." + code + " td.value";
         $(selector).html("" + percentage + "%");
       }
@@ -115,24 +106,14 @@
       _ref2 = this.app.mixer.secondary_carriers_values;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;
-        val = _ref2[code];
-        new_height = Math.round(val / total_renewable_amount * renewable_subchart_height);
+        ratio = _ref2[code];
+        new_height = Math.round(ratio * renewable_subchart_height);
         selector = "ul.chart ." + code;
         $(selector).animate({
           "height": new_height
         }, "slow");
-        label = $("" + selector + " .label");
-        if (new_height > 5) {
-          label.show();
-        } else {
-          label.hide();
-        }
       }
-      new_money_height = rounded_sum + 4 * 2;
-      $(".user_created .money").animate({
-        "height": new_money_height
-      }, "slow");
-      $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000));
+      $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000000000));
       return this.unblock_interface();
     };
     Chart.prototype.update_etm_link = function(url) {

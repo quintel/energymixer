@@ -54,18 +54,16 @@ class @Mixer
     
     # now let's udpate the result collections
     for own index, code of @mix_table
-      value = Math.round(@gquery_results[code]/1000000)
-      @carriers_values[code] = value
+      @carriers_values[code] = @gquery_results[code]
 
     for own index, code of @secondary_mix_table
-      value = Math.round(@gquery_results[code]/1000000)
-      @secondary_carriers_values[code] = value
+      @secondary_carriers_values[code] = @gquery_results[code]
 
     for own index, code of @dashboard_items
-      value = @gquery_results[code]
-      @dashboard_values[code] = value
+      @dashboard_values[code] = @gquery_results[code]
       
       # update scores object, which is based on dashboard values
+      # DEBT: move to external method
       @app.score.values[code].current = value
       if (@app.questions.current_question == 2 && @app.score.values[code].mark == null)
         @app.score.values[code].mark = value;
