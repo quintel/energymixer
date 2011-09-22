@@ -714,11 +714,11 @@ body#scenarios_index .scenario {
       margin-right: 5px;
       height: 80px;
       float: right;
-      -moz-box-shadow: 0px 2px 5px #333333;
-      -webkit-box-shadow: 0px 2px 5px #333333;
-      box-shadow: 0px 2px 5px #333333;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
-      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333'); }
+      -moz-box-shadow: 0px 2px 10px #cccccc;
+      -webkit-box-shadow: 0px 2px 10px #cccccc;
+      box-shadow: 0px 2px 10px #cccccc;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#cccccc')";
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#cccccc'); }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_co2_reduction_from_1990_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_0 {
         background: transparent url(/images/layout/gauge_6.png); }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_1, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_co2_reduction_from_1990_step_1, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_5, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_1 {

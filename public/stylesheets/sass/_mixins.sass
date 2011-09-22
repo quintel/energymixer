@@ -1,7 +1,7 @@
-@mixin shadow($color: #333333, $radius: 5px, $offset = 2px)
-  -moz-box-shadow: 0px 2px $radius $color
-  -webkit-box-shadow: 0px 2px $radius $color
-  box-shadow: 0px 2px $radius $color
+@mixin shadow($color: #333333, $radius: 5px, $offset: 2px)
+  -moz-box-shadow: 0px $offset $radius $color
+  -webkit-box-shadow: 0px $offset $radius $color
+  box-shadow: 0px $offset $radius $color
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#{$color}')"
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#{$color}')
 
