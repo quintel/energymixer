@@ -66,8 +66,7 @@ class @Mixer
       # update scores object, which is based on dashboard values
       # DEBT: move to external method
       @app.score.values[code].current = value
-      if (@app.questions.current_question == 2 && @app.score.values[code].mark == null)
-        @app.score.values[code].mark = value;
+      @app.score.values[code].mark = value if @app.questions.current_question == 2
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update

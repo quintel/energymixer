@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 09:59:49 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:23:24 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -77,7 +77,7 @@
         value = this.gquery_results[code];
         this.dashboard_values[code] = value;
         this.app.score.values[code].current = value;
-        _results.push(this.app.questions.current_question === 2 && this.app.score.values[code].mark === null ? this.app.score.values[code].mark = value : void 0);
+        _results.push(this.app.questions.current_question === 2 ? this.app.score.values[code].mark = value : void 0);
       }
       return _results;
     };

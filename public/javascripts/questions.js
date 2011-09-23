@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 12:57:37 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:24:29 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -117,7 +117,7 @@
       var first_question, last_question;
       first_question = this.current_question === 1;
       last_question = this.current_question === this.count_questions();
-      if (first_question) {
+      if (first_question || this.current_question > 2) {
         this.disable_prev_link();
       } else {
         this.enable_prev_link();
