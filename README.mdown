@@ -36,7 +36,7 @@ To deploy run
 
 	cap XXXXX deploy
 
-`XXXXX` might be `to_shell`, `to_gasmixer` or `to_shell2050`
+`XXXXX` might be `shell`, `gasmixer` or `mixer2050`
 
 
 Be careful with configuration data: `settings.yml` and `config.yml` are stored in `~/config_files` and 
