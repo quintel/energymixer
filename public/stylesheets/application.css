@@ -555,8 +555,8 @@ body#scenarios_index .scenario {
     float: left;
     width: 149px; }
 
-.shaded_chart .chart_container .chart_canvas_mix {
-  width: 60px; }
+.shaded_chart .charts_container .chart_canvas_mix {
+  opacity: 0.5; }
 
 .chart_normal .total_amount {
   background: #0b3375;
@@ -708,7 +708,7 @@ body#scenarios_index .scenario {
       float: left;
       margin-top: 10px; }
     .full_chart section.boxes .dashboard_item .gauge_icon {
-      width: 20px;
+      width: 23px;
       margin-top: 5px;
       margin-right: 5px;
       height: 80px;
