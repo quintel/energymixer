@@ -27,6 +27,12 @@ class @Questions
     $(".answers .active input[type=radio]").each ->
       answers.push(parseInt($(this).val()))
     return answers
+
+  reset_questions: ->
+    for el in $(".answers input:checked")
+      $(el).attr('checked', false)
+      $(el).closest("li.answer").removeClass('active')
+    app.mixer.refresh()
   
   # returns the question_number given the answer_id we're using 
   # this method to alert the user about conflicting answers
