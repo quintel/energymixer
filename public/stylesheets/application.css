@@ -433,7 +433,7 @@ body#scenarios_new section#left #user_details .item, body#scenarios_create secti
   body#scenarios_new section#left #user_details .item input[type=text], body#scenarios_create section#left #user_details .item input[type=text] {
     width: 220px; }
   body#scenarios_new section#left #user_details .item input[type=checkbox], body#scenarios_create section#left #user_details .item input[type=checkbox] {
-    margin-left: 94px; }
+    margin-left: 74px; }
   body#scenarios_new section#left #user_details .item input[type=submit], body#scenarios_create section#left #user_details .item input[type=submit] {
     float: right;
     margin: 15px; }
@@ -468,38 +468,6 @@ body#scenarios_new section#conflicts, body#scenarios_create section#conflicts {
     color: red;
     font-weight: bold;
     font-size: 1.1em; }
-body#scenarios_new section#score, body#scenarios_create section#score {
-  clear: both;
-  margin-top: 10px;
-  padding: 15px 40px; }
-  body#scenarios_new section#score .score_box, body#scenarios_create section#score .score_box {
-    width: 40%;
-    float: left; }
-    body#scenarios_new section#score .score_box #show_info, body#scenarios_create section#score .score_box #show_info {
-      background-image: url("/images/icons/i.png");
-      width: 16px;
-      height: 16px; }
-    body#scenarios_new section#score .score_box .value, body#scenarios_create section#score .score_box .value {
-      font-size: 2em;
-      font-weight: bold;
-      border: 1px solid black;
-      padding: 10px;
-      margin: 5px;
-      width: 50px;
-      text-align: center; }
-    body#scenarios_new section#score .score_box p.explanation, body#scenarios_create section#score .score_box p.explanation {
-      padding: 5px;
-      font-style: italic; }
-  body#scenarios_new section#score .score_details, body#scenarios_create section#score .score_details {
-    width: 40%;
-    float: left; }
-    body#scenarios_new section#score .score_details table tr.even, body#scenarios_create section#score .score_details table tr.even {
-      background: white; }
-    body#scenarios_new section#score .score_details table tr.even, body#scenarios_create section#score .score_details table tr.even {
-      background: #dddddd; }
-    body#scenarios_new section#score .score_details table td, body#scenarios_create section#score .score_details table td {
-      border: 1px solid black;
-      padding: 4px; }
 
 body#scenarios_index section#left #pagination {
   padding: 10px;
@@ -785,3 +753,34 @@ section#dashboard_popups .dashboard_popup {
   section#dashboard_popups .dashboard_popup .title {
     font-size: 1.2em;
     margin-bottom: 10px; }
+
+#score {
+  background: url("/images/icons/i.png") no-repeat 125px center;
+  cursor: pointer; }
+  #score .value {
+    font-weight: bold; }
+
+.score_details {
+  width: 200px;
+  position: absolute;
+  z-index: 999;
+  background-color: white;
+  color: black;
+  line-height: 1em;
+  -moz-box-shadow: 0px 2px 5px #333333;
+  -webkit-box-shadow: 0px 2px 5px #333333;
+  box-shadow: 0px 2px 5px #333333;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333'); }
+  .score_details table {
+    width: 100%; }
+    .score_details table tr.even {
+      background: white; }
+    .score_details table tr.even {
+      background: #dddddd; }
+    .score_details table td {
+      border-bottom: 1px solid #cccccc;
+      padding: 4px; }
+  .score_details p.explanation {
+    padding: 5px;
+    font-style: italic; }

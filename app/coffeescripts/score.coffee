@@ -85,12 +85,12 @@ class @Score
   
   setup_interface_callbacks: ->
     # show popup when user clicks question mark next to score
-    $("#score #show_info").click =>
-      $("#score .score_details").toggle()
+    $("#score").click =>
+      $(".score_details").toggle()
       if this.should_show_score_explanation()
-        $("#score .explanation").show()
+        $(this).find(".explanation").show()
       else
-        $("#score .explanation").hide()
+        $(this).find(".explanation").hide()
 
   should_show_score_explanation: ->
     @score == false && @app.questions.current_question <= 2

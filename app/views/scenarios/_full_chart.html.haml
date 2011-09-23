@@ -40,7 +40,11 @@
       = render 'renewables_float', :scenario => scenario    
 
   %section.boxes
-    %header.subheader_blue.shaded_gradient Effect
+    %header.subheader_blue.shaded_gradient
+      - if APP_CONFIG["score"]
+        = render 'score_box'
+      - else 
+        Effect
     - dashboard_items.each_pair do |o, gquery|
       .dashboard_item{:id => gquery}
         .gauge_icon{:class => set_class_for_output(o, scenario.send(o))}

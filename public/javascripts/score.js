@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 11:37:53 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:03:52 GMT from
+ * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/score.coffee
  */
 
 (function() {
@@ -114,12 +114,12 @@
       return this.update_interface();
     };
     Score.prototype.setup_interface_callbacks = function() {
-      return $("#score #show_info").click(__bind(function() {
-        $("#score .score_details").toggle();
+      return $("#score").click(__bind(function() {
+        $(".score_details").toggle();
         if (this.should_show_score_explanation()) {
-          return $("#score .explanation").show();
+          return $(this).find(".explanation").show();
         } else {
-          return $("#score .explanation").hide();
+          return $(this).find(".explanation").hide();
         }
       }, this));
     };

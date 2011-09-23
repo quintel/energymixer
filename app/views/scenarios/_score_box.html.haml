@@ -7,11 +7,11 @@
     import: "Energie import"
   }
 
-.score_box
-  %h3 Jouw score:
-  .value 0
+#score
+  Jouw score:
+  %strong.value 0
   #show_info
-.score_details
+.score_details{:style=>"display:none;"}
   %table
     - score_items.each do |key, label|
       %tr{:class => cycle("odd","even")}
