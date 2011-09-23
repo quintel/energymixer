@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     end
     
     def load_question_set
-      @question_set = QuestionSet.find_by_name(APP_CONFIG['app_name']) || QuestionSet.first
+      @question_set = QuestionSet.find_by_name(APP_NAME) || QuestionSet.first
       @end_year = @question_set.try(:end_year)
     end
 end
