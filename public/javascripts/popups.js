@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 09:53:20 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/popups.coffee
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 12:17:59 GMT from
+ * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/popups.coffee
  */
 
 (function() {
@@ -8,6 +8,9 @@
       return $(this).parents(".charts_container").find(".renewables_float").show();
     }, function() {
       return $(".renewables_float").hide();
+    });
+    $(".renewables_float").click(function() {
+      return $(this).hide();
     });
     $(".full_chart .dashboard_item .info_icon").click(function() {
       var key;
