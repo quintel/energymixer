@@ -210,12 +210,12 @@ body#pages_home section#main {
       padding: 8px 0 4px 0; }
       body#pages_home section#main #chart header strong {
         font-weight: bold; }
-    body#pages_home section#main #chart .legend {
-      left: -140px;
-      top: 260px; }
     body#pages_home section#main #chart .chart_canvas_mix {
       width: 80px;
       margin-right: 20px; }
+  body#pages_home section#main #chart > .charts_container > .legend {
+    left: -140px;
+    top: 260px; }
   body#pages_home section#main #map {
     margin-top: 20px;
     position: relative;
