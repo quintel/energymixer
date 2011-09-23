@@ -19,6 +19,7 @@
     = render 'full_chart', :scenario => @scenario
   %section#current_chart.shaded_gradient
     = render 'shaded_chart', :scenario => Scenario.current
+  = render 'score_box' if APP_CONFIG["score"]
 
   = render 'js_init'            
 
