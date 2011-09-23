@@ -2,7 +2,7 @@
   Beste #{@scenario.name},
 
 %p
-  Hierbij sturen we je de directe link naar de mix die je in de #{t(APP_CONFIG['app_name'])} heeft gemaakt.
+  Hierbij sturen we je de directe link naar de mix die je in de #{t(APP_NAME)} heeft gemaakt.
 
 %p
   = link_to scenario_url(@scenario), scenario_url(@scenario)
@@ -14,7 +14,7 @@
   = link_to "Open je mix in het Energietransitiemodel", @etm_scenario_url
 
 %p
-  Als je een idee hebt om de #{t(APP_CONFIG['app_name'])} te verbeteren, of gewoon een reactie wilt geven stuur dan een mail naar:
+  Als je een idee hebt om de #{t(APP_NAME)} te verbeteren, of gewoon een reactie wilt geven stuur dan een mail naar:
   = link_to "mixer@quintel.com", "mailto:mixer@quintel.com"
 
 %p

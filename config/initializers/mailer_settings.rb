@@ -6,7 +6,6 @@ if Rails.env.development?
   }
 end
 
-# TODO: update as needed
-if APP_CONFIG['app_name']
-  ActionMailer::Base.prepend_view_path("app/views/" + APP_CONFIG["app_name"])
+if APP_NAME
+  ActionMailer::Base.prepend_view_path("app/views/" + APP_NAME)
 end
