@@ -472,7 +472,6 @@ body#scenarios_index section#left #pagination {
     body#scenarios_index section#left #pagination span a {
       font-weight: bold; }
 body#scenarios_index section#right section#select {
-  height: 280px;
   padding: 10px;
   margin-bottom: 10px; }
   body#scenarios_index section#right section#select h3 {
