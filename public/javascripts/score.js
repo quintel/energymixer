@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 10:01:52 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 11:37:53 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -57,7 +57,7 @@
     Score.prototype.costs_score = function() {
       var score, v;
       v = this.values.mixer_total_costs;
-      score = (v.mark - v.current) / 1000;
+      score = (v.mark - v.current) / 100000000;
       if (score < 0) {
         score = 0;
       }
