@@ -154,22 +154,6 @@ body#scenarios_new, body#scenarios_create
       width: 68px
       float: left
       height: 432px
-    section#score
-      margin-top: 10px
-      padding: 10px
-      .value
-        font-size: 2em
-      table
-        tr.even
-          background: #ffffff
-        tr.even
-          background: #dddddd
-        td
-          border: 1px solid black
-          padding: 4px
-      p.explanation
-        padding: 5px
-        font-style: italic
   section#conflicts
     display: none
     clear: both
@@ -182,3 +166,32 @@ body#scenarios_new, body#scenarios_create
       color: red
       font-weight: bold
       font-size: 1.1em
+  section#score
+    clear: both
+    margin-top: 10px
+    padding: 15px 40px
+    .score_box
+      width: 40%
+      float: left
+      .value
+        font-size: 2em
+        font-weight: bold
+        border: 1px solid black
+        padding: 10px
+        margin: 5px
+        width: 50px
+        text-align: center
+      p.explanation
+        padding: 5px
+        font-style: italic
+    .score_details
+      width: 40%
+      float: left
+      table
+        tr.even
+          background: #ffffff
+        tr.even
+          background: #dddddd
+        td
+          border: 1px solid black
+          padding: 4px

@@ -456,21 +456,6 @@ body#scenarios_new section#right section#current_chart, body#scenarios_create se
   width: 68px;
   float: left;
   height: 432px; }
-body#scenarios_new section#right section#score, body#scenarios_create section#right section#score {
-  margin-top: 10px;
-  padding: 10px; }
-  body#scenarios_new section#right section#score .value, body#scenarios_create section#right section#score .value {
-    font-size: 2em; }
-  body#scenarios_new section#right section#score table tr.even, body#scenarios_create section#right section#score table tr.even {
-    background: white; }
-  body#scenarios_new section#right section#score table tr.even, body#scenarios_create section#right section#score table tr.even {
-    background: #dddddd; }
-  body#scenarios_new section#right section#score table td, body#scenarios_create section#right section#score table td {
-    border: 1px solid black;
-    padding: 4px; }
-  body#scenarios_new section#right section#score p.explanation, body#scenarios_create section#right section#score p.explanation {
-    padding: 5px;
-    font-style: italic; }
 body#scenarios_new section#conflicts, body#scenarios_create section#conflicts {
   display: none;
   clear: both;
@@ -483,6 +468,34 @@ body#scenarios_new section#conflicts, body#scenarios_create section#conflicts {
     color: red;
     font-weight: bold;
     font-size: 1.1em; }
+body#scenarios_new section#score, body#scenarios_create section#score {
+  clear: both;
+  margin-top: 10px;
+  padding: 15px 40px; }
+  body#scenarios_new section#score .score_box, body#scenarios_create section#score .score_box {
+    width: 40%;
+    float: left; }
+    body#scenarios_new section#score .score_box .value, body#scenarios_create section#score .score_box .value {
+      font-size: 2em;
+      font-weight: bold;
+      border: 1px solid black;
+      padding: 10px;
+      margin: 5px;
+      width: 50px;
+      text-align: center; }
+    body#scenarios_new section#score .score_box p.explanation, body#scenarios_create section#score .score_box p.explanation {
+      padding: 5px;
+      font-style: italic; }
+  body#scenarios_new section#score .score_details, body#scenarios_create section#score .score_details {
+    width: 40%;
+    float: left; }
+    body#scenarios_new section#score .score_details table tr.even, body#scenarios_create section#score .score_details table tr.even {
+      background: white; }
+    body#scenarios_new section#score .score_details table tr.even, body#scenarios_create section#score .score_details table tr.even {
+      background: #dddddd; }
+    body#scenarios_new section#score .score_details table td, body#scenarios_create section#score .score_details table td {
+      border: 1px solid black;
+      padding: 4px; }
 
 body#scenarios_index section#left #pagination {
   padding: 10px;

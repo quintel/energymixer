@@ -19,7 +19,6 @@
     = render 'full_chart', :scenario => @scenario
   %section#current_chart.shaded_gradient
     = render 'shaded_chart', :scenario => Scenario.current
-  = render 'score_box' if APP_CONFIG["score"]
 
   = render 'js_init'            
 
@@ -30,6 +29,10 @@
   lijken tegenstrijdig.
   %br
   Weet u zeker dat deze antwoorden de situatie in #{@end_year} goed beschrijven?
+
+- if APP_CONFIG["score"]
+  %section#score.shaded_gradient
+    = render 'score_box'
 
 %div#tooltip
   %h3 Title
