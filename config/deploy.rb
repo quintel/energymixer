@@ -15,12 +15,20 @@ ssh_options[:forward_agent] = true
 set :use_sudo, false
 set :rvm_ruby_string, '1.9.2'
 
+
+set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+set :db_user, "root"
+set :db_pass, "quintel"
+
+set :local_db_name, 'energymixer_dev'
+
 task :shell do
   set :domain, "79.125.109.178"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "shell"
+  set :db_name, "energymixer"
 end
 
 task :gasmixer do
@@ -29,11 +37,7 @@ task :gasmixer do
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "gasmixer"
-
-  set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
-  set :db_pass, "quintel"
   set :db_name, "gasmixer"
-  set :db_user, "root"
 end
 
 task :shell2050 do
@@ -42,9 +46,8 @@ task :shell2050 do
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "mixer2050"
+  set :db_name, "energymixer_2050"
 end
-
-set :local_db_name, 'energymixer_dev'
 
 namespace :deploy do
   task :copy_configuration_files do
