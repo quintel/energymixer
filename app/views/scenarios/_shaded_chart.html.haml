@@ -1,6 +1,6 @@
 :ruby
-  max_height = local_assigns.has_key?(:max_height) ? max_height : 390
-  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+  max_height = 360
+  max_amount = Scenario::MaxAmount
   width = 50
   rounded_sum = 0
   current_chart_height = scenario.total_amount / max_amount.to_f * max_height
