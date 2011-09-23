@@ -112,5 +112,5 @@ class @Chart
   
   update_etm_link: (url) ->
     $("footer a").click (e) =>
-      if(confirm("Wilt u meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan gaat u naar de homepage van het Energietransitiemodel)"))
+      if(confirm("Wil je meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan ga je naar de homepage van het Energietransitiemodel)"))
         $(e.target).attr("href", url)
