@@ -34,19 +34,11 @@ class Home
     this._update_chart()
 
   setup_callbacks: ->
-    $("#sector_links .sector a").hover(
-      (e) => 
-        sector_id = $(e.target).attr("rel")
-        @current_sector = sector_id
-        this.update_map()
-      ,
-      () => this.reset_map()
-    )
-
-    $("#sector_icons .sector").hover(
+    $("#sector_links .sector a, #sector_icons .sector").hover(
       (e) =>
-        $(e.target).find(".popup").show()
         sector_id = $(e.target).attr("rel")
+        popup = $("#sector_icons .sector[rel=#{sector_id}] .popup")
+        popup.show()
         @current_sector = sector_id
         this.update_map()
       ,
