@@ -27,12 +27,12 @@ body#pages_home
         padding: 8px 0 4px 0
         strong
           font-weight: bold
-      .legend
-        left: -140px
-        top: 260px
       .chart_canvas_mix
         width: 80px
         margin-right: 20px
+    #chart > .charts_container > .legend //we have to be very specific here, because otherwise it screws up the positioning of other legends
+      left: -140px
+      top: 260px
     #map
       margin-top: 20px
       position: relative
