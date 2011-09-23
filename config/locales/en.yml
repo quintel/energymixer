@@ -2,7 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  energymixer: EnergyMixer
+  energymixer: Energy Mixer
   gasmixer: GasMixer
   3d_view: 3D
   compare_scenarios: Compare Scenarios

@@ -6,8 +6,8 @@
 
 %section#left
   %section#search_scenarios_box.shaded_gradient
-    = link_to "Maak uw eigen EnergyMix", new_scenario_path, :class => 'shell'
-    %h3 Bekijk de EnergyMixes van anderen
+    = link_to "Maak uw eigen Energy Mix", new_scenario_path, :class => 'shell'
+    %h3 Bekijk de Energy Mixes van anderen
     = form_tag scenarios_path, :method => :get, :remote => true do
       = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
   .clear
