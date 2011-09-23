@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:03:52 GMT from
- * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/score.coffee
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 14:59:49 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
 (function() {
@@ -87,11 +87,11 @@
     Score.prototype.update_interface = function() {
       var current_question_dom_id, input_selector, total;
       total = parseInt(this.total_score());
-      $("#score table .cost").html(sprintf("%.2f", this.costs_score()));
-      $("#score table .co2").html(sprintf("%.2f", this.co2_score()));
-      $("#score table .renewables").html(sprintf("%.2f", this.renewability_score()));
-      $("#score table .areafp").html(sprintf("%.2f", this.footprint_score()));
-      $("#score table .import").html(sprintf("%.2f", this.dependence_score()));
+      $(".score_details table .cost").html(sprintf("%.2f", this.costs_score()));
+      $(".score_details table .co2").html(sprintf("%.2f", this.co2_score()));
+      $(".score_details table .renewables").html(sprintf("%.2f", this.renewability_score()));
+      $(".score_details table .areafp").html(sprintf("%.2f", this.footprint_score()));
+      $(".score_details table .import").html(sprintf("%.2f", this.dependence_score()));
       $("#score .value").html(total);
       $("input#scenario_score").val(total);
       if (!this.should_show_score_explanation()) {
