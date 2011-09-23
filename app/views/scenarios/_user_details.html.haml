@@ -2,9 +2,9 @@
   #user_details
     %h2 Uw Energy Mix van #{@end_year}
     %p
-      Bedankt voor het invullen van de Energy Mix. Vul hieronder uw gegevens in om de mix op te slaan en deze te vergelijken met anderen. U ontvangt dan ook een email waarin u altijd later weer deze mix terug kunt vinden.
+      Bedankt voor het invullen van de Energy Mix. Vul hieronder je gegevens in om de mix op te slaan en deze te vergelijken met anderen. Je ontvangt ook een email waarin je later deze mix weer terug kunt vinden.
         
-    %h2 Vul uw gegevens in:
+    %h2 Vul je gegevens in:
     = scenario.error_messages
     
     .item
@@ -17,7 +17,7 @@
       = scenario.label :age, "Leeftijd"
       = scenario.text_field :age
     .item
-      = scenario.label :title, "Naam voor uw mix"
+      = scenario.label :title, "Naam voor deze mix"
       = scenario.text_field :title
     .item
       = scenario.check_box :public
