@@ -64,11 +64,11 @@ class @Score
 
   update_interface: ->
     total = parseInt(this.total_score())
-    $("#score table .cost").html(sprintf("%.2f", this.costs_score()))
-    $("#score table .co2").html(sprintf("%.2f", this.co2_score()))
-    $("#score table .renewables").html(sprintf("%.2f", this.renewability_score()))
-    $("#score table .areafp").html(sprintf("%.2f", this.footprint_score()))
-    $("#score table .import").html(sprintf("%.2f", this.dependence_score()))
+    $(".score_details table .cost").html(sprintf("%.2f", this.costs_score()))
+    $(".score_details table .co2").html(sprintf("%.2f", this.co2_score()))
+    $(".score_details table .renewables").html(sprintf("%.2f", this.renewability_score()))
+    $(".score_details table .areafp").html(sprintf("%.2f", this.footprint_score()))
+    $(".score_details table .import").html(sprintf("%.2f", this.dependence_score()))
     $("#score .value").html(total)
     $("input#scenario_score").val(total)
     $("#score .explanation").hide() if !this.should_show_score_explanation()
