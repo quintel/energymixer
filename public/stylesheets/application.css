@@ -183,7 +183,10 @@ body#pages_home #intro_text {
   padding: 10px; }
   body#pages_home #intro_text h1 {
     height: 40px;
-    background: url("/images/layout/energy_mixer_header.png") no-repeat; }
+    background: url("/images/layout/energy_mixer_header.png") no-repeat;
+    text-indent: -9999px; }
+  body#pages_home #intro_text h1.gasmixer {
+    background: url("/images/layout/gasmixer_header.png") no-repeat; }
 body#pages_home #actions {
   padding: 25px 10px; }
   body#pages_home #actions a {
@@ -734,6 +737,7 @@ body#scenarios_index .scenario {
         background: transparent url(/images/layout/gauge_0.png); }
 
 section#dashboard_popups .dashboard_popup {
+  z-index: 1000;
   position: relative;
   top: -350px;
   left: 0;
