@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 21 Sep 2011 12:44:32 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 12:57:37 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -34,6 +34,16 @@
         return answers.push(parseInt($(this).val()));
       });
       return answers;
+    };
+    Questions.prototype.reset_questions = function() {
+      var el, _i, _len, _ref;
+      _ref = $(".answers input:checked");
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        el = _ref[_i];
+        $(el).attr('checked', false);
+        $(el).closest("li.answer").removeClass('active');
+      }
+      return app.mixer.refresh();
     };
     Questions.prototype.get_question_id_from_answer = function(answer_id) {
       var e, _i, _len, _ref;
