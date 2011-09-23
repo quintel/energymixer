@@ -103,7 +103,7 @@ class @Questions
     first_question = @current_question == 1
     last_question  = @current_question == this.count_questions()
     
-    if (first_question)
+    if first_question || @current_question > 2
       this.disable_prev_link()
     else
       this.enable_prev_link()
