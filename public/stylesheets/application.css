@@ -42,7 +42,6 @@ table {
   border-spacing: 0; }
 
 a {
-  text-decoration: none;
   color: inherit; }
 
 body {
@@ -548,9 +547,6 @@ body#scenarios_index .scenario {
     font-weight: bold; }
     body#scenarios_index .scenario .actions .show {
       padding: 5px; }
-      body#scenarios_index .scenario .actions .show a {
-        background: transparent url(/images/layout/flat/link_arrow.png) center left no-repeat;
-        padding-left: 16px; }
   body#scenarios_index .scenario .remove_from_list {
     display: none;
     float: right; }
@@ -558,7 +554,7 @@ body#scenarios_index .scenario {
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 4px;
-    margin-top: 15px; }
+    margin-top: 8px; }
   body#scenarios_index .scenario .date {
     color: #777777;
     font-size: 0.9em; }
