@@ -23,6 +23,8 @@ section#search_scenarios_box
 
 div#tooltip
   display: none
+  z-index: 1001 //should be ahead of everything
+  @include shadow(#bbb, 10px)
   border: 1px solid #ccc
   background-color: #fff
   position: absolute

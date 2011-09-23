@@ -78,6 +78,12 @@ section#search_scenarios_box {
 
 div#tooltip {
   display: none;
+  z-index: 1001;
+  -moz-box-shadow: 0px 2px 10px #bbbbbb;
+  -webkit-box-shadow: 0px 2px 10px #bbbbbb;
+  box-shadow: 0px 2px 10px #bbbbbb;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#bbbbbb')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#bbbbbb');
   border: 1px solid #cccccc;
   background-color: white;
   position: absolute;
