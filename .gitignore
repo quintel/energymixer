@@ -12,4 +12,5 @@ coverage
 config/config.yml
 config/database.yml
 tmp/restart.txt
-db/data.yml
+gasmixer.sql
+
