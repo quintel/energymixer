@@ -35,7 +35,7 @@
       .chart_canvas_mix{:style=>"width: #{width}px;"}
         %ul.chart
           - scenario.carrier_ratios.each_pair do |carrier, value|
-            - height = (value * current_chart_height).round
+            - height = transform_height(value * current_chart_height)
             %li.serie{:class => [carrier, Scenario::PrimaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
       = render 'renewables_float', :scenario => scenario    
 

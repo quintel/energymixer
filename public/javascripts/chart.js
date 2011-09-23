@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 09:51:09 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 08:39:24 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -77,6 +77,12 @@
       }
       return out;
     };
+    Chart.prototype.transform_height = function(x) {
+      if (x <= 0) {
+        return 0;
+      }
+      return Math.round(Math.log(x) * 20);
+    };
     Chart.prototype.update_bar_chart = function() {
       var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
       current_sum = this.mixer.gquery_results["mixer_total_costs"];
@@ -92,7 +98,7 @@
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
         ratio = _ref[code];
-        new_height = Math.round(ratio * current_chart_height);
+        new_height = this.transform_height(ratio * current_chart_height);
         item = charts_to_be_updated.find("li." + code);
         item.animate({
           "height": new_height
