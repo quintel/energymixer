@@ -40,7 +40,7 @@ task :gasmixer do
   set :db_name, "gasmixer"
 end
 
-task :shell2050 do
+task :mixer2050 do
   set :domain, "ec2-46-137-41-76.eu-west-1.compute.amazonaws.com"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
