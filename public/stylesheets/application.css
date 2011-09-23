@@ -586,9 +586,6 @@ body#scenarios_index .scenario {
   .full_chart section.boxes {
     float: left;
     width: 149px; }
-  .full_chart .legend {
-    top: 255px;
-    left: 10px; }
 
 .shaded_chart .chart_container .chart_canvas_mix {
   width: 60px; }
@@ -615,7 +612,7 @@ body#scenarios_index .scenario {
   opacity: 0.7;
   position: absolute;
   top: 255px;
-  left: 10px;
+  left: -106px;
   color: black; }
   .legend h4 {
     font-weight: bold;
