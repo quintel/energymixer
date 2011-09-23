@@ -10,14 +10,14 @@ gem 'kaminari',     '~> 0.12.1'
 gem 'bluecloth',    '~> 2.1.0'
 gem 'dynamic_form', '~> 1.1.3'
 gem 'client_side_validations', '~> 3.0.0'
-gem 'airbrake', '~> 3.0.3'
+gem 'airbrake', '~> 3.0.4'
 gem 'httparty', '~> 0.7.4'
 gem 'haml',   '~> 3.1.2'
 gem 'sass', '~> 3.1.1'
 # gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
 gem 'tabs_on_rails'
 gem 'memcache-client'
-gem 'barista'
+gem 'barista', "~> 1.2.1"
 gem 'therubyracer'
 
 group :development, :test do
@@ -37,5 +37,5 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov', '~> 0.5.0', :require => false
+  gem 'simplecov', '~> 0.5.3', :require => false
 end
