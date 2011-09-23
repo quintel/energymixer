@@ -10,12 +10,13 @@
 .score_box
   %h3 Jouw score:
   .value 0
-  %p.explanation
-    * je score is altijd nul als je vraag 1 en 2 nog niet hebt ingevuld
+  #show_info
 .score_details
   %table
     - score_items.each do |key, label|
       %tr{:class => cycle("odd","even")}
         %td= label
-        %td{:class => key} 0
+        %td{:class => key} 0.00
+  %p.explanation
+    * je score is altijd nul als je vraag 1 en 2 nog niet hebt ingevuld
 .clear

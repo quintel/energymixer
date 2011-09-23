@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 08:39:24 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 09:40:35 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -87,9 +87,9 @@
       var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
       current_sum = this.mixer.gquery_results["mixer_total_costs"];
       charts_to_be_updated = $(".charts_container").not('.static');
-      this.app.score.values.total_amount.current = current_sum;
-      if (this.app.questions.current_question === 2 && this.app.score.values.total_amount.mark === null) {
-        this.app.score.values.total_amount.mark = current_sum;
+      this.app.score.values.mixer_total_costs.current = current_sum;
+      if (this.app.questions.current_question === 2 && this.app.score.values.mixer_total_costs.mark === null) {
+        this.app.score.values.mixer_total_costs.mark = current_sum;
       }
       chart_max_height = 360;
       max_amount = globals.chart_max_amount;

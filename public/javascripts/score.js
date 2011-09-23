@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 22 Sep 2011 15:33:35 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 10:01:52 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -10,29 +10,99 @@
       this.values = {
         mixer_co2_reduction_from_1990: {
           mark: null,
-          current: null
+          current: null,
+          score: 0
         },
         mixer_renewability: {
           mark: null,
-          current: null
+          current: null,
+          score: 0
         },
         mixer_bio_footprint: {
           mark: null,
-          current: null
+          current: null,
+          score: 0
         },
         mixer_net_energy_import: {
           mark: null,
-          current: null
+          current: null,
+          score: 0
         },
-        total_amount: {
+        mixer_total_costs: {
           mark: null,
-          current: null
+          current: null,
+          score: 0
         }
       };
       this.setup_interface_callbacks();
     }
-    Score.prototype.calculate = function() {
-      var a, b, c, d, e, key, v, value, _ref;
+    Score.prototype.co2_score = function() {
+      var score, v;
+      v = this.values.mixer_co2_reduction_from_1990;
+      score = 0;
+      if (v.mark > v.current) {
+        score = Math.abs((v.mark - v.current) * 100);
+      }
+      return v.score = score;
+    };
+    Score.prototype.renewability_score = function() {
+      var score, v;
+      v = this.values.mixer_renewability;
+      score = (v.current - v.mark) * 100;
+      if (score < 0) {
+        score = 0;
+      }
+      return v.score = score;
+    };
+    Score.prototype.costs_score = function() {
+      var score, v;
+      v = this.values.mixer_total_costs;
+      score = (v.mark - v.current) / 1000;
+      if (score < 0) {
+        score = 0;
+      }
+      return v.score = score;
+    };
+    Score.prototype.footprint_score = function() {
+      var score, v;
+      v = this.values.mixer_bio_footprint;
+      score = (v.mark - v.current) * 100;
+      if (score < 0) {
+        score = 0;
+      }
+      return v.score = score;
+    };
+    Score.prototype.dependence_score = function() {
+      var score, v;
+      v = this.values.mixer_net_energy_import;
+      score = (v.mark - v.current) * 100;
+      if (score < 0) {
+        score = 0;
+      }
+      return v.score = score;
+    };
+    Score.prototype.total_score = function() {
+      return this.co2_score() + this.renewability_score() + this.costs_score() + this.footprint_score() + this.dependence_score();
+    };
+    Score.prototype.update_interface = function() {
+      var current_question_dom_id, input_selector, total;
+      total = parseInt(this.total_score());
+      $("#score table .cost").html(sprintf("%.2f", this.costs_score()));
+      $("#score table .co2").html(sprintf("%.2f", this.co2_score()));
+      $("#score table .renewables").html(sprintf("%.2f", this.renewability_score()));
+      $("#score table .areafp").html(sprintf("%.2f", this.footprint_score()));
+      $("#score table .import").html(sprintf("%.2f", this.dependence_score()));
+      $("#score .value").html(total);
+      $("input#scenario_score").val(total);
+      if (!this.should_show_score_explanation()) {
+        $("#score .explanation").hide();
+      }
+      current_question_dom_id = this.app.questions.current_question - 1;
+      input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
+      return $(input_selector).val(total);
+    };
+    Score.prototype.refresh = function() {
+      var key, value, _ref;
       _ref = this.values;
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
@@ -41,56 +111,11 @@
           return false;
         }
       }
-      v = this.values.total_amount;
-      a = (v.mark - v.current) / 1000;
-      if (a < 0) {
-        a = 0;
-      }
-      v = this.values.mixer_co2_reduction_from_1990;
-      b = 0;
-      if (v.mark > v.current) {
-        b = Math.abs((v.mark - v.current) * 100);
-      }
-      v = this.values.mixer_renewability;
-      c = (v.current - v.mark) * 100;
-      if (c < 0) {
-        c = 0;
-      }
-      v = this.values.mixer_bio_footprint;
-      d = (v.mark - v.current) * 100;
-      if (d < 0) {
-        d = 0;
-      }
-      v = this.values.mixer_net_energy_import;
-      e = (v.mark - v.current) * 100;
-      if (e < 0) {
-        e = 0;
-      }
-      $("#score table .cost").html(sprintf("%.2f", a));
-      $("#score table .co2").html(sprintf("%.2f", b));
-      $("#score table .renewables").html(sprintf("%.2f", c));
-      $("#score table .areafp").html(sprintf("%.2f", d));
-      $("#score table .import").html(sprintf("%.2f", e));
-      return a + b + c + d + e;
-    };
-    Score.prototype.show = function() {
-      var current_question_dom_id, input_selector;
-      this.score = this.calculate();
-      if (this.score !== false && this.app.questions.current_question > 2) {
-        $("#score .value").html(parseInt(this.score));
-        $("#score").show();
-        $("input#scenario_score").val(this.score);
-        if (!this.should_show_score_explanation()) {
-          $("#score .explanation").hide();
-        }
-        current_question_dom_id = this.app.questions.current_question - 1;
-        input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
-        return $(input_selector).val(this.score);
-      }
+      return this.update_interface();
     };
     Score.prototype.setup_interface_callbacks = function() {
       return $("#score #show_info").click(__bind(function() {
-        $("#score .details").toggle();
+        $("#score .score_details").toggle();
         if (this.should_show_score_explanation()) {
           return $("#score .explanation").show();
         } else {

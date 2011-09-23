@@ -60,7 +60,8 @@ class @Mixer
       @secondary_carriers_values[code] = @gquery_results[code]
 
     for own index, code of @dashboard_items
-      @dashboard_values[code] = @gquery_results[code]
+      value = @gquery_results[code]
+      @dashboard_values[code] = value
       
       # update scores object, which is based on dashboard values
       # DEBT: move to external method
@@ -91,7 +92,7 @@ class @Mixer
         @results = data
         this.store_results()
         @app.chart.refresh()
-        @app.score.show()
+        @app.score.refresh()
       error: (data, error) ->
         @app.chart.unblock_interface()
         $.logThis(error)
