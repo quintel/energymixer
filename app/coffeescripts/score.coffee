@@ -39,7 +39,7 @@ class @Score
 
   costs_score: ->
     v = @values.mixer_total_costs
-    score = (v.mark - v.current) / 1000
+    score = (v.mark - v.current) / 100000000
     score = 0 if (score < 0)
     v.score = score
 
