@@ -75,9 +75,9 @@ class @Chart
     
     # update the score attribute.
     # DEBT: move to score exclusive method
-    @app.score.values.total_amount.current = current_sum
-    if (@app.questions.current_question == 2 && @app.score.values.total_amount.mark == null)
-      @app.score.values.total_amount.mark = current_sum
+    @app.score.values.mixer_total_costs.current = current_sum
+    if (@app.questions.current_question == 2 && @app.score.values.mixer_total_costs.mark == null)
+      @app.score.values.mixer_total_costs.mark = current_sum
 
     # main chart
     chart_max_height = 360

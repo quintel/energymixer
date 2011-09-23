@@ -475,6 +475,10 @@ body#scenarios_new section#score, body#scenarios_create section#score {
   body#scenarios_new section#score .score_box, body#scenarios_create section#score .score_box {
     width: 40%;
     float: left; }
+    body#scenarios_new section#score .score_box #show_info, body#scenarios_create section#score .score_box #show_info {
+      background-image: url("/images/icons/i.png");
+      width: 16px;
+      height: 16px; }
     body#scenarios_new section#score .score_box .value, body#scenarios_create section#score .score_box .value {
       font-size: 2em;
       font-weight: bold;
