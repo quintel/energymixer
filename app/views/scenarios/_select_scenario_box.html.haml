@@ -3,7 +3,7 @@
     = image_tag 'graph_icon.png'
   .actions
     .show
-      = link_to 'Bekijk', scenario_path(scenario)
+      = link_to 'Bekijk', scenario_path(scenario), :class => "shell"
     .compare
       = check_box_tag 'ids[]', scenario.id
       Vergelijk
