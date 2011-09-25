@@ -1,8 +1,8 @@
 %section#intro_text.shaded_gradient
-  %h1{:class => APP_CONFIG['app_name']}
-    =t(APP_CONFIG['app_name']).upcase
+  %h1{:class => APP_NAME}
+    =t(APP_NAME).upcase
   %p
-    De #{t(APP_CONFIG['app_name'])} is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op je idee over de energiemix van de toekomst, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, duurzaamheid en beschikbaarheid.
+    De #{t(APP_NAME)} is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op je idee over de energiemix van de toekomst, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, duurzaamheid en beschikbaarheid.
 
 %section#actions
   = link_to "Bekijk de Energy Mixes van anderen", scenarios_path, :class => 'shell'
@@ -12,7 +12,7 @@
   #intro
     %h3 Dit is het energieverbruik van Nederland in 2011
     %p
-      In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkol. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkol. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in #{END_YEAR} uit zal zien? Maak met de #{t(APP_CONFIG['app_name'])} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
+      In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkol. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkol. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in #{END_YEAR} uit zal zien? Maak met de #{t(APP_NAME)} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
   #chart
     %header.header_blue
       %strong Energy Mix 2011
