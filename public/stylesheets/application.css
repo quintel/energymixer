@@ -574,11 +574,11 @@ body#scenarios_index .scenario {
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#d8d8d8'); }
 
 .legend {
-  -moz-box-shadow: 0px 2px 5px #333333;
-  -webkit-box-shadow: 0px 2px 5px #333333;
-  box-shadow: 0px 2px 5px #333333;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333');
+  -moz-box-shadow: 0px 2px 10px #c8c8c8;
+  -webkit-box-shadow: 0px 2px 10px #c8c8c8;
+  box-shadow: 0px 2px 10px #c8c8c8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#c8c8c8')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#c8c8c8');
   padding: 3px 6px;
   background-color: white;
   z-index: 7;
