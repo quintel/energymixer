@@ -16,6 +16,8 @@
     = render "layouts/javascript_unselectable"
   %body{:id => "#{controller.controller_name}_#{controller.action_name}",
         :class => [controller.controller_name, APP_NAME, APP_CONFIG['score'] && 'score_enabled']}
+    -if request.env['HTTP_USER_AGENT'].downcase.index('ipad')
+      %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
     #content
       = yield
   %footer
