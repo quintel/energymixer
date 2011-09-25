@@ -381,6 +381,8 @@ body#scenarios_new section#left section#questions, body#scenarios_create section
       body#scenarios_new section#left section#questions .question ul.answers li.answer label .text, body#scenarios_create section#left section#questions .question ul.answers li.answer label .text {
         font-weight: normal;
         margin: 0 0 0 0; }
+        body#scenarios_new section#left section#questions .question ul.answers li.answer label .text em, body#scenarios_create section#left section#questions .question ul.answers li.answer label .text em {
+          text-decoration: underline; }
       body#scenarios_new section#left section#questions .question ul.answers li.answer label a, body#scenarios_create section#left section#questions .question ul.answers li.answer label a {
         text-decoration: underline; }
     body#scenarios_new section#left section#questions .question ul.answers li.answer input[type=radio], body#scenarios_create section#left section#questions .question ul.answers li.answer input[type=radio] {
