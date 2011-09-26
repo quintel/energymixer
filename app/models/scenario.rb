@@ -95,7 +95,7 @@ class Scenario < ActiveRecord::Base
   scope :averages,     where(:average => true)
   scope :user_created, where(:featured => false)
   scope :featured_first, order('featured DESC')
-  scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%")}
+  scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%") unless q.blank? }
   scope :excluding, lambda{|s| where('id != ?', s)}
   
   attr_accessor :year, :accept_terms
