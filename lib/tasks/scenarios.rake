@@ -1,7 +1,7 @@
 namespace :scenarios do
   desc 'Creates average scenarios'
   task :create_average => :environment do
-    Scenario.featured.destroy_all
+    Scenario.averages.destroy_all
     
     [
       {:title => "< 19 jaar",      :range => 1..19},
