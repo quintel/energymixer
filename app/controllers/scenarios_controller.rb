@@ -17,8 +17,6 @@ class ScenariosController < ApplicationController
   def create
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
-      # We're using this session variable to compare the current scenario
-      session[:scenario_id] = @scenario.id
       begin
         MixerMailer.thankyou(@scenario).deliver unless APP_CONFIG['standalone']
       rescue
@@ -38,13 +36,8 @@ class ScenariosController < ApplicationController
   end
   
   def index
-    @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]
-    
-    scope      = Scenario.user_created.public.recent_first
-    # DEBT: following checks can be moved into the scope definitions
-    scope      = scope.excluding(session[:scenario_id]) if session[:scenario_id]
-    scope      = scope.by_user(params[:q]) unless params[:q].blank?
-    @scenarios = scope.page(params[:page])
+    @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]    
+    @scenarios = Scenario.user_created.public.by_user(params[:q]).recent_first.page(params[:page])
     @featured_scenarios = Scenario.featured
     @average_scenarios = Scenario.averages
     
