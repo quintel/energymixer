@@ -18,7 +18,7 @@ namespace :scenarios do
       s.average = true
       s.email = "foobar@quintel.com"
       s.name  = scenario[:title]
-      0.upto(11) do |i|
+      0.upto(12) do |i|
         sym = "output_#{i}".to_sym
         avg = records.average(sym)
         s[sym] = avg
