@@ -62,12 +62,7 @@ class @Chart
       else
         out = value
     return out
-  
-  # If we want to use a log function or a different scale
-  transform_height: (x) ->
-    return 0 if x <= 0
-    Math.round(Math.log(x) * 20)
-  
+    
   # TODO: refactor
   update_bar_chart: ->
     current_sum = @mixer.gquery_results["mixer_total_costs"]
@@ -82,9 +77,9 @@ class @Chart
     # main chart
     chart_max_height = 360
     max_amount = globals.chart_max_amount
-    current_chart_height = current_sum / max_amount * chart_max_height
+    current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height
     for own code, ratio of @mixer.carriers_values
-      new_height = this.transform_height(ratio * current_chart_height)
+      new_height = ratio * current_chart_height
       item = charts_to_be_updated.find("li.#{code}")
       item.animate({"height": new_height}, "slow")
       # update the legend
