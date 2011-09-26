@@ -314,6 +314,10 @@ body#scenarios_compare section#right section#select {
   margin-bottom: 10px; }
 body#scenarios_compare section#main {
   text-align: center; }
+body div.question_popup h1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px; }
 
 body#scenarios_new section#left section#questions, body#scenarios_create section#left section#questions {
   height: 430px;
