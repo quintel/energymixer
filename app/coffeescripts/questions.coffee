@@ -73,37 +73,50 @@ class @Questions
   # interface methods
   #
   
-  # TODO: refactor
-  _disable_link: (e) ->
-    e.preventDefault()
-    return false
+  _goto_next_question: =>
+    if this.current_question_was_answered()
+      @current_question++
+      last_question = this.count_questions()
+      if (@current_question > last_question)
+        @current_question = last_question
+      this.show_right_question()
+    
+  _goto_prev_question: =>
+    @current_question--
+    @current_question = 1 if (@current_question < 1)
+    this.show_right_question()
+    
   
   disable_prev_link: ->
     $("#previous_question").addClass('link_disabled')
-    $("#previous_question").bind 'click', this._disable_link
+    $("#previous_question").unbind('click')
   
   enable_prev_link: ->
     $("#previous_question").removeClass('link_disabled')
-    $("#previous_question").unbind 'click', this._disable_link
+    $("#previous_question").unbind('click')
+    $("#previous_question").bind 'click', this._goto_prev_question
   
   disable_next_link: ->
     $("#next_question").addClass('link_disabled')
-    $("#next_question").bind 'click', this._disable_link
+    $("#next_question").unbind('click')
   
   enable_next_link: ->
     $("#next_question").removeClass('link_disabled')
-    $("#next_question").unbind 'click', this._disable_link
+    $("#next_question").unbind('click')
+    $("#next_question").bind 'click', this._goto_next_question
   
 
-  disable_all_question_links: ->
+  disable_all_question_links: =>
     this.disable_next_link()
     this.disable_prev_link()
   
-  update_question_links: ->
+  update_question_links: =>
     first_question = @current_question == 1
     last_question  = @current_question == this.count_questions()
     
-    if first_question || @current_question > 2
+    # We don't want the user to change his mind on the first two questions
+    # to prevent score forging
+    if first_question || @current_question <= 3
       this.disable_prev_link()
     else
       this.enable_prev_link()
@@ -114,7 +127,7 @@ class @Questions
     else
       this.disable_next_link()
   
-  show_right_question: ->
+  show_right_question: =>
     $(".question").hide()
     question_id = "#question_" + @current_question
     $(question_id).show()
@@ -135,26 +148,18 @@ class @Questions
   # callbacks
   #
   setup_navigation_callbacks: ->
-    $("#next_question").click (e) =>
+    $("#previous_question, #next_question").click (e) -> 
       e.preventDefault()
-      if this.current_question_was_answered()
-        @current_question++
-        last_question = this.count_questions()
-        if (@current_question > last_question)
-          @current_question = last_question
-        this.show_right_question()
 
-    $("#previous_question").click (e) =>
-      @current_question--
-      @current_question = 1 if (@current_question < 1) 
-      this.show_right_question()
-      e.preventDefault()
+    $("#next_question").click this._goto_next_question
+    $("#prev_question").click this._goto_prev_question
+
 
     $("#questions nav#up a, #admin_menu a").click (e) =>
+      e.preventDefault()
       question_id = $(e.target).data('question_id')
       @current_question = question_id
       this.show_right_question()
-      e.preventDefault()
   
   setup_cosmetic_callbacks: ->
     # setup colorbox popups for below questions

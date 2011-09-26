@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 08:41:22 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 09:47:30 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -6,7 +6,11 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty;
   this.Questions = (function() {
     function Questions(app) {
-      this.app = app;
+      this.show_right_question = __bind(this.show_right_question, this);
+      this.update_question_links = __bind(this.update_question_links, this);
+      this.disable_all_question_links = __bind(this.disable_all_question_links, this);
+      this._goto_prev_question = __bind(this._goto_prev_question, this);
+      this._goto_next_question = __bind(this._goto_next_question, this);      this.app = app;
       this.current_question = 1;
       if ($(".field_with_errors").length > 0) {
         this.current_question = this.count_questions();
@@ -89,25 +93,41 @@
       }
       return conflict;
     };
-    Questions.prototype._disable_link = function(e) {
-      e.preventDefault();
-      return false;
+    Questions.prototype._goto_next_question = function() {
+      var last_question;
+      if (this.current_question_was_answered()) {
+        this.current_question++;
+        last_question = this.count_questions();
+        if (this.current_question > last_question) {
+          this.current_question = last_question;
+        }
+        return this.show_right_question();
+      }
+    };
+    Questions.prototype._goto_prev_question = function() {
+      this.current_question--;
+      if (this.current_question < 1) {
+        this.current_question = 1;
+      }
+      return this.show_right_question();
     };
     Questions.prototype.disable_prev_link = function() {
       $("#previous_question").addClass('link_disabled');
-      return $("#previous_question").bind('click', this._disable_link);
+      return $("#previous_question").unbind('click');
     };
     Questions.prototype.enable_prev_link = function() {
       $("#previous_question").removeClass('link_disabled');
-      return $("#previous_question").unbind('click', this._disable_link);
+      $("#previous_question").unbind('click');
+      return $("#previous_question").bind('click', this._goto_prev_question);
     };
     Questions.prototype.disable_next_link = function() {
       $("#next_question").addClass('link_disabled');
-      return $("#next_question").bind('click', this._disable_link);
+      return $("#next_question").unbind('click');
     };
     Questions.prototype.enable_next_link = function() {
       $("#next_question").removeClass('link_disabled');
-      return $("#next_question").unbind('click', this._disable_link);
+      $("#next_question").unbind('click');
+      return $("#next_question").bind('click', this._goto_next_question);
     };
     Questions.prototype.disable_all_question_links = function() {
       this.disable_next_link();
@@ -117,7 +137,7 @@
       var first_question, last_question;
       first_question = this.current_question === 1;
       last_question = this.current_question === this.count_questions();
-      if (first_question || this.current_question > 2) {
+      if (first_question || this.current_question <= 3) {
         this.disable_prev_link();
       } else {
         this.enable_prev_link();
@@ -150,32 +170,17 @@
       return this.track_event('opens_question', question_text, this.current_question);
     };
     Questions.prototype.setup_navigation_callbacks = function() {
-      $("#next_question").click(__bind(function(e) {
-        var last_question;
-        e.preventDefault();
-        if (this.current_question_was_answered()) {
-          this.current_question++;
-          last_question = this.count_questions();
-          if (this.current_question > last_question) {
-            this.current_question = last_question;
-          }
-          return this.show_right_question();
-        }
-      }, this));
-      $("#previous_question").click(__bind(function(e) {
-        this.current_question--;
-        if (this.current_question < 1) {
-          this.current_question = 1;
-        }
-        this.show_right_question();
+      $("#previous_question, #next_question").click(function(e) {
         return e.preventDefault();
-      }, this));
+      });
+      $("#next_question").click(this._goto_next_question);
+      $("#prev_question").click(this._goto_prev_question);
       return $("#questions nav#up a, #admin_menu a").click(__bind(function(e) {
         var question_id;
+        e.preventDefault();
         question_id = $(e.target).data('question_id');
         this.current_question = question_id;
-        this.show_right_question();
-        return e.preventDefault();
+        return this.show_right_question();
       }, this));
     };
     Questions.prototype.setup_cosmetic_callbacks = function() {
