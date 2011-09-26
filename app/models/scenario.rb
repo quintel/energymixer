@@ -88,7 +88,6 @@ class Scenario < ActiveRecord::Base
   validates :output_10, :presence => true
   validates :output_11, :presence => true
   validates :output_12, :presence => true
-  validates :accept_terms, :acceptance => true
   
   scope :recent_first, order('created_at DESC')
   scope :public,       where(:public => true)
