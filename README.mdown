@@ -7,9 +7,10 @@ Check `~/config_files/config.yml`.
 	api_base_path:      "http://etengine.dev/api/v2"
 	view_scenario_path: "http://etmodel.dev/scenarios"
 	max_total_cost: 115000000000 # max height of the scenario column
+	standalone: true/false # if true all outbound links and remote scripts are disabled. Used on offline instances
 	api_session_settings:
 	  :country: 'nl'
-	  :end_year: 2025
+
   
 
 
@@ -37,7 +38,6 @@ To deploy run
 	cap XXXXX deploy
 
 `XXXXX` might be `shell`, `gasmixer` or `mixer2050`
-
 
 Be careful with configuration data: `settings.yml` and `config.yml` are stored in `~/config_files` and 
 capistrano takes care of copying them to the application config directory.
@@ -71,3 +71,9 @@ As a reference, this is the current script:
 The `theming.rb` initializer will prepend `app/views/APP_NAME` to the rendering view path. This means
 that any view (including layouts) in that directory will be rendered if available. Otherwise the default
 view will be used.
+
+## Web server
+
+If mod_passenger has troubles with rvm check this link
+
+  http://beginrescueend.com/integration/passenger/
