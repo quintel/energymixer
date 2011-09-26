@@ -42,7 +42,7 @@
   %section.boxes
     %header.subheader_blue.shaded_gradient
       - if APP_CONFIG["score"]
-        = render 'score_box'
+        = render 'score_box', :scenario => scenario
       - else 
         Effect
     - dashboard_items.each_pair do |o, gquery|

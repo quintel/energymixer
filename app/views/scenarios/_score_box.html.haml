@@ -6,11 +6,12 @@
     areafp: "Bio-voetafdruk", 
     import: "Energie import"
   }
-
+  score = scenario.score.to_i rescue 0
 #score
   Jouw score:
-  %strong.value 0
-  #show_info
+  %strong.value= score
+  - if scenario.new_record?
+    #show_info
 .score_details{:style=>"display:none;"}
   %table
     - score_items.each do |key, label|
