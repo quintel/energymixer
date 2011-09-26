@@ -108,11 +108,4 @@ module ScenariosHelper
     Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
     out.to_json
   end
-  
-  # on the chart we might use a log scale
-  # Check chart.coffee for the corresponding js function
-  def transform_height(x)
-    return 0 if x.nil? || x <= 0
-    (Math.log(x) * 20).round
-  end
 end
