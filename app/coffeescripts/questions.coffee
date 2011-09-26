@@ -135,26 +135,26 @@ class @Questions
   # callbacks
   #
   setup_navigation_callbacks: ->
-    $("#next_question").click =>
+    $("#next_question").click (e) =>
+      e.preventDefault()
       if this.current_question_was_answered()
         @current_question++
         last_question = this.count_questions()
         if (@current_question > last_question)
           @current_question = last_question
         this.show_right_question()
-      return false
 
-    $("#previous_question").click =>
+    $("#previous_question").click (e) =>
       @current_question--
       @current_question = 1 if (@current_question < 1) 
       this.show_right_question()
-      return false
+      e.preventDefault()
 
     $("#questions nav#up a, #admin_menu a").click (e) =>
       question_id = $(e.target).data('question_id')
       @current_question = question_id
       this.show_right_question()
-      return false
+      e.preventDefault()
   
   setup_cosmetic_callbacks: ->
     # setup colorbox popups for below questions
@@ -192,13 +192,13 @@ class @Questions
       $("#tooltip").css({"top": tipY + 20 , "left": tipX})
     
     # show / hide question info box
-    $("section#questions .question a.close_info_popup").click ->
+    $("section#questions .question a.close_info_popup").click (e) ->
       $(this).parent().parent().hide()
-      return false
+      e.preventDefault()
   
-    $("section#questions .question a.show_info").click ->
+    $("section#questions .question a.show_info").click (e) ->
       $(this).parent().find(".information").toggle()
-      return false
+      e.preventDefault()
   
   setup_question_callbacks: ->
     # when the users clicks on an answer
