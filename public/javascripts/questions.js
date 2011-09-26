@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:24:29 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 08:41:22 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -150,32 +150,32 @@
       return this.track_event('opens_question', question_text, this.current_question);
     };
     Questions.prototype.setup_navigation_callbacks = function() {
-      $("#next_question").click(__bind(function() {
+      $("#next_question").click(__bind(function(e) {
         var last_question;
+        e.preventDefault();
         if (this.current_question_was_answered()) {
           this.current_question++;
           last_question = this.count_questions();
           if (this.current_question > last_question) {
             this.current_question = last_question;
           }
-          this.show_right_question();
+          return this.show_right_question();
         }
-        return false;
       }, this));
-      $("#previous_question").click(__bind(function() {
+      $("#previous_question").click(__bind(function(e) {
         this.current_question--;
         if (this.current_question < 1) {
           this.current_question = 1;
         }
         this.show_right_question();
-        return false;
+        return e.preventDefault();
       }, this));
       return $("#questions nav#up a, #admin_menu a").click(__bind(function(e) {
         var question_id;
         question_id = $(e.target).data('question_id');
         this.current_question = question_id;
         this.show_right_question();
-        return false;
+        return e.preventDefault();
       }, this));
     };
     Questions.prototype.setup_cosmetic_callbacks = function() {
@@ -213,13 +213,13 @@
           "left": tipX
         });
       });
-      $("section#questions .question a.close_info_popup").click(function() {
+      $("section#questions .question a.close_info_popup").click(function(e) {
         $(this).parent().parent().hide();
-        return false;
+        return e.preventDefault();
       });
-      return $("section#questions .question a.show_info").click(function() {
+      return $("section#questions .question a.show_info").click(function(e) {
         $(this).parent().find(".information").toggle();
-        return false;
+        return e.preventDefault();
       });
     };
     Questions.prototype.setup_question_callbacks = function() {

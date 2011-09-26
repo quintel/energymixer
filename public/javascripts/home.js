@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 15:05:56 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 08:38:11 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -15,9 +15,6 @@
     Home.prototype._update_price = function() {
       var amount, formatted_amount;
       if (this.current_sector) {
-        if (!this.shares.sectors[this.current_sector]) {
-          console.log("CS: " + this.current_sector);
-        }
         amount = this.shares.sectors[this.current_sector].total * this.shares.total.amount;
       } else {
         amount = this.shares.total.amount;
@@ -64,13 +61,13 @@
         $(".popup").hide();
         return this.reset_map();
       }, this));
-      return $("#sector_icons a").click(function(e) {
+      return $("#sector_icons a").click(__bind(function(e) {
         var container;
         e.preventDefault();
-        container = $(this).parent();
+        container = $(e.target).parent();
         container.find(".text").toggle();
-        return $(this).toggleClass("close_description");
-      });
+        return $(e.target).toggleClass("close_description");
+      }, this));
     };
     return Home;
   })();

@@ -7,7 +7,6 @@ class Home
   
   _update_price: ->
     if @current_sector
-      console.log "CS: #{@current_sector}" unless @shares.sectors[@current_sector]
       amount = @shares.sectors[@current_sector].total * @shares.total.amount
     else
       amount = @shares.total.amount
@@ -46,12 +45,12 @@ class Home
         $(".popup").hide()
         this.reset_map()
     )
-
-    $("#sector_icons a").click (e) ->
+        
+    $("#sector_icons a").click (e) =>
       e.preventDefault()
-      container = $(this).parent()
+      container = $(e.target).parent()
       container.find(".text").toggle()
-      $(this).toggleClass("close_description")
+      $(e.target).toggleClass("close_description")
 
 $ ->
   h = new Home
