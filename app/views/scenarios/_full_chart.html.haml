@@ -2,7 +2,7 @@
   max_height = 360
   width      = 86
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
-  current_chart_height = Math.sqrt(scenario.total_amount / max_amount) * max_height
+  current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
   dashboard_items = {
     output_5: "mixer_co2_reduction_from_1990",
     output_6: "mixer_renewability",

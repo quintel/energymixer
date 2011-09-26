@@ -3,8 +3,7 @@
   max_amount = Scenario::MaxAmount
   width = 50
   rounded_sum = 0
-  current_chart_height = scenario.total_amount / max_amount.to_f * max_height
-
+  current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
 .shaded_chart
   %header.header_grey Energy Mix 2011
   %header.sub.subheader_grey.shaded_gradient
@@ -14,7 +13,7 @@
   .charts_container.static
     .chart_canvas_mix{:style => "width: #{width}px"}
       %ul.chart
-        - scenario.carrier_ratios.each_pair do |carrier, value|
-          - height = transform_height(value * current_chart_height)
+        - scenario.carrier_ratios.each_pair do |carrier, ratio|
+          - height = ratio * current_chart_height
           %li.serie{:class => [carrier, Scenario::PrimaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
     = render 'renewables_float', :scenario => scenario
