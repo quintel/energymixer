@@ -2,11 +2,11 @@
   def full_text(s)
     out = []
     # Total amount
-    out << if s.total_amount < 40
+    out << if s.total_amount < 40_000_000_000
       "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
-    elsif s.total_amount < 60
+    elsif s.total_amount < 60_000_000_000
       "De mix wordt langzaam duurder, maar als onze economie blijft groeien kunnen we dat waarschijnlijk wel betalen."
-    elsif s.total_amount < 80
+    elsif s.total_amount < 80_000_000_000
       "De mix wordt behoorlijk veel duurder. Kunnen we dat wel blijven betalen?"
     else
       "De mix wordt veel duurder. Kunnen we dat niet meer betalen of groeien we onszelf uit de problemen?"
