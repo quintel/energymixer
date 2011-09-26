@@ -12,7 +12,7 @@
     = render 'full_chart', :scenario => @scenarios.first
 
 %section#right
-  %section#select
+  %section#select.shaded_gradient
     = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
   - if @scenarios.last
     = render 'full_chart', :scenario => @scenarios.last
