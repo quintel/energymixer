@@ -27,8 +27,10 @@
       
   %section.scenarios.shaded_gradient
     %nav.tabs
-      = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
-      = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'
+      - if @featured_scenarios.any?
+        = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
+      - if @average_scenarios.any?
+        = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'
       .clear
     .tab
       #featured_scenarios.selectable
