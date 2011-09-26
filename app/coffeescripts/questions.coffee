@@ -198,8 +198,9 @@ class @Questions
     
     # show / hide question info box
     $("section#questions .question a.close_info_popup").click (e) ->
-      $(this).parent().parent().hide()
       e.preventDefault()
+      $(this).closest(".information").hide()
+      return false
   
     $("section#questions .question a.show_info").click (e) ->
       $(this).parent().find(".information").toggle()
