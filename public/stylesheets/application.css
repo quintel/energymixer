@@ -627,6 +627,7 @@ body#scenarios_index .scenario {
     bottom: 10px;
     left: 120px; }
     .renewables_float ul.chart li.serie {
+      width: 80px;
       position: relative;
       margin: 0 0 -3px 0;
       min-height: 4px;
