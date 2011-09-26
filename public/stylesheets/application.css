@@ -512,6 +512,8 @@ body#scenarios_index section#right section#select {
     height: 130px;
     background-image: url("/images/placeholders.png");
     background-repeat: no-repeat; }
+    body#scenarios_index section#right section#select #selected_scenarios .scenario {
+      height: 43px; }
 body#scenarios_index section#right section.scenarios {
   padding: 10px 0px; }
   body#scenarios_index section#right section.scenarios nav.tabs {
