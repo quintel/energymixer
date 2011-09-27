@@ -7,6 +7,6 @@ class MixerMailer < ActionMailer::Base
   def thankyou(scenario)
     @scenario = scenario
     @etm_scenario_url = scenario_in_etm_url(@scenario)
-    mail :to => scenario.email, :subject => "Jouw Future Energy Mix"
+    mail :to => scenario.email, :subject => "Jouw Energy Mix"
   end
 end
