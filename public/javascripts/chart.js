@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 27 Sep 2011 12:50:36 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 27 Sep 2011 12:56:52 GMT from
  * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/chart.coffee
  */
 
@@ -99,7 +99,7 @@
         }, "slow");
         percentage = Math.round(ratio * 100);
         code = code.replace("uranium", "nuclear");
-        code = code.replace("renewable", "sustainable");
+        code = code.replace("sustainable", "renewable");
         selector = ".legend tr." + code + " td.value";
         $(selector).html("" + percentage + "%");
       }
