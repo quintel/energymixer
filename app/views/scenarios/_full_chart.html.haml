@@ -27,7 +27,8 @@
         %h4 Legenda
         %table
           - scenario.carrier_ratios.each_pair do |carrier, value|
-            %tr{:class => [carrier, "costs_share_of_#{carrier}"]}
+            -# TODO: CLEAN UP: NOT SEPERATE INTERPOLATION HERE, BUT SCENARIO::PRIMARYMIXTABLE, OR SOMETHING... DS Tue Sep 27 14:30:43 CEST 2011
+            %tr{:class => [carrier, "share_of_total_costs_assigned_to_#{carrier}"]} 
               %td= image_tag "layout/textures/#{carrier}.png"
               %td= t(carrier)
               %td.value= number_to_percentage(value * 100, :precision => 0)

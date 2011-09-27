@@ -84,6 +84,9 @@ class @Chart
       item.animate({"height": new_height}, "slow")
       # update the legend
       percentage = Math.round(ratio * 100)
+      #DEBT TODO CLEANUP: ALLIGN NAMES. DS Tue Sep 27 14:47:26 CEST 2011
+      code = code.replace("uranium", "nuclear")
+      code = code.replace("renewable", "sustainable")
       selector = ".legend tr.#{code} td.value"
       $(selector).html("#{percentage}%")
     
