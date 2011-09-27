@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 07:53:10 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
+/* DO NOT MODIFY. This file was compiled Tue, 27 Sep 2011 12:50:36 GMT from
+ * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/chart.coffee
  */
 
 (function() {
@@ -98,6 +98,8 @@
           "height": new_height
         }, "slow");
         percentage = Math.round(ratio * 100);
+        code = code.replace("uranium", "nuclear");
+        code = code.replace("renewable", "sustainable");
         selector = ".legend tr." + code + " td.value";
         $(selector).html("" + percentage + "%");
       }
