@@ -18,7 +18,7 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.new(params[:scenario])
     if @scenario.save
       begin
-        MixerMailer.thankyou(@scenario).deliver unless APP_CONFIG['standalone']
+        MixerMailer.thankyou(@scenario).deliver unless APP_CONFIG['standalone'] || @scenario.email.blank?
       rescue
         flash[:alert] = "There was an error sending the email"
       end
