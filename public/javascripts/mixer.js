@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 13:23:24 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 14:58:01 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -20,6 +20,7 @@
       this.mix_table = globals.mix_table;
       this.secondary_mix_table = globals.secondary_mix_table;
       this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["mixer_total_costs"]);
+      this.score_enabled = globals.score_enabled;
       this.fetch_scenario_id();
     }
     Mixer.prototype.fetch_scenario_id = function() {

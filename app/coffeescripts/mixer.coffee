@@ -18,6 +18,7 @@ class @Mixer
     @mix_table           = globals.mix_table       # idem
     @secondary_mix_table = globals.secondary_mix_table # idem
     @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["mixer_total_costs"])
+    @score_enabled = globals.score_enabled
     this.fetch_scenario_id()
 
   fetch_scenario_id: ->
