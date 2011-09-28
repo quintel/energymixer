@@ -24,6 +24,7 @@
       border-bottom: 1px solid #D0D1D1
       margin: 0 0 0 8px
       background: transparent
+      position: relative
       h3
         padding-top: 30px
         margin-right: 35px
@@ -62,22 +63,22 @@
           @include gauge_1
         &.mixer_net_energy_import_step_6, &.mixer_reduction_of_co2_emissions_versus_1990_step_6, &.mixer_renewability_step_0, &.mixer_bio_footprint_step_6
           @include gauge_0
-
-section#dashboard_popups
-  .dashboard_popup
-    z-index: 1000
-    position: relative
-    top: -350px
-    left: 0
-    width: 250px
-    display: none
-    @include shadow
-    background-color: #ffffff
-    opacity: 0.9
-    padding: 10px
-    a
-      display: block
-      float: right
-    .title
-      font-size: 1.2em
-      margin-bottom: 10px
+      .popup
+        z-index: 1000
+        position: absolute
+        top: -20px
+        left: -220px
+        width: 415px
+        display: none
+        @include shadow
+        background-color: #ffffff
+        opacity: 0.9
+        padding: 10px
+        a
+          display: block
+          float: right
+        .title
+          color: #0B2260
+          font-size: 1.2em
+          font-weight: bold
+          margin-bottom: 10px

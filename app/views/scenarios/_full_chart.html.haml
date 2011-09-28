@@ -4,10 +4,26 @@
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
   dashboard_items = {
-    output_5: "mixer_reduction_of_co2_emissions_versus_1990",
-    output_6: "mixer_renewability",
-    output_7: "mixer_bio_footprint",
-    output_8: "mixer_net_energy_import",
+    output_5: {
+      gquery: "mixer_reduction_of_co2_emissions_versus_1990",
+      title: "Verandering CO2-uitstoot",
+      text: "Hoe verandert de CO2-uitstoot als gevolg van je keuzes? Hier staat de verandering ten opzichte van de uitstoot in 1990."
+    },
+    output_6: {
+      gquery: "mixer_renewability",
+      title: "Hernieuwbare energie",
+      text: "Welk deel van het toekomstige energiegebruik is hernieuwbaar? We gebruiken hier de Europese definitie van hernieuwbare energie. Dat betekent dat we kijken welk percentage van het eindgebruik hernieuwbaar is."
+    },
+    output_7: {
+      gquery: "mixer_bio_footprint",
+      title: "Bio-voetafdruk",
+      text: "Hoeveel landbouwoppervlak is er nodig als gevolg van je keuzes? Biomassa moet vaak geteeld worden. Hier zie je hoeveel keer het Nederlandse landbouwareaal nodig is om dat te doen."
+    },
+    output_8: {
+      gquery: "mixer_net_energy_import",
+      title: "Import afhankelijkheid",
+      text: "Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteert wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe."
+    }
   }
 .full_chart.shaded_gradient
   %header.header_blue
@@ -46,33 +62,19 @@
         = render 'score_box', :scenario => scenario
       - else 
         Effect
-    - dashboard_items.each_pair do |o, gquery|
-      .dashboard_item{:id => gquery}
-        .gauge_icon{:class => set_class_for_output(o, scenario.send(o))}
+    - dashboard_items.each_pair do |output, item|
+      .dashboard_item{:id => item[:gquery]}
+        .gauge_icon{:class => set_class_for_output(output, scenario.send(output))}
         .info_icon
           = image_tag('icons/i.png')
-        %h3= raw t(dashboard_label_for_output(o))
-        .value= format_dashboard_value o, scenario.send(o)
+        %h3= raw t(dashboard_label_for_output(output))
+        .value= format_dashboard_value output, scenario.send(output)
+        .popup
+          = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
+          .title= item[:title]
+          .text= item[:text]
   .clear
-  
-  %section#dashboard_popups
-    .dashboard_popup.mixer_net_energy_import
-      = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
-      .title Import afhankelijkheid
-      .text
-        Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteert wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe.
-    .dashboard_popup.mixer_reduction_of_co2_emissions_versus_1990
-      = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
-      .title Verandering CO2-uitstoot
-      .text
-        Hoe verandert de CO2-uitstoot als gevolg van je keuzes? Hier staat de verandering ten opzichte van de uitstoot in 1990.
-    .dashboard_popup.mixer_renewability
-      = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
-      .title Hernieuwbare energie
-      .text
-        Welk deel van het toekomstige energiegebruik is hernieuwbaar? We gebruiken hier de Europese definitie van hernieuwbare energie. Dat betekent dat we kijken welk percentage van het eindgebruik hernieuwbaar is.
-    .dashboard_popup.mixer_bio_footprint
-      = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
-      .title Bio-voetafdruk
-      .text
-        Hoeveel landbouwoppervlak is er nodig als gevolg van je keuzes? Biomassa moet vaak geteeld worden. Hier zie je hoeveel keer het Nederlandse landbouwareaal nodig is om dat te doen.
+        
+        
+        
+        
