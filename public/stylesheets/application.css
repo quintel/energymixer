@@ -763,8 +763,8 @@ body#scenarios_index .scenario {
       z-index: 1000;
       position: absolute;
       top: -20px;
-      left: -220px;
-      width: 415px;
+      left: -219px;
+      width: 411px;
       display: none;
       -moz-box-shadow: 0px 2px 5px #333333;
       -webkit-box-shadow: 0px 2px 5px #333333;
