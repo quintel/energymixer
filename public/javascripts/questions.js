@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 13:48:06 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 14:01:14 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -222,19 +222,14 @@
         e.preventDefault();
         $(this).closest(".information").hide();
         $(this).closest("#questions").unblock();
+        $("nav#down").unblock();
         return false;
       });
       return $("section#questions .question a.show_info").click(function(e) {
         $(this).parent().find(".information").toggle();
         e.preventDefault();
-        return $(this).closest("#questions").block({
-          overlayCSS: {
-            backgroundColor: "#fff",
-            opacity: 0.6
-          },
-          baseZ: 900,
-          message: null
-        });
+        $(this).closest("#questions").block();
+        return $("nav#down").block();
       });
     };
     Questions.prototype.setup_question_callbacks = function() {
