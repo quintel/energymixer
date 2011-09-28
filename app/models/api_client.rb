@@ -6,15 +6,15 @@ class ApiClient
         "share_of_total_costs_assigned_to_coal",
         "share_of_total_costs_assigned_to_gas",
         "share_of_total_costs_assigned_to_oil",
-        "share_of_total_costs_assigned_to_uranium",
-        "share_of_total_costs_assigned_to_sustainable",
+        "share_of_total_costs_assigned_to_nuclear",
+        "share_of_total_costs_assigned_to_renewables",
         "mixer_co2_reduction_from_1990",
         "mixer_renewability",
         "mixer_bio_footprint",
         "mixer_net_energy_import",
-        "share_of_total_costs_assigned_to_sustainable_wind",
-        "share_of_total_costs_assigned_to_sustainable_solar",
-        "share_of_total_costs_assigned_to_sustainable_biomass",
+        "share_of_total_costs_assigned_to_renewables_wind",
+        "share_of_total_costs_assigned_to_renewables_solar",
+        "share_of_total_costs_assigned_to_renewables_biomass",
         "mixer_total_costs"
       ]
       
@@ -24,32 +24,32 @@ class ApiClient
     "share_of_total_costs_assigned_to_coal",
     "share_of_total_costs_assigned_to_gas",
     "share_of_total_costs_assigned_to_oil",
-    "share_of_total_costs_assigned_to_uranium",
-    "share_of_total_costs_assigned_to_sustainable",
+    "share_of_total_costs_assigned_to_nuclear",
+    "share_of_total_costs_assigned_to_renewables",
 
     "share_of_total_costs_assigned_to_oil_buildings",
     "share_of_total_costs_assigned_to_gas_buildings",
     "share_of_total_costs_assigned_to_coal_buildings",
-    "share_of_total_costs_assigned_to_uranium_buildings",
-    "share_of_total_costs_assigned_to_sustainable_buildings",
+    "share_of_total_costs_assigned_to_nuclear_buildings",
+    "share_of_total_costs_assigned_to_renewables_buildings",
 
     "share_of_total_costs_assigned_to_oil_industry",
     "share_of_total_costs_assigned_to_gas_industry",
     "share_of_total_costs_assigned_to_coal_industry",
-    "share_of_total_costs_assigned_to_uranium_industry",
-    "share_of_total_costs_assigned_to_sustainable_industry",
+    "share_of_total_costs_assigned_to_nuclear_industry",
+    "share_of_total_costs_assigned_to_renewables_industry",
 
     "share_of_total_costs_assigned_to_oil_transport",
     "share_of_total_costs_assigned_to_gas_transport",
     "share_of_total_costs_assigned_to_coal_transport",
-    "share_of_total_costs_assigned_to_uranium_transport",
-    "share_of_total_costs_assigned_to_sustainable_transport",
+    "share_of_total_costs_assigned_to_nuclear_transport",
+    "share_of_total_costs_assigned_to_renewables_transport",
 
     "share_of_total_costs_assigned_to_oil_agriculture",
     "share_of_total_costs_assigned_to_gas_agriculture",
     "share_of_total_costs_assigned_to_coal_agriculture",
-    "share_of_total_costs_assigned_to_uranium_agriculture",
-    "share_of_total_costs_assigned_to_sustainable_agriculture"
+    "share_of_total_costs_assigned_to_nuclear_agriculture",
+    "share_of_total_costs_assigned_to_renewables_agriculture"
   ]
   
   def intro_page_data
@@ -62,12 +62,12 @@ class ApiClient
     data = carrier_costs!
     out = {
       total: {
-        amount: data["mixer_total_costs"],
-        coal: data["share_of_total_costs_assigned_to_coal"],
-        gas: data["share_of_total_costs_assigned_to_gas"],
-        oil: data["share_of_total_costs_assigned_to_oil"],
-        uranium: data["share_of_total_costs_assigned_to_uranium"],
-        sustainable: data["share_of_total_costs_assigned_to_sustainable"]
+        amount:    data["mixer_total_costs"],
+        coal:      data["share_of_total_costs_assigned_to_coal"],
+        gas:       data["share_of_total_costs_assigned_to_gas"],
+        oil:       data["share_of_total_costs_assigned_to_oil"],
+        nuclear:   data["share_of_total_costs_assigned_to_nuclear"],
+        renewable: data["share_of_total_costs_assigned_to_renewables"]
       },
       sectors: {
         buildings: {
@@ -86,7 +86,7 @@ class ApiClient
     }
 
     [:buildings, :industry, :transport, :agriculture].each do |sector|
-      [:coal, :gas, :oil, :uranium, :sustainable].each do |carrier|
+      [:coal, :gas, :oil, :nuclear, :renewables].each do |carrier|
         out[:sectors][sector][:carriers][carrier] = data["share_of_total_costs_assigned_to_#{carrier}_#{sector}"]
       end
       out[:sectors][sector][:total] = out[:sectors][sector][:carriers].values.sum
