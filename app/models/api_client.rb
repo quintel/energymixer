@@ -62,12 +62,12 @@ class ApiClient
     data = carrier_costs!
     out = {
       total: {
-        amount:    data["mixer_total_costs"],
-        coal:      data["share_of_total_costs_assigned_to_coal"],
-        gas:       data["share_of_total_costs_assigned_to_gas"],
-        oil:       data["share_of_total_costs_assigned_to_oil"],
-        nuclear:   data["share_of_total_costs_assigned_to_nuclear"],
-        renewable: data["share_of_total_costs_assigned_to_renewables"]
+        amount:     data["mixer_total_costs"],
+        coal:       data["share_of_total_costs_assigned_to_coal"],
+        gas:        data["share_of_total_costs_assigned_to_gas"],
+        oil:        data["share_of_total_costs_assigned_to_oil"],
+        nuclear:    data["share_of_total_costs_assigned_to_nuclear"],
+        renewables: data["share_of_total_costs_assigned_to_renewables"]
       },
       sectors: {
         buildings: {
@@ -87,7 +87,7 @@ class ApiClient
 
     [:buildings, :industry, :transport, :agriculture].each do |sector|
       [:coal, :gas, :oil, :nuclear, :renewables].each do |carrier|
-        out[:sectors][sector][:carriers][carrier] = data["share_of_total_costs_assigned_to_#{carrier}_#{sector}"]
+        out[:sectors][sector][:carriers][carrier] = data["share_of_total_costs_assigned_to_#{carrier}_in_#{sector}"]
       end
       out[:sectors][sector][:total] = out[:sectors][sector][:carriers].values.sum
     end
