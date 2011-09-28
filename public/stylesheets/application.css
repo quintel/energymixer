@@ -217,8 +217,9 @@ body#pages_home section#main {
       width: 80px;
       margin-right: 20px; }
   body#pages_home section#main #chart > .charts_container > .legend {
-    left: -140px;
-    top: 260px; }
+    left: -160px;
+    top: 260px;
+    opacity: 1; }
   body#pages_home section#main #map {
     margin-top: 20px;
     position: relative;
