@@ -1,7 +1,8 @@
 ## Configuration
 
 Check `~/config_files/config.yml`.
-
+  
+  host_name: "mixer.et-model.com" # important! without this the links in the email won't be correct
 	app_name: "gasmixer" # if you define a new key here then add the translation in `en.yml` and `nl.yml`
 	score: true
 	api_base_path:      "http://etengine.dev/api/v2"
