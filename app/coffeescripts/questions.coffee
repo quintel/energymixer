@@ -114,9 +114,11 @@ class @Questions
     first_question = @current_question == 1
     last_question  = @current_question == this.count_questions()
     
+    if first_question 
+      this.disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
-    if first_question || @current_question <= 3
+    else if @current_question <= 3 && @app.score_enabled
       this.disable_prev_link()
     else
       this.enable_prev_link()
