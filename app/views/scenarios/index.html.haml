@@ -24,20 +24,25 @@
     = form_tag compare_scenarios_path do
       %section#selected_scenarios
       = link_to "Vergelijk", '#', :class => 'submit_form disabled'
-      
-  %section.scenarios.shaded_gradient
-    %nav.tabs
-      - if @featured_scenarios.any?
-        = link_to 'Uitgelicht', '#featured_scenarios', :class => 'scenario_tab_picker active'
-      - if @average_scenarios.any?
-        = link_to 'Gemiddelde', '#average_scenarios', :class => 'scenario_tab_picker'
-      .clear
-    .tab
-      #featured_scenarios.selectable
-        = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
-    .tab.hidden
-      #average_scenarios.selectable
-        = render :partial => 'select_scenario_box', :collection => @average_scenarios, :as => :scenario
+  
+  :ruby
+    any_featured = @featured_scenarios.any?
+    any_average  = @average_scenarios.any?
+    active_tab = any_featured ? :featured : :averages
+  - if any_featured || any_average
+    %section.scenarios.shaded_gradient
+      %nav.tabs
+        - if any_featured
+          = link_to 'Uitgelicht', '#featured_scenarios', :class => ['scenario_tab_picker', active_tab == :featured && 'active']
+        - if any_average
+          = link_to 'Gemiddelde', '#average_scenarios', :class => ['scenario_tab_picker', active_tab == :averages && 'active']
+        .clear
+      .tab{:class => active_tab == :featured || 'hidden'}
+        #featured_scenarios.selectable
+          = render :partial => 'select_scenario_box', :collection => @featured_scenarios, :as => :scenario
+      .tab{:class => active_tab == :averages || 'hidden'}
+        #average_scenarios.selectable
+          = render :partial => 'select_scenario_box', :collection => @average_scenarios, :as => :scenario
 
 
 - content_for :head do

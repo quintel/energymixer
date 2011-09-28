@@ -92,8 +92,9 @@ class Scenario < ActiveRecord::Base
   scope :recent_first, order('created_at DESC')
   scope :public,       where(:public => true)
   scope :featured,     where(:featured => true)
+  scope :not_featured, where(:featured => false)
   scope :averages,     where(:average => true)
-  scope :user_created, where(:featured => false)
+  scope :not_average,  where(:average => false)
   scope :featured_first, order('featured DESC')
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%") unless q.blank? }
   scope :excluding, lambda{|s| where('id != ?', s)}
