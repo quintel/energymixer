@@ -242,7 +242,8 @@ body#pages_home section#main {
           padding-right: 25px;
           background-image: url("/images/icons/i.png");
           background-repeat: no-repeat;
-          background-position: 95% center; }
+          background-position: 95% center;
+          text-decoration: none; }
         body#pages_home section#main #map #sector_icons div.sector .popup a.close_description {
           background-image: url("/images/icons/close.png"); }
         body#pages_home section#main #map #sector_icons div.sector .popup .text {
