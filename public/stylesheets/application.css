@@ -709,7 +709,8 @@ body#scenarios_index .scenario {
     height: 91px;
     border-bottom: 1px solid #d0d1d1;
     margin: 0 0 0 8px;
-    background: transparent; }
+    background: transparent;
+    position: relative; }
     .full_chart section.boxes .dashboard_item h3 {
       padding-top: 30px;
       margin-right: 35px;
@@ -752,28 +753,29 @@ body#scenarios_index .scenario {
         background: transparent url(/images/layout/gauge_1.png); }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_6 {
         background: transparent url(/images/layout/gauge_0.png); }
-
-section#dashboard_popups .dashboard_popup {
-  z-index: 1000;
-  position: relative;
-  top: -350px;
-  left: 0;
-  width: 250px;
-  display: none;
-  -moz-box-shadow: 0px 2px 5px #333333;
-  -webkit-box-shadow: 0px 2px 5px #333333;
-  box-shadow: 0px 2px 5px #333333;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333');
-  background-color: white;
-  opacity: 0.9;
-  padding: 10px; }
-  section#dashboard_popups .dashboard_popup a {
-    display: block;
-    float: right; }
-  section#dashboard_popups .dashboard_popup .title {
-    font-size: 1.2em;
-    margin-bottom: 10px; }
+    .full_chart section.boxes .dashboard_item .popup {
+      z-index: 1000;
+      position: absolute;
+      top: -20px;
+      left: -220px;
+      width: 415px;
+      display: none;
+      -moz-box-shadow: 0px 2px 5px #333333;
+      -webkit-box-shadow: 0px 2px 5px #333333;
+      box-shadow: 0px 2px 5px #333333;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333')";
+      filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#333333');
+      background-color: white;
+      opacity: 0.9;
+      padding: 10px; }
+      .full_chart section.boxes .dashboard_item .popup a {
+        display: block;
+        float: right; }
+      .full_chart section.boxes .dashboard_item .popup .title {
+        color: #0b2260;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px; }
 
 #score {
   background: url("/images/icons/i.png") no-repeat 125px center;
