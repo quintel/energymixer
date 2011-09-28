@@ -1,14 +1,15 @@
-%h2 Antwoorden van deze mix
+.scenario_answers
+  %h2 Antwoorden van deze mix
 
-%dl
-  - @scenario.answers.each do |a|
-    %dt
-      #{a.question.number}.
-      = a.question.question
-    %dd
-      - if a.answer
-        = a.answer.answer.html_safe
-      - else
-        **Geen antwoord gegeven**
-      - if APP_CONFIG["score"] && a.score
-        (Score: #{a.score})
+  %dl
+    - @scenario.answers.each do |a|
+      %dt
+        #{a.question.number}.
+        = a.question.question
+      %dd
+        - if a.answer
+          = a.answer.answer.html_safe
+        - else
+          **Geen antwoord gegeven**
+        - if APP_CONFIG["score"] && a.score
+          (Score: #{a.score})

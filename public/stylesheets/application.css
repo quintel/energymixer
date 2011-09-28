@@ -320,6 +320,15 @@ body div.question_popup h1 {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 15px; }
+body .scenario_answers h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px; }
+body .scenario_answers dl dt {
+  font-weight: bold;
+  margin-bottom: 2px; }
+body .scenario_answers dl dd {
+  margin-bottom: 12px; }
 
 body#scenarios_new section#left section#questions, body#scenarios_create section#left section#questions {
   height: 430px;
