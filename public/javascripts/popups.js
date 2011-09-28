@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 12:01:51 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 13:46:43 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/popups.coffee
  */
 
@@ -14,10 +14,19 @@
     });
     $(".full_chart .dashboard_item .info_icon").click(function() {
       var popup;
-      return popup = $(this).parent().find(".popup").toggle();
+      popup = $(this).parent().find(".popup").toggle();
+      return $(this).closest(".full_chart").block({
+        overlayCSS: {
+          backgroundColor: "#fff",
+          opacity: 0.6
+        },
+        baseZ: 900,
+        message: null
+      });
     });
     return $(".full_chart .dashboard_item a.close_popup").click(function() {
-      return $(this).parent().hide();
+      $(this).parent().hide();
+      return $(this).closest(".full_chart").unblock();
     });
   });
 }).call(this);
