@@ -401,8 +401,6 @@ body#scenarios_new section#left section#questions, body#scenarios_create section
     body#scenarios_new section#left section#questions .question ul.answers li.answer.active label, body#scenarios_new section#left section#questions .question ul.answers li.answer:hover label, body#scenarios_create section#left section#questions .question ul.answers li.answer.active label, body#scenarios_create section#left section#questions .question ul.answers li.answer:hover label {
       background-color: #dddddd;
       cursor: pointer; }
-    body#scenarios_new section#left section#questions .question ul.answers li.answer:hover label .text, body#scenarios_create section#left section#questions .question ul.answers li.answer:hover label .text {
-      text-decoration: underline; }
 body#scenarios_new section#left nav#down, body#scenarios_create section#left nav#down {
   margin-top: 10px; }
   body#scenarios_new section#left nav#down a, body#scenarios_create section#left nav#down a {
