@@ -8,13 +8,13 @@ class ApiClient
         "share_of_total_costs_assigned_to_oil",
         "share_of_total_costs_assigned_to_nuclear",
         "share_of_total_costs_assigned_to_renewables",
-        "mixer_co2_reduction_from_1990",
+        "mixer_reduction_of_co2_emissions_versus_1990",
         "mixer_renewability",
         "mixer_bio_footprint",
         "mixer_net_energy_import",
-        "share_of_total_costs_assigned_to_renewables_wind",
-        "share_of_total_costs_assigned_to_renewables_solar",
-        "share_of_total_costs_assigned_to_renewables_biomass",
+        "share_of_total_costs_assigned_to_wind",
+        "share_of_total_costs_assigned_to_solar",
+        "share_of_total_costs_assigned_to_biomass",
         "mixer_total_costs"
       ]
       
@@ -27,29 +27,29 @@ class ApiClient
     "share_of_total_costs_assigned_to_nuclear",
     "share_of_total_costs_assigned_to_renewables",
 
-    "share_of_total_costs_assigned_to_oil_buildings",
-    "share_of_total_costs_assigned_to_gas_buildings",
-    "share_of_total_costs_assigned_to_coal_buildings",
-    "share_of_total_costs_assigned_to_nuclear_buildings",
-    "share_of_total_costs_assigned_to_renewables_buildings",
+    "share_of_total_costs_assigned_to_oil_in_buildings",
+    "share_of_total_costs_assigned_to_gas_in_buildings",
+    "share_of_total_costs_assigned_to_coal_in_buildings",
+    "share_of_total_costs_assigned_to_nuclear_in_buildings",
+    "share_of_total_costs_assigned_to_renewables_in_buildings",
 
-    "share_of_total_costs_assigned_to_oil_industry",
-    "share_of_total_costs_assigned_to_gas_industry",
-    "share_of_total_costs_assigned_to_coal_industry",
-    "share_of_total_costs_assigned_to_nuclear_industry",
-    "share_of_total_costs_assigned_to_renewables_industry",
+    "share_of_total_costs_assigned_to_oil_in_industry",
+    "share_of_total_costs_assigned_to_gas_in_industry",
+    "share_of_total_costs_assigned_to_coal_in_industry",
+    "share_of_total_costs_assigned_to_nuclear_in_industry",
+    "share_of_total_costs_assigned_to_renewables_in_industry",
 
-    "share_of_total_costs_assigned_to_oil_transport",
-    "share_of_total_costs_assigned_to_gas_transport",
-    "share_of_total_costs_assigned_to_coal_transport",
-    "share_of_total_costs_assigned_to_nuclear_transport",
-    "share_of_total_costs_assigned_to_renewables_transport",
+    "share_of_total_costs_assigned_to_oil_in_transport",
+    "share_of_total_costs_assigned_to_gas_in_transport",
+    "share_of_total_costs_assigned_to_coal_in_transport",
+    "share_of_total_costs_assigned_to_nuclear_in_transport",
+    "share_of_total_costs_assigned_to_renewables_in_transport",
 
-    "share_of_total_costs_assigned_to_oil_agriculture",
-    "share_of_total_costs_assigned_to_gas_agriculture",
-    "share_of_total_costs_assigned_to_coal_agriculture",
-    "share_of_total_costs_assigned_to_nuclear_agriculture",
-    "share_of_total_costs_assigned_to_renewables_agriculture"
+    "share_of_total_costs_assigned_to_oil_in_agriculture",
+    "share_of_total_costs_assigned_to_gas_in_agriculture",
+    "share_of_total_costs_assigned_to_coal_in_agriculture",
+    "share_of_total_costs_assigned_to_nuclear_in_agriculture",
+    "share_of_total_costs_assigned_to_renewables_in_agriculture"
   ]
   
   def intro_page_data
