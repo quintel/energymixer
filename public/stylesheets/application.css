@@ -558,6 +558,8 @@ body#scenarios_index .scenario {
     font-weight: bold;
     margin-bottom: 4px;
     margin-top: 8px; }
+    body#scenarios_index .scenario .name a {
+      text-decoration: none; }
   body#scenarios_index .scenario .date {
     color: #777777;
     font-size: 0.9em; }
