@@ -4,7 +4,7 @@
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
   dashboard_items = {
-    output_5: "mixer_co2_reduction_from_1990",
+    output_5: "mixer_reduction_of_co2_emissions_versus_1990",
     output_6: "mixer_renewability",
     output_7: "mixer_bio_footprint",
     output_8: "mixer_net_energy_import",
@@ -61,7 +61,7 @@
       .title Import afhankelijkheid
       .text
         Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteert wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe.
-    .dashboard_popup.mixer_co2_reduction_from_1990
+    .dashboard_popup.mixer_reduction_of_co2_emissions_versus_1990
       = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
       .title Verandering CO2-uitstoot
       .text

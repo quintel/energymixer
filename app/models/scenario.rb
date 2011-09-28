@@ -44,28 +44,28 @@ class Scenario < ActiveRecord::Base
     output_2:  "share_of_total_costs_assigned_to_oil",
     output_3:  "share_of_total_costs_assigned_to_nuclear",
     output_4:  "share_of_total_costs_assigned_to_renewables",
-    output_5:  "mixer_co2_reduction_from_1990",
+    output_5:  "mixer_reduction_of_co2_emissions_versus_1990",
     output_6:  "mixer_renewability",
     output_7:  "mixer_bio_footprint",
     output_8:  "mixer_net_energy_import",
-    output_9:  "share_of_total_costs_assigned_to_renewables_wind",
-    output_10: "share_of_total_costs_assigned_to_renewables_solar",
-    output_11: "share_of_total_costs_assigned_to_renewables_biomass",
+    output_9:  "share_of_total_costs_assigned_to_wind",
+    output_10: "share_of_total_costs_assigned_to_solar",
+    output_11: "share_of_total_costs_assigned_to_biomass",
     output_12: "mixer_total_costs"
   }
   
   PrimaryMixTable = {
-    coal:      "share_of_total_costs_assigned_to_coal",
-    gas:       "share_of_total_costs_assigned_to_gas",
-    oil:       "share_of_total_costs_assigned_to_oil",
-    nuclear:   "share_of_total_costs_assigned_to_nuclear",
-    renewable: "share_of_total_costs_assigned_to_renewables"
+    coal:       "share_of_total_costs_assigned_to_coal",
+    gas:        "share_of_total_costs_assigned_to_gas",
+    oil:        "share_of_total_costs_assigned_to_oil",
+    nuclear:    "share_of_total_costs_assigned_to_nuclear",
+    renewables: "share_of_total_costs_assigned_to_renewables"
   }
   
   SecondaryMixTable = {
-    wind:    "share_of_total_costs_assigned_to_renewables_wind",
-    solar:   "share_of_total_costs_assigned_to_renewables_solar",
-    biomass: "share_of_total_costs_assigned_to_renewables_biomass"
+    wind:    "share_of_total_costs_assigned_to_wind",
+    solar:   "share_of_total_costs_assigned_to_solar",
+    biomass: "share_of_total_costs_assigned_to_biomass"
   }
   
   validates :name,  :presence => true
@@ -156,13 +156,13 @@ class Scenario < ActiveRecord::Base
         :output_2  => c["share_of_total_costs_assigned_to_oil"],
         :output_3  => c["share_of_total_costs_assigned_to_nuclear"],
         :output_4  => c["share_of_total_costs_assigned_to_renewables"],
-        :output_5  => c["mixer_co2_reduction_from_1990"],
+        :output_5  => c["mixer_reduction_of_co2_emissions_versus_1990"],
         :output_6  => c["mixer_renewability"],
         :output_7  => c["mixer_bio_footprint"],
         :output_8  => c["mixer_net_energy_import"],
-        :output_9  => c["share_of_total_costs_assigned_to_renewables_wind"],
-        :output_10 => c["share_of_total_costs_assigned_to_renewables_solar"],
-        :output_11 => c["share_of_total_costs_assigned_to_renewables_biomass"],
+        :output_9  => c["share_of_total_costs_assigned_to_wind"],
+        :output_10 => c["share_of_total_costs_assigned_to_solar"],
+        :output_11 => c["share_of_total_costs_assigned_to_biomass"],
         :output_12 => c["mixer_total_costs"],
         :year      => 2011
       )

@@ -2,7 +2,7 @@ class @Score
   constructor: (app) ->
     @app = app
     @values =
-      mixer_co2_reduction_from_1990:
+      mixer_reduction_of_co2_emissions_versus_1990:
         mark: null
         current : null
         score: 0
@@ -25,7 +25,7 @@ class @Score
     this.setup_interface_callbacks()
 
   co2_score: ->
-    v = @values.mixer_co2_reduction_from_1990
+    v = @values.mixer_reduction_of_co2_emissions_versus_1990
     score = 0
     if (v.mark > v.current)
       score = Math.abs((v.mark - v.current) * 100)

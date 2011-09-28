@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 08:51:42 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 09:34:04 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -59,7 +59,7 @@
       var out;
       out = "";
       switch (key) {
-        case "mixer_co2_reduction_from_1990":
+        case "mixer_reduction_of_co2_emissions_versus_1990":
           if (value > 0) {
             out = "+";
           }

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 14:59:49 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 09:40:33 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -8,7 +8,7 @@
     function Score(app) {
       this.app = app;
       this.values = {
-        mixer_co2_reduction_from_1990: {
+        mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
           current: null,
           score: 0
@@ -38,7 +38,7 @@
     }
     Score.prototype.co2_score = function() {
       var score, v;
-      v = this.values.mixer_co2_reduction_from_1990;
+      v = this.values.mixer_reduction_of_co2_emissions_versus_1990;
       score = 0;
       if (v.mark > v.current) {
         score = Math.abs((v.mark - v.current) * 100);

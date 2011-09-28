@@ -1,10 +1,10 @@
-/* DO NOT MODIFY. This file was compiled Fri, 23 Sep 2011 12:17:59 GMT from
- * /Users/dennisschoenmakers/apps/mixer/app/coffeescripts/popups.coffee
+/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 09:47:06 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/popups.coffee
  */
 
 (function() {
   $(function() {
-    $("ul.chart li.renewable").hover(function() {
+    $("ul.chart li.renewables").hover(function() {
       return $(this).parents(".charts_container").find(".renewables_float").show();
     }, function() {
       return $(".renewables_float").hide();

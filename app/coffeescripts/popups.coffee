@@ -1,5 +1,5 @@
 $ ->
-  $("ul.chart li.renewable").hover(
+  $("ul.chart li.renewables").hover(
     () -> $(this).parents(".charts_container").find(".renewables_float").show()
     ,
     () -> $(".renewables_float").hide()

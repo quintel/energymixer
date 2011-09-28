@@ -52,7 +52,7 @@ class @Chart
   format_dashboard_value: (key, value) ->
     out = ""
     switch key
-      when "mixer_co2_reduction_from_1990"
+      when "mixer_reduction_of_co2_emissions_versus_1990"
         out = "+" if (value > 0) 
         out += sprintf("%.1f", value * 100) + "%"
       when "mixer_bio_footprint"
