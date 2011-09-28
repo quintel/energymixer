@@ -20,6 +20,6 @@ $ ->
     popup = $(this).parent().find(".popup").toggle()
     $(this).closest(".full_chart").block()
   
-  $(".full_chart .dashboard_item a.close_popup").click ->
-    $(this).parent().hide()
+  $(".full_chart .dashboard_item .popup").click -> 
     $(this).closest(".full_chart").unblock()
+    $(this).hide()
