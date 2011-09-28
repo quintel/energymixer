@@ -201,12 +201,14 @@ class @Questions
       e.preventDefault()
       $(this).closest(".information").hide()
       $(this).closest("#questions").unblock()
+      $("nav#down").unblock()
       return false
   
     $("section#questions .question a.show_info").click (e) ->
       $(this).parent().find(".information").toggle()
       e.preventDefault()
-      $(this).closest("#questions").block({ overlayCSS: { backgroundColor: "#fff", opacity: 0.6}, baseZ: 900, message: null})
+      $(this).closest("#questions").block()
+      $("nav#down").block()
   
   setup_question_callbacks: ->
     # when the users clicks on an answer
