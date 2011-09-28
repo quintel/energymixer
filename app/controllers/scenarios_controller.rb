@@ -37,9 +37,9 @@ class ScenariosController < ApplicationController
   
   def index
     @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]    
-    @scenarios = Scenario.user_created.public.by_user(params[:q]).recent_first.page(params[:page])
+    @scenarios = Scenario.not_featured.not_average.public.by_user(params[:q]).recent_first.page(params[:page])
     @featured_scenarios = Scenario.featured
-    @average_scenarios = Scenario.averages
+    @average_scenarios  = Scenario.averages
     
     respond_to do |format|
       format.html
