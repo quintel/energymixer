@@ -69,7 +69,7 @@
           = image_tag('icons/i.png')
         %h3= raw t(dashboard_label_for_output(output))
         .value= format_dashboard_value output, scenario.send(output)
-        .popup
+        .popup.shaded_gradient
           = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
           .title= item[:title]
           .text= item[:text]
