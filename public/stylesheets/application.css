@@ -163,11 +163,12 @@ body {
     width: 435px;
     float: left; }
   body footer {
-    padding: 5px;
+    padding: 15px 5px 5px 5px;
     clear: both;
     text-align: center; }
     body footer a {
-      color: #666666; }
+      color: #666666;
+      text-decoration: none; }
     body footer a:hover {
       text-decoration: underline; }
 
