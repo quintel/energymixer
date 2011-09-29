@@ -252,16 +252,16 @@ body#pages_home section#main {
           padding: 10px; }
     body#pages_home section#main #map #sector_icons #icon_buildings {
       background: url("/images/layout/buildings_icon.png");
-      width: 102px;
-      height: 75px;
+      width: 125px;
+      height: 74px;
       left: 500px;
       top: 20px; }
     body#pages_home section#main #map #sector_icons #icon_agriculture {
       background: url("/images/layout/agriculture_icon.png");
-      width: 121px;
-      height: 71px;
-      left: 300px;
-      top: 202px; }
+      width: 128px;
+      height: 75px;
+      left: 277px;
+      top: 182px; }
     body#pages_home section#main #map #sector_icons #icon_industry {
       background: url("/images/layout/industry_icon.png");
       width: 124px;
@@ -273,7 +273,7 @@ body#pages_home section#main {
       width: 124px;
       height: 60px;
       top: 110px;
-      left: 319px; }
+      left: 348px; }
     body#pages_home section#main #map #sector_links {
       position: absolute;
       left: 0;
