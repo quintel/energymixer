@@ -12,6 +12,8 @@
       = javascript_include_tag 'vendor/google_analytics'
     /[if lt IE 9]
       = javascript_include_tag "vendor/html5", "ie"
+    /[if lte IE 7]
+      = stylesheet_link_tag "ie7"
     = csrf_meta_tag
     = yield :head
     = render "layouts/javascript_unselectable"
