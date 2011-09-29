@@ -64,3 +64,7 @@
     var globals = {
       carriers: #{carriers_to_json}
     }
+    if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
+      alert("Sorry de door jou gebruikte browser wordt niet (goed) ondersteund door de Energy Mixer. Kies een andere browser of upgrade je huidige browser voor een optimaal gebruik.");
+    }
+      
