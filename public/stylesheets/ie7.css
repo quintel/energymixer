@@ -1,0 +1,19 @@
+body#pages_home section#main {
+  position: absolute; }
+  body#pages_home section#main #chart header {
+    position: absolute;
+    left: 840px !important;
+    top: 80px !important; }
+  body#pages_home section#main #chart .legend {
+    left: 600px !important;
+    top: 300px !important; }
+  body#pages_home section#main #chart .chart_canvas_mix {
+    left: -280px !important;
+    top: 70px !important; }
+  body#pages_home section#main #map {
+    position: absolute;
+    top: 100px !important;
+    left: 100px !important; }
+
+a.shell {
+  color: black; }
