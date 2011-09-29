@@ -199,4 +199,8 @@ class Scenario < ActiveRecord::Base
       :year      => 2011
     )
   end
+  
+  def current_scenario?
+    self.featured? && self.title == I18n.t('current_scenario')
+  end
 end

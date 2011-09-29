@@ -21,7 +21,8 @@
     .content
       = full_text(@scenario)
     %p
-      = link_to "Toon antwoorden", answers_scenario_path(@scenario), :class => 'shell', :id => 'show_answers'
+      - unless @scenario.current_scenario?
+        = link_to "Toon antwoorden", answers_scenario_path(@scenario), :class => 'shell', :id => 'show_answers'
 
 %section#right
   %section#text.shaded_gradient
