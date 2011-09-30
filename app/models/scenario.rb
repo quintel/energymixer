@@ -68,26 +68,12 @@ class Scenario < ActiveRecord::Base
     biomass: "share_of_total_costs_assigned_to_biomass"
   }
   
-  validates :name,  :presence => true
+  validates :name, :presence => true
   # validates :email, :presence => true
   # disabled, client_side_validations has some issues with this validation
   # validates :age,   :numericality => true, :allow_blank => true
   
-  # DEBT: one-liner
-  # Outputs.keys.each {|key| validates key, :presence => true }
-  validates :output_0,  :presence => true
-  validates :output_1,  :presence => true
-  validates :output_2,  :presence => true
-  validates :output_3,  :presence => true
-  validates :output_4,  :presence => true
-  validates :output_5,  :presence => true
-  validates :output_6,  :presence => true
-  validates :output_7,  :presence => true
-  validates :output_8,  :presence => true
-  validates :output_9,  :presence => true
-  validates :output_10, :presence => true
-  validates :output_11, :presence => true
-  validates :output_12, :presence => true
+  Outputs.keys.each {|key| validates key, :presence => true }
   validates :accept_terms, :acceptance => true
   
   scope :recent_first, order('created_at DESC')
@@ -140,37 +126,13 @@ class Scenario < ActiveRecord::Base
   
   # store in cache when needed
   def self.current(force = false)
-    # DEBT: 
-    # Rails.cache.delete('current_scenario') if force
-    # @current_scenario = Rails.cache.fetch('current_scenario) do
-    #   client = ApiClient.new.current_situation
-    #   attributes = Options.inject({:year => 2011}) {|hsh, arr| key,val = arr; hsh.merge key => client[val]}
-    #   new(attributes)
-    # end
-    @current_scenario = Rails.cache.read('current_scenario')
-    if force || @current_scenario.nil?
+    Rails.cache.delete('current_scenario') if force
+    @current_scenario = Rails.cache.fetch('current_scenario') do
       c = ApiClient.new.current_situation
-      # DEBT: one-liner
-      # settings = Options.inject({:year => 2011}) {|hsh, arr| key,val = arr; hsh.merge key => c[val]}
-      @current_scenario = new(
-        :output_0  => c["share_of_total_costs_assigned_to_coal"],
-        :output_1  => c["share_of_total_costs_assigned_to_gas"],
-        :output_2  => c["share_of_total_costs_assigned_to_oil"],
-        :output_3  => c["share_of_total_costs_assigned_to_nuclear"],
-        :output_4  => c["share_of_total_costs_assigned_to_renewables"],
-        :output_5  => c["mixer_reduction_of_co2_emissions_versus_1990"],
-        :output_6  => c["mixer_renewability"],
-        :output_7  => c["mixer_bio_footprint"],
-        :output_8  => c["mixer_net_energy_import"],
-        :output_9  => c["share_of_total_costs_assigned_to_wind"],
-        :output_10 => c["share_of_total_costs_assigned_to_solar"],
-        :output_11 => c["share_of_total_costs_assigned_to_biomass"],
-        :output_12 => c["mixer_total_costs"],
-        :year      => 2011
-      )
-      Rails.cache.write('current_scenario', @current_scenario)
+      attrs = {:year => 2011}
+      Scenario::Outputs.each_pair {|output, gquery| attrs[output] = c[gquery]}
+      new(attrs)
     end
-    @current_scenario 
   rescue # some acceptable values, should the api request fail
     @current_scenario = self.acceptable_scenario
   end
@@ -181,7 +143,6 @@ class Scenario < ActiveRecord::Base
   
   # Returns plausible scenario if for any reason the API request fails
   def self.acceptable_scenario
-    # DEBT: shouldn't this belong in Api::Client?
     new(
       :output_0  => 4135606319.8158274,    # coal
       :output_1  => 19712261358.58237,     # gas
