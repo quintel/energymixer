@@ -7,16 +7,18 @@
     = javascript_include_tag :defaults
     = javascript_include_tag 'console', 'popups'
     = javascript_include_tag 'vendor/jquery.colorbox-min', 'vendor/jquery.blockUI'
-    - unless APP_CONFIG["standalone"]
-      = airbrake_javascript_notifier
-      = javascript_include_tag 'vendor/google_analytics'
     /[if lt IE 9]
       = javascript_include_tag "vendor/html5", "ie"
     /[if lte IE 7]
       = stylesheet_link_tag "ie7"
+
+    - unless APP_CONFIG["standalone"]
+      = airbrake_javascript_notifier
+      = render 'layouts/google_analytics' if APP_CONFIG["google_analytics_key"]
+
     = csrf_meta_tag
-    = yield :head
     = render "layouts/javascript_unselectable"
+    = yield :head
   %body{:id => "#{controller.controller_name}_#{controller.action_name}",
         :class => [controller.controller_name, APP_NAME, APP_CONFIG['score'] && 'score_enabled']}
     -if request.env['HTTP_USER_AGENT'].downcase.index('ipad')
@@ -29,3 +31,4 @@
     - else
       = link_to "http://www.energietransitiemodel.nl/", :target => "_blank" do
         De #{t(APP_NAME)} is gebaseerd op het Energietransitiemodel
+    = yield :footer
