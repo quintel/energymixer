@@ -21,11 +21,10 @@ gem 'barista', "~> 1.2.1"
 gem 'therubyracer'
 
 group :development, :test do
-  gem 'rspec-rails',        '~> 2.5.0'
+  gem 'rspec-rails',        '~> 2.6.0'
   gem 'factory_girl_rails', '~> 1.2.0'
   gem 'mocha',              '~> 0.10.0'
   gem 'shoulda',            '~> 2.11.3'
-  gem 'watchr',             '~> 0.7'
 end
 
 group :development do
@@ -34,8 +33,12 @@ group :development do
   gem 'awesome_print', :require => 'ap'
   gem 'capistrano'
   gem 'annotate', :require => false
+  gem 'guard'
 end
 
 group :test do
   gem 'simplecov', '~> 0.5.3', :require => false
+  gem 'guard-rspec'
+  gem 'spork', "> 0.9.0rc"
+  gem 'guard-spork'
 end
