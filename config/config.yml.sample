@@ -16,3 +16,4 @@ production:
   hostname: "mixer.et-model.com"
   api_base_path:      "http://api.et-model.com/api/v2"
   view_scenario_path: "http://etm.et-model.com/scenarios"
+  google_analytics_key: "UA-4089905-6"
