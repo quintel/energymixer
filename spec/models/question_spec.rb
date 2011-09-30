@@ -13,7 +13,5 @@ describe Question do
       question = Factory.create(:question, :ordering => 1)
       question.number.should eql(2)
     end
-  end
-  
+  end  
 end
-

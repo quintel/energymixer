@@ -29,6 +29,4 @@ class DashboardItem < ActiveRecord::Base
     end
     step
   end
-
-
 end
