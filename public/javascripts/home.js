@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 26 Sep 2011 08:38:11 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 30 Sep 2011 07:20:15 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -41,13 +41,30 @@
       }
       return _results;
     };
+    Home.prototype._update_percentages = function() {
+      var carrier, ratio, ratios, value, _results;
+      if (this.current_sector) {
+        ratios = this.shares.sectors[this.current_sector].carriers;
+      } else {
+        ratios = this.shares.total;
+      }
+      _results = [];
+      for (carrier in ratios) {
+        if (!__hasProp.call(ratios, carrier)) continue;
+        ratio = ratios[carrier];
+        value = Math.round(ratio * 100);
+        _results.push($("#chart tr." + carrier + " .value").html("" + value + "%"));
+      }
+      return _results;
+    };
     Home.prototype.reset_map = function() {
       this.current_sector = false;
       return this.update_map();
     };
     Home.prototype.update_map = function() {
       this._update_price();
-      return this._update_chart();
+      this._update_chart();
+      return this._update_percentages();
     };
     Home.prototype.setup_callbacks = function() {
       $("#sector_links .sector a, #sector_icons .sector").hover(__bind(function(e) {
