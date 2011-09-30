@@ -23,6 +23,15 @@ class Home
       new_height = @max_height * ratio
       carrier_li = $("ul.chart").find(".#{carrier}")
       carrier_li.stop(true).animate({"height": new_height}, 500)
+  
+  _update_percentages: ->
+    if @current_sector
+      ratios = @shares.sectors[@current_sector].carriers
+    else
+      ratios = @shares.total
+    for own carrier, ratio of ratios
+      value = Math.round(ratio * 100)
+      $("#chart tr.#{carrier} .value").html("#{value}%")
 
   reset_map: ->
     @current_sector = false
@@ -31,6 +40,7 @@ class Home
   update_map: ->
     this._update_price()
     this._update_chart()
+    this._update_percentages()
 
   setup_callbacks: ->
     $("#sector_links .sector a, #sector_icons .sector").hover(
