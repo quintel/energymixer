@@ -7,6 +7,7 @@
 #  enabled    :boolean(1)
 #  created_at :datetime
 #  updated_at :datetime
+#  end_year   :integer(4)
 #
 
 class QuestionSet < ActiveRecord::Base

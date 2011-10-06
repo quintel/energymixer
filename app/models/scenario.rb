@@ -27,6 +27,7 @@
 #  output_12       :float
 #  score           :float
 #  average         :boolean(1)      default(FALSE)
+#  year            :integer(4)
 #
 
 class Scenario < ActiveRecord::Base
