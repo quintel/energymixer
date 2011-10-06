@@ -31,7 +31,7 @@
       #{scenario.name} - 
     - else
       Jouw
-    Energy Mix van #{@end_year}
+    Energy Mix van #{scenario.current_scenario? ? 2011 : @end_year}
   %section.chart
     %header.subheader_blue.shaded_gradient
       Kosten &euro;
