@@ -28,6 +28,8 @@
 #  score           :float
 #  average         :boolean(1)      default(FALSE)
 #  year            :integer(4)
+#  longitude       :float
+#  latitude        :float
 #
 
 class Scenario < ActiveRecord::Base
