@@ -5,3 +5,9 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 EnergyMixer::Application.load_tasks
+
+desc "Runs annotate on all models, incl. app/pkg"
+task :annotate do
+  system "annotate -d"
+  system "annotate -p before -e tests, fixtures"
+end
