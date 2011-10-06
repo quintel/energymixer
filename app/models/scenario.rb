@@ -86,7 +86,7 @@ class Scenario < ActiveRecord::Base
   scope :by_user, lambda {|q| where('name LIKE ?', "%#{q}%") unless q.blank? }
   scope :excluding, lambda{|s| where('id != ?', s)}
   
-  attr_accessor :year, :accept_terms
+  attr_accessor :accept_terms
   before_save :sanitize_age
   
   paginates_per 10

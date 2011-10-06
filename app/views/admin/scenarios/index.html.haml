@@ -10,6 +10,7 @@
       %th Age
       %th Featured
       %th Average
+      %th Year
       %th
       %th Carriers
       %th Dashboard Values
@@ -23,6 +24,7 @@
         %td= scenario.age
         %td= scenario.featured
         %td= scenario.average
+        %td= scenario.year
         %td
           = link_to '', admin_scenario_path(scenario), :class => 'fugue fugue-information'
           = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
