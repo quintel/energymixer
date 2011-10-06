@@ -16,6 +16,7 @@ class ScenariosController < ApplicationController
   
   def create
     @scenario = Scenario.new(params[:scenario])
+    @scenario.year ||= @question_set.try(:end_year)
     if @scenario.save
       begin
         MixerMailer.thankyou(@scenario).deliver unless APP_CONFIG['standalone'] || @scenario.email.blank?
