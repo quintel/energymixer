@@ -22,15 +22,6 @@ set :db_pass, "quintel"
 
 set :local_db_name, 'energymixer_dev'
 
-task :shell do
-  set :domain, "79.125.109.178"
-  role :web, domain # Your HTTP server, Apache/etc
-  role :app, domain # This may be the same as your `Web` server
-  role :db,  domain, :primary => true # This is where Rails migrations will run
-  set :branch, "shell"
-  set :db_name, "energymixer"
-end
-
 task :gasmixer do
   set :domain, "46.137.111.149"
   role :web, domain # Your HTTP server, Apache/etc
@@ -40,12 +31,12 @@ task :gasmixer do
   set :db_name, "gasmixer"
 end
 
-task :mixer2050 do
-  set :domain, "ec2-46-137-41-76.eu-west-1.compute.amazonaws.com"
+task :mixer do
+  set :domain, "46.137.156.254"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
-  set :branch, "mixer2050"
+  set :branch, "mixer"
   set :db_name, "energymixer_2050"
 end
 
