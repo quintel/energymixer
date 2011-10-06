@@ -1,4 +1,6 @@
 nl:
+  layout:
+    footer: 'De %{app_name} is gebaseerd op het Energietransitiemodel'
   mixer2050: Energy Mixer
   energymixer: Energy Mixer
   gasmixer: NRG-Discovery

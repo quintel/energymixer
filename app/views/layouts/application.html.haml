@@ -27,8 +27,8 @@
       = yield
   %footer
     - if APP_CONFIG["standalone"]
-      De #{t(APP_NAME)} is gebaseerd op het Energietransitiemodel
+      = t('layout.footer', :app_name => t(APP_NAME))
     - else
       = link_to "http://www.energietransitiemodel.nl/", :target => "_blank" do
-        De #{t(APP_NAME)} is gebaseerd op het Energietransitiemodel
+        = t('layout.footer', :app_name => t(APP_NAME))
     = yield :footer
