@@ -23,5 +23,6 @@
       popups: #{popup_json},
       etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}",
       current_situation: #{Scenario.current.combined_carriers.to_json},
-      score_enabled: #{APP_CONFIG['score'].to_json}
+      score_enabled: #{APP_CONFIG['score'].to_json},
+      geolocation_enabled: #{APP_CONFIG['geolocation_enabled'].to_json}
     }

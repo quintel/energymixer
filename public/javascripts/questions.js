@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 14:58:25 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 06 Oct 2011 13:36:49 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -6,6 +6,7 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty;
   this.Questions = (function() {
     function Questions(app) {
+      this.store_location = __bind(this.store_location, this);
       this.show_right_question = __bind(this.show_right_question, this);
       this.update_question_links = __bind(this.update_question_links, this);
       this.disable_all_question_links = __bind(this.disable_all_question_links, this);
@@ -171,6 +172,12 @@
       event_label = "" + this.current_question + " : " + question_text;
       return this.track_event('opens_question', question_text, this.current_question);
     };
+    Questions.prototype.store_location = function() {
+      return navigator.geolocation.getCurrentPosition(function(pos) {
+        $("#scenario_longitude").val(pos.coords.longitude);
+        return $("#scenario_latitude").val(pos.coords.latitude);
+      });
+    };
     Questions.prototype.setup_navigation_callbacks = function() {
       $("#previous_question, #next_question").click(function(e) {
         return e.preventDefault();
@@ -244,7 +251,10 @@
         return this.check_conflicts();
       }, this));
       return $("form").submit(__bind(function() {
-        return $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
+        $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
+        if (globals.geolocation_enabled) {
+          return this.store_geolocation();
+        }
       }, this));
     };
     Questions.prototype.setup_callbacks = function() {

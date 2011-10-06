@@ -147,6 +147,11 @@ class @Questions
     event_label = "#{@current_question} : #{question_text}"
     this.track_event('opens_question', question_text, @current_question)
   
+  store_location: =>
+    navigator.geolocation.getCurrentPosition (pos) ->
+      $("#scenario_longitude").val(pos.coords.longitude)
+      $("#scenario_latitude").val(pos.coords.latitude)
+  
   # callbacks
   #
   setup_navigation_callbacks: ->
@@ -225,6 +230,7 @@ class @Questions
     $("form").submit =>
       # update the scenario id hidden field
       $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
+      this.store_geolocation() if globals.geolocation_enabled
     
   setup_callbacks: ->
     this.setup_navigation_callbacks()

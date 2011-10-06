@@ -6,6 +6,7 @@ development: &DEV
   view_scenario_path: "http://etmodel.dev/scenarios"
   max_total_cost: 115000000000
   standalone: false
+  geolocation_enabled: false
   api_session_settings:
     :country: 'nl'
   
