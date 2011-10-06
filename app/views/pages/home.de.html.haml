@@ -1,0 +1,70 @@
+%section#intro_text.shaded_gradient
+  %h1{:class => APP_NAME}
+    =t(APP_NAME).upcase
+  %p
+    XXXDe #{t(APP_NAME)} is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op je idee over de energiemix van de toekomst, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, duurzaamheid en beschikbaarheid.
+
+%section#actions
+  = link_to "Bekijk de Energy Mixes van anderen", scenarios_path, :class => 'shell'
+  = link_to "Maak je eigen Energy Mix", new_scenario_path, :class => 'shell'
+  
+%section#main.shaded_gradient
+  #intro
+    %h3 Dit is het energieverbruik van Nederland in 2011
+    %p
+      In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in #{END_YEAR} uit zal zien? Maak met de #{t(APP_NAME)} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken.
+  #chart
+    %header.header_blue
+      %strong Energy Mix 2011
+      %br
+      Kosten &euro; 
+      %span.amount= number_with_precision(Scenario.current.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
+      Miljard    
+    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
+  #map
+    #sector_icons
+      .sector#icon_buildings{:rel => 'buildings'}
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Gebouwen 28%
+          .text.hidden
+            Ruim 59% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit wel 40%. Hebben we die energie ook nog nodig in #{END_YEAR}?
+      .sector#icon_industry{:rel => 'industry'}
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Industrie 47%
+          .text.hidden
+            De industrie is de grootste gebruiker van aardolie, -gas en steenkool. De industrie levert de basis voor onze economie, maar consumeert tegelijkertijd ook veel schaarse grondstoffen. Wat gebeurt er met het energiegebruik van onze industrie in #{END_YEAR}?
+      .sector#icon_transport{:rel => 'transport'}
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Vervoer 18%
+          .text.hidden
+            Vervoer per auto, vrachtwagen, trein of binnenvaartschip is energie-intensief. In deze mixer beperken we ons tot het binnenlands vervoer. Als we het energiegebruik van de internationale lucht- en scheepvaart erbij zouden optellen dan zou dit percentage veel hoger zijn. Kunnen we onszelf en onze goederen niet slimmer vervoeren in #{END_YEAR}?
+      .sector#icon_agriculture{:rel => 'agriculture'}
+        .popup.hidden
+          %a.description{:href=>"#"}
+            Landbouw 7%
+          .text.hidden
+            Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik voor veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw heeft veel energie nodig. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in #{END_YEAR}?
+    #sector_links
+      %h3 Sectoren
+      .sector
+        %a.shell{:href => '#', :rel => 'transport'} Vervoer
+      .sector
+        %a.shell{:href => '#', :rel => 'agriculture'} Landbouw
+      .sector
+        %a.shell{:href => '#', :rel => 'industry'} Industrie
+      .sector
+        %a.shell{:href => '#', :rel => 'buildings'} Gebouwen
+  
+- content_for :head do
+  = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
+  :javascript
+    var globals = {
+      carriers: #{carriers_to_json}
+    }
+    if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
+      alert("Sorry de door jou gebruikte browser wordt niet (goed) ondersteund door de Energy Mixer. Kies een andere browser of upgrade je huidige browser voor een optimaal gebruik.");
+    }
+      

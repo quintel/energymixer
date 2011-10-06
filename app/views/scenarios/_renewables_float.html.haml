@@ -1,7 +1,7 @@
 - max_height = 160
 - cumulative_ratio = scenario.renewable_carrier_ratios.values.sum
 .renewables_float
-  %h3 Hernieuwbaar
+  %h3= t 'renewable'
   %ul.chart
     - scenario.renewable_carrier_ratios.each_pair do |carrier, value|
       - height = value / cumulative_ratio * max_height
