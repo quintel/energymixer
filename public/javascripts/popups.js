@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 15:19:37 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/popups.coffee
+/* DO NOT MODIFY. This file was compiled Fri, 07 Oct 2011 09:25:49 GMT from
+ * /Users/robbertdol/Sites/energymixer/app/coffeescripts/popups.coffee
  */
 
 (function() {
@@ -19,7 +19,9 @@
     $(".full_chart .dashboard_item .info_icon").click(function() {
       var popup;
       popup = $(this).parent().find(".popup").toggle();
-      return $(this).closest(".full_chart").block();
+      if (is_not_ie7()) {
+        return $(this).closest(".full_chart").block();
+      };
     });
     return $(".full_chart .dashboard_item .popup").click(function() {
       $(this).closest(".full_chart").unblock();

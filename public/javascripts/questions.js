@@ -237,8 +237,10 @@
       return $("section#questions .question a.show_info").click(function(e) {
         $(this).parent().find(".information").toggle();
         e.preventDefault();
-        $(this).closest("#questions").block();
-        return $("nav#down").block();
+        if (is_not_ie7()){
+          $(this).closest("#questions").block();
+          return $("nav#down").block();
+        }
       });
     };
     Questions.prototype.setup_question_callbacks = function() {

@@ -13,3 +13,7 @@ function unique(arr) {
   }
   return result;
 }
+
+function is_not_ie7(){
+  !(navigator.appVersion.indexOf("MSIE 7.") != -1);
+}
