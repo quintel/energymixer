@@ -1,15 +1,15 @@
 %section#breadcrumbs
   %nav
-    = link_to "Home", root_path
+    = link_to t('homepage'), root_path
     >
-    Bekijk de Mixes van anderen
+    = t 'links.scenarios_index'
 
 %section#left
   %section#search_scenarios_box.shaded_gradient
-    = link_to "Maak je eigen Energy Mix", new_scenario_path, :class => 'shell'
-    %h3 Bekijk de Energy Mixes van anderen
+    = link_to t('links.scenarios_new'), new_scenario_path, :class => 'shell'
+    %h3= t 'links.scenarios_index'
     = form_tag scenarios_path, :method => :get, :remote => true do
-      = text_field_tag :q, params[:q], :placeholder => 'Zoeken'
+      = text_field_tag :q, params[:q], :placeholder => t('search')
   .clear
 
   %section.scenarios
@@ -20,10 +20,10 @@
 
 %section#right
   %section#select.shaded_gradient
-    %h3 Vergelijk verschillende mixen met elkaar
+    %h3= t 'scenario.compare_with_others'
     = form_tag compare_scenarios_path do
       %section#selected_scenarios
-      = link_to "Vergelijk", '#', :class => 'submit_form disabled'
+      = link_to t('links.scenarios_compare'), '#', :class => 'submit_form disabled'
   
   :ruby
     any_featured = @featured_scenarios.any?
@@ -33,9 +33,9 @@
     %section.scenarios.shaded_gradient
       %nav.tabs
         - if any_featured
-          = link_to 'Uitgelicht', '#featured_scenarios', :class => ['scenario_tab_picker', active_tab == :featured && 'active']
+          = link_to t('scenario.featured'), '#featured_scenarios', :class => ['scenario_tab_picker', active_tab == :featured && 'active']
         - if any_average
-          = link_to 'Gemiddelde', '#average_scenarios', :class => ['scenario_tab_picker', active_tab == :averages && 'active']
+          = link_to t('scenario.average'), '#average_scenarios', :class => ['scenario_tab_picker', active_tab == :averages && 'active']
         .clear
       .tab{:class => active_tab == :featured || 'hidden'}
         #featured_scenarios.selectable
@@ -43,7 +43,6 @@
       .tab{:class => active_tab == :averages || 'hidden'}
         #average_scenarios.selectable
           = render :partial => 'select_scenario_box', :collection => @average_scenarios, :as => :scenario
-
 
 - content_for :head do
   = javascript_include_tag 'vendor/jquery.busy.min'

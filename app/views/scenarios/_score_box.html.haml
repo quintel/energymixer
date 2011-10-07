@@ -1,23 +1,17 @@
 :ruby
-  score_items = {
-    cost: "Kosten", 
-    co2: "Co2", 
-    renewables: "Hernieuwbaar", 
-    areafp: "Bio-voetafdruk", 
-    import: "Energie import"
-  }
+  score_items = ['cost', 'co2', 'renewables', 'areafp', 'import']
   score = scenario.score.to_i rescue 0
 #score
-  Jouw score:
+  = t 'score.your_score'
+  \:
   %strong.value= score
   - if scenario.new_record?
     #show_info
-.score_details{:style=>"display:none;"}
+.score_details{:style => "display:none;"}
   %table
-    - score_items.each do |key, label|
+    - score_items.each do |key|
       %tr{:class => cycle("odd","even")}
-        %td= label
+        %td= t "score.#{key}"
         %td{:class => key} 0.00
-  %p.explanation
-    * je score is altijd nul als je vraag 1 en 2 nog niet hebt ingevuld
+  %p.explanation= t 'score.explanation'
 .clear

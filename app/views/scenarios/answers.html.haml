@@ -1,5 +1,5 @@
 .scenario_answers
-  %h2 Antwoorden van deze mix
+  %h2= t 'scenario.answers'
 
   %dl
     - @scenario.answers.each do |a|
@@ -10,6 +10,6 @@
         - if a.answer
           = a.answer.answer.html_safe
         - else
-          **Geen antwoord gegeven**
+          = t 'scenario.no_answer'          
         - if APP_CONFIG["score"] && a.score
-          (Score: #{a.score})
+          = t 'scenario.score', :score => a.score

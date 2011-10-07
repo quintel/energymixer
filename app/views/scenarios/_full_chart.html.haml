@@ -5,42 +5,31 @@
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
   dashboard_items = {
     output_5: {
-      gquery: "mixer_reduction_of_co2_emissions_versus_1990",
-      title: "Verandering CO2-uitstoot",
-      text: "Hoe verandert de CO2-uitstoot als gevolg van je keuzes? Hier staat de verandering ten opzichte van de uitstoot in 1990."
+      gquery: "mixer_reduction_of_co2_emissions_versus_1990", title: t('dashboard.co2_emissions.title'), text: t('dashboard.co2_emissions.text')
     },
     output_6: {
-      gquery: "mixer_renewability",
-      title: "Hernieuwbare energie",
-      text: "Welk deel van het toekomstige energiegebruik is hernieuwbaar? We gebruiken hier de Europese definitie van hernieuwbare energie. Dat betekent dat we kijken welk percentage van het eindgebruik hernieuwbaar is."
+      gquery: "mixer_renewability", title: t('dashboard.renewability.title'), text: t('dashboard.renewability.text')
     },
     output_7: {
-      gquery: "mixer_bio_footprint",
-      title: "Bio-voetafdruk",
-      text: "Hoeveel landbouwoppervlak is er nodig als gevolg van je keuzes? Biomassa moet vaak geteeld worden. Hier zie je hoeveel keer het Nederlandse landbouwareaal nodig is om dat te doen."
+      gquery: "mixer_bio_footprint", title: t('dashboard.footprint.title'), text: t('dashboard.footprint.text')
     },
     output_8: {
-      gquery: "mixer_net_energy_import",
-      title: "Import afhankelijkheid",
-      text: "Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteert wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe."
+      gquery: "mixer_net_energy_import", title: t('dashboard.energy_import.title'), text: t('dashboard.energy_import.text')
     }
   }
 .full_chart.shaded_gradient
   %header.header_blue
+    - scenario_year = scenario.current_scenario? ? 2011 : scenario.year || @end_year
     - if scenario.name
-      #{scenario.name} - 
+      = t 'chart.header.scenario_name', :name => scenario.name, :year => scenario_year
     - else
-      Jouw
-    Energy Mix van #{scenario.current_scenario? ? 2011 : scenario.year || @end_year}
+      = t 'chart.header.your_scenario', :year => scenario_year
   %section.chart
     %header.subheader_blue.shaded_gradient
-      Kosten &euro;
-      %span.total_amount 
-        = number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
-      Miljard    
+      = t 'chart.header.total_costs', :amount => number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
     .charts_container
       .legend
-        %h4 Legenda
+        %h4= t 'chart.legend'
         %table
           - scenario.carrier_ratios.each_pair do |carrier, value|
             -# TODO: CLEAN UP: NOT SEPERATE INTERPOLATION HERE, BUT SCENARIO::PRIMARYMIXTABLE, OR SOMETHING... DS Tue Sep 27 14:30:43 CEST 2011

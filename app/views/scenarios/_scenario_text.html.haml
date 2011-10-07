@@ -3,55 +3,55 @@
     out = []
     # Total amount
     out << if s.total_amount < 40_000_000_000
-      "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
+      t 'scenario_steps.total_amount.step_0', :end_year => @end_year
     elsif s.total_amount < 60_000_000_000
-      "De mix wordt langzaam duurder, maar als onze economie blijft groeien kunnen we dat waarschijnlijk wel betalen."
+      t 'scenario_steps.total_amount.step_1', :end_year => @end_year
     elsif s.total_amount < 80_000_000_000
-      "De mix wordt behoorlijk veel duurder. Kunnen we dat wel blijven betalen?"
+      t 'scenario_steps.total_amount.step_2', :end_year => @end_year
     else
-      "De mix wordt veel duurder. Groeien we onszelf uit de problemen of kunnen we dat niet meer betalen?"
+      t 'scenario_steps.total_amount.step_3', :end_year => @end_year
     end
     
     # CO2
     out << if s.output_5 < -0.25
-      "De CO2-uitstoot van deze mix is erg laag. We zijn goed op weg om de internationale klimaatdoelen te halen."
+      t 'scenario_steps.co2_emissions.step_0', :end_year => @end_year
     elsif s.output_5 < -0.01
-      "De CO2-uitstoot neemt af en daardoor leveren we als Nederland een besparing aan de CO2-reductie wereldwijd. Is het wel genoeg?"
+      t 'scenario_steps.co2_emissions.step_1', :end_year => @end_year
     elsif s.output_5 < 0.1
-      "De CO2-uitstoot groeit zoals we dat ook in de afgelopen jaren gezien hebben. Hoe zit het met de opwarming van de aarde?"
+      t 'scenario_steps.co2_emissions.step_2', :end_year => @end_year
     else
-      "De CO2-uitstoot groeit sterk. De economie regeert. En hoe zat het ook alweer met ons klimaat?"
+      t 'scenario_steps.co2_emissions.step_3', :end_year => @end_year
     end
     
     # Share of renewable energy
     out << if s.output_6 < 0.05
-      "We blijven verslaafd aan fossiel en het lukt niet om hernieuwbare energie in te zetten. Misschien is het ook wel niet nodig."
+      t 'scenario_steps.renewables.step_0', :end_year => @end_year
     elsif s.output_6 < 0.1
-      "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en hernieuwbare energie, maar hard gaat het niet."
+      t 'scenario_steps.renewables.step_1', :end_year => @end_year
     elsif s.output_6 < 0.14
-      "In #{@end_year} halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
+      t 'scenario_steps.renewables.step_2', :end_year => @end_year
     elsif s.output_6 < 0.50
-      "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in #{@end_year} uit hernieuwbare bronnen."
+      t 'scenario_steps.renewables.step_3', :end_year => @end_year
     else
-      "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen!"
+      t 'scenario_steps.renewables.step_4', :end_year => @end_year
     end
     
     # Area footprint
     out << if s.output_7 < 0.71
-      "Ons biomassa gebruik is min of meer gelijk aan dat in 2011. Best veel eigenlijk."
+      t 'scenario_steps.footprint.step_0', :end_year => @end_year
     elsif s.output_7 <= 0.91
-      "We gaan steeds meer natuur en landbouwgronden inzetten voor de produktie van biomassa."
+      t 'scenario_steps.footprint.step_1', :end_year => @end_year
     else
-      "Het gebruik van biomassa groeit sterk. Hoe gaan we de landbouwgronden en natuur vinden om al deze biomassa op te telen?"
+      t 'scenario_steps.footprint.step_2', :end_year => @end_year
     end
     
     # Energy dependence
     out << if s.output_8 < 0.70
-      "Hoewel onze eigen aardgasreserves in #{@end_year} opraken lukt het toch goed om de afhankelijkheid van buitenlandse energiebronnen relatief te beperken."
+      t 'scenario_steps.energy_import.step_0', :end_year => @end_year
     elsif s.output_8 < 0.9
-      "Onze aardgasreserves raken op en we gaan steeds meer importeren. In #{@end_year} importeren we een groot deel van onze energie uit het buitenland."
+      t 'scenario_steps.energy_import.step_1', :end_year => @end_year
     else
-      "Terwijl onze eigen aardgasreserves krimpen gaan we vrolijk door met produceren en consumeren. We importeren meer dan 90% van onze energie uit het buitenland."
+      t 'scenario_steps.energy_import.step_2', :end_year => @end_year
     end
     
     out.map{|x| "<span>#{x} </span>"}.join.html_safe

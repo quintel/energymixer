@@ -1,34 +1,30 @@
 .question{:id => "question_#{Question.count + 1}"}
   #user_details
-    %h2 Jouw Energy Mix van #{@end_year}
-    %p
-      Bedankt voor het invullen van de Energy Mix. Vul hieronder je gegevens in om de mix op te slaan en deze te vergelijken met anderen. Je ontvangt ook een email waarin je later deze mix weer terug kunt vinden.
-        
-    %h2 Vul je gegevens in:
+    %h2= t 'form.title', :end_year => @end_year
+    %p= t 'form.text'
+    %h2= t 'form.fill_your_data'
     = scenario.error_messages
     
     .item
-      = scenario.label :name, "Naam"
+      = scenario.label :name, t('form.name')
       = scenario.text_field :name
     .item
-      = scenario.label :email, "E-mail"
+      = scenario.label :email, t('form.email')
       = scenario.text_field :email
     .item
-      = scenario.label :age, "Leeftijd"
+      = scenario.label :age, t('form.age')
       = scenario.text_field :age
     .item
-      = scenario.label :title, "Naam voor deze mix"
+      = scenario.label :title, t('form.scenario_title')
       = scenario.text_field :title
     .item
       = scenario.check_box :public
-      = scenario.label :public, "Mijn Energy Mix is ook voor anderen toegankelijk", :class => 'check_box'
+      = scenario.label :public, t('form.public'), :class => 'check_box'
     .item
       = scenario.check_box :accept_terms      
-      %label.check_box{:for => "scenario_accept_terms"}
-        Ik ga akkoord met de
-        = link_to 'algemene voorwaarden', '/disclaimer.html', :target => "_blank", :class => "normal"
+      %label.check_box{:for => "scenario_accept_terms"}= raw t('form.acceptance')
     .item      
-      = scenario.submit :value => "Bewaar mijn mix"
+      = scenario.submit :value => t('form.submit')
       -# .item
       -#   = link_to "Bewaar mijn mix", "#", :class => "shell", :id => "submit", :onmouseclick => "this.form.submit();"    
       = scenario.hidden_field :output_0, :'data-label' => gquery_for_output(:output_0)
