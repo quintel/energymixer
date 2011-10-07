@@ -3,10 +3,10 @@
     = image_tag 'graph_icon.png'
   .actions
     .show
-      = link_to 'Bekijk', scenario_path(scenario), :class => "shell"
+      = link_to t('links.scenarios_show'), scenario_path(scenario), :class => "shell"
     .compare
       = check_box_tag 'ids[]', scenario.id
-      Vergelijk
+      = t 'links.scenarios_compare'
   .remove_from_list
     = link_to image_tag('icons/close.png'), '#'
   .name
@@ -14,4 +14,4 @@
       = scenario.name
       = " - #{truncate scenario.title, :length => 60}" if scenario.title && !scenario.current_scenario?
   .date
-    #{time_ago_in_words(scenario.created_at)} geleden aangemaakt
+    #{time_ago_in_words(scenario.created_at)} #{t 'time_ago'}

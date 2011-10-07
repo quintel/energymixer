@@ -1,10 +1,10 @@
 %section#breadcrumbs
   %nav
-    = link_to "Home", root_path
+    = link_to t('homepage'), root_path
     >
-    = link_to "Bekijk de Mixes van anderen", scenarios_path
+    = link_to =t('links.scenarios_index'), scenarios_path
     >
-    Vergelijk
+    = t 'scenario.compare'
 
 %section#left
   = render :partial => 'search_scenario_box'
@@ -13,6 +13,6 @@
 
 %section#right
   %section#select.shaded_gradient
-    = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
+    = link_to t('scenario.compare_with_others'), scenarios_path, :class => 'shell'
   - if @scenarios.last
     = render 'full_chart', :scenario => @scenarios.last

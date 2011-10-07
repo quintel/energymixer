@@ -1,7 +1,7 @@
 - max_height = 360
 .charts_container
   .legend
-    %h4 Legenda
+    %h4= t 'chart.legend'
     %table
       - scenario.carrier_ratios.each_pair do |sector, value|
         %tr{:class => [sector, "costs_share_of_#{sector}"]}

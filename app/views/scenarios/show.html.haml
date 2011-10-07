@@ -2,9 +2,9 @@
 
 %section#breadcrumbs
   %nav
-    = link_to "Home", root_path
+    = link_to t('homepage'), root_path
     >
-    = link_to "Bekijk de Mixes van anderen", scenarios_path
+    = link_to t('links.scenarios_index'), scenarios_path
     >
     = @scenario.name
 
@@ -14,25 +14,26 @@
   %section#description.shaded_gradient
     - unless @scenario.title.blank?
       %h1= @scenario.title
-    %h2
-      De mix van #{@scenario.name}
+    %h2      
       - if @scenario.age
-        (#{@scenario.age} jaar)
+        = t 'scenario.by_age', :name => @scenario.name, :age => @scenario.age
+      - else
+        = t 'scenario.by', :name => @scenario.name
+        
     .content
       = full_text(@scenario)
     %p
       - unless @scenario.current_scenario?
-        = link_to "Toon antwoorden", answers_scenario_path(@scenario), :class => 'shell', :id => 'show_answers'
+        = link_to t('scenario.show_answers'), answers_scenario_path(@scenario), :class => 'shell', :id => 'show_answers'
 
 %section#right
   %section#text.shaded_gradient
-    = link_to 'Vergelijk verschillende mixen met elkaar', scenarios_path, :class => 'shell'
+    = link_to t('scenario.compare_with_others'), scenarios_path, :class => 'shell'
   %section#charts
     %section#user_chart
       = render 'full_chart', :scenario => @scenario
     %section#current_chart.shaded_gradient
       = render 'shaded_chart', :scenario => Scenario.current
-
 
 - content_for :head do
   -#TODO: move this javascript to a js-file

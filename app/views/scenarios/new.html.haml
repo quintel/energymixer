@@ -1,8 +1,8 @@
 %section#breadcrumbs
   %nav
-    = link_to "Home", root_path
+    = link_to t('homepage'), root_path
     >
-    Maak je eigen Energy Mix
+    = t 'links.scenarios_new'
 
 %section#left
   %section#questions.shaded_gradient
@@ -23,12 +23,8 @@
   = render 'js_init'            
 
 %section#conflicts.shaded_gradient
-  %span.warning Let op!
-  De antwoorden op de vragen  
-  %span.conflicting_questions
-  lijken tegenstrijdig.
-  %br
-  Weet je zeker dat deze antwoorden de situatie in #{@end_year} goed beschrijven?
+  %span.warning= t 'warning'
+  = raw t 'scenario.conflicts', :end_year => @end_year
 
 %div#tooltip
   %h3 Title

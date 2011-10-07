@@ -7,8 +7,7 @@
 .shaded_chart
   %header.header_grey Energy Mix 2011
   %header.sub.subheader_grey.shaded_gradient
-    = number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
-    Mld
+    = t 'chart.shaded.amount', :amount => number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
 
   .charts_container.static
     .chart_canvas_mix{:style => "width: #{width}px"}
