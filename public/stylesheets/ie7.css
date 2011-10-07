@@ -1,19 +1,36 @@
-body#pages_home section#main {
-  position: absolute; }
-  body#pages_home section#main #chart header {
-    position: absolute;
-    left: 840px !important;
-    top: 80px !important; }
-  body#pages_home section#main #chart .legend {
-    left: 600px !important;
-    top: 300px !important; }
-  body#pages_home section#main #chart .chart_canvas_mix {
-    left: -280px !important;
-    top: 70px !important; }
-  body#pages_home section#main #map {
-    position: absolute;
-    top: 100px !important;
-    left: 100px !important; }
+#content section#main #chart {
+  float: right;
+  width: 123px; }
+#content section#main #map {
+  float: left;
+  width: 672px; }
+#content section#user_chart div.legend, #content section#left div.legend, #content section#right div.legend {
+  left: 10px; }
+#content div#user_details {
+  overflow: hidden; }
+  #content div#user_details h2 {
+    margin-bottom: 5px !important;
+    padding: 5px 10px !important; }
+  #content div#user_details p {
+    padding: 5px 10px !important;
+    margin: 0px !important; }
+  #content div#user_details div.item {
+    float: left;
+    clear: both;
+    width: 100%; }
+    #content div#user_details div.item label {
+      float: left;
+      width: 80px; }
+    #content div#user_details div.item input[type="text"] {
+      float: left;
+      margin: 0px;
+      padding: 2px;
+      font-size: 80%;
+      width: 230px; }
+    #content div#user_details div.item input[type="submit"] {
+      float: right;
+      padding: 2px;
+      width: 120px; }
 
 a.shell {
   color: black; }

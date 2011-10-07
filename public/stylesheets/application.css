@@ -144,33 +144,33 @@ div#tooltip {
   line-height: 28px;
   text-align: center; }
 
-body {
+body #content {
   width: 890px;
   margin: 10px auto; }
-  body header nav#top {
-    padding: 1em; }
-  body section#breadcrumbs nav {
-    font-size: 0.9em;
-    color: #999999;
-    padding: 10px; }
-    body section#breadcrumbs nav a:hover {
-      text-decoration: underline; }
-  body section#left {
-    width: 435px;
-    float: left;
-    margin-right: 10px; }
-  body section#right {
-    width: 435px;
-    float: left; }
-  body footer {
-    padding: 15px 5px 5px 5px;
-    clear: both;
-    text-align: center; }
-    body footer a {
-      color: #666666;
-      text-decoration: none; }
-    body footer a:hover {
-      text-decoration: underline; }
+body header nav#top {
+  padding: 1em; }
+body section#breadcrumbs nav {
+  font-size: 0.9em;
+  color: #999999;
+  padding: 10px; }
+  body section#breadcrumbs nav a:hover {
+    text-decoration: underline; }
+body section#left {
+  width: 435px;
+  float: left;
+  margin-right: 10px; }
+body section#right {
+  width: 435px;
+  float: left; }
+body footer {
+  padding: 15px 5px 5px 5px;
+  clear: both;
+  text-align: center; }
+  body footer a {
+    color: #666666;
+    text-decoration: none; }
+  body footer a:hover {
+    text-decoration: underline; }
 
 #admin_menu {
   position: fixed;
@@ -222,6 +222,7 @@ body#pages_home section#main {
     top: 260px;
     opacity: 1; }
   body#pages_home section#main #map {
+    float: left;
     margin-top: 20px;
     position: relative;
     width: 672px;
