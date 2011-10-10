@@ -22,21 +22,19 @@ class @Chart
   # the following methods should not be called directly
   # You might only have to update the format_dashboard_value method
   update_dashboard_item: (key, value) ->
-    dashboard_selector = ".dashboard_item##{key}"
-    formatted_value = this.format_dashboard_value(key, value)
-    $("#{dashboard_selector} .value").html(formatted_value)
+    formatted_value = @format_dashboard_value key, value
+    dashboard_item = $ ".dashboard_item##{key}"
+    dashboard_item.find(".value").html formatted_value
     
-    # Decide which image to show as background.
-    # Find the right step first.
-    step = this.find_step_for_dashboard_item(key, value)
-    
+    # Decide which image to show as background.    
     # since we're doing everything through css classes, let's remove
     # the existing background-related classes
-    classes_to_remove = '' # FIXME: ugly
-    for i in [0..10]
-      classes_to_remove += "#{key}_step_#{i} "
-    class_to_add = "#{key}_step_#{step}"
-    $("#{dashboard_selector} .gauge_icon").removeClass(classes_to_remove).addClass(class_to_add)
+    gauge_icon = dashboard_item.find '.gauge_icon'
+    gauge_icon.removeClass "#{key}_step_#{i}" for i in [ 0..10 ]
+    
+    # Find the right step
+    step = @find_step_for_dashboard_item key, value
+    gauge_icon.addClass "#{key}_step_#{step}"
   
   find_step_for_dashboard_item: (key, value) ->
     # see DashboardItem#corresponding_step
@@ -84,8 +82,8 @@ class @Chart
       item.animate({"height": new_height}, "slow")
       # update the legend
       percentage = Math.round(ratio * 100)
-      selector = ".legend tr.#{code} td.value"
-      $(selector).html("#{percentage}%")
+      selector = $ ".legend tr.#{code} td.value"
+      selector.html("#{percentage}%")
     
     # renewable subchart
     chart_max_height = 160
@@ -96,9 +94,8 @@ class @Chart
       item.animate({"height": new_height}, "slow")
       # legend
       percentage = Math.round(ratio * 100)
-      selector = ".legend tr.#{code} td.value"
-      $(selector).html("#{percentage}%")
-
+      selector = $ ".legend tr.#{code} td.value"
+      selector.html("#{percentage}%")
     
     # and top counter
     $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
