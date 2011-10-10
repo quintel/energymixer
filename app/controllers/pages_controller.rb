@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_filter :load_question_set
   
   def home
+    @intro_data = ApiClient.new.intro_page_data rescue {}
   end
   
   def info

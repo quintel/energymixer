@@ -59,11 +59,6 @@ module ScenariosHelper
     out.to_json
   end
   
-  def carriers_to_json
-    data = ApiClient.new.intro_page_data
-    data.to_json
-  end
-
   def gquery_for_output(i)
     Scenario::Outputs[i]
   end

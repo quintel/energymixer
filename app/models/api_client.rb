@@ -92,6 +92,8 @@ class ApiClient
       out[:sectors][sector][:total] = out[:sectors][sector][:carriers].values.sum
     end
     out
+  rescue
+    nil
   end
 
   def current_situation

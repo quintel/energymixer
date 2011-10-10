@@ -56,7 +56,7 @@
   = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
   :javascript
     var globals = {
-      carriers: #{carriers_to_json}
+      carriers: #{@intro_data.to_json}
     }
     if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
       alert("#{t 'layout.old_browser'}");
