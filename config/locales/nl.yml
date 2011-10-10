@@ -108,27 +108,20 @@ nl:
     open_in_etm_link: "Wil je meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan ga je naar de homepage van het Energietransitiemodel)"
   warning: "Let op!"
   homepage: Home
-  mixer2050: Energy Mixer
   energymixer: Energy Mixer
+  current_scenario: Huidig scenario
   gasmixer: NRG-Discovery
-  3d_view: 3D
   coal: Steenkool
+  nuclear: Nucleair
+  oil: Olie
+  wind: Wind
+  biomass: Biomassa
+  solar: Zon
   compare_scenarios: Vergelijk scenarios
   gas: Gas
   next: Volgende vraag
-  nuclear: Nucleair
-  oil: Olie
   previous: Vorige vraag
   renewable: Hernieuwbaar
-  solid_view: Solid
   renewables: Hernieuwbaar
-  "CO2 Emissions": "CO2-uitstoot"
-  "Share of renewable energy": Hernieuwbaar
-  "Area Footprint per NL": "Bio-voetafdruk"
-  "Energy Dependence": Energie import
-  "wind": Wind
-  "biomass": Biomassa
-  "solar": Zon
-  current_scenario: Huidig scenario
   search: Zoeken
   time_ago: geleden aangemaakt
