@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 10:20:39 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 10 Oct 2011 09:45:11 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -31,17 +31,16 @@
       return this.app.questions.update_question_links();
     };
     Chart.prototype.update_dashboard_item = function(key, value) {
-      var class_to_add, classes_to_remove, dashboard_selector, formatted_value, i, step;
-      dashboard_selector = ".dashboard_item#" + key;
+      var dashboard_item, formatted_value, gauge_icon, i, step;
       formatted_value = this.format_dashboard_value(key, value);
-      $("" + dashboard_selector + " .value").html(formatted_value);
-      step = this.find_step_for_dashboard_item(key, value);
-      classes_to_remove = '';
+      dashboard_item = $(".dashboard_item#" + key);
+      dashboard_item.find(".value").html(formatted_value);
+      gauge_icon = dashboard_item.find('.gauge_icon');
       for (i = 0; i <= 10; i++) {
-        classes_to_remove += "" + key + "_step_" + i + " ";
+        gauge_icon.removeClass("" + key + "_step_" + i);
       }
-      class_to_add = "" + key + "_step_" + step;
-      return $("" + dashboard_selector + " .gauge_icon").removeClass(classes_to_remove).addClass(class_to_add);
+      step = this.find_step_for_dashboard_item(key, value);
+      return gauge_icon.addClass("" + key + "_step_" + step);
     };
     Chart.prototype.find_step_for_dashboard_item = function(key, value) {
       var i, step, steps, _i, _len;
@@ -98,8 +97,8 @@
           "height": new_height
         }, "slow");
         percentage = Math.round(ratio * 100);
-        selector = ".legend tr." + code + " td.value";
-        $(selector).html("" + percentage + "%");
+        selector = $(".legend tr." + code + " td.value");
+        selector.html("" + percentage + "%");
       }
       chart_max_height = 160;
       total_renewables_ratio = this.app.mixer.gquery_results.mixer_renewability;
@@ -113,8 +112,8 @@
           "height": new_height
         }, "slow");
         percentage = Math.round(ratio * 100);
-        selector = ".legend tr." + code + " td.value";
-        $(selector).html("" + percentage + "%");
+        selector = $(".legend tr." + code + " td.value");
+        selector.html("" + percentage + "%");
       }
       $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000000000));
       return this.unblock_interface();

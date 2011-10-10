@@ -3,7 +3,7 @@ class Home
     @current_sector = false
     @max_height = 360
     @shares = globals.carriers
-    this.setup_callbacks()
+    @setup_callbacks()
   
   _update_price: ->
     if @current_sector
@@ -35,12 +35,12 @@ class Home
 
   reset_map: ->
     @current_sector = false
-    this.update_map()
+    @update_map()
 
   update_map: ->
-    this._update_price()
-    this._update_chart()
-    this._update_percentages()
+    @_update_price()
+    @_update_chart()
+    @_update_percentages()
 
   setup_callbacks: ->
     $("#sector_links .sector a, #sector_icons .sector").hover(
@@ -49,11 +49,11 @@ class Home
         popup = $("#sector_icons .sector[rel=#{sector_id}] .popup")
         popup.show()
         @current_sector = sector_id
-        this.update_map()
+        @update_map()
       ,
       (e) =>
         $(".popup").hide()
-        this.reset_map()
+        @reset_map()
     )
         
     $("#sector_icons a").click (e) =>
