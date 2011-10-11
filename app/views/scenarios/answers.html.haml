@@ -5,10 +5,10 @@
     - @scenario.answers.each do |a|
       %dt
         #{a.question.number}.
-        = a.question.question
+        = a.question.text
       %dd
         - if a.answer
-          = a.answer.answer.html_safe
+          = a.answer.text.html_safe
         - else
           = t 'scenario.no_answer'          
         - if APP_CONFIG["score"] && a.score
