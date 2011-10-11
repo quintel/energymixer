@@ -147,7 +147,7 @@ class @Questions
     if (@current_question == this.count_questions())
       question_text = "Saving scenario"
     event_label = "#{@current_question} : #{question_text}"
-    this.track_event('opens_question', question_text, @current_question)
+    this.track_event("opens_question_#{@current_question}", question_text, @current_question)
   
   store_location: =>
     navigator.geolocation.getCurrentPosition (pos) ->

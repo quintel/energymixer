@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 14:01:53 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 14:45:14 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -170,7 +170,7 @@
         question_text = "Saving scenario";
       }
       event_label = "" + this.current_question + " : " + question_text;
-      return this.track_event('opens_question', question_text, this.current_question);
+      return this.track_event("opens_question_" + this.current_question, question_text, this.current_question);
     };
     Questions.prototype.store_location = function() {
       return navigator.geolocation.getCurrentPosition(function(pos) {
