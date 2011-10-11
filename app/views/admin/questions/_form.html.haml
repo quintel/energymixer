@@ -1,13 +1,16 @@
 = simple_form_for [:admin, @question], :validate => true do |f|
   = f.association :question_set
-  = f.input :question
-  = f.input :information, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+  = f.input :text_nl
+  = f.input :text_de
+  = f.input :description_nl, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+  = f.input :description_de, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
   
   = f.input :ordering
   = field_set_tag 'Answers' do
     = f.simple_fields_for :answers do |a|
       = field_set_tag do
-        = a.input :answer
+        = a.input :text_nl
+        = a.input :text_de
         = a.input :ordering
         - unless a.object.new_record?
           = a.input :_destroy, :as => :boolean

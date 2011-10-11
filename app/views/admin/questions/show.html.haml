@@ -1,7 +1,7 @@
 .question
-  %h2="Vraag #{@question.number}: #{@question.question}"
+  %h2="Vraag #{@question.number}: #{@question.text}"
   .information
-    = markdown @question.information
+    = markdown @question.description
 
 %table.striped
   %thead
@@ -15,7 +15,7 @@
     - @question.answers.ordered.each do |a|
       %tr{:class => cycle('even', 'odd')}
         %td= a.ordering
-        %td= a.answer
+        %td= a.text
         %td
           %table.small
             - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|

@@ -4,8 +4,10 @@
     $("input.autocomplete").autocomplete({ source: input_keys });
   });
 = simple_form_for [:admin, @answer] do |f|
-  = f.input :answer
-  = f.input :description
+  = f.input :text_nl
+  = f.input :text_de
+  = f.input :description_nl
+  = f.input :description_de
   = f.input :ordering
   = field_set_tag "Inputs" do
     = f.simple_fields_for :inputs do |i|
@@ -18,11 +20,11 @@
       - Question.ordered.each do |q|
         %li
           \##{q.number}
-          = q.question
+          = q.text
           %ol
             - q.answers.each do |a|
               %li
                 - unless @answer.question_id == q.id
                   = check_box_tag("answer[conflicting_answer_ids][]", a.id, @answer.conflicts_with?(a))
-                = a.answer
+                = a.text
   = f.button :submit
