@@ -1,6 +1,5 @@
 class @Score extends Backbone.View
   initialize: ->
-    @app = @model
     @values =
       mixer_reduction_of_co2_emissions_versus_1990:
         mark: null
@@ -22,7 +21,10 @@ class @Score extends Backbone.View
         mark: null
         current: null
         score: 0
-    this.setup_interface_callbacks()
+  el: 'body'
+
+  events:
+    "click #score" : "toggle_score"
 
   co2_score: ->
     v = @values.mixer_reduction_of_co2_emissions_versus_1990
@@ -56,41 +58,40 @@ class @Score extends Backbone.View
     v.score = score
   
   total_score: ->
-    this.co2_score() +
-    this.renewability_score() +
-    this.costs_score() +
-    this.footprint_score() +
-    this.dependence_score()
+    @co2_score() +
+    @renewability_score() +
+    @costs_score() +
+    @footprint_score() +
+    @dependence_score()
 
   update_interface: ->
-    total = parseInt(this.total_score())
-    $(".score_details table .cost").html(sprintf("%.2f", this.costs_score()))
-    $(".score_details table .co2").html(sprintf("%.2f", this.co2_score()))
-    $(".score_details table .renewables").html(sprintf("%.2f", this.renewability_score()))
-    $(".score_details table .areafp").html(sprintf("%.2f", this.footprint_score()))
-    $(".score_details table .import").html(sprintf("%.2f", this.dependence_score()))
+    total = parseInt(@total_score())
+    $(".score_details table .cost").html(sprintf("%.2f", @costs_score()))
+    $(".score_details table .co2").html(sprintf("%.2f", @co2_score()))
+    $(".score_details table .renewables").html(sprintf("%.2f", @renewability_score()))
+    $(".score_details table .areafp").html(sprintf("%.2f", @footprint_score()))
+    $(".score_details table .import").html(sprintf("%.2f", @dependence_score()))
     $("#score .value").html(total)
     $("input#scenario_score").val(total)
-    $("#score .explanation").hide() if !this.should_show_score_explanation()
+    $("#score .explanation").hide() if !@should_show_score_explanation()
     # update subscore, too
     # current_questions starts with 1, while rails nested attributes with 0
-    current_question_dom_id = @app.questions.current_question - 1
-    input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score"
+    current_question_dom_id = @model.questions.current_question - 1
+    input_selector = "#scenario_answers_attributes_#{current_question_dom_id}_score"
     $(input_selector).val(total)
 
   refresh: ->
     for own key, value of @values
       return false if (value.mark == null || value.current == null)
-    this.update_interface()
+    @update_interface()
   
-  setup_interface_callbacks: ->
-    # show popup when user clicks question mark next to score
-    $("#score").click =>
-      $(".score_details").toggle()
-      if this.should_show_score_explanation()
-        $(this).find(".explanation").show()
-      else
-        $(this).find(".explanation").hide()
+  toggle_score: (e) =>
+    $(".score_details").toggle()
+    explanation = $(e.target).find(".explanation")
+    if @should_show_score_explanation()
+      explanation.show()
+    else
+      explanation.hide()
 
   should_show_score_explanation: ->
-    @score == false && @app.questions.current_question <= 2
+    @score == false && @model.questions.current_question <= 2
