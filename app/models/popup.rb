@@ -15,5 +15,13 @@ class Popup < ActiveRecord::Base
   validates :title, :presence => true
   validates :body, :presence => true
   
-  attr_accessible :code, :title, :body
+  attr_accessible :code, :title_nl, :body_nl, :title_de, :body_de
+  
+  def title
+    send "title_#{I18n.locale}"
+  end
+  
+  def body
+    send "body_#{I18n.locale}"
+  end
 end

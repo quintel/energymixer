@@ -43,4 +43,13 @@ class Answer < ActiveRecord::Base
   def conflicts_with?(ans)
     conflicting_answer_ids.include?(ans.id)
   end
+  
+  def text
+    send "text_#{I18n.locale}"
+  end
+  
+  def description
+    send "description_#{I18n.locale}"
+  end
+    
 end

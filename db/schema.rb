@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006132700) do
+ActiveRecord::Schema.define(:version => 20111011073643) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(:version => 20111006132700) do
   add_index "answer_conflicts", ["other_answer_id"], :name => "index_answer_conflicts_on_other_answer_id"
 
   create_table "answers", :force => true do |t|
-    t.text     "answer"
+    t.text     "text_nl"
     t.integer  "ordering"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
+    t.text     "description_nl"
+    t.text     "text_de"
+    t.text     "description_de"
   end
 
   add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
@@ -56,10 +58,12 @@ ActiveRecord::Schema.define(:version => 20111006132700) do
 
   create_table "popups", :force => true do |t|
     t.string   "code"
-    t.string   "title"
-    t.text     "body"
+    t.string   "title_nl"
+    t.text     "body_nl"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title_de"
+    t.text     "body_de"
   end
 
   add_index "popups", ["code"], :name => "index_popups_on_code"
@@ -73,12 +77,14 @@ ActiveRecord::Schema.define(:version => 20111006132700) do
   end
 
   create_table "questions", :force => true do |t|
-    t.string   "question"
+    t.string   "text_nl"
     t.integer  "ordering"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "information"
+    t.text     "description_nl"
     t.integer  "question_set_id"
+    t.string   "text_de"
+    t.text     "description_de"
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"

@@ -22,10 +22,17 @@ class Question < ActiveRecord::Base
   scope :ordered, order('ordering, id')
   scope :excluding, lambda {|ids| where('id NOT IN (?)', ids) }
   
-  attr_accessible :question_set_id, :question, :ordering, :information, :answers_attributes
+  attr_accessible :question_set_id, :ordering, :answers_attributes, :text_nl, :text_de, :description_nl, :description_de
   
   def number
     ordering + 1 rescue nil
   end
+  
+  def text
+    send "text_#{I18n.locale}"
+  end
+  
+  def description
+    send "description_#{I18n.locale}"
+  end
 end
-
