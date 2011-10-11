@@ -8,7 +8,8 @@
       .close_button
         = link_to image_tag('icons/close.png'), "#", :class => "close_info_popup"
       %h3= t 'questions.info'
-      = markdown(question_object.description)
+      .body
+        = markdown(question_object.description)
   .number
     = question_object.number
   .text
