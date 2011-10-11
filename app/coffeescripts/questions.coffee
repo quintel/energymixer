@@ -1,6 +1,6 @@
 class @Questions extends Backbone.View
-  initialize: (app) ->
-    @app = app
+  initialize: ->
+    @app = @model
     @current_question = 1
     # If the user submits the form but the record is not saved
     # rails renders the template again. Let's show the final step
