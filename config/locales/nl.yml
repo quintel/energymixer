@@ -3,6 +3,8 @@ nl:
     footer: "De %{app_name} is gebaseerd op het Energietransitiemodel"
     old_browser: "Sorry de door jou gebruikte browser wordt niet (goed) ondersteund door de Energy Mixer. Kies een andere browser of upgrade je huidige browser voor een optimaal gebruik."
   chart:
+    header:
+      total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> Miljard"
     legend: Legenda
     shaded:
       amount: "%{amount} Mld"
