@@ -1,3 +1,6 @@
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:22:43 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
+ */
 
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
@@ -20,6 +23,8 @@
       this.select_answer = __bind(this.select_answer, this);
       this.submit_form = __bind(this.submit_form, this);
       this.open_question = __bind(this.open_question, this);
+      this.show_question_info_box = __bind(this.show_question_info_box, this);
+      this.hide_question_info_box = __bind(this.hide_question_info_box, this);
       Questions.__super__.constructor.apply(this, arguments);
     }
     Questions.prototype.initialize = function(app) {
@@ -42,14 +47,14 @@
       "click #prev_question": "_goto_prev_question",
       "click #questions nav#up a": "open_question",
       "click #admin_menu a": "open_question",
-      "click section#questions .question a.show_info": "show_question_info_box",
-      "click section#questions .question a.close_info_popup": "hide_question_info_box",
+      "click .question a.show_info": "show_question_info_box",
+      "click .question a.close_info_popup": "hide_question_info_box",
       "mouseover .answers em": "show_tooltip",
       "mouseout .answers em": "hide_tooltip",
       "mousemove .answers em": "move_tooltip"
     };
     Questions.prototype.setup_colorbox = function() {
-      $(".question .information a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
+      $(".question .information .body a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
         width: 600,
         opacity: 0.6
       });
@@ -92,8 +97,8 @@
       return $("nav#down").unblock();
     };
     Questions.prototype.show_question_info_box = function(e) {
-      $(e.target).parent().find(".information").toggle();
       e.preventDefault();
+      $(e.target).closest(".info").find(".information").toggle();
       $(e.target).closest("#questions").block();
       return $("nav#down").block();
     };

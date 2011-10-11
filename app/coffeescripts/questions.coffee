@@ -22,8 +22,8 @@ class @Questions extends Backbone.View
     "click #prev_question"       : "_goto_prev_question"
     "click #questions nav#up a"  : "open_question"
     "click #admin_menu a"        : "open_question"
-    "click section#questions .question a.show_info" : "show_question_info_box"
-    "click section#questions .question a.close_info_popup" : "hide_question_info_box"
+    "click .question a.show_info" : "show_question_info_box"
+    "click .question a.close_info_popup" : "hide_question_info_box"
     "mouseover .answers em" : "show_tooltip"
     "mouseout .answers em"  : "hide_tooltip"
     "mousemove .answers em" : "move_tooltip"
@@ -32,13 +32,11 @@ class @Questions extends Backbone.View
   #
 
   setup_colorbox: ->
-    # setup colorbox popups for below questions
-    $(".question .information a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
+    $(".question .information .body a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
       width: 600
       opacity: 0.6
     })
 
-    # setup colorbox popups for below questions
     $(".question .information a.iframe").colorbox({
       width: 600
       height: 400
@@ -64,15 +62,15 @@ class @Questions extends Backbone.View
     offset = $(this).offset()
     $("#tooltip").css({"top": tipY + 20 , "left": tipX})
 
-  hide_question_info_box: (e) ->
+  hide_question_info_box: (e) =>
     e.preventDefault()
     $(e.target).closest(".information").hide()
     $(e.target).closest("#questions").unblock()
     $("nav#down").unblock()
 
-  show_question_info_box: (e) ->
-    $(e.target).parent().find(".information").toggle()
+  show_question_info_box: (e) =>
     e.preventDefault()
+    $(e.target).closest(".info").find(".information").toggle()
     $(e.target).closest("#questions").block()
     $("nav#down").block()
 
