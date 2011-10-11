@@ -1,6 +1,6 @@
-class @Score
-  constructor: (app) ->
-    @app = app
+class @Score extends Backbone.View
+  initialize: ->
+    @app = @model
     @values =
       mixer_reduction_of_co2_emissions_versus_1990:
         mark: null

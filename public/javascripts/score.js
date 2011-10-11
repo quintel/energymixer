@@ -1,12 +1,23 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 09:40:33 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:56:35 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
 (function() {
-  var __hasProp = Object.prototype.hasOwnProperty, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+    for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor;
+    child.__super__ = parent.prototype;
+    return child;
+  }, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   this.Score = (function() {
-    function Score(app) {
-      this.app = app;
+    __extends(Score, Backbone.View);
+    function Score() {
+      Score.__super__.constructor.apply(this, arguments);
+    }
+    Score.prototype.initialize = function() {
+      this.app = this.model;
       this.values = {
         mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
@@ -34,8 +45,8 @@
           score: 0
         }
       };
-      this.setup_interface_callbacks();
-    }
+      return this.setup_interface_callbacks();
+    };
     Score.prototype.co2_score = function() {
       var score, v;
       v = this.values.mixer_reduction_of_co2_emissions_versus_1990;

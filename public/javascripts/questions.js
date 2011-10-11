@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:22:43 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:55:11 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -27,8 +27,8 @@
       this.hide_question_info_box = __bind(this.hide_question_info_box, this);
       Questions.__super__.constructor.apply(this, arguments);
     }
-    Questions.prototype.initialize = function(app) {
-      this.app = app;
+    Questions.prototype.initialize = function() {
+      this.app = this.model;
       this.current_question = 1;
       if ($(".field_with_errors").length > 0) {
         this.current_question = this.count_questions();
