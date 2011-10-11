@@ -26,7 +26,7 @@
       = t 'chart.header.your_scenario', :year => scenario_year
   %section.chart
     %header.subheader_blue.shaded_gradient
-      = t 'chart.header.total_costs', :amount => number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
+      = raw t 'chart.header.total_costs', :amount => number_with_precision(scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
     .charts_container
       .legend
         %h4= t 'chart.legend'
