@@ -20,11 +20,11 @@ class Answer < ActiveRecord::Base
   
   accepts_nested_attributes_for :inputs, :allow_destroy => true, :reject_if => proc {|attr| attr['key'].blank? && attr['value'].blank? }
   
-  validates :answer, :presence => true
+  validates :text_nl, :presence => true
   
   scope :ordered, order('ordering, id')
   
-  attr_accessible :inputs_attributes, :ordering, :answer, :description, :conflicting_answer_ids, :answer_conflicts
+  attr_accessible :inputs_attributes, :ordering, :text_nl, :text_de, :description_nl, :description_de, :conflicting_answer_ids, :answer_conflicts
   
   def conflicting_answers
     Answer.find(conflicting_answer_ids)

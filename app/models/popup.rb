@@ -12,8 +12,8 @@
 
 class Popup < ActiveRecord::Base
   validates :code, :presence => true, :uniqueness => true
-  validates :title, :presence => true
-  validates :body, :presence => true
+  validates :title_nl, :presence => true
+  validates :body_nl, :presence => true
   
   attr_accessible :code, :title_nl, :body_nl, :title_de, :body_de
   

@@ -39,9 +39,9 @@ describe Admin::AnswersController do
 
     describe "with valid params" do
       it "updates the requested answer" do
-        put :update, :id => @answer.id, :answer => { :answer => 'Hi!'}
+        put :update, :id => @answer.id, :answer => { :text_nl => 'Hi!'}
         assigns(:answer).should == @answer
-        @answer.reload.answer.should == 'Hi!'
+        @answer.reload.text_nl.should == 'Hi!'
         response.should redirect_to(admin_question_url(@question))
       end
     end
@@ -55,9 +55,9 @@ describe Admin::AnswersController do
         
         @answer.reload.conflicting_answer_ids.should == [a1.id]
         
-        put :update, :id => @answer.id, :answer => { :answer => 'Hi!', :conflicting_answer_ids => [a2.id]}
+        put :update, :id => @answer.id, :answer => { :text_nl => 'Hi!', :conflicting_answer_ids => [a2.id]}
         assigns(:answer).should == @answer
-        @answer.reload.answer.should == 'Hi!'
+        @answer.reload.text_nl.should == 'Hi!'
         @answer.reload.conflicting_answer_ids.should == [a2.id]
         
         response.should redirect_to(admin_question_url(@question))
@@ -66,7 +66,7 @@ describe Admin::AnswersController do
 
     describe "with invalid params" do
       it "assigns the answer as @answer" do
-        put :update, :id => @answer.id, :answer => { :answer => '' }
+        put :update, :id => @answer.id, :answer => { :text_nl => '' }
         assigns(:answer).should == @answer
         response.should render_template('edit')
       end

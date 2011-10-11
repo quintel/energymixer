@@ -8,11 +8,11 @@
       .close_button
         = link_to image_tag('icons/close.png'), "#", :class => "close_info_popup"
       %h3= t 'questions.info'
-      = markdown(question_object.information)
+      = markdown(question_object.description)
   .number
     = question_object.number
   .text
-    = raw question_object.question
+    = raw question_object.text
     
   %ul.answers
     - question_object.answers.ordered.each_with_index do |a, index|
@@ -23,4 +23,4 @@
                               :'data-question_number' => question_object.number
         %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
           %span.number= (index+65).chr
-          %span.text= markdown(a.answer)
+          %span.text= markdown(a.text)

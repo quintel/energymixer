@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Answer do
-  it { should validate_presence_of :answer }
+  it { should validate_presence_of :text_nl }
   it { should have_many(:inputs) }
   it { should belong_to(:question) }
   

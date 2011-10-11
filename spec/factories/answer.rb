@@ -1,6 +1,8 @@
 Factory.define :answer do |f|
-  f.sequence(:answer) {|n| "Answer ##{n}"}
-  f.description "lorem ipsum"
+  f.text_de "lorem ipsum"
+  f.text_nl "lorem ipsum"
+  f.description_de "lorem ipsum"
+  f.description_nl "lorem ipsum"
   f.inputs {|i| Array.new(3).map{ i.association(:input)} }
 end
 

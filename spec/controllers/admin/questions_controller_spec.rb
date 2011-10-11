@@ -52,7 +52,7 @@ describe Admin::QuestionsController do
     describe "with valid params" do
       it "creates a new question" do
         lambda {
-          post :create, :question => { :question => 'hi there'}
+          post :create, :question => { :text_nl => 'hi there'}
           response.should redirect_to(admin_question_url(assigns(:question)))
         }.should change(Question, :count)
       end
@@ -60,7 +60,7 @@ describe Admin::QuestionsController do
 
     describe "with invalid params" do
       it "should show the form again" do
-        post :create, :question => { :question => '' }
+        post :create, :question => { :text_nl => '' }
         response.should render_template('new')
       end
     end
@@ -73,15 +73,15 @@ describe Admin::QuestionsController do
 
     describe "with valid params" do
       it "updates the requested question" do
-        put :update, :id => @question.id, :question => { :question => 'hi there' }
-        @question.reload.question.should == 'hi there'
+        put :update, :id => @question.id, :question => { :text_nl => 'hi there' }
+        @question.reload.text_nl.should == 'hi there'
         response.should redirect_to(admin_question_url(@question))
       end
     end
 
     describe "with invalid params" do
       it "re-renders the 'edit' template" do
-        put :update, :id => @question.id, :question => { :question => '' }
+        put :update, :id => @question.id, :question => { :text_nl => '' }
         response.should render_template('edit')
       end
     end
