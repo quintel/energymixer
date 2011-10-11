@@ -1,18 +1,37 @@
 namespace :questions do
-  desc 'Dumps question set'
+  desc 'Dumps translations'
   task :dump => :environment do
+    
+    
     set = QuestionSet.first
+    
     set.questions.ordered.each do |q|
-      puts "Question ##{q.number}\n***********"
-      puts "Text: #{q.question}\n"
-      puts "Info: #{q.information}\n"
+      puts "Question ##{q.number}"
+      puts "==========="
+      puts q.text_nl
       puts
-      puts "Answers\n*******"
+      puts q.description_nl
+      puts
+      puts
+      puts "Answers"
+      puts "-------"
+      puts
       q.answers.each do |a|
-        puts "Text: #{a.answer}\n"
-        puts "Info: #{a.description}\n"
+        puts a.text_nl
+        puts
+        # puts a.description_nl
         puts
       end
+      puts
+      puts
+    end
+    
+    puts "Popups"
+    puts "======"
+    Popup.all.each do |p|
+      puts p.title_nl
+      puts
+      puts p.body_nl
       puts
       puts
     end
