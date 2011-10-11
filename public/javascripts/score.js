@@ -1,24 +1,24 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:56:35 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 16:06:03 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
 (function() {
-  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
     ctor.prototype = parent.prototype;
     child.prototype = new ctor;
     child.__super__ = parent.prototype;
     return child;
-  }, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  };
   this.Score = (function() {
     __extends(Score, Backbone.View);
     function Score() {
+      this.toggle_score = __bind(this.toggle_score, this);
       Score.__super__.constructor.apply(this, arguments);
     }
     Score.prototype.initialize = function() {
-      this.app = this.model;
-      this.values = {
+      return this.values = {
         mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
           current: null,
@@ -45,7 +45,10 @@
           score: 0
         }
       };
-      return this.setup_interface_callbacks();
+    };
+    Score.prototype.el = 'body';
+    Score.prototype.events = {
+      "click #score": "toggle_score"
     };
     Score.prototype.co2_score = function() {
       var score, v;
@@ -108,7 +111,7 @@
       if (!this.should_show_score_explanation()) {
         $("#score .explanation").hide();
       }
-      current_question_dom_id = this.app.questions.current_question - 1;
+      current_question_dom_id = this.model.questions.current_question - 1;
       input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
       return $(input_selector).val(total);
     };
@@ -124,18 +127,18 @@
       }
       return this.update_interface();
     };
-    Score.prototype.setup_interface_callbacks = function() {
-      return $("#score").click(__bind(function() {
-        $(".score_details").toggle();
-        if (this.should_show_score_explanation()) {
-          return $(this).find(".explanation").show();
-        } else {
-          return $(this).find(".explanation").hide();
-        }
-      }, this));
+    Score.prototype.toggle_score = function(e) {
+      var explanation;
+      $(".score_details").toggle();
+      explanation = $(e.target).find(".explanation");
+      if (this.should_show_score_explanation()) {
+        return explanation.show();
+      } else {
+        return explanation.hide();
+      }
     };
     Score.prototype.should_show_score_explanation = function() {
-      return this.score === false && this.app.questions.current_question <= 2;
+      return this.score === false && this.model.questions.current_question <= 2;
     };
     return Score;
   })();
