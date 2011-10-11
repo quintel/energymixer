@@ -1,23 +1,21 @@
-class @Chart
-  constructor: (app) ->
-    @app = app
+class @Chart extends Backbone.View
+  initialize: ->
     @dashboard_steps = window.globals.dashboard_steps
-    @mixer = @app.mixer
   
   # Main entry point.
   # assumes results have been stored
   refresh: ->
-    for own key, value of @mixer.dashboard_values
+    for own key, value of @model.mixer.dashboard_values
       this.update_dashboard_item(key, value)
     this.update_bar_chart()
   
   block_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy({img: '/images/spinner.gif'})
-    @app.questions.disable_all_question_links();
+    @model.questions.disable_all_question_links();
   
   unblock_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy("clear")
-    @app.questions.update_question_links()
+    @model.questions.update_question_links()
   
   # the following methods should not be called directly
   # You might only have to update the format_dashboard_value method
@@ -61,22 +59,21 @@ class @Chart
         out = value
     return out
     
-  # TODO: refactor
   update_bar_chart: ->
-    current_sum = @mixer.gquery_results["mixer_total_costs"]
+    current_sum = @model.mixer.gquery_results["mixer_total_costs"]
     charts_to_be_updated = $(".charts_container").not('.static')
     
     # update the score attribute.
     # DEBT: move to score exclusive method
-    @app.score.values.mixer_total_costs.current = current_sum
-    if (@app.questions.current_question == 2 && @app.score.values.mixer_total_costs.mark == null)
-      @app.score.values.mixer_total_costs.mark = current_sum
+    @model.score.values.mixer_total_costs.current = current_sum
+    if (@model.questions.current_question == 2 && @model.score.values.mixer_total_costs.mark == null)
+      @model.score.values.mixer_total_costs.mark = current_sum
 
     # main chart
     chart_max_height = 360
     max_amount = globals.chart_max_amount
     current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height
-    for own code, ratio of @mixer.carriers_values
+    for own code, ratio of @model.mixer.carriers_values
       new_height = ratio * current_chart_height
       item = charts_to_be_updated.find("li.#{code}")
       item.animate({"height": new_height}, "slow")
@@ -87,8 +84,8 @@ class @Chart
     
     # renewable subchart
     chart_max_height = 160
-    total_renewables_ratio = @app.mixer.gquery_results.mixer_renewability
-    for own code, ratio of @app.mixer.secondary_carriers_values
+    total_renewables_ratio = @model.mixer.gquery_results.mixer_renewability
+    for own code, ratio of @model.mixer.secondary_carriers_values
       new_height = Math.round(ratio / total_renewables_ratio * chart_max_height)
       item = charts_to_be_updated.find("ul.chart .#{code}")
       item.animate({"height": new_height}, "slow")

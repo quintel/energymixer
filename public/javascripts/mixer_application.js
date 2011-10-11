@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:36:56 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:39:49 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer_application.coffee
  */
 
@@ -19,7 +19,9 @@
     }
     App.prototype.initialize = function() {
       this.mixer = new Mixer(this);
-      this.chart = new Chart(this);
+      this.chart = new Chart({
+        model: this
+      });
       this.questions = new Questions(this);
       return this.score = new Score(this);
     };
