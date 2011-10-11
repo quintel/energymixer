@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 12:06:45 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 12:20:55 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/scenario_picker.coffee
  */
 
@@ -74,7 +74,6 @@
       var tab_selector;
       e.preventDefault();
       tab_selector = $(e.target).attr('href');
-      console.log(tab_selector);
       $("a.scenario_tab_picker").removeClass('active');
       $(e.target).addClass('active');
       $(".tab").hide();

@@ -2,6 +2,8 @@ class @Questions
   constructor: (app) ->
     @app = app
     @current_question = 1
+    # If the user submits the form but the record is not saved
+    # rails renders the template again. Let's show the final step
     if($(".field_with_errors").length > 0)
       # show the final form tab
       @current_question = this.count_questions()
