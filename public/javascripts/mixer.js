@@ -1,12 +1,32 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 14:58:01 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 12 Oct 2011 10:33:13 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty;
-  this.Mixer = (function() {
-    function Mixer(app) {
-      this.app = app;
+  var Mixer;
+  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+    for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor;
+    child.__super__ = parent.prototype;
+    return child;
+  }, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  Mixer = (function() {
+    __extends(Mixer, Backbone.Model);
+    function Mixer() {
+      Mixer.__super__.constructor.apply(this, arguments);
+    }
+    Mixer.prototype.initialize = function() {
+      this.chart = new Chart({
+        model: this
+      });
+      this.questions = new Questions({
+        model: this
+      });
+      this.score = new Score({
+        model: this
+      });
       this.base_path = globals.api_base_path + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
@@ -21,8 +41,8 @@
       this.secondary_mix_table = globals.secondary_mix_table;
       this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["mixer_total_costs"]);
       this.score_enabled = globals.score_enabled;
-      this.fetch_scenario_id();
-    }
+      return this.fetch_scenario_id();
+    };
     Mixer.prototype.fetch_scenario_id = function() {
       if (this.scenario_id) {
         return this.scenario_id;
@@ -156,4 +176,7 @@
     };
     return Mixer;
   })();
+  $(function() {
+    return window.app = new Mixer;
+  });
 }).call(this);
