@@ -2,9 +2,12 @@
 # For the output it depends on the Graph object and it
 # requires some parameters to be set in the globals hash,
 # namely api_base_path and api_session_settings
-class @Mixer
-  constructor: (app) ->
-    @app = app
+class Mixer extends Backbone.Model
+  initialize: ->
+    @chart     = new Chart({model: this})
+    @questions = new Questions({model: this})
+    @score     = new Score({model: this})
+
     @base_path        = globals.api_base_path + "/api_scenarios"
     @scenario_id      = false
     @parameters       = {} # parameters set according to user answers
@@ -130,3 +133,6 @@ class @Mixer
   refresh: ->
     this.process_form()
     this.make_request()
+
+$ ->
+  window.app = new Mixer
