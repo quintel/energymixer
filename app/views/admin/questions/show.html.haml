@@ -1,7 +1,18 @@
-.question
-  %h2="Vraag #{@question.number}: #{@question.text}"
-  .information
-    = markdown @question.description
+- page_title "Question Details"
+
+%table.striped
+  %tr.odd
+    %td Text NL:
+    %td= @question.text_nl
+  %tr.even
+    %td Text DE:
+    %td= @question.text_de
+  %tr.odd
+    %td Description NL:
+    %td= @question.description_nl
+  %tr.even
+    %td Description DE:
+    %td= @question.description_de
 
 %table.striped
   %thead
@@ -15,7 +26,10 @@
     - @question.answers.ordered.each do |a|
       %tr{:class => cycle('even', 'odd')}
         %td= a.ordering
-        %td= a.text
+        %td
+          NL: #{a.text_nl}
+          %br
+          DE: #{a.text_de}
         %td
           %table.small
             - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|
@@ -27,13 +41,13 @@
           %table.small
             - a.conflicting_answers.each do |answer|
               %tr
-                %td= truncate(answer.question.question)
-                %td= link_to(truncate(answer.answer), edit_admin_answer_path(answer))
+                %td= truncate(answer.question.text)
+                %td= link_to(truncate(answer.text), edit_admin_answer_path(answer))
         %td
           = link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
           = link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
 
 #actions
-  = link_to 'Edit', edit_admin_question_path(@question), :class => 'fugue fugue-pencil'
-  = link_to 'Back', admin_questions_path
-  = link_to 'Destroy', admin_question_path(@question), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'
+  = link_to 'Edit', edit_admin_question_path(@question)
+  = link_to 'Back to question index', admin_questions_path
+  = link_to 'Destroy', admin_question_path(@question), :method => :delete, :confirm => 'Are you sure?'
