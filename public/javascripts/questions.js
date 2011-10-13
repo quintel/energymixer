@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:44:57 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -112,7 +112,7 @@
     };
     Questions.prototype.submit_form = function() {
       $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
-      if (globals.geolocation_enabled) {
+      if (globals.config.geolocation_enabled) {
         return this.store_geolocation();
       }
     };
@@ -141,16 +141,6 @@
         return answers.push(parseInt($(this).val()));
       });
       return answers;
-    };
-    Questions.prototype.reset_questions = function() {
-      var el, _i, _len, _ref;
-      _ref = $(".answers input:checked");
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        el = _ref[_i];
-        $(el).attr('checked', false);
-        $(el).closest("li.answer").removeClass('active');
-      }
-      return app.refresh();
     };
     Questions.prototype.get_question_id_from_answer = function(answer_id) {
       var e, _i, _len, _ref;

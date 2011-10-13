@@ -7,7 +7,7 @@ class @Chart extends Backbone.View
   render: ->
     for own key, value of @model.dashboard_values
       @update_dashboard_item(key, value)
-    @.update_bar_chart()
+    @update_bar_chart()
   
   block_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy({img: '/images/spinner.gif'})
@@ -84,7 +84,7 @@ class @Chart extends Backbone.View
     # and top counter
     $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
     
-    this.unblock_interface()
+    @unblock_interface()
   
   _animate_chart_item: (code, height) ->
     charts_to_be_updated = $(".charts_container").not('.static')

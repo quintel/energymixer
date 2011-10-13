@@ -10,7 +10,7 @@ class @Questions extends Backbone.View
       @current_question = this.count_questions()
     else
       @current_question = 1
-    this.show_right_question()
+    @show_right_question()
     @setup_colorbox()
     @clear_the_form()
     
@@ -79,12 +79,12 @@ class @Questions extends Backbone.View
     e.preventDefault()
     question_id = $(e.target).data('question_id')
     @current_question = question_id
-    this.show_right_question()
+    @show_right_question()
 
   submit_form: =>
     # update the scenario id hidden field
     $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
-    this.store_geolocation() if globals.geolocation_enabled
+    @store_geolocation() if globals.config.geolocation_enabled
 
   select_answer: (e) =>
     element = $(e.target).closest("li.answer")
@@ -92,7 +92,7 @@ class @Questions extends Backbone.View
     element.parent().find("li.answer").removeClass('active')
     element.addClass('active')
     @app.refresh()
-    this.check_conflicts()
+    @check_conflicts()
     
   # question methods
   #
@@ -111,12 +111,6 @@ class @Questions extends Backbone.View
       answers.push(parseInt($(this).val()))
     return answers
 
-  reset_questions: ->
-    for el in $(".answers input:checked")
-      $(el).attr('checked', false)
-      $(el).closest("li.answer").removeClass('active')
-    app.refresh()
-  
   # returns the question_number given the answer_id we're using 
   # this method to alert the user about conflicting answers
   get_question_id_from_answer: (answer_id) ->
@@ -158,18 +152,17 @@ class @Questions extends Backbone.View
   
   _goto_next_question: (e) =>
     e.preventDefault()
-    if this.current_question_was_answered()
+    if @current_question_was_answered()
       @current_question++
       last_question = this.count_questions()
-      if (@current_question > last_question)
-        @current_question = last_question
-      this.show_right_question()
+      @current_question = last_question if @current_question > last_question
+      @show_right_question()
     
   _goto_prev_question: (e) =>
     e.preventDefault()
     @current_question--
-    @current_question = 1 if (@current_question < 1)
-    this.show_right_question()
+    @current_question = 1 if @current_question < 1
+    @show_right_question()
     
   
   disable_prev_link: ->
@@ -192,27 +185,27 @@ class @Questions extends Backbone.View
   
 
   disable_all_question_links: =>
-    this.disable_next_link()
-    this.disable_prev_link()
+    @disable_next_link()
+    @disable_prev_link()
   
   update_question_links: =>
     first_question = @current_question == 1
-    last_question  = @current_question == this.count_questions()
+    last_question  = @current_question == @count_questions()
     
     if first_question 
-      this.disable_prev_link()
+      @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
     else if @current_question <= 3 && @app.score_enabled
-      this.disable_prev_link()
+      @disable_prev_link()
     else
-      this.enable_prev_link()
-      this.disable_next_link() if last_question
+      @enable_prev_link()
+      @disable_next_link() if last_question
     
-    if (this.current_question_was_answered() && !last_question)
-      this.enable_next_link()
+    if @current_question_was_answered() && !last_question
+      @enable_next_link()
     else
-      this.disable_next_link()
+      @disable_next_link()
   
   show_right_question: =>
     $(".question").hide()
@@ -223,14 +216,13 @@ class @Questions extends Backbone.View
     for i in [1..@current_question]
       tab_selector = ".question_tab[data-question_id=#{i}]"
       $(tab_selector).addClass('active')      
-    this.update_question_links()
+    @update_question_links()
     
     # GA
     question_text = $.trim($(question_id).find("div.text").text())
-    if (@current_question == this.count_questions())
-      question_text = "Saving scenario"
+    question_text = "Saving scenario" if @current_question == @count_questions()
     event_label = "#{@current_question} : #{question_text}"
-    this.track_event("opens_question_#{@current_question}", question_text, @current_question)
+    @track_event("opens_question_#{@current_question}", question_text, @current_question)
   
   store_location: =>
     navigator.geolocation.getCurrentPosition (pos) ->
