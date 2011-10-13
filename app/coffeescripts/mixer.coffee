@@ -11,7 +11,6 @@ class Mixer extends Backbone.Model
     @base_path        = globals.api_base_path + "/api_scenarios"
     @scenario_id      = false
     @parameters       = {} # parameters set according to user answers
-    @results          = {} # semiraw response from the engine
     @user_answers     = [] # right from the form
     @carriers_values  = {} # used by chart, too!
     @dashboard_values = {} # idem
@@ -44,9 +43,7 @@ class Mixer extends Backbone.Model
   
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
-  store_results: ->
-    results = @results.result
-    
+  store_results: (results) ->
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
@@ -54,7 +51,7 @@ class Mixer extends Backbone.Model
       $("input[type=hidden][data-label=#{key}]").val(value)
 
     # total cost is used fairly often, let's save it in the mixer object
-    @total_cost = results["mixer_total_costs"][1][1]
+    @total_cost = @gquery_results["mixer_total_costs"]
     
     # now let's udpate the result collections
     for own index, code of @mix_table
@@ -77,12 +74,8 @@ class Mixer extends Backbone.Model
     request_parameters = {result: @gqueries, reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
-    # Note that we're not using the standard jquery ajax call,
-    # but http:#code.google.com/p/jquery-jsonp/
-    # for its better error handling.
-    # http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
-    # if we're going back to vanilla jquery change the callback parameters,
-    # add type: json and remove the '?callback=?' url suffix
+    # Note that we're not using the standard jquery ajax call, but 
+    # http://code.google.com/p/jquery-jsonp/ for its better error handling.
     api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json?callback=?"
     
     @chart.block_interface()
@@ -90,20 +83,14 @@ class Mixer extends Backbone.Model
       url: api_url,
       data: request_parameters,
       success: (data) =>
-        # if(data.errors.length > 0) { alert(data.errors); }
-        @results = data
-        this.store_results()
+        @store_results(data.result)
         @chart.refresh()
         @score.render()
       error: (data, error) =>
         @chart.unblock_interface()
         $.logThis(error)
     )
-    return true;
-  
-  set_parameter: (id, value) ->
-    @parameters[id] = value
-    return @parameters
+    return true
   
   # build parameters given user answers. The parameter values are defined in the
   # global answer hash.
@@ -114,7 +101,7 @@ class Mixer extends Backbone.Model
       answer_id   = item[1]
       # globals.answers is defined on the view!
       for own param_key, val of globals.answers[question_id][answer_id]
-        this.set_parameter(param_key, val)
+        @parameters[param_key] = val
   
   # makes an array out of user answers in this format:
   # [ [question_1_id, answer_1_id], [question_2_id, answer_2_id], ...]
