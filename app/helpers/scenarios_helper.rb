@@ -49,9 +49,7 @@ module ScenariosHelper
     Scenario::Outputs[i]
   end
   
-  # TODO: pass directly gquery
-  def set_class_for_output(i, value)
-    gquery = gquery_for_output(i)
+  def set_class_for_output(gquery, value)
     dashboard_item = DashboardItem.find_by_gquery(gquery)
     step = dashboard_item.corresponding_step(value)
     "#{gquery}_step_#{step}"
@@ -60,9 +58,7 @@ module ScenariosHelper
   end
   
   # Check graph.js for similar method
-  # TODO: pass directly gquery
-  def format_dashboard_value(input_id, value)
-    gquery = gquery_for_output(input_id)
+  def format_dashboard_value(gquery, value)
     return if value.nil? #cope with curren values nil on testing server
     case gquery
     when "mixer_reduction_of_co2_emissions_versus_1990"
