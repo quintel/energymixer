@@ -14,5 +14,5 @@
       %ul.chart
         - scenario.carrier_ratios.each_pair do |carrier, ratio|
           - height = ratio * current_chart_height
-          %li.serie{:class => [carrier, Scenario::PrimaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
+          %li.serie{:class => [carrier, Scenario::PrimaryTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
     = render 'renewables_float', :scenario => scenario
