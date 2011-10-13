@@ -59,10 +59,8 @@ class @Chart extends Backbone.View
         out = value
     return out
   
-  # TODO: DRY  
   update_bar_chart: ->
     current_sum = @model.gquery_results["mixer_total_costs"]
-    charts_to_be_updated = $(".charts_container").not('.static')
     
     # main chart
     chart_max_height = 360
@@ -71,12 +69,8 @@ class @Chart extends Backbone.View
     for own code, gquery of @model.gqueries.primary
       ratio = @model.gquery_results[gquery]
       new_height = ratio * current_chart_height
-      item = charts_to_be_updated.find("li.#{code}")
-      item.animate({"height": new_height}, "slow")
-      # update the legend
-      percentage = Math.round(ratio * 100)
-      selector = $ ".legend tr.#{code} td.value"
-      selector.html("#{percentage}%")
+      @_animate_chart_item(code, new_height)
+      @_update_legend_item(code, ratio)
     
     # renewable subchart
     chart_max_height = 160
@@ -84,18 +78,24 @@ class @Chart extends Backbone.View
     for own code, gquery of @model.gqueries.secondary
       ratio = @model.gquery_results[gquery]
       new_height = Math.round(ratio / total_renewables_ratio * chart_max_height)
-      item = charts_to_be_updated.find("ul.chart .#{code}")
-      item.animate({"height": new_height}, "slow")
-      # legend
-      percentage = Math.round(ratio * 100)
-      selector = $ ".legend tr.#{code} td.value"
-      selector.html("#{percentage}%")
+      @_animate_chart_item(code, new_height)
+      @_update_legend_item(code, ratio)
     
     # and top counter
     $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
     
     this.unblock_interface()
   
+  _animate_chart_item: (code, height) ->
+    charts_to_be_updated = $(".charts_container").not('.static')
+    item = charts_to_be_updated.find("ul.chart .#{code}")
+    item.animate({"height": height}, "slow")
+  
+  _update_legend_item: (code, ratio) ->
+    percentage = Math.round(ratio * 100)
+    selector = $ ".legend tr.#{code} td.value"
+    selector.html("#{percentage}%")
+    
   update_etm_link: (url) ->
     $("footer a").click (e) =>
       if(confirm(window.globals.open_in_etm_link))

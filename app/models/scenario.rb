@@ -129,6 +129,7 @@ class Scenario < ActiveRecord::Base
     
   def total_amount
     val = output_12 || (output_0 + output_1 + output_2 + output_3 + output_4)
+    # Old scenarios used billions as unit
     val *= 1_000_000_000 if val < 1_000_000_000
     val
   end

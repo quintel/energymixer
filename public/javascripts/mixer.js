@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:35:58 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 13:40:33 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -33,7 +33,6 @@
       this.parameters = {};
       this.user_answers = [];
       this.gquery_results = {};
-      this.dashboard_items = globals.dashboard_items;
       this.score_enabled = globals.score_enabled;
       return this.fetch_scenario_id();
     };
