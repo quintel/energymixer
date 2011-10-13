@@ -5,7 +5,7 @@ class @Chart extends Backbone.View
   # Main entry point.
   # assumes results have been stored
   refresh: ->
-    for own key, value of @model.mixer.dashboard_values
+    for own key, value of @model.dashboard_values
       this.update_dashboard_item(key, value)
     this.update_bar_chart()
   
@@ -60,7 +60,7 @@ class @Chart extends Backbone.View
     return out
     
   update_bar_chart: ->
-    current_sum = @model.mixer.gquery_results["mixer_total_costs"]
+    current_sum = @model.gquery_results["mixer_total_costs"]
     charts_to_be_updated = $(".charts_container").not('.static')
     
     # update the score attribute.
@@ -73,7 +73,7 @@ class @Chart extends Backbone.View
     chart_max_height = 360
     max_amount = globals.chart_max_amount
     current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height
-    for own code, ratio of @model.mixer.carriers_values
+    for own code, ratio of @model.carriers_values
       new_height = ratio * current_chart_height
       item = charts_to_be_updated.find("li.#{code}")
       item.animate({"height": new_height}, "slow")
@@ -84,8 +84,8 @@ class @Chart extends Backbone.View
     
     # renewable subchart
     chart_max_height = 160
-    total_renewables_ratio = @model.mixer.gquery_results.mixer_renewability
-    for own code, ratio of @model.mixer.secondary_carriers_values
+    total_renewables_ratio = @model.gquery_results.mixer_renewability
+    for own code, ratio of @model.secondary_carriers_values
       new_height = Math.round(ratio / total_renewables_ratio * chart_max_height)
       item = charts_to_be_updated.find("ul.chart .#{code}")
       item.animate({"height": new_height}, "slow")

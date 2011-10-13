@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:42:32 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 08:26:26 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -21,7 +21,7 @@
     };
     Chart.prototype.refresh = function() {
       var key, value, _ref;
-      _ref = this.model.mixer.dashboard_values;
+      _ref = this.model.dashboard_values;
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
         value = _ref[key];
@@ -87,7 +87,7 @@
     };
     Chart.prototype.update_bar_chart = function() {
       var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
-      current_sum = this.model.mixer.gquery_results["mixer_total_costs"];
+      current_sum = this.model.gquery_results["mixer_total_costs"];
       charts_to_be_updated = $(".charts_container").not('.static');
       this.model.score.values.mixer_total_costs.current = current_sum;
       if (this.model.questions.current_question === 2 && this.model.score.values.mixer_total_costs.mark === null) {
@@ -96,7 +96,7 @@
       chart_max_height = 360;
       max_amount = globals.chart_max_amount;
       current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height;
-      _ref = this.model.mixer.carriers_values;
+      _ref = this.model.carriers_values;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
         ratio = _ref[code];
@@ -110,8 +110,8 @@
         selector.html("" + percentage + "%");
       }
       chart_max_height = 160;
-      total_renewables_ratio = this.model.mixer.gquery_results.mixer_renewability;
-      _ref2 = this.model.mixer.secondary_carriers_values;
+      total_renewables_ratio = this.model.gquery_results.mixer_renewability;
+      _ref2 = this.model.secondary_carriers_values;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;
         ratio = _ref2[code];

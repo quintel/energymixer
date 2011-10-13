@@ -90,7 +90,7 @@ class @Questions extends Backbone.View
     # remove active class from other answer
     element.parent().find("li.answer").removeClass('active')
     element.addClass('active')
-    @app.mixer.refresh()
+    @app.refresh()
     this.check_conflicts()
     
   # question methods
@@ -114,7 +114,7 @@ class @Questions extends Backbone.View
     for el in $(".answers input:checked")
       $(el).attr('checked', false)
       $(el).closest("li.answer").removeClass('active')
-    app.mixer.refresh()
+    app.refresh()
   
   # returns the question_number given the answer_id we're using 
   # this method to alert the user about conflicting answers

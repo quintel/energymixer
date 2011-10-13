@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 15:55:11 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 08:27:13 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -120,7 +120,7 @@
       element = $(e.target).closest("li.answer");
       element.parent().find("li.answer").removeClass('active');
       element.addClass('active');
-      this.app.mixer.refresh();
+      this.app.refresh();
       return this.check_conflicts();
     };
     Questions.prototype.current_question_was_answered = function() {
@@ -149,7 +149,7 @@
         $(el).attr('checked', false);
         $(el).closest("li.answer").removeClass('active');
       }
-      return app.mixer.refresh();
+      return app.refresh();
     };
     Questions.prototype.get_question_id_from_answer = function(answer_id) {
       var e, _i, _len, _ref;
