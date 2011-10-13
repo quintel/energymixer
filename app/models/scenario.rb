@@ -57,7 +57,7 @@ class Scenario < ActiveRecord::Base
     output_12: "mixer_total_costs"
   }
   
-  PrimaryMixTable = {
+  PrimaryTable = {
     coal:       "share_of_total_costs_assigned_to_coal",
     gas:        "share_of_total_costs_assigned_to_gas",
     oil:        "share_of_total_costs_assigned_to_oil",
@@ -65,10 +65,22 @@ class Scenario < ActiveRecord::Base
     renewables: "share_of_total_costs_assigned_to_renewables"
   }
   
-  SecondaryMixTable = {
+  SecondaryTable = {
     wind:    "share_of_total_costs_assigned_to_wind",
     solar:   "share_of_total_costs_assigned_to_solar",
     biomass: "share_of_total_costs_assigned_to_biomass"
+  }
+  
+  # The keys are used in the translation files
+  DashboardTable = {
+    co2_emissions: "mixer_reduction_of_co2_emissions_versus_1990",
+    renewability:  "mixer_renewability",
+    footprint:     "mixer_bio_footprint",
+    energy_import: "mixer_net_energy_import"
+  }
+  
+  CostsTable = {
+    total_costs: "mixer_total_costs"
   }
   
   validates :name, :presence => true
@@ -118,6 +130,7 @@ class Scenario < ActiveRecord::Base
     
   def total_amount
     val = output_12 || (output_0 + output_1 + output_2 + output_3 + output_4)
+    # Old scenarios used billions as unit
     val *= 1_000_000_000 if val < 1_000_000_000
     val
   end

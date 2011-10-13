@@ -1,28 +1,41 @@
-/* DO NOT MODIFY. This file was compiled Wed, 28 Sep 2011 14:58:01 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty;
-  this.Mixer = (function() {
-    function Mixer(app) {
-      this.app = app;
-      this.base_path = globals.api_base_path + "/api_scenarios";
+  var Mixer;
+  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+    for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor;
+    child.__super__ = parent.prototype;
+    return child;
+  }, __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  Mixer = (function() {
+    __extends(Mixer, Backbone.Model);
+    function Mixer() {
+      Mixer.__super__.constructor.apply(this, arguments);
+    }
+    Mixer.prototype.initialize = function() {
+      this.chart = new Chart({
+        model: this
+      });
+      this.questions = new Questions({
+        model: this
+      });
+      this.score = new ScoreBoard({
+        model: this
+      });
+      this.gqueries = window.globals.gqueries;
+      this.base_path = globals.api.base_path + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
-      this.results = {};
       this.user_answers = [];
-      this.carriers_values = {};
-      this.dashboard_values = {};
-      this.secondary_carriers_values = {};
       this.gquery_results = {};
-      this.dashboard_items = globals.dashboard_items;
-      this.mix_table = globals.mix_table;
-      this.secondary_mix_table = globals.secondary_mix_table;
-      this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["mixer_total_costs"]);
-      this.score_enabled = globals.score_enabled;
-      this.fetch_scenario_id();
-    }
+      this.score_enabled = globals.config.score_enabled;
+      return this.fetch_scenario_id();
+    };
     Mixer.prototype.fetch_scenario_id = function() {
       if (this.scenario_id) {
         return this.scenario_id;
@@ -31,13 +44,13 @@
         url: "" + this.base_path + "/new.json",
         dataType: 'jsonp',
         data: {
-          settings: globals.api_session_settings
+          settings: globals.api.session_settings
         },
         success: __bind(function(data) {
           var key;
           key = data.api_scenario.id || data.api_scenario.api_session_key;
           this.scenario_id = key;
-          this.app.chart.update_etm_link("" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl");
+          this.chart.update_etm_link("" + globals.api.load_in_etm_url + "/" + this.scenario_id + "/load?locale=nl");
           $.logThis("New scenario id: " + key);
           return this.make_request();
         }, this),
@@ -47,71 +60,55 @@
       });
       return this.scenario_id;
     };
-    Mixer.prototype.store_results = function() {
-      var code, index, key, raw_results, results, value, _ref, _ref2, _ref3, _results;
-      results = this.results.result;
+    Mixer.prototype.store_results = function(results) {
+      var key, raw_results, value;
       for (key in results) {
         if (!__hasProp.call(results, key)) continue;
         raw_results = results[key];
         value = raw_results[1][1];
-        $("input[type=hidden][data-label=" + key + "]").val(value);
         this.gquery_results[key] = value;
+        $("input[type=hidden][data-label=" + key + "]").val(value);
       }
-      this.total_cost = results["mixer_total_costs"][1][1];
-      _ref = this.mix_table;
-      for (index in _ref) {
-        if (!__hasProp.call(_ref, index)) continue;
-        code = _ref[index];
-        this.carriers_values[code] = this.gquery_results[code];
+      return this.score.update_values(this.gquery_results);
+    };
+    Mixer.prototype.all_gqueries = function() {
+      var key, _i, _len, _ref;
+      if (this._all_gqueries) {
+        return this._all_gqueries;
       }
-      _ref2 = this.secondary_mix_table;
-      for (index in _ref2) {
-        if (!__hasProp.call(_ref2, index)) continue;
-        code = _ref2[index];
-        this.secondary_carriers_values[code] = this.gquery_results[code];
+      this._all_gqueries = [];
+      _ref = ['primary', 'secondary', 'dashboard', 'costs'];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        key = _ref[_i];
+        this._all_gqueries = this._all_gqueries.concat(_.values(this.gqueries[key]));
       }
-      _ref3 = this.dashboard_items;
-      _results = [];
-      for (index in _ref3) {
-        if (!__hasProp.call(_ref3, index)) continue;
-        code = _ref3[index];
-        value = this.gquery_results[code];
-        this.dashboard_values[code] = value;
-        this.app.score.values[code].current = value;
-        _results.push(this.app.questions.current_question === 2 ? this.app.score.values[code].mark = value : void 0);
-      }
-      return _results;
+      return this._all_gqueries;
     };
     Mixer.prototype.make_request = function() {
       var api_url, request_parameters;
       request_parameters = {
-        result: this.gqueries,
+        result: this.all_gqueries(),
         reset: 1
       };
       if (!$.isEmptyObject(this.parameters)) {
         request_parameters['input'] = this.parameters;
       }
       api_url = "" + this.base_path + "/" + (this.fetch_scenario_id()) + ".json?callback=?";
-      this.app.chart.block_interface();
+      this.chart.block_interface();
       $.jsonp({
         url: api_url,
         data: request_parameters,
         success: __bind(function(data) {
-          this.results = data;
-          this.store_results();
-          this.app.chart.refresh();
-          return this.app.score.refresh();
+          this.store_results(data.result);
+          this.chart.render();
+          return this.score.render();
         }, this),
-        error: function(data, error) {
-          this.app.chart.unblock_interface();
+        error: __bind(function(data, error) {
+          this.chart.unblock_interface();
           return $.logThis(error);
-        }
+        }, this)
       });
       return true;
-    };
-    Mixer.prototype.set_parameter = function(id, value) {
-      this.parameters[id] = value;
-      return this.parameters;
     };
     Mixer.prototype.build_parameters = function() {
       var answer_id, index, item, param_key, question_id, val, _ref, _results;
@@ -130,7 +127,7 @@
           for (param_key in _ref2) {
             if (!__hasProp.call(_ref2, param_key)) continue;
             val = _ref2[param_key];
-            _results2.push(this.set_parameter(param_key, val));
+            _results2.push(this.parameters[param_key] = val);
           }
           return _results2;
         }).call(this));
@@ -156,4 +153,7 @@
     };
     return Mixer;
   })();
+  $(function() {
+    return window.app = new Mixer;
+  });
 }).call(this);
