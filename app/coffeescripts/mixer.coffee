@@ -10,12 +10,12 @@ class Mixer extends Backbone.Model
 
     @gqueries = window.globals.gqueries
 
-    @base_path        = globals.api.base_path + "/api_scenarios"
-    @scenario_id      = false
-    @parameters       = {} # parameters set according to user answers
-    @user_answers     = [] # right from the form
-    @gquery_results   = {} # clean results hash
-    @score_enabled = globals.score_enabled
+    @base_path      = globals.api.base_path + "/api_scenarios"
+    @scenario_id    = false
+    @parameters     = {} # parameters set according to user answers
+    @user_answers   = [] # right from the form
+    @gquery_results = {} # clean results hash
+    @score_enabled  = globals.config.score_enabled
     @fetch_scenario_id()
 
   fetch_scenario_id: ->
@@ -31,8 +31,7 @@ class Mixer extends Backbone.Model
         $.logThis("New scenario id: #{key}")
         # show data for the first time
         @make_request()
-      error: (request, status, error) -> 
-        $.logThis(error)
+      error: (request, status, error) -> $.logThis(error)
       )
     return @scenario_id
   
@@ -100,14 +99,14 @@ class Mixer extends Backbone.Model
       obj = $(elem)
       question_id = obj.data('question_id')
       @user_answers.push([question_id, parseInt(obj.val())])
-    this.build_parameters()
-    return @parameters
+    @build_parameters()
+    @parameters
   
   # parses form, prepares parametes, makes ajax request and refreshes the chart
   # called every time the user selects an answer
   refresh: ->
-    this.process_form()
-    this.make_request()
+    @process_form()
+    @make_request()
 
 $ ->
   window.app = new Mixer
