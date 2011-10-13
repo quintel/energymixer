@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:11:56 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:35:58 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -34,8 +34,6 @@
       this.user_answers = [];
       this.gquery_results = {};
       this.dashboard_items = globals.dashboard_items;
-      this.mix_table = globals.mix_table;
-      this.secondary_mix_table = globals.secondary_mix_table;
       this.score_enabled = globals.score_enabled;
       return this.fetch_scenario_id();
     };
@@ -74,11 +72,23 @@
       }
       return this.score.update_values(this.gquery_results);
     };
+    Mixer.prototype.all_gqueries = function() {
+      var key, _i, _len, _ref;
+      if (this._all_gqueries) {
+        return this._all_gqueries;
+      }
+      this._all_gqueries = [];
+      _ref = ['primary', 'secondary', 'dashboard', 'costs'];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        key = _ref[_i];
+        this._all_gqueries = this._all_gqueries.concat(_.values(this.gqueries[key]));
+      }
+      return this._all_gqueries;
+    };
     Mixer.prototype.make_request = function() {
-      var all_gqueries, api_url, request_parameters;
-      all_gqueries = _.flatten(this.gqueries);
+      var api_url, request_parameters;
       request_parameters = {
-        result: all_gqueries,
+        result: this.all_gqueries(),
         reset: 1
       };
       if (!$.isEmptyObject(this.parameters)) {

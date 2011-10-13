@@ -17,10 +17,10 @@
         end_year: #{@end_year}
       },
       gqueries: {
-        primary: #{Scenario::PrimaryTable.values.to_json},
-        secondary: #{Scenario::SecondaryTable.values.to_json},
-        dashboard: #{Scenario::DashboardTable.values.to_json},
-        costs: #{Scenario::CostsTable.values.to_json}
+        primary: #{Scenario::PrimaryTable.to_json},
+        secondary: #{Scenario::SecondaryTable.to_json},
+        dashboard: #{Scenario::DashboardTable.to_json},
+        costs: #{Scenario::CostsTable.to_json}
       },
       popups: #{popup_json},
       etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}",
