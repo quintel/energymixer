@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:13:19 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:11:56 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -27,18 +27,15 @@
       this.score = new ScoreBoard({
         model: this
       });
+      this.gqueries = window.globals.gqueries;
       this.base_path = globals.api_base_path + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
       this.user_answers = [];
-      this.carriers_values = {};
-      this.dashboard_values = {};
-      this.secondary_carriers_values = {};
       this.gquery_results = {};
       this.dashboard_items = globals.dashboard_items;
       this.mix_table = globals.mix_table;
       this.secondary_mix_table = globals.secondary_mix_table;
-      this.gqueries = this.mix_table.concat(this.dashboard_items).concat(this.secondary_mix_table).concat(["mixer_total_costs"]);
       this.score_enabled = globals.score_enabled;
       return this.fetch_scenario_id();
     };
@@ -67,7 +64,7 @@
       return this.scenario_id;
     };
     Mixer.prototype.store_results = function(results) {
-      var code, index, key, raw_results, value, _ref, _ref2, _ref3;
+      var key, raw_results, value;
       for (key in results) {
         if (!__hasProp.call(results, key)) continue;
         raw_results = results[key];
@@ -75,31 +72,13 @@
         this.gquery_results[key] = value;
         $("input[type=hidden][data-label=" + key + "]").val(value);
       }
-      _ref = this.mix_table;
-      for (index in _ref) {
-        if (!__hasProp.call(_ref, index)) continue;
-        code = _ref[index];
-        this.carriers_values[code] = this.gquery_results[code];
-      }
-      _ref2 = this.secondary_mix_table;
-      for (index in _ref2) {
-        if (!__hasProp.call(_ref2, index)) continue;
-        code = _ref2[index];
-        this.secondary_carriers_values[code] = this.gquery_results[code];
-      }
-      _ref3 = this.dashboard_items;
-      for (index in _ref3) {
-        if (!__hasProp.call(_ref3, index)) continue;
-        code = _ref3[index];
-        value = this.gquery_results[code];
-        this.dashboard_values[code] = value;
-      }
       return this.score.update_values(this.gquery_results);
     };
     Mixer.prototype.make_request = function() {
-      var api_url, request_parameters;
+      var all_gqueries, api_url, request_parameters;
+      all_gqueries = _.flatten(this.gqueries);
       request_parameters = {
-        result: this.gqueries,
+        result: all_gqueries,
         reset: 1
       };
       if (!$.isEmptyObject(this.parameters)) {

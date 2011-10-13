@@ -37,20 +37,6 @@ module ScenariosHelper
     out.to_json
   end
   
-  # This array is used by mixer.js while querying the engine
-  def dashboard_items_json
-    DashboardItem.ordered.map(&:gquery).to_json
-  end
-  
-  # As above
-  def mix_table_json
-    Scenario::PrimaryMixTable.values.to_json
-  end
-  
-  def secondary_mix_table_json
-    Scenario::SecondaryMixTable.values.to_json
-  end
-  
   def dashboard_steps_json
     out = {}
     DashboardItem.ordered.each do |i|

@@ -8,18 +8,14 @@ class Mixer extends Backbone.Model
     @questions = new Questions({model: this})
     @score     = new ScoreBoard({model: this})
 
+    @gqueries = window.globals.gqueries
+
     @base_path        = globals.api_base_path + "/api_scenarios"
     @scenario_id      = false
     @parameters       = {} # parameters set according to user answers
     @user_answers     = [] # right from the form
-    @carriers_values  = {} # used by chart, too!
-    @dashboard_values = {} # idem
-    @secondary_carriers_values  = {}
     @gquery_results   = {} # clean results hash
     @dashboard_items     = globals.dashboard_items # provided by the controller
-    @mix_table           = globals.mix_table       # idem
-    @secondary_mix_table = globals.secondary_mix_table # idem
-    @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["mixer_total_costs"])
     @score_enabled = globals.score_enabled
     @fetch_scenario_id()
 
@@ -50,24 +46,14 @@ class Mixer extends Backbone.Model
       @gquery_results[key] = value
       $("input[type=hidden][data-label=#{key}]").val(value)
 
-    # now let's udpate the result collections
-    for own index, code of @mix_table
-      @carriers_values[code] = @gquery_results[code]
-
-    for own index, code of @secondary_mix_table
-      @secondary_carriers_values[code] = @gquery_results[code]
-
-    for own index, code of @dashboard_items
-      value = @gquery_results[code]
-      @dashboard_values[code] = value      
-    
     # let's pass the data to the score object
     @score.update_values @gquery_results    
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: ->
-    request_parameters = {result: @gqueries, reset: 1}
+    all_gqueries = _.flatten(@gqueries)
+    request_parameters = {result: all_gqueries, reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
     # Note that we're not using the standard jquery ajax call, but 

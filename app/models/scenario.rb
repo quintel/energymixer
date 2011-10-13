@@ -57,7 +57,7 @@ class Scenario < ActiveRecord::Base
     output_12: "mixer_total_costs"
   }
   
-  PrimaryMixTable = {
+  PrimaryTable = {
     coal:       "share_of_total_costs_assigned_to_coal",
     gas:        "share_of_total_costs_assigned_to_gas",
     oil:        "share_of_total_costs_assigned_to_oil",
@@ -65,10 +65,21 @@ class Scenario < ActiveRecord::Base
     renewables: "share_of_total_costs_assigned_to_renewables"
   }
   
-  SecondaryMixTable = {
+  SecondaryTable = {
     wind:    "share_of_total_costs_assigned_to_wind",
     solar:   "share_of_total_costs_assigned_to_solar",
     biomass: "share_of_total_costs_assigned_to_biomass"
+  }
+  
+  DashboardTable = {
+    co2_emissions: "mixer_reduction_of_co2_emissions_versus_1990",
+    renewability: "mixer_renewability",
+    footprint: "mixer_bio_footprint",
+    dependence: "mixer_net_energy_import"
+  }
+  
+  CostsTable = {
+    total_costs: "mixer_total_costs"
   }
   
   validates :name, :presence => true
