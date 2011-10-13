@@ -70,7 +70,10 @@ class @Score extends Backbone.View
     @footprint_score() +
     @dependence_score()
 
-  update_interface: ->
+  render: ->
+    for own key, value of @values
+      return false if (value.mark == null || value.current == null)
+
     total = parseInt(@total_score())
     $(".score_details table .cost").html(sprintf("%.2f", @costs_score()))
     $(".score_details table .co2").html(sprintf("%.2f", @co2_score()))
@@ -86,11 +89,6 @@ class @Score extends Backbone.View
     input_selector = "#scenario_answers_attributes_#{current_question_dom_id}_score"
     $(input_selector).val(total)
 
-  refresh: ->
-    for own key, value of @values
-      return false if (value.mark == null || value.current == null)
-    @update_interface()
-  
   toggle_score: (e) =>
     $(".score_details").toggle()
     explanation = $(e.target).find(".explanation")

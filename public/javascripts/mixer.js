@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:18:58 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:25:38 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -117,7 +117,7 @@
           this.results = data;
           this.store_results();
           this.chart.refresh();
-          return this.score.refresh();
+          return this.score.render();
         }, this),
         error: __bind(function(data, error) {
           this.chart.unblock_interface();

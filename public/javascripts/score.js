@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:20:14 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:25:38 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -51,18 +51,17 @@
       "click #score": "toggle_score"
     };
     Score.prototype.update_values = function(gqueries) {
-      var key, v, values, _ref;
+      var key, v, values, _ref, _results;
       _ref = this.values;
+      _results = [];
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
         values = _ref[key];
         v = gqueries[key];
         values.current = v;
-        if (this.model.questions.current_question === 2) {
-          values.mark = v;
-        }
+        _results.push(this.model.questions.current_question === 2 ? values.mark = v : void 0);
       }
-      return console.log(this.values);
+      return _results;
     };
     Score.prototype.co2_score = function() {
       var score, v;
@@ -112,8 +111,16 @@
     Score.prototype.total_score = function() {
       return this.co2_score() + this.renewability_score() + this.costs_score() + this.footprint_score() + this.dependence_score();
     };
-    Score.prototype.update_interface = function() {
-      var current_question_dom_id, input_selector, total;
+    Score.prototype.render = function() {
+      var current_question_dom_id, input_selector, key, total, value, _ref;
+      _ref = this.values;
+      for (key in _ref) {
+        if (!__hasProp.call(_ref, key)) continue;
+        value = _ref[key];
+        if (value.mark === null || value.current === null) {
+          return false;
+        }
+      }
       total = parseInt(this.total_score());
       $(".score_details table .cost").html(sprintf("%.2f", this.costs_score()));
       $(".score_details table .co2").html(sprintf("%.2f", this.co2_score()));
@@ -128,18 +135,6 @@
       current_question_dom_id = this.model.questions.current_question - 1;
       input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
       return $(input_selector).val(total);
-    };
-    Score.prototype.refresh = function() {
-      var key, value, _ref;
-      _ref = this.values;
-      for (key in _ref) {
-        if (!__hasProp.call(_ref, key)) continue;
-        value = _ref[key];
-        if (value.mark === null || value.current === null) {
-          return false;
-        }
-      }
-      return this.update_interface();
     };
     Score.prototype.toggle_score = function(e) {
       var explanation;
