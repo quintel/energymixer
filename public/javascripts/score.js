@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 16:06:03 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:20:14 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -49,6 +49,20 @@
     Score.prototype.el = 'body';
     Score.prototype.events = {
       "click #score": "toggle_score"
+    };
+    Score.prototype.update_values = function(gqueries) {
+      var key, v, values, _ref;
+      _ref = this.values;
+      for (key in _ref) {
+        if (!__hasProp.call(_ref, key)) continue;
+        values = _ref[key];
+        v = gqueries[key];
+        values.current = v;
+        if (this.model.questions.current_question === 2) {
+          values.mark = v;
+        }
+      }
+      return console.log(this.values);
     };
     Score.prototype.co2_score = function() {
       var score, v;

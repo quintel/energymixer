@@ -25,6 +25,12 @@ class @Score extends Backbone.View
 
   events:
     "click #score" : "toggle_score"
+  
+  update_values: (gqueries) ->
+    for own key, values of @values
+      v = gqueries[key]
+      values.current = v
+      values.mark = v if @model.questions.current_question == 2
 
   co2_score: ->
     v = @values.mixer_reduction_of_co2_emissions_versus_1990
