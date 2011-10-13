@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:32:39 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:21:13 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score_board.coffee
  */
 
@@ -18,6 +18,7 @@
       ScoreBoard.__super__.constructor.apply(this, arguments);
     }
     ScoreBoard.prototype.initialize = function() {
+      this.score = false;
       return this.values = {
         mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
@@ -107,7 +108,7 @@
       return this.co2_score() + this.renewability_score() + this.costs_score() + this.footprint_score() + this.dependence_score();
     };
     ScoreBoard.prototype.render = function() {
-      var current_question_dom_id, input_selector, key, total, value, _ref;
+      var current_question_dom_id, input_selector, key, value, _ref;
       _ref = this.values;
       for (key in _ref) {
         if (!__hasProp.call(_ref, key)) continue;
@@ -116,20 +117,20 @@
           return false;
         }
       }
-      total = parseInt(this.total_score());
+      this.score = parseInt(this.total_score());
       $(".score_details table .cost").html(sprintf("%.2f", this.costs_score()));
       $(".score_details table .co2").html(sprintf("%.2f", this.co2_score()));
       $(".score_details table .renewables").html(sprintf("%.2f", this.renewability_score()));
       $(".score_details table .areafp").html(sprintf("%.2f", this.footprint_score()));
       $(".score_details table .import").html(sprintf("%.2f", this.dependence_score()));
-      $("#score .value").html(total);
-      $("input#scenario_score").val(total);
+      $("#score .value").html(this.score);
+      $("input#scenario_score").val(this.score);
       if (!this.should_show_score_explanation()) {
-        $("#score .explanation").hide();
+        $(".score_details .explanation").hide();
       }
       current_question_dom_id = this.model.questions.current_question - 1;
       input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
-      return $(input_selector).val(total);
+      return $(input_selector).val(this.score);
     };
     ScoreBoard.prototype.toggle_score = function(e) {
       var explanation;
