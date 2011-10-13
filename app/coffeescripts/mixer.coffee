@@ -50,8 +50,8 @@ class Mixer extends Backbone.Model
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
-      $("input[type=hidden][data-label=#{key}]").val(value)
       @gquery_results[key] = value
+      $("input[type=hidden][data-label=#{key}]").val(value)
 
     # total cost is used fairly often, let's save it in the mixer object
     @total_cost = results["mixer_total_costs"][1][1]
@@ -65,12 +65,11 @@ class Mixer extends Backbone.Model
 
     for own index, code of @dashboard_items
       value = @gquery_results[code]
-      @dashboard_values[code] = value
-      
-      # update scores object, which is based on dashboard values
-      # DEBT: move to external method
-      @score.values[code].current = value
-      @score.values[code].mark = value if @questions.current_question == 2
+      @dashboard_values[code] = value      
+    
+    # let's pass the data to the score object
+    @score.update_values @gquery_results
+    
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update

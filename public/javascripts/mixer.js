@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 08:24:09 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:18:58 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -68,14 +68,14 @@
       return this.scenario_id;
     };
     Mixer.prototype.store_results = function() {
-      var code, index, key, raw_results, results, value, _ref, _ref2, _ref3, _results;
+      var code, index, key, raw_results, results, value, _ref, _ref2, _ref3;
       results = this.results.result;
       for (key in results) {
         if (!__hasProp.call(results, key)) continue;
         raw_results = results[key];
         value = raw_results[1][1];
-        $("input[type=hidden][data-label=" + key + "]").val(value);
         this.gquery_results[key] = value;
+        $("input[type=hidden][data-label=" + key + "]").val(value);
       }
       this.total_cost = results["mixer_total_costs"][1][1];
       _ref = this.mix_table;
@@ -91,16 +91,13 @@
         this.secondary_carriers_values[code] = this.gquery_results[code];
       }
       _ref3 = this.dashboard_items;
-      _results = [];
       for (index in _ref3) {
         if (!__hasProp.call(_ref3, index)) continue;
         code = _ref3[index];
         value = this.gquery_results[code];
         this.dashboard_values[code] = value;
-        this.score.values[code].current = value;
-        _results.push(this.questions.current_question === 2 ? this.score.values[code].mark = value : void 0);
       }
-      return _results;
+      return this.score.update_values(this.gquery_results);
     };
     Mixer.prototype.make_request = function() {
       var api_url, request_parameters;
@@ -122,10 +119,10 @@
           this.chart.refresh();
           return this.score.refresh();
         }, this),
-        error: function(data, error) {
+        error: __bind(function(data, error) {
           this.chart.unblock_interface();
           return $.logThis(error);
-        }
+        }, this)
       });
       return true;
     };
