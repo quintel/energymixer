@@ -1,4 +1,4 @@
-class @Score extends Backbone.View
+class @ScoreBoard extends Backbone.View
   initialize: ->
     @values =
       mixer_reduction_of_co2_emissions_versus_1990:

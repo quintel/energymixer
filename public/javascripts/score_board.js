@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:31:06 GMT from
- * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:32:39 GMT from
+ * /Users/paozac/Sites/energymixer/app/coffeescripts/score_board.coffee
  */
 
 (function() {
@@ -11,13 +11,13 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  this.Score = (function() {
-    __extends(Score, Backbone.View);
-    function Score() {
+  this.ScoreBoard = (function() {
+    __extends(ScoreBoard, Backbone.View);
+    function ScoreBoard() {
       this.toggle_score = __bind(this.toggle_score, this);
-      Score.__super__.constructor.apply(this, arguments);
+      ScoreBoard.__super__.constructor.apply(this, arguments);
     }
-    Score.prototype.initialize = function() {
+    ScoreBoard.prototype.initialize = function() {
       return this.values = {
         mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
@@ -41,11 +41,11 @@
         }
       };
     };
-    Score.prototype.el = 'body';
-    Score.prototype.events = {
+    ScoreBoard.prototype.el = 'body';
+    ScoreBoard.prototype.events = {
       "click #score": "toggle_score"
     };
-    Score.prototype.update_values = function(gqueries) {
+    ScoreBoard.prototype.update_values = function(gqueries) {
       var key, v, values, _ref, _results;
       _ref = this.values;
       _results = [];
@@ -58,7 +58,7 @@
       }
       return _results;
     };
-    Score.prototype.co2_score = function() {
+    ScoreBoard.prototype.co2_score = function() {
       var score, v;
       v = this.values.mixer_reduction_of_co2_emissions_versus_1990;
       score = 0;
@@ -67,7 +67,7 @@
       }
       return score;
     };
-    Score.prototype.renewability_score = function() {
+    ScoreBoard.prototype.renewability_score = function() {
       var score, v;
       v = this.values.mixer_renewability;
       score = (v.current - v.mark) * 100;
@@ -76,7 +76,7 @@
       }
       return score;
     };
-    Score.prototype.costs_score = function() {
+    ScoreBoard.prototype.costs_score = function() {
       var score, v;
       v = this.values.mixer_total_costs;
       score = (v.mark - v.current) / 100000000;
@@ -85,7 +85,7 @@
       }
       return score;
     };
-    Score.prototype.footprint_score = function() {
+    ScoreBoard.prototype.footprint_score = function() {
       var score, v;
       v = this.values.mixer_bio_footprint;
       score = (v.mark - v.current) * 100;
@@ -94,7 +94,7 @@
       }
       return score;
     };
-    Score.prototype.dependence_score = function() {
+    ScoreBoard.prototype.dependence_score = function() {
       var score, v;
       v = this.values.mixer_net_energy_import;
       score = (v.mark - v.current) * 100;
@@ -103,10 +103,10 @@
       }
       return score;
     };
-    Score.prototype.total_score = function() {
+    ScoreBoard.prototype.total_score = function() {
       return this.co2_score() + this.renewability_score() + this.costs_score() + this.footprint_score() + this.dependence_score();
     };
-    Score.prototype.render = function() {
+    ScoreBoard.prototype.render = function() {
       var current_question_dom_id, input_selector, key, total, value, _ref;
       _ref = this.values;
       for (key in _ref) {
@@ -131,7 +131,7 @@
       input_selector = "#scenario_answers_attributes_" + current_question_dom_id + "_score";
       return $(input_selector).val(total);
     };
-    Score.prototype.toggle_score = function(e) {
+    ScoreBoard.prototype.toggle_score = function(e) {
       var explanation;
       $(".score_details").toggle();
       explanation = $(e.target).find(".explanation");
@@ -141,9 +141,9 @@
         return explanation.hide();
       }
     };
-    Score.prototype.should_show_score_explanation = function() {
+    ScoreBoard.prototype.should_show_score_explanation = function() {
       return this.score === false && this.model.questions.current_question <= 2;
     };
-    return Score;
+    return ScoreBoard;
   })();
 }).call(this);

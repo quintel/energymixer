@@ -6,7 +6,7 @@ class Mixer extends Backbone.Model
   initialize: ->
     @chart     = new Chart({model: this})
     @questions = new Questions({model: this})
-    @score     = new Score({model: this})
+    @score     = new ScoreBoard({model: this})
 
     @base_path        = globals.api_base_path + "/api_scenarios"
     @scenario_id      = false
