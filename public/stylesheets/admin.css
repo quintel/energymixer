@@ -148,7 +148,7 @@ body.admin {
         font-weight: bold;
         padding: 10px 5px; }
   body.admin a {
-    color: #000066;
+    color: #38678b;
     text-decoration: underline; }
     body.admin a:hover {
       color: red; }
@@ -164,13 +164,8 @@ body.admin {
     body.admin #content #actions {
       margin-top: 0.5em;
       border: 1px solid #eeeeee;
-      padding: 1em 0.5em;
-      background-color: #efefef;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#efefef, endColorstr=#dfe1e2)";
-      background-image: -moz-linear-gradient(center top, #efefef, #dfe1e2);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dfe1e2)); }
+      padding: 1em 0.5em; }
       body.admin #content #actions a {
-        text-decoration: none;
         margin-right: 1em; }
   body.admin .flash {
     text-align: center;
@@ -217,7 +212,8 @@ body#questions_show .question {
   margin-bottom: 1em; }
 
 table.striped {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 10px; }
   table.striped td {
     padding: 0.4em; }
   table.striped thead tr {
@@ -241,7 +237,6 @@ table.striped {
     table.striped tbody tr td.small {
       font-size: 0.7em; }
     table.striped tbody tr td a {
-      font-size: 0.9em;
       color: #38678b; }
   table.striped tbody tr.even {
     background-color: #eeeeee; }
