@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:42:46 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 13:40:33 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -86,9 +86,8 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, gquery, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
+      var chart_max_height, code, current_chart_height, current_sum, gquery, max_amount, new_height, ratio, total_renewables_ratio, _ref, _ref2;
       current_sum = this.model.gquery_results["mixer_total_costs"];
-      charts_to_be_updated = $(".charts_container").not('.static');
       chart_max_height = 360;
       max_amount = globals.chart_max_amount;
       current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height;
@@ -98,13 +97,8 @@
         gquery = _ref[code];
         ratio = this.model.gquery_results[gquery];
         new_height = ratio * current_chart_height;
-        item = charts_to_be_updated.find("li." + code);
-        item.animate({
-          "height": new_height
-        }, "slow");
-        percentage = Math.round(ratio * 100);
-        selector = $(".legend tr." + code + " td.value");
-        selector.html("" + percentage + "%");
+        this._animate_chart_item(code, new_height);
+        this._update_legend_item(code, ratio);
       }
       chart_max_height = 160;
       total_renewables_ratio = this.model.gquery_results.mixer_renewability;
@@ -114,16 +108,25 @@
         gquery = _ref2[code];
         ratio = this.model.gquery_results[gquery];
         new_height = Math.round(ratio / total_renewables_ratio * chart_max_height);
-        item = charts_to_be_updated.find("ul.chart ." + code);
-        item.animate({
-          "height": new_height
-        }, "slow");
-        percentage = Math.round(ratio * 100);
-        selector = $(".legend tr." + code + " td.value");
-        selector.html("" + percentage + "%");
+        this._animate_chart_item(code, new_height);
+        this._update_legend_item(code, ratio);
       }
       $(".chart header span.total_amount").html(sprintf("%.1f", current_sum / 1000000000));
       return this.unblock_interface();
+    };
+    Chart.prototype._animate_chart_item = function(code, height) {
+      var charts_to_be_updated, item;
+      charts_to_be_updated = $(".charts_container").not('.static');
+      item = charts_to_be_updated.find("ul.chart ." + code);
+      return item.animate({
+        "height": height
+      }, "slow");
+    };
+    Chart.prototype._update_legend_item = function(code, ratio) {
+      var percentage, selector;
+      percentage = Math.round(ratio * 100);
+      selector = $(".legend tr." + code + " td.value");
+      return selector.html("" + percentage + "%");
     };
     Chart.prototype.update_etm_link = function(url) {
       return $("footer a").click(__bind(function(e) {

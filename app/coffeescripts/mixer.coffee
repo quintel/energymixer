@@ -15,7 +15,6 @@ class Mixer extends Backbone.Model
     @parameters       = {} # parameters set according to user answers
     @user_answers     = [] # right from the form
     @gquery_results   = {} # clean results hash
-    @dashboard_items     = globals.dashboard_items # provided by the controller
     @score_enabled = globals.score_enabled
     @fetch_scenario_id()
 

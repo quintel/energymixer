@@ -1,6 +1,6 @@
 :ruby
   max_height = 360
-  width      = 86
+  width      = 86 # TODO: move to CSS
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
   dashboard_items = {
@@ -32,8 +32,7 @@
         %h4= t 'chart.legend'
         %table
           - scenario.carrier_ratios.each_pair do |carrier, value|
-            -# TODO: CLEAN UP: NOT SEPERATE INTERPOLATION HERE, BUT SCENARIO::PRIMARYMIXTABLE, OR SOMETHING... DS Tue Sep 27 14:30:43 CEST 2011
-            %tr{:class => [carrier, "share_of_total_costs_assigned_to_#{carrier}"]} 
+            %tr{:class => [carrier, Scenario::PrimaryTable[carrier]]} 
               %td= image_tag "layout/textures/#{carrier}.png"
               %td= t(carrier)
               %td.value= number_to_percentage(value * 100, :precision => 0)
