@@ -73,9 +73,9 @@ class Scenario < ActiveRecord::Base
   
   DashboardTable = {
     co2_emissions: "mixer_reduction_of_co2_emissions_versus_1990",
-    renewability: "mixer_renewability",
-    footprint: "mixer_bio_footprint",
-    dependence: "mixer_net_energy_import"
+    renewability:  "mixer_renewability",
+    footprint:     "mixer_bio_footprint",
+    dependence:    "mixer_net_energy_import"
   }
   
   CostsTable = {

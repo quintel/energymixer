@@ -49,11 +49,19 @@ class Mixer extends Backbone.Model
     # let's pass the data to the score object
     @score.update_values @gquery_results    
   
+  
+  # flat list of all the gqueries we're sending to the engine
+  all_gqueries: ->
+    return @_all_gqueries if @_all_gqueries
+    @_all_gqueries = []
+    for key in ['primary', 'secondary', 'dashboard', 'costs']
+      @_all_gqueries = @_all_gqueries.concat(_.values(@gqueries[key]))
+    @_all_gqueries
+  
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: ->
-    all_gqueries = _.flatten(@gqueries)
-    request_parameters = {result: all_gqueries, reset: 1}
+    request_parameters = {result: @all_gqueries(), reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
     # Note that we're not using the standard jquery ajax call, but 
