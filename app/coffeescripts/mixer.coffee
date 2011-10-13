@@ -21,7 +21,7 @@ class Mixer extends Backbone.Model
     @secondary_mix_table = globals.secondary_mix_table # idem
     @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["mixer_total_costs"])
     @score_enabled = globals.score_enabled
-    this.fetch_scenario_id()
+    @fetch_scenario_id()
 
   fetch_scenario_id: ->
     return @scenario_id if @scenario_id
@@ -50,9 +50,6 @@ class Mixer extends Backbone.Model
       @gquery_results[key] = value
       $("input[type=hidden][data-label=#{key}]").val(value)
 
-    # total cost is used fairly often, let's save it in the mixer object
-    @total_cost = @gquery_results["mixer_total_costs"]
-    
     # now let's udpate the result collections
     for own index, code of @mix_table
       @carriers_values[code] = @gquery_results[code]
@@ -65,8 +62,7 @@ class Mixer extends Backbone.Model
       @dashboard_values[code] = value      
     
     # let's pass the data to the score object
-    @score.update_values @gquery_results
-    
+    @score.update_values @gquery_results    
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
@@ -84,7 +80,7 @@ class Mixer extends Backbone.Model
       data: request_parameters,
       success: (data) =>
         @store_results(data.result)
-        @chart.refresh()
+        @chart.render()
         @score.render()
       error: (data, error) =>
         @chart.unblock_interface()
