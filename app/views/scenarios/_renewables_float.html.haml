@@ -5,7 +5,7 @@
   %ul.chart
     - scenario.renewable_carrier_ratios.each_pair do |carrier, value|
       - height = value / cumulative_ratio * max_height
-      %li.serie{:class => [carrier, Scenario::SecondaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
+      %li.serie{:class => [carrier, Scenario::SecondaryTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
   .legend
     %h4= t 'chart.legend'
     %table

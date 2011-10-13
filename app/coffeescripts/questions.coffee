@@ -1,7 +1,8 @@
-class @Questions
-  constructor: (app) ->
-    @app = app
+class @Questions extends Backbone.View
+  initialize: ->
+    @app = @model
     @current_question = 1
+    @popups = window.globals.popups
     # If the user submits the form but the record is not saved
     # rails renders the template again. Let's show the final step
     if($(".field_with_errors").length > 0)
@@ -9,9 +10,89 @@ class @Questions
       @current_question = this.count_questions()
     else
       @current_question = 1
-    this.setup_callbacks()
-    this.show_right_question()
-    this.clear_the_form()
+    @show_right_question()
+    @setup_colorbox()
+    @clear_the_form()
+    
+
+  el: 'body'
+
+  events:
+    "change input[type='radio']" : "select_answer"
+    "submit form"                : "submit_form"
+    "click #next_question"       : "_goto_next_question"
+    "click #prev_question"       : "_goto_prev_question"
+    "click #questions nav#up a"  : "open_question"
+    "click #admin_menu a"        : "open_question"
+    "click .question a.show_info" : "show_question_info_box"
+    "click .question a.close_info_popup" : "hide_question_info_box"
+    "mouseenter li.answer em" : "show_tooltip"
+    "mouseleave  li.answer em" : "hide_tooltip"
+    "mousemove li.answer em" : "move_tooltip"
+
+  # Callbacks
+  #
+
+  setup_colorbox: ->
+    $(".question .information .body a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
+      width: 600
+      opacity: 0.6
+    })
+
+    $(".question .information a.iframe").colorbox({
+      width: 600
+      height: 400
+      opacity: 0.6
+      iframe: true
+    })
+
+  show_tooltip: (e) ->
+    element = $(e.target)
+    key = element.attr('key') || element.html()
+    popup = @popups[key]
+    return unless popup
+    $("#tooltip h3").html(popup.title)
+    $("#tooltip div").html(popup.body)
+    $("#tooltip").show("fast")
+
+  hide_tooltip: -> $("#tooltip").hide()
+
+  move_tooltip: (e) ->
+    tipX = e.pageX - 0
+    tipY = e.pageY - 0
+    offset = $(this).offset()
+    $("#tooltip").css({"top": tipY + 20 , "left": tipX})
+
+  hide_question_info_box: (e) =>
+    e.preventDefault()
+    $(e.target).closest(".information").hide()
+    $(e.target).closest("#questions").unblock()
+    $("nav#down").unblock()
+
+  show_question_info_box: (e) =>
+    e.preventDefault()
+    $(e.target).closest(".info").find(".information").toggle()
+    $(e.target).closest("#questions").block()
+    $("nav#down").block()
+
+  open_question: (e) =>
+    e.preventDefault()
+    question_id = $(e.target).data('question_id')
+    @current_question = question_id
+    @show_right_question()
+
+  submit_form: =>
+    # update the scenario id hidden field
+    $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
+    @store_geolocation() if globals.config.geolocation_enabled
+
+  select_answer: (e) =>
+    element = $(e.target).closest("li.answer")
+    # remove active class from other answer
+    element.parent().find("li.answer").removeClass('active')
+    element.addClass('active')
+    @app.refresh()
+    @check_conflicts()
     
   # question methods
   #
@@ -30,12 +111,6 @@ class @Questions
       answers.push(parseInt($(this).val()))
     return answers
 
-  reset_questions: ->
-    for el in $(".answers input:checked")
-      $(el).attr('checked', false)
-      $(el).closest("li.answer").removeClass('active')
-    app.mixer.refresh()
-  
   # returns the question_number given the answer_id we're using 
   # this method to alert the user about conflicting answers
   get_question_id_from_answer: (answer_id) ->
@@ -75,18 +150,19 @@ class @Questions
   # interface methods
   #
   
-  _goto_next_question: =>
-    if this.current_question_was_answered()
+  _goto_next_question: (e) =>
+    e.preventDefault()
+    if @current_question_was_answered()
       @current_question++
       last_question = this.count_questions()
-      if (@current_question > last_question)
-        @current_question = last_question
-      this.show_right_question()
+      @current_question = last_question if @current_question > last_question
+      @show_right_question()
     
-  _goto_prev_question: =>
+  _goto_prev_question: (e) =>
+    e.preventDefault()
     @current_question--
-    @current_question = 1 if (@current_question < 1)
-    this.show_right_question()
+    @current_question = 1 if @current_question < 1
+    @show_right_question()
     
   
   disable_prev_link: ->
@@ -109,27 +185,27 @@ class @Questions
   
 
   disable_all_question_links: =>
-    this.disable_next_link()
-    this.disable_prev_link()
+    @disable_next_link()
+    @disable_prev_link()
   
   update_question_links: =>
     first_question = @current_question == 1
-    last_question  = @current_question == this.count_questions()
+    last_question  = @current_question == @count_questions()
     
     if first_question 
-      this.disable_prev_link()
+      @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
     else if @current_question <= 3 && @app.score_enabled
-      this.disable_prev_link()
+      @disable_prev_link()
     else
-      this.enable_prev_link()
-      this.disable_next_link() if last_question
+      @enable_prev_link()
+      @disable_next_link() if last_question
     
-    if (this.current_question_was_answered() && !last_question)
-      this.enable_next_link()
+    if @current_question_was_answered() && !last_question
+      @enable_next_link()
     else
-      this.disable_next_link()
+      @disable_next_link()
   
   show_right_question: =>
     $(".question").hide()
@@ -140,110 +216,24 @@ class @Questions
     for i in [1..@current_question]
       tab_selector = ".question_tab[data-question_id=#{i}]"
       $(tab_selector).addClass('active')      
-    this.update_question_links()
+    @update_question_links()
     
     # GA
     question_text = $.trim($(question_id).find("div.text").text())
-    if (@current_question == this.count_questions())
-      question_text = "Saving scenario"
+    question_text = "Saving scenario" if @current_question == @count_questions()
     event_label = "#{@current_question} : #{question_text}"
-    this.track_event("opens_question_#{@current_question}", question_text, @current_question)
+    @track_event("opens_question_#{@current_question}", question_text, @current_question)
   
   store_location: =>
     navigator.geolocation.getCurrentPosition (pos) ->
       $("#scenario_longitude").val(pos.coords.longitude)
       $("#scenario_latitude").val(pos.coords.latitude)
   
-  # callbacks
-  #
-  setup_navigation_callbacks: ->
-    $("#previous_question, #next_question").click (e) -> 
-      e.preventDefault()
-
-    $("#next_question").click this._goto_next_question
-    $("#prev_question").click this._goto_prev_question
-
-
-    $("#questions nav#up a, #admin_menu a").click (e) =>
-      e.preventDefault()
-      question_id = $(e.target).data('question_id')
-      @current_question = question_id
-      this.show_right_question()
-  
-  setup_cosmetic_callbacks: ->
-    # setup colorbox popups for below questions
-    $(".question .information a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
-      width: 600
-      opacity: 0.6
-    })
-    
-    # setup colorbox popups for below questions
-    $(".question .information a.iframe").colorbox({
-      width: 600
-      height: 400
-      opacity: 0.6
-      iframe: true
-    });
-
-    # setup small tooltips
-    $(".answers em").hover(
-      () ->
-        if ($(this).attr('key'))
-          key = $(this).attr('key')
-        else
-          key = $(this).html()
-        text = globals.popups[key]
-        $("#tooltip h3").html(text.title)
-        $("#tooltip div").html(text.body)
-        $("#tooltip").show("fast")
-      ,
-      () -> $("#tooltip").hide()
-    )
-    $(".answers em").mousemove (e) ->
-      tipX = e.pageX - 0
-      tipY = e.pageY - 0
-      offset = $(this).offset()
-      $("#tooltip").css({"top": tipY + 20 , "left": tipX})
-    
-    # show / hide question info box
-    $("section#questions .question a.close_info_popup").click (e) ->
-      e.preventDefault()
-      $(this).closest(".information").hide()
-      $(this).closest("#questions").unblock()
-      $("nav#down").unblock()
-      return false
-  
-    $("section#questions .question a.show_info").click (e) ->
-      $(this).parent().find(".information").toggle()
-      e.preventDefault()
-      $(this).closest("#questions").block()
-      $("nav#down").block()
-  
-  setup_question_callbacks: ->
-    # when the users clicks on an answer
-    $("input[type='radio']").change (e) =>
-      element = $(e.target).closest("li.answer")
-      # remove active class from other answer
-      element.parent().find("li.answer").removeClass('active')
-      element.addClass('active')
-      @app.mixer.refresh()
-      this.check_conflicts()
-    
-    $("form").submit =>
-      # update the scenario id hidden field
-      $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
-      this.store_geolocation() if globals.geolocation_enabled
-    
-  setup_callbacks: ->
-    this.setup_navigation_callbacks()
-    this.setup_question_callbacks()
-    this.setup_cosmetic_callbacks()
-  
   # utility methods
   #
   
-  clear_the_form: ->
-    $('form')[0].reset() # we need to force this when a user refreshes the page (browser wants to remember the values), DS
+  # we need to force this when a user refreshes the page (browser wants to remember the values), DS
+  clear_the_form: -> $('form')[0].reset()
   
   track_event: (action, label, value) ->
     return if (typeof(_gaq) == "undefined")

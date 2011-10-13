@@ -4,7 +4,7 @@
     %h4= t 'chart.legend'
     %table
       - scenario.carrier_ratios.each_pair do |sector, value|
-        %tr{:class => [sector, "costs_share_of_#{sector}"]}
+        %tr{:class => sector}
           %td= image_tag "layout/textures/#{sector}.png"
           %td= t(sector)
           %td.value= number_to_percentage(value * 100, :precision => 0)
@@ -12,5 +12,5 @@
     %ul.chart
       - scenario.carrier_ratios.each_pair do |sector, value|
         - height = (value * max_height).round
-        %li.serie{:class => [sector, Scenario::PrimaryMixTable[sector]], :style => "height: #{height}px", :title => I18n.t(sector)}
+        %li.serie{:class => [sector, Scenario::PrimaryTable[sector]], :style => "height: #{height}px", :title => I18n.t(sector)}
   = render 'scenarios/renewables_float', :scenario => scenario

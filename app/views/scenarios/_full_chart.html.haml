@@ -1,22 +1,8 @@
 :ruby
   max_height = 360
-  width      = 86
+  width      = 86 # TODO: move to CSS
   max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
-  dashboard_items = {
-    output_5: {
-      gquery: "mixer_reduction_of_co2_emissions_versus_1990", title: t('dashboard.co2_emissions.title'), text: t('dashboard.co2_emissions.text')
-    },
-    output_6: {
-      gquery: "mixer_renewability", title: t('dashboard.renewability.title'), text: t('dashboard.renewability.text')
-    },
-    output_7: {
-      gquery: "mixer_bio_footprint", title: t('dashboard.footprint.title'), text: t('dashboard.footprint.text')
-    },
-    output_8: {
-      gquery: "mixer_net_energy_import", title: t('dashboard.energy_import.title'), text: t('dashboard.energy_import.text')
-    }
-  }
 .full_chart.shaded_gradient
   %header.header_blue
     - scenario_year = scenario.current_scenario? ? 2011 : scenario.year || @end_year
@@ -32,8 +18,7 @@
         %h4= t 'chart.legend'
         %table
           - scenario.carrier_ratios.each_pair do |carrier, value|
-            -# TODO: CLEAN UP: NOT SEPERATE INTERPOLATION HERE, BUT SCENARIO::PRIMARYMIXTABLE, OR SOMETHING... DS Tue Sep 27 14:30:43 CEST 2011
-            %tr{:class => [carrier, "share_of_total_costs_assigned_to_#{carrier}"]} 
+            %tr{:class => [carrier, Scenario::PrimaryTable[carrier]]} 
               %td= image_tag "layout/textures/#{carrier}.png"
               %td= t(carrier)
               %td.value= number_to_percentage(value * 100, :precision => 0)
@@ -42,7 +27,7 @@
         %ul.chart
           - scenario.carrier_ratios.each_pair do |carrier, ratio|
             - height = ratio * current_chart_height
-            %li.serie{:class => [carrier, Scenario::PrimaryMixTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
+            %li.serie{:class => [carrier, Scenario::PrimaryTable[carrier]], :style => "height: #{height}px", :title => I18n.t(carrier)}
       = render 'renewables_float', :scenario => scenario    
 
   %section.boxes
@@ -51,17 +36,18 @@
         = render 'score_box', :scenario => scenario
       - else 
         Effect
-    - dashboard_items.each_pair do |output, item|
-      .dashboard_item{:id => item[:gquery]}
-        .gauge_icon{:class => set_class_for_output(output, scenario.send(output))}
+    - Scenario::DashboardTable.each_pair do |key, gquery|
+      - output = output_for_dashboard_item(key)
+      .dashboard_item{:id => gquery}
+        .gauge_icon{:class => set_class_for_output(gquery, scenario.send(output))}
         .info_icon
           = image_tag('icons/i.png')
-        %h3= raw t(dashboard_label_for_output(output))
-        .value= format_dashboard_value output, scenario.send(output)
+        %h3= t "dashboard.#{key}.title"
+        .value= format_dashboard_value(gquery, scenario.send(output))
         .popup.shaded_gradient
           = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
-          .title= item[:title]
-          .text= item[:text]
+          .title= t "dashboard.#{key}.title"
+          .text= t "dashboard.#{key}.text"
   .clear
         
         

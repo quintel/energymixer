@@ -2,106 +2,83 @@
 # For the output it depends on the Graph object and it
 # requires some parameters to be set in the globals hash,
 # namely api_base_path and api_session_settings
-class @Mixer
-  constructor: (app) ->
-    @app = app
-    @base_path        = globals.api_base_path + "/api_scenarios"
-    @scenario_id      = false
-    @parameters       = {} # parameters set according to user answers
-    @results          = {} # semiraw response from the engine
-    @user_answers     = [] # right from the form
-    @carriers_values  = {} # used by chart, too!
-    @dashboard_values = {} # idem
-    @secondary_carriers_values  = {}
-    @gquery_results   = {} # clean results hash
-    @dashboard_items     = globals.dashboard_items # provided by the controller
-    @mix_table           = globals.mix_table       # idem
-    @secondary_mix_table = globals.secondary_mix_table # idem
-    @gqueries = @mix_table.concat(@dashboard_items).concat(@secondary_mix_table).concat(["mixer_total_costs"])
-    @score_enabled = globals.score_enabled
-    this.fetch_scenario_id()
+class Mixer extends Backbone.Model
+  initialize: ->
+    @chart     = new Chart({model: this})
+    @questions = new Questions({model: this})
+    @score     = new ScoreBoard({model: this})
+
+    @gqueries = window.globals.gqueries
+
+    @base_path      = globals.api.base_path + "/api_scenarios"
+    @scenario_id    = false
+    @parameters     = {} # parameters set according to user answers
+    @user_answers   = [] # right from the form
+    @gquery_results = {} # clean results hash
+    @score_enabled  = globals.config.score_enabled
+    @fetch_scenario_id()
 
   fetch_scenario_id: ->
     return @scenario_id if @scenario_id
     $.ajax(
       url: "#{@base_path}/new.json"
       dataType: 'jsonp'
-      data: { settings : globals.api_session_settings }
+      data: { settings : globals.api.session_settings }
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @scenario_id = key
-        @app.chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
+        @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
         $.logThis("New scenario id: #{key}")
         # show data for the first time
-        this.make_request()
-      error: (request, status, error) -> 
-        $.logThis(error)
+        @make_request()
+      error: (request, status, error) -> $.logThis(error)
       )
     return @scenario_id
   
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
-  store_results: ->
-    results = @results.result
-    
+  store_results: (results) ->
     # let's store all values in the corresponding hidden inputs
     for own key, raw_results of results
       value = raw_results[1][1]
-      $("input[type=hidden][data-label=#{key}]").val(value)
       @gquery_results[key] = value
+      $("input[type=hidden][data-label=#{key}]").val(value)
 
-    # total cost is used fairly often, let's save it in the mixer object
-    @total_cost = results["mixer_total_costs"][1][1]
-    
-    # now let's udpate the result collections
-    for own index, code of @mix_table
-      @carriers_values[code] = @gquery_results[code]
-
-    for own index, code of @secondary_mix_table
-      @secondary_carriers_values[code] = @gquery_results[code]
-
-    for own index, code of @dashboard_items
-      value = @gquery_results[code]
-      @dashboard_values[code] = value
-      
-      # update scores object, which is based on dashboard values
-      # DEBT: move to external method
-      @app.score.values[code].current = value
-      @app.score.values[code].mark = value if @app.questions.current_question == 2
+    # let's pass the data to the score object
+    @score.update_values @gquery_results    
+  
+  
+  # flat list of all the gqueries we're sending to the engine
+  all_gqueries: ->
+    return @_all_gqueries if @_all_gqueries
+    @_all_gqueries = []
+    for key in ['primary', 'secondary', 'dashboard', 'costs']
+      @_all_gqueries = @_all_gqueries.concat(_.values(@gqueries[key]))
+    @_all_gqueries
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: ->
-    request_parameters = {result: @gqueries, reset: 1}
+    request_parameters = {result: @all_gqueries(), reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
-    # Note that we're not using the standard jquery ajax call,
-    # but http:#code.google.com/p/jquery-jsonp/
-    # for its better error handling.
-    # http://stackoverflow.com/questions/1002367/jquery-ajax-jsonp-ignores-a-timeout-and-doesnt-fire-the-error-event
-    # if we're going back to vanilla jquery change the callback parameters,
-    # add type: json and remove the '?callback=?' url suffix
+    # Note that we're not using the standard jquery ajax call, but 
+    # http://code.google.com/p/jquery-jsonp/ for its better error handling.
     api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json?callback=?"
     
-    @app.chart.block_interface()
+    @chart.block_interface()
     $.jsonp(
       url: api_url,
       data: request_parameters,
       success: (data) =>
-        # if(data.errors.length > 0) { alert(data.errors); }
-        @results = data
-        this.store_results()
-        @app.chart.refresh()
-        @app.score.refresh()
-      error: (data, error) ->
-        @app.chart.unblock_interface()
+        @store_results(data.result)
+        @chart.render()
+        @score.render()
+      error: (data, error) =>
+        @chart.unblock_interface()
         $.logThis(error)
     )
-    return true;
-  
-  set_parameter: (id, value) ->
-    @parameters[id] = value
-    return @parameters
+    return true
   
   # build parameters given user answers. The parameter values are defined in the
   # global answer hash.
@@ -112,7 +89,7 @@ class @Mixer
       answer_id   = item[1]
       # globals.answers is defined on the view!
       for own param_key, val of globals.answers[question_id][answer_id]
-        this.set_parameter(param_key, val)
+        @parameters[param_key] = val
   
   # makes an array out of user answers in this format:
   # [ [question_1_id, answer_1_id], [question_2_id, answer_2_id], ...]
@@ -122,11 +99,14 @@ class @Mixer
       obj = $(elem)
       question_id = obj.data('question_id')
       @user_answers.push([question_id, parseInt(obj.val())])
-    this.build_parameters()
-    return @parameters
+    @build_parameters()
+    @parameters
   
   # parses form, prepares parametes, makes ajax request and refreshes the chart
   # called every time the user selects an answer
   refresh: ->
-    this.process_form()
-    this.make_request()
+    @process_form()
+    @make_request()
+
+$ ->
+  window.app = new Mixer

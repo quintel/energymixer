@@ -1,27 +1,129 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 14:45:14 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty;
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+    for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
+    function ctor() { this.constructor = child; }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor;
+    child.__super__ = parent.prototype;
+    return child;
+  };
   this.Questions = (function() {
-    function Questions(app) {
+    __extends(Questions, Backbone.View);
+    function Questions() {
       this.store_location = __bind(this.store_location, this);
       this.show_right_question = __bind(this.show_right_question, this);
       this.update_question_links = __bind(this.update_question_links, this);
       this.disable_all_question_links = __bind(this.disable_all_question_links, this);
       this._goto_prev_question = __bind(this._goto_prev_question, this);
-      this._goto_next_question = __bind(this._goto_next_question, this);      this.app = app;
+      this._goto_next_question = __bind(this._goto_next_question, this);
+      this.select_answer = __bind(this.select_answer, this);
+      this.submit_form = __bind(this.submit_form, this);
+      this.open_question = __bind(this.open_question, this);
+      this.show_question_info_box = __bind(this.show_question_info_box, this);
+      this.hide_question_info_box = __bind(this.hide_question_info_box, this);
+      Questions.__super__.constructor.apply(this, arguments);
+    }
+    Questions.prototype.initialize = function() {
+      this.app = this.model;
       this.current_question = 1;
+      this.popups = window.globals.popups;
       if ($(".field_with_errors").length > 0) {
         this.current_question = this.count_questions();
       } else {
         this.current_question = 1;
       }
-      this.setup_callbacks();
       this.show_right_question();
-      this.clear_the_form();
-    }
+      this.setup_colorbox();
+      return this.clear_the_form();
+    };
+    Questions.prototype.el = 'body';
+    Questions.prototype.events = {
+      "change input[type='radio']": "select_answer",
+      "submit form": "submit_form",
+      "click #next_question": "_goto_next_question",
+      "click #prev_question": "_goto_prev_question",
+      "click #questions nav#up a": "open_question",
+      "click #admin_menu a": "open_question",
+      "click .question a.show_info": "show_question_info_box",
+      "click .question a.close_info_popup": "hide_question_info_box",
+      "mouseenter li.answer em": "show_tooltip",
+      "mouseleave  li.answer em": "hide_tooltip",
+      "mousemove li.answer em": "move_tooltip"
+    };
+    Questions.prototype.setup_colorbox = function() {
+      $(".question .information .body a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
+        width: 600,
+        opacity: 0.6
+      });
+      return $(".question .information a.iframe").colorbox({
+        width: 600,
+        height: 400,
+        opacity: 0.6,
+        iframe: true
+      });
+    };
+    Questions.prototype.show_tooltip = function(e) {
+      var element, key, popup;
+      element = $(e.target);
+      key = element.attr('key') || element.html();
+      popup = this.popups[key];
+      if (!popup) {
+        return;
+      }
+      $("#tooltip h3").html(popup.title);
+      $("#tooltip div").html(popup.body);
+      return $("#tooltip").show("fast");
+    };
+    Questions.prototype.hide_tooltip = function() {
+      return $("#tooltip").hide();
+    };
+    Questions.prototype.move_tooltip = function(e) {
+      var offset, tipX, tipY;
+      tipX = e.pageX - 0;
+      tipY = e.pageY - 0;
+      offset = $(this).offset();
+      return $("#tooltip").css({
+        "top": tipY + 20,
+        "left": tipX
+      });
+    };
+    Questions.prototype.hide_question_info_box = function(e) {
+      e.preventDefault();
+      $(e.target).closest(".information").hide();
+      $(e.target).closest("#questions").unblock();
+      return $("nav#down").unblock();
+    };
+    Questions.prototype.show_question_info_box = function(e) {
+      e.preventDefault();
+      $(e.target).closest(".info").find(".information").toggle();
+      $(e.target).closest("#questions").block();
+      return $("nav#down").block();
+    };
+    Questions.prototype.open_question = function(e) {
+      var question_id;
+      e.preventDefault();
+      question_id = $(e.target).data('question_id');
+      this.current_question = question_id;
+      return this.show_right_question();
+    };
+    Questions.prototype.submit_form = function() {
+      $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
+      if (globals.config.geolocation_enabled) {
+        return this.store_geolocation();
+      }
+    };
+    Questions.prototype.select_answer = function(e) {
+      var element;
+      element = $(e.target).closest("li.answer");
+      element.parent().find("li.answer").removeClass('active');
+      element.addClass('active');
+      this.app.refresh();
+      return this.check_conflicts();
+    };
     Questions.prototype.current_question_was_answered = function() {
       var answer, question_id;
       question_id = "#question_" + this.current_question;
@@ -39,16 +141,6 @@
         return answers.push(parseInt($(this).val()));
       });
       return answers;
-    };
-    Questions.prototype.reset_questions = function() {
-      var el, _i, _len, _ref;
-      _ref = $(".answers input:checked");
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        el = _ref[_i];
-        $(el).attr('checked', false);
-        $(el).closest("li.answer").removeClass('active');
-      }
-      return app.mixer.refresh();
     };
     Questions.prototype.get_question_id_from_answer = function(answer_id) {
       var e, _i, _len, _ref;
@@ -94,8 +186,9 @@
       }
       return conflict;
     };
-    Questions.prototype._goto_next_question = function() {
+    Questions.prototype._goto_next_question = function(e) {
       var last_question;
+      e.preventDefault();
       if (this.current_question_was_answered()) {
         this.current_question++;
         last_question = this.count_questions();
@@ -105,7 +198,8 @@
         return this.show_right_question();
       }
     };
-    Questions.prototype._goto_prev_question = function() {
+    Questions.prototype._goto_prev_question = function(e) {
+      e.preventDefault();
       this.current_question--;
       if (this.current_question < 1) {
         this.current_question = 1;
@@ -177,90 +271,6 @@
         $("#scenario_longitude").val(pos.coords.longitude);
         return $("#scenario_latitude").val(pos.coords.latitude);
       });
-    };
-    Questions.prototype.setup_navigation_callbacks = function() {
-      $("#previous_question, #next_question").click(function(e) {
-        return e.preventDefault();
-      });
-      $("#next_question").click(this._goto_next_question);
-      $("#prev_question").click(this._goto_prev_question);
-      return $("#questions nav#up a, #admin_menu a").click(__bind(function(e) {
-        var question_id;
-        e.preventDefault();
-        question_id = $(e.target).data('question_id');
-        this.current_question = question_id;
-        return this.show_right_question();
-      }, this));
-    };
-    Questions.prototype.setup_cosmetic_callbacks = function() {
-      $(".question .information a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
-        width: 600,
-        opacity: 0.6
-      });
-      $(".question .information a.iframe").colorbox({
-        width: 600,
-        height: 400,
-        opacity: 0.6,
-        iframe: true
-      });
-      $(".answers em").hover(function() {
-        var key, text;
-        if ($(this).attr('key')) {
-          key = $(this).attr('key');
-        } else {
-          key = $(this).html();
-        }
-        text = globals.popups[key];
-        $("#tooltip h3").html(text.title);
-        $("#tooltip div").html(text.body);
-        return $("#tooltip").show("fast");
-      }, function() {
-        return $("#tooltip").hide();
-      });
-      $(".answers em").mousemove(function(e) {
-        var offset, tipX, tipY;
-        tipX = e.pageX - 0;
-        tipY = e.pageY - 0;
-        offset = $(this).offset();
-        return $("#tooltip").css({
-          "top": tipY + 20,
-          "left": tipX
-        });
-      });
-      $("section#questions .question a.close_info_popup").click(function(e) {
-        e.preventDefault();
-        $(this).closest(".information").hide();
-        $(this).closest("#questions").unblock();
-        $("nav#down").unblock();
-        return false;
-      });
-      return $("section#questions .question a.show_info").click(function(e) {
-        $(this).parent().find(".information").toggle();
-        e.preventDefault();
-        $(this).closest("#questions").block();
-        return $("nav#down").block();
-      });
-    };
-    Questions.prototype.setup_question_callbacks = function() {
-      $("input[type='radio']").change(__bind(function(e) {
-        var element;
-        element = $(e.target).closest("li.answer");
-        element.parent().find("li.answer").removeClass('active');
-        element.addClass('active');
-        this.app.mixer.refresh();
-        return this.check_conflicts();
-      }, this));
-      return $("form").submit(__bind(function() {
-        $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
-        if (globals.geolocation_enabled) {
-          return this.store_geolocation();
-        }
-      }, this));
-    };
-    Questions.prototype.setup_callbacks = function() {
-      this.setup_navigation_callbacks();
-      this.setup_question_callbacks();
-      return this.setup_cosmetic_callbacks();
     };
     Questions.prototype.clear_the_form = function() {
       return $('form')[0].reset();

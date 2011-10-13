@@ -37,20 +37,6 @@ module ScenariosHelper
     out.to_json
   end
   
-  # This array is used by mixer.js while querying the engine
-  def dashboard_items_json
-    DashboardItem.ordered.map(&:gquery).to_json
-  end
-  
-  # As above
-  def mix_table_json
-    Scenario::PrimaryMixTable.values.to_json
-  end
-  
-  def secondary_mix_table_json
-    Scenario::SecondaryMixTable.values.to_json
-  end
-  
   def dashboard_steps_json
     out = {}
     DashboardItem.ordered.each do |i|
@@ -63,12 +49,7 @@ module ScenariosHelper
     Scenario::Outputs[i]
   end
   
-  def dashboard_label_for_output(i)
-    DashboardItem.find_by_gquery(gquery_for_output(i)).label rescue nil
-  end
-  
-  def set_class_for_output(i, value)
-    gquery = gquery_for_output(i)
+  def set_class_for_output(gquery, value)
     dashboard_item = DashboardItem.find_by_gquery(gquery)
     step = dashboard_item.corresponding_step(value)
     "#{gquery}_step_#{step}"
@@ -77,8 +58,7 @@ module ScenariosHelper
   end
   
   # Check graph.js for similar method
-  def format_dashboard_value(input_id, value)
-    gquery = gquery_for_output(input_id)
+  def format_dashboard_value(gquery, value)
     return if value.nil? #cope with curren values nil on testing server
     case gquery
     when "mixer_reduction_of_co2_emissions_versus_1990"
@@ -102,5 +82,11 @@ module ScenariosHelper
     out = {}
     Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
     out.to_json
+  end
+  
+  # On the dashboard we want to know which scenario attribute corresponds to a key
+  def output_for_dashboard_item(key)
+    gquery = Scenario::DashboardTable[key]
+    output = Scenario::Outputs.invert[gquery]
   end
 end
