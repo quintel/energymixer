@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 12 Oct 2011 10:33:13 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 08:24:09 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -57,7 +57,7 @@
           var key;
           key = data.api_scenario.id || data.api_scenario.api_session_key;
           this.scenario_id = key;
-          this.app.chart.update_etm_link("" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl");
+          this.chart.update_etm_link("" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl");
           $.logThis("New scenario id: " + key);
           return this.make_request();
         }, this),
@@ -97,8 +97,8 @@
         code = _ref3[index];
         value = this.gquery_results[code];
         this.dashboard_values[code] = value;
-        this.app.score.values[code].current = value;
-        _results.push(this.app.questions.current_question === 2 ? this.app.score.values[code].mark = value : void 0);
+        this.score.values[code].current = value;
+        _results.push(this.questions.current_question === 2 ? this.score.values[code].mark = value : void 0);
       }
       return _results;
     };
@@ -112,18 +112,18 @@
         request_parameters['input'] = this.parameters;
       }
       api_url = "" + this.base_path + "/" + (this.fetch_scenario_id()) + ".json?callback=?";
-      this.app.chart.block_interface();
+      this.chart.block_interface();
       $.jsonp({
         url: api_url,
         data: request_parameters,
         success: __bind(function(data) {
           this.results = data;
           this.store_results();
-          this.app.chart.refresh();
-          return this.app.score.refresh();
+          this.chart.refresh();
+          return this.score.refresh();
         }, this),
         error: function(data, error) {
-          this.app.chart.unblock_interface();
+          this.chart.unblock_interface();
           return $.logThis(error);
         }
       });

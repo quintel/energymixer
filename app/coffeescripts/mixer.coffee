@@ -33,10 +33,10 @@ class Mixer extends Backbone.Model
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @scenario_id = key
-        @app.chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
+        @chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
         $.logThis("New scenario id: #{key}")
         # show data for the first time
-        this.make_request()
+        @make_request()
       error: (request, status, error) -> 
         $.logThis(error)
       )
@@ -69,8 +69,8 @@ class Mixer extends Backbone.Model
       
       # update scores object, which is based on dashboard values
       # DEBT: move to external method
-      @app.score.values[code].current = value
-      @app.score.values[code].mark = value if @app.questions.current_question == 2
+      @score.values[code].current = value
+      @score.values[code].mark = value if @questions.current_question == 2
   
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
@@ -86,7 +86,7 @@ class Mixer extends Backbone.Model
     # add type: json and remove the '?callback=?' url suffix
     api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json?callback=?"
     
-    @app.chart.block_interface()
+    @chart.block_interface()
     $.jsonp(
       url: api_url,
       data: request_parameters,
@@ -94,10 +94,10 @@ class Mixer extends Backbone.Model
         # if(data.errors.length > 0) { alert(data.errors); }
         @results = data
         this.store_results()
-        @app.chart.refresh()
-        @app.score.refresh()
+        @chart.refresh()
+        @score.refresh()
       error: (data, error) ->
-        @app.chart.unblock_interface()
+        @chart.unblock_interface()
         $.logThis(error)
     )
     return true;
