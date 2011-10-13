@@ -94,7 +94,7 @@ class Mixer extends Backbone.Model
         @results = data
         this.store_results()
         @chart.refresh()
-        @score.refresh()
+        @score.render()
       error: (data, error) =>
         @chart.unblock_interface()
         $.logThis(error)
