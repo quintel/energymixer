@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:25:38 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:32:39 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -24,7 +24,7 @@
       this.questions = new Questions({
         model: this
       });
-      this.score = new Score({
+      this.score = new ScoreBoard({
         model: this
       });
       this.base_path = globals.api_base_path + "/api_scenarios";
