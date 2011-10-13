@@ -49,10 +49,7 @@ module ScenariosHelper
     Scenario::Outputs[i]
   end
   
-  def dashboard_label_for_output(i)
-    DashboardItem.find_by_gquery(gquery_for_output(i)).label rescue nil
-  end
-  
+  # TODO: pass directly gquery
   def set_class_for_output(i, value)
     gquery = gquery_for_output(i)
     dashboard_item = DashboardItem.find_by_gquery(gquery)
@@ -63,6 +60,7 @@ module ScenariosHelper
   end
   
   # Check graph.js for similar method
+  # TODO: pass directly gquery
   def format_dashboard_value(input_id, value)
     gquery = gquery_for_output(input_id)
     return if value.nil? #cope with curren values nil on testing server
@@ -88,5 +86,11 @@ module ScenariosHelper
     out = {}
     Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
     out.to_json
+  end
+  
+  # On the dashboard we want to know which scenario attribute corresponds to a key
+  def output_for_dashboard_item(key)
+    gquery = Scenario::DashboardTable[key]
+    output = Scenario::Outputs.invert[gquery]
   end
 end

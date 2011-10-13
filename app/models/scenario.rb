@@ -71,11 +71,12 @@ class Scenario < ActiveRecord::Base
     biomass: "share_of_total_costs_assigned_to_biomass"
   }
   
+  # The keys are used in the translation files
   DashboardTable = {
     co2_emissions: "mixer_reduction_of_co2_emissions_versus_1990",
     renewability:  "mixer_renewability",
     footprint:     "mixer_bio_footprint",
-    dependence:    "mixer_net_energy_import"
+    energy_import: "mixer_net_energy_import"
   }
   
   CostsTable = {
