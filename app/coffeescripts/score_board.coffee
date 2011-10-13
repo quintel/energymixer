@@ -1,5 +1,6 @@
 class @ScoreBoard extends Backbone.View
   initialize: ->
+    @score = false
     @values =
       mixer_reduction_of_co2_emissions_versus_1990:
         mark: null
@@ -69,20 +70,20 @@ class @ScoreBoard extends Backbone.View
     for own key, value of @values
       return false if (value.mark == null || value.current == null)
 
-    total = parseInt(@total_score())
+    @score = parseInt(@total_score())
     $(".score_details table .cost").html(sprintf("%.2f", @costs_score()))
     $(".score_details table .co2").html(sprintf("%.2f", @co2_score()))
     $(".score_details table .renewables").html(sprintf("%.2f", @renewability_score()))
     $(".score_details table .areafp").html(sprintf("%.2f", @footprint_score()))
     $(".score_details table .import").html(sprintf("%.2f", @dependence_score()))
-    $("#score .value").html(total)
-    $("input#scenario_score").val(total)
-    $("#score .explanation").hide() if !@should_show_score_explanation()
+    $("#score .value").html(@score)
+    $("input#scenario_score").val(@score)
+    $(".score_details .explanation").hide() if !@should_show_score_explanation()
     # update subscore, too
     # current_questions starts with 1, while rails nested attributes with 0
     current_question_dom_id = @model.questions.current_question - 1
     input_selector = "#scenario_answers_attributes_#{current_question_dom_id}_score"
-    $(input_selector).val(total)
+    $(input_selector).val(@score)
 
   toggle_score: (e) =>
     $(".score_details").toggle()
