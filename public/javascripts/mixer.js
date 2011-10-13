@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:32:39 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:05:14 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -30,7 +30,6 @@
       this.base_path = globals.api_base_path + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
-      this.results = {};
       this.user_answers = [];
       this.carriers_values = {};
       this.dashboard_values = {};
@@ -67,9 +66,8 @@
       });
       return this.scenario_id;
     };
-    Mixer.prototype.store_results = function() {
-      var code, index, key, raw_results, results, value, _ref, _ref2, _ref3;
-      results = this.results.result;
+    Mixer.prototype.store_results = function(results) {
+      var code, index, key, raw_results, value, _ref, _ref2, _ref3;
       for (key in results) {
         if (!__hasProp.call(results, key)) continue;
         raw_results = results[key];
@@ -77,7 +75,7 @@
         this.gquery_results[key] = value;
         $("input[type=hidden][data-label=" + key + "]").val(value);
       }
-      this.total_cost = results["mixer_total_costs"][1][1];
+      this.total_cost = this.gquery_results["mixer_total_costs"];
       _ref = this.mix_table;
       for (index in _ref) {
         if (!__hasProp.call(_ref, index)) continue;
@@ -114,8 +112,7 @@
         url: api_url,
         data: request_parameters,
         success: __bind(function(data) {
-          this.results = data;
-          this.store_results();
+          this.store_results(data.result);
           this.chart.refresh();
           return this.score.render();
         }, this),
@@ -125,10 +122,6 @@
         }, this)
       });
       return true;
-    };
-    Mixer.prototype.set_parameter = function(id, value) {
-      this.parameters[id] = value;
-      return this.parameters;
     };
     Mixer.prototype.build_parameters = function() {
       var answer_id, index, item, param_key, question_id, val, _ref, _results;
@@ -147,7 +140,7 @@
           for (param_key in _ref2) {
             if (!__hasProp.call(_ref2, param_key)) continue;
             val = _ref2[param_key];
-            _results2.push(this.set_parameter(param_key, val));
+            _results2.push(this.parameters[param_key] = val);
           }
           return _results2;
         }).call(this));
