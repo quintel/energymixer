@@ -9,12 +9,17 @@
     var globals = {
       answers: #{answers_json},
       answers_conflicts: #{answers_conflicts_json},
-      dashboard_steps: #{dashboard_steps_json},
-      chart_max_amount: #{Scenario::MaxAmount},
-      api_base_path: #{APP_CONFIG["api_base_path"].to_json},
-      api_session_settings: {
-        country: #{APP_CONFIG["api_session_settings"][:country].to_json},
-        end_year: #{@end_year}
+      chart: {
+        dashboard_steps: #{dashboard_steps_json},
+        max_amount: #{Scenario::MaxAmount}
+      },
+      api: {
+        base_path: #{APP_CONFIG["api_base_path"].to_json},
+        session_settings: {
+          country: #{APP_CONFIG["api_session_settings"][:country].to_json},
+          end_year: #{@end_year}
+        },
+        load_in_etm_url: "#{APP_CONFIG['view_scenario_path']}"
       },
       gqueries: {
         primary: #{Scenario::PrimaryTable.to_json},
@@ -23,7 +28,6 @@
         costs: #{Scenario::CostsTable.to_json}
       },
       popups: #{popup_json},
-      etm_scenario_base_url: "#{APP_CONFIG['view_scenario_path']}",
       current_situation: #{Scenario.current.combined_carriers.to_json},
       score_enabled: #{APP_CONFIG['score'].to_json},
       geolocation_enabled: #{APP_CONFIG['geolocation_enabled'].to_json},

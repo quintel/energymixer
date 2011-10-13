@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 13:40:33 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:15:43 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -28,7 +28,7 @@
         model: this
       });
       this.gqueries = window.globals.gqueries;
-      this.base_path = globals.api_base_path + "/api_scenarios";
+      this.base_path = globals.api.base_path + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
       this.user_answers = [];
@@ -44,13 +44,13 @@
         url: "" + this.base_path + "/new.json",
         dataType: 'jsonp',
         data: {
-          settings: globals.api_session_settings
+          settings: globals.api.session_settings
         },
         success: __bind(function(data) {
           var key;
           key = data.api_scenario.id || data.api_scenario.api_session_key;
           this.scenario_id = key;
-          this.chart.update_etm_link("" + globals.etm_scenario_base_url + "/" + this.scenario_id + "/load?locale=nl");
+          this.chart.update_etm_link("" + globals.api.load_in_etm_url + "/" + this.scenario_id + "/load?locale=nl");
           $.logThis("New scenario id: " + key);
           return this.make_request();
         }, this),
