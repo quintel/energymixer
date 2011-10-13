@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 08:27:13 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:44:57 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -30,6 +30,7 @@
     Questions.prototype.initialize = function() {
       this.app = this.model;
       this.current_question = 1;
+      this.popups = window.globals.popups;
       if ($(".field_with_errors").length > 0) {
         this.current_question = this.count_questions();
       } else {
@@ -49,9 +50,9 @@
       "click #admin_menu a": "open_question",
       "click .question a.show_info": "show_question_info_box",
       "click .question a.close_info_popup": "hide_question_info_box",
-      "mouseover .answers em": "show_tooltip",
-      "mouseout .answers em": "hide_tooltip",
-      "mousemove .answers em": "move_tooltip"
+      "mouseenter li.answer em": "show_tooltip",
+      "mouseleave  li.answer em": "hide_tooltip",
+      "mousemove li.answer em": "move_tooltip"
     };
     Questions.prototype.setup_colorbox = function() {
       $(".question .information .body a, .answer .text a").not(".no_popup").not(".iframe").colorbox({
@@ -65,16 +66,16 @@
         iframe: true
       });
     };
-    Questions.prototype.show_tooltip = function() {
-      var key, text;
-      if ($(this).attr('key')) {
-        key = $(this).attr('key');
-      } else {
-        key = $(this).html();
+    Questions.prototype.show_tooltip = function(e) {
+      var element, key, popup;
+      element = $(e.target);
+      key = element.attr('key') || element.html();
+      popup = this.popups[key];
+      if (!popup) {
+        return;
       }
-      text = globals.popups[key];
-      $("#tooltip h3").html(text.title);
-      $("#tooltip div").html(text.body);
+      $("#tooltip h3").html(popup.title);
+      $("#tooltip div").html(popup.body);
       return $("#tooltip").show("fast");
     };
     Questions.prototype.hide_tooltip = function() {

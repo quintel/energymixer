@@ -2,6 +2,7 @@ class @Questions extends Backbone.View
   initialize: ->
     @app = @model
     @current_question = 1
+    @popups = window.globals.popups
     # If the user submits the form but the record is not saved
     # rails renders the template again. Let's show the final step
     if($(".field_with_errors").length > 0)
@@ -12,6 +13,7 @@ class @Questions extends Backbone.View
     this.show_right_question()
     @setup_colorbox()
     @clear_the_form()
+    
 
   el: 'body'
 
@@ -24,9 +26,9 @@ class @Questions extends Backbone.View
     "click #admin_menu a"        : "open_question"
     "click .question a.show_info" : "show_question_info_box"
     "click .question a.close_info_popup" : "hide_question_info_box"
-    "mouseover .answers em" : "show_tooltip"
-    "mouseout .answers em"  : "hide_tooltip"
-    "mousemove .answers em" : "move_tooltip"
+    "mouseenter li.answer em" : "show_tooltip"
+    "mouseleave  li.answer em" : "hide_tooltip"
+    "mousemove li.answer em" : "move_tooltip"
 
   # Callbacks
   #
@@ -44,14 +46,13 @@ class @Questions extends Backbone.View
       iframe: true
     })
 
-  show_tooltip: ->
-    if ($(this).attr('key'))
-      key = $(this).attr('key')
-    else
-      key = $(this).html()
-    text = globals.popups[key]
-    $("#tooltip h3").html(text.title)
-    $("#tooltip div").html(text.body)
+  show_tooltip: (e) ->
+    element = $(e.target)
+    key = element.attr('key') || element.html()
+    popup = @popups[key]
+    return unless popup
+    $("#tooltip h3").html(popup.title)
+    $("#tooltip div").html(popup.body)
     $("#tooltip").show("fast")
 
   hide_tooltip: -> $("#tooltip").hide()
