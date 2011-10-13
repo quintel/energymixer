@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:25:38 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 09:31:06 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/score.coffee
  */
 
@@ -21,28 +21,23 @@
       return this.values = {
         mixer_reduction_of_co2_emissions_versus_1990: {
           mark: null,
-          current: null,
-          score: 0
+          current: null
         },
         mixer_renewability: {
           mark: null,
-          current: null,
-          score: 0
+          current: null
         },
         mixer_bio_footprint: {
           mark: null,
-          current: null,
-          score: 0
+          current: null
         },
         mixer_net_energy_import: {
           mark: null,
-          current: null,
-          score: 0
+          current: null
         },
         mixer_total_costs: {
           mark: null,
-          current: null,
-          score: 0
+          current: null
         }
       };
     };
@@ -70,7 +65,7 @@
       if (v.mark > v.current) {
         score = Math.abs((v.mark - v.current) * 100);
       }
-      return v.score = score;
+      return score;
     };
     Score.prototype.renewability_score = function() {
       var score, v;
@@ -79,7 +74,7 @@
       if (score < 0) {
         score = 0;
       }
-      return v.score = score;
+      return score;
     };
     Score.prototype.costs_score = function() {
       var score, v;
@@ -88,7 +83,7 @@
       if (score < 0) {
         score = 0;
       }
-      return v.score = score;
+      return score;
     };
     Score.prototype.footprint_score = function() {
       var score, v;
@@ -97,7 +92,7 @@
       if (score < 0) {
         score = 0;
       }
-      return v.score = score;
+      return score;
     };
     Score.prototype.dependence_score = function() {
       var score, v;
@@ -106,7 +101,7 @@
       if (score < 0) {
         score = 0;
       }
-      return v.score = score;
+      return score;
     };
     Score.prototype.total_score = function() {
       return this.co2_score() + this.renewability_score() + this.costs_score() + this.footprint_score() + this.dependence_score();

@@ -4,23 +4,18 @@ class @Score extends Backbone.View
       mixer_reduction_of_co2_emissions_versus_1990:
         mark: null
         current : null
-        score: 0
       mixer_renewability:
         mark: null
         current: null
-        score: 0
       mixer_bio_footprint:
         mark: null
         current: null
-        score: 0
       mixer_net_energy_import:
         mark: null
         current: null
-        score: 0
       mixer_total_costs:
         mark: null
         current: null
-        score: 0
   el: 'body'
 
   events:
@@ -37,31 +32,31 @@ class @Score extends Backbone.View
     score = 0
     if (v.mark > v.current)
       score = Math.abs((v.mark - v.current) * 100)
-    v.score = score
+    score
 
   renewability_score: ->
     v = @values.mixer_renewability
     score = (v.current - v.mark) * 100
     score = 0 if (score < 0)
-    v.score = score
+    score
 
   costs_score: ->
     v = @values.mixer_total_costs
     score = (v.mark - v.current) / 100000000
     score = 0 if (score < 0)
-    v.score = score
+    score
 
   footprint_score: ->
     v = @values.mixer_bio_footprint
     score = (v.mark - v.current) * 100
     score = 0 if (score < 0)
-    v.score = score
+    score
 
   dependence_score: ->
     v = @values.mixer_net_energy_import
     score = (v.mark - v.current) * 100
     score = 0 if (score < 0)
-    v.score = score
+    score
   
   total_score: ->
     @co2_score() +
