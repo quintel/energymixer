@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:05:14 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:13:19 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -75,7 +75,6 @@
         this.gquery_results[key] = value;
         $("input[type=hidden][data-label=" + key + "]").val(value);
       }
-      this.total_cost = this.gquery_results["mixer_total_costs"];
       _ref = this.mix_table;
       for (index in _ref) {
         if (!__hasProp.call(_ref, index)) continue;
@@ -113,7 +112,7 @@
         data: request_parameters,
         success: __bind(function(data) {
           this.store_results(data.result);
-          this.chart.refresh();
+          this.chart.render();
           return this.score.render();
         }, this),
         error: __bind(function(data, error) {

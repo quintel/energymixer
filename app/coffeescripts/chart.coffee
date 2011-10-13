@@ -4,10 +4,10 @@ class @Chart extends Backbone.View
   
   # Main entry point.
   # assumes results have been stored
-  refresh: ->
+  render: ->
     for own key, value of @model.dashboard_values
-      this.update_dashboard_item(key, value)
-    this.update_bar_chart()
+      @update_dashboard_item(key, value)
+    @.update_bar_chart()
   
   block_interface: ->
     $(".dashboard_item .value, .chart header, #carriers").busy({img: '/images/spinner.gif'})
@@ -63,12 +63,6 @@ class @Chart extends Backbone.View
     current_sum = @model.gquery_results["mixer_total_costs"]
     charts_to_be_updated = $(".charts_container").not('.static')
     
-    # update the score attribute.
-    # DEBT: move to score exclusive method
-    @model.score.values.mixer_total_costs.current = current_sum
-    if (@model.questions.current_question == 2 && @model.score.values.mixer_total_costs.mark == null)
-      @model.score.values.mixer_total_costs.mark = current_sum
-
     # main chart
     chart_max_height = 360
     max_amount = globals.chart_max_amount
