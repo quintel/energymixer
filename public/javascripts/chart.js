@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 10:13:19 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 12:42:46 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -86,16 +86,17 @@
       return out;
     };
     Chart.prototype.update_bar_chart = function() {
-      var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
+      var chart_max_height, charts_to_be_updated, code, current_chart_height, current_sum, gquery, item, max_amount, new_height, percentage, ratio, selector, total_renewables_ratio, _ref, _ref2;
       current_sum = this.model.gquery_results["mixer_total_costs"];
       charts_to_be_updated = $(".charts_container").not('.static');
       chart_max_height = 360;
       max_amount = globals.chart_max_amount;
       current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height;
-      _ref = this.model.carriers_values;
+      _ref = this.model.gqueries.primary;
       for (code in _ref) {
         if (!__hasProp.call(_ref, code)) continue;
-        ratio = _ref[code];
+        gquery = _ref[code];
+        ratio = this.model.gquery_results[gquery];
         new_height = ratio * current_chart_height;
         item = charts_to_be_updated.find("li." + code);
         item.animate({
@@ -107,10 +108,11 @@
       }
       chart_max_height = 160;
       total_renewables_ratio = this.model.gquery_results.mixer_renewability;
-      _ref2 = this.model.secondary_carriers_values;
+      _ref2 = this.model.gqueries.secondary;
       for (code in _ref2) {
         if (!__hasProp.call(_ref2, code)) continue;
-        ratio = _ref2[code];
+        gquery = _ref2[code];
+        ratio = this.model.gquery_results[gquery];
         new_height = Math.round(ratio / total_renewables_ratio * chart_max_height);
         item = charts_to_be_updated.find("ul.chart ." + code);
         item.animate({
