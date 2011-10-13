@@ -39,11 +39,11 @@
     - Scenario::DashboardTable.each_pair do |key, gquery|
       - output = output_for_dashboard_item(key)
       .dashboard_item{:id => gquery}
-        .gauge_icon{:class => set_class_for_output(output, scenario.send(output))}
+        .gauge_icon{:class => set_class_for_output(gquery, scenario.send(output))}
         .info_icon
           = image_tag('icons/i.png')
         %h3= t "dashboard.#{key}.title"
-        .value= format_dashboard_value output, scenario.send(output)
+        .value= format_dashboard_value(gquery, scenario.send(output))
         .popup.shaded_gradient
           = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
           .title= t "dashboard.#{key}.title"
