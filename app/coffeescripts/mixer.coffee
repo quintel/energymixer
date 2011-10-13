@@ -10,7 +10,7 @@ class Mixer extends Backbone.Model
 
     @gqueries = window.globals.gqueries
 
-    @base_path        = globals.api_base_path + "/api_scenarios"
+    @base_path        = globals.api.base_path + "/api_scenarios"
     @scenario_id      = false
     @parameters       = {} # parameters set according to user answers
     @user_answers     = [] # right from the form
@@ -23,11 +23,11 @@ class Mixer extends Backbone.Model
     $.ajax(
       url: "#{@base_path}/new.json"
       dataType: 'jsonp'
-      data: { settings : globals.api_session_settings }
+      data: { settings : globals.api.session_settings }
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
         @scenario_id = key
-        @chart.update_etm_link "#{globals.etm_scenario_base_url}/#{@scenario_id}/load?locale=nl"
+        @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
         $.logThis("New scenario id: #{key}")
         # show data for the first time
         @make_request()

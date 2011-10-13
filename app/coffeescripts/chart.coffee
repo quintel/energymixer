@@ -1,6 +1,6 @@
 class @Chart extends Backbone.View
   initialize: ->
-    @dashboard_steps = window.globals.dashboard_steps
+    @dashboard_steps = window.globals.chart.dashboard_steps
   
   # Main entry point.
   # assumes results have been stored
@@ -64,7 +64,7 @@ class @Chart extends Backbone.View
     
     # main chart
     chart_max_height = 360
-    max_amount = globals.chart_max_amount
+    max_amount = globals.chart.max_amount
     current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height
     for own code, gquery of @model.gqueries.primary
       ratio = @model.gquery_results[gquery]
