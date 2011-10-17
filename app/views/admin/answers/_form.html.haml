@@ -9,12 +9,13 @@
   = f.input :description_nl
   = f.input :description_de
   = f.input :ordering
-  = field_set_tag "Inputs" do
-    = f.simple_fields_for :inputs do |i|
-      = field_set_tag do
-        = i.input :slider_name, :as => :string, :input_html => { :class => 'autocomplete'}
-        = i.input :value
-        = i.input :_destroy, :as => :boolean unless i.object.new_record?
+  = f.simple_fields_for :inputs do |i|
+    = field_set_tag do
+      = i.input :slider_name, :as => :string, :input_html => { :class => 'autocomplete'}
+      = i.label :value
+      = i.text_field :value
+      = i.check_box :_destroy unless i.object.new_record?
+      Remove parameter
   = field_set_tag "Conflicts" do
     %ul
       - Question.ordered.each do |q|

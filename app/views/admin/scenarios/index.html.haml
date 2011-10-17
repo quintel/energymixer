@@ -11,7 +11,7 @@
       %th Featured
       %th Average
       %th Year
-      %th Position
+      %th GPS Position
       %th
       %th Carriers
       %th Dashboard Values
@@ -27,7 +27,8 @@
         %td= scenario.average
         %td= scenario.year
         %td
-          #{scenario.longitude},#{scenario.latitude}
+          - if scenario.has_coordinates?
+            #{scenario.longitude},#{scenario.latitude}
         %td
           = link_to '', admin_scenario_path(scenario), :class => 'fugue fugue-information'
           = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
