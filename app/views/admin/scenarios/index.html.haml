@@ -13,8 +13,6 @@
       %th Year
       %th GPS Position
       %th
-      %th Carriers
-      %th Dashboard Values
   %tbody
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
@@ -34,28 +32,6 @@
           = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
           = link_to '', edit_admin_scenario_path(scenario), :class => 'fugue fugue-pencil'
           = link_to '', admin_scenario_path(scenario), :confirm => 'Are you sure?', :method => :delete, :class => 'fugue fugue-cross'
-        %td.no_padding
-          %dl.small
-            %dt= gquery_for_output(:output_0)
-            %dd= scenario.output_0
-            %dt= gquery_for_output(:output_1)
-            %dd= scenario.output_1
-            %dt= gquery_for_output(:output_2)
-            %dd= scenario.output_2
-            %dt= gquery_for_output(:output_3)
-            %dd= scenario.output_3
-            %dt= gquery_for_output(:output_4)
-            %dd= scenario.output_4
-        %td.no_padding
-          %dl.small
-            %dt= gquery_for_output(:output_5)
-            %dd= scenario.output_5
-            %dt= gquery_for_output(:output_6)
-            %dd= scenario.output_6
-            %dt= gquery_for_output(:output_7)
-            %dd= scenario.output_7
-            %dt= gquery_for_output(:output_8)
-            %dd= scenario.output_8
 
 = paginate @scenarios
 
