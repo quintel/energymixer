@@ -31,18 +31,22 @@
           %br
           DE: #{a.text_de}
         %td
-          %table.small
-            - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|
-              %tr
-                %td= i.slider
-                %td= "##{i.slider_id} "
-                %td= i.value
+          - if a.inputs.any?
+            = link_to_function 'inputs', '$(this).parent().find("table").toggle()'
+            %table.small.hidden
+              - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|
+                %tr
+                  %td= i.slider
+                  %td= "##{i.slider_id} "
+                  %td= i.value
         %td
-          %table.small
-            - a.conflicting_answers.each do |answer|
-              %tr
-                %td= truncate(answer.question.text)
-                %td= link_to(truncate(answer.text), edit_admin_answer_path(answer))
+          - if a.conflicting_answers.any?
+            = link_to_function 'conflicts', '$(this).parent().find("table").toggle()'        
+            %table.small.hidden
+              - a.conflicting_answers.each do |answer|
+                %tr
+                  %td= truncate(answer.question.text)
+                  %td= link_to(truncate(answer.text), edit_admin_answer_path(answer))
         %td
           = link_to '', edit_admin_answer_path(a), :class => 'fugue fugue-pencil'
           = link_to '', admin_answer_path(a), :method => :delete, :confirm => 'Are you sure?', :class => 'fugue fugue-cross'
