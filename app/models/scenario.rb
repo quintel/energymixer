@@ -180,4 +180,8 @@ class Scenario < ActiveRecord::Base
   def current_scenario?
     self.featured? && self.title == I18n.t('current_scenario')
   end
+  
+  def has_coordinates?
+    !latitude.blank? && !longitude.blank?
+  end
 end
