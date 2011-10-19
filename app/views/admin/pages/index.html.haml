@@ -1,3 +1,9 @@
 - page_title "Admin"
 
 Hi there!
+
+%h2 Cache stats
+
+%pre= Rails.cache.stats.to_yaml rescue "Error"
+
+= link_to "Reset Cache", :action => :reset_cache
