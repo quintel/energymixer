@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:14:43 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -14,7 +14,7 @@
   this.Questions = (function() {
     __extends(Questions, Backbone.View);
     function Questions() {
-      this.store_location = __bind(this.store_location, this);
+      this.store_geolocation = __bind(this.store_geolocation, this);
       this.show_right_question = __bind(this.show_right_question, this);
       this.update_question_links = __bind(this.update_question_links, this);
       this.disable_all_question_links = __bind(this.disable_all_question_links, this);
@@ -28,7 +28,6 @@
       Questions.__super__.constructor.apply(this, arguments);
     }
     Questions.prototype.initialize = function() {
-      this.app = this.model;
       this.current_question = 1;
       this.popups = window.globals.popups;
       if ($(".field_with_errors").length > 0) {
@@ -111,7 +110,7 @@
       return this.show_right_question();
     };
     Questions.prototype.submit_form = function() {
-      $("#scenario_etm_scenario_id").val(this.app.mixer.scenario_id);
+      $("#scenario_etm_scenario_id").val(this.model.scenario_id);
       if (globals.config.geolocation_enabled) {
         return this.store_geolocation();
       }
@@ -121,7 +120,7 @@
       element = $(e.target).closest("li.answer");
       element.parent().find("li.answer").removeClass('active');
       element.addClass('active');
-      this.app.refresh();
+      this.model.refresh();
       return this.check_conflicts();
     };
     Questions.prototype.current_question_was_answered = function() {
@@ -234,7 +233,7 @@
       last_question = this.current_question === this.count_questions();
       if (first_question) {
         this.disable_prev_link();
-      } else if (this.current_question <= 3 && this.app.score_enabled) {
+      } else if (this.current_question <= 3 && this.model.score_enabled) {
         this.disable_prev_link();
       } else {
         this.enable_prev_link();
@@ -266,7 +265,7 @@
       event_label = "" + this.current_question + " : " + question_text;
       return this.track_event("opens_question_" + this.current_question, question_text, this.current_question);
     };
-    Questions.prototype.store_location = function() {
+    Questions.prototype.store_geolocation = function() {
       return navigator.geolocation.getCurrentPosition(function(pos) {
         $("#scenario_longitude").val(pos.coords.longitude);
         return $("#scenario_latitude").val(pos.coords.latitude);
