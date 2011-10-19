@@ -5,17 +5,17 @@
     %tr
       %th Set
       %th Question Name
-      %th Order
       %th
   %tbody
     - @questions.each do |question|
       %tr{:class => cycle('even', 'odd')}
         %td= link_to(question.question_set.try(:name), [:admin, question.question_set]) if question.question_set
-        %td= link_to question.text, admin_question_path(question)
-        %td= question.number
         %td
-          = link_to '', edit_admin_question_path(question), :class => 'fugue fugue-pencil'
-          = link_to '', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete,  :class => 'fugue fugue-cross'
+          = link_to admin_question_path(question) do
+            #{question.number}. #{question.text}
+        %td
+          = link_to 'Edit', edit_admin_question_path(question)
+          = link_to 'Delete', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete
 
 #actions
   = link_to 'New Question', new_admin_question_path, :class => 'fugue fugue-plus'

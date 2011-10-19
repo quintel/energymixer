@@ -9,8 +9,12 @@
   %dd= @scenario.email
   %dt Age
   %dd= @scenario.age
+  %dt Year
+  %dd= @scenario.year
   %dt Featured
   %dd= @scenario.featured
+  %dt Average
+  %dd= @scenario.average
   %dt= gquery_for_output(:output_0)
   %dd= @scenario.output_0
   %dt= gquery_for_output(:output_1)
@@ -35,12 +39,18 @@
   %dd= @scenario.output_10
   %dt= gquery_for_output(:output_11)
   %dd= @scenario.output_11
+  %dt= gquery_for_output(:output_12)
+  %dd= @scenario.output_12
+  %dt Latitude
+  %dd= @scenario.latitude
+  %dt Longitude
+  %dd= @scenario.longitude
 
 %h2 User Answers
 %dl.admin
   - @scenario.answers.each do |a|
-    %dt= a.question.question
-    %dd= a.answer.try(:answer)
+    %dt= a.question.text
+    %dd= a.answer.try(:text)
 
 #actions
   = link_to 'Edit', edit_admin_scenario_path(@scenario), :class => 'fugue fugue-pencil'

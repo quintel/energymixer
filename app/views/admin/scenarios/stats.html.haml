@@ -1,0 +1,14 @@
+%h2 Stats
+
+%table.striped
+  %thead
+    %tr
+      %th Year
+      %th Month
+      %th Mixes
+  %tbody
+    - @rows.each do |r|  
+      %tr
+        %td= r["y"]
+        %td= r["m"]
+        %td= r["c"]

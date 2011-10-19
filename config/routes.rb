@@ -8,10 +8,18 @@ EnergyMixer::Application.routes.draw do
 
     resources :questions, :popups, :question_sets
     resources :dashboard_items
-    resources :scenarios
+    resources :scenarios do
+      get :stats, :on => :collection
+    end
     resources :translations
     
-    root :to => "questions#index"
+    resources :pages, :only => :index do
+      collection do
+        get :reset_cache
+      end
+    end
+    
+    root :to => "pages#index"
   end
 
   resources :scenarios, :path => 'mixes', :only => [:new, :create, :show, :index] do

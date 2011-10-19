@@ -1,6 +1,8 @@
 - page_title "Editing Answer"
-Question ##{@answer.question.number}
-= link_to @answer.question.text, admin_question_path(@answer.question)
+
+%div
+  Question ##{@answer.question.number}
+  = link_to @answer.question.text, admin_question_path(@answer.question)
 
 = render 'form'
 
