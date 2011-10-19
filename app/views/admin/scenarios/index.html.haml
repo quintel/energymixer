@@ -4,6 +4,7 @@
   %thead
     %tr
       %th Id
+      %th Date
       %th Title
       %th Name
       %th Email
@@ -17,6 +18,7 @@
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
         %td= link_to scenario.id, admin_scenario_path(scenario)
+        %td= l scenario.created_at, :format => :short
         %td= link_to scenario.title, admin_scenario_path(scenario) if scenario.title
         %td= link_to scenario.name, admin_scenario_path(scenario)
         %td= scenario.email

@@ -1,5 +1,5 @@
 class Admin::ScenariosController < AdminController
-  before_filter :find_scenario, :except => [:index, :new, :create]
+  before_filter :find_scenario, :except => [:index, :new, :create, :stats]
 
   def index
     @scenarios = Scenario.recent_first.page(params[:page])
@@ -36,6 +36,10 @@ class Admin::ScenariosController < AdminController
   def destroy
     @scenario.destroy
     redirect_to(admin_scenarios_url, :notice => 'Scenario deleted')
+  end
+  
+  def stats
+    @rows = ActiveRecord::Base.connection.select_all("SELECT count(id) AS c, YEAR(created_at) AS y, MONTH(created_at) AS m FROM scenarios GROUP BY y, m")
   end
 
   protected
