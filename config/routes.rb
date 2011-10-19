@@ -13,7 +13,12 @@ EnergyMixer::Application.routes.draw do
     end
     resources :translations
     
-    resources :pages, :only => :index
+    resources :pages, :only => :index do
+      collection do
+        get :reset_cache
+      end
+    end
+    
     root :to => "pages#index"
   end
 
