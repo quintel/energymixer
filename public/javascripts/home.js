@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 11 Oct 2011 11:47:01 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:39:54 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 
@@ -73,7 +73,6 @@
     };
     HomeView.prototype.show_information = function(e) {
       var container;
-      console.log("Yo");
       e.preventDefault();
       container = $(e.target).parent();
       container.find(".text").toggle();
