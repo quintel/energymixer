@@ -13,7 +13,8 @@ EnergyMixer::Application.routes.draw do
     end
     resources :translations
     
-    root :to => "questions#index"
+    resources :pages, :only => :index
+    root :to => "pages#index"
   end
 
   resources :scenarios, :path => 'mixes', :only => [:new, :create, :show, :index] do
