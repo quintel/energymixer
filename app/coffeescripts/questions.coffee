@@ -1,6 +1,5 @@
 class @Questions extends Backbone.View
   initialize: ->
-    @app = @model
     @current_question = 1
     @popups = window.globals.popups
     # If the user submits the form but the record is not saved
@@ -83,7 +82,7 @@ class @Questions extends Backbone.View
 
   submit_form: =>
     # update the scenario id hidden field
-    $("#scenario_etm_scenario_id").val(@app.mixer.scenario_id)
+    $("#scenario_etm_scenario_id").val(@model.scenario_id)
     @store_geolocation() if globals.config.geolocation_enabled
 
   select_answer: (e) =>
@@ -91,7 +90,7 @@ class @Questions extends Backbone.View
     # remove active class from other answer
     element.parent().find("li.answer").removeClass('active')
     element.addClass('active')
-    @app.refresh()
+    @model.refresh()
     @check_conflicts()
     
   # question methods
@@ -123,11 +122,11 @@ class @Questions extends Backbone.View
     conflicts = false
     conflicting_questions = []
         
-    $.each(this.currently_selected_answers(), (index, current_answer_id) =>
+    $.each(@currently_selected_answers(), (index, current_answer_id) =>
       if(conflicting_answer_id = this.check_conflicting_answer(current_answer_id))
         conflicts = true
-        conflicting_questions.push(this.get_question_id_from_answer(current_answer_id))
-        conflicting_questions.push(this.get_question_id_from_answer(conflicting_answer_id))
+        conflicting_questions.push(@get_question_id_from_answer(current_answer_id))
+        conflicting_questions.push(@get_question_id_from_answer(conflicting_answer_id))
     ) 
     
     if conflicts
@@ -140,7 +139,7 @@ class @Questions extends Backbone.View
   # returns false or the conflicting answer_id
   check_conflicting_answer: (selected_answer_id) ->
     conflict = false
-    currently_selected_answers = this.currently_selected_answers()
+    currently_selected_answers = @currently_selected_answers()
     for own index, answer_id of currently_selected_answers
       conflicting_answers = globals.answers_conflicts[answer_id] || []
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1)
@@ -172,7 +171,7 @@ class @Questions extends Backbone.View
   enable_prev_link: ->
     $("#previous_question").removeClass('link_disabled')
     $("#previous_question").unbind('click')
-    $("#previous_question").bind 'click', this._goto_prev_question
+    $("#previous_question").bind 'click', @_goto_prev_question
   
   disable_next_link: ->
     $("#next_question").addClass('link_disabled')
@@ -181,7 +180,7 @@ class @Questions extends Backbone.View
   enable_next_link: ->
     $("#next_question").removeClass('link_disabled')
     $("#next_question").unbind('click')
-    $("#next_question").bind 'click', this._goto_next_question
+    $("#next_question").bind 'click', @_goto_next_question
   
 
   disable_all_question_links: =>
@@ -196,7 +195,7 @@ class @Questions extends Backbone.View
       @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
-    else if @current_question <= 3 && @app.score_enabled
+    else if @current_question <= 3 && @model.score_enabled
       @disable_prev_link()
     else
       @enable_prev_link()
@@ -224,7 +223,7 @@ class @Questions extends Backbone.View
     event_label = "#{@current_question} : #{question_text}"
     @track_event("opens_question_#{@current_question}", question_text, @current_question)
   
-  store_location: =>
+  store_geolocation: =>
     navigator.geolocation.getCurrentPosition (pos) ->
       $("#scenario_longitude").val(pos.coords.longitude)
       $("#scenario_latitude").val(pos.coords.latitude)
