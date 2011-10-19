@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:04:52 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -20,12 +20,12 @@
       return this.dashboard_steps = window.globals.chart.dashboard_steps;
     };
     Chart.prototype.render = function() {
-      var key, value, _ref;
-      _ref = this.model.dashboard_values;
-      for (key in _ref) {
-        if (!__hasProp.call(_ref, key)) continue;
-        value = _ref[key];
-        this.update_dashboard_item(key, value);
+      var gquery, label, _ref;
+      _ref = this.model.gqueries.dashboard;
+      for (label in _ref) {
+        if (!__hasProp.call(_ref, label)) continue;
+        gquery = _ref[label];
+        this.update_dashboard_item(gquery, this.model.gquery_results[gquery]);
       }
       return this.update_bar_chart();
     };

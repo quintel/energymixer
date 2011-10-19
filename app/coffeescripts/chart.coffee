@@ -5,8 +5,8 @@ class @Chart extends Backbone.View
   # Main entry point.
   # assumes results have been stored
   render: ->
-    for own key, value of @model.dashboard_values
-      @update_dashboard_item(key, value)
+    for own label, gquery of @model.gqueries.dashboard
+      @update_dashboard_item(gquery, @model.gquery_results[gquery])
     @update_bar_chart()
   
   block_interface: ->
