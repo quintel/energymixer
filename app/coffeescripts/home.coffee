@@ -47,7 +47,6 @@ class HomeView extends Backbone.View
     return @el
     
   show_information: (e) =>
-    console.log "Yo"
     e.preventDefault()
     container = $(e.target).parent()
     container.find(".text").toggle()
