@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:14:43 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 21 Oct 2011 09:34:46 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -123,11 +123,18 @@
       this.model.refresh();
       return this.check_conflicts();
     };
+    Questions.prototype.question_was_answered = function(question_id) {
+      var answer, elem;
+      elem = "#question_" + question_id;
+      answer = $(elem).find("input:checked");
+      if (answer.length > 0) {
+        return answer;
+      } else {
+        return false;
+      }
+    };
     Questions.prototype.current_question_was_answered = function() {
-      var answer, question_id;
-      question_id = "#question_" + this.current_question;
-      answer = $(question_id).find("input:checked");
-      return answer.length > 0;
+      return this.question_was_answered(this.current_question);
     };
     Questions.prototype.count_questions = function() {
       this.num_questions = this.num_questions || $(".question").size();
@@ -248,7 +255,7 @@
       }
     };
     Questions.prototype.show_right_question = function() {
-      var event_label, i, question_id, question_text, tab_selector, _ref;
+      var answer, answer_container, answer_letter, answer_text, i, previous_question_id, question_id, question_text, tab_selector, _ref;
       $(".question").hide();
       question_id = "#question_" + this.current_question;
       $(question_id).show();
@@ -258,12 +265,14 @@
         $(tab_selector).addClass('active');
       }
       this.update_question_links();
-      question_text = $.trim($(question_id).find("div.text").text());
-      if (this.current_question === this.count_questions()) {
-        question_text = "Saving scenario";
+      previous_question_id = this.current_question - 1;
+      if (answer = this.question_was_answered(previous_question_id)) {
+        question_text = $("#question_" + previous_question_id + " > .text").text().trim();
+        answer_container = answer.parent();
+        answer_letter = answer_container.find(".number").text().trim();
+        answer_text = answer_container.find(".text").text().trim();
+        return this.track_event('mixer', "#" + previous_question_id + ": " + question_text, answer_text, answer_letter);
       }
-      event_label = "" + this.current_question + " : " + question_text;
-      return this.track_event("opens_question_" + this.current_question, question_text, this.current_question);
     };
     Questions.prototype.store_geolocation = function() {
       return navigator.geolocation.getCurrentPosition(function(pos) {
@@ -274,11 +283,13 @@
     Questions.prototype.clear_the_form = function() {
       return $('form')[0].reset();
     };
-    Questions.prototype.track_event = function(action, label, value) {
+    Questions.prototype.track_event = function(category, action, label, value) {
+      console.log("Tracking event: " + category + " / " + action + " / " + label + " / " + value);
+      return;
       if (typeof _gaq === "undefined") {
         return;
       }
-      return _gaq.push(['_trackEvent', 'questions', action, label, value]);
+      return _gaq.push(['_trackEvent', category, action, label, value]);
     };
     return Questions;
   })();
