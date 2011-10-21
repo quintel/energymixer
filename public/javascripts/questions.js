@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 21 Oct 2011 09:34:46 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 21 Oct 2011 09:48:25 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -284,8 +284,6 @@
       return $('form')[0].reset();
     };
     Questions.prototype.track_event = function(category, action, label, value) {
-      console.log("Tracking event: " + category + " / " + action + " / " + label + " / " + value);
-      return;
       if (typeof _gaq === "undefined") {
         return;
       }
