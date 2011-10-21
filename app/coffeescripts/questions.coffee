@@ -95,10 +95,16 @@ class @Questions extends Backbone.View
     
   # question methods
   #
+  question_was_answered: (question_id) ->
+    elem = "#question_#{question_id}"
+    answer = $(elem).find("input:checked")
+    if answer.length > 0
+      return answer
+    else
+      return false
+  
   current_question_was_answered: ->
-    question_id = "#question_#{@current_question}"
-    answer = $(question_id).find("input:checked")
-    return answer.length > 0
+    @question_was_answered @current_question
   
   count_questions: ->
     @num_questions = @num_questions || $(".question").size()
@@ -218,10 +224,13 @@ class @Questions extends Backbone.View
     @update_question_links()
     
     # GA
-    question_text = $.trim($(question_id).find("div.text").text())
-    question_text = "Saving scenario" if @current_question == @count_questions()
-    event_label = "#{@current_question} : #{question_text}"
-    @track_event("opens_question_#{@current_question}", question_text, @current_question)
+    previous_question_id = @current_question - 1
+    if answer = @question_was_answered(previous_question_id)
+      question_text = $("#question_#{previous_question_id} > .text").text().trim()
+      answer_container = answer.parent()      
+      answer_letter = answer_container.find(".number").text().trim()
+      answer_text   = answer_container.find(".text").text().trim()
+      @track_event('mixer', "##{previous_question_id}: #{question_text}", answer_text, answer_letter)
   
   store_geolocation: =>
     navigator.geolocation.getCurrentPosition (pos) ->
@@ -234,7 +243,7 @@ class @Questions extends Backbone.View
   # we need to force this when a user refreshes the page (browser wants to remember the values), DS
   clear_the_form: -> $('form')[0].reset()
   
-  track_event: (action, label, value) ->
+  track_event: (category, action, label, value) ->
     return if (typeof(_gaq) == "undefined")
     # http:#code.google.com/apis/analytics/docs/tracking/asyncMigrationExamples.html#EventTracking
-    _gaq.push(['_trackEvent', 'questions', action, label, value])
+    _gaq.push(['_trackEvent', category, action, label, value])
