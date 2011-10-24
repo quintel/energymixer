@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 21 Oct 2011 09:48:25 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 24 Oct 2011 13:18:39 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -267,10 +267,10 @@
       this.update_question_links();
       previous_question_id = this.current_question - 1;
       if (answer = this.question_was_answered(previous_question_id)) {
-        question_text = $("#question_" + previous_question_id + " > .text").text().trim();
+        question_text = $.trim($("#question_" + previous_question_id + " > .text").text());
         answer_container = answer.parent();
-        answer_letter = answer_container.find(".number").text().trim();
-        answer_text = answer_container.find(".text").text().trim();
+        answer_letter = $.trim(answer_container.find(".number").text());
+        answer_text = $.trim(answer_container.find(".text").text());
         return this.track_event('mixer', "#" + previous_question_id + ": " + question_text, answer_text, answer_letter);
       }
     };
