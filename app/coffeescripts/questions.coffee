@@ -226,10 +226,10 @@ class @Questions extends Backbone.View
     # GA
     previous_question_id = @current_question - 1
     if answer = @question_was_answered(previous_question_id)
-      question_text = $("#question_#{previous_question_id} > .text").text().trim()
+      question_text = $.trim $("#question_#{previous_question_id} > .text").text()
       answer_container = answer.parent()      
-      answer_letter = answer_container.find(".number").text().trim()
-      answer_text   = answer_container.find(".text").text().trim()
+      answer_letter = $.trim answer_container.find(".number").text()
+      answer_text   = $.trim answer_container.find(".text").text()
       @track_event('mixer', "##{previous_question_id}: #{question_text}", answer_text, answer_letter)
   
   store_geolocation: =>
