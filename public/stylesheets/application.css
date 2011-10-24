@@ -758,19 +758,19 @@ body#scenarios_index .scenario {
       -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#cccccc')";
       filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=180, Color='#cccccc'); }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_0 {
-        background: transparent url(/images/layout/gauge_6.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -198px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_1, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_1, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_5, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_1 {
-        background: transparent url(/images/layout/gauge_5.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -165px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_2, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_2, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_4, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_2 {
-        background: transparent url(/images/layout/gauge_4.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -132px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_3, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_3, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_3, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_3 {
-        background: transparent url(/images/layout/gauge_3.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -99px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_4, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_4, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_2, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_4 {
-        background: transparent url(/images/layout/gauge_2.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -66px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_5, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_5, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_1, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_5 {
-        background: transparent url(/images/layout/gauge_1.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) -33px 0px; }
       .full_chart section.boxes .dashboard_item .gauge_icon.mixer_net_energy_import_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_reduction_of_co2_emissions_versus_1990_step_6, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_renewability_step_0, .full_chart section.boxes .dashboard_item .gauge_icon.mixer_bio_footprint_step_6 {
-        background: transparent url(/images/layout/gauge_0.png); }
+        background: transparent url(/images/layout/gauge_sprite.png) 0px 0px; }
     .full_chart section.boxes .dashboard_item .popup {
       z-index: 1000;
       position: absolute;
