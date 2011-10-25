@@ -5,6 +5,8 @@ nl:
   chart:
     header:
       total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> Miljard"
+      scenario_name: "%{name} - Energy Mix van %{year}"
+      your_scenario: "Jouw Energy Mix van %{year}"
     legend: Legenda
     shaded:
       amount: "%{amount} Mld"
@@ -18,9 +20,6 @@ nl:
       header:
         title: Energy Mix 2011
         costs: "Kosten &euro; <span class='amount'>%{amount}</span> Miljard"
-        total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> Miljard"
-        scenario_name: "%{name} - Energy Mix van %{year}"
-        your_scenario: "Jouw Energy Mix van %{year}"
     popups:
       buildings: "Ruim 59% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit wel 40%. Hebben we die energie ook nog nodig in %{end_year}?"
       agriculture: "Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik voor veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw heeft veel energie nodig. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in %{end_year}?"
