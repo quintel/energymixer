@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 24 Oct 2011 13:18:39 GMT from
+/* DO NOT MODIFY. This file was compiled Tue, 25 Oct 2011 12:33:51 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -255,7 +255,7 @@
       }
     };
     Questions.prototype.show_right_question = function() {
-      var answer, answer_container, answer_letter, answer_text, i, previous_question_id, question_id, question_text, tab_selector, _ref;
+      var answer, answer_container, answer_letter, answer_number, answer_text, i, previous_question_id, question_id, question_text, tab_selector, _ref;
       $(".question").hide();
       question_id = "#question_" + this.current_question;
       $(question_id).show();
@@ -270,8 +270,9 @@
         question_text = $.trim($("#question_" + previous_question_id + " > .text").text());
         answer_container = answer.parent();
         answer_letter = $.trim(answer_container.find(".number").text());
+        answer_number = answer_letter.charCodeAt(0) - 64;
         answer_text = $.trim(answer_container.find(".text").text());
-        return this.track_event('mixer', "#" + previous_question_id + ": " + question_text, answer_text, answer_letter);
+        return this.track_event('mixer', "#" + previous_question_id + ": " + question_text, answer_text, answer_number);
       }
     };
     Questions.prototype.store_geolocation = function() {
