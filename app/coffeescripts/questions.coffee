@@ -229,8 +229,10 @@ class @Questions extends Backbone.View
       question_text = $.trim $("#question_#{previous_question_id} > .text").text()
       answer_container = answer.parent()      
       answer_letter = $.trim answer_container.find(".number").text()
+      # I convert the letter to a number because GA doesn't accept a string as parameter
+      answer_number = answer_letter.charCodeAt(0) - 64
       answer_text   = $.trim answer_container.find(".text").text()
-      @track_event('mixer', "##{previous_question_id}: #{question_text}", answer_text, answer_letter)
+      @track_event('mixer', "##{previous_question_id}: #{question_text}", answer_text, answer_number)
   
   store_geolocation: =>
     navigator.geolocation.getCurrentPosition (pos) ->
