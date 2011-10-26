@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_locale,:check_touchsceen
+  before_filter :set_locale, :check_touchsceen, :set_api_base_path
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
@@ -31,5 +31,9 @@ class ApplicationController < ActionController::Base
     def load_question_set
       @question_set = QuestionSet.find_by_name(APP_NAME) || QuestionSet.first
       @end_year = @question_set.try(:end_year)
+    end
+    
+    def set_api_base_path
+      @api_base_path = session[:api_base_path] || APP_CONFIG["api_base_path"]
     end
 end

@@ -14,7 +14,7 @@
         max_amount: #{Scenario::MaxAmount}
       },
       api: {
-        base_path: #{APP_CONFIG["api_base_path"].to_json},
+        base_path: #{@api_base_path.to_json},
         session_settings: {
           country: #{APP_CONFIG["api_session_settings"][:country].to_json},
           end_year: #{@end_year}
