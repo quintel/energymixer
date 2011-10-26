@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 25 Oct 2011 12:33:51 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 26 Oct 2011 09:27:04 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/questions.coffee
  */
 
@@ -112,8 +112,9 @@
     Questions.prototype.submit_form = function() {
       $("#scenario_etm_scenario_id").val(this.model.scenario_id);
       if (globals.config.geolocation_enabled) {
-        return this.store_geolocation();
+        this.store_geolocation();
       }
+      return this.track_event('mixer', "submits form");
     };
     Questions.prototype.select_answer = function(e) {
       var element;
