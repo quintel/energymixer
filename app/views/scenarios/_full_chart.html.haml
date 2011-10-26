@@ -45,7 +45,7 @@
         %h3= t "dashboard.#{key}.title"
         .value= format_dashboard_value(gquery, scenario.send(output))
         .popup.shaded_gradient
-          = link_to image_tag('icons/close.png'), '#', :class => 'close_popup'
+          = link_to 'close', '#', :class => 'close_popup'
           .title= t "dashboard.#{key}.title"
           .text= t "dashboard.#{key}.text"
   .clear

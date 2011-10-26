@@ -71,7 +71,10 @@ body#scenarios_index
         padding: 5px
     .remove_from_list
       display: none
-      float: right
+      a
+        @include close_button_link
+        float: right
+        display: block
     .name
       font-size: 13px
       font-weight: bold
