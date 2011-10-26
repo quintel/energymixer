@@ -387,6 +387,12 @@ body#scenarios_new section#left section#questions, body#scenarios_create section
         margin: 5px 0 10px 0; }
       body#scenarios_new section#left section#questions .question .info .information .close_button, body#scenarios_create section#left section#questions .question .info .information .close_button {
         float: right; }
+        body#scenarios_new section#left section#questions .question .info .information .close_button a, body#scenarios_create section#left section#questions .question .info .information .close_button a {
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: url(/images/icons/close.png) center center no-repeat;
+          text-indent: -9999px; }
   body#scenarios_new section#left section#questions .question ul.answers li.answer, body#scenarios_create section#left section#questions .question ul.answers li.answer {
     float: left;
     width: 100%;
@@ -566,8 +572,14 @@ body#scenarios_index .scenario {
     body#scenarios_index .scenario .actions .show {
       padding: 5px; }
   body#scenarios_index .scenario .remove_from_list {
-    display: none;
-    float: right; }
+    display: none; }
+    body#scenarios_index .scenario .remove_from_list a {
+      width: 10px;
+      height: 10px;
+      background: url(/images/icons/close.png) center center no-repeat;
+      text-indent: -9999px;
+      float: right;
+      display: block; }
   body#scenarios_index .scenario .name {
     font-size: 13px;
     font-weight: bold;
@@ -787,6 +799,10 @@ body#scenarios_index .scenario {
       opacity: 0.9;
       padding: 10px; }
       .full_chart section.boxes .dashboard_item .popup a {
+        width: 10px;
+        height: 10px;
+        background: url(/images/icons/close.png) center center no-repeat;
+        text-indent: -9999px;
         display: block;
         float: right; }
       .full_chart section.boxes .dashboard_item .popup .title {
