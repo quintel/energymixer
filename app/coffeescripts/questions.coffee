@@ -84,6 +84,7 @@ class @Questions extends Backbone.View
     # update the scenario id hidden field
     $("#scenario_etm_scenario_id").val(@model.scenario_id)
     @store_geolocation() if globals.config.geolocation_enabled
+    @track_event('mixer', "submits form")
 
   select_answer: (e) =>
     element = $(e.target).closest("li.answer")
@@ -247,5 +248,5 @@ class @Questions extends Backbone.View
   
   track_event: (category, action, label, value) ->
     return if (typeof(_gaq) == "undefined")
-    # http:#code.google.com/apis/analytics/docs/tracking/asyncMigrationExamples.html#EventTracking
+    # http://code.google.com/apis/analytics/docs/tracking/asyncMigrationExamples.html#EventTracking
     _gaq.push(['_trackEvent', category, action, label, value])
