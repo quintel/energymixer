@@ -7,7 +7,6 @@ set :repository,  "git@github.com:dennisschoenmakers/energymixer.git"
 
 set :user, 'ubuntu'
 set :deploy_to, "/home/ubuntu/apps/#{application}"
-set :config_files, "/home/ubuntu/config_files"
 set :deploy_via, :remote_cache
 set :chmod755, "app config db lib public vendor script script/* public/disp*"
 set :git_enable_submodules, 1
@@ -41,12 +40,12 @@ task :mixer do
 end
 
 namespace :deploy do
-  task :copy_configuration_files do
-    run "cp #{config_files}/database.yml #{release_path}/config/database.yml"
-    run "cp #{config_files}/config.yml #{release_path}/config/config.yml"
+  task :symlink_shared do
+    run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -s #{shared_path}/config/config.yml #{release_path}/config/config.yml"
   end
 end
 
-after 'deploy:update_code', 'deploy:copy_configuration_files'
+after 'deploy:update_code', 'deploy:symlink_shared'
 
 require './config/boot'
