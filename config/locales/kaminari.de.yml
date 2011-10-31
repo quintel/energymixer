@@ -1,0 +1,6 @@
+nl:
+  views:
+    pagination:
+      next: Next
+      previous: Previous
+      truncate: ...
