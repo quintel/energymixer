@@ -179,9 +179,9 @@ body.admin {
   body.admin .flash#notice {
     color: green;
     background-color: #7bff76; }
-  body.admin dl.admin dt {
+  body.admin dl dt {
     font-weight: bold; }
-  body.admin dl.admin dd {
+  body.admin dl dd {
     margin-left: 10px;
     margin: 5px; }
 
