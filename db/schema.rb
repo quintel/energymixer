@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011073643) do
+ActiveRecord::Schema.define(:version => 20111031095927) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20111011073643) do
     t.datetime "updated_at"
     t.string   "title_de"
     t.text     "body_de"
+    t.string   "video_nl"
+    t.string   "video_de"
   end
 
   add_index "popups", ["code"], :name => "index_popups_on_code"
