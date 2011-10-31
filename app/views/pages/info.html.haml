@@ -1,3 +1,5 @@
 .question_popup
   %h1= @popup.title
-  .body= @popup.body.html_safe
+  .body= raw @popup.body
+  - if @popup.video
+    .video= embed_video @popup

@@ -1,9 +1,20 @@
 - page_title @popup.title
 
-.code
-  %strong= @popup.code
-.body
-  = @popup.body
+%dl
+  %dt Code
+  %dd= @popup.code
+  %dt Title NL:
+  %dd= @popup.title_nl
+  %dt Body NL:
+  %dd= @popup.body_nl
+  %dt Video NL:
+  %dd= @popup.video_nl
+  %dt Title DE:
+  %dd= @popup.title_de
+  %dt Body DE:
+  %dd= @popup.body_de
+  %dt Video DE:
+  %dd= @popup.video_de
 
 #actions
   = link_to 'Edit', edit_admin_popup_path(@popup), :class => 'fugue fugue-pencil'
