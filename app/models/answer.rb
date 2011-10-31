@@ -2,13 +2,15 @@
 #
 # Table name: answers
 #
-#  id          :integer(4)      not null, primary key
-#  answer      :text
-#  ordering    :integer(4)
-#  question_id :integer(4)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  description :text
+#  id             :integer(4)      not null, primary key
+#  text_nl        :text
+#  ordering       :integer(4)
+#  question_id    :integer(4)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  description_nl :text
+#  text_de        :text
+#  description_de :text
 #
 
 class Answer < ActiveRecord::Base

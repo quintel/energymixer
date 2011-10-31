@@ -3,12 +3,14 @@
 # Table name: questions
 #
 #  id              :integer(4)      not null, primary key
-#  question        :string(255)
+#  text_nl         :string(255)
 #  ordering        :integer(4)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  information     :text
+#  description_nl  :text
 #  question_set_id :integer(4)
+#  text_de         :string(255)
+#  description_de  :text
 #
 
 class Question < ActiveRecord::Base

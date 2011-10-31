@@ -4,10 +4,14 @@
 #
 #  id         :integer(4)      not null, primary key
 #  code       :string(255)
-#  title      :string(255)
-#  body       :text
+#  title_nl   :string(255)
+#  body_nl    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  title_de   :string(255)
+#  body_de    :text
+#  video_nl   :string(255)
+#  video_de   :string(255)
 #
 
 class Popup < ActiveRecord::Base
@@ -23,5 +27,9 @@ class Popup < ActiveRecord::Base
   
   def body
     send "body_#{I18n.locale}"
+  end
+  
+  def video
+    send "video_#{I18n.locale}"
   end
 end
