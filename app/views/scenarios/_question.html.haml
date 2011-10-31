@@ -23,4 +23,4 @@
                               :'data-question_number' => question_object.number
         %label{:for => "answer_#{a.id}", :id => "label_#{a.id}"}
           %span.number= (index+65).chr
-          %span.text= markdown(a.text)
+          .text= markdown(a.text)
