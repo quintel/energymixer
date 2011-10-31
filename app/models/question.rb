@@ -17,7 +17,7 @@ class Question < ActiveRecord::Base
   belongs_to :question_set
   has_many :answers, :dependent => :destroy
   
-  accepts_nested_attributes_for :answers, :allow_destroy => true, :reject_if => proc {|attrs| attrs['answer'].blank? }
+  accepts_nested_attributes_for :answers, :allow_destroy => true, :reject_if => proc {|attrs| attrs['text_nl'].blank? }
 
   validates :text_nl, :presence => true
 
