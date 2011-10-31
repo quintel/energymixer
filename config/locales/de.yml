@@ -1,0 +1,128 @@
+de:
+  layout:
+    footer: "Der %{app_name} ist entwickelt auf der Basis des Energiewende-Modells"
+    old_browser: "Dein Browser wird leider nicht (gut) unterstützt durch den Energie-Mixer. Wähle einen anderen Browser oder erneuere deinen Browser für eine optimale Anwendung."
+  chart:
+    header:
+      total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> Milliarden"
+      scenario_name: "%{name} - Energiemix von %{year}"
+      your_scenario: "Dein Energiemix von %{year}"
+    legend: Legende
+    shaded:
+      amount: "%{amount} Mrd"
+  home:
+    header:
+      text: "Der %{app_name} ist eine online Anwendung, mit der du deine Kenntnisse über die Energiezukunft erweitern kannst. Die Beantwortung von Fragen, die Bezug haben auf deine Ideen zum Energiemix der Zukunft, erlaubt dir, die Konsequenzen deiner Entscheidungen für Preis, Dauerhaftigkeit und Verfügbarkeit zu erkennen."
+    intro:
+      title: "Dies ist der Energieverbrauch in den Niederlanden im Jahre 2011."
+      text: "In den Niederlanden kommt beinahe die Hälfte der verbrauchten Energie aus Erdöl, Erdgas oder Steinkohle. Unser Transportsystem hängt fast vollständig vom Erdöl ab; die Beheizung und die Elektrizität für unsere Wohnungen werden in erster Linie aus Erdgas und Steinkohle erzeugt. Wollen wir dies so beibehalten und können wir uns das weiterhin erlauben? Wie wird deiner Meinung nach der Energiemix inunserem Land im Jahr %{end_year} aussehen? Gestalte mit dem %{app_name} den Energiemix nach deinen eigenen Vorstellungen auf der Basis desselben Rechenmodells, das auch die Politiker verwenden."
+    chart:
+      header:
+        title: Energiemix 2011
+        costs: "Kosten &euro; <span class='amount'>%{amount}</span> Milliarden"
+    popups:
+      buildings: "Etwa 59% des Energieverbrauchs in Wohnungen, Schulen und Bürogebäuden wird genutzt für Beheizung und Kühlung. In Wohnungen wird etwa 20% des Energieverbrauchs für Elektrizität aufgewendet; in Schulen und Bürogebäuden ist dieser Anteil etwa 40%. Benötigen wir diese Energie auch noch im Jahre %{end_year}?"
+      agriculture: "Der direkte Energieverbrauch für Ackerbau und Viehzucht in den Niederlanden ist relative niedrig. Dabei rechnen wir den Energieverbrauch zur Herstellung von Viehfutter im Ausland nicht mit. Der niederländische Unterglasanbau benötigt viel Energie. Etwa 80% des Energieverbrauchs unserer Landwirtschaft geht auf Kosten der Gewächshäuser. Kann man dies bis zum Jahre %{end_year} verändern?"
+      transport: "Transport per Auto, Lastwagen, Zug oder Binnenschiff ist energieintensiv. In diesem Energiemixer beschränken wir uns auf den inländischen Transport. Wenn wir den Energieverbrauch durch die internationale Luft- und Schiffahrt mitrechnen, wird der Anteil noch viel höher ausfallen. Können wir uns und unsere Güter im Jahre %{end_year} nicht intelligenter transportieren?"
+      industry: "Die Industrie ist der größte Verbraucher von Erdöl, Erdgas und Steinkohle. Die Industrie ist die Basis unserer Wirtschaft, aber verbraucht gleichzeitig viel kostbare Rohstoffe. Wie wird sich der Energieverbrauch unserer Industrie bis zum Jahre %{end_year} entwickeln?"
+  sectors:
+    buildings: Gebäude
+    agriculture: Landwirtschaft
+    transport: Transport
+    industry: Industrie
+  links:
+    scenarios_new: Stelle deinen eigenen Energiemix zusammen
+    scenarios_index: Schaue dir den Energiemix anderer Teilnehmer an
+    scenarios_show: Anschauen
+    scenarios_compare: Vergleichen
+  dashboard:
+    co2_emissions:
+      title: Veränderung im CO2 Ausstoß
+      text: "Wie verändert sich der CO2 Ausstoß als Folge deiner Entscheidungen? Hier steht die Veränderung im Vergleich zum Ausstoß im Jahre 1990."
+    renewability:
+      title: Erneuerbare Energie
+      text: "Welcher Anteil des zukünftigen Energieverbrauchs wird aus erneuerbaren Quellen stammen? Wir verwenden hier die Europäische Definition von erneuerbarer Energie. Wir schauen also, welcher Anteil des Endverbrauchs erneuerbar ist."
+    footprint:
+      title: Bio-Fussabdruck
+      text: "Wieviel Ackerbaufläche wird als Folge deiner Entscheidungen benötigt? Biomasse muss oftmals extra angebaut werden. Was das Vielfache der niederländische Ackerbaufläche ist, das dafür benötigt wird, kannst du hier sehen."
+    energy_import:
+      title: Abhängigkeit vom Import
+      text: "Wieviel Energie importieren die Niederlande aus dem Ausland als Folge deiner Entscheidungen? Hier steht, welcher Anteil aller verbrauchten Energie eingeführt wird, nach Abzug der Energiemenge, die die Niederlande ausführen. Da die niederländischen Gasreserven abnehmen, wird der Import langsam ansteigen."
+  questions:
+    info: Info
+  scenario_steps:
+    total_amount:
+      step_0: "Der Energiemix ist zum Glück billiger als im Jahre 2011. Wir zahlen schon so viel für Energie."
+      step_1: "Der Energiemix wird langsam teurer, aber wenn unsere Wirtschaft weiter wächst, können wir uns das wahrscheinlich leisten."
+      step_2: "Der Energiemix wird ansehnlich teurer. Können wir uns das wohl leisten?"
+      step_3: "Der Energiemix wird viel teurer. Bringt uns das Wirtschaftwachstum aus der Problemzone oder können wir das nicht mehr bezahlen?"
+    co2_emissions:
+      step_0: "Der CO2 Ausstoß Energiemixes ist sehr niedrig. sind auf dem guten Weg, um die internationalen Klimaziele einzuhalten."
+      step_1: "Der CO2 Ausstoß Energiemixes nimmt ab und damit trägt unser Land bei zur weltweiten CO2 Verminderung. Reicht das wohl aus?"
+      step_2: "Der CO2 Ausstoß dieses Energiemixes wächst wie in den vergangenen Jahren. Was bedeutet dies für die Erderwärmung?"
+      step_3: "Der CO2 Ausstoß dieses Energiemixes wächst stark an. Die Wirtschaft hat das Sagen. Und wie war das noch mal mit unserem Klima?"
+    renewables:
+      step_0: "Wir bleiben weiterhin abhängig von fossilen Energiequellen und es gelingt nicht, erneuerbare Energiequellen zu erschließen. Vielleicht ist das auch gar nicht nötig."
+      step_1: "Wir machen ganz langsam Fortschritte beim Einrichten eines besseren Gleichgewichts zwischen fossiler und erneuerbarer Energie, aber schnell geht das wirklich nicht."
+      step_2: "Im Jahre %{end_year} erfüllen wir noch immer nicht die Ziele für erneuerbare Energie, die die Regierung im Jahr 2011 für das Jahr 2020 abgesteckt hat!"
+      step_3: "Die Energiewende beginnt langsam in Fahrt zu kommen und wir gehen stets bewusster mit unserem Energieverbrauch um. Ein ansehnlicher Teil unserer Energie kommt im Jahre %{end_year} aus erneuerbaren Quellen."
+      step_4: "Mehr als 50% unseres Energiebedarf wird aus erneuerbaren Quellen gedeckt!"
+    footprint:
+      step_0: "Unser Einsatz von Biomasse ist mehr oder weniger so geblieben wie im Jahr 2011. Das ist eigentlich ganz schön viel."
+      step_1: "Wir werden stets mehr Natur- und Ackerbauflächen für die Produktion von Biomasse einsetzen."
+      step_2: "Der Einsatz von Biomasse nimmt stark zu. Wie erschliessen wir die Natur- und Ackerbauflächen, um diese Biomasse wachsen zu lassen?"
+    energy_import:
+      step_0: "Obwohl unsere eigenen Erdgasreserven im Jahre %{end_year} verbraucht sein werden, wird es uns gut gelingen, die Abhängigkeit von ausländischen Energiequellen in Schranken zu halten."
+      step_1: "Unsere Erdgasreserven gehen zu Ende und wir werden stets mehr importieren. Im Jahre %{end_year} führen wir einen großen Anteil unserer Energie aus dem Ausland ein."
+      step_2: "Während unsere eigenen Erdgasreserven schrumpfen, machen wir lustig weiter mit Produzieren und Konsumieren. Wir importieren mehr als 90% unserer Energie aus dem Ausland."
+  score:
+    your_score: Dein Ergebnis
+    cost: Kosten
+    co2: CO2
+    renewables: Erneuerbar
+    areafp: Bio-Fußabdruck
+    import: Energieimport
+    explanation: "* Dein Ergebnis bleibt Null, wenn du die Fragen 1 und 2 noch nicht beantwortet hast."
+  form:
+    title: "Dein Energiemix im Jahre %{end_year}"
+    text: "Danke für die Beantwortung der Fragen zum Energiemix. Trage unten deine Daten ein und speichere deinen Energiemix, um ihn mit anderen Resultaten zu vergleichen. Du erhältst auch eine E- mail, in der du deinen Energiemix wieder auffinden kannst."
+    fill_your_data: "Trage deine Daten ein:"
+    name: "Name"
+    email: "E-mail"
+    age: "Alter"
+    scenario_title: "Name dieses Energiemixes"
+    public: "Mein Energiemix steht auch anderen zur Verfügung"
+    acceptance: "Ich akzeptiere die <a href='/disclaimer.html' class='normal' target='_blank'>allgemeinen Bedingungen</a>"
+    submit: "Speichere meinen Energiemix"
+  scenario:
+    answers: "Antworten in diesem Energiemix"
+    no_answer: "**Nicht beantwortet**"
+    score: "(Ergebnis: %{score})"
+    compare: Vergleiche
+    compare_with_others: "Vergleiche verschiedene Energiemixe miteinander"
+    featured: Hervorgehoben
+    average: Mittelwert
+    conflicts: "Die Antworten auf die Fragen <span class='conflicting_questions'></span> scheinen widersprüchlich.<br/>Bist du sicher, dass diese Antworten die Situation im Jahr %{end_year} gut beschreiben?"
+    show_answers: "Zeige die Antworten"
+    by: "Der Energiemix von %{name}"
+    by_age: "Der Energiemix von %{name} (%{age} jahre)"
+    open_in_etm_link: "Willst du sofort die gewählten Einstellungen Energiewende-Modell sehen? (falls nicht, geh dann zur homepage des Energiewende-Modells)"
+  warning: "Aufpassen!"
+  homepage: Home
+  energymixer: Energiemixer
+  current_scenario: Heutiges Szenario
+  gasmixer: NRG-Discovery
+  coal: Steinkohle
+  nuclear: Kernenergie
+  oil: Öl
+  wind: Wind
+  biomass: Biomasse
+  solar: Sonne
+  compare_scenarios: Vergleiche Szenarios
+  gas: Gas
+  next: Nächste Frage
+  previous: Vorige Frage
+  renewable: Erneuerbar
+  renewables: Erneuerbare Energiequellen
+  search: Suchen
+  time_ago: früher angelegt
