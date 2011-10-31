@@ -60,7 +60,7 @@ describe Admin::PopupsController do
 
     describe "with invalid params" do
       it "should show the form again" do
-        post :create, :popup => { :title => '' }
+        post :create, :popup => { :title_nl => '' }
         response.should render_template('new')
       end
     end
