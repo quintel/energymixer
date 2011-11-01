@@ -13,7 +13,7 @@
       = stylesheet_link_tag "ie7"
 
     - unless APP_CONFIG["standalone"]
-      = airbrake_javascript_notifier
+      = airbrake_javascript_notifier unless APP_CONFIG['app_name'] == 'energymixer'
       = render 'layouts/google_analytics' if APP_CONFIG["google_analytics_key"]
 
     = csrf_meta_tag
