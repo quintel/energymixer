@@ -15,7 +15,7 @@ de:
       text: "Der %{app_name} ist eine online Anwendung, mit der du deine Kenntnisse über die Energiezukunft erweitern kannst. Die Beantwortung von Fragen, die Bezug haben auf deine Ideen zum Energiemix der Zukunft, erlaubt dir, die Konsequenzen deiner Entscheidungen für Preis, Dauerhaftigkeit und Verfügbarkeit zu erkennen."
     intro:
       title: "Dies ist der Energieverbrauch in den Niederlanden im Jahre 2011."
-      text: "In den Niederlanden kommt beinahe die Hälfte der verbrauchten Energie aus Erdöl, Erdgas oder Steinkohle. Unser Transportsystem hängt fast vollständig vom Erdöl ab; die Beheizung und die Elektrizität für unsere Wohnungen werden in erster Linie aus Erdgas und Steinkohle erzeugt. Wollen wir dies so beibehalten und können wir uns das weiterhin erlauben? Wie wird deiner Meinung nach der Energiemix inunserem Land im Jahr %{end_year} aussehen? Gestalte mit dem %{app_name} den Energiemix nach deinen eigenen Vorstellungen auf der Basis desselben Rechenmodells, das auch die Politiker verwenden."
+      text: "In den Niederlanden kommt beinahe die Hälfte der verbrauchten Energie aus Erdöl, Erdgas oder Steinkohle. Unser Transportsystem hängt fast vollständig vom Erdöl ab; die Heizwärme und die Elektrizität für unsere Wohnungen werden in erster Linie aus Erdgas und Steinkohle erzeugt. Wollen wir dies so beibehalten und können wir uns das weiterhin erlauben? Wie wird deiner Meinung nach der Energiemix inunserem Land im Jahr %{end_year} aussehen? Gestalte mit dem %{app_name} den Energiemix nach deinen eigenen Vorstellungen auf der Basis desselben Rechenmodells, das auch die Politiker verwenden."
     chart:
       header:
         title: Energiemix 2011
@@ -106,7 +106,7 @@ de:
     show_answers: "Zeige die Antworten"
     by: "Der Energiemix von %{name}"
     by_age: "Der Energiemix von %{name} (%{age} jahre)"
-    open_in_etm_link: "Willst du sofort die gewählten Einstellungen Energiewende-Modell sehen? (falls nicht, geh dann zur homepage des Energiewende-Modells)"
+    open_in_etm_link: "Willst du sofort die gewählten Einstellungen im Energiewende-Modell sehen? (falls nicht, geh dann zur Homepage des Energiewende-Modells)"
   warning: "Aufpassen!"
   homepage: Home
   energymixer: Energiemixer
