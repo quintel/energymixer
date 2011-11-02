@@ -12,13 +12,16 @@
 %section#left
   = render 'search_scenario_box'
   %section#description.shaded_gradient
-    - unless @scenario.title.blank?
+    - if @scenario.current_scenario?
+      %h1= t 'current_scenario'
+    - elsif @scenario.title.blank?
       %h1= @scenario.title
-    %h2      
-      - if @scenario.age
-        = t 'scenario.by_age', :name => @scenario.name, :age => @scenario.age
-      - else
-        = t 'scenario.by', :name => @scenario.name
+    %h2
+      - unless @scenario.current_scenario?
+        - if @scenario.age
+          = t 'scenario.by_age', :name => @scenario.name, :age => @scenario.age
+        - else
+          = t 'scenario.by', :name => @scenario.name unless @scenario.current_scenario?
         
     .content
       = full_text(@scenario)
