@@ -34,7 +34,7 @@ namespace :scenarios do
   
   desc "Saves current scenario as featured"
   task :create_current => :environment do
-    title = I18n.t('current_scenario')
+    title = Scenario::CurrentTitle
     Scenario.featured.find_by_title(title).destroy_all rescue nil
     s = Scenario.new(Scenario.current.attributes)
     s.name = title

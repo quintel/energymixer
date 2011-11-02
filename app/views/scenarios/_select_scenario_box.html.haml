@@ -11,7 +11,10 @@
     = link_to 'remove', '#'
   .name
     = link_to scenario_path(scenario) do
-      = scenario.name
-      = " - #{truncate scenario.title, :length => 60}" if scenario.title && !scenario.current_scenario?
+      - if scenario.current_scenario?
+        = t 'current_scenario'
+      - else
+        = scenario.name
+        = " - #{truncate scenario.title, :length => 60}" if scenario.title
   .date
     #{time_ago_in_words(scenario.created_at)} #{t 'time_ago'}
