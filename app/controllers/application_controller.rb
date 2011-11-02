@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
     end
     
     def set_locale
-      # if params[:locale] is nil then I18n.default_locale will be used
-      I18n.locale = params[:locale]
+      session[:locale] = params[:locale] || session[:locale] || I18n.locale
+      I18n.locale = session[:locale]
     end
 
     def record_not_found
