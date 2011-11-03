@@ -97,6 +97,6 @@ class @Chart extends Backbone.View
     selector.html("#{percentage}%")
     
   update_etm_link: (url) ->
-    $("footer a").click (e) =>
+    $("footer a.open_in_etm").click (e) =>
       if(confirm(window.globals.open_in_etm_link))
         $(e.target).attr("href", url)
