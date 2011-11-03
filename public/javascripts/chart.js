@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:04:52 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 03 Nov 2011 08:38:05 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -129,7 +129,7 @@
       return selector.html("" + percentage + "%");
     };
     Chart.prototype.update_etm_link = function(url) {
-      return $("footer a").click(__bind(function(e) {
+      return $("footer a.open_in_etm").click(__bind(function(e) {
         if (confirm(window.globals.open_in_etm_link)) {
           return $(e.target).attr("href", url);
         }

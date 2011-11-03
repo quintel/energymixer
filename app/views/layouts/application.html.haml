@@ -30,7 +30,7 @@
     - if APP_CONFIG["standalone"]
       = t('layout.footer', :app_name => t(APP_NAME))
     - else
-      = link_to "http://www.energietransitiemodel.nl/", :target => "_blank" do
+      = link_to "http://www.energietransitiemodel.nl/", :target => "_blank", :class => 'open_in_etm' do
         = t('layout.footer', :app_name => t(APP_NAME))
     - if APP_CONFIG['multilanguage']
       - if I18n.locale == :nl
