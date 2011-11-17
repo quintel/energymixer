@@ -26,8 +26,8 @@ task :gasmixer do
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "gasmixer"
   set :db_name, "gasmixer"
-  set :db_user, "root"
-  set :db_pass, "quintel"
+  set :db_user, "gasmixer"
+  set :db_pass, "IpoYWWV00DREjh"
 end
 
 task :mixer do
