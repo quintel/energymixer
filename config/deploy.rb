@@ -16,8 +16,6 @@ set :rvm_ruby_string, '1.9.2'
 
 
 set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
-set :db_user, "root"
-set :db_pass, "quintel"
 
 set :local_db_name, 'energymixer_dev'
 
@@ -28,6 +26,8 @@ task :gasmixer do
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "gasmixer"
   set :db_name, "gasmixer"
+  set :db_user, "root"
+  set :db_pass, "quintel"
 end
 
 task :mixer do
@@ -36,7 +36,9 @@ task :mixer do
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
   set :branch, "mixer"
-  set :db_name, "energymixer_2050"
+  set :db_name, "energymixer"
+  set :db_user, "energymixer"
+  set :db_pass, "sKkE6qyst0jCUN"
 end
 
 namespace :deploy do
