@@ -13,11 +13,9 @@ EnergyMixer::Application.routes.draw do
     end
     resources :translations
     
-    resources :pages, :only => :index do
-      collection do
-        get :reset_cache
-      end
-    end
+    resources :pages, :only => :index
+    
+    match 'reset_cache' => 'pages#reset_cache', :as => :reset_cache
     
     root :to => "pages#index"
   end

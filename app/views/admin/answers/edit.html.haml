@@ -1,7 +1,12 @@
 - page_title "Editing Answer"
 
-%div
-  Question ##{@answer.question.number}
+%p
+  If you're changing the answer inputs it's a good idea to clear the inputs cache
+  #{link_to 'clicking here', admin_reset_cache_path}, otherwise you might have a
+  stale list.
+
+%p
+  Question ##{@answer.question.number}:
   = link_to @answer.question.text, admin_question_path(@answer.question)
 
 = render 'form'

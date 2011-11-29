@@ -16,8 +16,13 @@
 
 %pre= APP_CONFIG.to_yaml
 
-%h2 Cache stats
+%hr
+= link_to_function 'Cache stats', '$("#cache_stats").toggle()'
+#cache_stats.hidden
+  %pre= Rails.cache.stats.to_yaml rescue "Error"
 
-%pre= Rails.cache.stats.to_yaml rescue "Error"
-
-= link_to "Reset Cache", :action => :reset_cache
+%p  
+  One you clear the cache it will take a while for the application to load
+  the inputs list. Expect a few seconds delay the first time you land on the
+  admin pages where you edit questions and answers.
+  = button_to "Reset Cache", admin_reset_cache_path
