@@ -161,6 +161,8 @@ body.admin {
       font-size: 1.5em;
       font-weight: bold;
       margin: 0.75em 0.3em; }
+    body.admin #content p {
+      padding: 10px; }
     body.admin #content #actions {
       margin-top: 0.5em;
       border: 1px solid #eeeeee;
