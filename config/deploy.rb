@@ -31,7 +31,7 @@ task :gasmixer do
 end
 
 task :mixer do
-  set :domain, "46.137.156.254"
+  set :domain, "mixer.et-model.com"
   role :web, domain # Your HTTP server, Apache/etc
   role :app, domain # This may be the same as your `Web` server
   role :db,  domain, :primary => true # This is where Rails migrations will run
