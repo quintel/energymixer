@@ -334,7 +334,7 @@ body .scenario_answers dl dd {
 
 body#scenarios_new section#left section#questions, body#scenarios_create section#left section#questions {
   height: 430px;
-  overflow: auto; }
+  overflow: hidden; }
   body#scenarios_new section#left section#questions nav#up, body#scenarios_create section#left section#questions nav#up {
     height: 30px;
     display: block;
