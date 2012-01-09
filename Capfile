@@ -27,6 +27,7 @@ task :gasmixer do
   set :db_name, "gasmixer"
   set :db_user, "gasmixer"
   set :db_pass, "IpoYWWV00DREjh"
+  set :rvm_ruby_string, "1.9.3@#{application_name}"
 end
 
 task :mixer do
@@ -37,6 +38,7 @@ task :mixer do
   set :db_name, "energymixer"
   set :db_user, "energymixer"
   set :db_pass, "sKkE6qyst0jCUN"
+  set :rvm_ruby_string, "1.9.3@#{application_name}"
 end
 
 # Symlink database.yml, etc.
@@ -49,4 +51,3 @@ after 'deploy',             'airbrake:notify'
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require "rvm/capistrano"          # Load RVM's capistrano plugin.
-set :rvm_ruby_string, "1.9.3@#{application_name}" # Or whatever env you want it to run in.
