@@ -43,3 +43,10 @@ end
 after 'deploy:update_code', 'deploy:link_config'
 after 'deploy:restart',     'bluepill:restart_monitored'
 after 'deploy',             'airbrake:notify'
+
+# RVM Stuff ------------------------------------------------------------------
+
+# Add RVM's lib directory to the load path.
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"          # Load RVM's capistrano plugin.
+set :rvm_ruby_string, "1.9.3@#{application_name}" # Or whatever env you want it to run in.
