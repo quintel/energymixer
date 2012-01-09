@@ -22,7 +22,6 @@ class Mixer extends Backbone.Model
     return @scenario_id if @scenario_id
     $.ajax(
       url: "#{@base_path}/new.json"
-      dataType: 'jsonp'
       data: { settings : globals.api.session_settings }
       success: (data) =>
         key = data.api_scenario.id || data.api_scenario.api_session_key
@@ -62,12 +61,10 @@ class Mixer extends Backbone.Model
     request_parameters = {result: @all_gqueries(), reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     
-    # Note that we're not using the standard jquery ajax call, but 
-    # http://code.google.com/p/jquery-jsonp/ for its better error handling.
-    api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json?callback=?"
+    api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json"
     
     @chart.block_interface()
-    $.jsonp(
+    $.ajax(
       url: api_url,
       data: request_parameters,
       success: (data) =>

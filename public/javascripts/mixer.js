@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 13 Oct 2011 14:25:41 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 09 Jan 2012 14:51:05 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -42,7 +42,6 @@
       }
       $.ajax({
         url: "" + this.base_path + "/new.json",
-        dataType: 'jsonp',
         data: {
           settings: globals.api.session_settings
         },
@@ -93,9 +92,9 @@
       if (!$.isEmptyObject(this.parameters)) {
         request_parameters['input'] = this.parameters;
       }
-      api_url = "" + this.base_path + "/" + (this.fetch_scenario_id()) + ".json?callback=?";
+      api_url = "" + this.base_path + "/" + (this.fetch_scenario_id()) + ".json";
       this.chart.block_interface();
-      $.jsonp({
+      $.ajax({
         url: api_url,
         data: request_parameters,
         success: __bind(function(data) {
