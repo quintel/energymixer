@@ -14,7 +14,7 @@ namespace :bluepill do
   DESC
   task :start, roles: :app do
     puts '*** Cannot manually start Bluepill; it is managed by Upstart.'
-    puts '    See: /etc/init/bluepill-#{application}.conf'
+    puts '    See: /etc/init/bluepill-#{application_name}.conf'
   end
 
   desc <<-DESC
