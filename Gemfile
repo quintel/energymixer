@@ -20,6 +20,8 @@ gem 'memcache-client'
 gem 'barista', "~> 1.2.1"
 gem 'therubyracer'
 
+gem 'capistrano'
+
 group :development, :test do
   gem 'rspec-rails',        '~> 2.6.0'
   gem 'factory_girl_rails', '~> 1.2.0'
@@ -31,7 +33,6 @@ group :development do
   gem 'ruby-debug19', '~> 0.11.6'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
-  gem 'capistrano'
   gem 'annotate', :require => false
   gem 'guard'
 end

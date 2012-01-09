@@ -1,31 +1,41 @@
-load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
+require 'bundler/capistrano'
+
+load 'deploy'
 load 'lib/capistrano/db_recipes'
-load 'config/deploy' # remove this line to skip loading any of the default tasks
+load 'lib/capistrano/airbrake'
+load 'lib/capistrano/bluepill'
+load 'lib/capistrano/link_config'
+load 'lib/capistrano/mixer'
 
-namespace :deploy do
-  task :start do 
-    # otherwise deploy:cold won't work
-  end
+set :scm, :git
+set :repository,  "git@github.com:dennisschoenmakers/energymixer.git"
+set :user, 'ubuntu'
+set :deploy_to, "/home/ubuntu/apps/#{application}"
+set :deploy_via, :remote_cache
+ssh_options[:forward_agent] = true
+set :use_sudo, false
 
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
+server 'mixer.et-model.com', :web, :app, :db, :primary => true
+set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
+set :local_db_name, 'energymixer_dev'
+
+task :gasmixer do
+  set :application, "gasmixer"
+  set :branch, "gasmixer"
+  set :db_name, "gasmixer"
+  set :db_user, "gasmixer"
+  set :db_pass, "IpoYWWV00DREjh"
 end
 
-namespace :rake_tasks do
-  desc "Reset production db loading seeds file"
-  task :db_reset do
-    run("cd #{deploy_to}/current && /usr/bin/env rake db:reset RAILS_ENV=production")
-  end
-
-  desc "Recreates the average scenarios"
-  task :average_scenarios do
-    run("cd #{deploy_to}/current && /usr/bin/env rake scenarios:create_average RAILS_ENV=production")
-  end
-
-  desc "Clears cache"
-  task :clear_cache do
-    run("cd #{deploy_to}/current && /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production")
-  end
+task :mixer do
+  set :application, "mixer"
+  set :branch, "mixer"
+  set :db_name, "energymixer"
+  set :db_user, "energymixer"
+  set :db_pass, "sKkE6qyst0jCUN"
 end
+
+# Symlink database.yml, etc.
+after  'deploy:update_code', 'deploy:link_config'
+after  'deploy:restart',     'bluepill:restart_monitored'
+after  'deploy',             'airbrake:notify'
