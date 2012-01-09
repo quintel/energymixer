@@ -34,7 +34,7 @@ Bluepill.application('gasmixer', log_file: log_file) do |app|
     process.start_command =
       "env BUNDLE_GEMFILE=#{rails_root}/Gemfile " \
       "bundle exec unicorn -D " \
-      "-c #{rails_root}/config/unicorn/#{rails_env}.rb " \
+      "-c #{rails_root}/config/unicorn/gasmixer.rb " \
       "-E #{rails_env}"
 
     # Set the command line argument to STOP Unicorn.
