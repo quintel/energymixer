@@ -3,7 +3,7 @@
 # @param [String] command The command to be sent to Bluepill.
 #
 def run_bluepill(command)
-  run "/usr/local/rvm/bin/193_bluepill #{command} --no-privileged"
+  run "/usr/local/rvm/bin/193_bluepill #{application_name} #{command} --no-privileged"
 end
 
 # Bluepill is used to monitor the Unicorn processes.
