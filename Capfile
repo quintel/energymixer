@@ -31,10 +31,12 @@ task :gasmixer do
 end
 
 task :mixer do
-  server 'mixer.et-model.com', :web, :app, :db, :primary => true
+  # TODO: update with the new address!
+  server 'gasmixer.et-model.com', :web, :app, :db, :primary => true
   set :application_name, "mixer"
   set :deploy_to, "/home/ubuntu/apps/#{application_name}"
-  set :branch, "mixer"
+  # TODO: use mixer branch ASAP
+  set :branch, "mixer_rc"
   set :db_name, "energymixer"
   set :db_user, "energymixer"
   set :db_pass, "sKkE6qyst0jCUN"
