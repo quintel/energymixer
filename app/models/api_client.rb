@@ -1,23 +1,23 @@
 class ApiClient
   include HTTParty
-  base_uri APP_CONFIG['api_base_path']
-  
-  GQueries = [ 
-        "share_of_total_costs_assigned_to_coal",
-        "share_of_total_costs_assigned_to_gas",
-        "share_of_total_costs_assigned_to_oil",
-        "share_of_total_costs_assigned_to_nuclear",
-        "share_of_total_costs_assigned_to_renewables",
-        "mixer_reduction_of_co2_emissions_versus_1990",
-        "mixer_renewability",
-        "mixer_bio_footprint",
-        "mixer_net_energy_import",
-        "share_of_total_costs_assigned_to_wind",
-        "share_of_total_costs_assigned_to_solar",
-        "share_of_total_costs_assigned_to_biomass",
-        "mixer_total_costs"
-      ]
-      
+  base_uri APP_CONFIG['api_url']
+
+  GQueries = [
+    "share_of_total_costs_assigned_to_coal",
+    "share_of_total_costs_assigned_to_gas",
+    "share_of_total_costs_assigned_to_oil",
+    "share_of_total_costs_assigned_to_nuclear",
+    "share_of_total_costs_assigned_to_renewables",
+    "mixer_reduction_of_co2_emissions_versus_1990",
+    "mixer_renewability",
+    "mixer_bio_footprint",
+    "mixer_net_energy_import",
+    "share_of_total_costs_assigned_to_wind",
+    "share_of_total_costs_assigned_to_solar",
+    "share_of_total_costs_assigned_to_biomass",
+    "mixer_total_costs"
+  ]
+
   CarrierCostsGQueries = [
     "mixer_total_costs",
 
@@ -51,7 +51,7 @@ class ApiClient
     "share_of_total_costs_assigned_to_nuclear_in_agriculture",
     "share_of_total_costs_assigned_to_renewables_in_agriculture"
   ]
-  
+
   def intro_page_data
     Rails.cache.fetch("intro_page_data") do
       intro_page_data!
@@ -105,7 +105,7 @@ class ApiClient
       carrier_costs!
     end
   end
-    
+
   def carrier_costs!
     query(ApiClient::CarrierCostsGQueries)
   end
@@ -113,7 +113,7 @@ class ApiClient
   def api_session_key
     @api_session_key ||= api_session_key!
   end
-  
+
   def api_session_key!
     response = self.class.get("/api_scenarios/new.json")
     # the next ETE release will use id as key
@@ -121,18 +121,18 @@ class ApiClient
   rescue
     nil
   end
-  
-  private
-  
-    def query(gqueries)
-        url   = "/api_scenarios/#{api_session_key}.json"
-        query = { result: gqueries, reset: 1 }
 
-        response = self.class.get(url, :query => query)
-        out = {}
-        response["result"].each_pair{|k,v| out[k] = v[0][1]}
-        out
-      rescue
-        nil
-    end
+  private
+
+  def query(gqueries)
+    url   = "/api_scenarios/#{api_session_key}.json"
+    query = { result: gqueries, reset: 1 }
+
+    response = self.class.get(url, :query => query)
+    out = {}
+    response["result"].each_pair{|k,v| out[k] = v[0][1]}
+    out
+  rescue
+    nil
+  end
 end
