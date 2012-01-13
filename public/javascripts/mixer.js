@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:39:47 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 10:26:17 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -148,7 +148,7 @@
       return this.make_request();
     };
     Mixer.prototype.base_url = function() {
-      if (jQuery.support.cors && !globals.api.cors_disable) {
+      if (jQuery.support.cors && !globals.api.disable_cors) {
         return globals.api.url;
       } else {
         return globals.api.proxy_url;
