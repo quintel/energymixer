@@ -98,7 +98,7 @@ class Mixer extends Backbone.Model
 
   # returns the base API URL according to proxy and CORS support
   base_url: ->
-    if jQuery.support.cors && !globals.api.cors_disable
+    if jQuery.support.cors && !globals.api.disable_cors
         globals.api.url
     else
         globals.api.proxy_url
