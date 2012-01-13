@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:28:29 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:39:47 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -27,12 +27,8 @@
       this.score = new ScoreBoard({
         model: this
       });
-      this.gqueries = window.globals.gqueries;
+      this.gqueries = globals.gqueries;
       this.base_path = this.base_url() + "/api_scenarios";
-      this.scenario_id = false;
-      this.parameters = {};
-      this.user_answers = [];
-      this.gquery_results = {};
       this.score_enabled = globals.config.score_enabled;
       return this.fetch_scenario_id();
     };
@@ -61,6 +57,7 @@
     };
     Mixer.prototype.store_results = function(results) {
       var key, raw_results, value;
+      this.gquery_results || (this.gquery_results = {});
       for (key in results) {
         if (!__hasProp.call(results, key)) continue;
         raw_results = results[key];
