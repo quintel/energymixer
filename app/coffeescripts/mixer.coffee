@@ -10,7 +10,7 @@ class Mixer extends Backbone.Model
 
     @gqueries = window.globals.gqueries
 
-    @base_path      = globals.api.base_path + "/api_scenarios"
+    @base_path      = @base_url() + "/api_scenarios"
     @scenario_id    = false
     @parameters     = {} # parameters set according to user answers
     @user_answers   = [] # right from the form
@@ -44,8 +44,7 @@ class Mixer extends Backbone.Model
       $("input[type=hidden][data-label=#{key}]").val(value)
 
     # let's pass the data to the score object
-    @score.update_values @gquery_results    
-  
+    @score.update_values @gquery_results
   
   # flat list of all the gqueries we're sending to the engine
   all_gqueries: ->
@@ -105,5 +104,11 @@ class Mixer extends Backbone.Model
     @process_form()
     @make_request()
 
+  # returns the base API URL according to proxy and CORS support
+  base_url: ->
+    if jQuery.support.cors && !globals.api.cors_disable
+        globals.api.url
+    else
+        globals.api.proxy_url
 $ ->
   window.app = new Mixer

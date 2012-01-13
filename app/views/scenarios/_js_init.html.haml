@@ -13,7 +13,9 @@
         max_amount: #{Scenario::MaxAmount}
       },
       api: {
-        base_path: #{APP_CONFIG[:api_proxy_url].to_json},
+        url: #{APP_CONFIG[:api_url].to_json},
+        proxy_url: #{APP_CONFIG[:api_proxy_url].to_json},
+        disable_cors: #{APP_CONFIG[:disable_cors].to_json},
         session_settings: {
           country: #{APP_CONFIG["api_session_settings"][:country].to_json},
           end_year: #{@end_year}
