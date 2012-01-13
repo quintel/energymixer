@@ -14,11 +14,11 @@
 class DashboardItem < ActiveRecord::Base
   validates :gquery, :presence => true
   validates :label, :presence => true
-  
+
   scope :ordered, order('ordering, id')
 
   attr_accessible :gquery, :label, :steps, :ordering
-  
+
   # If we're defining some steps in the object field we can use this
   # method to check the step a value belongs to
   def corresponding_step(value)
