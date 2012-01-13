@@ -66,7 +66,7 @@ class HomeView extends Backbone.View
       # legend
       value = Math.round(ratio * 100)
       $("#chart tr.#{carrier} .value").html("#{value}%")
-        
+  
   reset_current_sector: =>
     @model.set({'current_sector': false})
 
