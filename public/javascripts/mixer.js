@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 09 Jan 2012 14:51:05 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:28:29 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/mixer.coffee
  */
 
@@ -28,7 +28,7 @@
         model: this
       });
       this.gqueries = window.globals.gqueries;
-      this.base_path = globals.api.base_path + "/api_scenarios";
+      this.base_path = this.base_url() + "/api_scenarios";
       this.scenario_id = false;
       this.parameters = {};
       this.user_answers = [];
@@ -149,6 +149,13 @@
     Mixer.prototype.refresh = function() {
       this.process_form();
       return this.make_request();
+    };
+    Mixer.prototype.base_url = function() {
+      if (jQuery.support.cors && !globals.api.cors_disable) {
+        return globals.api.url;
+      } else {
+        return globals.api.proxy_url;
+      }
     };
     return Mixer;
   })();

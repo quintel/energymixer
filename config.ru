@@ -12,7 +12,7 @@ if APP_CONFIG[:local_proxy]
   use Rack::Proxy do |req|
     # TODO: check robustness of the regexp
     if req.path =~ Regexp.new(proxy_url)
-      remote_url = APP_CONFIG[:api_base_path] + req.path.gsub(proxy_url, '')
+      remote_url = APP_CONFIG[:api_url] + req.path.gsub(proxy_url, '')
       URI.parse("#{remote_url}#{"?" if req.query_string}#{req.query_string}")
     end
   end
