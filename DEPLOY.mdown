@@ -1,0 +1,35 @@
+Deploy
+======
+
+We're currently using NGINX + Unicorn, handled by upstart.
+
+RVM
+---
+
+Remember to generate a rvm wrapper script for unicorn. You do that with
+
+    rvm wrapper ruby@gemset [scope] [binary-name]
+
+So in our case it will be something like:
+
+    rvm wrapper 1.9.3-p0@mixer mixer unicorn
+
+If you get weird "Missing binary" errors try running the script in the bundler context:
+
+    bundle exec rvm wrapper 1.9.3-p0@gasmixer gasmixer unicorn
+
+I've had many troubles with missing gems, bundler etc. Things began working when the wrapper was created with `sudo` (therefore owned by root). If some gem binary is missing you might have to manually `gem install` them. Check with `rvm info` which environment you're in.
+
+Upstart
+-------
+
+This is the current upstart script for unicorn (in `/etc/init/gasmixer-unicorn.conf`):
+
+    start on runlevel [2345]
+    stop on runlevel [!2345]
+    respawn
+    exec su -s /bin/sh -c 'exec "$0" "$@"' ubuntu -- /usr/local/rvm/bin/gasmixer_unicorn -c /home/ubuntu/apps/gasmixer/current/config/unicorn/gasmixer.rb -E production -D
+
+The `su -s` section makes `ubuntu` the process owner.
+
+

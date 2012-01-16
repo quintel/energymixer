@@ -12,8 +12,7 @@ class @Questions extends Backbone.View
     @show_right_question()
     @setup_colorbox()
     @clear_the_form()
-    
-
+  
   el: 'body'
 
   events:
@@ -23,11 +22,11 @@ class @Questions extends Backbone.View
     "click #prev_question"       : "_goto_prev_question"
     "click #questions nav#up a"  : "open_question"
     "click #admin_menu a"        : "open_question"
-    "click .question a.show_info" : "show_question_info_box"
+    "click .question a.show_info"        : "show_question_info_box"
     "click .question a.close_info_popup" : "hide_question_info_box"
-    "mouseenter li.answer em" : "show_tooltip"
+    "mouseenter li.answer em"  : "show_tooltip"
     "mouseleave  li.answer em" : "hide_tooltip"
-    "mousemove li.answer em" : "move_tooltip"
+    "mousemove li.answer em"   : "move_tooltip"
 
   # Callbacks
   #
@@ -93,7 +92,7 @@ class @Questions extends Backbone.View
     element.addClass('active')
     @model.refresh()
     @check_conflicts()
-    
+  
   # question methods
   #
   question_was_answered: (question_id) ->
@@ -128,14 +127,14 @@ class @Questions extends Backbone.View
   check_conflicts: ->
     conflicts = false
     conflicting_questions = []
-        
+  
     $.each(@currently_selected_answers(), (index, current_answer_id) =>
       if(conflicting_answer_id = this.check_conflicting_answer(current_answer_id))
         conflicts = true
         conflicting_questions.push(@get_question_id_from_answer(current_answer_id))
         conflicting_questions.push(@get_question_id_from_answer(conflicting_answer_id))
-    ) 
-    
+    )
+  
     if conflicts
       text = unique(conflicting_questions).join(" en ")
       $("section#conflicts .conflicting_questions").html(text)
@@ -163,13 +162,12 @@ class @Questions extends Backbone.View
       last_question = this.count_questions()
       @current_question = last_question if @current_question > last_question
       @show_right_question()
-    
+  
   _goto_prev_question: (e) =>
     e.preventDefault()
     @current_question--
     @current_question = 1 if @current_question < 1
     @show_right_question()
-    
   
   disable_prev_link: ->
     $("#previous_question").addClass('link_disabled')
@@ -197,8 +195,8 @@ class @Questions extends Backbone.View
   update_question_links: =>
     first_question = @current_question == 1
     last_question  = @current_question == @count_questions()
-    
-    if first_question 
+  
+    if first_question
       @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
@@ -207,7 +205,7 @@ class @Questions extends Backbone.View
     else
       @enable_prev_link()
       @disable_next_link() if last_question
-    
+  
     if @current_question_was_answered() && !last_question
       @enable_next_link()
     else
@@ -221,14 +219,14 @@ class @Questions extends Backbone.View
     $(".question_tab").removeClass('active')
     for i in [1..@current_question]
       tab_selector = ".question_tab[data-question_id=#{i}]"
-      $(tab_selector).addClass('active')      
+      $(tab_selector).addClass('active')
     @update_question_links()
-    
+  
     # GA
     previous_question_id = @current_question - 1
     if answer = @question_was_answered(previous_question_id)
       question_text = $.trim $("#question_#{previous_question_id} > .text").text()
-      answer_container = answer.parent()      
+      answer_container = answer.parent()
       answer_letter = $.trim answer_container.find(".number").text()
       # I convert the letter to a number because GA doesn't accept a string as parameter
       answer_number = answer_letter.charCodeAt(0) - 64
