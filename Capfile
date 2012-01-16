@@ -3,9 +3,9 @@ require 'bundler/capistrano'
 load 'deploy'
 load 'lib/capistrano/db_recipes'
 load 'lib/capistrano/airbrake'
-load 'lib/capistrano/bluepill'
 load 'lib/capistrano/link_config'
 load 'lib/capistrano/mixer'
+load 'lib/capistrano/unicorn'
 
 set :application, 'mixer'
 
@@ -43,7 +43,7 @@ end
 
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
-after 'deploy:restart',     'bluepill:restart_monitored'
+after 'deploy:restart',     'deploy:reload'
 after 'deploy',             'airbrake:notify'
 
 # RVM Stuff ------------------------------------------------------------------
