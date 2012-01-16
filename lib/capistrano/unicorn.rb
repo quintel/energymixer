@@ -24,7 +24,7 @@ namespace :deploy do
   def set_unicorn_variables
     set :rails_env, :production
     set :unicorn_binary, "/usr/local/rvm/bin/#{application_name}_unicorn"
-    set :unicorn_config, "#{current_path}/config/#{application_name}.rb"
+    set :unicorn_config, "#{current_path}/config/unicorn/#{application_name}.rb"
     set :unicorn_pid, "#{current_path}/tmp/pids/unicorn.pid"
   end
 end
