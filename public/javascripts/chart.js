@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 03 Nov 2011 08:38:05 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:44:25 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/chart.coffee
  */
 
@@ -17,7 +17,7 @@
       Chart.__super__.constructor.apply(this, arguments);
     }
     Chart.prototype.initialize = function() {
-      return this.dashboard_steps = window.globals.chart.dashboard_steps;
+      return this.dashboard_steps = globals.chart.dashboard_steps;
     };
     Chart.prototype.render = function() {
       var gquery, label, _ref;

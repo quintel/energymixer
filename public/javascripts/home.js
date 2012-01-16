@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 19 Oct 2011 15:39:54 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 13 Jan 2012 09:44:25 GMT from
  * /Users/paozac/Sites/energymixer/app/coffeescripts/home.coffee
  */
 

@@ -39,11 +39,6 @@ GEM
       coffee-script (~> 2.2)
     bcrypt-ruby (3.0.0)
     bluecloth (2.1.0)
-    bluepill (0.0.52)
-      activesupport (>= 3.0.0)
-      daemons (~> 1.1.0)
-      i18n (>= 0.5.0)
-      state_machine (~> 1.1.0)
     builder (2.1.2)
     capistrano (2.8.0)
       highline
@@ -58,7 +53,6 @@ GEM
     coffee-script-source (1.1.2)
     columnize (0.3.4)
     crack (0.1.8)
-    daemons (1.1.5)
     devise (1.4.5)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -171,7 +165,6 @@ GEM
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
     spork (0.9.0.rc9)
-    state_machine (1.1.1)
     tabs_on_rails (2.0.2)
     therubyracer (0.9.4)
       libv8 (~> 3.3.10)
@@ -196,7 +189,6 @@ DEPENDENCIES
   awesome_print
   barista (~> 1.2.1)
   bluecloth (~> 2.1.0)
-  bluepill
   capistrano
   client_side_validations (~> 3.0.0)
   devise (~> 1.4.5)

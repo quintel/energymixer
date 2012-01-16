@@ -7,20 +7,14 @@ class Mixer extends Backbone.Model
     @chart     = new Chart({model: this})
     @questions = new Questions({model: this})
     @score     = new ScoreBoard({model: this})
-
-    @gqueries = window.globals.gqueries
-
-    @base_path      = globals.api.base_path + "/api_scenarios"
-    @scenario_id    = false
-    @parameters     = {} # parameters set according to user answers
-    @user_answers   = [] # right from the form
-    @gquery_results = {} # clean results hash
-    @score_enabled  = globals.config.score_enabled
+    @gqueries  = globals.gqueries
+    @base_path = @base_url() + "/api_scenarios"
+    @score_enabled = globals.config.score_enabled
     @fetch_scenario_id()
 
   fetch_scenario_id: ->
     return @scenario_id if @scenario_id
-    $.ajax(
+    $.ajax
       url: "#{@base_path}/new.json"
       data: { settings : globals.api.session_settings }
       success: (data) =>
@@ -31,21 +25,20 @@ class Mixer extends Backbone.Model
         # show data for the first time
         @make_request()
       error: (request, status, error) -> $.logThis(error)
-      )
     return @scenario_id
   
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
   store_results: (results) ->
     # let's store all values in the corresponding hidden inputs
+    @gquery_results ||= {}
     for own key, raw_results of results
       value = raw_results[1][1]
       @gquery_results[key] = value
       $("input[type=hidden][data-label=#{key}]").val(value)
 
     # let's pass the data to the score object
-    @score.update_values @gquery_results    
-  
+    @score.update_values @gquery_results
   
   # flat list of all the gqueries we're sending to the engine
   all_gqueries: ->
@@ -60,11 +53,10 @@ class Mixer extends Backbone.Model
   make_request: ->
     request_parameters = {result: @all_gqueries(), reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
-    
     api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json"
     
     @chart.block_interface()
-    $.ajax(
+    $.ajax
       url: api_url,
       data: request_parameters,
       success: (data) =>
@@ -74,7 +66,6 @@ class Mixer extends Backbone.Model
       error: (data, error) =>
         @chart.unblock_interface()
         $.logThis(error)
-    )
     return true
   
   # build parameters given user answers. The parameter values are defined in the
@@ -105,5 +96,11 @@ class Mixer extends Backbone.Model
     @process_form()
     @make_request()
 
+  # returns the base API URL according to proxy and CORS support
+  base_url: ->
+    if jQuery.support.cors && !globals.api.disable_cors
+        globals.api.url
+    else
+        globals.api.proxy_url
 $ ->
   window.app = new Mixer

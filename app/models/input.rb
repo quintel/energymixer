@@ -12,20 +12,20 @@
 
 class Input < ActiveRecord::Base
   belongs_to :answer
-  
+
   validates :slider_id, :presence => true
-  
+
   attr_accessible :value, :slider_id, :key, :slider_name
-  
+
   def slider_name
     self.class.available_inputs[slider_id] rescue nil
   end
   alias_method :slider, :slider_name
-  
+
   def slider_name=(s)
     self.slider_id = self.class.available_inputs.invert[s]
   end
-  
+
   def self.available_inputs
     Rails.cache.fetch('available_inputs') do
       hash = {}

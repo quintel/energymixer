@@ -40,9 +40,6 @@ end
 group :production do
   # Use unicorn as the web server
   gem 'unicorn'
-
-  # Used for monitoring processes; not actually loaded in the Rails app.
-  gem 'bluepill', require: false
 end
 
 group :test do

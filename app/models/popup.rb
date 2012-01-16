@@ -18,15 +18,15 @@ class Popup < ActiveRecord::Base
   validates :code, :presence => true, :uniqueness => true
   validates :title_nl, :presence => true
   validates :body_nl, :presence => true
-  
+
   def title
     send "title_#{I18n.locale}"
   end
-  
+
   def body
     send "body_#{I18n.locale}"
   end
-  
+
   def video
     send "video_#{I18n.locale}"
   end

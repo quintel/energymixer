@@ -1,6 +1,6 @@
 class @Chart extends Backbone.View
   initialize: ->
-    @dashboard_steps = window.globals.chart.dashboard_steps
+    @dashboard_steps = globals.chart.dashboard_steps
   
   # Main entry point.
   # assumes results have been stored

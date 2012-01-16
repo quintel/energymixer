@@ -2,9 +2,10 @@ development: &DEV
   hostname: "energymixer.dev"
   app_name: "gasmixer"
   score: false
-  api_base_path:      "http://etengine.dev/api/v2"
+  api_url: "http://etengine.dev/api/v2"
   api_proxy_url: /ete_proxy
   local_proxy: true
+  disable_cors: false
   view_scenario_path: "http://etmodel.dev/scenarios"
   max_total_cost: 115000000000
   standalone: false
@@ -12,13 +13,12 @@ development: &DEV
   geolocation_enabled: false
   api_session_settings:
     :country: 'nl'
-  
 test:
   <<: *DEV
 production:
   <<: *DEV
   hostname: "mixer.et-model.com"
-  api_base_path:      "http://api.et-model.com/api/v2"
+  api_url:      "http://api.et-model.com/api/v2"
   view_scenario_path: "http://etm.et-model.com/scenarios"
   google_analytics_key: "UA-4089905-6"
   local_proxy: false
