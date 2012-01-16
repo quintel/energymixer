@@ -17,8 +17,7 @@ namespace :deploy do
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
     set_unicorn_variables
-    stop
-    start
+    reload
   end
 
   def set_unicorn_variables
