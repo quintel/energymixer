@@ -11,6 +11,7 @@ development: &DEV
   standalone: false
 	multilanguage: false
   geolocation_enabled: false
+  airbrake_key: false
   api_session_settings:
     :country: 'nl'
 test:
