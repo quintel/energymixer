@@ -43,7 +43,6 @@ end
 
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
-after 'deploy:restart',     'deploy:reload'
 after 'deploy',             'airbrake:notify'
 
 # RVM Stuff ------------------------------------------------------------------
