@@ -6,13 +6,14 @@ require 'spec_helper'
 
 describe Admin::AnswersController do
   render_views
-  
+
   let(:question) { Factory :question }
   let(:answer) { Factory :answer, :question => question }
   let(:user) { Factory :user }
 
   before do
     sign_in user
+    Input.stubs(:available_inputs).returns({1 => :foo})
   end
 
   describe "GET show" do
@@ -52,14 +53,14 @@ describe Admin::AnswersController do
         a2 = Factory :answer
         @answer.conflicting_answer_ids = [a1.id]
         @answer.save
-        
+
         @answer.reload.conflicting_answer_ids.should == [a1.id]
-        
+
         put :update, :id => @answer.id, :answer => { :text_nl => 'Hi!', :conflicting_answer_ids => [a2.id]}
         assigns(:answer).should == @answer
         @answer.reload.text_nl.should == 'Hi!'
         @answer.reload.conflicting_answer_ids.should == [a2.id]
-        
+
         response.should redirect_to(admin_question_url(@question))
       end
     end
@@ -72,7 +73,7 @@ describe Admin::AnswersController do
       end
     end
   end
-  
+
   describe "DELETE destroy" do
     it "should delete an answer" do
       @question = Factory :question
