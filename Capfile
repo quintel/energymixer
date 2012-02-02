@@ -45,11 +45,12 @@ end
 
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
-after 'deploy:restart',     'deploy:reload'
 after 'deploy',             'airbrake:notify'
 
 # RVM Stuff ------------------------------------------------------------------
 
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano"          # Load RVM's capistrano plugin.
+require "rvm/capistrano" if ENV['rvm_path'] # Load RVM's capistrano plugin.
+set(:bundle_cmd) {"/usr/local/rvm/bin/#{application_name}_bundle"}
+
