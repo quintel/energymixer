@@ -31,13 +31,6 @@ class Input < ActiveRecord::Base
       hash = {}
       Api::Input.all.sort_by(&:key).each{|i| hash[i.id] = i.key}
       hash
-      # DEBT: one-liner
-      # Api::Input.all.sort_by(:key).inject({}) {|hsh,i| hsh.merge i.id => i.key}
-      # +each+ makes the code easier to read and is *way* faster
-      #       user     system      total        real
-      # each:  1.040000   0.000000   1.040000 (  1.035372)
-      # inject: 18.190000   0.080000  18.270000 ( 18.232147)
-      # - PZ
     end
   end
 end
