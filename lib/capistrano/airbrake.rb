@@ -16,7 +16,7 @@ namespace :airbrake do
     }
 
     settings       = settings.map { |key, val| "#{key}=#{val}" }.join(' ')
-    notify_command = "bundle exec rake #{settings} airbrake:deploy"
+    notify_command = "#{bundle_cmd} exec rake #{settings} airbrake:deploy"
 
     puts ' ** Notifying Airbrake of deployment'
     run  "cd #{release_path} && #{notify_command}"
