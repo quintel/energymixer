@@ -8,7 +8,7 @@
         = a.question.text
       %dd
         - if a.answer
-          = a.answer.text.html_safe
+          = strip_links(markdown(a.answer.text)).html_safe
         - else
           = t 'scenario.no_answer'          
         - if APP_CONFIG["score"] && a.score
