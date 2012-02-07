@@ -1,5 +1,5 @@
 .question_popup
   %h1= @popup.title
   .body= raw @popup.body
-  - if @popup.video
+  - if @popup.video && !APP_CONFIG[:standalone]
     .video= embed_video @popup
