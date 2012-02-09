@@ -22,8 +22,7 @@ set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
 set :local_db_name, 'energymixer_dev'
 
 task :gasmixer do
-  # server 'gasmixer.et-model.com', :web, :app, :db, :primary => true
-  server 'ec2-46-137-65-178.eu-west-1.compute.amazonaws.com', :web, :app, :db, :primary => true
+  server 'gasmixer.et-model.com', :web, :app, :db, :primary => true
   set :application_name, "gasmixer"
   set :deploy_to, "/u/apps/#{application_name}"
   set :branch, "gasmixer"
