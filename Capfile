@@ -32,16 +32,13 @@ task :gasmixer do
 end
 
 task :mixer do
-  # TODO: update with the new address!
   server 'mixer.et-model.com', :web, :app, :db, :primary => true
   set :application_name, "mixer"
-  set :deploy_to, "/home/ubuntu/apps/#{application_name}"
-  # TODO: use mixer branch ASAP
-  set :branch, "mixer_rc"
+  set :deploy_to, "/u/apps/#{application_name}"
+  set :branch, "mixer"
   set :db_name, "energymixer"
   set :db_user, "energymixer"
   set :db_pass, "sKkE6qyst0jCUN"
-  set :rvm_ruby_string, "1.9.3@#{application_name}"
 end
 
 # Symlink database.yml, etc.
