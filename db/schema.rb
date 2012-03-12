@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111031095927) do
+ActiveRecord::Schema.define(:version => 20120312094623) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20111031095927) do
     t.text     "description_nl"
     t.text     "text_de"
     t.text     "description_de"
+    t.text     "text_en"
+    t.text     "description_en"
   end
 
   add_index "answers", ["ordering"], :name => "index_answers_on_ordering"
@@ -66,6 +68,9 @@ ActiveRecord::Schema.define(:version => 20111031095927) do
     t.text     "body_de"
     t.string   "video_nl"
     t.string   "video_de"
+    t.string   "title_en"
+    t.text     "body_en"
+    t.string   "video_en"
   end
 
   add_index "popups", ["code"], :name => "index_popups_on_code"
@@ -87,6 +92,8 @@ ActiveRecord::Schema.define(:version => 20111031095927) do
     t.integer  "question_set_id"
     t.string   "text_de"
     t.text     "description_de"
+    t.string   "text_en"
+    t.text     "description_en"
   end
 
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
