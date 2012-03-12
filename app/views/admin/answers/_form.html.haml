@@ -6,8 +6,10 @@
 = simple_form_for [:admin, @answer] do |f|
   = f.input :text_nl
   = f.input :text_de
+  = f.input :text_en
   = f.input :description_nl
   = f.input :description_de
+  = f.input :description_en
   = f.input :ordering
   = f.simple_fields_for :inputs do |i|
     = field_set_tag do
