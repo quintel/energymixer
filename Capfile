@@ -1,8 +1,8 @@
 require 'bundler/capistrano'
+require 'airbrake/capistrano'
 
 load 'deploy'
 load 'lib/capistrano/db_recipes'
-load 'lib/capistrano/airbrake'
 load 'lib/capistrano/link_config'
 load 'lib/capistrano/mixer'
 load 'lib/capistrano/unicorn'
@@ -45,5 +45,4 @@ end
 
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
-after 'deploy',             'airbrake:notify'
 
