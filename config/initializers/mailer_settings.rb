@@ -11,7 +11,5 @@ if APP_NAME
 end
 
 
-ActionMailer::Base.smtp_settings = {
   # Postfix fails on production without this
-  :enable_starttls_auto => false
-}
+ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
