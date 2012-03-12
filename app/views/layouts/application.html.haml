@@ -33,8 +33,7 @@
       = link_to "http://www.energietransitiemodel.nl/", :target => "_blank", :class => 'open_in_etm' do
         = t('layout.footer', :app_name => t(APP_NAME))
     - if APP_CONFIG['multilanguage']
-      - if I18n.locale == :nl
-        = link_to 'DE', :locale => :de
-      - else
-        = link_to 'NL', :locale => :nl
+      = link_to 'DE', :locale => :de unless I18n.locale.to_sym == :de
+      = link_to 'NL', :locale => :nl unless I18n.locale.to_sym == :nl
+      = link_to 'EN', :locale => :en unless I18n.locale.to_sym == :en
     = yield :footer
