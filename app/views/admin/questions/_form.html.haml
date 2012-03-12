@@ -2,8 +2,10 @@
   = f.association :question_set
   = f.input :text_nl
   = f.input :text_de
+  = f.input :text_en
   = f.input :description_nl, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
   = f.input :description_de, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+  = f.input :description_en, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
   
   = f.input :ordering
   = field_set_tag 'Answers' do
@@ -11,6 +13,7 @@
       = field_set_tag do
         = a.input :text_nl
         = a.input :text_de
+        = a.input :text_en
         = a.input :ordering
         - unless a.object.new_record?
           = a.input :_destroy, :as => :boolean

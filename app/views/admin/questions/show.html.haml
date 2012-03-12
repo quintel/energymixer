@@ -13,6 +13,12 @@
   %tr.even
     %td Description DE:
     %td= @question.description_de
+  %tr.odd
+    %td Text EN:
+    %td= @question.text_en
+  %tr.even
+    %td Description EN:
+    %td= @question.description_en
 
 %table.striped
   %thead
@@ -30,6 +36,8 @@
           NL: #{a.text_nl}
           %br
           DE: #{a.text_de}
+          %br
+          EN: #{a.text_en}
         %td
           - if a.inputs.any?
             = link_to_function 'inputs', '$(this).parent().find("table").toggle()'
