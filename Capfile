@@ -34,10 +34,10 @@ end
 task :mixer do
   # Use the right server name ASAP!
   # server 'mixer.et-model.com', :web, :app, :db, :primary => true
-  server 'gasmixer.et-model.com', :web, :app, :db, :primary => true
+  server 'mixer.et-model.com', :web, :app, :db, :primary => true
   set :application_name, "mixer"
   set :deploy_to, "/u/apps/#{application_name}"
-  set :branch, "mixer_rc"
+  set :branch, "mixer"
   set :db_name, "energymixer"
   set :db_user, "energymixer"
   set :db_pass, "sKkE6qyst0jCUN"
