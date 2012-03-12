@@ -26,7 +26,9 @@ class Answer < ActiveRecord::Base
 
   scope :ordered, order('ordering, id')
 
-  attr_accessible :inputs_attributes, :ordering, :text_nl, :text_de, :description_nl, :description_de, :conflicting_answer_ids, :answer_conflicts
+  attr_accessible :inputs_attributes, :ordering, :text_nl, :text_de,
+    :description_nl, :description_de, :conflicting_answer_ids, :answer_conflicts,
+    :text_en, :description_en
 
   def conflicting_answers
     Answer.find(conflicting_answer_ids)
