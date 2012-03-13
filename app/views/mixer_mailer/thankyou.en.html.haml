@@ -1,0 +1,24 @@
+%p
+  Dear #{@scenario.name},
+
+%p
+  We hereby send you a direct link to the mix you created using the #{t(APP_NAME)}.
+
+%p
+  = link_to scenario_url(@scenario), scenario_url(@scenario)
+
+%p
+  You can also use the link below to load your Energy Mix in the Energy Transition Model. This allows you to fine tune your scenario, using many more options. This is what policy makers use.
+
+%p
+  = link_to "Open your mix in the Energy Transition Model", @etm_scenario_url
+
+%p
+  Any ideas to improve the #{t(APP_NAME)} or reactions can be sent in an e-mail to:
+  = link_to "mixer@quintel.com", "mailto:mixer@quintel.com"
+
+%p
+  Kind regards,
+
+%p
+  =t(APP_NAME)
