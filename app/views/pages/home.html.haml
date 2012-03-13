@@ -34,7 +34,7 @@
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.transport'} 18%
-          .text.hidden= t 'home.popups.transport', :end_year => @end_year
+          .text.hidden= t 'home.popups.transport', :end_year => @end_year, :app_name => t(APP_NAME)
       .sector#icon_industry{:rel => 'industry'}
         .popup.hidden
           %a.description{:href=>"#"}
