@@ -6,7 +6,7 @@ class ScenariosController < ApplicationController
     @scenario = Scenario.current.clone
     @scenario.year = @question_set.try(:end_year)
 
-    @questions    = @question_set.questions.ordered rescue []
+    @questions    = @question_set.questions.enabled.ordered rescue []
     @answers      = @questions.map{|q| q.answers}.flatten.uniq
     
     @questions.each do |q|
