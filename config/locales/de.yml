@@ -100,6 +100,7 @@ de:
     score: "(Ergebnis: %{score})"
     compare: Vergleiche
     compare_with_others: "Vergleiche verschiedene Energiemixe miteinander"
+    compare_placeholder: "Wählen sie einen Energy Mix zum vergleichen"
     featured: Hervorgehoben
     average: Mittelwert
     conflicts: "Die Antworten auf die Fragen <span class='conflicting_questions'></span> scheinen widersprüchlich.<br/>Bist du sicher, dass diese Antworten die Situation im Jahr %{end_year} gut beschreiben?"

@@ -23,6 +23,8 @@
     %h3= t 'scenario.compare_with_others'
     = form_tag compare_scenarios_path do
       %section#selected_scenarios
+        #placeholder_1= t 'scenario.compare_placeholder'
+        #placeholder_2= t 'scenario.compare_placeholder'
       = link_to t('links.scenarios_compare'), '#', :class => 'submit_form disabled'
   
   :ruby

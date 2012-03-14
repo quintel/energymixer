@@ -100,6 +100,7 @@ en:
     score: "(Score: %{score})"
     compare: Compare
     compare_with_others: "Compare two mixes"
+    compare_placeholder: "Choose a mix to compare"
     featured: Featured
     average: Average
     conflicts: "The answers to questions <span class='conflicting_questions'></span> appear to be contradictory.<br/>Are you sure these answers reflect the situation in %{end_year}?"

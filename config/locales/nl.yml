@@ -100,6 +100,7 @@ nl:
     score: "(Score: %{score})"
     compare: Vergelijk
     compare_with_others: "Vergelijk verschillende mixen met elkaar"
+    compare_placeholder: "Kies een mix om te vergelijken"
     featured: Uitgelicht
     average: Gemiddelde
     conflicts: "De antwoorden op de vragen <span class='conflicting_questions'></span> lijken tegenstrijdig.<br/>Weet je zeker dat deze antwoorden de situatie in %{end_year} goed beschrijven?"
