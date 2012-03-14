@@ -13,3 +13,4 @@ config/config.yml
 config/database.yml
 tmp/restart.txt
 *.sql
+.sass-cache
