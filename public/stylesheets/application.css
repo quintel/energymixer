@@ -535,6 +535,16 @@ body#scenarios_index section#right section#select {
     background-repeat: no-repeat; }
     body#scenarios_index section#right section#select #selected_scenarios .scenario {
       height: 43px; }
+    body#scenarios_index section#right section#select #selected_scenarios #placeholder_1, body#scenarios_index section#right section#select #selected_scenarios #placeholder_2 {
+      text-align: center;
+      position: absolute;
+      width: 410px;
+      color: #666666;
+      font-style: italic; }
+    body#scenarios_index section#right section#select #selected_scenarios #placeholder_1 {
+      top: 105px; }
+    body#scenarios_index section#right section#select #selected_scenarios #placeholder_2 {
+      top: 165px; }
 body#scenarios_index section#right section.scenarios {
   padding: 10px 0px; }
   body#scenarios_index section#right section.scenarios nav.tabs {
