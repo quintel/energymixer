@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312094623) do
+ActiveRecord::Schema.define(:version => 20120314112040) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -94,8 +94,10 @@ ActiveRecord::Schema.define(:version => 20120312094623) do
     t.text     "description_de"
     t.string   "text_en"
     t.text     "description_en"
+    t.boolean  "enabled",         :default => true
   end
 
+  add_index "questions", ["enabled"], :name => "index_questions_on_enabled"
   add_index "questions", ["ordering"], :name => "index_questions_on_ordering"
 
   create_table "scenario_answers", :force => true do |t|
