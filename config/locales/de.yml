@@ -26,6 +26,7 @@ de:
       transport: "Transport per Auto, Lastwagen, Zug oder Binnenschiff ist energieintensiv. In diesem Energiemixer beschränken wir uns auf den inländischen Transport. Wenn wir den Energieverbrauch durch die internationale Luft- und Schiffahrt mitrechnen, wird der Anteil noch viel höher ausfallen. Können wir uns und unsere Güter im Jahre %{end_year} nicht intelligenter transportieren?"
       industry: "Die Industrie ist der größte Verbraucher von Erdöl, Erdgas und Steinkohle. Die Industrie ist die Basis unserer Wirtschaft, aber verbraucht gleichzeitig viel kostbare Rohstoffe. Wie wird sich der Energieverbrauch unserer Industrie bis zum Jahre %{end_year} entwickeln?"
   sectors:
+    sectors: Sektoren
     buildings: Gebäude
     agriculture: Landwirtschaft
     transport: Transport
