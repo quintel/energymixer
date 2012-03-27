@@ -55,7 +55,7 @@ en:
     total_amount:
       step_0: "This mix is cheaper than in 2011. A good thing, as we already spend so much on energy."
       step_1: "This mix is a little more expensive, but if our economy keeps growing, we will probably be able to afford this."
-      step_2: "This mix is considerably more expensive. Will be still be able to afford this in %{end_year}?"
+      step_2: "This mix is considerably more expensive. Will we still be able to afford this in %{end_year}?"
       step_3: "This mix is much more expensive. Will we be able to grow our way out of this predicament or be unable to afford this?"
     co2_emissions:
       step_0: "CO2 emissions of this mix are quite low. We are well on track to making our international reduction targets."
