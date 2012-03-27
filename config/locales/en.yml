@@ -33,7 +33,7 @@ en:
     industry: Industry
   links:
     scenarios_new: Create your own Energy Mix
-    scenarios_index: See other people's Energy Mixes 
+    scenarios_index: "See other people's Energy Mixes"
     scenarios_show: See
     scenarios_compare: Compare
   dashboard:

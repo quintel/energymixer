@@ -6,12 +6,12 @@
 %section#actions
   = link_to t('links.scenarios_index'), scenarios_path, :class => 'shell'
   = link_to t('links.scenarios_new'), new_scenario_path, :class => 'shell'
-  
+
 %section#main.shaded_gradient
   #intro
     %h3= t 'home.intro.title'
     %p= t 'home.intro.text', :app_name => t(APP_NAME), :end_year => @end_year
-      
+
   #chart
     %header.header_blue
       %strong= t 'home.chart.header.title'
@@ -42,7 +42,7 @@
           .text.hidden= t 'home.popups.industry', :end_year => @end_year
 
     #sector_links
-      %h3 t 'sectors.sectors'
+      %h3= t 'sectors.sectors'
       .sector
         %a.shell{:href => '#', :rel => 'transport'}= t 'sectors.transport'
       .sector
@@ -51,7 +51,7 @@
         %a.shell{:href => '#', :rel => 'industry'}= t 'sectors.industry'
       .sector
         %a.shell{:href => '#', :rel => 'buildings'}= t 'sectors.buildings'
-  
+
 - content_for :head do
   = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
   :javascript
@@ -61,4 +61,4 @@
     if (navigator.appVersion.indexOf("MSIE 7.") != -1) {
       alert("#{t 'layout.old_browser'}");
     }
-      
+
