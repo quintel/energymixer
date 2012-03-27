@@ -15,7 +15,7 @@ nl:
       text: "De %{app_name} is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op je idee over de energiemix van de toekomst, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, hernieuwbaarheid en beschikbaarheid."
     intro:
       title: Dit is het energieverbruik van Nederland in 2011
-      text: "In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie, de verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in %{end_year} uit zal zien? Maak met de %{app_name} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken."
+      text: "In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie. De verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in %{end_year} uit zal zien? Maak met de %{app_name} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken."
     chart:
       header:
         title: Energy Mix 2011
@@ -26,6 +26,7 @@ nl:
       transport: "Vervoer per auto, vrachtwagen, trein of binnenvaartschip is energie-intensief. In deze mixer beperken we ons tot het binnenlands vervoer. Als we het energiegebruik van de internationale lucht- en scheepvaart erbij zouden optellen dan zou dit percentage veel hoger zijn. Kunnen we onszelf en onze goederen niet slimmer vervoeren in %{end_year}?"
       industry: "De industrie is de grootste gebruiker van aardolie, -gas en steenkool. De industrie levert de basis voor onze economie, maar consumeert tegelijkertijd ook veel schaarse grondstoffen. Wat gebeurt er met het energiegebruik van onze industrie in %{end_year}?"
   sectors:
+    sectors: Sectoren
     buildings: Gebouwen
     agriculture: Landbouw
     transport: Vervoer
