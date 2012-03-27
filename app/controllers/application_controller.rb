@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    session[:locale] = params[:locale] || session[:locale] || I18n.default_locale
-    session[:locale] = :nl unless [:nl, :de, :en].include?(session[:locale].to_sym)
+    session[:locale] = params[:locale] || session[:locale] || default_locale
+    session[:locale] = default_locale unless [:nl, :de, :en].include?(session[:locale].to_sym)
     I18n.locale = session[:locale]
   end
 
@@ -32,5 +32,9 @@ class ApplicationController < ActionController::Base
   def load_question_set
     @question_set = QuestionSet.find_by_name(APP_NAME) || QuestionSet.first
     @end_year = @question_set.try(:end_year)
+  end
+
+  def default_locale
+    APP_CONFIG[:default_locale] || I18n.default_locale
   end
 end

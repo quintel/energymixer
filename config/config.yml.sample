@@ -10,6 +10,7 @@ development: &DEV
   max_total_cost: 115000000000
   standalone: false
 	multilanguage: false
+  default_locale: en
   geolocation_enabled: false
   airbrake_key: false
   api_session_settings:
