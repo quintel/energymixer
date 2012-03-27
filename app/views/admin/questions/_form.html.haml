@@ -6,6 +6,7 @@
   = f.input :description_nl, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
   = f.input :description_de, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
   = f.input :description_en, :hint => "You can use markdown syntax. To insert a popup use [foobar](/info/foobar). Available popups: #{Popup.all.map(&:code).join("/")}"
+  = f.input :enabled, :as => :boolean
   
   = f.input :ordering
   = field_set_tag 'Answers' do

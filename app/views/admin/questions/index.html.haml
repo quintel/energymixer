@@ -5,6 +5,7 @@
     %tr
       %th Set
       %th Question Name
+      %th Enabled
       %th
   %tbody
     - @questions.each do |question|
@@ -13,6 +14,7 @@
         %td
           = link_to admin_question_path(question) do
             #{question.number}. #{question.text}
+        %td= question.enabled
         %td
           = link_to 'Edit', edit_admin_question_path(question)
           = link_to 'Delete', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete

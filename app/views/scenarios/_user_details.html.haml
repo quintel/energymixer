@@ -1,4 +1,4 @@
-.question{:id => "question_#{Question.count + 1}"}
+.question{:id => "question_#{@questions.count + 1}"}
   #user_details
     %h2= t 'form.title', :end_year => @end_year
     %p= t 'form.text'
