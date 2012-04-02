@@ -12,13 +12,12 @@
     /[if lte IE 7]
       = stylesheet_link_tag "ie7"
 
-    - unless APP_CONFIG["standalone"]
-      = airbrake_javascript_notifier unless APP_CONFIG['app_name'] == 'energymixer'
-      = render 'layouts/google_analytics' if APP_CONFIG["google_analytics_key"]
-
     = csrf_meta_tag
     = render "layouts/javascript_unselectable"
     = yield :head
+    - unless APP_CONFIG["standalone"]
+      = airbrake_javascript_notifier unless APP_CONFIG['app_name'] == 'energymixer'
+      = render 'layouts/google_analytics' if APP_CONFIG["google_analytics_key"]
   %body{:id => "#{controller.controller_name}_#{controller.action_name}",
         :class => [controller.controller_name, APP_NAME, APP_CONFIG['score'] && 'score_enabled']}
     = render "layouts/mediamind_tracker" if APP_CONFIG['app_name'] == 'energymixer'
