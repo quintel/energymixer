@@ -18,9 +18,9 @@ class HomeView extends Backbone.View
     @render()
 
   model: Home
-  
+
   el: "#map"
-  
+
   events:
     "click #sector_icons a.description"  : "show_information"
     "mouseenter #sector_links .sector a" : "update_current_sector"
@@ -37,15 +37,15 @@ class HomeView extends Backbone.View
       popup.show()
     else
       $(".popup").hide()
-    
+
     # price
     $("#chart header span.amount").html @model.price()
-    
+
     # chart
     @update_chart()
-    
+
     return @el
-    
+
   show_information: (e) =>
     e.preventDefault()
     container = $(e.target).parent()
@@ -66,13 +66,13 @@ class HomeView extends Backbone.View
       # legend
       value = Math.round(ratio * 100)
       $("#chart tr.#{carrier} .value").html("#{value}%")
-  
+
   reset_current_sector: =>
     @model.set({'current_sector': false})
 
   update_current_sector: (e) =>
     sector_id = $(e.target).attr("rel")
     @model.set({current_sector: sector_id})
-  
+
 $ ->
   window.h = new HomeView()
