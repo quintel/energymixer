@@ -3,8 +3,7 @@
   %head
     %title= t(APP_NAME)
     = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'vendor/colorbox'
-    = javascript_include_tag :defaults
+    = javascript_include_tag 'application'
     = javascript_include_tag 'vendor/underscore-min', 'vendor/backbone-min', 'vendor/jquery.colorbox-min', 'vendor/jquery.blockUI'
     = javascript_include_tag 'console', 'popups'
     /[if lt IE 9]
