@@ -47,7 +47,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    client_side_validations (3.0.12)
+    client_side_validations (3.1.4)
     coderay (1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -206,7 +206,7 @@ DEPENDENCIES
   awesome_print
   bluecloth (~> 2.1.0)
   capistrano
-  client_side_validations (~> 3.0.0)
+  client_side_validations (~> 3.1.4)
   coffee-rails (~> 3.2.1)
   devise (~> 1.4.5)
   dynamic_form (~> 1.1.3)
