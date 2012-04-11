@@ -6,7 +6,7 @@ gem 'mysql2',       '~> 0.3.11'
 gem 'devise',       '~> 1.4.5'
 gem 'jquery-rails', '~> 1.0.19'
 gem 'simple_form',  '~> 1.4.2'
-gem 'kaminari',     '~> 0.12.1'
+gem 'kaminari',     '~> 0.13.0'
 gem 'bluecloth',    '~> 2.1.0'
 gem 'dynamic_form', '~> 1.1.3'
 gem 'client_side_validations', '~> 3.0.0'
@@ -20,13 +20,13 @@ gem 'capistrano'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.9.0'
-  gem 'factory_girl_rails'
+  gem 'factory_girl'
   gem 'mocha',              '~> 0.10.0'
-  gem 'shoulda',            '~> 2.11.3'
+  gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 group :development do
-  gem 'pry'
   gem 'hirb'
   gem 'awesome_print', :require => 'ap'
   gem 'annotate', :require => false
