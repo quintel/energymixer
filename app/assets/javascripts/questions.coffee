@@ -12,7 +12,7 @@ class @Questions extends Backbone.View
     @show_right_question()
     @setup_colorbox()
     @clear_the_form()
-  
+
   el: 'body'
 
   events:
@@ -92,7 +92,7 @@ class @Questions extends Backbone.View
     element.addClass('active')
     @model.refresh()
     @check_conflicts()
-  
+
   # question methods
   #
   question_was_answered: (question_id) ->
@@ -102,46 +102,46 @@ class @Questions extends Backbone.View
       return answer
     else
       return false
-  
+
   current_question_was_answered: ->
     @question_was_answered @current_question
-  
+
   count_questions: ->
     @num_questions = @num_questions || $(".question").size()
     @num_questions
-  
+
   currently_selected_answers: ->
     answers = []
     $(".answers .active input[type=radio]").each ->
       answers.push(parseInt($(this).val()))
     return answers
 
-  # returns the question_number given the answer_id we're using 
+  # returns the question_number given the answer_id we're using
   # this method to alert the user about conflicting answers
   get_question_id_from_answer: (answer_id) ->
     @answers2questions = {}
     for e in $("div.question input:checked")
       @answers2questions[$(e).val()] = $(e).data('question_number')
     return @answers2questions[answer_id]
-  
+
   check_conflicts: ->
     conflicts = false
     conflicting_questions = []
-  
+
     $.each(@currently_selected_answers(), (index, current_answer_id) =>
       if(conflicting_answer_id = this.check_conflicting_answer(current_answer_id))
         conflicts = true
         conflicting_questions.push(@get_question_id_from_answer(current_answer_id))
         conflicting_questions.push(@get_question_id_from_answer(conflicting_answer_id))
     )
-  
+
     if conflicts
       text = unique(conflicting_questions).join(" en ")
       $("section#conflicts .conflicting_questions").html(text)
       $("section#conflicts").show()
     else
       $("section#conflicts").hide()
-  
+
   # returns false or the conflicting answer_id
   check_conflicting_answer: (selected_answer_id) ->
     conflict = false
@@ -151,10 +151,10 @@ class @Questions extends Backbone.View
       if ($.inArray(parseInt(selected_answer_id), conflicting_answers) != -1)
         conflict = selected_answer_id
     return conflict
-  
+
   # interface methods
   #
-  
+
   _goto_next_question: (e) =>
     e.preventDefault()
     if @current_question_was_answered()
@@ -162,40 +162,40 @@ class @Questions extends Backbone.View
       last_question = this.count_questions()
       @current_question = last_question if @current_question > last_question
       @show_right_question()
-  
+
   _goto_prev_question: (e) =>
     e.preventDefault()
     @current_question--
     @current_question = 1 if @current_question < 1
     @show_right_question()
-  
+
   disable_prev_link: ->
     $("#previous_question").addClass('link_disabled')
     $("#previous_question").unbind('click')
-  
+
   enable_prev_link: ->
     $("#previous_question").removeClass('link_disabled')
     $("#previous_question").unbind('click')
     $("#previous_question").bind 'click', @_goto_prev_question
-  
+
   disable_next_link: ->
     $("#next_question").addClass('link_disabled')
     $("#next_question").unbind('click')
-  
+
   enable_next_link: ->
     $("#next_question").removeClass('link_disabled')
     $("#next_question").unbind('click')
     $("#next_question").bind 'click', @_goto_next_question
-  
+
 
   disable_all_question_links: =>
     @disable_next_link()
     @disable_prev_link()
-  
+
   update_question_links: =>
     first_question = @current_question == 1
     last_question  = @current_question == @count_questions()
-  
+
     if first_question
       @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
@@ -205,12 +205,12 @@ class @Questions extends Backbone.View
     else
       @enable_prev_link()
       @disable_next_link() if last_question
-  
+
     if @current_question_was_answered() && !last_question
       @enable_next_link()
     else
       @disable_next_link()
-  
+
   show_right_question: =>
     $(".question").hide()
     question_id = "#question_" + @current_question
@@ -221,7 +221,7 @@ class @Questions extends Backbone.View
       tab_selector = ".question_tab[data-question_id=#{i}]"
       $(tab_selector).addClass('active')
     @update_question_links()
-  
+
     # GA
     previous_question_id = @current_question - 1
     if answer = @question_was_answered(previous_question_id)
@@ -232,18 +232,18 @@ class @Questions extends Backbone.View
       answer_number = answer_letter.charCodeAt(0) - 64
       answer_text   = $.trim answer_container.find(".text").text()
       @track_event('mixer', "##{previous_question_id}: #{question_text}", answer_text, answer_number)
-  
+
   store_geolocation: =>
     navigator.geolocation.getCurrentPosition (pos) ->
       $("#scenario_longitude").val(pos.coords.longitude)
       $("#scenario_latitude").val(pos.coords.latitude)
-  
+
   # utility methods
   #
-  
+
   # we need to force this when a user refreshes the page (browser wants to remember the values), DS
   clear_the_form: -> $('form')[0].reset()
-  
+
   track_event: (category, action, label, value) ->
     return if (typeof(_gaq) == "undefined")
     # http://code.google.com/apis/analytics/docs/tracking/asyncMigrationExamples.html#EventTracking
