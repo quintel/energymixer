@@ -3,7 +3,7 @@ class ScenariosController < ApplicationController
   before_filter :load_question_set
 
   def new
-    @scenario = Scenario.current.clone
+    @scenario = Scenario.new(Scenario.current.attributes)
     @scenario.year = @question_set.try(:end_year)
 
     @questions    = @question_set.questions.enabled.ordered rescue []

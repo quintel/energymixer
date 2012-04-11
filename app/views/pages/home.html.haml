@@ -53,7 +53,7 @@
         %a.shell{:href => '#', :rel => 'buildings'}= t 'sectors.buildings'
 
 - content_for :head do
-  = javascript_include_tag 'home', 'vendor/sprintf-0.7-beta1'
+  = javascript_include_tag 'home'
   :javascript
     var globals = {
       carriers: #{@intro_data.to_json}

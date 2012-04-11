@@ -2,6 +2,7 @@ require 'bundler/capistrano'
 require 'airbrake/capistrano'
 
 load 'deploy'
+load 'deploy/assets'
 load 'lib/capistrano/db_recipes'
 load 'lib/capistrano/link_config'
 load 'lib/capistrano/mixer'
@@ -45,4 +46,5 @@ end
 
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
+before 'deploy:assets:precompile', 'deploy:link_config'
 

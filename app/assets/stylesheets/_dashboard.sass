@@ -1,0 +1,87 @@
+
+@mixin gauge_0
+  background: transparent url(/assets/layout/gauge_sprite.png) 0px 0px
+@mixin gauge_1
+  background: transparent url(/assets/layout/gauge_sprite.png) -33px 0px
+@mixin gauge_2
+  background: transparent url(/assets/layout/gauge_sprite.png) -66px 0px
+@mixin gauge_3
+  background: transparent url(/assets/layout/gauge_sprite.png) -99px 0px
+@mixin gauge_4
+  background: transparent url(/assets/layout/gauge_sprite.png) -132px 0px
+@mixin gauge_5
+  background: transparent url(/assets/layout/gauge_sprite.png) -165px 0px
+@mixin gauge_6
+  background: transparent url(/assets/layout/gauge_sprite.png) -198px 0px
+
+.full_chart
+  section.boxes
+    float: left
+    width: 149px
+    header
+    .dashboard_item
+      height: 91px
+      border-bottom: 1px solid #D0D1D1
+      margin: 0 0 0 8px
+      background: transparent
+      position: relative
+      h3
+        padding-top: 30px
+        margin-right: 35px
+        text-align: right
+        color: #000000
+        font-weight: bold
+      .value
+        padding-top: 5px
+        margin-right: 35px
+        font-size: 1.6em
+        margin-top: 0
+        text-align: right
+        font-weight: bold
+        color: #000000
+      .info_icon
+        float: left
+        margin-top: 10px
+        &:hover
+          cursor: pointer
+      .gauge_icon
+        width: 23px
+        margin-top: 5px
+        margin-right: 5px
+        height: 80px
+        float: right
+        @include shadow(#cccccc, 10px)
+        &.mixer_net_energy_import_step_0, &.mixer_reduction_of_co2_emissions_versus_1990_step_0, &.mixer_renewability_step_6, &.mixer_bio_footprint_step_0
+          @include gauge_6
+        &.mixer_net_energy_import_step_1, &.mixer_reduction_of_co2_emissions_versus_1990_step_1, &.mixer_renewability_step_5, &.mixer_bio_footprint_step_1
+          @include gauge_5
+        &.mixer_net_energy_import_step_2, &.mixer_reduction_of_co2_emissions_versus_1990_step_2, &.mixer_renewability_step_4, &.mixer_bio_footprint_step_2
+          @include gauge_4
+        &.mixer_net_energy_import_step_3, &.mixer_reduction_of_co2_emissions_versus_1990_step_3, &.mixer_renewability_step_3, &.mixer_bio_footprint_step_3
+          @include gauge_3
+        &.mixer_net_energy_import_step_4, &.mixer_reduction_of_co2_emissions_versus_1990_step_4, &.mixer_renewability_step_2, &.mixer_bio_footprint_step_4
+          @include gauge_2
+        &.mixer_net_energy_import_step_5, &.mixer_reduction_of_co2_emissions_versus_1990_step_5, &.mixer_renewability_step_1, &.mixer_bio_footprint_step_5
+          @include gauge_1
+        &.mixer_net_energy_import_step_6, &.mixer_reduction_of_co2_emissions_versus_1990_step_6, &.mixer_renewability_step_0, &.mixer_bio_footprint_step_6
+          @include gauge_0
+      .popup
+        z-index: 1000
+        position: absolute
+        top: -20px
+        left: -219px
+        width: 411px
+        display: none
+        @include shadow
+        background-color: #ffffff
+        opacity: 0.9
+        padding: 10px
+        a
+          @include close_button_link
+          display: block
+          float: right
+        .title
+          color: #0B2260
+          font-size: 1.2em
+          font-weight: bold
+          margin-bottom: 10px
