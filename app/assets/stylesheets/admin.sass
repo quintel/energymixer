@@ -1,0 +1,152 @@
+@import "reset"
+@import "mixins"
+@import "simple_form"
+
+body.admin
+  font-family: helvetica
+  margin: 0
+  padding: 0
+  header
+    margin: 0
+    nav
+      @include gradient(#6a7176, #4d5256)
+      padding: .6em
+      margin: 0
+      color: #cdcdcd
+      height: 22px
+      ul
+        li
+          list-style-type: none
+          float: left
+          padding-right: 1em
+          margin-right: 1em
+          text-shadow: black 0px 1px 0px
+          &.current
+            color: black
+          a
+            color: #cdcdcd
+            text-decoration: none
+            &.active
+              color: #ffffff
+    #subnav
+      @include gradient(#EFEFEF, #DFE1E2)
+      height: 70px
+      border-bottom: 1px solid #ededed
+      text-shadow: white 0px 1px 0px
+      .login_box
+        padding: 10px 5px
+        font-size: .8em
+        float: right
+        color: #5e6469
+      h2
+        font-size: 30px
+        color: #5e6469
+        font-weight: bold
+        padding: 10px 5px
+  a
+    color: #38678B
+    text-decoration: underline
+    &:hover
+      color: red
+  #content
+    padding: .5em
+    h1
+      font-size: 1.8em
+      font-weight: bold
+    h2
+      font-size: 1.5em
+      font-weight: bold
+      margin: .75em .3em
+    p
+      padding: 10px
+    #actions
+      margin-top: .5em
+      border: 1px solid #eeeeee
+      padding: 1em 0.5em
+      a
+        margin-right: 1em
+  .flash
+    text-align: center
+    border: 1px solid
+    margin: .5em
+    padding: 1em
+    font-weight: bold
+  .flash#alert
+    color: red
+    background-color: #FDBBBC
+  .flash#notice
+    color: green
+    background-color: #7BFF76
+  dl
+    dt
+      font-weight: bold
+    dd
+      margin-left: 10px
+      margin: 5px
+
+nav.pagination
+  text-align: center
+  border: 1px solid #eee
+  padding: .5em
+  margin-top: .5em
+
+table
+  tr
+    td.no_padding
+      padding: 0
+dl.small
+  font-size: .7em
+  dt
+    font-weight: bold
+
+body.answers
+  form
+    ul
+      li
+        font-weight: bold
+        ol
+          margin: 1em 0
+          li
+            font-weight: normal
+            font-size: .9em
+
+body#questions_show
+  .question
+    padding: 1em
+    margin-bottom: 1em
+
+table.striped
+  width: 100%
+  margin-bottom: 10px
+  td
+    padding: .4em
+  thead
+    tr
+      @include gradient(#e2e2e2, #d2d4d6)
+      th
+        color: #5e6469
+        text-align: left
+        padding: .5em
+        font-weight: bold
+        border: 1px solid #ddd
+        font-weight: 300
+        &.small
+          font-size: .7em
+  tbody
+    tr
+      td
+        font-weight: 100
+        border: 1px solid #ddd
+        font-size: .9em
+        &.small
+          font-size: .7em
+        a
+          color: #38678B
+    tr.even
+      background-color: #eee
+
+.hidden
+  display: none
+
+@import fugue-sprite
+@import ui-lightness/jquery-ui-1.8.15.custom

@@ -1,0 +1,174 @@
+body#scenarios_new, body#scenarios_create
+  section#left
+    section#questions
+      height: 430px
+      overflow: hidden
+      nav#up
+        height: 30px
+        display: block
+        text-align: center
+        a
+          font-size: 11.2px
+        table
+          width: 100%
+          table-layout : fixed
+          td
+            color: #073274
+            margin: 1px auto
+            padding: 8px
+            &.active
+              color: #ffffff
+              font-weight: bold
+              background-color: #073274
+      .question
+        .number
+          font-weight: bold
+          width: 5%
+          float: left
+          padding-left: 7px
+        .text
+          float: left
+          width: 90%
+          line-height: 18px
+          font-weight: bold
+          margin-bottom: 10px
+        .info
+          padding: 20px 10px 10px 3px
+          position: relative
+          .information
+            display: none
+            position: absolute
+            top: 30px
+            left: 0
+            padding: 10px
+            line-height: 15px
+            margin: 10px
+            z-index: 1000
+            @include shadow
+            h3
+              font-size: 13px
+              font-weight: bold
+              color: #0C3473
+              margin: 5px 0 10px 0
+            .close_button
+              float: right
+              a
+                display: block
+                @include close_button_link
+        ul.answers
+          li.answer
+            float: left
+            width: 100%
+            margin-left: 0
+            font-weight: bold
+            list-style-type: none
+            clear: both
+            label
+              width: 100%
+              float: left
+              padding: 5px 0
+              margin-bottom: 4px
+              font-weight: normal
+              .number
+                padding-top: 1px
+              .text
+                font-weight: normal
+                margin: 0 0 0 0
+                em
+                  text-decoration: underline
+              a
+                text-decoration: underline
+            input[type=radio]
+              display: none
+            &.active, &:hover
+              label
+                background-color: #DDDDDD
+                cursor: pointer
+
+    nav#down
+      margin-top: 10px
+      a
+        color: #313131
+        font-weight: bold
+        margin: 15px
+        &#previous_question
+          float: left
+        &#next_question
+          float: right
+        &.link_disabled
+          color: #DDDDDD
+
+    #user_details
+      h2
+        font-size: 12px
+        font-weight: bold
+        margin-bottom: 10px
+        padding: 10px
+      p
+        padding: 10px
+        font-weight: normal
+        line-height: 14px
+      .item
+        padding: 3px
+        clear: left
+        .field_with_errors
+          color: red
+          font-weight: bold
+          // float: left
+          // position: relative
+          // height: 36px
+        label
+          font-size: 11px
+          display: block
+          float: left
+          width: 80px
+          padding: 5px
+          text-align: right
+          &.check_box
+            width: 306px
+            float: right
+            text-align: left
+        input
+          display: block
+          float: left
+          padding: 3px
+          margin: 4px
+        input[type=text]
+          width: 220px
+        input[type=checkbox]
+          margin-left: 74px
+        input[type=submit]
+          float: right
+          margin: 15px
+      #errorExplanation
+        border: 1px solid red
+        margin: 3px 3px 20px 3px
+        h2
+          padding: 5px
+          background-color: red
+          color: #ffffff
+          font-size: 1.3em
+          margin-bottom: .5em
+          border-bottom: 1px solid
+        p, ul
+          padding: 5px
+  section#right
+    section#user_chart
+      float: left
+      margin-right: 3px
+    section#current_chart
+      width: 68px
+      float: left
+      height: 432px
+  section#conflicts
+    display: none
+    clear: both
+    padding: 15px 40px
+    margin-top: 10px
+    line-height: 20px
+    text-align: left
+    color: #000000
+    span.warning
+      color: red
+      font-weight: bold
+      font-size: 1.1em

@@ -1,0 +1,26 @@
+#score
+  background: url('/assets/icons/i.png') no-repeat 125px center
+  cursor: pointer
+  .value
+    font-weight: bold
+
+.score_details
+  width: 200px
+  position: absolute
+  z-index: 999
+  background-color: #fff
+  color: #000
+  line-height: 1em
+  @include shadow
+  table
+    width: 100%
+    tr.even
+      background: #ffffff
+    tr.even
+      background: #dddddd
+    td
+      border-bottom: 1px solid #ccc
+      padding: 4px
+  p.explanation
+    padding: 5px
+    font-style: italic

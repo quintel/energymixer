@@ -2,9 +2,12 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# If you have a Gemfile, require the gems listed there, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 module EnergyMixer
   class Application < Rails::Application
@@ -40,11 +43,18 @@ module EnergyMixer
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
+
     config.generators do |g|
       g.template_engine :haml
+      g.test_framework  :rspec, :fixture => false
     end
-    
+
     config.cache_store = :mem_cache_store
+
+    config.assets.enabled = true
+    config.assets.precompile += ['home.js', 'mixer_application.js', 'admin.css', 'ie.js', 'ie7.css', 'html5.js', 'compare_scenarios.js']
+    config.assets.css_compressor = :yui
+    config.assets.js_compressor = :uglifier
+    config.assets.compress = true
   end
 end
