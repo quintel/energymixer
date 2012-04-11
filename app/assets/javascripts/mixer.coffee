@@ -26,7 +26,7 @@ class Mixer extends Backbone.Model
         @make_request()
       error: (request, status, error) -> $.logThis(error)
     return @scenario_id
-  
+
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
   store_results: (results) ->
@@ -39,7 +39,7 @@ class Mixer extends Backbone.Model
 
     # let's pass the data to the score object
     @score.update_values @gquery_results
-  
+
   # flat list of all the gqueries we're sending to the engine
   all_gqueries: ->
     return @_all_gqueries if @_all_gqueries
@@ -47,14 +47,14 @@ class Mixer extends Backbone.Model
     for key in ['primary', 'secondary', 'dashboard', 'costs']
       @_all_gqueries = @_all_gqueries.concat(_.values(@gqueries[key]))
     @_all_gqueries
-  
+
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: ->
     request_parameters = {result: @all_gqueries(), reset: 1}
     request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
     api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json"
-    
+
     @chart.block_interface()
     $.ajax
       url: api_url,
@@ -67,7 +67,7 @@ class Mixer extends Backbone.Model
         @chart.unblock_interface()
         $.logThis(error)
     return true
-  
+
   # build parameters given user answers. The parameter values are defined in the
   # global answer hash.
   build_parameters: ->
@@ -78,18 +78,18 @@ class Mixer extends Backbone.Model
       # globals.answers is defined on the view!
       for own param_key, val of globals.answers[question_id][answer_id]
         @parameters[param_key] = val
-  
+
   # makes an array out of user answers in this format:
   # [ [question_1_id, answer_1_id], [question_2_id, answer_2_id], ...]
   process_form: ->
-    @user_answers = [];
+    @user_answers = []
     for elem in $("div.question ul.answers input:checked")
       obj = $(elem)
       question_id = obj.data('question_id')
       @user_answers.push([question_id, parseInt(obj.val())])
     @build_parameters()
     @parameters
-  
+
   # parses form, prepares parametes, makes ajax request and refreshes the chart
   # called every time the user selects an answer
   refresh: ->
