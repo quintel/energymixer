@@ -22,8 +22,8 @@
         %td= (scenario.output_8*100).round(2)
         %td= (scenario.output_12/1000000000).round(2)
         %td
-          = link_to '', admin_scenario_path(scenario), :class => 'fugue fugue-information'
-          = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
+          = link_to '', admin_scenario_path(scenario), :target => '_blank', :class => 'fugue fugue-information'
+          = link_to '', scenario_path(scenario), :target => '_blank', :class => 'fugue fugue-chart'
 
 #actions
   = link_to 'Back', admin_scenarios_path
