@@ -42,7 +42,7 @@ class Admin::ScenariosController < AdminController
   end
   
   def analysis
-    @scenarios = Scenario.find_all_by_id(params[:scenarios][:id])
+    @scenarios = Scenario.recent_first.find(params[:id])
   end
   
 
