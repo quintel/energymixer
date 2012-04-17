@@ -1,46 +1,28 @@
 - page_title "User Scenarios"
 
-= form_tag(analysis_admin_scenarios_path, :method => "post")
 %table.striped
   %thead
     %tr
-      %th
-      %th Id
       %th Date
       %th Title
       %th Name
-      %th Email
-      %th Age
-      %th Featured
-      %th Average
-      %th Year
-      %th GPS Position
+      %th Co2 (%)
+      %th Renewables (%)
+      %th Import (%)
+      %th Cost (mrd)
       %th
   %tbody
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
-        %td= check_box_tag "scenarios[id][]", scenario.id, false
-        %td= link_to scenario.id, admin_scenario_path(scenario)
         %td= l scenario.created_at, :format => :short
         %td= link_to scenario.title, admin_scenario_path(scenario) if scenario.title
         %td= link_to scenario.name, admin_scenario_path(scenario)
-        %td= scenario.email
-        %td= scenario.age
-        %td= scenario.featured
-        %td= scenario.average
-        %td= scenario.year
-        %td
-          - if scenario.has_coordinates?
-            #{scenario.longitude},#{scenario.latitude}
+        %td= (scenario.output_5*100).round(2)
+        %td= (scenario.output_6*100).round(2)
+        %td= (scenario.output_8*100).round(2)
+        %td= (scenario.output_12/1000000000).round(2)
         %td
           = link_to '', admin_scenario_path(scenario), :class => 'fugue fugue-information'
           = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
           = link_to '', edit_admin_scenario_path(scenario), :class => 'fugue fugue-pencil'
           = link_to '', admin_scenario_path(scenario), :confirm => 'Are you sure?', :method => :delete, :class => 'fugue fugue-cross'
-
-= button_to 'Analysis', analysis_admin_scenarios_path
-= paginate @scenarios
-
-
-#actions
-  = link_to 'New User Scenario', new_admin_scenario_path, :class => 'fugue fugue-plus'

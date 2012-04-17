@@ -10,6 +10,7 @@ EnergyMixer::Application.routes.draw do
     resources :dashboard_items
     resources :scenarios do
       get :stats, :on => :collection
+      post :analysis, :on => :collection
     end
     resources :translations
     
