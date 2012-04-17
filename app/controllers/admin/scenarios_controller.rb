@@ -42,7 +42,17 @@ class Admin::ScenariosController < AdminController
   end
   
   def analysis
-    @scenarios = Scenario.recent_first.find(params[:id])
+    @scenarios = Scenario.order(params[:sort]).find(params[:id])
+    if(params[:sort_data])
+      data = params[:sort_data].split(" ")
+      if(Scenario.method_defined?(data[0]))
+        if(data[1] == "asc")
+          @scenarios.sort! { |a,b| a.send(data[0]) <=> b.send(data[0])  }
+        else
+          @scenarios.sort! { |a,b| b.send(data[0]) <=> a.send(data[0])  }
+        end
+      end
+    end
   end
   
 
