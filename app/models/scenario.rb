@@ -105,7 +105,7 @@ class Scenario < ActiveRecord::Base
   attr_accessor :accept_terms
   before_save :sanitize_age
 
-  paginates_per 30
+  paginates_per 10
 
   def carrier_ratios
     {

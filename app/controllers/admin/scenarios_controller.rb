@@ -1,13 +1,13 @@
 class Admin::ScenariosController < AdminController
-  before_filter :find_scenario, :except => [:index, :new, :create, :stats]
+  before_filter :find_scenario, :except => [:index, :analysis, :new, :create, :stats]
 
   def index
-    @scenarios = Scenario.recent_first.page(params[:page])
+    @scenarios = Scenario.recent_first.page(params[:page]).per(30)
   end
 
   def show
   end
-
+  
   def new
     @scenario = Scenario.new
   end
@@ -17,7 +17,6 @@ class Admin::ScenariosController < AdminController
 
   def create
     @scenario = Scenario.new(params[:scenario])
-
     if @scenario.save
       redirect_to(admin_scenario_path(@scenario), :notice => 'Scenario was successfully created.')
     else
@@ -41,9 +40,13 @@ class Admin::ScenariosController < AdminController
   def stats
     @rows = ActiveRecord::Base.connection.select_all("SELECT count(id) AS c, YEAR(created_at) AS y, MONTH(created_at) AS m FROM scenarios GROUP BY y, m")
   end
+  
+  def analysis
+    @scenarios = Scenario.find_all_by_id(params[:scenarios][:id])
+  end
+  
 
   protected
-
   def find_scenario
     @scenario = Scenario.find(params[:id])
   end
