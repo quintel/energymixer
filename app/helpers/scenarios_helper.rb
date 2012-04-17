@@ -89,4 +89,22 @@ module ScenariosHelper
     gquery = Scenario::DashboardTable[key]
     output = Scenario::Outputs.invert[gquery]
   end
+  
+  def sortable(scenarios,methode,column, title = nil)
+    title ||= column.titleize
+    if(methode)
+      direction = (column +  " asc" == params[:sort_data]) ? "desc" : "asc"
+      link_to title, :sort_data => column + " "+ direction, :id => scenarios.map(&:id)
+    else
+      direction = (sort_column(column) +  " asc" == params[:sort]) ? "desc" : "asc"
+      link_to title, :sort => sort_column(column) + " "+ direction, :id => scenarios.map(&:id)
+    end
+  end
+  
+  private 
+  
+  def sort_column(column)
+    Scenario.column_names.include?(column) ? column : "name"
+  end
+  
 end
