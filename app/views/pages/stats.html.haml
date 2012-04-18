@@ -12,13 +12,14 @@
       %tr
         %th
         %th Id
+        %th= sortable_header 'Date', 'created_at'
         %th= sortable_header 'Title', 'title'
         %th= sortable_header 'Name', 'name'
         %th= sortable_header "CO2 (%)", "output_5"
-        %th= sortable_header "Renewables (%)","output_6"
+        %th= sortable_header "Renew. (%)","output_6"
         %th= sortable_header "Import (%)", 'output_8'
-        %th= sortable_header "Cost (mrd euro)", 'output_12'
-        %th= sortable_header "Bio-Footprint", 'output_7'
+        %th= sortable_header "Cost (mrd &euro;)", 'output_12'
+        %th= sortable_header "Bio-FP", 'output_7'
     %tfoot
       %tr
         %td{:colspan => 8}= paginate @scenarios
@@ -27,6 +28,7 @@
         %tr{:class => cycle('even', 'odd')}
           %td= check_box_tag "scenario_ids[]", s.id, false
           %td= s.id
+          %td= s.created_at.to_s(:short)
           %td= link_to truncate(s.title, :length => 25), s, :target => '_blank' if s.title
           %td= link_to s.name, s, :target => '_blank'
           %td= (s.output_5*100).round(2)
