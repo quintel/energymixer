@@ -2,7 +2,7 @@ EnergyMixer::Application.routes.draw do
   devise_for :users
 
   root :to => "pages#home"
-  
+
   namespace :admin do
     resources :answers, :only => [:edit, :update, :show, :destroy]
 
@@ -11,14 +11,14 @@ EnergyMixer::Application.routes.draw do
     resources :scenarios do
       get :stats, :on => :collection
       get :analysis, :on => :collection
-      post :analysis, :on => :collection 
+      post :analysis, :on => :collection
     end
     resources :translations
-    
+
     resources :pages, :only => :index
-    
+
     match 'reset_cache' => 'pages#reset_cache', :as => :reset_cache
-    
+
     root :to => "pages#index"
   end
 
@@ -26,6 +26,7 @@ EnergyMixer::Application.routes.draw do
     post :compare, :on => :collection
     get :answers,  :on => :member
   end
-  
+
   match "/info/:code", :to => "pages#info"
+  match "/stats", :to => "pages#stats"
 end

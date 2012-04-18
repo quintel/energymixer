@@ -56,4 +56,8 @@ class Answer < ActiveRecord::Base
     send "description_#{I18n.locale}"
   end
 
+  # how many times this answer has been chosen
+  def votes
+    scenario_answers.count
+  end
 end

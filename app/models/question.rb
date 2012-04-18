@@ -39,4 +39,8 @@ class Question < ActiveRecord::Base
   def description
     send "description_#{I18n.locale}"
   end
+
+  def most_voted_answer
+    answers.max_by{|a| a.votes}
+  end
 end
