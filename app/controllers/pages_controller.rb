@@ -11,7 +11,9 @@ class PagesController < ApplicationController
   end
 
   def stats
-    @scenarios = Scenario.not_featured.not_average.public.page(params[:page]).per(30)
+    order = ['title', 'name', 'output_5', 'output_6', 'output_8', 'output_12'].include?(params[:sort]) ? params[:sort] : 'id'
+    direction = ['asc', 'desc'].include?(params[:order]) ? params[:order] : 'asc'
+    @scenarios = Scenario.not_featured.not_average.public.order("#{order} #{direction}").page(params[:page]).per(30)
   end
 
   def full_stats

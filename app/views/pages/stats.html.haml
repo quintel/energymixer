@@ -11,19 +11,21 @@
     %thead
       %tr
         %th
-        %th Title
-        %th Name
-        %th Co2 (%)
-        %th Renewables (%)
-        %th Import (%)
-        %th Cost (bln)
+        %th Id
+        %th= sortable_header 'Title', 'title'
+        %th= sortable_header 'Name', 'name'
+        %th= sortable_header("Co2 (%)", "output_5")
+        %th= sortable_header("Renewables (%)","output_6")
+        %th= sortable_header("Import (%)", 'output_8')
+        %th= sortable_header("Cost (mrd)", 'output_12')
     %tfoot
       %tr
-        %td{:colspan => 7}= paginate @scenarios
+        %td{:colspan => 8}= paginate @scenarios
     %tbody
       - @scenarios.each do |s|
         %tr{:class => cycle('even', 'odd')}
           %td= check_box_tag "scenario_ids[]", s.id, false
+          %td= s.id
           %td= link_to s.title, s if s.title
           %td= link_to s.name, s
           %td= (s.output_5*100).round(2)
