@@ -1,25 +1,28 @@
 %h2 Mixes
 
-%table
-  %thead
-    %tr
-      %th
-      %th Title
-      %th Name
-      %th Co2 (%)
-      %th Renewables (%)
-      %th Import (%)
-      %th Cost (bln)
-  %tfoot
-    %tr
-      %td{:colspan => 7}= paginate @scenarios
-  %tbody
-    - @scenarios.each do |s|
-      %tr{:class => cycle('even', 'odd')}
-        %td= check_box_tag :foo
-        %td= link_to s.title, s if s.title
-        %td= link_to s.name, s
-        %td= (s.output_5*100).round(2)
-        %td= (s.output_6*100).round(2)
-        %td= (s.output_8*100).round(2)
-        %td= (s.output_12/1000000000).round(2)
+= form_tag "/analysis", :method => :post do
+  %table
+    %thead
+      %tr
+        %th
+        %th Title
+        %th Name
+        %th Co2 (%)
+        %th Renewables (%)
+        %th Import (%)
+        %th Cost (bln)
+    %tfoot
+      %tr
+        %td{:colspan => 7}= paginate @scenarios
+    %tbody
+      - @scenarios.each do |s|
+        %tr{:class => cycle('even', 'odd')}
+          %td= check_box_tag "scenario_ids[]", s.id, false
+          %td= link_to s.title, s if s.title
+          %td= link_to s.name, s
+          %td= (s.output_5*100).round(2)
+          %td= (s.output_6*100).round(2)
+          %td= (s.output_8*100).round(2)
+          %td= (s.output_12/1000000000).round(2)
+
+  %p= submit_tag "Compare answers"
