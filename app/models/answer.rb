@@ -49,11 +49,15 @@ class Answer < ActiveRecord::Base
   end
 
   def text
-    send "text_#{I18n.locale}"
+    answer = send "text_#{I18n.locale}" 
+    answer = "No answer available in your language" if answer.nil?
+    return answer
   end
 
   def description
-    send "description_#{I18n.locale}"
+    description_text = send "description_#{I18n.locale}"
+    description_text = "No description  available in your language" if description_text.nil?
+    return description_text
   end
 
   # how many times this answer has been chosen
