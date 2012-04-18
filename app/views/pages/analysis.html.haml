@@ -12,11 +12,12 @@
       %th= sortable_header 'Date', 'created_at'
       %th= sortable_header 'Title', 'title'
       %th= sortable_header 'Name', 'name'
-      %th= sortable_header 'Co2 (%)', 'output_5'
+      %th= sortable_header 'CO2 (%)', 'output_5'
       %th= sortable_header 'Renewables (%)', 'output_6'
       %th= sortable_header 'Import (%)', 'output_8'
-      %th= sortable_header 'Cost (mrd)', 'output_12'
+      %th= sortable_header 'Cost (mrd euro)', 'output_12'
       %th= sortable_header 'Bio-Footprint', 'output_7'
+      %th
   %tbody
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
@@ -28,12 +29,13 @@
         %td= (scenario.output_8*100).round(2)
         %td= (scenario.output_12/1000000000).round(2)
         %td= scenario.output_7.round(2)
+        %td= link_to 'Answers', answers_scenario_path(scenario), :target => '_blank'
 
 .scenarios_stats
-  - @question_set.questions.ordered.each do |question|
+  - @question_set.questions.enabled.ordered.each do |question|
     %table.answer_stats
       %tr
-        %th.title{:colspan => 2}= question.text
+        %th.title{:colspan => 2} #{question.number}. #{question.text}
       - question.answers.ordered.each do |answer|
         - percentage = answer.votes_in_scenarios(@scenarios).to_f / question.most_voted_answer_for_scenarios(@scenarios).votes_in_scenarios(@scenarios) * 95 rescue 0.0
         %tr{:class => cycle('even', 'odd')}
