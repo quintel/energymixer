@@ -25,5 +25,18 @@
           = link_to '', admin_scenario_path(scenario), :target => '_blank', :class => 'fugue fugue-information'
           = link_to '', scenario_path(scenario), :target => '_blank', :class => 'fugue fugue-chart'
 
+.scenarios_stats
+  - @question_set.questions.each do |question|
+    %h3= question.text
+    %table.answer_stats
+      - question.answers.each do |answer|
+        - percentage = answer.votes_in_scenarios(@scenarios).to_f / question.most_voted_answer_for_scenarios(@scenarios).votes_in_scenarios(@scenarios) * 95 rescue 0.0
+        %tr
+          %td.text= answer.text
+          %td.bar
+            .bar{:style => "width: #{percentage}%"}
+            .votes= answer.votes_in_scenarios(@scenarios)
+
+
 #actions
   = link_to 'Back', admin_scenarios_path

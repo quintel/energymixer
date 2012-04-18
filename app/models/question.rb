@@ -47,4 +47,10 @@ class Question < ActiveRecord::Base
   def most_voted_answer
     answers.max_by{|a| a.votes}
   end
+
+  # as above, but using the answers of an array of scenarios
+  # See the stats page
+  def most_voted_answer_for_scenarios(scenarios)
+    answers.max_by{|a| a.votes_in_scenarios(scenarios)}
+  end
 end

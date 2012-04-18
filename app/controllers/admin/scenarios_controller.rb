@@ -7,7 +7,7 @@ class Admin::ScenariosController < AdminController
 
   def show
   end
-  
+
   def new
     @scenario = Scenario.new
   end
@@ -36,12 +36,13 @@ class Admin::ScenariosController < AdminController
     @scenario.destroy
     redirect_to(admin_scenarios_url, :notice => 'Scenario deleted')
   end
-  
+
   def stats
     @rows = ActiveRecord::Base.connection.select_all("SELECT count(id) AS c, YEAR(created_at) AS y, MONTH(created_at) AS m FROM scenarios GROUP BY y, m")
   end
-  
+
   def analysis
+    load_question_set
     @scenarios = Scenario.order(params[:sort]).find(params[:id])
     if(params[:sort_data])
       data = params[:sort_data].split(" ")
@@ -54,7 +55,7 @@ class Admin::ScenariosController < AdminController
       end
     end
   end
-  
+
 
   protected
   def find_scenario

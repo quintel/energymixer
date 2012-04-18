@@ -64,4 +64,10 @@ class Answer < ActiveRecord::Base
   def votes
     scenario_answers.count
   end
+
+  # as above, but limiting to an array of scenarios. This is used by the stats
+  # page
+  def votes_in_scenarios(scenarios)
+    scenario_answers.for_scenarios(scenarios).count
+  end
 end
