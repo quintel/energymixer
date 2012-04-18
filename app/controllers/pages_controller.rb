@@ -16,4 +16,8 @@ class PagesController < ApplicationController
 
   def full_stats
   end
+
+  def analysis
+    @scenarios = Scenario.find(params[:scenario_ids])
+  end
 end

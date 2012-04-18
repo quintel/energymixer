@@ -1,9 +1,11 @@
 .scenarios_stats
   h3
-    font-size: 1.4em
+    font-size: 1.2em
     padding: 10px
+    font-weight: bold
   table.answer_stats
-    width: 90%
+    tr.even
+      background: #eee
     td
       border: 1px solid #ccc
       padding: 5px
@@ -18,9 +20,12 @@
         float: left
         margin-left: 3px
 
-body#pages_stats
+body#pages_stats, body#pages_analysis
   table
-    width: 100%
+    width: 90%
+    th.title
+      font-size: 1.2em
+      padding: 10px
     td, th
       padding: 3px
     th
