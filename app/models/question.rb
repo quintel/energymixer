@@ -33,11 +33,15 @@ class Question < ActiveRecord::Base
   end
 
   def text
-    send "text_#{I18n.locale}"
+    question_text = send "text_#{I18n.locale}"
+    question_text = "No description  available in your language" if question_text.nil?
+    return question_text
   end
 
   def description
-    send "description_#{I18n.locale}"
+    description_text = send "description_#{I18n.locale}"
+    description_text = "No description  available in your language" if description_text.nil?
+    return description_text
   end
 
   def most_voted_answer
