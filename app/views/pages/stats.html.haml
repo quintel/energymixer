@@ -1,4 +1,10 @@
-%h2 Mixes
+%section#breadcrumbs
+  %nav
+    = link_to t('homepage'), root_path
+    >
+    = link_to t('links.scenarios_index'), scenarios_path
+    >
+    Stats
 
 = form_tag "/analysis", :method => :post do
   %table
