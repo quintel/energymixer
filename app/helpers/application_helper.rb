@@ -16,6 +16,6 @@ module ApplicationHelper
   def sortable_header(name, field = nil)
     field ||= name
     order = params[:order] == 'asc' ? 'desc' : 'asc'
-    link_to name, {:sort => field, :order => order}
+    link_to name, params.merge({:sort => field, :order => order})
   end
 end

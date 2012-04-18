@@ -6,7 +6,7 @@
     >
     Stats
 
-= form_tag "/analysis", :method => :post do
+= form_tag "/analysis", :method => :get do
   %table
     %thead
       %tr
@@ -14,10 +14,11 @@
         %th Id
         %th= sortable_header 'Title', 'title'
         %th= sortable_header 'Name', 'name'
-        %th= sortable_header("Co2 (%)", "output_5")
-        %th= sortable_header("Renewables (%)","output_6")
-        %th= sortable_header("Import (%)", 'output_8')
-        %th= sortable_header("Cost (mrd)", 'output_12')
+        %th= sortable_header "Co2 (%)", "output_5"
+        %th= sortable_header "Renewables (%)","output_6"
+        %th= sortable_header "Import (%)", 'output_8'
+        %th= sortable_header "Cost (mrd)", 'output_12'
+        %th= sortable_header "Bio-Footprint", 'output_7'
     %tfoot
       %tr
         %td{:colspan => 8}= paginate @scenarios
@@ -26,11 +27,12 @@
         %tr{:class => cycle('even', 'odd')}
           %td= check_box_tag "scenario_ids[]", s.id, false
           %td= s.id
-          %td= link_to s.title, s if s.title
-          %td= link_to s.name, s
+          %td= link_to truncate(s.title, :length => 25), s, :target => '_blank' if s.title
+          %td= link_to s.name, s, :target => '_blank'
           %td= (s.output_5*100).round(2)
           %td= (s.output_6*100).round(2)
           %td= (s.output_8*100).round(2)
           %td= (s.output_12/1000000000).round(2)
+          %td= s.output_7.round(2)
 
   %p= submit_tag "Compare answers"
