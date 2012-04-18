@@ -9,20 +9,19 @@
 %table
   %thead
     %tr
-      %th= sortable(@scenarios, false , "created_at" ,"Date")
-      %th= sortable(@scenarios, false , "title")
-      %th= sortable(@scenarios, false , "name")
-      %th= sortable(@scenarios, true , "output_5", "Co2 (%)")
-      %th= sortable(@scenarios, true , "output_6", "Renewables (%)")
-      %th= sortable(@scenarios, true , "output_8", "Import (%)")
-      %th= sortable(@scenarios, true , "output_12", "Cost (mrd)")
-      %th
+      %th Date
+      %th Title
+      %th Name
+      %th Co2 (%)
+      %th Renewables (%)
+      %th Import (%)
+      %th Cost (mrd)
   %tbody
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
         %td= l scenario.created_at, :format => :short
-        %td= link_to scenario.title, admin_scenario_path(scenario) if scenario.title
-        %td= link_to scenario.name, admin_scenario_path(scenario)
+        %td= link_to scenario.title, scenario if scenario.title
+        %td= link_to scenario.name, scenario
         %td= (scenario.output_5*100).round(2)
         %td= (scenario.output_6*100).round(2)
         %td= (scenario.output_8*100).round(2)
