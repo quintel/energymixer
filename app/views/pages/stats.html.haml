@@ -1,12 +1,25 @@
-%h2 Stats
-.scenarios_stats
-  - @question_set.questions.enabled.ordered.each do |question|
-    %h3= question.text
-    %table.answer_stats
-      - question.answers.each do |answer|
-        - percentage = answer.votes.to_f / question.most_voted_answer.votes * 95 rescue 0.0
-        %tr
-          %td.text= answer.text
-          %td.bar
-            .bar{:style => "width: #{percentage}%"}
-            .votes= answer.scenario_answers.count
+%h2 Mixes
+
+%table
+  %thead
+    %tr
+      %th
+      %th Title
+      %th Name
+      %th Co2 (%)
+      %th Renewables (%)
+      %th Import (%)
+      %th Cost (bln)
+  %tfoot
+    %tr
+      %td{:colspan => 7}= paginate @scenarios
+  %tbody
+    - @scenarios.each do |s|
+      %tr{:class => cycle('even', 'odd')}
+        %td= check_box_tag :foo
+        %td= link_to s.title, s if s.title
+        %td= link_to s.name, s
+        %td= (s.output_5*100).round(2)
+        %td= (s.output_6*100).round(2)
+        %td= (s.output_8*100).round(2)
+        %td= (s.output_12/1000000000).round(2)

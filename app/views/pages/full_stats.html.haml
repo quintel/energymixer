@@ -1,0 +1,12 @@
+%h2 Stats
+.scenarios_stats
+  - @question_set.questions.enabled.ordered.each do |question|
+    %h3= question.text
+    %table.answer_stats
+      - question.answers.each do |answer|
+        - percentage = answer.votes.to_f / question.most_voted_answer.votes * 95 rescue 0.0
+        %tr
+          %td.text= answer.text
+          %td.bar
+            .bar{:style => "width: #{percentage}%"}
+            .votes= answer.scenario_answers.count

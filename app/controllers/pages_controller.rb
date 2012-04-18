@@ -11,5 +11,9 @@ class PagesController < ApplicationController
   end
 
   def stats
+    @scenarios = Scenario.not_featured.not_average.public.page(params[:page]).per(30)
+  end
+
+  def full_stats
   end
 end
