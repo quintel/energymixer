@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def stats
-    @scenarios = Scenario.not_featured.not_average.public.order("#{@order} #{@direction}").page(params[:page]).per(30)
+    @scenarios = Scenario.not_featured.not_average.order("#{@order} #{@direction}").page(params[:page]).per(30)
   end
 
   def full_stats
@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     scenarios = Scenario.find(params[:scenario_ids])
     @scenarios = scenarios.to_a.sort_by{|s| s.send @order.to_sym}
     @scenarios.reverse! if @direction == 'desc'
+    @scenarios.each_with_index { |s, i| s.title = "<anonymous>" ; s.name = "person ##{s.id}" } if params[:anonymous]
   end
 
   private
