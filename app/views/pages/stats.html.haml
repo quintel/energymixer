@@ -12,6 +12,7 @@
       %tr
         %th
         %th Id
+        %th Public
         %th= sortable_header 'Date', 'created_at'
         %th= sortable_header 'Title', 'title'
         %th= sortable_header 'Name', 'name'
@@ -28,6 +29,7 @@
         %tr{:class => cycle('even', 'odd')}
           %td= check_box_tag "scenario_ids[]", s.id, false
           %td= s.id
+          %td= s.public ? "yes" : "no"
           %td= s.created_at.to_s(:short)
           %td= link_to truncate(s.title, :length => 25), s, :target => '_blank' if s.title
           %td= link_to s.name, s, :target => '_blank'
@@ -37,4 +39,7 @@
           %td= (s.output_12/1000000000).round(2)
           %td= s.output_7.round(2)
 
-  %p= submit_tag "Compare answers"
+  %p
+    = submit_tag "Compare answers"
+    = check_box_tag "anonymous", "yes"
+    = label_tag "anonymous", "Anonymously"
