@@ -1,7 +1,7 @@
 en:
   layout:
     footer: "The %{app_name} is based on the Energy Transition Model"
-    old_browser: "Sorry your browser is not supported by the Energy Mixer. Please choose another browser or upgrade your current browser for optimal results."
+    old_browser: "Sorry, your browser is not supported by the Energy Mixer. Please choose another browser or upgrade your current browser for optimal results."
   chart:
     header:
       total_costs: "Costs &euro; <span class='total_amount'>%{amount}</span> Billion"
@@ -12,18 +12,18 @@ en:
       amount: "%{amount} Bln"
   home:
     header:
-      text: "The %{app_name} is an online tool for learning more about the future of energy. By answering questions about your ideas on the future energy mix, you can see what the consequences will be for prices, renewability, and availability."
+      text: "The %{app_name} is an online tool for learning more about how energy will be produced and used in the future. By answering questions about your ideas for the future of energy, you can observe the consequences of you choices on prices, renewability, and availability."
     intro:
       title: Dutch energy demand in 2011
-      text: "In the Netherlands almost 92% of all energy is supplied by oil, natural gas, and coal. Our transport sector runs almost entirely on oil. Heating and electricity for our houses mostly come from natural gas and coal. Do we want it to stay that way? What do you think the Dutch Energy Mix will look like in %{end_year}? Use the %{app_name} to create your own Energy Mix, based on the same quantitative model policy makers use."
+      text: "In the Netherlands, almost 92% of all energy is supplied by oil, natural gas, and coal. Our transport sector runs almost entirely on oil. Heating and electricity for our houses mostly come from natural gas and coal. Do we want it to stay that way? What do you think the Dutch Energy Mix will look like in %{end_year}? Use the %{app_name} to create your own Energy Mix, based on the same quantitative model used by policy-makers."
     chart:
       header:
         title: Energy Mix 2011
         costs: "Costs &euro; <span class='amount'>%{amount}</span> Billion"
     popups:
-      buildings: "More than 59% of the energy for houses, schools, and offices is for heating or cooling. In houses almost 20% is for electricity, in buildings this is 40%. Will we still need this energy in %{end_year}?"
-      agriculture: "Agriculture in the Netherlands uses relatively little energy directly. We disregard energy use for production of animal feeds imported from abroad. The Dutch greenhouses need a lot of energy. Greenhouses account for approximately 80% of all agricultural energy use. Can we change that by %{end_year}?"
-      transport: "Transport by car, truck, train or inland navigation is energy intensive. The %{app_name} limits itself to domestic trasport. If we also include energy demand of international flights and shipping, this pecentage becomes much higher. Will there be smarter options for transportation in %{end_year}?"
+      buildings: "More than 59% of the energy used in homes, schools, and offices is spent on heating or cooling. In houses, nearly 20% of energy is used by electrical appliances; while in offices this figure is 40%. Will we still use this much energy in %{end_year}?"
+      agriculture: "Agriculture in the Netherlands uses relatively little energy directly, but greenhouses are an exception. In fact, approximately 80% of energy used by agriculture is used in green houses! Can we change that by %{end_year}? We disregard energy used in the production of animal feeds imported from abroad."
+      transport: "Transport by car, truck, train, or inland navigation is energy intensive. The %{app_name} limits itself to domestic transport. If we also include energy demand of international flights and shipping, the pecentage of energy used by transport becomes much higher. Will there be smarter options for transportation in %{end_year}?"
       industry: "Industry is the largest user of oil, gas, and coal. Industry also provides the basis for our economy, while consuming precious natural resources. How will energy demand in industry change by %{end_year}?"
   sectors:
     sectors: Sectors
@@ -42,13 +42,13 @@ en:
       text: How will CO2 emissions change as a result of your choices here? This shows changes with respect to 1990 levels.
     renewability:
       title: Renewable energy
-      text: Which part of future energy use will be renewable? This uses the European definition of renewable energy. This means we consider what percentage of final energy use is renewable.
+      text: Which part of future energy use will be renewable? This uses the European definition of renewable energy which means we consider what percentage of final energy use is renewable.
     footprint:
       title: Bio-footprint
-      text: How much arable land is needed as a result of your choices here? Biomass often needs to be grown. This shows how many times the total area of Dutch arable land is required.
+      text: How much arable land is needed as a result of your choices? Biomass often needs to be grown. This shows how many times the total area of Dutch arable land is required.
     energy_import:
       title: Import dependence
-      text: "How much energy do the Netherlands import as a result of your choices here? This shows what percentage of energy used is imported, after subtracting exported energy. Dutch gas reserves are steadily declining, leading to a steadily rising import dependence."
+      text: "How much energy would the Netherlands import as a result of your choices here? This shows what percentage of energy used is imported after subtracting exported energy. Dutch gas reserves are steadily declining, leading to a rising dependence on imports."
   questions:
     info: Info
   scenario_steps:
@@ -58,24 +58,24 @@ en:
       step_2: "This mix is considerably more expensive. Will we still be able to afford this in %{end_year}?"
       step_3: "This mix is much more expensive. Will we be able to grow our way out of this predicament or be unable to afford this?"
     co2_emissions:
-      step_0: "CO2 emissions of this mix are quite low. We are well on track to making our international reduction targets."
-      step_1: "CO2 emissions will decrease and the Netherlands are contributing to a gobal reduction in greenhouse gases. Will it be enough though?"
-      step_2: "CO2 emissions will grow just like they have in the past years. What about global warming?"
-      step_3: "CO2 emissions will increase strongly. The economy is all people care about. What about our climate?"
+      step_0: "CO2 emissions of this mix are quite low. We are well on track to meeting our international reduction targets."
+      step_1: "CO2 emissions will decrease, and the Netherlands is contributing to a gobal reduction in greenhouse gases. However, will it be enough?"
+      step_2: "CO2 emissions will continue to grow as they have in previous years. What about global warming?"
+      step_3: "CO2 emissions will increase significantly. The economy is all people care about. What will be the consequences for the climate?"
     renewables:
-      step_0: "We remain addicted to fossil fuels and are unable to harness renewable energy sources. Maybe we will not need them anyway."
-      step_1: "We are making slow progress in creating a better balance between fossil and renewable energy, but cannot be said to be in a hurry."
-      step_2: "In %{end_year} we will still not make the renewable energy targets our country has set itself in 2011 for 2020!"
+      step_0: "We remain addicted to fossil fuels and are unable to harness renewable energy sources. Maybe we will not need them anyway?"
+      step_1: "We will make slow progress in creating a better balance between fossil and renewable energy, but the transition is extremely underwhelming."
+      step_2: "Progress is being made, but in %{end_year} we will not even have met the renewable energy targets set by policy-makers for 2020!"
       step_3: "Our energy transition is starting to get going and we are growing more conscious of the way we use energy. A significant share of our energy use in %{end_year} comes from renewable sources."
       step_4: "More than 50% of our energy needs are met by renewable sources!"
     footprint:
-      step_0: "We will use about the same amount of biomass as we did in 2011. Quite a lot actually."
-      step_1: "We will use ever more arable land and natural resources for the production of biomass."
+      step_0: "Biomass use will remain level with usage in 2011; quite a lot actually."
+      step_1: "Ever more arable land and natural resources will be used for the production of biomass."
       step_2: "Biomass use will grow strongly. Where will the required arable land and natural resources come from to grow all this biomass?"
     energy_import:
-      step_0: "Although our own natural gas reserves will be depleted in %{end_year} we will manage to limit dependence on foreign energy quite well."
-      step_1: "Our natural gas reservers are steadily being depleted, leading to increased imports. In %{end_year} we will import a large share of our energy demand."
-      step_2: "Although our natural gas reserves are steadily being depleted, we happily continue consuming and producing. We import over 90% of our energy demand."
+      step_0: "Although our own natural gas reserves will be depleted in %{end_year}, we will manage to limit dependence on foreign energy quite well."
+      step_1: "Our natural gas reservers are being steadily depleted, which leads to increased imports. In %{end_year} we will import a large share of our energy demand."
+      step_2: "Although our natural gas reserves are being steadily depleted, we happily continue consuming and producing. We import over 90% of our energy demand."
   score:
     your_score: Your score
     cost: Costs
@@ -83,11 +83,11 @@ en:
     renewables: Renewables
     areafp: Bio-footprint
     import: Energy imports
-    explanation: "* your score will remain zero until you fill in questions 1 and 2"
+    explanation: "* your score will remain zero until you complete questions 1 and 2"
   form:
     title: "Your Energy Mix in %{end_year}"
-    text: "Thank you for fill in this Energy Mix. Please provide your details for saving this Energy Mix and sharing it with others. You will receive an email to help your find this mix again later."
-    fill_your_data: "Please fill in your data:"
+    text: "Thank you for completing your Energy Mix. Please provide some simple details for saving this Energy Mix and sharing it with others. You will receive an email to help you find this mix again later."
+    fill_your_data: "Please fill in your information:"
     name: "Name"
     email: "E-mail"
     age: "Age"
