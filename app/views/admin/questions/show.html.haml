@@ -42,7 +42,7 @@
           - if a.inputs.any?
             = link_to_function 'inputs', '$(this).parent().find("table").toggle()'
             %table.small.hidden
-              - a.inputs.sort{|a,b|a.slider<=>b.slider}.each do |i|
+              - a.inputs.sort_by(&:slider_id).each do |i|
                 %tr
                   %td= i.slider
                   %td= "##{i.slider_id} "
