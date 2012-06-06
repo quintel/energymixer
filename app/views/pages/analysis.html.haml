@@ -9,27 +9,27 @@
 %table
   %thead
     %tr
-      %th= sortable_header 'Date', 'created_at'
-      %th= sortable_header 'Title', 'title'
+      %th.dont_print= sortable_header 'Date', 'created_at'
+      %th.dont_print= sortable_header 'Title', 'title'
       %th= sortable_header 'Name', 'name'
       %th= sortable_header 'CO2 (%)', 'output_5'
       %th= sortable_header 'Renewables (%)', 'output_6'
       %th= sortable_header 'Import (%)', 'output_8'
       %th= sortable_header 'Cost (mrd euro)', 'output_12'
       %th= sortable_header 'Bio-Footprint', 'output_7'
-      %th
+      %th.dont_print
   %tbody
     - @scenarios.each do |scenario|
       %tr{:class => cycle('even', 'odd')}
-        %td= l scenario.created_at, :format => :short
-        %td= link_to truncate(scenario.title, :length => 25), scenario, :target => '_blank' if scenario.title
+        %td.dont_print= l scenario.created_at, :format => :short
+        %td.dont_print= link_to truncate(scenario.title, :length => 25), scenario, :target => '_blank' if scenario.title
         %td= link_to scenario.name, scenario, :target => '_blank'
         %td= (scenario.output_5*100).round(2)
         %td= (scenario.output_6*100).round(2)
         %td= (scenario.output_8*100).round(2)
         %td= (scenario.output_12/1000000000).round(2)
         %td= scenario.output_7.round(2)
-        %td= link_to 'Answers', answers_scenario_path(scenario), :target => '_blank'
+        %td.dont_print= link_to 'Answers', answers_scenario_path(scenario), :target => '_blank'
 
 .scenarios_stats
   - @question_set.questions.enabled.ordered.each do |question|
