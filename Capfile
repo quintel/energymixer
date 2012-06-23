@@ -20,7 +20,9 @@ set :bundle_flags, '--deployment --quiet --binstubs --shebang ruby-local-exec'
 set :use_sudo, false
 
 set :db_host, "etm.cr6sxqj0itls.eu-west-1.rds.amazonaws.com"
-set :local_db_name, 'energymixer_dev'
+
+database_config = File.expand_path('../config/database.yml',__FILE__)
+set :local_db_name, YAML.load_file(database_config)["development"]["database"]
 
 task :gasmixer do
   server 'gasmixer.et-model.com', :web, :app, :db, :primary => true
