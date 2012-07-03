@@ -104,12 +104,13 @@ en:
     compare_placeholder: "Choose a mix to compare"
     featured: Featured
     average: Average
-    conflicts: "The answers to questions <span class='conflicting_questions'></span> appear to be contradictory.<br/>Are you sure these answers reflect the situation in %{end_year}?"
+    conflicts: "Your answers to questions <span class='conflicting_questions'></span> appear to be contradictory.<br/>Are you sure these answers reflect the situation in %{end_year}?"
     show_answers: "Show answers"
     by: "%{name}'s mix"
     by_age: "%{name}'s mix (%{age} years old)"
     open_in_etm_link: "Do you want to open your settings in the Energy Transition Model? (if not, you will be directed to the homepage of the Energy Transition Model)"
   warning: "Watch out!"
+  and: and
   homepage: Home
   energymixer: Energy Mixer
   current_scenario: Current scenario
