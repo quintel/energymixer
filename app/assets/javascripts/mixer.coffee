@@ -18,7 +18,7 @@ class Mixer extends Backbone.Model
       url: "#{@base_path}/new.json"
       data: { settings : globals.api.session_settings }
       success: (data) =>
-        key = data.api_scenario.id || data.api_scenario.api_session_key
+        key = data.scenario.id || data.scenario.api_session_key
         @scenario_id = key
         @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
         $.logThis("New scenario id: #{key}")
