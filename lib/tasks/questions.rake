@@ -9,12 +9,12 @@ namespace :questions do
       puts "##### Dutch"
       puts q.text_nl
       puts
-      puts "*#{q.description_nl.strip!}*" unless q.description_nl.empty?
+      puts "*#{q.description_nl.strip}*" unless q.description_nl.empty?
       puts
       puts "##### English"
       puts q.text_en
       puts
-      puts "*#{q.description_en.strip!}*" unless q.description_en.empty?
+      puts "*#{q.description_en.strip}*" unless q.description_en.empty? 
       puts
       puts "### Answers"
       puts
