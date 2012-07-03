@@ -27,6 +27,7 @@ class HomeView extends Backbone.View
     "mouseenter #sector_icons .sector"   : "update_current_sector"
     "mouseleave #sector_links .sector a" : "reset_current_sector"
     "mouseleave #sector_icons .sector"   : "reset_current_sector"
+    "click #sector_links a"              : "click_sector_link"
 
   render: =>
     @sector_id = @model.get("current_sector")
@@ -73,6 +74,9 @@ class HomeView extends Backbone.View
   update_current_sector: (e) =>
     sector_id = $(e.target).attr("rel")
     @model.set({current_sector: sector_id})
+
+  click_sector_link: (event) ->
+    event.preventDefault()
 
 $ ->
   window.h = new HomeView()
