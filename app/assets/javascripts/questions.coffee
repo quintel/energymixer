@@ -126,6 +126,7 @@ class @Questions extends Backbone.View
 
   check_conflicts: ->
     conflicts = false
+    conflictsEl = $("section#conflicts")
     conflicting_questions = []
 
     $.each(@currently_selected_answers(), (index, current_answer_id) =>
@@ -136,11 +137,11 @@ class @Questions extends Backbone.View
     )
 
     if conflicts
-      text = unique(conflicting_questions).join(" en ")
-      $("section#conflicts .conflicting_questions").html(text)
-      $("section#conflicts").show()
+      text = unique(conflicting_questions).join(" #{ conflictsEl.data('and') } ")
+      conflictsEl.find('.conflicting_questions').html(text)
+      conflictsEl.show()
     else
-      $("section#conflicts").hide()
+      conflictsEl.hide()
 
   # returns false or the conflicting answer_id
   check_conflicting_answer: (selected_answer_id) ->

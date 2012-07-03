@@ -110,6 +110,7 @@ de:
     by_age: "Der Energiemix von %{name} (%{age} jahre)"
     open_in_etm_link: "Willst du sofort die gewählten Einstellungen im Energiewende-Modell sehen? (falls nicht, geh dann zur Homepage des Energiewende-Modells)"
   warning: "Aufpassen!"
+  and: und
   homepage: Home
   energymixer: Energiemixer
   current_scenario: Heutiges Szenario

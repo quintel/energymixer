@@ -110,6 +110,7 @@ nl:
     by_age: "De mix van %{name} (%{age} jaar)"
     open_in_etm_link: "Wil je meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan ga je naar de homepage van het Energietransitiemodel)"
   warning: "Let op!"
+  and: and
   homepage: Home
   energymixer: Energy Mixer
   current_scenario: Huidig scenario
