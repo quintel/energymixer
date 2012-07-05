@@ -30,11 +30,28 @@ class ApplicationController < ActionController::Base
   end
 
   def load_question_set
-    @question_set = QuestionSet.find_by_name(APP_NAME) || QuestionSet.first
-    @end_year = @question_set.try(:end_year)
+    @question_set = partition.question_set
+    @end_year     = @question_set.try(:end_year)
   end
 
   def default_locale
-    APP_CONFIG[:default_locale] || I18n.default_locale
+    partition.default_locale || I18n.default_locale
   end
+
+  # @return [Partition]
+  #   Returns the Partition with settings for the current subdomain.
+  #
+  # @raise [RuntimeError]
+  #   Raises if the named partition does not exist, or if no subdomain is
+  #   present.
+  #
+  def partition
+    unless PARTITIONS.has_key?(request.subdomain)
+      raise "No such partition: #{request.subdomain}"
+    end
+
+    @partition ||= Partition.new(PARTITIONS[request.subdomain])
+  end
+
+  helper_method :partition
 end

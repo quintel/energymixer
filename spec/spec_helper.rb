@@ -28,6 +28,11 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
     config.include FactoryGirl::Syntax::Methods
+
+    # We apparently cannot add a before filter here, since request and
+    # controller aren't available. Yet they are if the filter is added to the
+    # example block. Odd!
+    config.include SubdomainSpec, type: :controller
   end
 end
 
