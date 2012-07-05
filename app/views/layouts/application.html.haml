@@ -15,13 +15,13 @@
     = yield :head
 
     - unless APP_CONFIG["standalone"]
-      = airbrake_javascript_notifier unless APP_CONFIG['app_name'] == 'energymixer'
-      = render 'layouts/google_analytics' if APP_CONFIG["google_analytics_key"]
+      = airbrake_javascript_notifier unless partition.name == 'energymixer'
+      = render 'layouts/google_analytics' if partition.analytics?
 
   %body{:id => "#{controller.controller_name}_#{controller.action_name}",
-        :class => [controller.controller_name, APP_NAME, APP_CONFIG['score'] && 'score_enabled']}
+        :class => [controller.controller_name, partition.name, partition.show_score? && 'score_enabled']}
 
-    = render "layouts/mediamind_tracker" if APP_CONFIG['app_name'] == 'energymixer'
+    = render "layouts/mediamind_tracker" if partition.name == 'energymixer'
 
     - if ipad?
       %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
@@ -31,10 +31,10 @@
 
   %footer
     - if APP_CONFIG["standalone"]
-      = t('layout.footer', :app_name => t(APP_NAME))
+      = t('layout.footer', :app_name => t(partition.name))
     - else
       = link_to "http://www.energietransitiemodel.nl/", :target => "_blank", :class => 'open_in_etm' do
-        = t('layout.footer', :app_name => t(APP_NAME))
+        = t('layout.footer', :app_name => t(partition.name))
     - if APP_CONFIG['multilanguage']
       = link_to 'DE', :locale => :de unless I18n.locale.to_sym == :de
       = link_to 'NL', :locale => :nl unless I18n.locale.to_sym == :nl

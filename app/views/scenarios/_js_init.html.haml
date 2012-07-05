@@ -13,7 +13,7 @@
         proxy_url: #{APP_CONFIG[:api_proxy_url].to_json},
         disable_cors: #{APP_CONFIG[:disable_cors].to_json},
         session_settings: {
-          country: #{APP_CONFIG["api_session_settings"][:country].to_json},
+          country: #{partition.api_settings[:country].to_json},
           end_year: #{@end_year}
         },
         load_in_etm_url: "#{APP_CONFIG['view_scenario_path']}"
@@ -27,7 +27,7 @@
       popups: #{popup_json},
       current_situation: #{Scenario.current.combined_carriers.to_json},
       config: {
-        score_enabled: #{APP_CONFIG['score'].to_json},
+        score_enabled: #{partition.show_score?.to_json},
         geolocation_enabled: #{APP_CONFIG['geolocation_enabled'].to_json}
       },
       open_in_etm_link: #{t('scenario.open_in_etm_link').to_json}
