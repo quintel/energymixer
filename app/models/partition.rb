@@ -48,4 +48,11 @@ class Partition
   def show_score?
     @show_score
   end
+
+  # @return [QuestionSet, nil]
+  #   Returns the QuestionSet associated with the partition.
+  #
+  def question_set
+    QuestionSet.where(name: name).first
+  end
 end # Partition

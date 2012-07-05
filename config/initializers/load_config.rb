@@ -3,6 +3,11 @@ config = YAML.load_file(Rails.root.join('config', 'config.yml'))
 APP_CONFIG = config['application'][Rails.env].with_indifferent_access
 APP_NAME   = config['gasmixer'][Rails.env]['app_name']
 
+PARTITIONS = config.except('application').
+  each_with_object({}) do |(key, conf), partitions|
+    partitions[key] = conf[Rails.env]
+  end
+
 # Temporary: Required to boot the app while refactoring the "unify" branch.
 APP_CONFIG.merge! config['gasmixer'][Rails.env]
 
