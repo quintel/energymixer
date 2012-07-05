@@ -11,5 +11,5 @@
           = strip_links(markdown(a.answer.text)).html_safe
         - else
           = t 'scenario.no_answer'          
-        - if APP_CONFIG["score"] && a.score
+        - if partition.show_score? && a.score
           = t 'scenario.score', :score => a.score
