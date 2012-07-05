@@ -1,7 +1,7 @@
 %section#intro_text.shaded_gradient
-  %h1{:class => APP_NAME}
-    =t(APP_NAME).upcase
-  %p= t 'home.header.text', :app_name => t(APP_NAME)
+  %h1{:class => partition.name}
+    =t(partition.name).upcase
+  %p= t 'home.header.text', :app_name => t(partition.name)
 
 %section#actions
   = link_to t('links.scenarios_index'), scenarios_path, :class => 'shell'
@@ -10,7 +10,7 @@
 %section#main.shaded_gradient
   #intro
     %h3= t 'home.intro.title'
-    %p= t 'home.intro.text', :app_name => t(APP_NAME), :end_year => @end_year
+    %p= t 'home.intro.text', :app_name => t(partition.name), :end_year => @end_year
 
   #chart
     %header.header_blue
@@ -34,7 +34,7 @@
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.transport'} 18%
-          .text.hidden= t 'home.popups.transport', :end_year => @end_year, :app_name => t(APP_NAME)
+          .text.hidden= t 'home.popups.transport', :end_year => @end_year, :app_name => t(partition.name)
       .sector#icon_industry{:rel => 'industry'}
         .popup.hidden
           %a.description{:href=>"#"}
