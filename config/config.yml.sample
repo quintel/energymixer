@@ -1,26 +1,60 @@
-development: &DEV
-  hostname: "energymixer.dev"
-  app_name: "gasmixer"
-  score: false
-  api_url: "http://etengine.dev/api/v2"
-  api_proxy_url: /ete_proxy
-  local_proxy: true
-  disable_cors: false
-  view_scenario_path: "http://etmodel.dev/scenarios"
-  max_total_cost: 115000000000
-  standalone: false
-	multilanguage: false
-  default_locale: en
-  geolocation_enabled: false
-  airbrake_key: false
-  api_session_settings:
-    :country: 'nl'
-test:
-  <<: *DEV
-production:
-  <<: *DEV
-  hostname: "mixer.et-model.com"
-  api_url:      "http://api.et-model.com/api/v2"
-  view_scenario_path: "http://etm.et-model.com/scenarios"
-  google_analytics_key: "UA-4089905-6"
-  local_proxy: false
+# APPLICATION-WIDE SETTINGS --------------------------------------------------
+
+# Settings which affect the whole application (regardless of the subdomain).
+
+application:
+  development: &application
+    airbrake_key:         false
+    api_proxy_url:        '/ete_proxy'
+    api_url:              'http://etengine.dev/api/v2'
+    disable_cors:         false
+    geolocation_enabled:  false
+    local_proxy:          true
+    standalone:           false
+    view_scenario_path:   'http://etmodel.dev/scenarios'
+  production:
+    <<: *application
+    api_url:              'http://api.et-model.com/api/v2'
+    hostname:             'mixer.et-model.com'
+    local_proxy:          false
+    view_scenario_path:   'http://etm.et-model.com/scenarios'
+  test:
+    <<: *application
+
+# ENERGYMIXER ----------------------------------------------------------------
+
+mixer:
+  development: &mixer
+    app_name:             'mixer'
+    default_locale:       'en'
+    hostname:             'mixer.mixer.dev'
+    max_total_cost:       200000000000
+    multilanguage:        true
+    score:                false
+    api_session_settings:
+      :country:           'nl'
+      :end_year:          2030
+  production:
+    <<: *mixer
+    google_analytics_key: 'UA-25446433-1'
+  test:
+    <<: *mixer
+
+# GASMIXER -------------------------------------------------------------------
+
+gasmixer:
+  development: &gasmixer
+    app_name:             'gasmixer'
+    default_locale:       'en'
+    hostname:             'gasmixer.mixer.dev'
+    max_total_cost:       131000000000
+    multilanguage:        true
+    score:                true
+    api_session_settings:
+      :country:           'nl'
+      :end_year:          2050
+  production:
+    <<: *gasmixer
+    google_analytics_key: 'UA-4089905-6'
+  test:
+    <<: *gasmixer
