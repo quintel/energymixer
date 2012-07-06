@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530112848) do
+ActiveRecord::Schema.define(:version => 20120706193906) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120530112848) do
     t.integer  "ordering"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "question_set_id", :null => false
   end
 
   add_index "dashboard_items", ["ordering"], :name => "index_dashboard_items_on_ordering"
