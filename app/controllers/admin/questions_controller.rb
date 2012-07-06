@@ -2,7 +2,8 @@ class Admin::QuestionsController < AdminController
   before_filter :find_question, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @questions = Question.ordered.all
+    @questions = Question.joins(:question_set).
+      order('`question_sets`.`name` ASC').ordered.all
   end
 
   def show
