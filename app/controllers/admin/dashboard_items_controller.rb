@@ -2,7 +2,8 @@ class Admin::DashboardItemsController < AdminController
   before_filter :find_dashboard_item, :except => [:index, :new, :create]
   
   def index
-    @dashboard_items = DashboardItem.ordered.all
+    @dashboard_items = DashboardItem.joins(:question_set).
+      order('`question_sets`.`name` ASC').ordered.all
   end
 
   def show

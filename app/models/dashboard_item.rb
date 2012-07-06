@@ -12,12 +12,15 @@
 #
 
 class DashboardItem < ActiveRecord::Base
+  belongs_to :question_set
+
   validates :gquery, :presence => true
   validates :label, :presence => true
+  validates :question_set_id, :presence => true
 
   scope :ordered, order('ordering, id')
 
-  attr_accessible :gquery, :label, :steps, :ordering
+  attr_accessible :gquery, :label, :steps, :ordering,  :question_set_id
 
   # If we're defining some steps in the object field we can use this
   # method to check the step a value belongs to
