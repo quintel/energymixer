@@ -26,7 +26,7 @@ describe ScenariosController do
     before do
       set = create :question_set
       2.times { create :question, :question_set_id => set.id }
-      2.times { create :dashboard_item}
+      2.times { create :dashboard_item, :question_set_id => set.id }
     end
 
     it "should be successful" do

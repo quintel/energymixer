@@ -52,7 +52,8 @@ describe Admin::DashboardItemsController do
     describe "with valid params" do
       it "creates a new dashboard_item" do
         lambda {
-          post :create, :dashboard_item => Factory.attributes_for(:dashboard_item)
+          post :create, :dashboard_item =>
+            Factory.attributes_for(:dashboard_item).merge(question_set_id: 1)
           response.should redirect_to(admin_dashboard_item_url(assigns(:dashboard_item)))
         }.should change(DashboardItem, :count)
       end
