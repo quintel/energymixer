@@ -13,4 +13,4 @@
 #actions
   = link_to 'Edit', edit_admin_dashboard_item_path(@dashboard_item), :class => 'fugue fugue-pencil'
   = link_to 'Back', admin_dashboard_items_path
-  = link_to 'Destroy', admin_dashboard_item_path(@dashboard_item), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'
+  = link_to 'Destroy', admin_dashboard_item_path(@dashboard_item), :method => :delete, :data => { :confirm => 'Are you sure?' },  :class => 'fugue fugue-cross'

@@ -55,4 +55,4 @@
 #actions
   = link_to 'Edit', edit_admin_scenario_path(@scenario), :class => 'fugue fugue-pencil'
   = link_to 'Back', admin_scenarios_path
-  = link_to 'Destroy', admin_scenario_path(@scenario), :method => :delete, :confirm => 'Are you sure?',  :class => 'fugue fugue-cross'
+  = link_to 'Destroy', admin_scenario_path(@scenario), :method => :delete, :date => { :confirm => 'Are you sure?' },  :class => 'fugue fugue-cross'

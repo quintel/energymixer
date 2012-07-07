@@ -36,7 +36,7 @@
           = link_to '', admin_scenario_path(scenario), :class => 'fugue fugue-information'
           = link_to '', scenario_path(scenario), :class => 'fugue fugue-chart'
           = link_to '', edit_admin_scenario_path(scenario), :class => 'fugue fugue-pencil'
-          = link_to '', admin_scenario_path(scenario), :confirm => 'Are you sure?', :method => :delete, :class => 'fugue fugue-cross'
+          = link_to '', admin_scenario_path(scenario), :data => { :confirm => 'Are you sure?' }, :method => :delete, :class => 'fugue fugue-cross'
 
 = button_to 'Analysis', analysis_admin_scenarios_path
 = paginate @scenarios

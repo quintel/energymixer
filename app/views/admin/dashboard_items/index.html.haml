@@ -19,7 +19,7 @@
         %td= d.steps
         %td= link_to 'Show', admin_dashboard_item_path(d)
         %td= link_to 'Edit', edit_admin_dashboard_item_path(d)
-        %td= link_to 'Delete', admin_dashboard_item_path(d), :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'Delete', admin_dashboard_item_path(d), :data => { :confirm => 'Are you sure?' }, :method => :delete
 
 #actions
   = link_to 'New Question', new_admin_dashboard_item_path
