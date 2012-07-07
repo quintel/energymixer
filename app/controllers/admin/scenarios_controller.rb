@@ -42,8 +42,8 @@ class Admin::ScenariosController < AdminController
   end
 
   def analysis
-    load_question_set
     @scenarios = Scenario.order(params[:sort]).find(params[:id])
+    @question_set = @scenarios.first.question_set
     if(params[:sort_data])
       data = params[:sort_data].split(" ")
       if(Scenario.method_defined?(data[0]))
