@@ -17,7 +17,7 @@
         %td= question.enabled
         %td
           = link_to 'Edit', edit_admin_question_path(question)
-          = link_to 'Delete', admin_question_path(question), :confirm => 'Are you sure?', :method => :delete
+          = link_to 'Delete', admin_question_path(question), :data => { :confirm => 'Are you sure?' }, :method => :delete
 
 #actions
   = link_to 'New Question', new_admin_question_path, :class => 'fugue fugue-plus'
