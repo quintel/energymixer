@@ -2,7 +2,8 @@ class Admin::ScenariosController < AdminController
   before_filter :find_scenario, :except => [:index, :analysis, :new, :create, :stats]
 
   def index
-    @scenarios = Scenario.recent_first.page(params[:page]).per(30)
+    @scenarios = Scenario.includes(:question_set).
+      recent_first.page(params[:page]).per(30)
   end
 
   def show
