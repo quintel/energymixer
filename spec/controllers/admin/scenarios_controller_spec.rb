@@ -55,7 +55,9 @@ describe Admin::ScenariosController do
     describe "with valid params" do
       it "creates a new scenario" do
         lambda {
-          post :create, :scenario => Factory.attributes_for(:scenario)
+          post :create, :scenario => Factory.attributes_for(:scenario).
+            merge(question_set_id: @scenario.question_set_id)
+
           response.should redirect_to(admin_scenario_url(assigns(:scenario)))
         }.should change(Scenario, :count)
       end

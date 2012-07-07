@@ -37,6 +37,7 @@ class Scenario < ActiveRecord::Base
   CurrentTitle = 'Current Scenario'
 
   has_many :answers, :class_name => 'ScenarioAnswer', :dependent => :destroy
+  belongs_to :question_set
 
   accepts_nested_attributes_for :answers
 
@@ -85,6 +86,7 @@ class Scenario < ActiveRecord::Base
   }
 
   validates :name, :presence => true
+  validates :question_set_id, :presence => true
   # validates :email, :presence => true
   # disabled, client_side_validations has some issues with this validation
   # validates :age,   :numericality => true, :allow_blank => true

@@ -14,6 +14,7 @@ class QuestionSet < ActiveRecord::Base
   validates :name, :presence => true
 
   has_many :questions
+  has_many :scenarios
 
   def combinations
     return [] if questions.count.zero?

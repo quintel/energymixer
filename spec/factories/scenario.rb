@@ -18,6 +18,7 @@ Factory.define :scenario do |f|
   f.output_10 1.00
   f.output_11 1.00
   f.output_12 1.00
+  f.association :question_set, factory: :question_set
 end
 
 Factory.define :featured_scenario, :parent => :scenario do |f|
