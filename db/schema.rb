@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706193906) do
+ActiveRecord::Schema.define(:version => 20120707154724) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20120706193906) do
     t.integer  "year"
     t.float    "longitude"
     t.float    "latitude"
+    t.integer  "question_set_id",                    :null => false
   end
 
   add_index "scenarios", ["average"], :name => "index_scenarios_on_average"

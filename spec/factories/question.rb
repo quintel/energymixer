@@ -7,4 +7,5 @@ Factory.define :question do |f|
   f.answers {|a| Array.new(2).map { a.association(:answer) } }
   f.description_nl "foo"
   f.description_de "foo"  
+  f.association :question_set
 end

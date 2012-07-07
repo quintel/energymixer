@@ -162,6 +162,7 @@ task unify: :environment do
     # Scenarios.
 
     xml('scenarios') do |line|
+      line.update_foreign_key!(:question_set_id, REFS.question_sets)
       insert(line, Scenario, REFS.scenarios)
     end
 

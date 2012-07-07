@@ -70,10 +70,13 @@ describe ScenariosController do
     before do
       @valid_attributes = Factory.attributes_for(:scenario)
       question = Factory :question
+
       @valid_attributes.merge(
+        :question_set_id => question.question_set_id,
+
         :answers_attributes => {
-          :question_id => question.id,
-          :answer_id   => question.answers.first.id
+          :question_id     => question.id,
+          :answer_id       => question.answers.first.id
         }
       )
     end
