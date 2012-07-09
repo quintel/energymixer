@@ -116,8 +116,9 @@ class ApiClient
 
   def api_session_key!
     response = self.class.get("/api_scenarios/new.json")
-    # the next ETE release will use id as key
-    response["scenario"]["id"] || response["scenario"]["api_session_key"]
+
+    scenario_data = response['scenario'] || response['api_scenario']
+    sceanrio_data['id'] || scenario_data['api_session_key']
   rescue
     nil
   end
