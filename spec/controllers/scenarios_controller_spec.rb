@@ -23,15 +23,26 @@ describe ScenariosController do
   end
 
   describe "GET 'new'" do
-    before do
-      set = create :question_set
-      2.times { create :question, :question_set_id => set.id }
-      2.times { create :dashboard_item, :question_set_id => set.id }
+    let!(:question) do
+      create :question,
+        :question_set => default_question_set,
+        :text_en      => 'My correct question'
+    end
+
+    let!(:dashboard_item) do
+      create :dashboard_item,
+        :question_set => default_question_set,
+        :label        => 'My correct dashboard item'
     end
 
     it "should be successful" do
       get :new
       response.should be_success
+    end
+
+    it "should show the correct question" do
+      get :new
+      response.should contain('My correct question')
     end
   end
 

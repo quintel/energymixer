@@ -15,6 +15,7 @@ class QuestionSet < ActiveRecord::Base
 
   has_many :questions
   has_many :scenarios
+  has_many :dashboard_items
 
   def combinations
     return [] if questions.count.zero?
