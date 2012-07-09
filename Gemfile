@@ -43,6 +43,7 @@ group :test do
   gem 'guard-rspec'
   gem 'spork'
   gem 'guard-spork'
+  gem 'capybara'
 end
 
 group :assets do

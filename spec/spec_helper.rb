@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'capybara/rspec'
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
@@ -33,6 +34,8 @@ Spork.prefork do
     # controller aren't available. Yet they are if the filter is added to the
     # example block. Odd!
     config.include SubdomainSpec, type: :controller
+
+    # Capybara.default_host = 'gasmixer.mixer.dev'
   end
 end
 
