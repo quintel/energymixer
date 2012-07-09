@@ -6,8 +6,8 @@ require 'spec_helper'
 
 describe Admin::QuestionsController do
   render_views
-  let!(:question) { Factory :question }
-  let(:user) { Factory :user }
+  let!(:question) { create :question }
+  let(:user) { create :user }
 
   before do
     sign_in user
@@ -68,7 +68,7 @@ describe Admin::QuestionsController do
 
   describe "PUT update" do
     before do
-      @question = Factory :question
+      @question = create :question
     end
 
     describe "with valid params" do
@@ -89,7 +89,7 @@ describe Admin::QuestionsController do
 
   describe "DELETE destroy" do
     before do
-      @question = Factory :question
+      @question = create :question
     end
 
     it "destroys the requested question" do

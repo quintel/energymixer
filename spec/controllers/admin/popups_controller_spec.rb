@@ -6,8 +6,8 @@ require 'spec_helper'
 
 describe Admin::PopupsController do
   render_views
-  let!(:popup) { Factory :popup }
-  let(:user) { Factory :user }
+  let!(:popup) { create :popup }
+  let(:user) { create :user }
 
   before do
     sign_in user
@@ -52,7 +52,7 @@ describe Admin::PopupsController do
     describe "with valid params" do
       it "creates a new popup" do
         lambda {
-          post :create, :popup => Factory.attributes_for(:popup)
+          post :create, :popup => attributes_for(:popup)
           response.should redirect_to(admin_popup_url(assigns(:popup)))
         }.should change(Popup, :count)
       end
@@ -68,12 +68,12 @@ describe Admin::PopupsController do
 
   describe "PUT update" do
     before do
-      @popup = Factory :popup
+      @popup = create :popup
     end
 
     describe "with valid params" do
       it "updates the requested popup" do
-        put :update, :id => @popup.id, :popup => Factory.attributes_for(:popup)
+        put :update, :id => @popup.id, :popup => attributes_for(:popup)
         response.should redirect_to(admin_popup_url(@popup))
       end
     end
@@ -88,7 +88,7 @@ describe Admin::PopupsController do
 
   describe "DELETE destroy" do
     before do
-      @popup = Factory :popup
+      @popup = create :popup
     end
 
     it "destroys the requested popup" do

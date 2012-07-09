@@ -19,8 +19,8 @@ gem 'memcache-client'
 gem 'capistrano'
 
 group :development, :test do
-  gem 'rspec-rails',        '~> 2.9.0'
-  gem 'factory_girl'
+  gem 'rspec-rails',        '~> 2.11.0'
+  gem 'factory_girl_rails'
   gem 'mocha',              '~> 0.10.0'
   gem 'shoulda-matchers'
   gem 'pry'

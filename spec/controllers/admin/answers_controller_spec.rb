@@ -7,9 +7,9 @@ require 'spec_helper'
 describe Admin::AnswersController do
   render_views
 
-  let(:question) { Factory :question }
-  let(:answer) { Factory :answer, :question => question }
-  let(:user) { Factory :user }
+  let(:question) { create :question }
+  let(:answer) { create :answer, :question => question }
+  let(:user) { create :user }
 
   before do
     sign_in user
@@ -34,7 +34,7 @@ describe Admin::AnswersController do
 
   describe "PUT update" do
     before do
-      @question = Factory :question
+      @question = create :question
       @answer = @question.answers.first
     end
 
@@ -49,8 +49,8 @@ describe Admin::AnswersController do
 
     describe "with valid params and a conflict" do
       it "updates the requested answer" do
-        a1 = Factory :answer
-        a2 = Factory :answer
+        a1 = create :answer
+        a2 = create :answer
         @answer.conflicting_answer_ids = [a1.id]
         @answer.save
 
@@ -76,7 +76,7 @@ describe Admin::AnswersController do
 
   describe "DELETE destroy" do
     it "should delete an answer" do
-      @question = Factory :question
+      @question = create :question
       @answer = @question.answers.first
       lambda {
         delete :destroy, :id => @answer.id

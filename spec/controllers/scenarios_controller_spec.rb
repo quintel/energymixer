@@ -5,7 +5,7 @@ describe ScenariosController do
 
   describe "GET index" do
     before do
-      @scenarios = Array.new(3).map { Factory :scenario }
+      @scenarios = Array.new(3).map { create :scenario }
     end
 
     it "should show a list of existing scenarios" do
@@ -38,10 +38,10 @@ describe ScenariosController do
   describe "GET show" do
     before do
       # We're introducing some coupling here
-      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_5])
-      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_6])
-      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_7])
-      Factory.create(:dashboard_item, :gquery => Scenario::Outputs[:output_8])
+      create(:dashboard_item, :gquery => Scenario::Outputs[:output_5])
+      create(:dashboard_item, :gquery => Scenario::Outputs[:output_6])
+      create(:dashboard_item, :gquery => Scenario::Outputs[:output_7])
+      create(:dashboard_item, :gquery => Scenario::Outputs[:output_8])
     end
 
     it "should redirect invalid requests" do
@@ -50,7 +50,7 @@ describe ScenariosController do
     end
 
     it "should show an existing scenario" do
-      @scenario = Factory :scenario
+      @scenario = create :scenario
       get :show, :id => @scenario.id
       response.should be_success
       assigns(:scenario).should == @scenario
@@ -59,7 +59,7 @@ describe ScenariosController do
 
   describe "GET answers" do
     it "should work" do
-      @scenario = Factory :scenario
+      @scenario = create :scenario
       get :show, :id => @scenario.id
       response.should be_success
       assigns(:scenario).should == @scenario
@@ -68,8 +68,8 @@ describe ScenariosController do
 
   describe "POST create" do
     before do
-      @valid_attributes = Factory.attributes_for(:scenario)
-      question = Factory :question
+      @valid_attributes = attributes_for(:scenario)
+      question = create :question
 
       @valid_attributes.merge(
         :question_set_id => question.question_set_id,
@@ -98,7 +98,7 @@ describe ScenariosController do
 
   describe "GET compare" do
     it "should compare scenarios" do
-      @scenarios = Array.new(3).map { Factory :scenario }
+      @scenarios = Array.new(3).map { create :scenario }
       get :compare, :ids => @scenarios.map(&:id)
       response.should be_success
     end

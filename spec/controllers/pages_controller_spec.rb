@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PagesController do
-  let(:popup) { Factory :popup }
+  let(:popup) { create :popup }
   
   describe "GET home" do
     it "should have no problems" do
