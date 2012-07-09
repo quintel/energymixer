@@ -39,11 +39,6 @@ describe ScenariosController do
       get :new
       response.should be_success
     end
-
-    it "should show the correct question" do
-      get :new
-      response.should contain('My correct question')
-    end
   end
 
   describe "GET show" do
