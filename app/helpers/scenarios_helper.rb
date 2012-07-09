@@ -1,4 +1,43 @@
 module ScenariosHelper
+  def global_json
+    Jbuilder.encode do |json|
+      json.answers               answers_json
+      json.answers_conflicts     answers_conflicts_json
+      json.popups                popup_json
+      json.current_situation     Scenario.current.combined_carriers
+      json.open_in_etm_link      t('scenario.open_in_etm_link')
+
+      json.chart do |json|
+        json.dashboard_steps     dashboard_steps_json
+        json.max_amount          Scenario::MaxAmount
+      end
+
+      json.gqueries do |json|
+        json.primary             Scenario::PrimaryTable
+        json.secondary           Scenario::SecondaryTable
+        json.dashboard           Scenario::DashboardTable
+        json.costs               Scenario::CostsTable
+      end
+
+      json.config do |json|
+        json.score_enabled       partition.show_score?
+        json.geolocation_enabled APP_CONFIG[:geolocation_enabled]
+      end
+
+      json.api do |json|
+        json.url                 APP_CONFIG[:api_url]
+        json.proxy_url           APP_CONFIG[:api_proxy_url]
+        json.disable_cors        APP_CONFIG[:disable_cors]
+        json.load_in_etm         APP_CONFIG[:view_scenario_path]
+
+        json.session_settings do |json|
+          json.country           partition.api_settings[:country]
+          json.end_year          @end_year
+        end
+      end
+    end
+  end
+
   # created a json hash with the parameters corresponding to the
   # user selections.
   # This could be rewritten as QuestionsController#index.json
@@ -16,7 +55,8 @@ module ScenariosHelper
         end
       end
     end
-    out.to_json
+
+    out
   end
   
   def answers_conflicts_json
@@ -34,15 +74,17 @@ module ScenariosHelper
       end
     end
     out.each_pair{|k,v| v.uniq!}
-    out.to_json
+
+    out
   end
   
   def dashboard_steps_json
     out = {}
-    DashboardItem.ordered.each do |i|
+    partition.question_set.dashboard_items.ordered.each do |i|
       out[i.gquery] = i.steps.split(",").map(&:to_f) rescue []
     end
-    out.to_json
+
+    out
   end
   
   def gquery_for_output(i)
@@ -81,7 +123,7 @@ module ScenariosHelper
   def popup_json
     out = {}
     Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
-    out.to_json
+    out
   end
   
   # On the dashboard we want to know which scenario attribute corresponds to a key
