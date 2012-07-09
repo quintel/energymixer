@@ -6,14 +6,14 @@ require 'spec_helper'
 
 describe Admin::ScenariosController do
   render_views
-  let(:user) { Factory :user }
+  let(:user) { create :user }
 
   before do
     sign_in user
   end
 
   before do
-    @scenario = Factory :scenario
+    @scenario = create :scenario
   end
 
   describe "GET index" do
@@ -55,7 +55,7 @@ describe Admin::ScenariosController do
     describe "with valid params" do
       it "creates a new scenario" do
         lambda {
-          post :create, :scenario => Factory.attributes_for(:scenario).
+          post :create, :scenario => attributes_for(:scenario).
             merge(question_set_id: @scenario.question_set_id)
 
           response.should redirect_to(admin_scenario_url(assigns(:scenario)))
@@ -74,7 +74,7 @@ describe Admin::ScenariosController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested scenario" do
-        put :update, :id => @scenario.id, :scenario => Factory.attributes_for(:scenario)
+        put :update, :id => @scenario.id, :scenario => attributes_for(:scenario)
         response.should redirect_to(admin_scenario_url(@scenario))
       end
     end

@@ -7,8 +7,8 @@ describe Answer do
   
   describe "conflicting answers" do
     it "should store a conflict on assignment" do
-      a = Factory :answer, :question => Factory(:question)
-      b = Factory :answer, :question => Factory(:question)
+      a = create :answer, :question => create(:question)
+      b = create :answer, :question => create(:question)
       a.conflicting_answer_ids.should be_empty
       a.conflicting_answer_ids = [b.id]
       a.save

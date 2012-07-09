@@ -6,8 +6,8 @@ require 'spec_helper'
 
 describe Admin::DashboardItemsController do
   render_views  
-  let!(:dashboard_item) { Factory :dashboard_item }
-  let(:user) { Factory :user }
+  let!(:dashboard_item) { create :dashboard_item }
+  let(:user) { create :user }
 
   before do
     sign_in user
@@ -53,7 +53,7 @@ describe Admin::DashboardItemsController do
       it "creates a new dashboard_item" do
         lambda {
           post :create, :dashboard_item =>
-            Factory.attributes_for(:dashboard_item).merge(question_set_id: 1)
+            attributes_for(:dashboard_item).merge(question_set_id: 1)
           response.should redirect_to(admin_dashboard_item_url(assigns(:dashboard_item)))
         }.should change(DashboardItem, :count)
       end
@@ -69,12 +69,12 @@ describe Admin::DashboardItemsController do
 
   describe "PUT update" do
     before do
-      @dashboard_item = Factory :dashboard_item
+      @dashboard_item = create :dashboard_item
     end
     
     describe "with valid params" do
       it "updates the requested dashboard_item" do
-        put :update, :id => @dashboard_item.id, :dashboard_item => Factory.attributes_for(:dashboard_item)
+        put :update, :id => @dashboard_item.id, :dashboard_item => attributes_for(:dashboard_item)
         response.should redirect_to(admin_dashboard_item_url(@dashboard_item))
       end
     end
@@ -89,7 +89,7 @@ describe Admin::DashboardItemsController do
 
   describe "DELETE destroy" do
     before do
-      @dashboard_item = Factory :dashboard_item
+      @dashboard_item = create :dashboard_item
     end
     
     it "destroys the requested dashboard_item" do
