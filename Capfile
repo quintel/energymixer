@@ -46,6 +46,16 @@ task :mixer do
   set :db_pass, "sKkE6qyst0jCUN"
 end
 
+task :production do
+  server 'gasmixer.et-model.com', :web, :app, :db, primary: true
+  set :application_name, 'energymixer'
+  set :deploy_to,        '/u/apps/energymixer'
+  set :branch,           'production'
+  set :db_name,          'mixer'
+  set :db_user,          'mixer'
+  set :db_pass,          'I9tSJXG4RX98YMGW'
+end
+
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
 before 'deploy:assets:precompile', 'deploy:link_config'
