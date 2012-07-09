@@ -88,6 +88,16 @@ describe ScenariosController do
       }.should change(Scenario, :count)
     end
 
+    it 'should set the question set' do
+      post :create, :scenario => @valid_attributes
+      assigns(:scenario).question_set.should eql(default_question_set)
+    end
+
+    it 'should not allow customising the question set' do
+      post :create, :scenario => @valid_attributes.merge(:question_set_id => 1337)
+      assigns(:scenario).question_set_id.should eql(default_question_set.id)
+    end
+
     it "should not save a scenario with invalid parameters" do
       lambda {
         post :create, :scenario => @valid_attributes.merge(:name => '')
