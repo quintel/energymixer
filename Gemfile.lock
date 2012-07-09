@@ -40,6 +40,7 @@ GEM
     arel (3.0.2)
     awesome_print (0.4.0)
     bcrypt-ruby (3.0.0)
+    blankslate (2.1.2.4)
     bluecloth (2.1.0)
     builder (3.0.0)
     capistrano (2.8.0)
@@ -96,6 +97,9 @@ GEM
     httparty (0.7.8)
       crack (= 0.1.8)
     i18n (0.6.0)
+    jbuilder (0.4.0)
+      activesupport (>= 3.0.0)
+      blankslate (>= 2.1.2.4)
     journey (1.0.3)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -244,6 +248,7 @@ DEPENDENCIES
   haml (~> 3.1.4)
   hirb
   httparty (~> 0.7.4)
+  jbuilder
   jquery-rails (~> 1.0.19)
   kaminari (~> 0.13.0)
   memcache-client

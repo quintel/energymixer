@@ -15,6 +15,7 @@ gem 'httparty', '~> 0.7.4'
 gem 'haml',   '~> 3.1.4'
 gem 'tabs_on_rails'
 gem 'memcache-client'
+gem 'jbuilder'
 
 gem 'capistrano'
 
