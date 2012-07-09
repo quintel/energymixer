@@ -3,10 +3,6 @@ class ScenariosController < ApplicationController
   before_filter :load_question_set
 
   def new
-    Rails.logger.info '-'*100
-    Rails.logger.info Scenario.current.attributes.inspect
-    Rails.logger.info '-'*100
-
     @scenario = Scenario.new(Scenario.current.attributes)
     @scenario.year = @question_set.try(:end_year)
 
