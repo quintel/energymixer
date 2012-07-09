@@ -92,11 +92,8 @@ module ScenariosHelper
   end
   
   def set_class_for_output(gquery, value)
-    dashboard_item = DashboardItem.find_by_gquery(gquery)
-    step = dashboard_item.corresponding_step(value)
-    "#{gquery}_step_#{step}"
-  rescue
-    nil
+    item = partition.question_set.dashboard_items.where(gquery: gquery).first
+    "#{gquery}_step_#{item.corresponding_step(value)}" if item.present?
   end
   
   # Check graph.js for similar method
