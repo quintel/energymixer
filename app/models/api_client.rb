@@ -118,7 +118,7 @@ class ApiClient
     response = self.class.get("/api_scenarios/new.json")
 
     scenario_data = response['scenario'] || response['api_scenario']
-    sceanrio_data['id'] || scenario_data['api_session_key']
+    scenario_data['id'] || scenario_data['api_session_key']
   rescue
     nil
   end
