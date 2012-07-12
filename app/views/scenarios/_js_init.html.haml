@@ -13,7 +13,8 @@
         proxy_url: #{APP_CONFIG[:api_proxy_url].to_json},
         disable_cors: #{APP_CONFIG[:disable_cors].to_json},
         session_settings: {
-          country: #{APP_CONFIG["api_session_settings"][:country].to_json},
+          area_code: #{APP_CONFIG["api_session_settings"][:area_code].to_json},
+          source: #{APP_CONFIG["api_session_settings"][:source].to_json},
           end_year: #{@end_year}
         },
         load_in_etm_url: "#{APP_CONFIG['view_scenario_path']}"
