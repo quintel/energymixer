@@ -1,6 +1,6 @@
 class ScenariosController < ApplicationController
-  before_filter :find_scenario, :only => [:show, :answers]
   before_filter :load_question_set
+  before_filter :find_scenario, :only => [:show, :answers]
 
   def new
     @scenario = Scenario.new(Scenario.current.attributes)
@@ -40,10 +40,15 @@ class ScenariosController < ApplicationController
   end
 
   def index
-    @selected_scenario  = Scenario.find(params[:selected]) if params[:selected]
-    @scenarios = Scenario.not_featured.not_average.public.by_user(params[:q]).recent_first.page(params[:page])
-    @featured_scenarios = Scenario.featured
-    @average_scenarios  = Scenario.averages
+    @scenarios = @question_set.scenarios.not_featured.not_average.public.
+      by_user(params[:q]).recent_first.page(params[:page])
+
+    @featured_scenarios = @question_set.scenarios.featured
+    @average_scenarios  = @question_set.scenarios.averages
+
+    if params[:selected]
+      @selected_scenario = @question_set.scenarios.find(params[:selected])
+    end
 
     respond_to do |format|
       format.html
@@ -53,13 +58,13 @@ class ScenariosController < ApplicationController
 
   def compare
     ids = params[:ids].take(5) rescue []
-    @scenarios = Scenario.find(ids)
+    @scenarios = @question_set.scenarios.find(ids)
   end
 
   protected
 
     def find_scenario
-      @scenario = Scenario.find(params[:id])
+      @scenario = @question_set.scenarios.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path, :alert => "Scenario not found"
     end

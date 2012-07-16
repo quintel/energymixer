@@ -96,12 +96,23 @@ feature 'A new scenarios' do
 
     visit "http://gasmixer.example.com/mixes/#{ saved.id }"
 
-    # binding.pry
     page.status_code.should eql(200)
 
     # Correct dashboard steps?
     page.should     have_css('.mixer_reduction_of_co2_emissions_versus_1990_step_2')
     page.should_not have_css('.mixer_reduction_of_co2_emissions_versus_1990_step_1')
+  end
+
+  # --------------------------------------------------------------------------
+
+  scenario 'Viewing a scenario from an other question set' do
+    other = create :scenario, question_set: create(:question_set, name: 'o')
+
+    visit "http://gasmixer.example.com/mixes/#{ other.id }"
+
+    # We should be back on the root page.
+    page.should_not have_css('#user_chart')
+    page.should     have_css('#intro')
   end
 
   # --------------------------------------------------------------------------
