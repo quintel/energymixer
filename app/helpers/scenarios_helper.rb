@@ -9,7 +9,7 @@ module ScenariosHelper
 
       json.chart do |json|
         json.dashboard_steps     dashboard_steps_json
-        json.max_amount          Scenario::MaxAmount
+        json.max_amount          partition.max_cost
       end
 
       json.gqueries do |json|

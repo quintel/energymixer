@@ -17,9 +17,9 @@ class Partition
 
     @name           = attributes.fetch(:app_name)
     @host           = attributes.fetch(:hostname)
-    @max_cost       = attributes.fetch(:max_total_cost)
     @api_settings   = attributes.fetch(:api_session_settings).freeze
 
+    @max_cost       = attributes.fetch(:max_total_cost, 140e9)
     @default_locale = attributes.fetch(:default_locale, 'nl')
     @multi_language = attributes.fetch(:multilanguage, true)
     @show_score     = attributes.fetch(:score, true)
