@@ -32,6 +32,8 @@ module ScenariosHelper
 
         json.session_settings do |json|
           json.country           partition.api_settings[:country]
+          json.area_code         partition.api_settings[:area_code]
+          json.source            partition.name
           json.end_year          @end_year
         end
       end
