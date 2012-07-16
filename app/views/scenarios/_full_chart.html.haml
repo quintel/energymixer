@@ -1,7 +1,7 @@
 :ruby
   max_height = 360
   width      = 86 # TODO: move to CSS
-  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : Scenario::MaxAmount
+  max_amount = local_assigns.has_key?(:max_amount) ? max_amount : partition.max_cost
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
 .full_chart.shaded_gradient
   %header.header_blue

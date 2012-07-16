@@ -33,7 +33,6 @@
 #
 
 class Scenario < ActiveRecord::Base
-  MaxAmount = APP_CONFIG["max_total_cost"] || 100_000_000_000
   CurrentTitle = 'Current Scenario'
 
   has_many :answers, :class_name => 'ScenarioAnswer', :dependent => :destroy
