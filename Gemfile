@@ -32,6 +32,7 @@ group :development do
   gem 'awesome_print', :require => 'ap'
   gem 'annotate', :require => false
   gem 'guard'
+  gem 'pry-remote'
 end
 
 group :production do
