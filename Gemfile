@@ -46,6 +46,8 @@ group :test do
   gem 'spork'
   gem 'guard-spork'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 group :assets do
