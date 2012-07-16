@@ -40,6 +40,43 @@ feature 'A new scenarios' do
 
   # --------------------------------------------------------------------------
 
+  scenario 'Filling out questions', :js do
+    visit 'http://gasmixer.mixer.dev:54163/mixes/new'
+
+    # Select a first answer.
+
+    find('.answers .answer:first label').click
+    wait_for_xhr
+
+    click_on 'Next question >>'
+
+    # Select a second answer.
+
+    find('.answers .answer:first label').click
+    wait_for_xhr
+
+    click_on 'Next question >>'
+
+    # Save scenario.
+
+    fill_in 'Name',              with: 'Benjamin Chang'
+    fill_in 'E-mail',            with: 'chang@example.com'
+    fill_in 'Age',               with: '36'
+    fill_in 'Name for this mix', with: 'Chang The World'
+
+    check 'I agree with the terms and conditions'
+
+    click_on 'Save my mix'
+
+    # --
+
+    page.should have_css('h2', text: "Benjamin Chang's mix (36 years old)")
+
+    Scenario.last.question_set_id.should eql(question_set.id)
+  end
+
+  # --------------------------------------------------------------------------
+
   scenario 'Does not show questions from other question sets' do
     other_set = create :full_question_set
 
