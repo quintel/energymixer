@@ -4,7 +4,7 @@
 
 The EnergyMixer application is "partitioned" into question sets, each
 containing a number of questions which may be answered by a user in order
-to design their scenario. Each question set has a `name` which matches the
+to design their scenario. Each question set has a `name` matching the
 subdomain to which it is deployed. For example:
 
     "mixer"    => mixer.et-model.com
