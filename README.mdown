@@ -7,8 +7,8 @@ containing a number of questions which may be answered by a user in order
 to design their scenario. Each question set has a `name` which matches the
 subdomain to which it is deployed. For example:
 
-  "mixer"    => mixer.et-model.com
-  "gasmixer" => gasmixer.et-model.com
+    "mixer"    => mixer.et-model.com
+    "gasmixer" => gasmixer.et-model.com
 
 Firstly, copy the sample configuration file "config/config.yml.sample" to
 "config/config.yml".
@@ -17,8 +17,8 @@ As EnergyMixer determines which question set is to be shown depending on the
 subdomain you use, you must set up Pow to mimic this behaviour. In the OS X
 terminal, go to the EnergyMixer directory then:
 
-  ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/mixer.mixer
-  ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/gasmixer.mixer
+    ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/mixer.mixer
+    ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/gasmixer.mixer
 
 The EnergyMixer will now be available at http://mixer.mixer.dev/ and
 http://gasmixer.mixer.dev/, with the "mixer" and "gasmixer" question sets
@@ -30,13 +30,13 @@ In config.yml you will find the configuration for the application. This file
 is split into two sections: an "application" section, whose setting apply to
 all partitions, and separate configurations which apply to each partition.
 
-#### Notable application settings:
+##### Notable application settings:
 
 * **`standalone`** – When true, all outbound links and remote scripts (such as
   Google Analytics) are disabled. Used on offline instances (conference
   laptops).
 
-#### Notable partition settings:
+##### Notable partition settings:
 
 * **`host_name`** – This is important! Without a host name, the links in
   e-mails will not be correct.
@@ -49,17 +49,17 @@ all partitions, and separate configurations which apply to each partition.
 
 Currently we have three running instances of the application
 
-#### mixer.et-model.com
+##### mixer.et-model.com
 
 Instance embeded as iframe on shell
 
 End Year: 2025
 
-#### gasmixer.et-model.com
+##### gasmixer.et-model.com
 
 End Year: 2030
 
-#### mixer2050.et-model.com
+##### mixer2050.et-model.com
 
 End Year: 2050
 
