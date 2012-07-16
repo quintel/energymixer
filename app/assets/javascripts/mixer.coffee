@@ -24,10 +24,10 @@ class Mixer extends Backbone.Model
 
         @scenario_id = key
         @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
-        $.logThis("New scenario id: #{key}")
+        console.log("New scenario id: #{key}")
         # show data for the first time
         @make_request()
-      error: (request, status, error) -> $.logThis(error)
+      error: (request, status, error) -> window.error(error)
     return @scenario_id
 
   # saving results to local variables in human readable format
@@ -68,7 +68,7 @@ class Mixer extends Backbone.Model
         @score.render()
       error: (data, error) =>
         @chart.unblock_interface()
-        $.logThis(error)
+        console.error(error)
     return true
 
   # build parameters given user answers. The parameter values are defined in the
