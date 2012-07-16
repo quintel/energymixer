@@ -1,38 +1,67 @@
-## Configuration
+# EnergyMixer
 
-Check `~/config_files/config.yml`.
-  
-  host_name: "mixer.et-model.com" # important! without this the links in the email won't be correct
-	app_name: "gasmixer" # if you define a new key here then add the translation in `en.yml` and `nl.yml`
-	score: true
-	api_base_path:      "http://etengine.dev/api/v2"
-	view_scenario_path: "http://etmodel.dev/scenarios"
-	max_total_cost: 115000000000 # max height of the scenario column
-	standalone: true/false # if true all outbound links and remote scripts are disabled. Used on offline instances
-	api_session_settings:
-	  :country: 'nl'
+### Setting Up EnergyMixer
 
-  
+The EnergyMixer application is "partitioned" into question sets, each
+containing a number of questions which may be answered by a user in order
+to design their scenario. Each question set has a `name` which matches the
+subdomain to which it is deployed. For example:
 
+  "mixer"    => mixer.et-model.com
+  "gasmixer" => gasmixer.et-model.com
 
-## Deployment
+Firstly, copy the sample configuration file "config/config.yml.sample" to
+"config/config.yml".
+
+As EnergyMixer determines which question set is to be shown depending on the
+subdomain you use, you must set up Pow to mimic this behaviour. In the OS X
+terminal, go to the EnergyMixer directory then:
+
+  ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/mixer.mixer
+  ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/gasmixer.mixer
+
+The EnergyMixer will now be available at http://mixer.mixer.dev/ and
+http://gasmixer.mixer.dev/, with the "mixer" and "gasmixer" question sets
+respectively.
+
+### Configuration
+
+In config.yml you will find the configuration for the application. This file
+is split into two sections: an "application" section, whose setting apply to
+all partitions, and separate configurations which apply to each partition.
+
+#### Notable application settings:
+
+* **`standalone`** – When true, all outbound links and remote scripts (such as
+  Google Analytics) are disabled. Used on offline instances (conference
+  laptops).
+
+#### Notable partition settings:
+
+* **`host_name`** – This is important! Without a host name, the links in
+  e-mails will not be correct.
+
+* **`app_name`** – Soon to be deprecated in favour of using the partition
+  name. If you define a new key here, don't forget to add a translations to
+  "de.yml", "en.yml", and "nl.yml"
+
+### Deployment
 
 Currently we have three running instances of the application
 
-### mixer.et-model.com
+#### mixer.et-model.com
 
 Instance embeded as iframe on shell
 
 End Year: 2025
 
-### gasmixer.et-model.com
+#### gasmixer.et-model.com
 
 End Year: 2030
 
-### mixer2050.et-model.com
+#### mixer2050.et-model.com
 
 End Year: 2050
-
 
 To deploy run
 
@@ -43,7 +72,7 @@ To deploy run
 Be careful with configuration data: `settings.yml` and `config.yml` are stored in `~/config_files` and 
 capistrano takes care of copying them to the application config directory.
 
-## Caching
+### Caching
 
 The application caches the current scenario. To clear the cache run
 `/home/ubuntu/clear_rails_cache.sh`. There's a cron job that does this
@@ -67,13 +96,13 @@ As a reference, this is the current script:
   # If we're using MemoryStore this is enough
   touch tmp/restart.txt
  
-## Themes
+### Themes
 
 The `theming.rb` initializer will prepend `app/views/APP_NAME` to the rendering view path. This means
 that any view (including layouts) in that directory will be rendered if available. Otherwise the default
 view will be used.
 
-## Web server
+### Web server
 
 If mod_passenger has troubles with rvm check this link
 
