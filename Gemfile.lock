@@ -140,6 +140,9 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.7.1)
       slop (>= 2.4.4, < 3)
+    pry-remote (0.1.0)
+      pry (~> 0.9.6)
+      slop (~> 2.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -255,6 +258,7 @@ DEPENDENCIES
   mocha (~> 0.10.0)
   mysql2 (~> 0.3.11)
   pry
+  pry-remote
   rails (= 3.2.6)
   rspec-rails (~> 2.11.0)
   sass-rails (~> 3.2.3)
