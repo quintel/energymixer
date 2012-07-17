@@ -54,9 +54,12 @@ Spork.prefork do
     # in a transaction, so neither should high-level tests. These filters need
     # to be above the filter which starts DatabaseCleaner.
 
-    [ :request, :controller ].each do |type|
-      config.before(type: type) { DatabaseCleaner.strategy = :truncation  }
-      config.after(type: type)  { DatabaseCleaner.strategy = :transaction }
+    config.before(:each, type: :request) do
+      DatabaseCleaner.strategy = :truncation
+    end
+
+    config.after(:each, type: :request) do
+      DatabaseCleaner.strategy = :transaction
     end
 
     # The database_cleaner gem is used to restore the DB to a clean state
