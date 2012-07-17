@@ -5,7 +5,9 @@ describe ScenariosController do
 
   describe "GET index" do
     before do
-      @scenarios = Array.new(3).map { create :scenario }
+      @scenarios = Array.new(3).map do
+        create :scenario, question_set: default_question_set
+      end
     end
 
     it "should show a list of existing scenarios" do
@@ -56,7 +58,7 @@ describe ScenariosController do
     end
 
     it "should show an existing scenario" do
-      @scenario = create :scenario
+      @scenario = create :scenario, question_set: default_question_set
       get :show, :id => @scenario.id
       response.should be_success
       assigns(:scenario).should == @scenario
@@ -65,7 +67,7 @@ describe ScenariosController do
 
   describe "GET answers" do
     it "should work" do
-      @scenario = create :scenario
+      @scenario = create :scenario, question_set: default_question_set
       get :show, :id => @scenario.id
       response.should be_success
       assigns(:scenario).should == @scenario
@@ -114,7 +116,10 @@ describe ScenariosController do
 
   describe "GET compare" do
     it "should compare scenarios" do
-      @scenarios = Array.new(3).map { create :scenario }
+      @scenarios = Array.new(3).map do
+        create :scenario, question_set: default_question_set
+      end
+
       get :compare, :ids => @scenarios.map(&:id)
       response.should be_success
     end
