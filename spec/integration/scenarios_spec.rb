@@ -4,7 +4,7 @@ feature 'A new scenarios' do
 
   # --------------------------------------------------------------------------
 
-  let!(:question_set) { create :full_question_set }
+  let!(:question_set) { create :full_question_set, name: 'gasmixer' }
 
   def global_json
     source = page.find('script#global_json').text

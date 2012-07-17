@@ -6,7 +6,7 @@ module SubdomainSpec
       end
 
       before(:each) do
-        request.host = '%s.test.host' % default_question_set.name
+        request.host = 'gasmixer.test.host'
       end
     RUBY
   end

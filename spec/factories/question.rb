@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :question_set do |f|
-    f.name 'gasmixer'
+    f.sequence(:name) { |number| "mixer_#{ number }" }
   end
 
   factory :question do |f|
@@ -13,9 +13,7 @@ FactoryGirl.define do
 
   # "Full" factories - which contain detailed associations.
 
-  factory :full_question_set, class: QuestionSet do
-    name 'gasmixer'
-
+  factory :full_question_set, parent: :question_set, class: QuestionSet do
     after(:create) do |question_set, evaluator|
       FactoryGirl.create_list(:full_question,  2, question_set: question_set)
       FactoryGirl.create_list(:dashboard_item, 2, question_set: question_set)
