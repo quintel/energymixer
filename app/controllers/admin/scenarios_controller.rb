@@ -38,7 +38,20 @@ class Admin::ScenariosController < AdminController
   end
 
   def stats
-    @rows = ActiveRecord::Base.connection.select_all("SELECT count(id) AS c, YEAR(created_at) AS y, MONTH(created_at) AS m FROM scenarios GROUP BY y, m")
+    set_id = ActiveRecord::Base.sanitize(@question_set.id)
+
+    @rows = ActiveRecord::Base.connection.select_all <<-SQL
+      SELECT
+          count(id)         AS c,
+          YEAR(created_at)  AS y,
+          MONTH(created_at) AS m
+      FROM
+          scenarios
+      WHERE
+          scenarios.question_set_id = #{ set_id }
+      GROUP BY
+          y, m
+    SQL
   end
 
   def analysis
