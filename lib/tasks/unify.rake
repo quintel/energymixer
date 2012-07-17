@@ -10,6 +10,8 @@ desc <<-DESC
   just "table", click "New file per table", and "Format: Plain Schema". The
   path should be set to ENERGYMIXER_DIR/unify.
 
+  Change the "energymixer" question set name to simply be "mixer".
+
   All IDs from the exported database will be changed from their originals
   (otherwise they would likely conflict with those in the new DB) but
   references (e.g. between questions and question sets) will be tracked and

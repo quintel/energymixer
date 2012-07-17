@@ -6,16 +6,18 @@ class Partition
 
   # Creates a new Partition, using the given options (from the config file).
   #
+  # @param [String] name
+  #   The unique name which idenfities the partition.
   # @param [Hash] attributes
   #   The attributes to be used to create the Partition.
   #
   # @raise [KeyError]
   #   Raises KeyError if the attributes are missing one or more requires keys.
   #
-  def initialize(attributes)
+  def initialize(name, attributes)
     attributes      = attributes.symbolize_keys
 
-    @name           = attributes.fetch(:app_name)
+    @name           = name.to_s
     @host           = attributes.fetch(:hostname)
     @api_settings   = attributes.fetch(:api_session_settings).freeze
 

@@ -112,7 +112,7 @@ nl:
   warning: "Let op!"
   and: and
   homepage: Home
-  energymixer: Energy Mixer
+  mixer: Energy Mixer
   current_scenario: Huidig scenario
   gasmixer: NRG-Discovery
   coal: Steenkool

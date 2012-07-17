@@ -15,13 +15,13 @@
     = yield :head
 
     - unless APP_CONFIG["standalone"]
-      = airbrake_javascript_notifier unless partition.name == 'energymixer'
+      = airbrake_javascript_notifier unless partition.name == 'mixer'
       = render 'layouts/google_analytics' if partition.analytics?
 
   %body{:id => "#{controller.controller_name}_#{controller.action_name}",
         :class => [controller.controller_name, partition.name, partition.show_score? && 'score_enabled']}
 
-    = render "layouts/mediamind_tracker" if partition.name == 'energymixer'
+    = render "layouts/mediamind_tracker" if partition.name == 'mixer'
 
     - if ipad?
       %meta{:name=>"viewport", :content=>"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
