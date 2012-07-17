@@ -4,7 +4,7 @@ feature 'The scenarios list' do
 
   # --------------------------------------------------------------------------
 
-  let!(:question_set) { create :full_question_set }
+  let!(:question_set) { create :full_question_set, name: 'gasmixer' }
 
   # --------------------------------------------------------------------------
 

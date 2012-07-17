@@ -6,7 +6,7 @@ require 'spec_helper'
 
 describe Admin::DashboardItemsController do
   render_views  
-  let!(:dashboard_item) { create :dashboard_item }
+  let!(:dashboard_item) { create :dashboard_item, question_set_id: default_question_set }
   let(:user) { create :user }
 
   before do
@@ -69,7 +69,7 @@ describe Admin::DashboardItemsController do
 
   describe "PUT update" do
     before do
-      @dashboard_item = create :dashboard_item
+      @dashboard_item = create :dashboard_item, question_set_id: default_question_set
     end
     
     describe "with valid params" do
@@ -89,7 +89,7 @@ describe Admin::DashboardItemsController do
 
   describe "DELETE destroy" do
     before do
-      @dashboard_item = create :dashboard_item
+      @dashboard_item = create :dashboard_item, question_set: default_question_set
     end
     
     it "destroys the requested dashboard_item" do

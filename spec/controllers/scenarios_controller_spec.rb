@@ -46,10 +46,11 @@ describe ScenariosController do
   describe "GET show" do
     before do
       # We're introducing some coupling here
-      create(:dashboard_item, :gquery => Scenario::Outputs[:output_5])
-      create(:dashboard_item, :gquery => Scenario::Outputs[:output_6])
-      create(:dashboard_item, :gquery => Scenario::Outputs[:output_7])
-      create(:dashboard_item, :gquery => Scenario::Outputs[:output_8])
+      [ 5, 6, 7, 8 ].each do |number|
+        create(:dashboard_item,
+          gquery:       Scenario::Outputs[:"output_#{number}"],
+          question_set: default_question_set)
+      end
     end
 
     it "should redirect invalid requests" do
@@ -77,7 +78,7 @@ describe ScenariosController do
   describe "POST create" do
     before do
       @valid_attributes = attributes_for(:scenario)
-      question = create :question
+      question = create :question, question_set: default_question_set
 
       @valid_attributes.merge(
         :question_set_id => question.question_set_id,
