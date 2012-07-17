@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
       raise "No such partition: #{subdomain}"
     end
 
-    @partition ||= Partition.new(subdomain, PARTITIONS[subdomain])
+    @partition ||= Partition.named(subdomain)
   end
 
   helper_method :partition

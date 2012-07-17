@@ -4,6 +4,20 @@ class Partition
   attr_reader :name, :default_locale, :host, :max_cost, :analytics_key
   attr_reader :api_settings
 
+  # Creates a new Partition instance for the given subdomain or question set
+  # key, loading the configuration from config/config.yml.
+  #
+  # @param [String] name
+  #   The unique name which idenfities the partition. This will match the
+  #   subdomain and question set name.
+  #
+  # @raise [KeyError]
+  #   Raises KeyError if the configuration is missing one or more required keys.
+  #
+  def self.named(name)
+    Partition.new(name, PARTITIONS[name])
+  end
+
   # Creates a new Partition, using the given options (from the config file).
   #
   # @param [String] name
@@ -12,7 +26,7 @@ class Partition
   #   The attributes to be used to create the Partition.
   #
   # @raise [KeyError]
-  #   Raises KeyError if the attributes are missing one or more requires keys.
+  #   Raises KeyError if the attributes are missing one or more required keys.
   #
   def initialize(name, attributes)
     attributes      = attributes.symbolize_keys
