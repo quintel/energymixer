@@ -5,8 +5,12 @@ module AdminHelper
   #
   def partition_select_tag
     sets = QuestionSet.order('`name` ASC').map do |set|
-      [ set.name, Partition.named(set.name).host ]
-    end
+      begin
+        [ set.name, Partition.named(set.name).host ]
+      rescue Partition::NoSuchPartition
+        # Ignore question sets which have no partition.
+      end
+    end.compact
 
     select_tag('partition', options_from_collection_for_select(
       sets, :second, :first, partition.host))

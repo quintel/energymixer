@@ -1,6 +1,18 @@
 # Stores setting specific to a subdomain, such as the application name,
 # whether to show the score, etc.
 class Partition
+  # An exception which is raised when trying to create a new partition, and no
+  # such partition is defined in the configuration file.
+  class NoSuchPartition < RuntimeError
+    def initialize(partition_name)
+      @name = partition_name
+    end
+
+    def message
+      "No configuration is present for partition named #{ @name.inspect }"
+    end
+  end
+
   attr_reader :name, :default_locale, :host, :max_cost, :analytics_key
   attr_reader :api_settings
 
@@ -15,6 +27,10 @@ class Partition
   #   Raises KeyError if the configuration is missing one or more required keys.
   #
   def self.named(name)
+    unless PARTITIONS.has_key?(name)
+      raise NoSuchPartition.new(name)
+    end
+
     Partition.new(name, PARTITIONS[name])
   end
 
