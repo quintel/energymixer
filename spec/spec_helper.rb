@@ -54,21 +54,22 @@ Spork.prefork do
     # in a transaction, so neither should high-level tests. These filters need
     # to be above the filter which starts DatabaseCleaner.
 
-    config.before(:each, type: :request) do
-      DatabaseCleaner.strategy = :truncation
+    [ :request, :controller ].each do |type|
+      config.before(type: type) { DatabaseCleaner.strategy = :truncation  }
+      config.after(type: type)  { DatabaseCleaner.strategy = :transaction }
     end
 
-    config.after(:each, type: :request) do
-      DatabaseCleaner.strategy = :transaction
-    end
-
-    # The database_cleaner gem is used to restore the DB to a clean state before
-    # each example runs. This is used in preference over rspec-rails'
+    # The database_cleaner gem is used to restore the DB to a clean state
+    # before each example runs. This is used in preference over rspec-rails'
     # transactions since we also need this behaviour in Cucumber features.
 
-    config.before(:suite) { DatabaseCleaner.strategy = :transaction }
-    config.before(:each)  { DatabaseCleaner.start                   }
-    config.after(:each)   { DatabaseCleaner.clean                   }
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
+    end
+
+    config.before(:each) { DatabaseCleaner.start }
+    config.after(:each)  { DatabaseCleaner.clean }
 
     # Capybara
     # --------
