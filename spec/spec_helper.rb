@@ -25,6 +25,7 @@ Spork.prefork do
     # controller aren't available. Yet they are if the filter is added to the
     # example block. Odd!
     config.include SubdomainSpec, type: :controller
+    config.include SignIn,        type: :request
     config.include WaitForXHR,    type: :request
 
     # Handle `it('thing', :js)` as `it('thing', js: true)`.
