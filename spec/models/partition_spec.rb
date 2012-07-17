@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Partition do
   let(:attributes) { {
-    app_name:             'testapp',
     hostname:             'testapp.example.org',
     max_total_cost:       150,
     api_session_settings: { end_year: 2050 },
@@ -12,7 +11,7 @@ describe Partition do
     google_analytics_key: '123'
   } }
 
-  subject { Partition.new(attributes) }
+  subject { Partition.new('testapp', attributes) }
 
   its(:name)            { should eql('testapp')             }
   its(:host)            { should eql('testapp.example.org') }
@@ -26,17 +25,17 @@ describe Partition do
   its(:show_score?)     { should be_false                   }
 
   it 'should be multi-language by default' do
-    partition = Partition.new(attributes.except(:multilanguage))
+    partition = Partition.new('name', attributes.except(:multilanguage))
     partition.multi_language?.should be_true
   end
 
   it 'should disable analytics by default' do
-    partition = Partition.new(attributes.except(:google_analytics_key))
+    partition = Partition.new('name', attributes.except(:google_analytics_key))
     partition.analytics?.should be_false
   end
 
   it 'should show score by default' do
-    partition = Partition.new(attributes.except(:score))
+    partition = Partition.new('name', attributes.except(:score))
     partition.show_score?.should be_true
   end
 
