@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :load_question_set
   
   layout "admin"
 

@@ -6,11 +6,12 @@ require 'spec_helper'
 
 describe Admin::DashboardItemsController do
   render_views  
-  let!(:dashboard_item) { create :dashboard_item, question_set_id: default_question_set }
+  let!(:dashboard_item) { create :dashboard_item, question_set: default_question_set }
   let(:user) { create :user }
 
   before do
     sign_in user
+    # dashboard_item # bang! cannot use let!
   end
 
   describe "GET index" do
@@ -52,9 +53,9 @@ describe Admin::DashboardItemsController do
     describe "with valid params" do
       it "creates a new dashboard_item" do
         lambda {
-          post :create, :dashboard_item =>
-            attributes_for(:dashboard_item).merge(question_set_id: 1)
+          post :create, :dashboard_item => attributes_for(:dashboard_item)
           response.should redirect_to(admin_dashboard_item_url(assigns(:dashboard_item)))
+          DashboardItem.last.question_set_id.should eql(default_question_set.id)
         }.should change(DashboardItem, :count)
       end
     end
@@ -69,7 +70,7 @@ describe Admin::DashboardItemsController do
 
   describe "PUT update" do
     before do
-      @dashboard_item = create :dashboard_item, question_set_id: default_question_set
+      @dashboard_item = create :dashboard_item, question_set: default_question_set
     end
     
     describe "with valid params" do

@@ -5,9 +5,8 @@ describe ScenariosController do
 
   describe "GET index" do
     before do
-      @scenarios = Array.new(3).map do
-        create :scenario, question_set: default_question_set
-      end
+      @scenarios = FactoryGirl.create_list(
+        :scenario, 3, question_set: default_question_set)
     end
 
     it "should show a list of existing scenarios" do
@@ -117,9 +116,8 @@ describe ScenariosController do
 
   describe "GET compare" do
     it "should compare scenarios" do
-      @scenarios = Array.new(3).map do
-        create :scenario, question_set: default_question_set
-      end
+      @scenarios = FactoryGirl.create_list(
+        :scenario, 3, question_set: default_question_set)
 
       get :compare, :ids => @scenarios.map(&:id)
       response.should be_success

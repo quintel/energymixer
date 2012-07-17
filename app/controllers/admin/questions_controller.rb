@@ -2,8 +2,7 @@ class Admin::QuestionsController < AdminController
   before_filter :find_question, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @questions = Question.joins(:question_set).
-      order('`question_sets`.`name` ASC').ordered.all
+    @questions = @question_set.questions.ordered.all
   end
 
   def show
@@ -19,7 +18,7 @@ class Admin::QuestionsController < AdminController
   end
 
   def create
-    @question = Question.new(params[:question])
+    @question = @question_set.questions.build(params[:question])
 
     if @question.save
       redirect_to(admin_question_path(@question), :notice => 'Question was successfully created.')
@@ -44,6 +43,6 @@ class Admin::QuestionsController < AdminController
   private
   
     def find_question
-      @question = Question.find(params[:id])
+      @question = @question_set.questions.find(params[:id])
     end
 end

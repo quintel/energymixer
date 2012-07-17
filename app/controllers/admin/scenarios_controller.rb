@@ -2,8 +2,7 @@ class Admin::ScenariosController < AdminController
   before_filter :find_scenario, :except => [:index, :analysis, :new, :create, :stats]
 
   def index
-    @scenarios = Scenario.includes(:question_set).
-      recent_first.page(params[:page]).per(30)
+    @scenarios = @question_set.scenarios.recent_first.page(params[:page]).per(30)
   end
 
   def show
@@ -17,7 +16,7 @@ class Admin::ScenariosController < AdminController
   end
 
   def create
-    @scenario = Scenario.new(params[:scenario])
+    @scenario = @question_set.scenarios.build(params[:scenario])
     if @scenario.save
       redirect_to(admin_scenario_path(@scenario), :notice => 'Scenario was successfully created.')
     else
@@ -57,9 +56,9 @@ class Admin::ScenariosController < AdminController
     end
   end
 
-
   protected
+
   def find_scenario
-    @scenario = Scenario.find(params[:id])
+    @scenario = @question_set.scenarios.find(params[:id])
   end
 end

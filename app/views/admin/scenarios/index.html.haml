@@ -7,7 +7,6 @@
       %th
       %th Id
       %th Date
-      %th Question Set
       %th Title
       %th Name
       %th Email
@@ -22,7 +21,6 @@
         %td= check_box_tag "id[]", scenario.id, false
         %td= link_to scenario.id, admin_scenario_path(scenario)
         %td= l scenario.created_at, :format => :short
-        %td= link_to scenario.question_set.name, admin_question_set_path(scenario.question_set)
         %td= link_to scenario.title, admin_scenario_path(scenario) if scenario.title
         %td= link_to scenario.name, admin_scenario_path(scenario)
         %td= scenario.email
