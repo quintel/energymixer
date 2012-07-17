@@ -6,7 +6,7 @@ require 'spec_helper'
 
 describe Admin::QuestionsController do
   render_views
-  let!(:question) { create :question }
+  let!(:question) { create :question, question_set: default_question_set }
   let(:user) { create :user }
 
   before do
@@ -54,6 +54,7 @@ describe Admin::QuestionsController do
         lambda {
           post :create, :question => { :text_nl => 'hi there'}
           response.should redirect_to(admin_question_url(assigns(:question)))
+          Question.last.question_set_id.should eql(default_question_set.id)
         }.should change(Question, :count)
       end
     end
@@ -68,7 +69,7 @@ describe Admin::QuestionsController do
 
   describe "PUT update" do
     before do
-      @question = create :question
+      @question = create :question, question_set: default_question_set
     end
 
     describe "with valid params" do
@@ -89,7 +90,7 @@ describe Admin::QuestionsController do
 
   describe "DELETE destroy" do
     before do
-      @question = create :question
+      @question = create :question, question_set: default_question_set
     end
 
     it "destroys the requested question" do

@@ -3,7 +3,6 @@
 %table.striped
   %thead
     %tr
-      %th Question Set
       %th Label
       %th GQuery
       %th Steps
@@ -13,7 +12,6 @@
   %tbody
     - @dashboard_items.each do |d|
       %tr{:class => cycle('even', 'odd')}
-        %td= link_to d.question_set.name, admin_question_set_path(d.question_set)
         %td= link_to d.label, admin_dashboard_item_path(d)
         %td= d.gquery
         %td= d.steps
@@ -22,4 +20,4 @@
         %td= link_to 'Delete', admin_dashboard_item_path(d), :data => { :confirm => 'Are you sure?' }, :method => :delete
 
 #actions
-  = link_to 'New Question', new_admin_dashboard_item_path
+  = link_to 'New Dashboard Item', new_admin_dashboard_item_path

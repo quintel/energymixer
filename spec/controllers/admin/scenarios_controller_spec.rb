@@ -13,7 +13,7 @@ describe Admin::ScenariosController do
   end
 
   before do
-    @scenario = create :scenario
+    @scenario = create :scenario, question_set: default_question_set
   end
 
   describe "GET index" do
@@ -55,10 +55,9 @@ describe Admin::ScenariosController do
     describe "with valid params" do
       it "creates a new scenario" do
         lambda {
-          post :create, :scenario => attributes_for(:scenario).
-            merge(question_set_id: @scenario.question_set_id)
-
+          post :create, :scenario => attributes_for(:scenario)
           response.should redirect_to(admin_scenario_url(assigns(:scenario)))
+          Scenario.last.question_set_id.should eql(default_question_set.id)
         }.should change(Scenario, :count)
       end
     end
