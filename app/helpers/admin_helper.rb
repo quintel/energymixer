@@ -4,7 +4,11 @@ module AdminHelper
   #   partition.
   #
   def partition_select_tag
+    sets = QuestionSet.order('`name` ASC').map do |set|
+      [ set.name, Partition.named(set.name).host ]
+    end
+
     select_tag('partition', options_from_collection_for_select(
-      QuestionSet.order('`name` ASC'), :name, :name, partition.name))
+      sets, :second, :first, partition.host))
   end
 end
