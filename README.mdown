@@ -41,10 +41,6 @@ all partitions, and separate configurations which apply to each partition.
 * **`host_name`** – This is important! Without a host name, the links in
   e-mails will not be correct.
 
-* **`app_name`** – Soon to be deprecated in favour of using the partition
-  name. If you define a new key here, don't forget to add a translations to
-  "de.yml", "en.yml", and "nl.yml"
-
 ### Deployment
 
 Currently we have three running instances of the application
