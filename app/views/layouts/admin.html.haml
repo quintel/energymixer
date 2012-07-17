@@ -20,6 +20,8 @@
           = tab.scenarios       'Mixes',               admin_scenarios_path
           = tab.stats           'Stats',               stats_admin_scenarios_path
           =# tab.translations    'Translations',        admin_translations_path
+        #partition
+          = partition_select_tag
       #subnav
         .login_box
           - if user_signed_in?
