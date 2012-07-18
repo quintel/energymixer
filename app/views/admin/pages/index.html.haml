@@ -3,7 +3,7 @@
 %h2 Current Configuration
 
 %h4 Global Application
-%pre= APP_CONFIG.to_yaml
+%pre= APP_CONFIG.to_hash.to_yaml
 
 %h4== Partition Configuration (#{ @partition.name })
 %pre= PARTITIONS[@partition.name].to_yaml
