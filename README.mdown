@@ -94,9 +94,10 @@ As a reference, this is the current script:
  
 ### Themes
 
-The `theming.rb` initializer will prepend `app/views/APP_NAME` to the rendering view path. This means
-that any view (including layouts) in that directory will be rendered if available. Otherwise the default
-view will be used.
+Each partition can be customised with it's own views; controllers will prepend
+"app/views/{partition.name}. This means that any view in that directory
+(including layouts) will be rendered if available. Otherwise the default view
+will be used.
 
 ### Web server
 
