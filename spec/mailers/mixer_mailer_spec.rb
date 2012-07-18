@@ -24,14 +24,14 @@ describe MixerMailer do
 
           it 'renders the body with a link to the scenario' do
             mail.body.parts.each do |part|
-              part.to_s.should match(scenario_path(scenario))
-              part.to_s.should match(Partition.named(partition).host)
+              part.to_s.should include(scenario_path(scenario))
+              part.to_s.should include(Partition.named(partition).host)
             end
           end
 
           it 'should contain the application name' do
             mail.body.parts.each do |part|
-              part.to_s.should match(" #{ I18n.t(partition) } ")
+              part.to_s.should include(" #{ I18n.t(partition) } ")
             end
           end
 
@@ -41,10 +41,8 @@ describe MixerMailer do
           end
 
           it 'should link to the ETM' do
-            url = Regexp.new(Regexp.escape(scenario_in_etm_url(scenario)))
-
             mail.body.parts.each do |part|
-              part.to_s.should match(url)
+              part.to_s.should include(scenario_in_etm_url(scenario))
             end
           end
 
