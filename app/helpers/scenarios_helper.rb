@@ -32,7 +32,7 @@ module ScenariosHelper
 
         json.session_settings do |json|
           json.area_code         partition.api_settings[:area_code]
-          json.source            partition.name
+          json.source            partition.api_settings[:source]
           json.end_year          question_set.end_year
         end
       end
