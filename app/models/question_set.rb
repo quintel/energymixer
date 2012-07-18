@@ -12,6 +12,7 @@
 
 class QuestionSet < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
+  validates :end_year, :numericality => { :only_integer => true }
 
   has_many :questions
   has_many :scenarios

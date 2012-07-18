@@ -56,9 +56,6 @@ class Partition
     @multi_language = attributes.fetch(:multilanguage, true)
     @show_score     = attributes.fetch(:score, true)
     @analytics_key  = attributes.fetch(:google_analytics_key, nil)
-
-    @api_settings.freeze
-    freeze
   end
 
   # @return [true, false]

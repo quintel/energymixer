@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'A new scenarios' do
+feature 'A new scenario' do
 
   # --------------------------------------------------------------------------
 
@@ -29,13 +29,12 @@ feature 'A new scenarios' do
     # Make sure the correct dashboard steps were used.
     steps = global_json['chart']['dashboard_steps']
 
-    steps.should have(2).elements
+    steps.should have(question_set.dashboard_items.count).elements
 
-    steps[ question_set.dashboard_items[0].gquery ].should \
-      eql( question_set.dashboard_items[0].steps.split(',').map(&:to_f) )
-
-    steps[ question_set.dashboard_items[1].gquery ].should \
-      eql( question_set.dashboard_items[1].steps.split(',').map(&:to_f) )
+    0.upto(3) do |number|
+      item = question_set.dashboard_items[number]
+      steps[item.gquery].should eql(item.steps.split(',').map(&:to_f))
+    end
   end
 
   # --------------------------------------------------------------------------
@@ -100,13 +99,12 @@ feature 'A new scenarios' do
     # Make sure the correct dashboard steps were used.
     steps = global_json['chart']['dashboard_steps']
 
-    steps.should have(2).elements
+    steps.should have(4).elements
 
-    steps[ question_set.dashboard_items[0].gquery ].should \
-      eql( question_set.dashboard_items[0].steps.split(',').map(&:to_f) )
-
-    steps[ question_set.dashboard_items[1].gquery ].should \
-      eql( question_set.dashboard_items[1].steps.split(',').map(&:to_f) )
+    0.upto(3) do |number|
+      item = question_set.dashboard_items[number]
+      steps[item.gquery].should eql(item.steps.split(',').map(&:to_f))
+    end
   end
 
   # --------------------------------------------------------------------------
@@ -154,4 +152,28 @@ feature 'A new scenarios' do
 
   # --------------------------------------------------------------------------
 
+  scenario 'QuestionSet with an unusual end year and area code', :js do
+    question_set.update_attributes!(end_year: 2041)
+
+    partition = Partition.named(question_set.name)
+    settings  = partition.api_settings.dup
+
+    settings[:area_code] = 'de'
+
+    partition.stubs(:api_settings).returns(settings)
+    Partition.stubs(:named).returns(partition)
+
+    # --
+
+    visit 'http://gasmixer.mixer.dev:54163/mixes/new'
+
+    wait_for_xhr
+
+    page.should have_css('#user_chart header', text: '2041')
+
+    page.evaluate_script('window.app.end_year').should eql(2041)
+    page.evaluate_script('window.app.area_code').should eql('de')
+  end
+
+  # --------------------------------------------------------------------------
 end
