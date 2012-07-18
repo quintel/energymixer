@@ -32,7 +32,8 @@ mixer:
     multilanguage:        true
     score:                false
     api_session_settings:
-      :country:           'nl'
+      :area_code:         'nl'
+      :source:            'EnergyMixer'
       :end_year:          2030
   production:
     <<: *mixer
@@ -51,7 +52,8 @@ gasmixer:
     multilanguage:        true
     score:                true
     api_session_settings:
-      :country:           'nl'
+      :area_code:         'nl'
+      :source:            'GasMixer'
       :end_year:          2050
   production:
     <<: *gasmixer
