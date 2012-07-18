@@ -11,7 +11,6 @@ describe Admin::DashboardItemsController do
 
   before do
     sign_in user
-    # dashboard_item # bang! cannot use let!
   end
 
   describe "GET index" do

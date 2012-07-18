@@ -7,7 +7,7 @@ require 'spec_helper'
 describe Admin::AnswersController do
   render_views
 
-  let(:question) { create :question }
+  let(:question) { create :question, question_set: default_question_set }
   let(:answer) { create :answer, :question => question }
   let(:user) { create :user }
 
@@ -34,7 +34,7 @@ describe Admin::AnswersController do
 
   describe "PUT update" do
     before do
-      @question = create :question
+      @question = create :question, question_set: default_question_set
       @answer = @question.answers.first
     end
 
@@ -49,10 +49,11 @@ describe Admin::AnswersController do
 
     describe "with valid params and a conflict" do
       it "updates the requested answer" do
-        a1 = create :answer
-        a2 = create :answer
+        a1 = create :answer, question: create(:question, question_set: default_question_set)
+        a2 = create :answer, question: create(:question, question_set: default_question_set)
+
         @answer.conflicting_answer_ids = [a1.id]
-        @answer.save
+        @answer.save!
 
         @answer.reload.conflicting_answer_ids.should == [a1.id]
 
@@ -76,11 +77,13 @@ describe Admin::AnswersController do
 
   describe "DELETE destroy" do
     it "should delete an answer" do
-      @question = create :question
+      @question = create :question, question_set: default_question_set
       @answer = @question.answers.first
+
       lambda {
         delete :destroy, :id => @answer.id
       }.should change(Answer, :count)
+
       response.should redirect_to(admin_question_path(@question))
     end
   end

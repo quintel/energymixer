@@ -38,7 +38,12 @@ class ApplicationController < ActionController::Base
 
   def load_question_set
     @question_set = partition.question_set
-    @end_year     = @question_set.try(:end_year)
+    @end_year     = @question_set.end_year
+  rescue ActiveRecord::RecordNotFound
+    # Do not allow the RNF to be raised; the default handler will redirect to
+    # the root page. No question set will be found again, and the client will
+    # begin an infinite redirect loop.
+    raise "No question set matches partition #{ partition.name.inspect }"
   end
 
   def default_locale
