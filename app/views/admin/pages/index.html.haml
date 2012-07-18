@@ -5,7 +5,7 @@
 %pre= APP_CONFIG.to_yaml
 
 %hr
-= link_to_function 'Cache stats', '$("#cache_stats").toggle()'
+%a(href="#" onclick="$('#cache_stats').toggle(); return false;") Cache stats
 #cache_stats.hidden
   %pre= Rails.cache.stats.to_yaml rescue "Error"
 
