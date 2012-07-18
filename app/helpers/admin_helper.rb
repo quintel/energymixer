@@ -15,4 +15,22 @@ module AdminHelper
     select_tag('partition', options_from_collection_for_select(
       sets, :second, :first, partition.host))
   end
+
+  # @return [String]
+  #   Front page and admin links for a question set.
+  #
+  def question_set_host_links(set)
+    host = Partition.named(set.name).host
+
+    [ link_to('Front page', "http://#{ host }"),
+      link_to('Admin page', "http://#{ host }/admin")
+    ].join(' &ndash; ').html_safe
+
+  rescue Partition::NoSuchPartition
+    <<-HTML.html_safe
+      <span style="color:#777">
+        No partition config - please add it to config.yml.
+      </span>
+    HTML
+  end
 end

@@ -8,6 +8,7 @@
       %th Questions
       %th End Year
       %th
+      %th
   %tbody
     - @question_sets.each do |s|
       %tr{:class => cycle('even', 'odd')}
@@ -15,6 +16,8 @@
         %td= link_to s.name, [:admin, s]
         %td= s.questions.count
         %td= s.end_year
+        %td
+          = question_set_host_links(s)
         %td
           = link_to 'edit', edit_admin_question_set_path(s)
           = link_to 'delete', [:admin, s], :method => :delete, :confirm => 'Are you sure?'
