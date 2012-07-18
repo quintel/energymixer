@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :partition, :set_locale, :check_touchsceen, :append_theme_path
+
+  before_filter :require_partition!, :require_question_set!,
+    :set_locale, :check_touchsceen, :append_theme_path
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
@@ -36,9 +38,22 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  def load_question_set
-    @question_set = partition.question_set
-    @end_year     = @question_set.end_year
+  def default_locale
+    partition.default_locale || I18n.default_locale
+  end
+
+  # @return [QuestionSet]
+  #   Returns the QuestionSet for the request. The question set is determined
+  #   by the current partition.
+  #
+  # @raise [RuntimeError]
+  #   Raised if no matching QuestionSet is present in the database.
+  #
+  def question_set
+    @question_set ||= partition.question_set
+    @end_year       = @question_set.end_year
+
+    @question_set
   rescue ActiveRecord::RecordNotFound
     # Do not allow the RNF to be raised; the default handler will redirect to
     # the root page. No question set will be found again, and the client will
@@ -46,9 +61,8 @@ class ApplicationController < ActionController::Base
     raise "No question set matches partition #{ partition.name.inspect }"
   end
 
-  def default_locale
-    partition.default_locale || I18n.default_locale
-  end
+  # Alias for filters.
+  alias_method :require_question_set!, :question_set
 
   # @return [Partition]
   #   Returns the Partition with settings for the current subdomain.
@@ -60,6 +74,9 @@ class ApplicationController < ActionController::Base
   def partition
     @partition ||= Partition.named(request.subdomains.join('.'))
   end
+
+  # Alias for filters.
+  alias_method :require_partition!, :partition
 
   helper_method :partition
 end

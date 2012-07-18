@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_filter :load_question_set
   before_filter :setup_ordering, :only => [:stats, :analysis]
 
   def home

@@ -1,5 +1,4 @@
 class ScenariosController < ApplicationController
-  before_filter :load_question_set
   before_filter :find_scenario, :only => [:show, :answers]
 
   def new
