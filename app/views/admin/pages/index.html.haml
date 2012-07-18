@@ -1,8 +1,12 @@
 - page_title "Admin"
 
-%h2 Current config.yml
+%h2 Current Configuration
 
+%h4 Global Application
 %pre= APP_CONFIG.to_yaml
+
+%h4== Partition Configuration (#{ @partition.name })
+%pre= PARTITIONS[@partition.name].to_yaml
 
 %hr
 %a(href="#" onclick="$('#cache_stats').toggle(); return false;") Cache stats
