@@ -7,9 +7,6 @@ PARTITIONS = config.except('application').
     partitions[key] = conf[Rails.env]
   end
 
-# Temporary: Required to boot the app while refactoring the "unify" branch.
-APP_CONFIG.merge! config['gasmixer'][Rails.env]
-
 # Airbrake setup requires APP_CONFIG.
 if APP_CONFIG[:airbrake_key] && ! APP_CONFIG[:standalone]
   Airbrake.configure { |config| config.api_key = APP_CONFIG[:airbrake_key] }
