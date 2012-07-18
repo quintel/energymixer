@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_locale, :check_touchsceen
+  before_filter :set_locale, :check_touchsceen, :append_theme_path
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
@@ -20,6 +20,13 @@ class ApplicationController < ActionController::Base
     session[:locale] = params[:locale] || session[:locale] || default_locale
     session[:locale] = default_locale unless [:nl, :de, :en].include?(session[:locale].to_sym)
     I18n.locale = session[:locale]
+  end
+
+  # Enables support for theming by placing custom view files into the
+  # app/views/{partition.name} directory.
+  def append_theme_path
+    prepend_view_path(Rails.root.join('app', 'views', partition.name))
+    @ctrl_view_paths = lookup_context.view_paths.paths
   end
 
   def record_not_found

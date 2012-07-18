@@ -6,10 +6,5 @@ if Rails.env.development?
   }
 end
 
-if APP_NAME
-  ActionMailer::Base.prepend_view_path("app/views/" + APP_NAME)
-end
-
-
-  # Postfix fails on production without this
+# Postfix fails on production without this.
 ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
