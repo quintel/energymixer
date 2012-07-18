@@ -2,7 +2,7 @@ class Admin::DashboardItemsController < AdminController
   before_filter :find_dashboard_item, :except => [:index, :new, :create]
   
   def index
-    @dashboard_items = @question_set.dashboard_items.ordered.all
+    @dashboard_items = question_set.dashboard_items.ordered.all
   end
 
   def show
@@ -16,7 +16,7 @@ class Admin::DashboardItemsController < AdminController
   end
 
   def create
-    @dashboard_item = @question_set.dashboard_items.build(params[:dashboard_item])
+    @dashboard_item = question_set.dashboard_items.build(params[:dashboard_item])
 
     if @dashboard_item.save
       redirect_to(admin_dashboard_item_path(@dashboard_item), :notice => 'Dashboard Item was successfully created.')
@@ -41,6 +41,6 @@ class Admin::DashboardItemsController < AdminController
   protected
   
     def find_dashboard_item
-      @dashboard_item = @question_set.dashboard_items.find(params[:id])
+      @dashboard_item = question_set.dashboard_items.find(params[:id])
     end
 end

@@ -1,7 +1,7 @@
 :javascript
   var _gaq = _gaq || [];
   _gaq.push(
-    ['_setAccount', #{@partition.analytics_key.to_json}],
+    ['_setAccount', #{partition.analytics_key.to_json}],
     ['_setDomainName', 'none'],
     ['_setAllowLinker', true],
     ['_trackPageview']

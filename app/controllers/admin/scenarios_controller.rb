@@ -2,7 +2,7 @@ class Admin::ScenariosController < AdminController
   before_filter :find_scenario, :except => [:index, :analysis, :new, :create, :stats]
 
   def index
-    @scenarios = @question_set.scenarios.recent_first.page(params[:page]).per(30)
+    @scenarios = question_set.scenarios.recent_first.page(params[:page]).per(30)
   end
 
   def show
@@ -16,7 +16,7 @@ class Admin::ScenariosController < AdminController
   end
 
   def create
-    @scenario = @question_set.scenarios.build(params[:scenario])
+    @scenario = question_set.scenarios.build(params[:scenario])
     if @scenario.save
       redirect_to(admin_scenario_path(@scenario), :notice => 'Scenario was successfully created.')
     else
@@ -38,7 +38,7 @@ class Admin::ScenariosController < AdminController
   end
 
   def stats
-    set_id = ActiveRecord::Base.sanitize(@question_set.id)
+    set_id = ActiveRecord::Base.sanitize(question_set.id)
 
     @rows = ActiveRecord::Base.connection.select_all <<-SQL
       SELECT
@@ -56,7 +56,7 @@ class Admin::ScenariosController < AdminController
 
   def analysis
     @scenarios = Scenario.order(params[:sort]).find(params[:id])
-    @question_set = @scenarios.first.question_set
+    question_set = @scenarios.first.question_set
     if(params[:sort_data])
       data = params[:sort_data].split(" ")
       if(Scenario.method_defined?(data[0]))
@@ -72,6 +72,6 @@ class Admin::ScenariosController < AdminController
   protected
 
   def find_scenario
-    @scenario = @question_set.scenarios.find(params[:id])
+    @scenario = question_set.scenarios.find(params[:id])
   end
 end

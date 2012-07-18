@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
   #   Raised if no matching QuestionSet is present in the database.
   #
   def question_set
-    @question_set ||= partition.question_set
+    @_question_set ||= partition.question_set
   rescue ActiveRecord::RecordNotFound
     # Do not allow the RNF to be raised; the default handler will redirect to
     # the root page. No question set will be found again, and the client will
@@ -71,7 +71,7 @@ class ApplicationController < ActionController::Base
   #   present.
   #
   def partition
-    @partition ||= Partition.named(request.subdomains.join('.'))
+    @_partition ||= Partition.named(request.subdomains.join('.'))
   end
 
   # Alias for filters.

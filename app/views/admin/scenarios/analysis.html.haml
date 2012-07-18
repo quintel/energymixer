@@ -26,7 +26,7 @@
           = link_to '', scenario_path(scenario), :target => '_blank', :class => 'fugue fugue-chart'
 
 .scenarios_stats
-  - @question_set.questions.each do |question|
+  - question_set.questions.each do |question|
     %h3= question.text
     %table.answer_stats
       - question.answers.each do |answer|
