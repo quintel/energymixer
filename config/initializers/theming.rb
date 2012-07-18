@@ -1,1 +1,0 @@
-ActionController::Base.prepend_view_path("app/views/" + APP_NAME)

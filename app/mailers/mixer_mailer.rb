@@ -12,6 +12,9 @@ class MixerMailer < ActionMailer::Base
 
     @etm_scenario_url = scenario_in_etm_url(@scenario)
 
+    # Enable theming by adding custom views to app/views/{partition.name}.
+    prepend_view_path(Rails.root.join('app', 'views', @partition.name))
+
     mail to: scenario.email, subject: 'Jouw Energy Mix'
   end
 end
