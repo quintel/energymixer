@@ -25,7 +25,6 @@ application:
 
 mixer:
   development: &mixer
-    app_name:             'mixer'
     default_locale:       'en'
     hostname:             'mixer.mixer.dev'
     max_total_cost:       200000000000
@@ -45,7 +44,6 @@ mixer:
 
 gasmixer:
   development: &gasmixer
-    app_name:             'gasmixer'
     default_locale:       'en'
     hostname:             'gasmixer.mixer.dev'
     max_total_cost:       131000000000
