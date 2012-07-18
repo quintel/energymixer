@@ -49,7 +49,7 @@ class Partition
 
     @name           = name.to_s
     @host           = attributes.fetch(:hostname)
-    @api_settings   = attributes.fetch(:api_session_settings).freeze
+    @api_settings   = attributes.fetch(:api_session_settings).symbolize_keys
 
     @max_cost       = attributes.fetch(:max_total_cost, 140e9)
     @default_locale = attributes.fetch(:default_locale, 'nl')
@@ -57,6 +57,7 @@ class Partition
     @show_score     = attributes.fetch(:score, true)
     @analytics_key  = attributes.fetch(:google_analytics_key, nil)
 
+    @api_settings.freeze
     freeze
   end
 
