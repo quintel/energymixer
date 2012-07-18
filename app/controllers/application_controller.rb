@@ -58,13 +58,7 @@ class ApplicationController < ActionController::Base
   #   present.
   #
   def partition
-    subdomain = request.subdomains.join('.')
-
-    unless PARTITIONS.has_key?(subdomain)
-      raise "No such partition: #{subdomain.inspect}"
-    end
-
-    @partition ||= Partition.named(subdomain)
+    @partition ||= Partition.named(request.subdomains.join('.'))
   end
 
   helper_method :partition
