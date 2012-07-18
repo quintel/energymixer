@@ -33,7 +33,6 @@ mixer:
     api_session_settings:
       area_code:          'nl'
       source:             'EnergyMixer'
-      end_year:           2030
   production:
     <<: *mixer
     google_analytics_key: 'UA-25446433-1'
@@ -52,7 +51,6 @@ gasmixer:
     api_session_settings:
       area_code:          'nl'
       source:             'GasMixer'
-      end_year:           2050
   production:
     <<: *gasmixer
     google_analytics_key: 'UA-4089905-6'

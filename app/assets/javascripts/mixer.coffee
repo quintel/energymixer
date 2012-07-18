@@ -18,14 +18,15 @@ class Mixer extends Backbone.Model
       url: "#{@base_path}/new.json"
       data: { settings : globals.api.session_settings }
       success: (data) =>
-        # api_scenario = pre-July deploy, scenario = post deploy
-        scenario_data = data.scenario || data.api_scenario
-        key = scenario_data.id || scenario_data.api_session_key
+        @scenario_id = data.scenario.id
+        @area_code   = data.scenario.area_code
+        @end_year    = data.scenario.end_year
 
-        @scenario_id = key
         @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
+
         # show data for the first time
         @make_request()
+
       error: (request, status, error) -> window.error(error)
     return @scenario_id
 
