@@ -35,6 +35,11 @@ describe MixerMailer do
             end
           end
 
+          it 'should contain the application name in the HTML title' do
+            html = mail.body.parts.last.to_s
+            html.should include("<title>#{ I18n.t(partition) }</title>")
+          end
+
           it 'should link to the ETM' do
             url = Regexp.new(Regexp.escape(scenario_in_etm_url(scenario)))
 
