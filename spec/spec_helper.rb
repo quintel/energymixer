@@ -21,13 +21,6 @@ Spork.prefork do
     # config.mock_with :rr
     # config.mock_with :rspec
 
-    # We apparently cannot add a before filter here, since request and
-    # controller aren't available. Yet they are if the filter is added to the
-    # example block. Odd!
-    config.include SubdomainSpec, type: :controller
-    config.include SignIn,        type: :request
-    config.include WaitForXHR,    type: :request
-
     # Handle `it('thing', :js)` as `it('thing', js: true)`.
     config.treat_symbols_as_metadata_keys_with_true_values = true
 
@@ -38,6 +31,13 @@ Spork.prefork do
     # individual test, or in a before(:each) block.
     #
     config.before(:each) { I18n.locale = 'en' }
+
+    # Helpers
+    # -------
+
+    config.include SubdomainSpec, type: :controller
+    config.include SignIn,        type: :request
+    config.include WaitForXHR,    type: :request
 
     # Database
     # --------
@@ -74,6 +74,9 @@ Spork.prefork do
 
     config.before(:each) { DatabaseCleaner.start }
     config.after(:each)  { DatabaseCleaner.clean }
+
+    # The gasmixer question set must exist when running controller specs.
+    config.before(:each, type: :controller) { default_question_set }
 
     # Capybara
     # --------
