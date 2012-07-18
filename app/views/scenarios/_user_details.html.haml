@@ -1,6 +1,6 @@
 .question{:id => "question_#{@questions.count + 1}"}
   #user_details
-    %h2= t 'form.title', :end_year => @end_year
+    %h2= t 'form.title', :end_year => question_set.end_year
     %p= t 'form.text'
     %h2= t 'form.fill_your_data'
     = scenario.error_messages
