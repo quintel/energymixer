@@ -24,7 +24,6 @@ class Mixer extends Backbone.Model
 
         @scenario_id = key
         @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
-        console.log("New scenario id: #{key}")
         # show data for the first time
         @make_request()
       error: (request, status, error) -> window.error(error)
