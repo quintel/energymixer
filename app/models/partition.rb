@@ -9,7 +9,7 @@ class Partition
     end
 
     def message
-      "No configuration is present for partition named #{ @name.inspect }"
+      "No such partition is configured: #{ @name.inspect }"
     end
   end
 
@@ -84,7 +84,10 @@ class Partition
   # @return [QuestionSet, nil]
   #   Returns the QuestionSet associated with the partition.
   #
+  # @raise [ActiveRecord::RecordNotFound]
+  #   Raises if no such question set exists.
+  #
   def question_set
-    QuestionSet.where(name: name).first
+    QuestionSet.where(name: name).first!
   end
 end # Partition
