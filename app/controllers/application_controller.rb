@@ -51,9 +51,6 @@ class ApplicationController < ActionController::Base
   #
   def question_set
     @question_set ||= partition.question_set
-    @end_year       = @question_set.end_year
-
-    @question_set
   rescue ActiveRecord::RecordNotFound
     # Do not allow the RNF to be raised; the default handler will redirect to
     # the root page. No question set will be found again, and the client will
@@ -63,6 +60,8 @@ class ApplicationController < ActionController::Base
 
   # Alias for filters.
   alias_method :require_question_set!, :question_set
+
+  helper_method :question_set
 
   # @return [Partition]
   #   Returns the Partition with settings for the current subdomain.

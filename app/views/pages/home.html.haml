@@ -10,7 +10,7 @@
 %section#main.shaded_gradient
   #intro
     %h3= t 'home.intro.title'
-    %p= t 'home.intro.text', :app_name => t(partition.name), :end_year => @end_year
+    %p= t 'home.intro.text', :app_name => t(partition.name), :end_year => question_set.end_year
 
   #chart
     %header.header_blue
@@ -24,22 +24,22 @@
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.buildings'} 28%
-          .text.hidden= t 'home.popups.buildings', :end_year => @end_year
+          .text.hidden= t 'home.popups.buildings', :end_year => question_set.end_year
       .sector#icon_agriculture{:rel => 'agriculture'}
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.agriculture'} 7%
-          .text.hidden= t 'home.popups.agriculture', :end_year => @end_year
+          .text.hidden= t 'home.popups.agriculture', :end_year => question_set.end_year
       .sector#icon_transport{:rel => 'transport'}
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.transport'} 18%
-          .text.hidden= t 'home.popups.transport', :end_year => @end_year, :app_name => t(partition.name)
+          .text.hidden= t 'home.popups.transport', :end_year => question_set.end_year, :app_name => t(partition.name)
       .sector#icon_industry{:rel => 'industry'}
         .popup.hidden
           %a.description{:href=>"#"}
             #{t 'sectors.industry'} 47%
-          .text.hidden= t 'home.popups.industry', :end_year => @end_year
+          .text.hidden= t 'home.popups.industry', :end_year => question_set.end_year
 
     #sector_links
       %h3= t 'sectors.sectors'

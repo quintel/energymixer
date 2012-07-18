@@ -1,57 +1,59 @@
 :ruby
   def full_text(s)
-    out = []
+    out  = []
+    year = question_set.end_year
+
     # Total amount
     out << if s.total_amount < 40_000_000_000
-      t 'scenario_steps.total_amount.step_0', :end_year => @end_year
+      t 'scenario_steps.total_amount.step_0', :end_year => year
     elsif s.total_amount < 60_000_000_000
-      t 'scenario_steps.total_amount.step_1', :end_year => @end_year
+      t 'scenario_steps.total_amount.step_1', :end_year => year
     elsif s.total_amount < 80_000_000_000
-      t 'scenario_steps.total_amount.step_2', :end_year => @end_year
+      t 'scenario_steps.total_amount.step_2', :end_year => year
     else
-      t 'scenario_steps.total_amount.step_3', :end_year => @end_year
+      t 'scenario_steps.total_amount.step_3', :end_year => year
     end
     
     # CO2
     out << if s.output_5 < -0.25
-      t 'scenario_steps.co2_emissions.step_0', :end_year => @end_year
+      t 'scenario_steps.co2_emissions.step_0', :end_year => year
     elsif s.output_5 < -0.01
-      t 'scenario_steps.co2_emissions.step_1', :end_year => @end_year
+      t 'scenario_steps.co2_emissions.step_1', :end_year => year
     elsif s.output_5 < 0.1
-      t 'scenario_steps.co2_emissions.step_2', :end_year => @end_year
+      t 'scenario_steps.co2_emissions.step_2', :end_year => year
     else
-      t 'scenario_steps.co2_emissions.step_3', :end_year => @end_year
+      t 'scenario_steps.co2_emissions.step_3', :end_year => year
     end
     
     # Share of renewable energy
     out << if s.output_6 < 0.05
-      t 'scenario_steps.renewables.step_0', :end_year => @end_year
+      t 'scenario_steps.renewables.step_0', :end_year => year
     elsif s.output_6 < 0.1
-      t 'scenario_steps.renewables.step_1', :end_year => @end_year
+      t 'scenario_steps.renewables.step_1', :end_year => year
     elsif s.output_6 < 0.14
-      t 'scenario_steps.renewables.step_2', :end_year => @end_year
+      t 'scenario_steps.renewables.step_2', :end_year => year
     elsif s.output_6 < 0.50
-      t 'scenario_steps.renewables.step_3', :end_year => @end_year
+      t 'scenario_steps.renewables.step_3', :end_year => year
     else
-      t 'scenario_steps.renewables.step_4', :end_year => @end_year
+      t 'scenario_steps.renewables.step_4', :end_year => year
     end
     
     # Area footprint
     out << if s.output_7 < 0.71
-      t 'scenario_steps.footprint.step_0', :end_year => @end_year
+      t 'scenario_steps.footprint.step_0', :end_year => year
     elsif s.output_7 <= 0.91
-      t 'scenario_steps.footprint.step_1', :end_year => @end_year
+      t 'scenario_steps.footprint.step_1', :end_year => year
     else
-      t 'scenario_steps.footprint.step_2', :end_year => @end_year
+      t 'scenario_steps.footprint.step_2', :end_year => year
     end
     
     # Energy dependence
     out << if s.output_8 < 0.70
-      t 'scenario_steps.energy_import.step_0', :end_year => @end_year
+      t 'scenario_steps.energy_import.step_0', :end_year => year
     elsif s.output_8 < 0.9
-      t 'scenario_steps.energy_import.step_1', :end_year => @end_year
+      t 'scenario_steps.energy_import.step_1', :end_year => year
     else
-      t 'scenario_steps.energy_import.step_2', :end_year => @end_year
+      t 'scenario_steps.energy_import.step_2', :end_year => year
     end
     
     out.map{|x| "<span>#{x} </span>"}.join.html_safe
