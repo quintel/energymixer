@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :set_locale, :check_touchsceen, :append_theme_path
+  before_filter :partition, :set_locale, :check_touchsceen, :append_theme_path
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
