@@ -32,7 +32,7 @@
         %td.dont_print= link_to 'Answers', answers_scenario_path(scenario), :target => '_blank'
 
 .scenarios_stats
-  - @question_set.questions.enabled.ordered.each_with_index do |question, idx|
+  - question_set.questions.enabled.ordered.each_with_index do |question, idx|
     %table.answer_stats
       %tr
         %th.title{:colspan => 2} #{idx + 1}. #{question.text}

@@ -1,6 +1,6 @@
 %h2 Stats
 .scenarios_stats
-  - @question_set.questions.enabled.ordered.each do |question|
+  - question_set.questions.enabled.ordered.each do |question|
     %h3= question.text
     %table.answer_stats
       - question.answers.each do |answer|
