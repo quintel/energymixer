@@ -36,6 +36,12 @@ all partitions, and separate configurations which apply to each partition.
   Google Analytics) are disabled. Used on offline instances (conference
   laptops).
 
+* **`local_proxy`** - Uses Rack to set up a local proxy to ETengine at the URL
+  specified by the `api_proxy_url` setting. This is used to provide access to
+  ETengine for old browsers which do not support Cross-Origin Resource
+  Sharing. It is not required in production, since Nginx will handle this more
+  efficiently.
+
 ##### Notable partition settings:
 
 * **`host_name`** – This is important! Without a host name, the links in
@@ -49,64 +55,33 @@ all partitions, and separate configurations which apply to each partition.
 
 ### Deployment
 
-Currently we have three running instances of the application
+A single instance of the EnergyMixer application is used to run both the
+mixer.et-model.com and gasmixer.et-model.com websites. Merge your changes into
+the "production" branch, then run `cap production deploy`.
 
-##### mixer.et-model.com
-
-Instance embeded as iframe on shell
-
-End Year: 2025
-
-##### gasmixer.et-model.com
-
-End Year: 2030
-
-##### mixer2050.et-model.com
-
-End Year: 2050
-
-To deploy run
-
-	cap XXXXX deploy
-
-`XXXXX` might be `shell`, `gasmixer` or `mixer2050`
-
-Be careful with configuration data: `settings.yml` and `config.yml` are stored in `~/config_files` and 
-capistrano takes care of copying them to the application config directory.
+Be careful with configuration data: your local "config/config.yml" is not
+copied to the server. Instead, the file is stored on the server in
+"/u/apps/energymixer/shared/config/config.yml". Capistrano will take care of
+creating the appropriate symlinks after deploying.
 
 ### Caching
 
-The application caches the current scenario. To clear the cache run
-`/home/ubuntu/clear_rails_cache.sh`. There's a cron job that does this
-every night.
+The application caches the current scenario. To clear the cache, log in to the
+admin section and click "Reset Cache". Alternatively, fire up the Rails
+console:
 
-If we're using the default rails MemoryStore as backend we're actually just
-touching `tmp/restart.txt`, because it saves everything into the memory
-of the same process.
-
-When we will be using a shared cache (memcached, etc) we have to call
-`Rails.cache.clear`, too.
+    $ cd /u/apps/energymixer/current
+    $ bin/rails console production
+    irb(main):001:0> Rails.cache.clear
+    irb(main):001:0> exit
 
 The Scenario class has two methods related to this cache: `Scenario.current`
-(cached) and `Scenario.current!` (forces reload).
+which used the cached value if available and defers to `current!` otherise, and
+`Scenario.current!` which always forces a reload from ETengine.
 
-As a reference, this is the current script:
-
-  #!/bin/sh
-  cd /home/ubuntu/apps/energymixer/current
-  # /usr/bin/env rake scenarios:clear_cache RAILS_ENV=production
-  # If we're using MemoryStore this is enough
-  touch tmp/restart.txt
- 
 ### Themes
 
 Each partition can be customised with it's own views; controllers will prepend
 "app/views/{partition.name}. This means that any view in that directory
 (including layouts) will be rendered if available. Otherwise the default view
 will be used.
-
-### Web server
-
-If mod_passenger has troubles with rvm check this link
-
-  http://beginrescueend.com/integration/passenger/
