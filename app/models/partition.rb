@@ -23,8 +23,10 @@ class Partition
   #   The unique name which idenfities the partition. This will match the
   #   subdomain and question set name.
   #
+  # @raise [NoSuchPartition]
+  #   Raised when the partition does not exist in config/config.yml.
   # @raise [KeyError]
-  #   Raises KeyError if the configuration is missing one or more required keys.
+  #   Raises if the configuration is missing one or more required keys.
   #
   def self.named(name)
     unless PARTITIONS.has_key?(name)
