@@ -71,10 +71,7 @@ class ApplicationController < ActionController::Base
   #   present.
   #
   def partition
-    subdomain = request.subdomains.join('.')
-    subdomain = 'mixer' if subdomain == 'mixer2050'
-
-    @_partition ||= Partition.named(subdomain)
+    @_partition ||= Partition.named(request.subdomains.join('.'))
   end
 
   # Alias for filters.
