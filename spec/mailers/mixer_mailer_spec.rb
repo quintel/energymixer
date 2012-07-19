@@ -20,7 +20,11 @@ describe MixerMailer do
           let(:mail)         { MixerMailer.thankyou(scenario) }
 
           it 'renders the headers' do
-            mail.subject.should match(/Energy Mix/)
+            if language == 'de'
+              mail.subject.should match(/Energiemix/)
+            else
+              mail.subject.should match(/Energy Mix/)
+            end
           end
 
           it 'renders the body with a link to the scenario' do
@@ -43,7 +47,10 @@ describe MixerMailer do
 
           it 'should link to the ETM' do
             mail.body.parts.each do |part|
-              part.to_s.should include(scenario_in_etm_url(scenario))
+              url = scenario_in_etm_url(scenario, language)
+              url.should include('locale=nl') if language == 'de'
+
+              part.to_s.should include(url)
             end
           end
 

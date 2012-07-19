@@ -113,14 +113,15 @@ module ScenariosHelper
   end
   
   # Accepts as parameter a Scenario object or the id string
-  def scenario_in_etm_url(scenario_id)
+  def scenario_in_etm_url(scenario_id, locale = 'nl')
     etm_path = APP_CONFIG['view_scenario_path'].chomp('/')
+    locale   = 'nl' if locale.to_sym == :de
 
     if scenario_id.is_a?(Scenario)
       scenario_id = scenario_id.etm_scenario_id
     end
 
-    "#{ etm_path }/#{ scenario_id }/load?locale=nl"
+    "#{ etm_path }/#{ scenario_id }/load?locale=#{ locale }"
   end
     
   def popup_json
