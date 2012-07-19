@@ -1,5 +1,5 @@
 !!! 5
-%html
+%html{ lang: I18n.locale }
   %head
     %title= t(partition.name)
     = stylesheet_link_tag 'application'
@@ -33,10 +33,7 @@
     - if APP_CONFIG["standalone"]
       = t('layout.footer', :app_name => t(partition.name))
     - else
-      = link_to "http://www.energietransitiemodel.nl/", :target => "_blank", :class => 'open_in_etm' do
+      %a.open_in_etm(href="http://www.energietransitiemodel.nl/" target="_blank")<
         = t('layout.footer', :app_name => t(partition.name))
-    - if partition.multi_language?
-      = link_to 'DE', :locale => :de unless I18n.locale.to_sym == :de
-      = link_to 'NL', :locale => :nl unless I18n.locale.to_sym == :nl
-      = link_to 'EN', :locale => :en unless I18n.locale.to_sym == :en
+    = other_locale_links
     = yield :footer

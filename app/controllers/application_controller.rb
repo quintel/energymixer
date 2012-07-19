@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     session[:locale] = params[:locale] || session[:locale] || default_locale
-    session[:locale] = default_locale unless [:nl, :de, :en].include?(session[:locale].to_sym)
+    session[:locale] = default_locale unless partition.locales.include?(session[:locale].to_sym)
     I18n.locale = session[:locale]
   end
 

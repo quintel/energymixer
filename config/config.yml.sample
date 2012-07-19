@@ -25,10 +25,9 @@ application:
 
 mixer:
   development: &mixer
-    default_locale:       'en'
+    locales:              ['nl', 'en']
     hostname:             'mixer.mixer.dev'
     max_total_cost:       205000000000
-    multilanguage:        false
     score:                false
     api_session_settings:
       area_code:          'nl'
@@ -43,10 +42,9 @@ mixer:
 
 gasmixer:
   development: &gasmixer
-    default_locale:       'en'
+    locales:              ['en', 'nl', 'de']
     hostname:             'gasmixer.mixer.dev'
     max_total_cost:       131000000000
-    multilanguage:        true
     score:                true
     api_session_settings:
       area_code:          'nl'

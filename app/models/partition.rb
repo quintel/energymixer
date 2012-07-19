@@ -13,8 +13,7 @@ class Partition
     end
   end
 
-  attr_reader :name, :default_locale, :host, :max_cost, :analytics_key
-  attr_reader :api_settings
+  attr_reader :name, :locales, :host, :max_cost, :analytics_key, :api_settings
 
   # Creates a new Partition instance for the given subdomain or question set
   # key, loading the configuration from config/config.yml.
@@ -54,17 +53,31 @@ class Partition
     @api_settings   = attributes.fetch(:api_session_settings).symbolize_keys
 
     @max_cost       = attributes.fetch(:max_total_cost, 140e9)
-    @default_locale = attributes.fetch(:default_locale, 'nl')
+    @locales        = attributes.fetch(:locales, %w( en nl )).map(&:to_sym)
     @multi_language = attributes.fetch(:multilanguage, true)
     @show_score     = attributes.fetch(:score, true)
     @analytics_key  = attributes.fetch(:google_analytics_key, nil)
+  end
+
+  # @return [Symbol]
+  #   Returns the default locale. This head of the "locales" array.
+  #
+  def default_locale
+    @locales.first
+  end
+
+  # @return [Array<Symbol>]
+  #   Returns a list of supported locales, excluding the one given.
+  #
+  def other_locales(locale)
+    @locales - [ locale.to_sym ]
   end
 
   # @return [true, false]
   #   Returns if the user is allowed to change the language of the UI.
   #
   def multi_language?
-    @multi_language
+    @locales.length > 1
   end
 
   # @return [true, false]
