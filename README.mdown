@@ -40,7 +40,7 @@ all partitions, and separate configurations which apply to each partition.
   Google Analytics) are disabled. Used on offline instances (conference
   laptops).
 
-* ** `local_proxy` ** – Uses Rack to set up a local proxy to ETengine at the URL
+* **`local_proxy`** – Uses Rack to set up a local proxy to ETengine at the URL
   specified by the "api_proxy_url" setting. This is used to provide access to
   ETengine for old browsers which do not support Cross-Origin Resource
   Sharing. It is not required in production, since Nginx will handle this more
