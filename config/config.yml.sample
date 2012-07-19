@@ -17,7 +17,7 @@ application:
     api_url:              'http://api.et-model.com/api/v2'
     hostname:             'mixer.et-model.com'
     local_proxy:          false
-    view_scenario_path:   'http://etm.et-model.com/scenarios'
+    view_scenario_path:   'http://et-model.com/scenarios'
   test:
     <<: *application
 
@@ -27,8 +27,8 @@ mixer:
   development: &mixer
     default_locale:       'en'
     hostname:             'mixer.mixer.dev'
-    max_total_cost:       200000000000
-    multilanguage:        true
+    max_total_cost:       205000000000
+    multilanguage:        false
     score:                false
     api_session_settings:
       area_code:          'nl'
