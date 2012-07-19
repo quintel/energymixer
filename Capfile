@@ -31,7 +31,7 @@ task :production do
   set :branch,           'production'
   set :db_name,          'mixer'
   set :db_user,          'mixer'
-  set :db_pass,          'I9tSJXG4RX98YMGW'
+  set :db_pass,          'sVJs1qvqGO36Dt9U'
 end
 
 # Symlink database.yml, etc.
