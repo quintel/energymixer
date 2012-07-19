@@ -7,8 +7,10 @@ containing a number of questions which may be answered by a user in order
 to design their scenario. Each question set has a `name` matching the
 subdomain to which it is deployed. For example:
 
-    "mixer"    => mixer.et-model.com
-    "gasmixer" => gasmixer.et-model.com
+```ruby
+"mixer"    #=> mixer.et-model.com
+"gasmixer" #=> gasmixer.et-model.com
+```
 
 Firstly, copy the sample configuration file "config/config.yml.sample" to
 "config/config.yml".
@@ -17,8 +19,10 @@ As EnergyMixer determines which question set is to be shown depending on the
 subdomain you use, you must set up Pow to mimic this behaviour. In the OS X
 terminal, go to the EnergyMixer directory then:
 
-    ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/mixer.mixer
-    ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/gasmixer.mixer
+```sh
+ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/mixer.mixer
+ln -s `pwd` ~/Library/Application\ Support/Pow/Hosts/gasmixer.mixer
+```
 
 The EnergyMixer will now be available at http://mixer.mixer.dev/ and
 http://gasmixer.mixer.dev/, with the "mixer" and "gasmixer" question sets
@@ -36,8 +40,8 @@ all partitions, and separate configurations which apply to each partition.
   Google Analytics) are disabled. Used on offline instances (conference
   laptops).
 
-* **`local_proxy`** - Uses Rack to set up a local proxy to ETengine at the URL
-  specified by the `api_proxy_url` setting. This is used to provide access to
+* ** `local_proxy` ** – Uses Rack to set up a local proxy to ETengine at the URL
+  specified by the "api_proxy_url" setting. This is used to provide access to
   ETengine for old browsers which do not support Cross-Origin Resource
   Sharing. It is not required in production, since Nginx will handle this more
   efficiently.
@@ -70,10 +74,12 @@ The application caches the current scenario. To clear the cache, log in to the
 admin section and click "Reset Cache". Alternatively, fire up the Rails
 console:
 
-    $ cd /u/apps/energymixer/current
-    $ bin/rails console production
-    irb(main):001:0> Rails.cache.clear
-    irb(main):001:0> exit
+```sh
+$ cd /u/apps/energymixer/current
+$ bin/rails console production
+irb(main):001:0> Rails.cache.clear
+irb(main):002:0> exit
+```
 
 The Scenario class has two methods related to this cache: `Scenario.current`
 which used the cached value if available and defers to `current!` otherise, and
