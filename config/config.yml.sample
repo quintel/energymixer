@@ -15,7 +15,6 @@ application:
   production:
     <<: *application
     api_url:              'http://api.et-model.com/api/v2'
-    hostname:             'mixer.et-model.com'
     local_proxy:          false
     view_scenario_path:   'http://et-model.com/scenarios'
   test:
