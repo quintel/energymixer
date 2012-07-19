@@ -15,7 +15,8 @@ describe MixerMailer do
           include ScenariosHelper
 
           let(:question_set) { create :question_set, name: partition }
-          let(:scenario)     { create :scenario, question_set: question_set }
+          let(:scenario)     { create :scenario, question_set: question_set,
+                                                 etm_scenario_id: 1337 }
           let(:mail)         { MixerMailer.thankyou(scenario) }
 
           it 'renders the headers' do
