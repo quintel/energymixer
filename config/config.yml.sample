@@ -33,6 +33,7 @@ mixer:
       source:             'EnergyMixer'
   production:
     <<: *mixer
+    hostname:             'mixer.et-model.com'
     google_analytics_key: 'UA-25446433-1'
   test:
     <<: *mixer
@@ -50,6 +51,7 @@ gasmixer:
       source:             'GasMixer'
   production:
     <<: *gasmixer
+    hostname:             'gasmixer.et-model.com'
     google_analytics_key: 'UA-4089905-6'
   test:
     <<: *gasmixer
