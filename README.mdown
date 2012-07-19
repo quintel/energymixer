@@ -41,6 +41,12 @@ all partitions, and separate configurations which apply to each partition.
 * **`host_name`** – This is important! Without a host name, the links in
   e-mails will not be correct.
 
+* **`locales`** – This should be an array of two-character locales which are
+  available to visitors. The first entry will be the default locale.
+
+  For example: `locales: ['nl', 'en']` indicates that Dutch and English
+  translations are available, and that Dutch should be the default.
+
 ### Deployment
 
 Currently we have three running instances of the application
