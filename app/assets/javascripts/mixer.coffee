@@ -22,7 +22,7 @@ class Mixer extends Backbone.Model
         @area_code   = data.scenario.area_code
         @end_year    = data.scenario.end_year
 
-        @chart.update_etm_link "#{globals.api.load_in_etm_url}/#{@scenario_id}/load?locale=nl"
+        @chart.update_etm_link "#{globals.api.load_in_etm}/#{@scenario_id}/load?locale=nl"
 
         # show data for the first time
         @make_request()
