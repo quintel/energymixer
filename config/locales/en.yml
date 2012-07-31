@@ -108,7 +108,7 @@ en:
     show_answers: "Show answers"
     by: "%{name}'s mix"
     by_age: "%{name}'s mix (%{age} years old)"
-    open_in_etm_link: "Do you want to open your settings in the Energy Transition Model? (if not, you will be directed to the homepage of the Energy Transition Model)"
+    open_in_etm_link: "Press 'OK' to open your own scenario in the Energy Transition Model (ETM), press 'Cancel' to be taken to the ETM homepage."
   warning: "Watch out!"
   and: and
   homepage: Home

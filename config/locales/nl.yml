@@ -108,7 +108,7 @@ nl:
     show_answers: "Toon antwoorden"
     by: "De mix van %{name}"
     by_age: "De mix van %{name} (%{age} jaar)"
-    open_in_etm_link: "Wil je meteen de gekozen instellingen zien in het Energietransitiemodel? (zo nee, dan ga je naar de homepage van het Energietransitiemodel)"
+    open_in_etm_link: "Klik op 'OK' op je eigen scenario te openen in het Energietransitiemodel (ETM). Klik op 'Cancel' om naar de homepage van het ETM te gaan."
   warning: "Let op!"
   and: and
   homepage: Home
