@@ -9,7 +9,9 @@ class Partition
     end
 
     def message
-      "No such partition is configured: #{ @name.inspect }"
+      "No such partition is configured: #{ @name.inspect }. "     \
+      "Please go to something like `http://mixer.mixer.dev` if "  \
+      "you are running this on your local box."
     end
   end
 
