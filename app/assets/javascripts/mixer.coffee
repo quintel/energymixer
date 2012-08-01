@@ -17,6 +17,8 @@ class Mixer extends Backbone.Model
     $.ajax
       url: "#{@base_path}/new.json"
       data: { settings : globals.api.session_settings }
+      type: 'GET'
+      dataType: 'json'
       success: (data) =>
         @scenario_id = data.scenario.id
         @area_code   = data.scenario.area_code
@@ -27,7 +29,7 @@ class Mixer extends Backbone.Model
         # show data for the first time
         @make_request()
 
-      error: (request, status, error) -> window.error(error)
+      error: (request, status, error) -> console.error(error)
     return @scenario_id
 
   # saving results to local variables in human readable format
@@ -60,8 +62,9 @@ class Mixer extends Backbone.Model
 
     @chart.block_interface()
     $.ajax
-      url: api_url,
-      data: request_parameters,
+      url: api_url
+      data: request_parameters
+      dataType: 'json'
       success: (data) =>
         @store_results(data.result)
         @chart.render()
