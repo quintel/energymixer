@@ -53,7 +53,8 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails', '~> 3.2.3'
-  gem 'therubyracer'
+  gem 'therubyracer', '0.11.0beta5'
+  gem 'libv8', '~> 3.11.8'
   gem 'uglifier'
   gem 'yui-compressor'
 end
