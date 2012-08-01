@@ -2,4 +2,4 @@
   = javascript_include_tag 'mixer_application'
 
   %script#global_json(type="text/javascript")
-    = "var globals = #{ global_json }".html_safe
+    = "window.globals = #{ global_json };".html_safe
