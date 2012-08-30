@@ -12,6 +12,7 @@ application:
     local_proxy:          true
     standalone:           false
     view_scenario_path:   'http://etmodel.dev/scenarios'
+    default_app:          'mixer'
   production:
     <<: *application
     api_url:              'http://api.et-model.com/api/v2'

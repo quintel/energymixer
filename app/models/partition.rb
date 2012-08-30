@@ -30,6 +30,9 @@ class Partition
   #   Raises if the configuration is missing one or more required keys.
   #
   def self.named(name)
+    if name.empty?
+      name = APP_CONFIG["default_app"]
+    end
     unless PARTITIONS.has_key?(name)
       raise NoSuchPartition.new(name)
     end
