@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 
 gem 'mysql2',       '~> 0.3.11'
 gem 'devise',       '~> 1.4.5'
