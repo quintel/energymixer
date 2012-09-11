@@ -52,7 +52,8 @@ module EnergyMixer
     config.cache_store = :mem_cache_store
 
     config.assets.enabled = true
-    config.assets.precompile += ['home.js', 'mixer_application.js', 'admin.css', 'ie.js', 'ie7.css', 'html5.js', 'compare_scenarios.js']
+    config.assets.precompile += ['home.js', 'mixer_application.js', 'admin.css',
+      'ie.js', 'ie7.css', 'html5.js', 'compare_scenarios.js', 'print.css']
     config.assets.css_compressor = :yui
     config.assets.js_compressor = :uglifier
     config.assets.compress = true
