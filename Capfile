@@ -11,7 +11,7 @@ load 'lib/capistrano/unicorn'
 set :application, 'mixer'
 
 set :scm, :git
-set :repository, "git@github.com:dennisschoenmakers/energymixer.git"
+set :repository, "git@github.com:quintel/energymixer.git"
 set :user, 'ubuntu'
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
