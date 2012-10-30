@@ -49,7 +49,7 @@ class Answer < ActiveRecord::Base
   end
 
   def text
-    answer = send "text_#{I18n.locale}" 
+    answer = send "text_#{I18n.locale}"
     answer = "No answer available in your language" if answer.nil?
     return answer
   end
@@ -69,5 +69,19 @@ class Answer < ActiveRecord::Base
   # page
   def votes_in_scenarios(scenarios)
     scenario_answers.for_scenarios(scenarios).count
+  end
+
+  # array of the slider ids affected
+  def slider_ids
+    @_slider_ids ||= inputs.map(&:slider_id)
+  end
+
+  # returns the sibling questions that set the same inputs
+  def questions_using_the_same_sliders
+    return false unless question
+    @sibling_questions ||= question.question_set.questions.where(['id != ?', question.id])
+    @sibling_questions.select do |q|
+      (q.answers.map(&:slider_ids).flatten & self.slider_ids).any?
+    end
   end
 end
