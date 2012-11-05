@@ -6,7 +6,10 @@ EnergyMixer::Application.routes.draw do
   namespace :admin do
     resources :answers, :only => [:edit, :update, :show, :destroy]
 
-    resources :questions, :popups, :question_sets
+    resources :questions, :popups
+    resources :question_sets do
+      get :conflicts, :on => :member
+    end
     resources :dashboard_items
     resources :scenarios do
       get :stats, :on => :collection

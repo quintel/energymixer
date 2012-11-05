@@ -1,0 +1,22 @@
+%h2 Question set possible conflicts
+
+%ul
+  - @question_set.questions.ordered.each do |q|
+    %li
+      %span.question
+        = link_to q.id, edit_admin_question_path(q)
+        = q.text
+      %ul.answers
+        - q.answers.ordered.each do |a|
+          %li
+            = link_to a.id, edit_admin_answer_path(a)
+            = a.text
+            %ul.conflicts
+              - a.answers_using_the_same_sliders.each do |n|
+                %li
+                  = link_to edit_admin_answer_path(n) do
+                    = n.question_id
+                    \-
+                    = n.id
+                    %strong= n.question.text
+                    = n.text
