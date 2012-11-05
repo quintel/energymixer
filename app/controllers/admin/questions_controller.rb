@@ -1,6 +1,6 @@
 class Admin::QuestionsController < AdminController
   before_filter :find_question, :only => [:show, :edit, :update, :destroy]
-  
+
   def index
     @questions = question_set.questions.ordered.all
   end
@@ -39,10 +39,10 @@ class Admin::QuestionsController < AdminController
     @question.destroy
     redirect_to(admin_questions_url, :notice => 'Question deleted')
   end
-  
+
   private
-  
+
     def find_question
-      @question = question_set.questions.find(params[:id])
+      @question = Question.find(params[:id])
     end
 end
