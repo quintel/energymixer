@@ -18,6 +18,8 @@
         %td= s.end_year
         %td
           = question_set_host_links(s)
+          \-
+          = link_to 'conflicts', conflicts_admin_question_set_path(s)
         %td
           = link_to 'edit', edit_admin_question_set_path(s)
           = link_to 'delete', [:admin, s], :method => :delete, :confirm => 'Are you sure?'

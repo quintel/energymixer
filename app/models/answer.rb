@@ -84,4 +84,13 @@ class Answer < ActiveRecord::Base
       (q.answers.map(&:slider_ids).flatten & self.slider_ids).any?
     end
   end
+
+  # returns the answers (of other questions) that set the same inputs
+  def answers_using_the_same_sliders
+    return false unless question
+    @sibling_questions ||= question.question_set.questions.where(['id != ?', question.id])
+    @sibling_questions.map(&:answers).flatten.uniq.select do |a|
+      (a.slider_ids & self.slider_ids).any?
+    end
+  end
 end
