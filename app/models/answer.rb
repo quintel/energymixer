@@ -72,8 +72,8 @@ class Answer < ActiveRecord::Base
   end
 
   # array of the slider ids affected
-  def slider_ids
-    @_slider_ids ||= inputs.map(&:slider_id)
+  def slider_keys
+    @_slider_keys ||= inputs.map(&:key)
   end
 
   # returns the sibling questions that set the same inputs
@@ -81,7 +81,7 @@ class Answer < ActiveRecord::Base
     return false unless question
     @sibling_questions ||= question.question_set.questions.where(['id != ?', question.id])
     @sibling_questions.select do |q|
-      (q.answers.map(&:slider_ids).flatten & self.slider_ids).any?
+      (q.answers.map(&:slider_keys).flatten & self.slider_keys).any?
     end
   end
 
@@ -90,7 +90,7 @@ class Answer < ActiveRecord::Base
     return false unless question
     @sibling_questions ||= question.question_set.questions.where(['id != ?', question.id])
     @sibling_questions.map(&:answers).flatten.uniq.select do |a|
-      (a.slider_ids & self.slider_ids).any?
+      (a.slider_keys & self.slider_keys).any?
     end
   end
 end

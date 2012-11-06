@@ -5,6 +5,7 @@ class Admin::AnswersController < AdminController
   end
 
   def edit
+    @available_inputs = Input.available_inputs.values.sort
     4.times{ @answer.inputs.build }
   end
 
