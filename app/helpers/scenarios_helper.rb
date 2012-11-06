@@ -52,14 +52,14 @@ module ScenariosHelper
         a_id = a.id
         out[q_id][a_id] = {}
         a.inputs.each do |i|
-          out[q_id][a_id][i.slider_id] = i.value
+          out[q_id][a_id][i.key] = i.value
         end
       end
     end
 
     out
   end
-  
+
   def answers_conflicts_json
     return false unless @answers
     out = {}
@@ -78,7 +78,7 @@ module ScenariosHelper
 
     out
   end
-  
+
   def dashboard_steps_json
     out = {}
     partition.question_set.dashboard_items.ordered.each do |i|
@@ -87,16 +87,16 @@ module ScenariosHelper
 
     out
   end
-  
+
   def gquery_for_output(i)
     Scenario::Outputs[i]
   end
-  
+
   def set_class_for_output(gquery, value)
     item = partition.question_set.dashboard_items.where(gquery: gquery).first
     "#{gquery}_step_#{item.corresponding_step(value)}" if item.present?
   end
-  
+
   # Check graph.js for similar method
   def format_dashboard_value(gquery, value)
     return if value.nil? #cope with curren values nil on testing server
@@ -111,7 +111,7 @@ module ScenariosHelper
       value
     end
   end
-  
+
   # Accepts as parameter a Scenario object or the id string
   def scenario_in_etm_url(scenario_id, locale = 'nl')
     etm_path = APP_CONFIG['view_scenario_path'].chomp('/')
@@ -123,19 +123,19 @@ module ScenariosHelper
 
     "#{ etm_path }/#{ scenario_id }/load?locale=#{ locale }"
   end
-    
+
   def popup_json
     out = {}
     Popup.all.each {|p| out[p.code] = {title: p.title, body: p.body}}
     out
   end
-  
+
   # On the dashboard we want to know which scenario attribute corresponds to a key
   def output_for_dashboard_item(key)
     gquery = Scenario::DashboardTable[key]
     output = Scenario::Outputs.invert[gquery]
   end
-  
+
   def sortable(scenarios,methode,column, title = nil)
     title ||= column.titleize
     if(methode)
@@ -146,11 +146,11 @@ module ScenariosHelper
       link_to title, :sort => sort_column(column) + " "+ direction, :id => scenarios.map(&:id)
     end
   end
-  
-  private 
-  
+
+  private
+
   def sort_column(column)
     Scenario.column_names.include?(column) ? column : "name"
   end
-  
+
 end
