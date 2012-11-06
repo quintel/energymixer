@@ -7,24 +7,16 @@
 #  answer_id  :integer(4)
 #  created_at :datetime
 #  updated_at :datetime
-#  slider_id  :integer(4)
+#  key        :string
 #
 
 class Input < ActiveRecord::Base
   belongs_to :answer
 
-  validates :slider_id, :presence => true
+  validates :key, :presence => true
+  validates :value, :presence => true
 
-  attr_accessible :value, :slider_id, :key, :slider_name
-
-  def slider_name
-    self.class.available_inputs[slider_id] rescue nil
-  end
-  alias_method :slider, :slider_name
-
-  def slider_name=(s)
-    self.slider_id = self.class.available_inputs.invert[s]
-  end
+  attr_accessible :value, :key
 
   def self.available_inputs
     Rails.cache.fetch('available_inputs') do
