@@ -1,8 +1,3 @@
-:javascript
-  var input_keys = #{Input.available_inputs.map{|i| {:label => i[1]}}.to_json}
-  $(function(){
-    $("input.autocomplete").autocomplete({ source: input_keys });
-  });
 = simple_form_for [:admin, @answer] do |f|
   = f.input :text_nl
   = f.input :text_de
@@ -13,7 +8,7 @@
   = f.input :ordering
   = f.simple_fields_for :inputs do |i|
     = field_set_tag do
-      = i.input :slider_name, :as => :string, :input_html => { :class => 'autocomplete'}
+      = i.input :key, :as => :select, :collection => @available_inputs
       = i.label :value
       = i.text_field :value
       = i.check_box :_destroy unless i.object.new_record?
