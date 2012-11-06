@@ -8,29 +8,21 @@ class Mixer extends Backbone.Model
     @questions = new Questions({model: this})
     @score     = new ScoreBoard({model: this})
     @gqueries  = globals.gqueries
-    @base_path = @base_url() + "/api_scenarios"
     @score_enabled = globals.config.score_enabled
-    @fetch_scenario_id()
 
-  fetch_scenario_id: ->
-    return @scenario_id if @scenario_id
-    $.ajax
-      url: "#{@base_path}/new.json"
-      data: { settings : globals.api.session_settings }
-      type: 'GET'
-      dataType: 'json'
-      success: (data) =>
-        @scenario_id = data.scenario.id
-        @area_code   = data.scenario.area_code
-        @end_year    = data.scenario.end_year
+    @api = new ApiGateway
+      api_path:           globals.api.url
+      api_proxy_path:     globals.api.proxy_url
+      offline:            globals.disable_cors
+      # beforeLoading:      @showLoading
+      # afterLoading:       @hideLoading
+      source:             globals.api.session_settings.source
+      area_code:          globals.api.session_settings.area_code
+      end_year:           globals.api.session_settings.end_year
 
-        @chart.update_etm_link "#{globals.api.load_in_etm}/#{@scenario_id}/load?locale=nl"
-
-        # show data for the first time
-        @make_request()
-
-      error: (request, status, error) -> console.error(error)
-    return @scenario_id
+    @api.ensure_id().done (id) =>
+      @chart.update_etm_link "#{globals.api.load_in_etm}/#{id}/load?locale=nl"
+      @make_request()
 
   # saving results to local variables in human readable format
   # store data in hidden form inputs too
@@ -38,7 +30,7 @@ class Mixer extends Backbone.Model
     # let's store all values in the corresponding hidden inputs
     @gquery_results ||= {}
     for own key, raw_results of results
-      value = raw_results[1][1]
+      value = raw_results.future
       @gquery_results[key] = value
       $("input[type=hidden][data-label=#{key}]").val(value)
 
@@ -55,24 +47,18 @@ class Mixer extends Backbone.Model
 
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
-  make_request: ->
-    request_parameters = {result: @all_gqueries(), reset: 1}
-    request_parameters['input'] = @parameters unless $.isEmptyObject(@parameters)
-    api_url = "#{@base_path}/#{this.fetch_scenario_id()}.json"
-
-    @chart.block_interface()
-    $.ajax
-      url: api_url
-      data: request_parameters
-      dataType: 'json'
+  make_request: =>
+    @api.update
+      queries: @all_gqueries()
+      reset: 1
+      inputs: @parameters
       success: (data) =>
-        @store_results(data.result)
+        @store_results(data.results)
         @chart.render()
         @score.render()
       error: (data, error) =>
         @chart.unblock_interface()
         console.error(error)
-    return true
 
   # build parameters given user answers. The parameter values are defined in the
   # global answer hash.
@@ -102,11 +88,5 @@ class Mixer extends Backbone.Model
     @process_form()
     @make_request()
 
-  # returns the base API URL according to proxy and CORS support
-  base_url: ->
-    if jQuery.support.cors && !globals.api.disable_cors
-        globals.api.url
-    else
-        globals.api.proxy_url
 $ ->
   window.app = new Mixer
