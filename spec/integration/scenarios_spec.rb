@@ -8,7 +8,7 @@ feature 'A new scenario' do
 
   def global_json
     source = page.find('script#global_json').text
-    source = source.gsub("\nvar globals = ", '')
+    source = source.strip.gsub("window.globals = ", '').chomp(';')
 
     JSON.parse(source)
   end
