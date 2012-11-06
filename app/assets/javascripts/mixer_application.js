@@ -1,3 +1,4 @@
+//= require jquery.etmodel
 //= require questions
 //= require score_board
 //= require mixer
