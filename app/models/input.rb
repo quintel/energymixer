@@ -29,7 +29,7 @@ class Input < ActiveRecord::Base
   def self.available_inputs
     Rails.cache.fetch('available_inputs') do
       hash = {}
-      Api::Input.all.sort_by(&:key).each{|i| hash[i.id] = i.key}
+      Api::Input.all(:from => :list).sort_by(&:key).each{|i| hash[i.id] = i.key}
       hash
     end
   end
