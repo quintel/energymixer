@@ -24,12 +24,5 @@
               %li
                 - unless @answer.question_id == q.id
                   = check_box_tag("answer[conflicting_answer_ids][]", a.id, @answer.conflicts_with?(a))
-                - others = a.questions_using_the_same_sliders
-                %span{:class => others.any? && 'red'}=a.text
-                - if others.any?
-                  %ul
-                    - others.each do |q|
-                      %li
-                        Possible conflict with
-                        = link_to q.text, edit_admin_question_path(q)
+                %span=a.text
   = f.button :submit
