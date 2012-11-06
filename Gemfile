@@ -16,7 +16,7 @@ gem 'haml',   '~> 3.1.4'
 gem 'tabs_on_rails'
 gem 'memcache-client'
 gem 'jbuilder'
-
+gem "jquery-etmodel-rails", '~> 0.3', :github => "quintel/etplugin"
 gem 'capistrano'
 
 group :development, :test do
