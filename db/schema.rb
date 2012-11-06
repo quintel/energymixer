@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707154724) do
+ActiveRecord::Schema.define(:version => 20121106145448) do
 
   create_table "answer_conflicts", :force => true do |t|
     t.integer "answer_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20120707154724) do
     t.integer  "answer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "slider_id"
+    t.string   "key"
   end
 
   add_index "inputs", ["answer_id"], :name => "index_inputs_on_answer_id"
