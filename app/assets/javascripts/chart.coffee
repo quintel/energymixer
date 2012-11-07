@@ -50,11 +50,11 @@ class @Chart extends Backbone.View
     switch key
       when "mixer_reduction_of_co2_emissions_versus_1990"
         out = "+" if (value > 0)
-        out += sprintf("%.1f", value * 100) + "%"
+        out += "#{(value * 100).toFixed(1)}%"
       when "mixer_bio_footprint"
-        out = sprintf("%.2f", value) + "xNL"
+        out = "#{value.toFixed(2)}xNL"
       when "mixer_renewability", "mixer_net_energy_import"
-        out = sprintf("%.1f", value * 100) + "%"
+        out = "#{(value * 100).toFixed(1)}%"
       else
         out = value
     return out
@@ -82,7 +82,7 @@ class @Chart extends Backbone.View
       @_update_legend_item(code, ratio)
 
     # and top counter
-    $(".chart header span.total_amount").html(sprintf("%.1f" ,current_sum / 1000000000))
+    $(".chart header span.total_amount").html((current_sum / 1000000000).toFixed(1))
 
     @unblock_interface()
 

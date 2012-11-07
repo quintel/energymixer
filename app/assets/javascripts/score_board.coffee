@@ -21,7 +21,7 @@ class @ScoreBoard extends Backbone.View
 
   events:
     "click #score" : "toggle_score"
-  
+
   update_values: (gqueries) ->
     for own key, values of @values
       v = gqueries[key]
@@ -58,7 +58,7 @@ class @ScoreBoard extends Backbone.View
     score = (v.mark - v.current) * 100
     score = 0 if (score < 0)
     score
-  
+
   total_score: ->
     @co2_score() +
     @renewability_score() +
@@ -70,12 +70,12 @@ class @ScoreBoard extends Backbone.View
     for own key, value of @values
       return false if (value.mark == null || value.current == null)
 
-    @score = parseInt(@total_score())
-    $(".score_details table .cost").html(sprintf("%.2f", @costs_score()))
-    $(".score_details table .co2").html(sprintf("%.2f", @co2_score()))
-    $(".score_details table .renewables").html(sprintf("%.2f", @renewability_score()))
-    $(".score_details table .areafp").html(sprintf("%.2f", @footprint_score()))
-    $(".score_details table .import").html(sprintf("%.2f", @dependence_score()))
+    @score = +@total_score()
+    $(".score_details table .cost").html @costs_score().toFixed(2)
+    $(".score_details table .co2").html @co2_score().toFixed(2)
+    $(".score_details table .renewables").html @renewability_score().toFixed(2)
+    $(".score_details table .areafp").html @footprint_score().toFixed(2)
+    $(".score_details table .import").html @dependence_score().toFixed(2)
     $("#score .value").html(@score)
     $("input#scenario_score").val(@score)
     $(".score_details .explanation").hide() if !@should_show_score_explanation()
