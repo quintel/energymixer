@@ -171,8 +171,8 @@ feature 'A new scenario' do
 
     page.should have_css('#user_chart header', text: '2041')
 
-    page.evaluate_script('window.app.end_year').should eql(2041)
-    page.evaluate_script('window.app.area_code').should eql('de')
+    page.evaluate_script('window.app.api.scenario.end_year').should eql(2041)
+    page.evaluate_script('window.app.api.scenario.area_code').should eql('de')
   end
 
   # --------------------------------------------------------------------------

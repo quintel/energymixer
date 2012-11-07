@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/quintel/etplugin.git
+  revision: a8986a20164ba0d75959b9c6ea68a84ae80c20c1
+  specs:
+    jquery-etmodel-rails (0.3)
+      railties (>= 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -270,6 +277,7 @@ DEPENDENCIES
   hirb
   httparty (~> 0.7.4)
   jbuilder
+  jquery-etmodel-rails (~> 0.3)!
   jquery-rails (~> 1.0.19)
   kaminari (~> 0.13.0)
   libv8 (~> 3.11.8)
