@@ -2,7 +2,7 @@ namespace :scenarios do
   desc 'Creates average scenarios'
   task :create_average => :environment do
     Scenario.averages.destroy_all
-    
+
     [
       {:title => "< 19 jaar",      :range => 1..19},
       {:title => "20 tot 29 jaar", :range => 20..29},
@@ -22,16 +22,16 @@ namespace :scenarios do
         sym = "output_#{i}".to_sym
         avg = records.average(sym)
         s[sym] = avg
-      end    
+      end
       s.save
     end
   end
-  
+
   desc "Clear cache"
   task :clear_cache => :environment do
     Rails.cache.clear
   end
-  
+
   desc "Saves current scenario as featured"
   task :create_current => :environment do
     title = Scenario::CurrentTitle
@@ -41,5 +41,38 @@ namespace :scenarios do
     s.title = title
     s.featured = true
     s.save!
+  end
+
+  desc "output CSV files"
+  task :csv => :environment do
+    require 'csv'
+    QuestionSet.all.each do |set|
+      puts "* Processing question set ##{set.id} - #{set.name}"
+      questions = set.questions.enabled.ordered
+      CSV.open("#{set.name}.csv", "wb") do |csv|
+        csv << (['user', 'email', 'age', 'title'] + questions.map{|q| ['', q.text_nl]}).flatten
+        set.scenarios.each do |s|
+          line = [
+            s.name,
+            s.email,
+            s.age,
+            s.title
+          ]
+
+          questions.each do |q|
+            a = s.answers.find_by_question_id(q.id)
+            if a && a.answer
+              line << a.answer_id
+              line << a.answer.text_nl
+            else
+              line << ''
+              line << ''
+            end
+          end
+
+          csv << line
+        end
+      end
+    end
   end
 end
