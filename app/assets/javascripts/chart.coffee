@@ -59,14 +59,14 @@ class @Chart extends Backbone.View
         out = value
     return out
 
-  update_bar_chart: ->
+  update_bar_chart: =>
     current_sum = @model.gquery_results["mixer_total_costs"]
 
     # main chart
     chart_max_height = 360
     max_amount = globals.chart.max_amount
     current_chart_height = Math.sqrt(current_sum / max_amount) * chart_max_height
-    for own code, gquery of @model.gqueries.primary
+    for code, gquery of @model.gqueries.primary
       ratio = @model.gquery_results[gquery]
       new_height = ratio * current_chart_height
       @_animate_chart_item(code, new_height)
@@ -75,14 +75,16 @@ class @Chart extends Backbone.View
     # renewable subchart
     chart_max_height = 160
     total_renewables_ratio = @model.gquery_results.mixer_renewability
-    for own code, gquery of @model.gqueries.secondary
+    for code, gquery of @model.gqueries.secondary
       ratio = @model.gquery_results[gquery]
       new_height = Math.round(ratio / total_renewables_ratio * chart_max_height)
       @_animate_chart_item(code, new_height)
       @_update_legend_item(code, ratio)
 
-    # and top counter
-    $(".chart header span.total_amount").html((current_sum / 1000000000).toFixed(1))
+    # and top counter. IE8 doesn't always update it or does it with a 10 sec
+    # delay. Don't ask me why.
+    tot = (current_sum / 1000000000).toFixed(1)
+    $("header .total_amount").html(tot)
 
     @unblock_interface()
 
