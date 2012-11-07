@@ -64,7 +64,7 @@ class Mixer extends Backbone.Model
   # global answer hash.
   build_parameters: ->
     @parameters = {}
-    for own index, item of @user_answers
+    for item in @user_answers
       question_id = item[0]
       answer_id   = item[1]
       # globals.answers is defined on the view!
@@ -78,7 +78,7 @@ class Mixer extends Backbone.Model
     for elem in $("div.question ul.answers input:checked")
       obj = $(elem)
       question_id = obj.data('question_id')
-      @user_answers.push([question_id, parseInt(obj.val())])
+      @user_answers.push([question_id, +obj.val()])
     @build_parameters()
     @parameters
 

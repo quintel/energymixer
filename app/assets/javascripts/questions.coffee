@@ -16,7 +16,7 @@ class @Questions extends Backbone.View
   el: 'body'
 
   events:
-    "change input[type='radio']" : "select_answer"
+    "click input[type='radio']"  : "select_answer"
     "submit form"                : "submit_form"
     "click #next_question"       : "_goto_next_question"
     "click #prev_question"       : "_goto_prev_question"
