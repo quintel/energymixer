@@ -42,10 +42,9 @@
           - if a.inputs.any?
             %a{ :href => '#', :onclick => '$(this).parent().find("table").toggle(); return false;' } Inputs
             %table.small.hidden
-              - a.inputs.sort_by(&:slider_id).each do |i|
+              - a.inputs.sort_by(&:key).each do |i|
                 %tr
-                  %td= i.slider
-                  %td= "##{i.slider_id} "
+                  %td= i.key
                   %td= i.value
         %td
           - if a.conflicting_answers.any?

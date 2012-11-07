@@ -1,3 +1,5 @@
+//= require jquery.ajaxQueue
+//= require jquery.etmodel
 //= require questions
 //= require score_board
 //= require mixer
