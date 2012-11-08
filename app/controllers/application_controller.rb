@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     :set_locale, :check_touchsceen, :append_theme_path
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+  rescue_from Partition::NoSuchPartition, :with => :partition_not_found
 
   protected
 
@@ -36,6 +37,10 @@ class ApplicationController < ActionController::Base
     redirect_to :back
   rescue
     redirect_to root_path
+  end
+
+  def partition_not_found
+    render :text => 'Bad partition, please check the URL'
   end
 
   def default_locale
