@@ -84,6 +84,7 @@ Spork.prefork do
     Capybara.javascript_driver = :webkit
     Capybara.server_port = '54163'
     Capybara.app_host    = 'http://gasmixer.mixer.dev:54163'
+    Capybara.default_wait_time = 5
 
   end
 end
