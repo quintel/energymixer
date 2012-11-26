@@ -115,10 +115,8 @@ class ApiClient
   end
 
   def api_session_key!
-    response = self.class.get("/api_scenarios/new.json")
-
-    scenario_data = response['scenario'] || response['api_scenario']
-    scenario_data['id'] || scenario_data['api_session_key']
+    response = self.class.post("/api/v3/scenarios.json", :query => {:source => 'Mixer'})
+    response['id']
   rescue
     nil
   end
@@ -126,12 +124,13 @@ class ApiClient
   private
 
   def query(gqueries)
-    url   = "/api_scenarios/#{api_session_key}.json"
-    query = { result: gqueries, reset: 1 }
+    url   = "/api/v3/scenarios/#{api_session_key}.json"
+    query = { gqueries: gqueries, reset: 1 }
 
-    response = self.class.get(url, :query => query)
+    response = self.class.put(url, :query => query)
     out = {}
-    response["result"].each_pair{|k,v| out[k] = v[0][1]}
+    # We're only interested in present values here
+    response["gqueries"].each_pair{|k,v| out[k] = v['present']}
     out
   rescue
     nil
