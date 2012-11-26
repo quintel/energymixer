@@ -3,12 +3,12 @@ class Home extends Backbone.Model
     @shares = window.globals.carriers
 
   price: =>
-    current_sector = this.get("current_sector")
+    current_sector = @get("current_sector")
     if current_sector
       amount = @shares.sectors[current_sector].total * @shares.total.amount
     else
       amount = @shares.total.amount
-    sprintf("%.1f", amount / 1000000000)
+    (amount / 1000000000).toFixed(1)
 
 class HomeView extends Backbone.View
   initialize: ->
