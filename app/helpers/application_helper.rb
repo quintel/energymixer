@@ -27,7 +27,7 @@ module ApplicationHelper
     return nil unless partition.multi_language?
 
     others = partition.other_locales(I18n.locale)
-    links  = others.map { |lang| link_to h(lang.to_s.upcase), locale: lang }
+    links  = others.map { |lang| link_to image_tag("icons/#{lang}.png"), locale: lang }
 
     links.join("\n").html_safe
   end
