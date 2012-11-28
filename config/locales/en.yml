@@ -15,14 +15,14 @@ en:
       text: "The %{app_name} is an online tool for learning more about how energy will be produced and used in the future. By answering questions about your ideas for the future of energy, you can observe the consequences of you choices on prices, renewability, and availability."
     intro:
       title: Dutch energy demand in 2011
-      text: "In the Netherlands, almost 92% of all energy is supplied by oil, natural gas, and coal. Our transport sector runs almost entirely on oil. Heating and electricity for our houses mostly come from natural gas and coal. Do we want it to stay that way? What do you think the Dutch Energy Mix will look like in %{end_year}? Use the %{app_name} to create your own Energy Mix, based on the same quantitative model used by policy-makers."
+      text: "In the Netherlands, almost 92% of all energy is supplied by oil, natural gas and coal. Our transport sector runs almost entirely on oil. Heating and electricity for our houses mostly come from natural gas and coal. Do we want it to stay that way? What do you think the Dutch Energy Mix will look like in %{end_year}? Use the %{app_name} to create your own Energy Mix, based on the same quantitative model used by policy-makers."
     chart:
       header:
         title: Energy Mix 2011
         costs: "Costs &euro; <span class='amount'>%{amount}</span> Billion"
     popups:
-      buildings: "More than 59% of the energy used in homes, schools, and offices is spent on heating or cooling. In houses, nearly 20% of energy is used by electrical appliances; while in offices this figure is 40%. Will we still use this much energy in %{end_year}?"
-      agriculture: "Agriculture in the Netherlands uses relatively little energy directly, but greenhouses are an exception. In fact, approximately 80% of energy used by agriculture is used in green houses! Can we change that by %{end_year}? We disregard energy used in the production of animal feeds imported from abroad."
+      buildings: "More than 59% of the energy used in homes, schools and offices is spent on heating or cooling. In houses, nearly 20% of energy is used by electrical appliances; while in offices this figure is 40%. Will we still use this much energy in %{end_year}?"
+      agriculture: "Agriculture in the Netherlands uses relatively little energy directly, but greenhouses are an exception. In fact, approximately 80% of energy used by agriculture is used in greenhouses! Can we change that by %{end_year}? We disregard energy used in the production of animal feeds imported from abroad."
       transport: "Transport by car, truck, train, or inland navigation is energy intensive. The %{app_name} limits itself to domestic transport. If we also include energy demand of international flights and shipping, the pecentage of energy used by transport becomes much higher. Will there be smarter options for transportation in %{end_year}?"
       industry: "Industry is the largest user of oil, gas, and coal. Industry also provides the basis for our economy, while consuming precious natural resources. How will energy demand in industry change by %{end_year}?"
   sectors:
