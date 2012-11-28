@@ -4,7 +4,7 @@ nl:
     old_browser: "Sorry de door jou gebruikte browser wordt niet (goed) ondersteund door de Energy Mixer. Kies een andere browser of upgrade je huidige browser voor een optimaal gebruik."
   chart:
     header:
-      total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> Miljard"
+      total_costs: "Kosten &euro; <span class='total_amount'>%{amount}</span> miljard"
       scenario_name: "%{name} - Energy Mix van %{year}"
       your_scenario: "Jouw Energy Mix van %{year}"
     legend: Legenda
@@ -19,7 +19,7 @@ nl:
     chart:
       header:
         title: Energy Mix 2011
-        costs: "Kosten &euro; <span class='amount'>%{amount}</span> Miljard"
+        costs: "Kosten &euro; <span class='amount'>%{amount}</span> miljard"
     popups:
       buildings: "Ruim 59% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit wel 40%. Hebben we die energie ook nog nodig in %{end_year}?"
       agriculture: "Het directe energiegebruik van de akkerbouw en veeteelt in Nederland is relatief laag. We tellen dan het energiegebruik voor veevoeders uit het buitenland niet mee. De Nederlandse glastuinbouw heeft veel energie nodig. Kassen verbruiken ongeveer 80% van de energie in de Nederlandse landbouw. Kan dit ook anders in %{end_year}?"
@@ -48,7 +48,7 @@ nl:
       text: Hoeveel landbouwoppervlak is er nodig als gevolg van je keuzes? Biomassa moet vaak geteeld worden. Hier zie je hoeveel keer het Nederlandse landbouwareaal nodig is om dat te doen.
     energy_import:
       title: Import afhankelijkheid
-      text: "Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteert wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe."
+      text: "Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteerd wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe."
   questions:
     info: Info
   scenario_steps:
