@@ -13,7 +13,7 @@ class Mixer extends Backbone.Model
     @api = new ApiGateway
       api_path:           globals.api.url
       api_proxy_path:     globals.api.proxy_url
-      offline:            globals.disable_cors
+      offline:            globals.api.disable_cors
       # beforeLoading:      @showLoading
       # afterLoading:       @hideLoading
       source:             globals.api.session_settings.source
