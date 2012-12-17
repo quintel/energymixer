@@ -70,7 +70,7 @@ class @ScoreBoard extends Backbone.View
     for own key, value of @values
       return false if (value.mark == null || value.current == null)
 
-    @score = +@total_score()
+    @score = +@total_score().toFixed()
     $(".score_details table .cost").html @costs_score().toFixed(2)
     $(".score_details table .co2").html @co2_score().toFixed(2)
     $(".score_details table .renewables").html @renewability_score().toFixed(2)
