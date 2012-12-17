@@ -6,7 +6,7 @@ application:
   development: &application
     airbrake_key:         false
     api_proxy_url:        '/ete_proxy'
-    api_url:              'http://etengine.dev/api/v2'
+    api_url:              'http://etengine.dev'
     disable_cors:         false
     geolocation_enabled:  false
     local_proxy:          true
@@ -15,7 +15,7 @@ application:
     default_app:          'mixer'
   production:
     <<: *application
-    api_url:              'http://api.et-model.com/api/v2'
+    api_url:              'http://et-engine.com'
     local_proxy:          false
     view_scenario_path:   'http://et-model.com/scenarios'
   test:
