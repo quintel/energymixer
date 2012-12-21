@@ -25,7 +25,7 @@ database_config = File.expand_path('../config/database.yml',__FILE__)
 set :local_db_name, YAML.load_file(database_config)["development"]["database"]
 
 task :production do
-  server 'gasmixer.et-model.com', :web, :app, :db, primary: true
+  server 'mixer.et-model.com', :web, :app, :db, primary: true
   set :application_name, 'energymixer'
   set :deploy_to,        '/u/apps/energymixer'
   set :branch,           'production'
