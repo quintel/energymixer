@@ -86,6 +86,7 @@ class Scenario < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :question_set_id, :presence => true
+  validates :etm_scenario_id, presence: true
   # validates :email, :presence => true
   # disabled, client_side_validations has some issues with this validation
   # validates :age,   :numericality => true, :allow_blank => true

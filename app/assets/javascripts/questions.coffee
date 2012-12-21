@@ -81,7 +81,7 @@ class @Questions extends Backbone.View
 
   submit_form: =>
     # update the scenario id hidden field
-    $("#scenario_etm_scenario_id").val(@model.scenario_id)
+    $("#scenario_etm_scenario_id").val(@model.api.scenario_id)
     @store_geolocation() if globals.config.geolocation_enabled
     @track_event('mixer', "submits form")
 
