@@ -5,6 +5,7 @@ FactoryGirl.define do
     f.email 'test@quintel.com'
     f.age 99
     f.featured false
+    f.etm_scenario_id 1337
     f.public true
     f.output_0 1.00
     f.output_1 1.00
