@@ -127,7 +127,7 @@ class ApiClient
     url   = "/api/v3/scenarios/#{api_session_key}.json"
     query = { gqueries: gqueries, reset: 1 }
 
-    response = self.class.put(url, :query => query)
+    response = self.class.put(url, :query => query, headers: { "Content-length" => '0' } )
     out = {}
     # We're only interested in present values here
     response["gqueries"].each_pair{|k,v| out[k] = v['present']}
