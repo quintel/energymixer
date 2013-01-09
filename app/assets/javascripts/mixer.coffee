@@ -48,6 +48,7 @@ class Mixer extends Backbone.Model
   # sends the current parameters to the engine, stores
   # the results and triggers the interface update
   make_request: =>
+    @chart.block_interface()
     @api.update
       queries: @all_gqueries()
       reset: 1
