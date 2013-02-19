@@ -51,7 +51,7 @@ class Mixer extends Backbone.Model
     @chart.block_interface()
     @api.update
       queries: @all_gqueries()
-      reset: 1
+      reset: true
       inputs: @parameters
       success: (data) =>
         @store_results(data.results)
