@@ -16,17 +16,17 @@ class @Questions extends Backbone.View
   el: 'body'
 
   events:
-    "click input[type='radio']"  : "select_answer"
-    "submit form"                : "submit_form"
-    "click #next_question"       : "_goto_next_question"
-    "click #prev_question"       : "_goto_prev_question"
-    "click #questions nav#up a"  : "open_question"
-    "click #admin_menu a"        : "open_question"
+    "click input[type='radio']"          : "select_answer"
+    "submit form"                        : "submit_form"
+    "click #next_question"               : "goto_next_question"
+    "click #prev_question"               : "goto_prev_question"
+    "click #questions nav#up a"          : "open_question"
+    "click #admin_menu a"                : "open_question"
     "click .question a.show_info"        : "show_question_info_box"
     "click .question a.close_info_popup" : "hide_question_info_box"
-    "mouseenter li.answer em"  : "show_tooltip"
-    "mouseleave  li.answer em" : "hide_tooltip"
-    "mousemove li.answer em"   : "move_tooltip"
+    "mouseenter li.answer em"            : "show_tooltip"
+    "mouseleave  li.answer em"           : "hide_tooltip"
+    "mousemove li.answer em"             : "move_tooltip"
 
   # Callbacks
   #
@@ -156,7 +156,7 @@ class @Questions extends Backbone.View
   # interface methods
   #
 
-  _goto_next_question: (e) =>
+  goto_next_question: (e) =>
     e.preventDefault()
     if @current_question_was_answered()
       @current_question++
@@ -164,7 +164,7 @@ class @Questions extends Backbone.View
       @current_question = last_question if @current_question > last_question
       @show_right_question()
 
-  _goto_prev_question: (e) =>
+  goto_prev_question: (e) =>
     e.preventDefault()
     @current_question--
     @current_question = 1 if @current_question < 1
@@ -177,7 +177,7 @@ class @Questions extends Backbone.View
   enable_prev_link: ->
     $("#previous_question").removeClass('link_disabled')
     $("#previous_question").unbind('click')
-    $("#previous_question").bind 'click', @_goto_prev_question
+    $("#previous_question").bind 'click', @goto_prev_question
 
   disable_next_link: ->
     $("#next_question").addClass('link_disabled')
@@ -186,7 +186,7 @@ class @Questions extends Backbone.View
   enable_next_link: ->
     $("#next_question").removeClass('link_disabled')
     $("#next_question").unbind('click')
-    $("#next_question").bind 'click', @_goto_next_question
+    $("#next_question").bind 'click', @goto_next_question
 
 
   disable_all_question_links: =>
