@@ -19,7 +19,7 @@ class @Questions extends Backbone.View
     "click input[type='radio']"          : "select_answer"
     "submit form"                        : "submit_form"
     "click #next_question"               : "goto_next_question"
-    "click #prev_question"               : "goto_prev_question"
+    "click #previous_question"           : "goto_prev_question"
     "click #questions nav#up a"          : "open_question"
     "click #admin_menu a"                : "open_question"
     "click .question a.show_info"        : "show_question_info_box"
@@ -106,9 +106,7 @@ class @Questions extends Backbone.View
   current_question_was_answered: ->
     @question_was_answered @current_question
 
-  count_questions: ->
-    @num_questions = @num_questions || $(".question").size()
-    @num_questions
+  count_questions: => @num_questions?= $(".question").size()
 
   currently_selected_answers: ->
     answers = []
@@ -160,7 +158,7 @@ class @Questions extends Backbone.View
     e.preventDefault()
     if @current_question_was_answered()
       @current_question++
-      last_question = this.count_questions()
+      last_question = @count_questions()
       @current_question = last_question if @current_question > last_question
       @show_right_question()
 
@@ -170,24 +168,13 @@ class @Questions extends Backbone.View
     @current_question = 1 if @current_question < 1
     @show_right_question()
 
-  disable_prev_link: ->
-    $("#previous_question").addClass('link_disabled')
-    $("#previous_question").unbind('click')
+  disable_prev_link: -> $("#previous_question").addClass('link_disabled')
 
-  enable_prev_link: ->
-    $("#previous_question").removeClass('link_disabled')
-    $("#previous_question").unbind('click')
-    $("#previous_question").bind 'click', @goto_prev_question
+  enable_prev_link: -> $("#previous_question").removeClass('link_disabled')
 
-  disable_next_link: ->
-    $("#next_question").addClass('link_disabled')
-    $("#next_question").unbind('click')
+  disable_next_link: -> $("#next_question").addClass('link_disabled')
 
-  enable_next_link: ->
-    $("#next_question").removeClass('link_disabled')
-    $("#next_question").unbind('click')
-    $("#next_question").bind 'click', @goto_next_question
-
+  enable_next_link: -> $("#next_question").removeClass('link_disabled')
 
   disable_all_question_links: =>
     @disable_next_link()
