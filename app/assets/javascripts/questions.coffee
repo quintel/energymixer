@@ -164,6 +164,9 @@ class @Questions extends Backbone.View
 
   goto_prev_question: (e) =>
     e.preventDefault()
+    # if score is enabled then the user shouldn't go back so easily
+    return false if @shouldnt_go_to_previous_question()
+
     @current_question--
     @current_question = 1 if @current_question < 1
     @show_right_question()
@@ -188,7 +191,7 @@ class @Questions extends Backbone.View
       @disable_prev_link()
     # We don't want the user to change his mind on the first two questions
     # to prevent score forging
-    else if @current_question <= 3 && @model.score_enabled
+    else if @shouldnt_go_to_previous_question()
       @disable_prev_link()
     else
       @enable_prev_link()
@@ -225,6 +228,11 @@ class @Questions extends Backbone.View
     navigator.geolocation.getCurrentPosition (pos) ->
       $("#scenario_longitude").val(pos.coords.longitude)
       $("#scenario_latitude").val(pos.coords.latitude)
+
+  # Score is calculated taking in to account the answers of the first three
+  # questions, so the user isn't allowed to change them.
+  shouldnt_go_to_previous_question: =>
+    @model.score_enabled && @current_question <= 3
 
   # utility methods
   #
