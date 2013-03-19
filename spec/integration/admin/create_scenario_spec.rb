@@ -14,7 +14,8 @@ feature 'Creating a scenario' do
     click_link 'Mixes'
     click_link 'New User Scenario'
 
-    fill_in 'Name', with: 'My First Scenario'
+    fill_in 'Name',         with: 'My First Scenario'
+    fill_in 'Etm scenario', with: '1'
 
     0.upto(12) { |number| fill_in "Output #{number}", with: number.to_s }
 
