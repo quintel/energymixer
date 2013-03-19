@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 gem 'mysql2',       '~> 0.3.11'
 gem 'devise',       '~> 1.4.5'
@@ -20,11 +20,15 @@ gem "jquery-etmodel-rails", '~> 0.3', :github => "quintel/etplugin"
 gem 'capistrano'
 
 group :development, :test do
-  gem 'rspec-rails',        '~> 2.11.0'
+  gem 'rspec-rails',        '~> 2.13.0'
   gem 'factory_girl_rails'
-  gem 'mocha',              '~> 0.10.0'
-  gem 'shoulda-matchers'
   gem 'pry'
+
+  gem "bourne", ">= 1.4.0"
+  # Use stable version when shoulda-matchers > 1.5.0 gets released
+  gem "shoulda-matchers", github: "thoughtbot/shoulda-matchers", branch: "dc-bourne-dependency", require: false
+  gem "mocha", ">= 0.13.3", require: false
+  # gem 'mocha',              '~> 0.10.0'
 end
 
 group :development do
