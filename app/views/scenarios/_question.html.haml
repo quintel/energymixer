@@ -6,7 +6,7 @@
     = link_to image_tag('icons/i.png'), '#', :class => "show_info"
     .information.shaded_gradient
       .close_button= link_to 'close', "#", :class => "close_info_popup"
-      %h3= t 'questions.info'
+      %h3= t 'info'
       .body
         = markdown(question_object.description)
   .number

@@ -49,8 +49,7 @@ en:
     energy_import:
       title: Import dependence
       text: "How much energy would the Netherlands import as a result of your choices here? This shows what percentage of energy used is imported after subtracting exported energy. Dutch gas reserves are steadily declining, leading to a rising dependence on imports."
-  questions:
-    info: Info
+  info: Info
   scenario_steps:
     total_amount:
       step_0: "This mix is cheaper than in 2011. A good thing, as we already spend so much on energy."
@@ -113,6 +112,7 @@ en:
   and: and
   homepage: Home
   mixer: Energy Mixer
+  questions: Energy Mixer
   current_scenario: Current scenario
   gasmixer: NRG-Discovery
   coal: Coal
