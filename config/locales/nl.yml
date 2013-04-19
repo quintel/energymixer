@@ -49,8 +49,7 @@ nl:
     energy_import:
       title: Import afhankelijkheid
       text: "Hoeveel energie importeert Nederland uit het buitenland als gevolg van je keuzes? Hier staat welk percentage van alle gebruikte energie er geïmporteerd wordt, na aftrek van de hoeveelheid energie die Nederland exporteert. De Nederlandse gasvoorraden nemen af, en dus neemt de import geleidelijk aan toe."
-  questions:
-    info: Info
+  info: Info
   scenario_steps:
     total_amount:
       step_0: "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
@@ -113,6 +112,7 @@ nl:
   and: and
   homepage: Home
   mixer: Energy Mixer
+  questions: Energy Mixer
   current_scenario: Huidig scenario
   gasmixer: NRG-Discovery
   coal: Steenkool
