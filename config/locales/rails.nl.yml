@@ -21,18 +21,18 @@ nl:
       - :month
       - :year
 
-  time:
-    formats:
+  time: 
+    formats: 
       default: "%a %d %b %Y %H:%M:%S %Z"
       short: "%d %b %H:%M"
-      long: "%d %B %Y %H:%M"
+      long: "%d %B %Y %H:%M"            
       time: "%H:%M"
       only_second: "%S"
     am: "'s ochtends"
     pm: "'s middags"
 
-  support:
-    array:
+  support: 
+    array: 
       words_connector: ", "
       two_words_connector: " en "
       last_word_connector: " en "
@@ -96,37 +96,37 @@ nl:
     distance_in_words:
       half_a_minute: "een halve minuut"
       less_than_x_seconds:
-        one:   "minder dan één seconde"
+        one:   "minder dan \xC3\xA9\xC3\xA9n seconde"
         other: "minder dan %{count} seconden"
       x_seconds:
         one:   "1 seconde"
         other: "%{count} seconden"
       less_than_x_minutes:
-        one:   "minder dan één minuut"
+        one:   "minder dan \xC3\xA9\xC3\xA9n minuut"
         other: "minder dan %{count} minuten"
       x_minutes:
         one:   "1 minuut"
         other: "%{count} minuten"
       about_x_hours:
-        one:   "ongeveer één uur"
+        one:   "ongeveer \xC3\xA9\xC3\xA9n uur"
         other: "ongeveer %{count} uur"
       x_days:
         one:   "1 dag"
         other: "%{count} dagen"
-      about_x_months:
-        one: "ongeveer één maand"
+      about_x_months: 
+        one: "ongeveer \xC3\xA9\xC3\xA9n maand"
         other: "ongeveer %{count} maanden"
       x_months:
         one:   "1 maand"
         other: "%{count} maanden"
-      about_x_years:
-        one: "ongeveer één jaar"
+      about_x_years: 
+        one: "ongeveer \xC3\xA9\xC3\xA9n jaar"
         other: "ongeveer %{count} jaar"
-      over_x_years:
-        one: "meer dan één jaar"
+      over_x_years: 
+        one: "meer dan \xC3\xA9\xC3\xA9n jaar"
         other: "meer dan %{count} jaar"
       almost_x_years:
-        one:   "bijna één jaar"
+        one:   "bijna \xC3\xA9\xC3\xA9n jaar"
         other: "bijna %{count} jaar"
     prompts:
       year:   "jaar"
@@ -169,17 +169,18 @@ nl:
       odd: "moet oneven zijn"
       even: "moet even zijn"
 
-  errors:
-    template:
-      header:
-        one:    "%{model} niet opgeslagen: 1 fout gevonden"
-        other:  "%{model} niet opgeslagen: %{count} fouten gevonden"
-      body: "Controleer de volgende velden:"
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "%{model} niet opgeslagen: 1 fout gevonden"
+          other:  "%{model} niet opgeslagen: %{count} fouten gevonden"
+        body: "Controleer de volgende velden:"
 
-    messages:
-      taken: "is al in gebruik"
-      record_invalid: "Validatie mislukt: %{errors}"
-      <<: *errors_messages
+      messages:
+        taken: "is al in gebruik"
+        record_invalid: "Validatie mislukt: %{errors}"
+        <<: *errors_messages
 
-    full_messages:
-      format: "%{attribute}%{message}"
+      full_messages:
+        format: "%{attribute}%{message}"
