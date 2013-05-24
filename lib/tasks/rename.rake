@@ -1,40 +1,51 @@
 require 'csv'
 
-desc "Rename InputElement#key using CSV file specified by path=path/to/file."
+desc "Renames model attributes as specified in CSV file"
 task :rename => [:environment] do
 
-  file_path = ENV['path']
-  force   = ENV['force']
+  model_name = ENV['model'].to_s.classify
+  attribute  = ENV['attribute']
+  file_name  = ENV['file']
+  force      = ENV['force'] && ENV['force'].upcase == 'TRUE'
+  revert    = ENV['revert'] && ENV['reverse'].upcase == 'TRUE'
 
-  unless file_path
-    raise ArgumentError.new("ArgumentError: You should specify which `path`")
+  unless defined?(model_name)
+    raise "Invalid model: #{ model_name }"
   end
 
-  raise "#{ file_path } does not exist" unless File.exists?(file_path)
-
-  if force
-    puts "For real buddy..."
-  else
-    puts "Dry run... append force=true for the real thing."
+  unless model_name.constantize.new.respond_to?(attribute)
+    raise "Invalid attribute: #{ model_name } doesn't have #{ attribute } attribute"
   end
 
-  CSV.foreach(file_path) do |line|
+  raise "No such file: #{ file_name }" unless File.exists?(file_name)
 
-  old_value = line.first
-  new_value = line.last
-
-  ie = InputElement.find_by_key(old_value)
-
-  if ie
-    ie.key = new_value
-    ie.save! if force
-    puts "SUCCESS: Renamed InputElement from `#{ old_value }` to `#{ new_value }`"
-  else
-    puts "WARNING: No InputElement found with name `#{ old_value }`!"
+  changed = 0
+  CSV.foreach(file_name) do |line|
+    old_value, new_value = line
+    changed += 1 unless old_value == new_value
   end
 
+  unless force
+    puts "#{ changed } out of #{ CSV.read(file_name).count } listed instances of #{ model_name } will be changed"
+    exit
   end
-
-  puts "Done!"
-
+  
+  puts "Bulk update has started"
+  updated = 0
+  CSV.foreach(file_name) do |line|
+    old_value, new_value = line
+    
+    old_value, new_value = new_value, old_value if revert
+    
+    if old_value != new_value
+      instance = model_name.constantize.where(attribute.to_sym => old_value).first
+      if instance
+        instance.send("#{ attribute }=", new_value)
+        instance.save!
+        updated += 1
+      end
+      print '.'
+    end
+  end
+  puts "\n\nThe #{ attribute } attribute of #{ updated } instances of #{ model_name } has been updated"
 end
