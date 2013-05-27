@@ -4,6 +4,7 @@
     %p= t 'form.text'
     %h2= t 'form.fill_your_data'
     = scenario.error_messages
+    = scenario.hidden_field :accept_terms, value: '1'
     
     .item
       = scenario.label :name, t('form.name')
@@ -20,9 +21,6 @@
     .item
       = scenario.check_box :public
       = scenario.label :public, t('form.public'), :class => 'check_box'
-    .item
-      = scenario.check_box :accept_terms      
-      %label.check_box{:for => "scenario_accept_terms"}= raw t('form.acceptance')
     .item      
       = scenario.submit :value => t('form.submit')
       -# .item
