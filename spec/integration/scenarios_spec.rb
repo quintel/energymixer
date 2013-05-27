@@ -63,8 +63,6 @@ feature 'A new scenario' do
     fill_in 'Age',               with: '36'
     fill_in 'Name for this mix', with: 'Chang The World'
 
-    check 'I agree with the terms and conditions'
-
     click_on 'Save my mix'
 
     # --
