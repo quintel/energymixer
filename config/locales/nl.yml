@@ -115,6 +115,7 @@ nl:
   questions: Energy Mixer
   current_scenario: Huidig scenario
   gasmixer: NRG-Discovery
+  etmixer: ET-Mixer
   coal: Steenkool
   nuclear: Nucleair
   oil: Olie

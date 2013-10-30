@@ -56,3 +56,21 @@ gasmixer:
     google_analytics_key: 'UA-4089905-6'
   test:
     <<: *gasmixer
+
+# ETMIXER ----------------------------------------------------------------------
+
+etmixer:
+  development: &etmixer
+    locales:              ['nl', 'en']
+    hostname:             'etmixer.mixer.dev'
+    max_total_cost:       205000000000
+    score:                false
+    api_session_settings:
+      area_code:          'nl'
+      source:             'ETMixer'
+  production:
+    <<: *etmixer
+    hostname:             'etmixer.et-model.com'
+    google_analytics_key: 'UA-25446433-1'
+  test:
+    <<: *etmixer
