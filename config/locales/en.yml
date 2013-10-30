@@ -115,6 +115,7 @@ en:
   questions: Energy Mixer
   current_scenario: Current scenario
   gasmixer: NRG-Discovery
+  etmixer: ET-Mixer
   coal: Coal
   nuclear: Nuclear
   oil: Oil
