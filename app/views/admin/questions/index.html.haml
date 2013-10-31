@@ -12,7 +12,11 @@
         %td
           = link_to admin_question_path(question) do
             #{question.number}. #{question.text}
-        %td= question.enabled
+        %td
+          - if question.enabled
+            %span(style="color: green") Yes
+          - else
+            %span(style="color: #c04109") No
         %td
           = link_to 'Edit', edit_admin_question_path(question)
           = link_to 'Delete', admin_question_path(question), :data => { :confirm => 'Are you sure?' }, :method => :delete
