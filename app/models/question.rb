@@ -21,7 +21,7 @@ class Question < ActiveRecord::Base
 
   validates :text_nl, :presence => true
 
-  scope :ordered, order('ordering, id')
+  scope :ordered, order(['enabled DESC, ordering, id', true])
   scope :excluding, lambda {|ids| where('id NOT IN (?)', ids) }
   scope :enabled, where(:enabled => true)
 
