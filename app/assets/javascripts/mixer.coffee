@@ -19,6 +19,7 @@ class Mixer extends Backbone.Model
       source:             globals.api.session_settings.source
       area_code:          globals.api.session_settings.area_code
       end_year:           globals.api.session_settings.end_year
+      preset_scenario_id: globals.api.session_settings.preset_id
 
     @api.ensure_id().done (id) =>
       @chart.update_etm_link "#{globals.api.load_in_etm}/#{id}/load?locale=nl"

@@ -16,8 +16,8 @@
     %header.header_blue
       %strong= t 'home.chart.header.title'
       %br
-      = raw t 'home.chart.header.costs', :amount => number_with_precision(Scenario.current.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
-    = render :partial => 'chart', :locals => {:scenario => Scenario.current, :max_amount => 43_000_000_000}
+      = raw t 'home.chart.header.costs', :amount => number_with_precision(question_set.current_scenario.total_amount / 1_000_000_000, :precision => 1, :separator => ".")
+    = render :partial => 'chart', :locals => {:scenario => question_set.current_scenario, :max_amount => 43_000_000_000}
   #map
     #sector_icons
       .sector#icon_buildings{:rel => 'buildings'}

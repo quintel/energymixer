@@ -16,7 +16,7 @@
   %section#user_chart
     = render 'full_chart', :scenario => @scenario
   %section#current_chart.shaded_gradient
-    = render 'shaded_chart', :scenario => Scenario.current
+    = render 'shaded_chart', :scenario => question_set.current_scenario
 
   = render 'js_init'
 

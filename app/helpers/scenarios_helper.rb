@@ -4,7 +4,7 @@ module ScenariosHelper
       json.answers               answers_json
       json.answers_conflicts     answers_conflicts_json
       json.popups                popup_json
-      json.current_situation     Scenario.current.combined_carriers
+      json.current_situation     question_set.current_scenario.combined_carriers
       json.open_in_etm_link      t('scenario.open_in_etm_link')
 
       json.chart do |json|
@@ -34,6 +34,7 @@ module ScenariosHelper
           json.area_code         partition.api_settings[:area_code]
           json.source            partition.api_settings[:source]
           json.end_year          question_set.end_year
+          json.preset_id         question_set.preset_id
         end
       end
     end
