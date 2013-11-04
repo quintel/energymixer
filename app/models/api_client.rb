@@ -102,12 +102,7 @@ class ApiClient
   end
 
   def carrier_costs
-    b = Time.now
-    v = cache('carrier_costs', &method(:carrier_costs!))
-    a = Time.now
-
-    Rails.logger.info "!!! carrier_costs=#{a-b}s"
-    v
+    cache('carrier_costs', &method(:carrier_costs!))
   end
 
   def carrier_costs!
