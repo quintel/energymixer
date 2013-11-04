@@ -81,9 +81,9 @@ irb(main):001:0> Rails.cache.clear
 irb(main):002:0> exit
 ```
 
-The Scenario class has two methods related to this cache: `Scenario.current`
-which used the cached value if available and defers to `current!` otherise, and
-`Scenario.current!` which always forces a reload from ETengine.
+The QuestionSet class has a method related to this cache:
+`QuestionSet.current_scenario` which returns the cached value if available, and
+goes to ETEngine for the values if not.
 
 ### Themes
 

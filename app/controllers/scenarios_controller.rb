@@ -2,7 +2,7 @@ class ScenariosController < ApplicationController
   before_filter :find_scenario, :only => [:show, :answers]
 
   def new
-    @scenario = Scenario.new(Scenario.current.attributes)
+    @scenario = Scenario.new(question_set.current_scenario.attributes)
     @scenario.year = question_set.try(:end_year)
 
     @questions    = question_set.questions.enabled.ordered rescue []

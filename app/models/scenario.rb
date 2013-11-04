@@ -138,22 +138,18 @@ class Scenario < ActiveRecord::Base
     val
   end
 
-  # forces reload
-  def self.current!
-    current(true)
-  end
+  # Given results from ETEngine, converts the query keys to those mapped in
+  # Scenario::Outputs.
+  #
+  # Returns a hash.
+  def self.queries_to_outputs(queries)
+    attrs = {}
 
-  # store in cache when needed
-  def self.current(force = false)
-    Rails.cache.delete('current_scenario') if force
-    @current_scenario = Rails.cache.fetch('current_scenario') do
-      c = ApiClient.new.current_situation
-      attrs = {:year => 2011}
-      Scenario::Outputs.each_pair {|output, gquery| attrs[output] = c[gquery]}
-      new(attrs)
+    Scenario::Outputs.each_pair do |output, gquery|
+      attrs[output] = queries[gquery]
     end
-  rescue # some acceptable values, should the api request fail
-    @current_scenario = self.acceptable_scenario
+
+    attrs
   end
 
   def sanitize_age

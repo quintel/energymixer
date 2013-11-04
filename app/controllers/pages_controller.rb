@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_filter :setup_ordering, :only => [:stats, :analysis]
 
   def home
-    @intro_data = ApiClient.new.intro_page_data rescue {}
+    @intro_data = question_set.api_client.intro_page_data rescue {}
   end
 
   def info

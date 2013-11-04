@@ -2,6 +2,10 @@ class ApiClient
   include HTTParty
   base_uri APP_CONFIG['api_url']
 
+  def initialize(question_set)
+    @question_set = question_set
+  end
+
   GQueries = [
     "share_of_total_costs_assigned_to_coal",
     "share_of_total_costs_assigned_to_gas",
@@ -53,13 +57,12 @@ class ApiClient
   ]
 
   def intro_page_data
-    Rails.cache.fetch("intro_page_data") do
-      intro_page_data!
-    end
+    cache('intro_page_data', &method(:intro_page_data!))
   end
 
   def intro_page_data!
     data = carrier_costs!
+
     out = {
       total: {
         amount:     data["mixer_total_costs"],
@@ -92,18 +95,19 @@ class ApiClient
       out[:sectors][sector][:total] = out[:sectors][sector][:carriers].values.sum
     end
     out
-  rescue
-    nil
   end
 
   def current_situation
-    query(ApiClient::GQueries)
+    cache('current_situation') { query(ApiClient::GQueries) }
   end
 
   def carrier_costs
-    Rails.cache.fetch("carrier_costs") do
-      carrier_costs!
-    end
+    b = Time.now
+    v = cache('carrier_costs', &method(:carrier_costs!))
+    a = Time.now
+
+    Rails.logger.info "!!! carrier_costs=#{a-b}s"
+    v
   end
 
   def carrier_costs!
@@ -115,10 +119,11 @@ class ApiClient
   end
 
   def api_session_key!
-    response = self.class.post("/api/v3/scenarios.json", :query => {:source => 'Mixer'})
-    response['id']
-  rescue
-    nil
+    self.class.post('/api/v3/scenarios.json', query: {
+      source:      @question_set.partition.api_settings[:source],
+      area_code:   @question_set.partition.api_settings[:area_code],
+      scenario_id: @question_set.preset_id
+    })['id']
   end
 
   private
@@ -132,7 +137,9 @@ class ApiClient
     # We're only interested in present values here
     response["gqueries"].each_pair{|k,v| out[k] = v['present']}
     out
-  rescue
-    nil
+  end
+
+  def cache(key, &block)
+    Rails.cache.fetch("api_client.#{@question_set.id}.#{key}", &block)
   end
 end

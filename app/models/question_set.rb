@@ -25,6 +25,30 @@ class QuestionSet < ActiveRecord::Base
     answers[0].product(*answers[1..-1]).select{|x| valid_combination?(x)}
   end
 
+  def api_client
+    @api_client ||= ApiClient.new(self)
+  end
+
+  # The application Partition to which the question set belongs.
+  def partition
+    Partition.named(name)
+  end
+
+  def current_scenario(force = false)
+    cache_key = "current_scenario.#{id}"
+
+    Rails.cache.delete(cache_key) if force
+
+    Rails.cache.fetch(cache_key) do
+      situation  = api_client.current_situation
+      attributes = Scenario.queries_to_outputs(api_client.current_situation)
+
+      Scenario.new(attributes.merge(year: 2011))
+    end
+  rescue
+    Scenario.acceptable_scenario
+  end
+
   private
 
   def valid_combination?(x)

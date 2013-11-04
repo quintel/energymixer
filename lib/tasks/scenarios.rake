@@ -36,7 +36,7 @@ namespace :scenarios do
   task :create_current => :environment do
     title = Scenario::CurrentTitle
     Scenario.featured.find_by_title(title).destroy_all rescue nil
-    s = Scenario.new(Scenario.current.attributes)
+    s = Scenario.new(QuestionSet.first.current_scenario.attributes)
     s.name = title
     s.title = title
     s.featured = true
