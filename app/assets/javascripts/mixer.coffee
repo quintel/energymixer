@@ -50,9 +50,9 @@ class Mixer extends Backbone.Model
   # the results and triggers the interface update
   make_request: =>
     @chart.block_interface()
-    @api.update
+
+    params =
       queries: @all_gqueries()
-      reset: true
       inputs: @parameters
       success: (data) =>
         @store_results(data.results)
@@ -61,6 +61,13 @@ class Mixer extends Backbone.Model
       error: (data, error) =>
         @chart.unblock_interface()
         console.error(error)
+
+    # If the scenario is based on a preset, DO NOT reset the scenario on
+    # ETEngine else we lose all the preset inputs.
+    unless globals.api.session_settings.preset_id
+      params.reset = true
+
+    @api.update(params)
 
   # build parameters given user answers. The parameter values are defined in the
   # global answer hash.
