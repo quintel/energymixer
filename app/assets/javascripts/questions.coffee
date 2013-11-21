@@ -16,17 +16,19 @@ class @Questions extends Backbone.View
   el: 'body'
 
   events:
-    "click input[type='radio']"          : "select_answer"
-    "submit form"                        : "submit_form"
-    "click #next_question"               : "goto_next_question"
-    "click #previous_question"           : "goto_prev_question"
-    "click #questions nav#up a"          : "open_question"
-    "click #admin_menu a"                : "open_question"
-    "click .question a.show_info"        : "show_question_info_box"
-    "click .question a.close_info_popup" : "hide_question_info_box"
-    "mouseenter li.answer em"            : "show_tooltip"
-    "mouseleave  li.answer em"           : "hide_tooltip"
-    "mousemove li.answer em"             : "move_tooltip"
+    "click input[type='radio']":          "select_answer"
+    "submit form":                        "submit_form"
+    "click #next_question":               "goto_next_question"
+    "click #previous_question":           "goto_prev_question"
+    "click #admin_menu a":                "open_question"
+    "click .question a.show_info":        "show_question_info_box"
+    "click .question a.close_info_popup": "hide_question_info_box"
+    "mouseenter li.answer em":            "show_tooltip"
+    "mouseleave  li.answer em":           "hide_tooltip"
+    "mousemove li.answer em":             "move_tooltip"
+
+    "click #questions nav#up td.question_tab.answered":  "open_question"
+    "click #questions nav#up td.question_tab.available": "open_question"
 
   # Callbacks
   #
@@ -76,8 +78,11 @@ class @Questions extends Backbone.View
   open_question: (e) =>
     e.preventDefault()
     question_id = $(e.target).data('question_id')
-    @current_question = question_id
-    @show_right_question()
+
+    unless @current_question is question_id ||
+          @model.score_enabled && question_id <= 3
+      @current_question = question_id
+      @show_right_question()
 
   submit_form: =>
     # update the scenario id hidden field
@@ -90,6 +95,10 @@ class @Questions extends Backbone.View
     # remove active class from other answer
     element.parent().find("li.answer").removeClass('active')
     element.addClass('active')
+
+    $(".question_tab[data-question_id=#{@current_question}]").addClass('answered')
+    $(".question_tab[data-question_id=#{@current_question + 1}]").addClass('available')
+
     @model.refresh()
     @check_conflicts()
 
@@ -208,9 +217,10 @@ class @Questions extends Backbone.View
     $(question_id).show()
     # update top row
     $(".question_tab").removeClass('active')
-    for i in [1..@current_question]
+    for i in [1...@current_question]
       tab_selector = ".question_tab[data-question_id=#{i}]"
-      $(tab_selector).addClass('active')
+      $(tab_selector).addClass('answered')
+    $(".question_tab[data-question_id=#{i}]").addClass('active')
     @update_question_links()
 
     # GA
