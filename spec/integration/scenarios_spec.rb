@@ -47,14 +47,14 @@ feature 'A new scenario' do
     find('.answers .answer:first label').click
     wait_for_xhr
 
-    click_on 'Next question >>'
+    click_on 'Next question »'
 
     # Select a second answer.
 
     find('.answers .answer:first label').click
     wait_for_xhr
 
-    click_on 'Next question >>'
+    click_on 'Next question »'
 
     # Save scenario.
 
