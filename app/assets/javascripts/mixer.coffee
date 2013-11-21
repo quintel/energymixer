@@ -10,7 +10,15 @@ class Mixer extends Backbone.Model
     @gqueries  = globals.gqueries
     @score_enabled = globals.config.score_enabled
 
+    # When the user has JavaScript disabled and does not fill in a valid form
+    # after answering their questions, we need to reference their original
+    # scenario, rather than creating a new one which won't have the correct
+    # input values.
+    scenario_id = $('#scenario_etm_scenario_id').val()
+    scenario_id = null if scenario_id is ''
+
     @api = new ApiGateway
+      scenario_id:        scenario_id
       api_path:           globals.api.url
       api_proxy_path:     globals.api.proxy_url
       offline:            globals.api.disable_cors
