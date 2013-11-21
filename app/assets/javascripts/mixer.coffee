@@ -107,3 +107,7 @@ class Mixer extends Backbone.Model
 
 $ ->
   window.app = new Mixer
+
+  $('body')
+    .on('swipeleft',  app.questions.goto_next_question)
+    .on('swiperight', app.questions.goto_prev_question)

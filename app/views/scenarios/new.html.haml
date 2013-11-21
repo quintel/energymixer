@@ -8,8 +8,8 @@
   %section#questions.shaded_gradient
     = render 'questions'
   %nav#down
-    %a#previous_question{:href => "#"}= "<< #{t('previous')}"
-    %a#next_question{:href => "#"}= "#{t('next')} >>"
+    %a#previous_question{:href => "#"}= "&laquo; #{t('previous')}".html_safe
+    %a#next_question{:href => "#"}= "#{t('next')} &raquo;".html_safe
     .clear
 
 %section#right

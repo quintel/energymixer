@@ -7,5 +7,7 @@
 //= require console
 //= require jquery.busy.min
 //= require jquery.blockUI
+//= require jquery.event.move
+//= require jquery.event.swipe
 //= require popups
 //= require rails.validations
