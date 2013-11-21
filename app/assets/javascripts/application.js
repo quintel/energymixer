@@ -8,3 +8,4 @@
 //= require jquery.busy.min
 //= require jquery.blockUI
 //= require popups
+//= require rails.validations
