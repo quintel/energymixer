@@ -13,13 +13,31 @@ body#scenarios_new, body#scenarios_create
           width: 100%
           table-layout : fixed
           td
-            color: #073274
+            color: #9fa7b3
+            cursor: default
             margin: 1px auto
             padding: 8px
+            border-right: 1px solid transparent
+            &.available
+              color: #4772B3
+              cursor: pointer
+              box-shadow: inset 0 0 0 1px #6A8CBE
+              background-color: transparent
+              border-left: 1px solid transparent
+            &.answered
+              background-color: #6a8cbe
+              border-right-color: #eee
+              box-shadow: none
+              border-left: none
+              color: white
+              cursor: pointer
             &.active
               color: #ffffff
+              cursor: default
               font-weight: bold
               background-color: #073274
+              box-shadow: none
+              border-left: none
       .question
         .number
           font-weight: bold
