@@ -12,7 +12,7 @@ subdomain to which it is deployed. For example:
 "gasmixer" #=> gasmixer.et-model.com
 ```
 
-Firstly, copy the sample configuration file "config/config.yml.sample" to
+Firstly, copy the sample configuration file "config/config.sample.yml" to
 "config/config.yml".
 
 As EnergyMixer determines which question set is to be shown depending on the
