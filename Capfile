@@ -50,12 +50,6 @@ task :production do
   set :db_user, remote_config(:database, :username)
 end
 
-task :show do
-  %w( db_host db_pass db_name db_user ).each do |meth|
-    puts "#{ meth }=#{__send__(meth)}"
-  end
-end
-
 # Symlink database.yml, etc.
 after 'deploy:update_code', 'deploy:link_config'
 before 'deploy:assets:precompile', 'deploy:link_config'
