@@ -1,0 +1,551 @@
+---
+- id: 2
+  code: geothermal
+  title_nl: 'Geothermie: de aarde als energiebron'
+  body_nl: 'In theorie kun je heel veel energie uit de aarde halen. Op grote diepte
+    is de aarde erg heet. Je kunt die warmte gebruiken om huizen mee te verwarmen,
+    chemische processen mogelijk te maken of om elektriciteit te maken. Hoe betaalbaar
+    de warmte is, hangt vooral af van hoe diep je moet boren om het naar boven te
+    halen. '
+  created_at: 2011-04-05 12:46:24.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: 'Erdwärme: die Erde als Energiequelle'
+  body_de: Theoretisch kann man aus der Erde sehr viel Energie gewinnen. In großer
+    Tiefe ist die Erde sehr heiß. Diese Wärme kann man ausnutzen, um Wohnungen zu
+    beheizen, chemische Reaktionen ablaufen zu lassen oder Elektrizität zu erzeugen.
+    Ob die Erdwärme bezahlbar ist, hängt vor allem davon ab, aus welcher Tiefe die
+    Wärme zur Oberfläche gefördert werden muss.
+  video_nl: ''
+  video_de: ''
+  title_en: 'Geothermal energy: the earth''s heat as an energy source'
+  body_en: In theory, quite a lot of energy can be extracted from the Earth; at large
+    depths the planet is extremely hot. This heat can be used for heating homes, providing
+    energy for chemical industry, or making electricity. Whether such heat is affordable
+    mostly depends on how deep one has to drill to extract it.
+  video_en: ''
+- id: 3
+  code: unconventional_oil
+  title_nl: Moeilijk winbare olie
+  body_nl: "Als er nieuwe olievoorraden gevonden worden, is dat vaak op plaatsen die
+    moeilijk te bereiken zijn, of waar de olie moeilijk te verwerken is. De 'makkelijke'
+    olie is eigenlijk al gevonden. Deze moeilijke olievelden liggen bijvoorbeeld vele
+    kilometers onder de zee of in zeer onherbergzame gebieden als de Noordpool. Soms
+    moet de olie juist uit teerzanden gehaald worden. Dat noemen we 'onconventionele'
+    olie.\r\n<br/>\r\nOliemaatschappijen produceren in de toekomst dus waarschijnlijk
+    meer onconventionele en moeilijke olie. De productie zal naar verwachting dan
+    ook duurder worden. \r\n"
+  created_at: 2011-04-05 13:19:44.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Schwer zu förderndes Erdöl
+  body_de: "Neu entdeckte Ölvorräte liegen oft in schwer zugänglichen Regionen oder
+    in Gegenden, wo das Öl schwer zu verarbeiten ist. Das „schnell verdiente“ Öl ist
+    bereits so gut wie entdeckt. Die schwierigen Ölfelder liegen z.B. in großer Meerestiefe
+    von einigen Kilometern oder in unwirtlichen Gegenden wie am Nordpol. Manchmal
+    muss das Öl selbst aus Teersand gewonnen werden. Das nennen wir dann das „unkonventionelle“
+    Erdöl.\r\n<br/>\r\nDie Erdölkonzerne werden in Zukunft also wahrscheinlich mehr
+    unkonventionelles und schwieriges Öl fördern. Die Ölproduktion wird dann erwartungsgemäß
+    auch teurer werden."
+  video_nl: ''
+  video_de: ''
+  title_en: Unconventional oil
+  body_en: |-
+    Most recently-discovered oil deposits have tended to be in places that are hard to reach, or of oil that requires a lot of energy to process. 'Easy' oil is hardly ever found anymore. Such difficult oil fields may lie many kilometres below sea level or in inhospitable places like the Arctic. Some kinds of difficult oil need to be extracted from tar sands or shale rock formations. Such oil is called 'unconventional oil'.<br/>
+    In the future, oil companies are expected to produce more unconventional or difficult oil. Oil production is therefore also expected to become more expensive.
+  video_en: ''
+- id: 4
+  code: renewable
+  title_nl: Hernieuwbare energie
+  body_nl: Hernieuwbare energie is afkomstig uit bronnen die nooit opraken. Het gaat
+    bijvoorbeeld om wind, zon, aardwarmte, getijdenenergie en duurzaam geteelde biomassa
+    als hout of suikerriet.
+  created_at: 2011-04-05 13:20:13.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Erneuerbare Energie
+  body_de: Erneuerbare Energie wird aus Quellen geschöpft, die niemals versiegen.
+    Hiermit sind z.B. Wind, Sonne, Erdwärme und Gezeiten gemeint, aber auch nachwachsende
+    Rohstoffe aus ökologischem Anbau wie Holz oder Zuckerrohr.
+  video_nl: ''
+  video_de: ''
+  title_en: Renewable energy
+  body_en: Renewable energy comes from inexhaustible sources and includes wind, solar,
+    geothermal, and tidal energy. Biomass, like wood or sugar cane, also counts so
+    long as it has been grown by sustainable agriculture.
+  video_en: ''
+- id: 5
+  code: declining_gas_production
+  title_nl: Afnemende gasproductie
+  body_nl: "Energiebeheer Nederland (EBN) is de Nederlandse instantie die beslist
+    hoe omgesprongen moet worden met het Nederlandse gas. EBN verwacht dat productie
+    van aardgas uit Nederlandse gasvelden de komende 40 jaar zal afnemen tot nul.
+    Dit komt natuurlijk doordat de gasvelden langzaam opraken. Bij deze voorspelling
+    is rekening gehouden met de verplichtingen die Nederland al is aangegaan om gas
+    aan het buitenland te leveren in de komende jaren.\r\n<br/><br/>\r\nHet gaat hier
+    om 'conventioneel' gas. Dat is gas dat met gewone boortechnieken gewonnen kan
+    worden. 'Onconventioneel' gas wordt gewonnen met andere technieken die in Europa
+    nog niet beproefd zijn. Hiervan verwachten mensen soms veel voor Europa, omdat
+    de Verenigde Staten er veel succes mee hebben gehad. Het is nog onvoldoende duidelijk
+    hoeveel onconventioneel gas er in Nederland gewonnen zou kunnen worden en hoe
+    duur dat zou zijn."
+  created_at: 2011-04-05 13:20:50.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Abnehmende Gasförderung
+  body_de: "Die niederländische Energieaufsicht EBN („Energiebeheer Nederland“) entscheidet,
+    wie das in den Niederlanden geförderte Gas verwendet werden soll. EBN geht davon
+    aus, dass die Gasförderung in den Niederlanden in den kommenden 40 Jahren beendet
+    sein wird, weil dann die Gasfelder so gut wie leer gepumpt sind. Diese Prognose
+    beinhaltet bereits die angegangenen Verpflichtungen, um in den kommenden Jahren
+    Gas ans Ausland zu liefern.\r\n<br/><br/>\r\nEs handelt sich hierbei um „konventionelles“
+    Gas, also Gas, das mit gewöhnlicher Bohrtechnik gefördert werden kann. Für die
+    Förderung von „unkonventionellem“ Gas sind andere Techniken erforderlich, die
+    aber in Europa noch nicht erprobt sind. Von dieser neuen Technik erwartet man
+    sehr viel in Europa, weil die USA damit schon viele Erfolge gebucht haben. Es
+    ist noch überhaupt nicht geklärt, wie viel unkonventionelles Gas in unserem Land
+    verfügbar ist oder wie viel Gewinnung kosten würde. "
+  video_nl: ''
+  video_de: ''
+  title_en: Declining natural gas production
+  body_en: |-
+    The Dutch Energy Management Agency EBN ('Energiebeheer Nederland') decides what should be done with Dutch natural gas. EBN expects natural gas production from Dutch fields to decline to zero within the next 40 years as the fields are exhausted. These predictions take into account the long-term supply contracts that the Netherlands have with various other countries.<br/><br/>
+    This concerns conventional gas; such gas can be extracted using ordinary, well-established drilling techniques. 'Unconventional' gas is extracted using techniques that have not yet been put to the test extensively in Europe. Some people have high expectations for such gas for Europe, because the United States has been quite successful in extracting it. As yet it is unclear how much unconventional gas reserves our country has, or how much extraction would cost.
+  video_en: ''
+- id: 6
+  code: biomass
+  title_nl: Energie uit biomassa
+  body_nl: 'Biomassa is een moeilijk woord voor biologisch materiaal. Of het nu plantaardig
+    of dierlijk is, het bevat energie. Als je in Nederland speciaal biomassa wilt
+    verbouwen voor energiewinning, betekent dat wel dat je minder voedsel kunt verbouwen. '
+  created_at: 2011-04-05 13:22:13.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Energie aus Biomasse
+  body_de: Biomasse ist ein schwieriges Wort für biologisches Material. Egal, ob diese
+    Masse nun aus Pflanzen oder Tieren hergestellt wird, enthält sie in jedem Falle
+    Energie. Wenn man in unserem Land gezielt Biomasse produzieren will, bedeutet
+    das in jedem Falle, dass weniger Nahrungsmittel erzeugt werden können.
+  video_nl: ''
+  video_de: ''
+  title_en: Energy from biomass
+  body_en: Biomass is the technical term for 'biological material'. Biomass from plant
+    or animal residues contains energy. In many countries, energy crops are grown
+    at the expense of food production.
+  video_en: ''
+- id: 7
+  code: biodiesel
+  title_nl: Biodiesel
+  body_nl: "Biodiesel kun je maken van plantaardig en dierlijk vet. Vooral olie uit
+    zaden (lijnzaad of koolzaad) is in Europa erg populair. Veelbesproken is diesel
+    uit algen. Je hoeft daarvoor geen landbouwgrond op te geven, omdat de algen natuurlijk
+    in water groeien. Nu wordt nog maar weinig algen-diesel gemaakt, en nog praktisch
+    niets op commerciële schaal. \r\n<br/><br/>\r\nDieselauto's kunnen op pure bio-diesel
+    rijden zonder anders afgesteld te worden, maar met plantaardige biodiesel kan
+    de motor sneller slijten."
+  created_at: 2011-04-05 13:40:59.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Biodiesel
+  body_de: "Biodiesel kann man aus pflanzlichen oder tierischen Fetten gewinnen. Insbesondere
+    Öle, die aus Saatgut wie Leinsamen oder Raps gewonnen werden, sind in Europa sehr
+    populär. Viel wird auch über die Dieselgewinnung aus Algen diskutiert. Dafür muss
+    man keinen Ackerboden opfern, weil Algen auf natürliche Art im Wasser wachsen.
+    Zurzeit wird noch wenig Diesel aus Algen produziert und so gut wie gar nicht auf
+    kommerzieller Basis.\r\n<br/><br/>\r\nDieselautos können mit reinem Biodiesel
+    angetrieben werden, ohne dass sie dafür speziell eingestellt werden müssen, aber
+    mit pflanzlichem Biodiesel kann der Motor schneller verschleißen."
+  video_nl: ''
+  video_de: ''
+  title_en: Biodiesel
+  body_en: |-
+    Biodiesel can be produced from both animal and vegetable fats; oils from rape seeds or seed flax are especially popular in Europe. Oils from aquatic algae have caused a bit of a stir too, since they do not require the use of precious arable land. As yet, algae diesel is not a profitable option.<br/><br/>
+    Diesel-powered cars can use biodiesel without any adjustments to their engines, but vegetable oils can decrease engine lifetimes.
+  video_en: ''
+- id: 8
+  code: electric_cars
+  title_nl: Elektrische auto's
+  body_nl: "Elektrische auto's zijn nu behoorlijk 'hot'. De reden is dat ze minder
+    dan de helft van de energie gebruiken van een dieselauto, van de bron naar de
+    wielen gemeten, als je Nederlandse stroom gebruikt. Hoe efficiënter en schoner
+    de stroomproductie, hoe beter het plaatje wordt. Ook stoten elektrische auto's
+    geen schadelijke gassen uit en zijn ze lekker stil. \r\n<br/>\r\nNatuurlijk zijn
+    er ook nadelen. Vooral de batterijen zijn nog heel duur en je kunt er niet zoveel
+    energie in opslaan als in je benzinetank gaat. Ook is het de vraag of de batterijen
+    wel lang genoeg meegaan. Kortom, de technologie heeft zich nog niet bewezen ook
+    al gaan de ontwikkelingen heel snel.\r\n<br/>\r\nEen typische elektrische sedan
+    heeft nu een bereik van 150 - 250 km met een volle accu. Zo'n auto is dus geschikt
+    voor kleine en dichtbevolkte landen. \r\n<br/><br/>\r\nDe technologie voor de
+    auto's is beschikbaar, maar de benodigde infrastructuur (om op te kunnen laden
+    of accu's te wisselen) is er nog niet. Of en wanneer die er komt, zal allesbepalend
+    zijn voor het succes van deze auto's."
+  created_at: 2011-04-05 13:53:14.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Elektroautos
+  body_de: "Elektroautos sind im Moment sehr attraktiv, weil sie nur halb so viel
+    Energie verbrauchen wie ein Dieselauto – gemessen von der Energiequelle bis auf
+    die Strasse, auf der Basis von niederländischen Strompreisen. Diese Bilanz wird
+    noch besser, je effizienter und sauberer Natürlich gibt es auch Nachteile. Insbesondere
+    sind die Batterien noch sehr teuer und sie können viel\r\nweniger Energie speichern
+    als man in einen Benzintank füllen kann. Auch\r\nist die Lebensdauer von Batterien\r\nnoch
+    ein Problem. Kurz gesagt, diese Technologie ist noch nicht ausgereift, aber die
+    Entwicklungen sind in vollem Gange.\r\n<br/>\r\nEin typisches Elektroauto vom
+    Typ Sedan hat im Moment mit vollgeladener Batterie eine Reichweite von 150 bis
+    250 km. Ein solches Auto ist gut geeignet für kleine dicht bevölkerte Länder.\r\n<br/><br/>\r\nDie
+    Technologie für Elektroautos steht zur Verfügung, aber die nötige Infrastruktur
+    (zum Aufladen oder Auswechseln der Batterien) besteht noch nicht. Ob und wann
+    die angelegt wird, wird entscheiden über den Erfolg von Elektroautos."
+  video_nl: ''
+  video_de: ''
+  title_en: Electric cars
+  body_en: |-
+    Electric cars are an issue which have caused much discussion in Europe. Since their well-to-wheels energy use is less than half that of fossil-fuelled cars, this is no surprise! Of course, generating electricity from renewable sources would only increase their clean appeal. Electric cars do not emit noxious gases and they are quiet.<br/>
+    Of course, they do have some disadvantages. Battery packs are expensive and do not have the storage capacity or lifetime of a fuel tank. Although technical developments are proceeding apace, electric cars have not yet proven to be as attractive as fossil-fuelled cars.<br/>
+    A typical electric saloon car can now drive 150 - 250 km with a full battery. Such a car may be quite suitable for small, densely populated countries.<br/><br/>
+    Although the technology to create electric cars is available, the necessary infrastructure for charging or changing batteries is not. When – or even whether – it will be available will strongly influence their chances of success.
+  video_en: ''
+- id: 9
+  code: carbon_capture_storage
+  title_nl: Afvang en opslag van CO2
+  body_nl: Als er op één plek veel CO2 wordt uitgestoten, is het een optie om die
+    CO2 af te vangen en ergens op te slaan. Overal waar veel kolen of gas verbrand
+    wordt, wordt veel CO2 uitgestoten. Kolen- en gascentrales, hoogovens, olieraffinaderijen
+    zijn voorbeelden van zulke plekken. Het kost veel energie en je vangt ongeveer
+    90% van de emissies af.
+  created_at: 2011-04-05 14:24:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Auffangen und Speichern von CO2
+  body_de: Wenn an einem bestimmten Ort viel CO2 ausgestoßen wird, hat man die Möglichkeit,
+    das CO2 Gas aufzufangen und irgendwo zu speichern. Überall dort, wo viel Kohle
+    oder Gas verbrannt wird, wird auch viel CO2 Gas ausgestoßen. Beispiele für solche
+    Orte sind Kohle- oder Gaskraftwerke, Hochöfen oder Ölraffinerien. Man muss wohl
+    viel Energie aufwenden, aber man fangt nur 90% vom CO2 auf.
+  video_nl: ''
+  video_de: ''
+  title_en: Capture and storage of CO2
+  body_en: Major sources of CO2 – such as coal or gas power plants, blast furnaces,
+    and oil refineries – offer the possibility of capturing and storing emissions.
+    Current capture techniques are energy intensive but typically result in the capture
+    of 90% of CO2 emissions.
+  video_en: ''
+- id: 10
+  code: demand_growth
+  title_nl: De vraagtoename volgens Shell
+  body_nl: 'Het is te verwachten dat door een combinatie van groei van de wereldbevolking
+    en groei van de welvaart de vraag in 2050 drie keer zo hoog kan zijn als in het
+    jaar 2000. Lees bijvoorbeeld de Shell Scenario''s <a class=''no_popup'' target=''_blank''  href=''http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf''>
+    Signals and Signposts</a>. <br/> '
+  created_at: 2011-04-06 06:05:23.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Die Nachfrage-Entwicklung laut Shell
+  body_de: "Man erwartet, dass das Zusammenspiel von wachsender Weltbevölkerung und
+    wachsendem Wohlstand im Jahre 2050 zu einer dreifach höheren Nachfrage führen
+    kann verglichen mit dem Jahr 2000. Schau dir hierzu z.B. die Shell Szenarios an:\r\n<a
+    class='no_popup' target='_blank' href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'>
+    Signals and Signposts</a>."
+  video_nl: ''
+  video_de: ''
+  title_en: Demand growth according to Royal Dutch Shell
+  body_en: It is to be expected that energy demand will increase threefold between
+    2000 and 2050 as a result of a growing world population and increased global prosperity.
+    For more information you can read the Shell Scenarios in <a class='no_popup' target='_blank'
+    href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'>Signals
+    and Signposts</a>.
+  video_en: ''
+- id: 11
+  code: Savings
+  title_nl: Besparingen en efficiëntie energiegebruik wereldwijd
+  body_nl: Het is te verwachten dat de wereldbevolking pogingen zal blijven doen om
+    minder energie te gebruiken en efficiënter met het energie om te gaan. Desondanks
+    kan er een groot gat tussen vraag en aanbod ontstaan de komende jaren doordat
+    de energieproductie de snel groeiende vraag niet kan bijhouden.  Als je hier meer
+    over wilt weten lees dan de Shell Scenario's  <a class='no_popup' target='_blank'  href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'>
+    Signals and Signposts</a>.
+  created_at: 2011-04-06 06:25:38.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Einsparungen und Effizienz im weltweiten Energieverbrauch
+  body_de: "Man kann annehmen, dass die Weltbevölkerung weiterhin alle Anstrengungen
+    unternehmen wird, um weniger Energie zu verbrauchen und Energie effizienter einzusetzen.
+    Trotzdem ist zu befürchten, dass in den kommenden Jahren eine große Lücke zwischen
+    Angebot und Nachfrage klaffen wird, weil die Energieproduktion den wachsenden
+    Bedarf nicht decken kann. Wenn du dieses Problem vertiefen willst, studiere dann
+    die Shell Szenarios:\r\n<a class='no_popup' target='_blank' href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'>
+    Signals and Signposts</a>."
+  video_nl: ''
+  video_de: ''
+  title_en: Global savings in energy demand and efficiency increases
+  body_en: It is likely that the world population will keep trying to be more energy
+    efficient and use less energy than it does presently. Despite these efforts, a
+    large gap looms between expected demand and supply of energy in the coming years,
+    as energy production fails to keep up with rapidly rising demand. For more information,
+    read the Shell Scenarios in <a class='no_popup' target='_blank' href='http://www-static.shell.com/static/aboutshell/downloads/aboutshell/signals_signposts.pdf'>Signals
+    and Signposts</a>.
+  video_en: ''
+- id: 12
+  code: micro_chp
+  title_nl: HRe ketel
+  body_nl: "De HRe ketel is een CV ketel die behalve warm water ook stroom maakt.
+    Een huishouden wordt op deze manier zelf een producent van stroom. Als de stroom
+    ook lokaal gebruikt wordt, is dat een zeer efficiënt gebruik van aardgas. De HRe
+    ketel is nu nog vrij duur, maar de verwachting is dat de kosten sterk gaan dalen
+    als meer HRe ketels geïnstalleerd worden.\r\n"
+  created_at: 2011-04-11 10:32:38.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: HRe Wärmeerzeuger
+  body_de: Der HRe Wärmeerzeuger ist eine Zentralheizung, die außer warmem Wasser
+    auch Strom liefert. Ein Haushalt wird dadurch selbst zum Stromerzeuger. Wird der
+    Strom auch lokal verbraucht, dann hat man Erdgas sehr effizient eingesetzt. Der
+    HRe Wärmeerzeuger ist im Moment noch sehr teuer, aber man kann erwarten, dass
+    der Preis stark sinkt, wenn mehr davon installiert werden.
+  video_nl: http://www.youtube.com/v/faZcULWegkw?fs=1&amp;hl=en_US&amp;rel=0
+  video_de: ''
+  title_en: Micro CHP
+  body_en: A micro CHP (Combined Heat and Power) is a gas-fired heater which also
+    produces electricity. Households that use them become power producers, with excess
+    power used locally, or sold back to the national grid. Using this power locally
+    makes for more efficient use of natural gas. Micro CHPs are still rather expensive,
+    but costs are expected to fall as more are installed.
+  video_en: ''
+- id: 13
+  code: heat_pumps
+  title_nl: Warmtepompen
+  body_nl: "Warmtepompen kunnen warmte van de ene plek naar de andere verplaatsen.
+    Warmtepompen kunnen aangedreven worden door gas of door elektriciteit. <br/>\r\nEen
+    koelkast gebruikt een warmtepomp om warmte uit de koelkast te pompen, maar je
+    kunt ook warmte je huis in pompen om het te verwarmen. Dat kan heel efficiënt
+    zijn, als het buiten niet te koud is. "
+  created_at: 2011-04-14 09:05:46.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Wärmepumpen
+  body_de: "Wärmepumpen können Wärme von einem Ort zum anderen transportieren. Wärmepumpen
+    können mit Gas oder Elektrizität betrieben werden. <br/>\r\nEin Kühlschrank nutzt
+    eine Wärmepumpe, um Wärme aus dem Kühlraum zu pumpen. Ebenso kann man Wärme auch
+    in ein\r\nHaus pumpen, um es zu beheizen. Dies kann sehr effizient geschehen,
+    wenn die Außentemperatur nicht zu niedrig ist."
+  video_nl: ''
+  video_de: ''
+  title_en: Heat pumps
+  body_en: |-
+    Heat pumps can move heat from one place to another, and are driven by gas or by electricity.<br/>
+    Fridges use heat pumps to pump heat out, but the same principles can be used to pump heat into your home from outside. This can be quite efficient, provided it is not too cold outside.
+  video_en: ''
+- id: 14
+  code: fuel_cells
+  title_nl: Brandstofcellen
+  body_nl: Brandstofcellen verbranden brandstoffen als aardgas of waterstof na ze
+    eerst op te lossen. Ze zijn zeer efficiënt en maken daarbij zowel stroom als warmte.
+    Het idee is dat ze continu aanstaan om warm water te maken voor douchen en afwassen,
+    etc. Zo wordt de eigenaar zelf een stroomproducent. Nu zijn brandstofcellen nog
+    vrij duur, maar over 10 - 20 jaar misschien niet meer.
+  created_at: 2011-04-14 09:14:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Brennstoffzellen
+  body_de: Brennstoffzellen verbrennen Brennstoffe wie Erdgas oder Wasserstoff, nachdem
+    diese erst zersetzt werden. Dieser Prozess ist sehr effizient und erzeugt sowohl
+    Strom als Wärme. Das Prinzip einer Brennstoffzelle ist, dass diese kontinuierlich
+    im Betrieb ist, um Warmwasser zu erzeugen zum Duschen, Spülen usw.. Auf diese
+    Art wird der Betreiber selbst zum Stromerzeuger. Im Moment sind Brennstoffzellen
+    noch sehr teuer, aber in 10 bis 20 Jahren vielleicht nicht mehr.
+  video_nl: ''
+  video_de: ''
+  title_en: Fuel cells
+  body_en: Fuel cells combust fuels like natural gas or hydrogen after dissolving
+    them; they are extremely efficient and can produce both power and heat. Small
+    fuel cells can be used to run continuously and provide hot water for showering
+    etc. Owners of fuel cells will thereby become power producers. Fuel cell are still
+    quite expensive, but may become cheaper in the next 10 to 20 years.
+  video_en: ''
+- id: 15
+  code: energy_intensity
+  title_nl: Energiebehoefte van de industrie
+  body_nl: "De industrie gaat steeds efficiënter met haar energie om. Hieronder zie
+    je hoe de energie-intensiteit (energieverbruik per euro toegevoegde waarde) van
+    de Nederlandse industrie verandert met de jaren.\r\n<br/>\r\n<img width = '381',
+    height='204', src='/assets/popups/energy_intensity.png'/>"
+  created_at: 2011-04-14 12:50:43.000000000 Z
+  updated_at: 2012-09-26 07:32:03.000000000 Z
+  title_de: Energiebedarf der Industrie
+  body_de: "Die Industrie setzt Energie stets effizienter ein. Im folgenden Bild sieht
+    man, wie die Energie-Intensität (das ist der Energieaufwand pro Euro Wertschöpfung)
+    der niederländischen Industrie sich im Laufe der Jahre verändert.\r\n<br/>\r\n<img
+    width = '381', height='204', src='/assets/popups/energy_intensity.png'/>"
+  video_nl: ''
+  video_de: ''
+  title_en: Energy demand for industry
+  body_en: "Industrial processes tend to become ever more energy efficient. The graph
+    below shows how energy intensity of Dutch industry (energy used per euro of value
+    added) has changed through the years.<br/>\r\n<img width='381' height='204' src='/assets/popups/energy_intensity.png'
+    />"
+  video_en: ''
+- id: 16
+  code: world_population
+  title_nl: Groeiende wereldbevolking
+  body_nl: "De bevolking in de meeste rijke landen groeit niet zo hard meer, maar
+    in ontwikkelingslanden wordt nog veel groei verwacht. Hieronder een plaatje met
+    de historische wereldbevolking en verwachtingen van de VN voor hoe deze gaat groeien.\r\n<img
+    height='503', width='492', src='/assets/popups/world_population.png'/>"
+  created_at: 2011-04-14 14:02:53.000000000 Z
+  updated_at: 2013-01-28 08:40:45.000000000 Z
+  title_de: Wachsende Welbevölkerung
+  body_de: "Die Bevölkerung der meisten wohlhabenden Länder wächst nicht mehr\r\nso
+    schnell, aber ein großes wird in Entwicklungsländern Im folgenden Bild sieht man
+    historische Weltbevölkerung verglichen mit den Wachstumserwartungen der UNO.\r\n<img
+    height='503', width='492', src='/assets/popups/world_population.png'/>"
+  video_nl: ''
+  video_de: ''
+  title_en: Growing world population
+  body_en: "Population growth has slowed significantly in most wealthy countries,
+    but in developing countries strong growth is expected to continue. The chart shows
+    historical and expected population growth according to the UN for the near future.<br/>\r\n<img
+    height='503', width='492', src='/assets/popups/world_population.png'/>"
+  video_en: ''
+- id: 17
+  code: consumption
+  title_nl: Huishoudelijke consumptie
+  body_nl: "De consumptie van goederen en diensten in Nederlandse huishoudens blijft
+    stijgen. Hieronder ziet u hoe deze door de jaren heen is toegenomen.\r\n<img width
+    = '381', height='204', src='/assets/popups/growth_household_consumption.png'/>"
+  created_at: 2011-04-14 14:20:25.000000000 Z
+  updated_at: 2012-09-26 07:30:54.000000000 Z
+  title_de: Konsumverhalten im Haushalt
+  body_de: "Der Konsum von Gütern und Dienstleistungen in unseren Haushalten nimmt
+    beständig zu. Im folgenden Bild sieht man, wie der Konsum im Laufe der Jahre gewachsen
+    ist.\r\n<img width = '381', height='204', src='/assets/popups/growth_household_
+    consumption.png'/>"
+  video_nl: ''
+  video_de: ''
+  title_en: Consumption in households
+  body_en: "Consumption of goods and services in households continues to rise. Here
+    you can see how consumption has increased over the past years.<br/>\r\n<img width
+    = '381', height='204', src='/assets/popups/growth_household_consumption.png'/>"
+  video_en: ''
+- id: 18
+  code: unconventional_gas
+  title_nl: Onconventioneel gas
+  body_nl: "Onconventioneel gas is niet afkomstig uit 'gewone' gasbellen. Het bevindt
+    zich in erg dicht bodemgesteente, waardoor het moeilijker te winnen is. Om het
+    gas te winnen, moet de bodem worden ’gekraakt’, door met grote druk een mengsel
+    van water, chemicaliën en zand te injecteren. Daarom is het technisch lastig en
+    alleen tegen hoge kosten te winnen. <br/>\r\nDit gas komt wel veel meer voor dan
+    het 'makkelijke' gas. De Verenigde Staten hebben de afgelopen jaren de productie
+    van onconventioneel gas uit eigen bodem sterk verhoogd om minder afhankelijk te
+    zijn van buitenlandse energiebronnen. "
+  created_at: 2011-08-11 12:57:38.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Unkonventionelles Gas
+  body_de: "Unkonventionelles Gas strömt nicht aus „gewöhnlichen“ Gasblasen. Es ist
+    eingeschlossen in sehr dichtem Erdgestein eingeschlossen und dadurch nur schwierig
+    freizusetzen. Um dieses Gas zu gewinnen, muss der Boden erst „aufgebrochen“ werden.
+    Dies geschieht durch das Einspritzen einer Mischung von Wasser, Chemikalien und
+    Sand unter hohem Druck. Diese Prozedur ist technisch sehr aufwendig und teuer.\r\n<br/>\r\nAllerdings
+    sind die Vorkommen solcher Gase viel größer als die des\r\n„leicht“ zu fördernden
+    Gases. Die USA haben in den vergangenen Jahren die Produktion von unkonventionellem
+    Gas aus eigenem Boden stark erhöht, um weniger abhängig zu werden von ausländischen
+    Energiequellen."
+  video_nl: ''
+  video_de: ''
+  title_en: Unconventional gas
+  body_en: |-
+    The term 'unconventional gas' refers to natural gas that does not come from 'normal' gas fields. It is found in very tight rock formations, making it hard to extract. Rocks need to be fractured, or 'fracked', by injecting water and chemicals at high pressures. This makes such gas harder, and therefore more expensive, to extract.<br/>
+    Unconventional gas deposits are much larger than 'easy' gas reserves. The United States has significantly increased domestic unconventional gas production in order to decrease their dependence on foreign energy sources.
+  video_en: ''
+- id: 19
+  code: heat_pumps_gas
+  title_nl: Gaswarmtepompen
+  body_nl: "Warmtepompen kunnen warmte van de ene plek naar de andere verplaatsen.
+    Warmtepompen kunnen aangedreven worden door gas of door elektriciteit. \r\n<br/>
+    \r\nEen koelkast gebruikt een warmtepomp om warmte uit de koelkast te pompen,
+    maar je kunt ook warmte je huis in pompen om het te verwarmen. Dat kan heel efficiënt
+    zijn, als het buiten niet te koud is.\r\n<br/>\r\nHet voordeel van gaswarmtepompen
+    is dat ze beter werken dan elektrische warmtepompen als het heel koud is. Het
+    nadeel is dat ze CO2 uitstoten. "
+  created_at: 2011-08-18 13:25:20.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Gaswärmepumpen
+  body_de: "Wärmepumpen können Wärme von einem Ort zum anderen transportieren. Wärmepumpen
+    können mit Gas oder Elektrizität betrieben werden.\r\n<br/>\r\nEin Kühlschrank
+    nutzt eine Wärmepumpe, um Wärme aus dem Kühlraum zu pumpen. Ebenso kann man Wärme
+    auch in ein\r\nHaus pumpen, um es zu beheizen. Dies kann sehr effizient geschehen,
+    wenn die Außentemperatur nicht zu niedrig ist.\r\n<br/>\r\nDer Vorteil von Gaswärmepumpen
+    ist, dass sie besser als elektrische Wärmepumpen arbeiten, wenn es sehr kalt ist.
+    Der Nachteil ist, dass sie CO2 ausstoßen."
+  video_nl: ''
+  video_de: ''
+  title_en: Gas-powered heat pumps
+  body_en: |-
+    Heat pumps can pump heat from one place to another, and are driven by gas or electricity.<br/>
+    Fridges use heat pumps to pump heat out, but the same principles can be used to pump heat into your home from outside.
+    Gas-powered heat pumps are more efficient than electric ones when outside temperatures are low. Their disadvantage is that they produce CO2.
+  video_en: ''
+- id: 20
+  code: heat_pumps_el
+  title_nl: Elektrische warmtepompen
+  body_nl: "Warmtepompen kunnen warmte van de ene plek naar de andere verplaatsen.
+    Warmtepompen kunnen aangedreven worden door gas of door elektriciteit. \r\n<br/>
+    \r\nEen koelkast gebruikt een warmtepomp om warmte uit de koelkast te pompen,
+    maar je kunt ook warmte je huis in pompen om het te verwarmen. Dat kan heel efficiënt
+    zijn, als het buiten niet te koud is.\r\n<br/>\r\nAls elektriciteit duurzaam geproduceerd
+    is, zijn elektrische warmtepompen een zeer schone optie. Helaas zijn ze niet zo
+    efficiënt als het buiten zeer koud is."
+  created_at: 2011-08-18 13:28:34.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Elektrische Wärmepumpen
+  body_de: "Wärmepumpen können Wärme von einem Ort zum anderen transportieren. Wärmepumpen
+    können mit Gas oder Elektrizität betrieben werden.\r\n<br/>\r\nEin Kühlschrank
+    nutzt eine Wärmepumpe, um Wärme aus dem Kühlraum zu pumpen. Ebenso kann man Wärme
+    auch in ein\r\nHaus pumpen, um es zu beheizen. Dies kann sehr effizient geschehen,
+    wenn die Außentemperatur nicht zu niedrig ist.\r\n<br/>\r\nWenn Elektrizität ökologisch
+    und aus nachwachsenden Rohstoffen produziert wird, bieten elektrische Wärmepumpen
+    eine sehr saubere Perspektive. Leider sind sie nicht sehr effizient, wenn die
+    Außentemperatur sehr niedrig ist."
+  video_nl: ''
+  video_de: ''
+  title_en: Electric heat pumps
+  body_en: |-
+    Heat pumps can pump heat from one place to another, and are driven by gas or electricity.<br/>
+    Fridges use heat pumps to pump heat out, but the same principles can be used to pump heat into your home from outside.
+    Electric heat pumps are quite clean so long as their power is produced from renewable sources. Their disadvantage is that efficiencies tend to drop when outside temperatures are low.
+  video_en: ''
+- id: 21
+  code: solar_water_heater
+  title_nl: Zonneboiler
+  body_nl: 'Zonneboilers zetten zonnestralen om in warmte. Het principe van een zonneboiler
+    is eenvoudig: als een tuinslang de hele dag in de zon ligt, wordt het water in
+    de slang erg warm. Zonneboilers maken gebruik van datzelfde principe. Zelfs in
+    de winter als de zon maar een paar uur schijnt, kan zo''n boiler voldoende warm
+    water produceren om te douchen, te wassen of schoon te maken.'
+  created_at: 2011-08-18 14:08:21.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Sonnenwärmeboiler
+  body_de: 'Sonnenwärmeboiler wandeln Energie aus Sonnenstrahlen in Wärme um. Das
+    Prinzip eines Sonnenwärmeboilers ist einfach: wenn ein Gartenschlauch den ganzen
+    Tag in der Sonne liegt, wird das Wasser im Schlauch sehr warm. Sonnenwärmeboiler
+    nutzen dieses Phänomen aus. Selbst im Winter bei kurzer Sonnenscheindauer kann
+    ein solcher Boiler noch ausreichend Warmwasser zum Duschen, Waschen oder Putzen
+    produzieren.'
+  video_nl: ''
+  video_de: ''
+  title_en: Solar water heater
+  body_en: 'Solar water heating systems convert solar energy to heat. The principle
+    is simple: a garden hose exposed to the sun all days will heat up. Even in winter,
+    a day with a few hours of sunshine can produce enough hot water for showering
+    or doing the dishes.'
+  video_en: ''
+- id: 22
+  code: heat_network
+  title_nl: Warmtenet
+  body_nl: 'Grote elektriciteitscentrales hebben na het maken van stroom nog veel
+    warmte over. Die warmte kun je weggooien, maar dat is eigenlijk zonde. In landen
+    als Denemarken moeten centrales verplicht hun warmte aan een warmtenet leveren.
+    Huishoudens en bedrijven kunnen die warmte nog prima gebruiken. In Nederland staan
+    centrales nog vaak te ver weg om dit op grote schaal toe te passen. '
+  created_at: 2011-08-18 14:21:11.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  title_de: Wärmenetz
+  body_de: "Grosse Elektrizitätswerke produzieren neben Strom einen großen Überschuss\r\nan
+    Wärme. Diese Wärme kann man ungenutzt abführen, aber das wäre Verschwendung. In
+    Ländern wie\r\nDänemark sind Kraftwerke verpflichtet, ihre Überschusswärme in
+    ein Wärmenetz einzuspeisen. In Haushalten und Betrieben kann diese Wärme gut gebraucht
+    werden. In unserem Land sind Kraftwerke meist zu weit abgelegen für großflächige
+    Wärmenetze."
+  video_nl: ''
+  video_de: ''
+  title_en: Heating networks
+  body_en: |-
+    Large power plants tend to produce a lot of excess heat. Instead of dumping this heat, it can instead be put to good use: in Denmark it is compulsory for power plants to supply this heat to heating networks which is then used by households and offices for heating.<br/>
+    In absence of such regulation, power plants tend to be built too far away from population centres for large scale application of heating networks.
+  video_en: ''

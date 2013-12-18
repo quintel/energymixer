@@ -1,0 +1,4422 @@
+---
+- id: 1
+  text_nl: Het blijft even duur. De energierekening bij ons thuis blijft gelijk.
+  ordering: 3
+  question_id: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Het blijft even duur
+  text_de: Alles bleibt gleich teuer. Die Energierechnung für unser Haus bleibt gleich
+    hoch.
+  description_de: 
+  text_en: Everything will cost the same as it does today. Our energy bill will not
+    change.
+  description_en: 
+- id: 2
+  text_nl: Het wordt duurder. Ieder jaar stijgt de energierekening een klein beetje.
+  ordering: 2
+  question_id: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Fosiele brandstoffen worden 50% duurder
+  text_de: Alles wird teurer. Jedes Jahr wird die Energierechnung ein wenig höher.
+  description_de: 
+  text_en: Prices will rise and every year our energy bill will be a little higher.
+  description_en: 
+- id: 3
+  text_nl: Ieder jaar wordt de energierekening bij ons thuis fors duurder. Ons gezin
+    houdt minder geld over voor leuke dingen als vakanties en mooie spullen.
+  ordering: 1
+  question_id: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Fosiele brandstoffen worden 100% duurder
+  text_de: Jedes Jahr steigt die Energierechnung für unser Haus kräftig an. Unsere
+    Familie hat weniger Geld zur Verfügung für angenehme Dinge wie Urlaub oder neue
+    Anschaffungen.
+  description_de: 
+  text_en: Every year our energy bill will be considerably higher. My family will
+    have less money to spend on holidays or luxuries.
+  description_en: 
+- id: 4
+  text_nl: Het wordt goedkoper. De energierekening wordt ieder jaar iets lager.
+  ordering: 4
+  question_id: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Fosiele brandstoffen worden 25% goedkoper
+  text_de: Alles wird billiger. Jedes Jahr wird die Energierechnung ein wenig niedriger.
+  description_de: 
+  text_en: Everything will become a little cheaper and our energy bill will be lower
+    each year.
+  description_en: 
+- id: 5
+  text_nl: Het wordt veel goedkoper. En dus houden we meer geld over voor leuke dingen.
+  ordering: 5
+  question_id: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Fosiele brandstoffen worden 50% goedkoper
+  text_de: Alles wird viel billiger. Deshalb hat unsere Familie mehr Geld zur Verfügung
+    für schöne Anschaffungen.
+  description_de: 
+  text_en: Everything will become much cheaper. My family will have more money to
+    spend on doing nice things.
+  description_en: 
+- id: 6
+  text_nl: Alle huizen verwarmen met een HR-combi ketel
+  ordering: 0
+  question_id: 2
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-16 10:06:02.000000000 Z
+  description_nl: HR Combi naar 100%
+  text_de: Alle Häuser werden mit dem HR-combi Wärmeerzeuger beheizt.
+  description_de: ''
+  text_en: Heat all homes using high-yield gas boilers.
+  description_en: ''
+- id: 7
+  text_nl: Alle huizen verwarmen met een HRe ketel (= micro-WKK)
+  ordering: 1
+  question_id: 2
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-16 10:08:06.000000000 Z
+  description_nl: ''
+  text_de: Alle Häuser werden mit dem HRe Wärmeerzeuger (= mikro-WKK = mikro-Wärmekraftkopplung)
+    beheizt.
+  description_de: ''
+  text_en: Heat all homes using micro-CHPs.
+  description_en: ''
+- id: 8
+  text_nl: Alle huizen verwarmen met houtpelletkachels
+  ordering: 2
+  question_id: 2
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-09-14 09:03:01.000000000 Z
+  description_nl: '[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen
+    aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind'
+  text_de: Alle Häuser werden mit einer Pelletkaminofen beheizt
+  description_de: ''
+  text_en: Heat all homes using wood pellet stoves
+  description_en: ''
+- id: 9
+  text_nl: Alle huizen verwarmen met een elektrische warmtepomp en bodemwarmte
+  ordering: 3
+  question_id: 2
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-16 10:01:42.000000000 Z
+  description_nl: ''
+  text_de: Alle Häuser werden mit einer elektrischen Wärmepumpe und mit Erdwärme beheizt.
+  description_de: ''
+  text_en: Heat all homes using electric heat pumps which draw heat from the ground.
+  description_en: ''
+- id: 10
+  text_nl: Iedereen kookt op gas
+  ordering: 0
+  question_id: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-03-13 11:04:08.000000000 Z
+  description_nl: '[NOTE] Er gebeurt niets.'
+  text_de: Alle Leute kochen mit Gas.
+  description_de: 
+  text_en: Everyone will use gas.
+  description_en: 
+- id: 11
+  text_nl: Iedereen kookt op elektrische kookplaten
+  ordering: 1
+  question_id: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: '[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing
+    geven dat de helft van het aardgas nog steeds wordt gebruikt'
+  text_de: Alle Leute kochen auf einer elektrischen Kochplatte.
+  description_de: 
+  text_en: Everyone will use resistive electric stoves.
+  description_en: 
+- id: 12
+  text_nl: Iedereen kookt op halogeen kookplaten
+  ordering: 2
+  question_id: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-03-13 11:04:08.000000000 Z
+  description_nl: '[NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe
+    kerncentrale en schrap equivalente hoeveelheid wind'
+  text_de: Alle Leute kochen auf Kochplatte.
+  description_de: 
+  text_en: Everyone will use halogen stoves.
+  description_en: 
+- id: 14
+  text_nl: Iedereen kookt op inductie kookplaten
+  ordering: 3
+  question_id: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Alle Leute kochen auf einer Induktionskochplatte.
+  description_de: 
+  text_en: Everyone will use induction stoves.
+  description_en: 
+- id: 16
+  text_nl: Ik blijf rijden op benzine of diesel en we komen in opstand tegen de EU.
+  ordering: 0
+  question_id: 4
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De brandstofmix is in de toekomst hetzelfde als nu.
+  text_de: Ich fahre weiter mit Benzin- oder Dieselautos und wir wehren uns gegen
+    die Beschlüsse der EU.
+  description_de: 
+  text_en: I will not give up my gasoline or diesel-fuelled car and will rise up against
+    the EU.
+  description_en: 
+- id: 17
+  text_nl: Ik ga rijden op aardgas net als de rest van de Nederlanders
+  ordering: 1
+  question_id: 4
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Ich fahre wie alle anderen Mitbürger in unserem Land mit einem Auto, das
+    mit Erdgas angetrieben wird.
+  description_de: 
+  text_en: My fellow citizens and I will start using vehicles powered by natural gas.
+  description_en: 
+- id: 18
+  text_nl: We gaan allemaal op elektriciteit rijden. De elektriciteit die daarvoor
+    nodig is importeren we uit het buitenland.
+  ordering: 2
+  question_id: 4
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Wir fahren alle in elektrischen Autos. Die dafür nötige Elektrizität importieren
+    wir aus dem Ausland.
+  description_de: 
+  text_en: Everyone will use electric cars with the required electricity imported
+    from neighboring countries.
+  description_en: 
+- id: 20
+  text_nl: De helft van alle centrales wordt vervangen door moderne kolencentrales
+  ordering: 0
+  question_id: 5
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Er verandert hierdoor dus niets uit de uitkomsten.
+  text_de: Die Hälfte aller Kraftwerke wird durch moderne Kohlekraftwerke ersetzt.
+  description_de: 
+  text_en: Half of our power plants will be replaced by modern, coal-fired power plants.
+  description_en: 
+- id: 21
+  text_nl: De helft van alle centrales wordt vervangen door moderne gascentrales
+  ordering: 1
+  question_id: 5
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Die Hälfte aller Kraftwerke wird durch moderne Gaskraftwerke ersetzt.
+  description_de: 
+  text_en: Half of our power plants will be replaced by modern, gas-fired power plants.
+  description_en: 
+- id: 23
+  text_nl: De helft van alle centrales wordt vervangen door kerncentrales
+  ordering: 2
+  question_id: 5
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-03-13 11:24:35.000000000 Z
+  description_nl: ''
+  text_de: Die Hälfte aller Kraftwerke wird durch Kernkraftwerke ersetzt.
+  description_de: 
+  text_en: Half of our power plants will be replaced by nuclear power plants.
+  description_en: 
+- id: 24
+  text_nl: Helemaal niets. De aardgasbaten van de overheid dalen weliswaar met 10
+    miljard per jaar en er gaat meer geld naar het buitenland om het in te kopen,
+    maar daar is verder niets aan te doen.
+  ordering: 0
+  question_id: 6
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 4%
+  text_de: Wir tun nichts. Der Niederländische Staat wird wohl per Jahr 10 Milliarden
+    Euro weniger Gewinne aus Erdgas einnehmen und mehr Geld muss aufgewendet werden,
+    um Erdgas im Ausland zu kaufen, aber wir können das nicht ändern.
+  description_de: 
+  text_en: We will not do anything. Government revenues will decrease by approximately
+    10 billion euros a year and more money will be needed for foreign energy supplies,
+    but nothing can be done to stop this.
+  description_en: 
+- id: 25
+  text_nl: "Alle gebouwen isoleren we verplicht maximaal, zelfs de bestaande huizen.
+    De verwarming voor woningen heb je eerder al ingevuld. De verwarming van overige
+    gebouwen doen we ook zo efficiënt mogelijk.\r\nHiervoor zijn  [warmtepompen](/info/heat_pumps),
+    [HRe ketels](/info/micro_chp), [brandstofcellen](/info/fuel_cells), [zonneboilers](/info/solar_water_heater),
+    aardwarmte en [warmtenetwerken](/info/heat_network) allemaal nodig."
+  ordering: 3
+  question_id: 6
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-16 10:27:50.000000000 Z
+  description_nl: "I cheated a little bit by reducing demand in buildings, since the
+    insulation measures do not cover all building categories.\r\nAlso reduced heat
+    demand in households a bit more.\r\n\r\nNote that none of the options uses micro
+    CHP, because they make less sense for hot water than fuel cells. Space heating
+    in houes has been set in question 3, so this is not changed here. "
+  text_de: "Alle Gebäude inklusiv Altbauten müssen per Gesetz maximal isoliert werden.
+    Die Beheizung von Wohnungen ist vorher schon behandelt worden. Die Beheizung aller
+    anderen Gebäude muss ebenfalls so effizient wie möglich geschehen.\r\nHierfür
+    müssen alle verfügbaren Möglichkeiten wie [Wärmepumpen](/info/heat_pumps), [HRe
+    Wärmeerzeuger](/info/micro_chp), [Brennstoffzellen](/info/fuel_cells), [Sonnenwärmeboiler](/info/solar_water_heater),
+    Erdwärme und [Wärmenetzwerk](/info/heat_network) eingesetzt werden."
+  description_de: ''
+  text_en: All buildings will be obliged to maximize their insulation, even existing
+    homes. You have already chosen your household heating options in a previous question,
+    while other buildings will be heated as efficiently as possible. This will require
+    a combination of [heat pumps](/info/heat_pumps), [micro-CHPs](/info/micro_chp),
+    [fuel cells](/info/fuel_cells), [solar water heaters](/info/solar_water_heater),
+    geothermal heating, and [heating networks](/info/heat_network).
+  description_en: ''
+- id: 29
+  text_nl: Groen gas is gewoon veel te duur. Ik zet geen groen gas in.
+  ordering: 0
+  question_id: 7
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-03-13 12:10:02.000000000 Z
+  description_nl: ''
+  text_de: Grünes Gas ist einfach viel zu teuer. Ich werde kein grünes Gas gebrauchen.
+  description_de: 
+  text_en: Green gas is far too expensive and my country will not use it.
+  description_en: 
+- id: 31
+  text_nl: 2% Groen gas. Ik gebruik alleen Nederlandse biomassa hiervoor.
+  ordering: 1
+  question_id: 7
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: '2% grünes Gas: hierfür verwende ich ausschließlich Biomasse aus dem eigenen
+    Land.'
+  description_de: 
+  text_en: '2% green gas: my country will only use domestic biomass.'
+  description_en: 
+- id: 32
+  text_nl: 5% Groen gas. Ik importeer ook biomassa uit het buitenland die ik vervolgens
+    omzet in Groen gas
+  ordering: 2
+  question_id: 7
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: '5% grünes Gas: hierfür importiere ich auch Biomasse aus dem Ausland, um
+    grünes Gas zu gewinnen.'
+  description_de: 
+  text_en: '5% green gas: my country will import some of the required biomass.'
+  description_en: 
+- id: 33
+  text_nl: Ik word een beetje rijker en Nederland ook. De economie groeit langzaam.
+  ordering: 2
+  question_id: 8
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025.
+    Het energiegebruik stijgt met 1% per jaar.
+  text_de: Ich werde ein wenig reicher und ebenso mein Land. Die Wirtschaft wächst
+    langsam.
+  description_de: 
+  text_en: I will be a little wealthier, as will be my country. The economy will grow
+    slowly.
+  description_en: 
+- id: 34
+  text_nl: Ik blijf even rijk en Nederland blijft even rijk. De economie groeit soms
+    een beetje en krimpt soms een beetje.
+  ordering: 3
+  question_id: 8
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De economie groeit gemiddeld met 0% per jaar
+  text_de: Mein Wohlstand bleibt gleich und ebenso der meines Landes. Die Wirtschaft
+    wächst manchmal ein wenig und schrumpft dann wieder ein wenig.
+  description_de: 
+  text_en: My wealth – and that of my country – will remain the same. The economy
+    will occasionally grow and shrink a little.
+  description_en: 
+- id: 35
+  text_nl: Ik word misschien wel rijker maar de Nederlanders worden langzaam armer.
+    De economie krimpt langzaam
+  ordering: 4
+  question_id: 8
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De economie krimpt met 1% per jaar. De energievraag neemt met een
+    0.5% per jaar af.
+  text_de: Vielleicht werde ich selbst ein wenig reicher aber der Wohlstand meines
+    Landes nimmt langsam ab. Die Wirtschaft schrumpft langsam.
+  description_de: 
+  text_en: I will likely grow wealthier, but many will become slightly poorer than
+    today. The economy will slowly shrink.
+  description_en: 
+- id: 36
+  text_nl: De helft van alle centrales wordt vervangen door windmolenparken op zee
+  ordering: 3
+  question_id: 5
+  created_at: 2011-04-05 17:39:06.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Die Hälfte aller Kraftwerke wird durch Windturbinenanlagen auf See ersetzt.
+  description_de: 
+  text_en: Half of our power plants will be replaced by off-shore wind turbines.
+  description_en: 
+- id: 37
+  text_nl: Mijn familie en ik worden net als de meeste Nederlanders veel rijker. De
+    economie groeit snel.
+  ordering: 1
+  question_id: 8
+  created_at: 2011-04-05 18:08:13.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Meine Familie und ich werden ebenso wie die meisten meiner Mitbürger viel
+    reicher.  Die Wirtschaft wächst schnell.
+  description_de: 
+  text_en: My family and I will become quite a lot richer, as will most others in
+    my country. The economy will grow quickly.
+  description_en: 
+- id: 39
+  text_nl: "De helft van alle centrales wordt vervangen door zonnepanelen op daken,
+    parkeerplaatsen, vuilstortplaatsen, etc.\r\n"
+  ordering: 5
+  question_id: 5
+  created_at: 2011-05-31 13:36:39.000000000 Z
+  updated_at: 2012-03-13 11:24:35.000000000 Z
+  description_nl: ''
+  text_de: Die Hälfte aller Kraftwerke wird durch Solarzellen-Panele auf Dächern,
+    Parkplätzen, Mülldeponien usw. ersetzt.
+  description_de: 
+  text_en: Half of our power plants will be replaced by solar power panels on rooftops,
+    car parks, garbage dumps, etc.
+  description_en: 
+- id: 43
+  text_nl: 'Iedereen kookt op hout '
+  ordering: 4
+  question_id: 3
+  created_at: 2011-06-14 15:38:43.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Alle Leute kochen auf einem Holzfeuer.
+  description_de: 
+  text_en: Everyone will cook on wood-fired stoves.
+  description_en: 
+- id: 44
+  text_nl: 10% groen gas. Ik ga overal uit de wereld biomassa halen. Desnoods ten
+    koste van natuur en voedsel voor mens en dier.
+  ordering: 3
+  question_id: 7
+  created_at: 2011-06-21 11:35:02.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: '10% grünes Gas: hierfür importiere ich Biomasse aus aller Welt. Notfalls
+    geht dies auf Kosten der Natur und der Nahrungsmittel für Mensch und Tier.'
+  description_de: 
+  text_en: '10% green gas: my country will import biomass from around the world, even
+    if this might be at the expense of food production.'
+  description_en: 
+- id: 45
+  text_nl: Ik ga dan ook overal naartoe met de auto. Mijn werk, de school van de kinderen
+    en familiebezoek doe ik allemaal met de auto.
+  ordering: 0
+  question_id: 10
+  created_at: 2011-07-08 07:21:58.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "\r\n"
+  text_de: Ich fahre jedenfalls so viel wie möglich mit dem Auto. Wenn ich zur Arbeit
+    fahre, die Kinder zur Schule bringe oder die Familie besuche, fahre ich immer
+    mit dem Auto.
+  description_de: 
+  text_en: I will still use my car to go everywhere such as work, school, and family
+    visits.
+  description_en: 
+- id: 46
+  text_nl: Ik probeer zoveel mogelijk met de fiets te doen en als het handig is ga
+    ik soms met de bus en de trein. Voor de rest gebruik ik de auto.
+  ordering: 1
+  question_id: 10
+  created_at: 2011-07-08 07:21:58.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Ich bemühe mich, so viel wie möglich mit dem Fahrrad zu fahren, und wenn
+    es gut auskommt, nehme ich auch mal den Bus oder den Zug.
+  description_de: 
+  text_en: I will try and use my bicycle as much as I can, and use public transport
+    when it is convenient. For all other places I will still need my car.
+  description_en: 
+- id: 47
+  text_nl: Ik ga alleen nog maar met de bus, de trein en op de fiets. Ik neem later
+    geen auto.
+  ordering: 2
+  question_id: 10
+  created_at: 2011-07-08 07:21:58.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Ich fahre ausschließlich mit dem Bus, mit dem Zug oder auf dem Fahrrad.
+    Ich werde demnächst kein Auto anschaffen.
+  description_de: 
+  text_en: I will only use public transport or my bicycle; I will not buy a car.
+  description_en: 
+- id: 51
+  text_nl: We gaan allemaal op elektriciteit rijden. De elektriciteit wordt opgewekt
+    met windmolens op land.
+  ordering: 3
+  question_id: 4
+  created_at: 2011-07-08 07:47:15.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: ''
+  text_de: Wir fahren alle in elektrischen Autos. Die dafür nötige Elektrizität wird
+    durch Windturbinen auf dem Festland erzeugt.
+  description_de: 
+  text_en: Everyone will use electric cars. The electricity required will be generated
+    using inland wind turbines.
+  description_en: 
+- id: 52
+  text_nl: Alle nieuwe huizen en andere gebouwen worden maximaal geïsoleerd, zodat
+    daar bijna geen verwarming meer nodig is.
+  ordering: 1
+  question_id: 6
+  created_at: 2011-09-13 08:34:10.000000000 Z
+  updated_at: 2012-07-16 10:27:02.000000000 Z
+  description_nl: ''
+  text_de: Alle neuen Wohnhäuser und andere Gebäude müssen maximal isoliert werden,
+    so dass beinahe keine Beheizung mehr nötig ist.
+  description_de: ''
+  text_en: All new homes and other buildings will be completely insulated, so they
+    will no longer require any energy for heating.
+  description_en: ''
+- id: 53
+  text_nl: Alle nieuw gebouwde huizen en alle gebouwen (zoals kantoren, scholen, ziekenhuizen
+    en zwembaden) worden maximaal geïsoleerd, zodat ze bijna geen warmte meer nodig
+    hebben.
+  ordering: 2
+  question_id: 6
+  created_at: 2011-09-13 11:51:32.000000000 Z
+  updated_at: 2012-07-16 10:27:19.000000000 Z
+  description_nl: I cheated a little bit by reducing demand in buildings, since the
+    insulation measures do not cover all building categories.
+  text_de: Alle neuen Wohnhäuser und andere Gebäude (wie Bürogebäude, Schulen, Krankenhäuser
+    und Schwimmbäder) müssen maximal isoliert werden, so dass beinahe keine Wärme
+    mehr zugeführt werden muss.
+  description_de: ''
+  text_en: All new homes and all buildings (offices, schools, swimming pools, hospitals,
+    etc.) will be completely insulated, so they no longer require any heating.
+  description_en: ''
+- id: 55
+  text_nl: Fossiele brandstoffen blijven even duur, hernieuwbare bronnen worden iets
+    goedkoper
+  ordering: 3
+  question_id: 11
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: Het blijft even duur, maar duurzame E-opties worden hoe dan ook
+    goedkoper
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels remain at their current prices, but renewable energy will
+    get a little cheaper.
+  description_en: 
+- id: 56
+  text_nl: Fossiele brandstoffen worden duurder, hierdoor worden hernieuwbare bronnen
+    goedkoper
+  ordering: 2
+  question_id: 11
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: Fossiele brandstoffen en biomassa worden 75% duurder, maar duurzame
+    E opties worden hoe dan ook goedkoper
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels become more expensive, with renewable energy becoming less
+    expensive.
+  description_en: 
+- id: 57
+  text_nl: Fossiele brandstoffen worden veel duurder. Hierdoor wordt meer in hernieuwbare
+    energie geïnvesteerd, en wordt hernieuwbaar juist goedkoper
+  ordering: 1
+  question_id: 11
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: Fosiele brandstoffen en biomassa worden 150% duurder. Duurzame opties
+    worden hoe dan ook goedkoper.
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels will become vastly more expensive, with the revenue being
+    invested in cheaper renewables.
+  description_en: 
+- id: 58
+  text_nl: Fossiele brandstoffen en hernieuwbare bronnen worden beide een beetje goedkoper
+  ordering: 4
+  question_id: 11
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: Fosiele brandstoffen worden 15% goedkoper. Biomassa blijft gelijk
+  text_de: 
+  description_de: 
+  text_en: Both fossil fuels and renewable energy will be a bit cheaper.
+  description_en: 
+- id: 59
+  text_nl: Fossiele brandstoffen worden veel goedkoper, waardoor hernieuwbare bronnen
+    nauwelijks goedkoper worden
+  ordering: 5
+  question_id: 11
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: Fosiele brandstoffen worden 40% goedkoper. Biomassa wordt iets geodkoper.
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels will be less expensive, with little difference in price between
+    fossil fuels and renewable sources.
+  description_en: 
+- id: 60
+  text_nl: Aardgas importeren, met name uit Rusland en het Midden Oosten
+  ordering: 0
+  question_id: 12
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-11-28 11:00:11.000000000 Z
+  description_nl: Er verandert verder niets bij deze keuze, anders dan de herkomstmix
+    van gas
+  text_de: ''
+  description_de: 
+  text_en: The natural gas we need will be imported from Russia and the Middle East.
+  description_en: 
+- id: 61
+  text_nl: Dit opvangen door zowel aardgas te importeren als een flink deel van de
+    vraag door besparingen teniet te doen
+  ordering: 1
+  question_id: 12
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-11-28 11:05:04.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Large amounts of natural gas will be imported and demand will be lowered
+    by increased savings.
+  description_en: 
+- id: 62
+  text_nl: De helft opwekken met energie uit 'eigen' <em key='biomass'>biomassa</em>,
+    zon en wind en een flink deel uit energiebesparing halen
+  ordering: 2
+  question_id: 12
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2013-07-31 14:52:21.000000000 Z
+  description_nl: '[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen
+    aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind'
+  text_de: ''
+  description_de: ''
+  text_en: Half of our energy needs will be met with <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power.
+  description_en: ''
+- id: 63
+  text_nl: Het tekort aan aardgas zoveel mogelijk uit andere, eigen energiebronnen
+    halen zoals <em key='biomass'>biomassa</em>, <em key='geothermal'>geothermie</em>,
+    zon en wind om de energie-import zo klein mogelijk te houden
+  ordering: 3
+  question_id: 12
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2013-02-20 13:13:39.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: As much energy as possible will be sourced from <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power, keeping imports as
+    low as possible.
+  description_en: ''
+- id: 64
+  text_nl: 'Niets. Ik twijfel aan het verband tussen CO2-uitstoot en de opwarming
+    van de aarde. Bovendien: andere landen gaan toch door met de CO2 uitstoot, een
+    actieve houding van Nederland zal weinig effect hebben'
+  ordering: 0
+  question_id: 13
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: '[NOTE] Er gebeurt niets.'
+  text_de: ''
+  description_de: 
+  text_en: Nothing should be done; I doubt the link between CO2 emissions and climate
+    change. Moreover, as other countries continue to produce CO2, a change of attitude
+    in the Netherlands would likely have little effect.
+  description_en: 
+- id: 65
+  text_nl: 'Maximale inzet van hernieuwbare opwek: zon, wind, waterkracht, geothermie
+    en schone biomassa'
+  ordering: 4
+  question_id: 13
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: '[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing
+    geven dat de helft van het aardgas nog steeds wordt gebruikt'
+  text_de: ''
+  description_de: 
+  text_en: 'We would use as much renewable energy as possible: solar, wind, hydroelectric
+    power, geothermal, and clean biomass should be used to their maximum potential.'
+  description_en: 
+- id: 66
+  text_nl: Maximale inzet van CO2-neutrale opwek, dus hernieuwbare maar ook kernenergie
+  ordering: 3
+  question_id: 13
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: |-
+    AW heeft 3a aangepast en is onderstaande geldt dus ook niet meer.
+    Alle conventionele centrales uitgefaseerd.
+    [NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe kerncentrale en schrap equivalente hoeveelheid wind
+  text_de: ''
+  description_de: 
+  text_en: We should focus on using CO2-neutral sources – not only renewables sources,
+    but also nuclear fission.
+  description_en: 
+- id: 67
+  text_nl: Vervangen van kolencentrales door CO2 arme bronnen zoals aardgascentrales.
+    De laatste stoten maar half zoveel CO2 uit
+  ordering: 2
+  question_id: 13
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: '[NOTE] Zou goed zijn om hier informatie te geven over verschil
+    tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot'
+  text_de: ''
+  description_de: 
+  text_en: Replace coal power plants with less-polluting sources such as natural gas
+    plants which emit only half as much CO2.
+  description_en: 
+- id: 68
+  text_nl: Alleen <em key='carbon_capture_storage'>opvang en opslag van CO2</em> uit
+    grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
+  ordering: 1
+  question_id: 13
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: '[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog
+    bepaald worden HOEVEEL suppl'
+  text_de: ''
+  description_de: 
+  text_en: Only use <em key='carbon_capture_storage'>capture and storage</em> of CO2
+    on major sources (e.g. coal power plants and refineries).
+  description_en: 
+- id: 69
+  text_nl: Ondanks de plannen van de EU blijven we nog steeds hoofdzakelijk op benzine
+    en diesel rijden.
+  ordering: 0
+  question_id: 14
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: De brandstofmix is in de toekomst hetzelfde als nu.
+  text_de: 
+  description_de: 
+  text_en: Regardless of the EU plans, we will remain mostly using petrol and diesel.
+  description_en: 
+- id: 70
+  text_nl: Benzine en diesel met een kwart biobrandstof bijgemengd
+  ordering: 1
+  question_id: 14
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: 
+  text_de: 
+  description_de: 
+  text_en: Petrol and diesel will still be used, but around 25% of vehicles will use
+    biofuels.
+  description_en: 
+- id: 71
+  text_nl: De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere
+    helft op elektriciteit, waarbij de elektriciteit voornamelijk opgewekt is met
+    gasgestookte <em key='fuel_cells'>brandstofcellen</em> in de gebouwde omgeving
+  ordering: 2
+  question_id: 14
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: 
+  text_de: 
+  description_de: 
+  text_en: Half of cars will continue to use petrol, diesel, and biofuels, with the
+    other half on electricity. This electricity is generated using gas-fired <em key='fuel_cells'>fuel
+    cells</em>.
+  description_en: 
+- id: 72
+  text_nl: Driekwart van de auto's rijdt op elektriciteit waarbij de elektriciteit
+    geheel uit hernieuwbare bronnen komt, een kwart van de auto's rijdt nog op benzine/diesel/biobrandstof.
+  ordering: 3
+  question_id: 14
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: '[NOTE] herniewbare bronnen moeten nog worden aangepast!'
+  text_de: 
+  description_de: 
+  text_en: Three quarters of vehicles will be powered with electricity from renewable
+    sources, with the rest using petrol, diesel, and biofuel.
+  description_en: 
+- id: 73
+  text_nl: De energiebehoefte blijft ongeveer gelijk. De huizen worden wel steeds
+    iets zuiniger maar de mensen gaan ook steeds luxer leven
+  ordering: 0
+  question_id: 15
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:11:07.000000000 Z
+  description_nl: Er verandert hierdoor dus niets uit de uitkomsten.
+  text_de: ''
+  description_de: 
+  text_en: Energy use will remain much as it is today. Homes may be better insulated,
+    but this is negated by improved prosperity.
+  description_en: 
+- id: 74
+  text_nl: Nieuwe gebouwen zijn zo goed ge&#239;soleerd dat ze met de helft van het
+    aardgas toe kunnen
+  ordering: 1
+  question_id: 15
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:11:07.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: New buildings will be very well-insulated, halfing the amount of natural
+    gas consumed for heating.
+  description_en: 
+- id: 75
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft
+    minder aardgas toe
+  ordering: 2
+  question_id: 15
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:11:07.000000000 Z
+  description_nl: 'N.B.: I cheated a bit and included a -2%/yr heat demand growth,
+    because insulation of ''other buildings'' was not possible and this way building
+    heating demand was reduced by 50%.'
+  text_de: ''
+  description_de: 
+  text_en: Both old and new buildings will be well-insulated.
+  description_en: 
+- id: 76
+  text_nl: Groeien door een snel groeiende wereldeconomie en de behoefte aan energie
+    stijgt navenant
+  ordering: 0
+  question_id: 16
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 4%
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow rapidly, significantly increasing energy use.
+  description_en: 
+- id: 77
+  text_nl: Groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie
+    in energiegebruik
+  ordering: 1
+  question_id: 16
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert
+    met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow modestly, but energy use increases less rapidly
+    thanks to higher efficiencies.
+  description_en: 
+- id: 78
+  text_nl: Langzaam groeien, de energiebehoefte stijgt ook maar licht
+  ordering: 2
+  question_id: 16
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: De energievraag van de industrie stijgt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, as will energy use.
+  description_en: 
+- id: 79
+  text_nl: Langzaam groeien en door verregaande effici&euml;ntie daalt de energiebehoefte
+    licht
+  ordering: 3
+  question_id: 16
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 1%, efficientie
+    verbeterd met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, but energy efficiency will get worse.
+  description_en: 
+- id: 80
+  text_nl: Langzaam krimpen (produktie is hier te duur), energiebehoefte neemt navenant
+    af
+  ordering: 4
+  question_id: 16
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: De energievraag van de industrie daalt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will shrink as production becomes more expensive. Energy use
+    falls accordingly.
+  description_en: 
+- id: 81
+  text_nl: Onveranderlijk uit fossiele energiebronnen
+  ordering: 0
+  question_id: 17
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:16:11.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Energy continues to be sourced from fossil fuels.
+  description_en: 
+- id: 82
+  text_nl: Voor een kwart uit zelf opgewekte energie uit biomassa en de rest uit fossiele
+    energie
+  ordering: 1
+  question_id: 17
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:16:11.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will be supplied by biomass, the rest by fossil fuels.
+  description_en: 
+- id: 83
+  text_nl: Voor een kwart uit zelf opgewekte energie met zonnewarmte en biomassa,
+    een kwart met geothermische energie en de helft met fossiele energie
+  ordering: 2
+  question_id: 17
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:16:11.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will come from solar and biomass, a quarter from geothermal
+    sources and the remaining half from fossil fuels.
+  description_en: 
+- id: 84
+  text_nl: Voor 25% uit eigen biomassa en zonnewarmte en voor 75% uit geothermie
+  ordering: 3
+  question_id: 17
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:16:11.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy is sourced from biomass, and the rest from geothermal
+    sources.
+  description_en: 
+- id: 85
+  text_nl: De economie groeit langzaam
+  ordering: 2
+  question_id: 18
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025.
+    Het energiegebruik stijgt met 1% per jaar.
+  text_de: 
+  description_de: 
+  text_en: The economy will slowly grow
+  description_en: 
+- id: 86
+  text_nl: De economie groeit soms een beetje en krimpt soms een beetje
+  ordering: 3
+  question_id: 18
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: De economie groeit gemiddeld met 0% per jaar
+  text_de: 
+  description_de: 
+  text_en: The economy will occasionally grow and shrink a little.
+  description_en: 
+- id: 87
+  text_nl: De economie krimpt langzaam
+  ordering: 4
+  question_id: 18
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: De economie krimpt met 1% per jaar. De energievraag neemt met een
+    0.5% per jaar af.
+  text_de: 
+  description_de: 
+  text_en: The economy will slowly shrink.
+  description_en: 
+- id: 88
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en maken gebruik van
+    de nieuwste verwarmingstechnieken (<em key='micro_chp'>HRe</em>, <em key='heat_pumps'>warmtepompen</em>
+    op gas of elektriciteit, hout-CV kachels en gasgestookte <em key='fuel_cells'>brandstofcellen</em>).
+  ordering: 3
+  question_id: 15
+  created_at: 2011-04-05 16:39:06.000000000 Z
+  updated_at: 2012-08-14 07:55:00.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Both new and old buildings will be extremely well-insulated, with the latest
+    heating technology – <em key='micro_chp'>Micro CHPs</em>, <em key='heat_pumps'>heat
+    pumps</em>, and <em key='fuel_cells'>gas-fired fuel cells</em> – being used extensively.
+  description_en: ''
+- id: 89
+  text_nl: De economie groeit snel
+  ordering: 1
+  question_id: 18
+  created_at: 2011-04-05 17:08:13.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: |-
+    Voor 2050 als uitgangspunten genomen dat de alle CO2 betaald is.
+    Aanname dat e-gebruik sneller groeit dan ruimteverwarmingsvraag.
+    Aanname dat aantal gebouwen en personen met 0.5% per jaar groeit, vanwege ruimtegebrek.
+  text_de: 
+  description_de: 
+  text_en: The economy will grow quickly.
+  description_en: 
+- id: 90
+  text_nl: Fossiele brandstoffen blijven even duur, hernieuwbare bronnen worden iets
+    goedkoper
+  ordering: 3
+  question_id: 19
+  created_at: 2013-04-19 09:40:02.000000000 Z
+  updated_at: 2013-04-19 13:54:59.000000000 Z
+  description_nl: Het blijft even duur, maar duurzame E-opties worden hoe dan ook
+    goedkoper
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels remain at their current prices, but renewable energy will
+    get a little cheaper.
+  description_en: 
+- id: 91
+  text_nl: Fossiele brandstoffen worden duurder, hierdoor worden hernieuwbare bronnen
+    goedkoper
+  ordering: 2
+  question_id: 19
+  created_at: 2013-04-19 09:40:02.000000000 Z
+  updated_at: 2013-04-19 13:54:59.000000000 Z
+  description_nl: Fossiele brandstoffen en biomassa worden 75% duurder, maar duurzame
+    E opties worden hoe dan ook goedkoper
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels become more expensive, with renewable energy becoming less
+    expensive.
+  description_en: 
+- id: 92
+  text_nl: Fossiele brandstoffen worden veel duurder. Hierdoor wordt meer in hernieuwbare
+    energie geïnvesteerd, en wordt hernieuwbaar juist goedkoper
+  ordering: 1
+  question_id: 19
+  created_at: 2013-04-19 09:40:02.000000000 Z
+  updated_at: 2013-04-19 13:54:59.000000000 Z
+  description_nl: Fosiele brandstoffen en biomassa worden 150% duurder. Duurzame opties
+    worden hoe dan ook goedkoper.
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels will become vastly more expensive, with the revenue being
+    invested in cheaper renewables.
+  description_en: 
+- id: 93
+  text_nl: Fossiele brandstoffen en hernieuwbare bronnen worden beide een beetje goedkoper
+  ordering: 4
+  question_id: 19
+  created_at: 2013-04-19 09:40:02.000000000 Z
+  updated_at: 2013-04-19 13:54:59.000000000 Z
+  description_nl: Fosiele brandstoffen worden 15% goedkoper. Biomassa blijft gelijk
+  text_de: ''
+  description_de: 
+  text_en: Both fossil fuels and renewable energy will be a bit cheaper.
+  description_en: 
+- id: 94
+  text_nl: Fossiele brandstoffen worden veel goedkoper, waardoor hernieuwbare bronnen
+    nauwelijks goedkoper worden
+  ordering: 5
+  question_id: 19
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 13:54:59.000000000 Z
+  description_nl: Fosiele brandstoffen worden 40% goedkoper. Biomassa wordt iets geodkoper.
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels will be less expensive, with little difference in price between
+    fossil fuels and renewable sources.
+  description_en: 
+- id: 95
+  text_nl: Aardgas importeren, met name uit Rusland en het Midden Oosten
+  ordering: 0
+  question_id: 20
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: Er verandert verder niets bij deze keuze, anders dan de herkomstmix
+    van gas
+  text_de: ''
+  description_de: 
+  text_en: The natural gas we need will be imported from Russia and the Middle East.
+  description_en: 
+- id: 96
+  text_nl: Dit opvangen door zowel aardgas te importeren als een flink deel van de
+    vraag door besparingen teniet te doen
+  ordering: 1
+  question_id: 20
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Large amounts of natural gas will be imported and demand will be lowered
+    by increased savings.
+  description_en: 
+- id: 97
+  text_nl: De helft opwekken met energie uit 'eigen' <em key='biomass'>biomassa</em>,
+    zon en wind en een flink deel uit energiebesparing halen
+  ordering: 2
+  question_id: 20
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: '[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen
+    aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind'
+  text_de: ''
+  description_de: 
+  text_en: Half of our energy needs will be met with <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power.
+  description_en: 
+- id: 98
+  text_nl: Het tekort aan aardgas zoveel mogelijk uit andere, eigen energiebronnen
+    halen zoals <em key='biomass'>biomassa</em>, <em key='geothermal'>geothermie</em>,
+    zon en wind om de energie-import zo klein mogelijk te houden
+  ordering: 3
+  question_id: 20
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: As much energy as possible will be sourced from <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power, keeping imports as
+    low as possible.
+  description_en: ''
+- id: 99
+  text_nl: 'Niets. Ik twijfel aan het verband tussen CO2-uitstoot en de opwarming
+    van de aarde. Bovendien: andere landen gaan toch door met de CO2 uitstoot, een
+    actieve houding van Nederland zal weinig effect hebben'
+  ordering: 0
+  question_id: 21
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: '[NOTE] Er gebeurt niets.'
+  text_de: ''
+  description_de: 
+  text_en: Nothing should be done; I doubt the link between CO2 emissions and climate
+    change. Moreover, as other countries continue to produce CO2, a change of attitude
+    in the Netherlands would likely have little effect.
+  description_en: 
+- id: 100
+  text_nl: 'Maximale inzet van hernieuwbare opwek: zon, wind, waterkracht, geothermie
+    en schone biomassa'
+  ordering: 4
+  question_id: 21
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 09:40:03.000000000 Z
+  description_nl: '[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing
+    geven dat de helft van het aardgas nog steeds wordt gebruikt'
+  text_de: ''
+  description_de: 
+  text_en: 'We would use as much renewable energy as possible: solar, wind, hydroelectric
+    power, geothermal, and clean biomass should be used to their maximum potential.'
+  description_en: 
+- id: 101
+  text_nl: Maximale inzet van CO2-neutrale opwek, dus hernieuwbare maar ook kernenergie
+  ordering: 3
+  question_id: 21
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: |-
+    AW heeft 3a aangepast en is onderstaande geldt dus ook niet meer.
+    Alle conventionele centrales uitgefaseerd.
+    [NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe kerncentrale en schrap equivalente hoeveelheid wind
+  text_de: ''
+  description_de: 
+  text_en: We should focus on using CO2-neutral sources – not only renewables sources,
+    but also nuclear fission.
+  description_en: 
+- id: 102
+  text_nl: Vervangen van kolencentrales door CO2 arme bronnen zoals aardgascentrales.
+    De laatste stoten maar half zoveel CO2 uit
+  ordering: 2
+  question_id: 21
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: '[NOTE] Zou goed zijn om hier informatie te geven over verschil
+    tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot'
+  text_de: ''
+  description_de: 
+  text_en: Replace coal power plants with less-polluting sources such as natural gas
+    plants which emit only half as much CO2.
+  description_en: 
+- id: 103
+  text_nl: Alleen <em key='carbon_capture_storage'>opvang en opslag van CO2</em> uit
+    grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
+  ordering: 1
+  question_id: 21
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: '[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog
+    bepaald worden HOEVEEL suppl'
+  text_de: ''
+  description_de: 
+  text_en: Only use <em key='carbon_capture_storage'>capture and storage</em> of CO2
+    on major sources (e.g. coal power plants and refineries).
+  description_en: 
+- id: 104
+  text_nl: Ondanks de plannen van de EU blijven we nog steeds hoofdzakelijk op benzine
+    en diesel rijden.
+  ordering: 0
+  question_id: 22
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 10:55:06.000000000 Z
+  description_nl: De brandstofmix is in de toekomst hetzelfde als nu.
+  text_de: ''
+  description_de: 
+  text_en: Regardless of the EU plans, we will remain mostly using petrol and diesel.
+  description_en: 
+- id: 105
+  text_nl: Benzine en diesel met een kwart biobrandstof bijgemengd
+  ordering: 1
+  question_id: 22
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 10:55:06.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Petrol and diesel will still be used, but around 25% of vehicles will use
+    biofuels.
+  description_en: 
+- id: 106
+  text_nl: De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere
+    helft op elektriciteit, waarbij de elektriciteit voornamelijk opgewekt is met
+    gasgestookte <em key='fuel_cells'>brandstofcellen</em> in de gebouwde omgeving
+  ordering: 2
+  question_id: 22
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 10:55:06.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Half of cars will continue to use petrol, diesel, and biofuels, with the
+    other half on electricity. This electricity is generated using gas-fired <em key='fuel_cells'>fuel
+    cells</em>.
+  description_en: 
+- id: 107
+  text_nl: Driekwart van de auto's rijdt op elektriciteit waarbij de elektriciteit
+    geheel uit hernieuwbare bronnen komt, een kwart van de auto's rijdt nog op benzine/diesel/biobrandstof.
+  ordering: 3
+  question_id: 22
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 10:55:06.000000000 Z
+  description_nl: '[NOTE] herniewbare bronnen moeten nog worden aangepast!'
+  text_de: ''
+  description_de: 
+  text_en: Three quarters of vehicles will be powered with electricity from renewable
+    sources, with the rest using petrol, diesel, and biofuel.
+  description_en: 
+- id: 108
+  text_nl: De energiebehoefte blijft ongeveer gelijk. De huizen worden wel steeds
+    iets zuiniger maar de mensen gaan ook steeds luxer leven
+  ordering: 0
+  question_id: 23
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: Er verandert hierdoor dus niets uit de uitkomsten.
+  text_de: ''
+  description_de: 
+  text_en: Energy use will remain much as it is today. Homes may be better insulated,
+    but this is negated by improved prosperity.
+  description_en: 
+- id: 109
+  text_nl: Nieuwe gebouwen zijn zo goed ge&#239;soleerd dat ze met de helft van het
+    aardgas toe kunnen
+  ordering: 1
+  question_id: 23
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: New buildings will be very well-insulated, halfing the amount of natural
+    gas consumed for heating.
+  description_en: 
+- id: 110
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft
+    minder aardgas toe
+  ordering: 2
+  question_id: 23
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 09:40:04.000000000 Z
+  description_nl: 'N.B.: I cheated a bit and included a -2%/yr heat demand growth,
+    because insulation of ''other buildings'' was not possible and this way building
+    heating demand was reduced by 50%.'
+  text_de: ''
+  description_de: 
+  text_en: Both old and new buildings will be well-insulated.
+  description_en: 
+- id: 111
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en maken gebruik van
+    de nieuwste verwarmingstechnieken (<em key='micro_chp'>HRe</em>, <em key='heat_pumps'>warmtepompen</em>
+    op gas of elektriciteit, hout-CV kachels en gasgestookte <em key='fuel_cells'>brandstofcellen</em>).
+  ordering: 3
+  question_id: 23
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Both new and old buildings will be extremely well-insulated, with the latest
+    heating technology – <em key='micro_chp'>Micro CHPs</em>, <em key='heat_pumps'>heat
+    pumps</em>, and <em key='fuel_cells'>gas-fired fuel cells</em> – being used extensively.
+  description_en: ''
+- id: 112
+  text_nl: Groeien door een snel groeiende wereldeconomie en de behoefte aan energie
+    stijgt navenant
+  ordering: 0
+  question_id: 24
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 4%
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow rapidly, significantly increasing energy use.
+  description_en: 
+- id: 113
+  text_nl: Groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie
+    in energiegebruik
+  ordering: 1
+  question_id: 24
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert
+    met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow modestly, but energy use increases less rapidly
+    thanks to higher efficiencies.
+  description_en: 
+- id: 114
+  text_nl: Langzaam groeien, de energiebehoefte stijgt ook maar licht
+  ordering: 2
+  question_id: 24
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: De energievraag van de industrie stijgt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, as will energy use.
+  description_en: 
+- id: 115
+  text_nl: Langzaam groeien en door verregaande effici&euml;ntie daalt de energiebehoefte
+    licht
+  ordering: 3
+  question_id: 24
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 1%, efficientie
+    verbeterd met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, but energy efficiency will get worse.
+  description_en: 
+- id: 116
+  text_nl: Langzaam krimpen (produktie is hier te duur), energiebehoefte neemt navenant
+    af
+  ordering: 4
+  question_id: 24
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: De energievraag van de industrie daalt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will shrink as production becomes more expensive. Energy use
+    falls accordingly.
+  description_en: 
+- id: 117
+  text_nl: Onveranderlijk uit fossiele energiebronnen
+  ordering: 0
+  question_id: 25
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Energy continues to be sourced from fossil fuels.
+  description_en: 
+- id: 118
+  text_nl: Voor een kwart uit zelf opgewekte energie uit biomassa en de rest uit fossiele
+    energie
+  ordering: 1
+  question_id: 25
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will be supplied by biomass, the rest by fossil fuels.
+  description_en: 
+- id: 119
+  text_nl: Voor een kwart uit zelf opgewekte energie met zonnewarmte en biomassa,
+    een kwart met geothermische energie en de helft met fossiele energie
+  ordering: 2
+  question_id: 25
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will come from solar and biomass, a quarter from geothermal
+    sources and the remaining half from fossil fuels.
+  description_en: 
+- id: 120
+  text_nl: Voor 25% uit eigen biomassa en zonnewarmte en voor 75% uit geothermie
+  ordering: 3
+  question_id: 25
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 09:40:05.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy is sourced from biomass, and the rest from geothermal
+    sources.
+  description_en: 
+- id: 121
+  text_nl: De economie groeit langzaam
+  ordering: 2
+  question_id: 26
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 13:54:35.000000000 Z
+  description_nl: De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025.
+    Het energiegebruik stijgt met 1% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will slowly grow
+  description_en: 
+- id: 122
+  text_nl: De economie groeit soms een beetje en krimpt soms een beetje
+  ordering: 3
+  question_id: 26
+  created_at: 2013-04-19 09:40:06.000000000 Z
+  updated_at: 2013-04-19 13:54:35.000000000 Z
+  description_nl: De economie groeit gemiddeld met 0% per jaar
+  text_de: ''
+  description_de: 
+  text_en: The economy will occasionally grow and shrink a little.
+  description_en: 
+- id: 123
+  text_nl: De economie krimpt langzaam
+  ordering: 4
+  question_id: 26
+  created_at: 2013-04-19 09:40:06.000000000 Z
+  updated_at: 2013-04-19 13:54:35.000000000 Z
+  description_nl: De economie krimpt met 1% per jaar. De energievraag neemt met een
+    0.5% per jaar af.
+  text_de: ''
+  description_de: 
+  text_en: The economy will slowly shrink.
+  description_en: 
+- id: 124
+  text_nl: De economie groeit snel
+  ordering: 1
+  question_id: 26
+  created_at: 2013-04-19 09:40:06.000000000 Z
+  updated_at: 2013-04-19 13:54:35.000000000 Z
+  description_nl: |-
+    Voor 2050 als uitgangspunten genomen dat de alle CO2 betaald is.
+    Aanname dat e-gebruik sneller groeit dan ruimteverwarmingsvraag.
+    Aanname dat aantal gebouwen en personen met 0.5% per jaar groeit, vanwege ruimtegebrek.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow quickly.
+  description_en: 
+- id: 125
+  text_nl: Stijgt met ongeveer 5% per jaar
+  ordering: 1
+  question_id: 27
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-04-19 10:34:34.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 126
+  text_nl: Stijgt met ongeveer 2% per jaar
+  ordering: 2
+  question_id: 27
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-04-19 10:35:20.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 127
+  text_nl: Blijft ongeveer gelijk
+  ordering: 3
+  question_id: 27
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-04-19 10:36:06.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 128
+  text_nl: Daalt met 2 % per jaar
+  ordering: 4
+  question_id: 27
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-04-19 10:36:28.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 129
+  text_nl: Daalt met 5% per jaar
+  ordering: 5
+  question_id: 27
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-04-19 10:36:56.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 130
+  text_nl: Meer dan 10 miljard m3
+  ordering: 1
+  question_id: 28
+  created_at: 2013-04-19 10:50:57.000000000 Z
+  updated_at: 2013-04-19 10:50:57.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 131
+  text_nl: Ongeveer 5 miljard m3
+  ordering: 2
+  question_id: 28
+  created_at: 2013-04-19 10:50:57.000000000 Z
+  updated_at: 2013-04-19 10:50:57.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 132
+  text_nl: Ongeveer 1 miljard m3
+  ordering: 3
+  question_id: 28
+  created_at: 2013-04-19 10:50:57.000000000 Z
+  updated_at: 2013-04-19 10:50:57.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 133
+  text_nl: Schaliegas wordt in Nederland niet geproduceerd voor 2030
+  ordering: 4
+  question_id: 28
+  created_at: 2013-04-19 10:50:57.000000000 Z
+  updated_at: 2013-04-19 10:51:15.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 134
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 29
+  created_at: 2013-04-19 10:54:46.000000000 Z
+  updated_at: 2013-04-19 14:02:49.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 135
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 29
+  created_at: 2013-04-19 10:54:46.000000000 Z
+  updated_at: 2013-04-19 14:03:23.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 136
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 29
+  created_at: 2013-04-19 10:54:46.000000000 Z
+  updated_at: 2013-04-19 14:04:00.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 137
+  text_nl: Produktie van groen gas is eigenlijk niet zo'n goed idee. 0 m3
+  ordering: 4
+  question_id: 29
+  created_at: 2013-04-19 10:54:46.000000000 Z
+  updated_at: 2013-04-19 14:04:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 138
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 30
+  created_at: 2013-04-19 10:58:09.000000000 Z
+  updated_at: 2013-04-19 14:26:02.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 139
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 30
+  created_at: 2013-04-19 10:58:09.000000000 Z
+  updated_at: 2013-04-19 14:26:35.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 140
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 30
+  created_at: 2013-04-19 10:58:09.000000000 Z
+  updated_at: 2013-04-19 14:26:59.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 141
+  text_nl: Power to Gas is helemaal niet zo'n goed idee je kunt elektriciteit veel
+    beter direct gebruiken.
+  ordering: 4
+  question_id: 30
+  created_at: 2013-04-19 10:58:09.000000000 Z
+  updated_at: 2013-04-19 10:58:09.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 142
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 31
+  created_at: 2013-04-19 10:58:34.000000000 Z
+  updated_at: 2013-04-19 10:58:34.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 143
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 31
+  created_at: 2013-04-19 10:58:34.000000000 Z
+  updated_at: 2013-04-19 10:58:34.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 144
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 31
+  created_at: 2013-04-19 10:58:34.000000000 Z
+  updated_at: 2013-04-19 10:58:34.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 145
+  text_nl: Power to Gas is helemaal niet zo'n goed idee je kunt elektriciteit veel
+    beter direct gebruiken.
+  ordering: 4
+  question_id: 31
+  created_at: 2013-04-19 10:58:34.000000000 Z
+  updated_at: 2013-04-19 10:58:34.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 146
+  text_nl: De aardgasbaten gaan stijgen omdat het volume minder afneemt dan de prijs
+  ordering: 1
+  question_id: 32
+  created_at: 2013-04-19 13:26:52.000000000 Z
+  updated_at: 2013-04-19 13:26:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 147
+  text_nl: De aardgasbaten gaan stijgen omdat we steeds meer onconventioneel aardgas
+    gaan produceren tegen een stijgende prijs
+  ordering: 2
+  question_id: 32
+  created_at: 2013-04-19 13:26:52.000000000 Z
+  updated_at: 2013-04-19 13:26:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 148
+  text_nl: De aardgasbaten gaan dalen omdat onze productiecapaciteit afneemt en de
+    prijsstijging dit niet compenseert
+  ordering: 3
+  question_id: 32
+  created_at: 2013-04-19 13:26:52.000000000 Z
+  updated_at: 2013-04-19 13:26:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 149
+  text_nl: De aardgasbaten gaan sterk dalen en zullen tegen 2030 zijn gehalveerd
+  ordering: 4
+  question_id: 32
+  created_at: 2013-04-19 13:26:52.000000000 Z
+  updated_at: 2013-04-19 13:29:55.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 150
+  text_nl: Door een combinatie van dalende prijzen en sterk teruglopende productiecapaciteit
+    zullen de aardgasbaten zijn opgedroogd in 2030
+  ordering: 5
+  question_id: 32
+  created_at: 2013-04-19 13:29:30.000000000 Z
+  updated_at: 2013-04-22 07:15:04.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 151
+  text_nl: De handelsbalans verbetert want we worden gasrontonde
+  ordering: 1
+  question_id: 33
+  created_at: 2013-04-19 13:38:18.000000000 Z
+  updated_at: 2013-04-19 14:14:08.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 152
+  text_nl: De handelsbalans blijft gelijk. De productievolumedaling en de prijsstijging
+    heffen elkaar op
+  ordering: 2
+  question_id: 33
+  created_at: 2013-04-19 13:38:18.000000000 Z
+  updated_at: 2013-04-22 07:17:12.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 153
+  text_nl: De handelsbalans verslechtert omdat we vanaf 2025 netto importeur van gas
+    worden
+  ordering: 3
+  question_id: 33
+  created_at: 2013-04-19 13:38:18.000000000 Z
+  updated_at: 2013-04-19 13:38:18.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 154
+  text_nl: Ja, we moeten stoppen met de aardgaswinning. Te gevaarlijk.
+  ordering: 1
+  question_id: 34
+  created_at: 2013-04-19 13:40:40.000000000 Z
+  updated_at: 2013-04-19 13:40:40.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 155
+  text_nl: We kunnen het tempo iets terugbrengen om het risico te verkleinen.
+  ordering: 2
+  question_id: 34
+  created_at: 2013-04-19 13:40:40.000000000 Z
+  updated_at: 2013-04-19 13:40:40.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 156
+  text_nl: Nee, het is zinvoller door te gaan met de winning zoals gepland.
+  ordering: 3
+  question_id: 34
+  created_at: 2013-04-19 13:40:40.000000000 Z
+  updated_at: 2013-04-19 13:40:40.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 157
+  text_nl: Ja. We vernietigen anders ons eigen leefmilieu. Dit geldt overigens ook
+    voor olie en kolen.
+  ordering: 1
+  question_id: 35
+  created_at: 2013-04-19 13:44:03.000000000 Z
+  updated_at: 2013-04-19 14:15:14.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 158
+  text_nl: Nee. Je moet het juist inzetten als alternatief voor steenkool. Dat is
+    de goedkoopste manier om de uitstoot te verminderen op korte termijn.
+  ordering: 2
+  question_id: 35
+  created_at: 2013-04-19 13:44:03.000000000 Z
+  updated_at: 2013-04-19 14:17:13.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 159
+  text_nl: Nee. Het is nog maar de vraag of de aarde wel zo snel opwarmt.
+  ordering: 3
+  question_id: 35
+  created_at: 2013-04-19 13:44:03.000000000 Z
+  updated_at: 2013-04-19 13:44:03.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 160
+  text_nl: 0%
+  ordering: 1
+  question_id: 36
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-22 14:39:38.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 161
+  text_nl: <5%
+  ordering: 2
+  question_id: 36
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-22 14:39:38.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 162
+  text_nl: 10%
+  ordering: 3
+  question_id: 36
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-22 14:39:38.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 163
+  text_nl: 25%
+  ordering: 4
+  question_id: 36
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-22 14:39:38.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 164
+  text_nl: '>50%'
+  ordering: 86
+  question_id: 36
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-22 14:39:38.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 165
+  text_nl: 0%
+  ordering: 1
+  question_id: 37
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-22 14:40:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 166
+  text_nl: <5%
+  ordering: 2
+  question_id: 37
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-22 14:40:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 167
+  text_nl: 10%
+  ordering: 3
+  question_id: 37
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-22 14:40:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 168
+  text_nl: 25%
+  ordering: 4
+  question_id: 37
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-22 14:40:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 169
+  text_nl: '>50%'
+  ordering: 5
+  question_id: 37
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-22 14:40:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 170
+  text_nl: Nederland
+  ordering: 1
+  question_id: 38
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-22 14:42:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 171
+  text_nl: Noord-West Europa
+  ordering: 2
+  question_id: 38
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-22 14:42:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 172
+  text_nl: Europa
+  ordering: 3
+  question_id: 38
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-22 14:42:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 173
+  text_nl: Europa + Noord Afrika
+  ordering: 4
+  question_id: 38
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-22 14:42:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 174
+  text_nl: Europa + Noord Afrika + Midden Oosten
+  ordering: 5
+  question_id: 38
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-22 14:42:52.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 175
+  text_nl: Een windmolen op land in Nederland
+  ordering: 1
+  question_id: 39
+  created_at: 2013-05-22 14:45:07.000000000 Z
+  updated_at: 2013-05-22 14:45:07.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 176
+  text_nl: Een windmolen op het Nederlandse deel van de  Noordzee
+  ordering: 2
+  question_id: 39
+  created_at: 2013-05-22 14:45:07.000000000 Z
+  updated_at: 2013-05-22 14:45:07.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 177
+  text_nl: Een windmolen in de woestijn in Marokko
+  ordering: 3
+  question_id: 39
+  created_at: 2013-05-22 14:45:07.000000000 Z
+  updated_at: 2013-05-27 15:51:10.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 178
+  text_nl: Je kunt beter investeren in andere vormen van elektriciteitproduktie
+  ordering: 4
+  question_id: 39
+  created_at: 2013-05-22 14:45:07.000000000 Z
+  updated_at: 2013-05-23 06:39:11.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 179
+  text_nl: Ja, want dan krijgen we een positie in dit belangrijke speelveld en we
+    zitten dicht bij het vuur wat betreft innovatie
+  ordering: 1
+  question_id: 40
+  created_at: 2013-05-22 14:46:12.000000000 Z
+  updated_at: 2013-05-23 06:42:02.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 180
+  text_nl: Nee. De Nederlandse overheid moet zich bezighouden met Nederlandse energiezaken
+    en de rest aan de EU overlaten
+  ordering: 2
+  question_id: 40
+  created_at: 2013-05-22 14:46:12.000000000 Z
+  updated_at: 2013-05-23 06:42:02.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 181
+  text_nl: Ja via branche organisaties als Energie Nederland, FME of VNO/NCW
+  ordering: 1
+  question_id: 41
+  created_at: 2013-05-22 14:48:49.000000000 Z
+  updated_at: 2013-05-22 14:48:49.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 182
+  text_nl: Ja, bijvoorbeeld Philips, Eneco, Rabobank e.a. moeten rechtstreeks participeren
+  ordering: 2
+  question_id: 41
+  created_at: 2013-05-22 14:48:49.000000000 Z
+  updated_at: 2013-05-22 14:48:49.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 183
+  text_nl: Nee, het is voldoende als Shell dit doet
+  ordering: 3
+  question_id: 41
+  created_at: 2013-05-22 14:48:49.000000000 Z
+  updated_at: 2013-05-22 14:48:49.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 184
+  text_nl: Nee dat kan niet. O.a. omdat je dan de systeemstabiliteit niet kan garanderen.
+    Zon en wind zijn niet altijd beschikbaar
+  ordering: 3
+  question_id: 42
+  created_at: 2013-05-22 15:08:20.000000000 Z
+  updated_at: 2013-05-23 06:44:00.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 185
+  text_nl: 'Ja zeker. Een energiemix die heel goed kan: 50% uit wind, 25% uit zon,
+    15% hydro en 10% backup met gas'
+  ordering: 1
+  question_id: 42
+  created_at: 2013-05-22 15:08:20.000000000 Z
+  updated_at: 2013-05-27 12:56:33.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 186
+  text_nl: Ja, dat kan op heel veel manieren. Een mix met relatief meer biomassa en
+    nieuwe technieken dan in het vorige antwoord is ook mogelijk
+  ordering: 2
+  question_id: 42
+  created_at: 2013-05-22 15:08:20.000000000 Z
+  updated_at: 2013-05-27 12:56:33.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 187
+  text_nl: Duurder, want het is de komende jaren goedkoper om fossiel te gebruiken
+    en bovendien is het heel duur om hoogspanningskabels met voldoende capaciteit
+    door de hele regio te trekken.
+  ordering: 1
+  question_id: 43
+  created_at: 2013-05-22 15:08:40.000000000 Z
+  updated_at: 2013-05-27 12:57:07.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 188
+  text_nl: Duurder, want je krijgt de kosten van duurzame energie plus de kosten om
+    het systeem in balans te houden met backup capaciteit  voor als het weinig waait
+    en het nacht is
+  ordering: 
+  question_id: 43
+  created_at: 2013-05-22 15:08:40.000000000 Z
+  updated_at: 2013-05-23 06:35:43.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 189
+  text_nl: Dat hangt helemaal af van de prijsontwikkeling van fossiele brandstof en
+    duurzame energie. Eigenlijk kan dit alleen maar als fossiel duurder wordt en duurzaam
+    goedkoper
+  ordering: 3
+  question_id: 43
+  created_at: 2013-05-22 15:08:40.000000000 Z
+  updated_at: 2013-05-23 06:35:43.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 190
+  text_nl: Goedkoper. Wind en zon uit dit gebied kunnen nu al bijna concurreren met
+    fossiel en de extra kosten voor backup en hoogspanningsleidingen worden volledig
+    gecompenseerd door de veel betere benutting van de capaciteit in EUMENA.
+  ordering: 4
+  question_id: 43
+  created_at: 2013-05-23 06:35:43.000000000 Z
+  updated_at: 2013-05-23 06:35:43.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 191
+  text_nl: Het maakt eigenlijk niet veel uit
+  ordering: 5
+  question_id: 39
+  created_at: 2013-05-23 06:39:11.000000000 Z
+  updated_at: 2013-05-27 13:37:23.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 192
+  text_nl: Nee. De Nederlandse overheid moet de markt zijn werk laten doen en niet
+    interveniëren.
+  ordering: 
+  question_id: 40
+  created_at: 2013-05-23 06:42:02.000000000 Z
+  updated_at: 2013-05-23 06:42:02.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 193
+  text_nl: Fossiele brandstoffen blijven even duur, hernieuwbare bronnen worden iets
+    goedkoper
+  ordering: 3
+  question_id: 44
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Het blijft even duur, maar duurzame E-opties worden hoe dan ook
+    goedkoper
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels remain at their current prices, but renewable energy will
+    get a little cheaper.
+  description_en: 
+- id: 194
+  text_nl: Fossiele brandstoffen worden duurder, hierdoor worden hernieuwbare bronnen
+    goedkoper
+  ordering: 2
+  question_id: 44
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Fossiele brandstoffen en biomassa worden 75% duurder, maar duurzame
+    E opties worden hoe dan ook goedkoper
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels become more expensive, with renewable energy becoming less
+    expensive.
+  description_en: 
+- id: 195
+  text_nl: Fossiele brandstoffen worden veel duurder. Hierdoor wordt meer in hernieuwbare
+    energie geïnvesteerd, en wordt hernieuwbaar juist goedkoper
+  ordering: 1
+  question_id: 44
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Fosiele brandstoffen en biomassa worden 150% duurder. Duurzame opties
+    worden hoe dan ook goedkoper.
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels will become vastly more expensive, with the revenue being
+    invested in cheaper renewables.
+  description_en: 
+- id: 196
+  text_nl: Fossiele brandstoffen en hernieuwbare bronnen worden beide een beetje goedkoper
+  ordering: 4
+  question_id: 44
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Fosiele brandstoffen worden 15% goedkoper. Biomassa blijft gelijk
+  text_de: ''
+  description_de: 
+  text_en: Both fossil fuels and renewable energy will be a bit cheaper.
+  description_en: 
+- id: 197
+  text_nl: Fossiele brandstoffen worden veel goedkoper, waardoor hernieuwbare bronnen
+    nauwelijks goedkoper worden
+  ordering: 5
+  question_id: 44
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Fosiele brandstoffen worden 40% goedkoper. Biomassa wordt iets geodkoper.
+  text_de: ''
+  description_de: 
+  text_en: Fossil fuels will be less expensive, with little difference in price between
+    fossil fuels and renewable sources.
+  description_en: 
+- id: 198
+  text_nl: Aardgas importeren, met name uit Rusland en het Midden Oosten
+  ordering: 0
+  question_id: 45
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Er verandert verder niets bij deze keuze, anders dan de herkomstmix
+    van gas
+  text_de: ''
+  description_de: 
+  text_en: The natural gas we need will be imported from Russia and the Middle East.
+  description_en: 
+- id: 199
+  text_nl: Dit opvangen door zowel aardgas te importeren als een flink deel van de
+    vraag door besparingen teniet te doen
+  ordering: 1
+  question_id: 45
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Large amounts of natural gas will be imported and demand will be lowered
+    by increased savings.
+  description_en: 
+- id: 200
+  text_nl: De helft opwekken met energie uit 'eigen' <em key='biomass'>biomassa</em>,
+    zon en wind en een flink deel uit energiebesparing halen
+  ordering: 2
+  question_id: 45
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: '[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen
+    aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind'
+  text_de: ''
+  description_de: 
+  text_en: Half of our energy needs will be met with <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power.
+  description_en: 
+- id: 201
+  text_nl: Het tekort aan aardgas zoveel mogelijk uit andere, eigen energiebronnen
+    halen zoals <em key='biomass'>biomassa</em>, <em key='geothermal'>geothermie</em>,
+    zon en wind om de energie-import zo klein mogelijk te houden
+  ordering: 3
+  question_id: 45
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: As much energy as possible will be sourced from <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power, keeping imports as
+    low as possible.
+  description_en: ''
+- id: 202
+  text_nl: 'Niets. Ik twijfel aan het verband tussen CO2-uitstoot en de opwarming
+    van de aarde. Bovendien: andere landen gaan toch door met de CO2 uitstoot, een
+    actieve houding van Nederland zal weinig effect hebben'
+  ordering: 0
+  question_id: 46
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: '[NOTE] Er gebeurt niets.'
+  text_de: ''
+  description_de: 
+  text_en: Nothing should be done; I doubt the link between CO2 emissions and climate
+    change. Moreover, as other countries continue to produce CO2, a change of attitude
+    in the Netherlands would likely have little effect.
+  description_en: 
+- id: 203
+  text_nl: 'Maximale inzet van hernieuwbare opwek: zon, wind, waterkracht, geothermie
+    en schone biomassa'
+  ordering: 4
+  question_id: 46
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: '[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing
+    geven dat de helft van het aardgas nog steeds wordt gebruikt'
+  text_de: ''
+  description_de: 
+  text_en: 'We would use as much renewable energy as possible: solar, wind, hydroelectric
+    power, geothermal, and clean biomass should be used to their maximum potential.'
+  description_en: 
+- id: 204
+  text_nl: Maximale inzet van CO2-neutrale opwek, dus hernieuwbare maar ook kernenergie
+  ordering: 3
+  question_id: 46
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: |-
+    AW heeft 3a aangepast en is onderstaande geldt dus ook niet meer.
+    Alle conventionele centrales uitgefaseerd.
+    [NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe kerncentrale en schrap equivalente hoeveelheid wind
+  text_de: ''
+  description_de: 
+  text_en: We should focus on using CO2-neutral sources – not only renewables sources,
+    but also nuclear fission.
+  description_en: 
+- id: 205
+  text_nl: Vervangen van kolencentrales door CO2 arme bronnen zoals aardgascentrales.
+    De laatste stoten maar half zoveel CO2 uit
+  ordering: 2
+  question_id: 46
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: '[NOTE] Zou goed zijn om hier informatie te geven over verschil
+    tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot'
+  text_de: ''
+  description_de: 
+  text_en: Replace coal power plants with less-polluting sources such as natural gas
+    plants which emit only half as much CO2.
+  description_en: 
+- id: 206
+  text_nl: Alleen <em key='carbon_capture_storage'>opvang en opslag van CO2</em> uit
+    grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
+  ordering: 1
+  question_id: 46
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: '[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog
+    bepaald worden HOEVEEL suppl'
+  text_de: ''
+  description_de: 
+  text_en: Only use <em key='carbon_capture_storage'>capture and storage</em> of CO2
+    on major sources (e.g. coal power plants and refineries).
+  description_en: 
+- id: 207
+  text_nl: Ondanks de plannen van de EU blijven we nog steeds hoofdzakelijk op benzine
+    en diesel rijden.
+  ordering: 0
+  question_id: 47
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: De brandstofmix is in de toekomst hetzelfde als nu.
+  text_de: ''
+  description_de: 
+  text_en: Regardless of the EU plans, we will remain mostly using petrol and diesel.
+  description_en: 
+- id: 208
+  text_nl: Benzine en diesel met een kwart biobrandstof bijgemengd
+  ordering: 1
+  question_id: 47
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Petrol and diesel will still be used, but around 25% of vehicles will use
+    biofuels.
+  description_en: 
+- id: 209
+  text_nl: De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere
+    helft op elektriciteit, waarbij de elektriciteit voornamelijk opgewekt is met
+    gasgestookte <em key='fuel_cells'>brandstofcellen</em> in de gebouwde omgeving
+  ordering: 2
+  question_id: 47
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Half of cars will continue to use petrol, diesel, and biofuels, with the
+    other half on electricity. This electricity is generated using gas-fired <em key='fuel_cells'>fuel
+    cells</em>.
+  description_en: 
+- id: 210
+  text_nl: Driekwart van de auto's rijdt op elektriciteit waarbij de elektriciteit
+    geheel uit hernieuwbare bronnen komt, een kwart van de auto's rijdt nog op benzine/diesel/biobrandstof.
+  ordering: 3
+  question_id: 47
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: '[NOTE] herniewbare bronnen moeten nog worden aangepast!'
+  text_de: ''
+  description_de: 
+  text_en: Three quarters of vehicles will be powered with electricity from renewable
+    sources, with the rest using petrol, diesel, and biofuel.
+  description_en: 
+- id: 211
+  text_nl: De energiebehoefte blijft ongeveer gelijk. De huizen worden wel steeds
+    iets zuiniger maar de mensen gaan ook steeds luxer leven
+  ordering: 0
+  question_id: 48
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: Er verandert hierdoor dus niets uit de uitkomsten.
+  text_de: ''
+  description_de: 
+  text_en: Energy use will remain much as it is today. Homes may be better insulated,
+    but this is negated by improved prosperity.
+  description_en: 
+- id: 212
+  text_nl: Nieuwe gebouwen zijn zo goed ge&#239;soleerd dat ze met de helft van het
+    aardgas toe kunnen
+  ordering: 1
+  question_id: 48
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: New buildings will be very well-insulated, halfing the amount of natural
+    gas consumed for heating.
+  description_en: 
+- id: 213
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft
+    minder aardgas toe
+  ordering: 2
+  question_id: 48
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: 'N.B.: I cheated a bit and included a -2%/yr heat demand growth,
+    because insulation of ''other buildings'' was not possible and this way building
+    heating demand was reduced by 50%.'
+  text_de: ''
+  description_de: 
+  text_en: Both old and new buildings will be well-insulated.
+  description_en: 
+- id: 214
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en maken gebruik van
+    de nieuwste verwarmingstechnieken (<em key='micro_chp'>HRe</em>, <em key='heat_pumps'>warmtepompen</em>
+    op gas of elektriciteit, hout-CV kachels en gasgestookte <em key='fuel_cells'>brandstofcellen</em>).
+  ordering: 3
+  question_id: 48
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Both new and old buildings will be extremely well-insulated, with the latest
+    heating technology – <em key='micro_chp'>Micro CHPs</em>, <em key='heat_pumps'>heat
+    pumps</em>, and <em key='fuel_cells'>gas-fired fuel cells</em> – being used extensively.
+  description_en: ''
+- id: 215
+  text_nl: Groeien door een snel groeiende wereldeconomie en de behoefte aan energie
+    stijgt navenant
+  ordering: 0
+  question_id: 49
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 4%
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow rapidly, significantly increasing energy use.
+  description_en: 
+- id: 216
+  text_nl: Groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie
+    in energiegebruik
+  ordering: 1
+  question_id: 49
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert
+    met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow modestly, but energy use increases less rapidly
+    thanks to higher efficiencies.
+  description_en: 
+- id: 217
+  text_nl: Langzaam groeien, de energiebehoefte stijgt ook maar licht
+  ordering: 2
+  question_id: 49
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: De energievraag van de industrie stijgt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, as will energy use.
+  description_en: 
+- id: 218
+  text_nl: Langzaam groeien en door verregaande effici&euml;ntie daalt de energiebehoefte
+    licht
+  ordering: 3
+  question_id: 49
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 1%, efficientie
+    verbeterd met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, but energy efficiency will get worse.
+  description_en: 
+- id: 219
+  text_nl: Langzaam krimpen (produktie is hier te duur), energiebehoefte neemt navenant
+    af
+  ordering: 4
+  question_id: 49
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: De energievraag van de industrie daalt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will shrink as production becomes more expensive. Energy use
+    falls accordingly.
+  description_en: 
+- id: 220
+  text_nl: Onveranderlijk uit fossiele energiebronnen
+  ordering: 0
+  question_id: 50
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Energy continues to be sourced from fossil fuels.
+  description_en: 
+- id: 221
+  text_nl: Voor een kwart uit zelf opgewekte energie uit biomassa en de rest uit fossiele
+    energie
+  ordering: 1
+  question_id: 50
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will be supplied by biomass, the rest by fossil fuels.
+  description_en: 
+- id: 222
+  text_nl: Voor een kwart uit zelf opgewekte energie met zonnewarmte en biomassa,
+    een kwart met geothermische energie en de helft met fossiele energie
+  ordering: 2
+  question_id: 50
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will come from solar and biomass, a quarter from geothermal
+    sources and the remaining half from fossil fuels.
+  description_en: 
+- id: 223
+  text_nl: Voor 25% uit eigen biomassa en zonnewarmte en voor 75% uit geothermie
+  ordering: 3
+  question_id: 50
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy is sourced from biomass, and the rest from geothermal
+    sources.
+  description_en: 
+- id: 224
+  text_nl: De economie groeit langzaam
+  ordering: 2
+  question_id: 51
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025.
+    Het energiegebruik stijgt met 1% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will slowly grow
+  description_en: 
+- id: 225
+  text_nl: De economie groeit soms een beetje en krimpt soms een beetje
+  ordering: 3
+  question_id: 51
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: De economie groeit gemiddeld met 0% per jaar
+  text_de: ''
+  description_de: 
+  text_en: The economy will occasionally grow and shrink a little.
+  description_en: 
+- id: 226
+  text_nl: De economie krimpt langzaam
+  ordering: 4
+  question_id: 51
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: De economie krimpt met 1% per jaar. De energievraag neemt met een
+    0.5% per jaar af.
+  text_de: ''
+  description_de: 
+  text_en: The economy will slowly shrink.
+  description_en: 
+- id: 227
+  text_nl: De economie groeit snel
+  ordering: 1
+  question_id: 51
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: |-
+    Voor 2050 als uitgangspunten genomen dat de alle CO2 betaald is.
+    Aanname dat e-gebruik sneller groeit dan ruimteverwarmingsvraag.
+    Aanname dat aantal gebouwen en personen met 0.5% per jaar groeit, vanwege ruimtegebrek.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow quickly.
+  description_en: 
+- id: 228
+  text_nl: Stijgt met ongeveer 5% per jaar
+  ordering: 1
+  question_id: 52
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 229
+  text_nl: Stijgt met ongeveer 2% per jaar
+  ordering: 2
+  question_id: 52
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 230
+  text_nl: Blijft ongeveer gelijk
+  ordering: 3
+  question_id: 52
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 231
+  text_nl: Daalt met 2 % per jaar
+  ordering: 4
+  question_id: 52
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 232
+  text_nl: Daalt met 5% per jaar
+  ordering: 5
+  question_id: 52
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 233
+  text_nl: Meer dan 10 miljard m3
+  ordering: 1
+  question_id: 53
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 234
+  text_nl: Ongeveer 5 miljard m3
+  ordering: 2
+  question_id: 53
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 235
+  text_nl: Ongeveer 1 miljard m3
+  ordering: 3
+  question_id: 53
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 236
+  text_nl: Schaliegas wordt in Nederland niet geproduceerd voor 2030
+  ordering: 4
+  question_id: 53
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 237
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 54
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 238
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 54
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 239
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 54
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 240
+  text_nl: Produktie van groen gas is eigenlijk niet zo'n goed idee. 0 m3
+  ordering: 4
+  question_id: 54
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 241
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 55
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 242
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 55
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 243
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 55
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 244
+  text_nl: Power to Gas is helemaal niet zo'n goed idee je kunt elektriciteit veel
+    beter direct gebruiken.
+  ordering: 4
+  question_id: 55
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 245
+  text_nl: Meer dan 5 miljard m3
+  ordering: 1
+  question_id: 56
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 246
+  text_nl: Ongeveer 2 miljard m3
+  ordering: 2
+  question_id: 56
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 247
+  text_nl: Minder dan 1 miljard m3
+  ordering: 3
+  question_id: 56
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 248
+  text_nl: Power to Gas is helemaal niet zo'n goed idee je kunt elektriciteit veel
+    beter direct gebruiken.
+  ordering: 4
+  question_id: 56
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 249
+  text_nl: De aardgasbaten gaan stijgen omdat het volume minder afneemt dan de prijs
+  ordering: 1
+  question_id: 57
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 250
+  text_nl: De aardgasbaten gaan stijgen omdat we steeds meer onconventioneel aardgas
+    gaan produceren tegen een stijgende prijs
+  ordering: 2
+  question_id: 57
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 251
+  text_nl: De aardgasbaten gaan dalen omdat onze productiecapaciteit afneemt en de
+    prijsstijging dit niet compenseert
+  ordering: 3
+  question_id: 57
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 252
+  text_nl: De aardgasbaten gaan sterk dalen en zullen tegen 2030 zijn gehalveerd
+  ordering: 4
+  question_id: 57
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 253
+  text_nl: Door een combinatie van dalende prijzen en sterk teruglopende productiecapaciteit
+    zullen de aardgasbaten zijn opgedroogd in 2030
+  ordering: 5
+  question_id: 57
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 254
+  text_nl: De handelsbalans verbetert want we worden gasrontonde
+  ordering: 1
+  question_id: 58
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 255
+  text_nl: De handelsbalans blijft gelijk. De productievolumedaling en de prijsstijging
+    heffen elkaar op
+  ordering: 2
+  question_id: 58
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 256
+  text_nl: De handelsbalans verslechtert omdat we vanaf 2025 netto importeur van gas
+    worden
+  ordering: 3
+  question_id: 58
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 257
+  text_nl: Ja, we moeten stoppen met de aardgaswinning. Te gevaarlijk.
+  ordering: 1
+  question_id: 59
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 258
+  text_nl: We kunnen het tempo iets terugbrengen om het risico te verkleinen.
+  ordering: 2
+  question_id: 59
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 259
+  text_nl: Nee, het is zinvoller door te gaan met de winning zoals gepland.
+  ordering: 3
+  question_id: 59
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 260
+  text_nl: Ja. We vernietigen anders ons eigen leefmilieu. Dit geldt overigens ook
+    voor olie en kolen.
+  ordering: 1
+  question_id: 60
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 261
+  text_nl: Nee. Je moet het juist inzetten als alternatief voor steenkool. Dat is
+    de goedkoopste manier om de uitstoot te verminderen op korte termijn.
+  ordering: 2
+  question_id: 60
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 262
+  text_nl: Nee. Het is nog maar de vraag of de aarde wel zo snel opwarmt.
+  ordering: 3
+  question_id: 60
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 263
+  text_nl: 0%
+  ordering: 1
+  question_id: 61
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 264
+  text_nl: <5%
+  ordering: 2
+  question_id: 61
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 265
+  text_nl: 10%
+  ordering: 3
+  question_id: 61
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 266
+  text_nl: 25%
+  ordering: 4
+  question_id: 61
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 267
+  text_nl: '>50%'
+  ordering: 86
+  question_id: 61
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 268
+  text_nl: 0%
+  ordering: 1
+  question_id: 62
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 269
+  text_nl: <5%
+  ordering: 2
+  question_id: 62
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 270
+  text_nl: 10%
+  ordering: 3
+  question_id: 62
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 271
+  text_nl: 25%
+  ordering: 4
+  question_id: 62
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 272
+  text_nl: '>50%'
+  ordering: 5
+  question_id: 62
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 273
+  text_nl: Nederland
+  ordering: 1
+  question_id: 63
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 274
+  text_nl: Noord-West Europa
+  ordering: 2
+  question_id: 63
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 275
+  text_nl: Europa
+  ordering: 3
+  question_id: 63
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 276
+  text_nl: Europa + Noord Afrika
+  ordering: 4
+  question_id: 63
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 277
+  text_nl: Europa + Noord Afrika + Midden Oosten
+  ordering: 5
+  question_id: 63
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 278
+  text_nl: Een windmolen op land in Nederland
+  ordering: 1
+  question_id: 64
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 279
+  text_nl: Een windmolen op het Nederlandse deel van de  Noordzee
+  ordering: 2
+  question_id: 64
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 280
+  text_nl: Een windmolen in de woestijn in Marokko
+  ordering: 3
+  question_id: 64
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 281
+  text_nl: Je kunt beter investeren in andere vormen van elektriciteitproduktie
+  ordering: 4
+  question_id: 64
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 282
+  text_nl: Het maakt eigenlijk niet veel uit
+  ordering: 5
+  question_id: 64
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 283
+  text_nl: Ja, want dan krijgen we een positie in dit belangrijke speelveld en we
+    zitten dicht bij het vuur wat betreft innovatie
+  ordering: 1
+  question_id: 65
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 284
+  text_nl: Nee. De Nederlandse overheid moet zich bezighouden met Nederlandse energiezaken
+    en de rest aan de EU overlaten
+  ordering: 2
+  question_id: 65
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 285
+  text_nl: Nee. De Nederlandse overheid moet de markt zijn werk laten doen en niet
+    interveniëren.
+  ordering: 
+  question_id: 65
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 286
+  text_nl: Ja via branche organisaties als Energie Nederland, FME of VNO/NCW
+  ordering: 1
+  question_id: 66
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 287
+  text_nl: Ja, bijvoorbeeld Philips, Eneco, Rabobank e.a. moeten rechtstreeks participeren
+  ordering: 2
+  question_id: 66
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 288
+  text_nl: Nee, het is voldoende als Shell dit doet
+  ordering: 3
+  question_id: 66
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 289
+  text_nl: Nee dat kan niet. O.a. omdat je dan de systeemstabiliteit niet kan garanderen.
+    Zon en wind zijn niet altijd beschikbaar
+  ordering: 3
+  question_id: 67
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 290
+  text_nl: 'Ja zeker. Een energiemix die heel goed kan: 50% uit wind, 25% uit zon,
+    15% hydro en 10% backup met gas'
+  ordering: 1
+  question_id: 67
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 291
+  text_nl: Ja, dat kan op heel veel manieren. Een mix met relatief meer biomassa en
+    nieuwe technieken dan in het vorige antwoord is ook mogelijk
+  ordering: 2
+  question_id: 67
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 292
+  text_nl: Duurder, want het is de komende jaren goedkoper om fossiel te gebruiken
+    en bovendien is het heel duur om hoogspanningskabels met voldoende capaciteit
+    door de hele regio te trekken.
+  ordering: 1
+  question_id: 68
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+- id: 293
+  text_nl: Duurder, want je krijgt de kosten van duurzame energie plus de kosten om
+    het systeem in balans te houden met backup capaciteit  voor als het weinig waait
+    en het nacht is
+  ordering: 
+  question_id: 68
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 294
+  text_nl: Dat hangt helemaal af van de prijsontwikkeling van fossiele brandstof en
+    duurzame energie. Eigenlijk kan dit alleen maar als fossiel duurder wordt en duurzaam
+    goedkoper
+  ordering: 3
+  question_id: 68
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 295
+  text_nl: Goedkoper. Wind en zon uit dit gebied kunnen nu al bijna concurreren met
+    fossiel en de extra kosten voor backup en hoogspanningsleidingen worden volledig
+    gecompenseerd door de veel betere benutting van de capaciteit in EUMENA.
+  ordering: 4
+  question_id: 68
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:14:26.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: ''
+  description_en: 
+- id: 296
+  text_nl: Fossiele brandstoffen blijven even duur, hernieuwbare bronnen worden iets
+    goedkoper
+  ordering: 3
+  question_id: 69
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Het blijft even duur, maar duurzame E-opties worden hoe dan ook
+    goedkoper
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels remain at their current prices, but renewable energy will
+    get a little cheaper.
+  description_en: 
+- id: 297
+  text_nl: Fossiele brandstoffen worden duurder, hierdoor worden hernieuwbare bronnen
+    goedkoper
+  ordering: 2
+  question_id: 69
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Fossiele brandstoffen en biomassa worden 75% duurder, maar duurzame
+    E opties worden hoe dan ook goedkoper
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels become more expensive, with renewable energy becoming less
+    expensive.
+  description_en: 
+- id: 298
+  text_nl: Fossiele brandstoffen worden veel duurder. Hierdoor wordt meer in hernieuwbare
+    energie geïnvesteerd, en wordt hernieuwbaar juist goedkoper
+  ordering: 1
+  question_id: 69
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Fosiele brandstoffen en biomassa worden 150% duurder. Duurzame opties
+    worden hoe dan ook goedkoper.
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels will become vastly more expensive, with the revenue being
+    invested in cheaper renewables.
+  description_en: 
+- id: 299
+  text_nl: Fossiele brandstoffen en hernieuwbare bronnen worden beide een beetje goedkoper
+  ordering: 4
+  question_id: 69
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Fosiele brandstoffen worden 15% goedkoper. Biomassa blijft gelijk
+  text_de: 
+  description_de: 
+  text_en: Both fossil fuels and renewable energy will be a bit cheaper.
+  description_en: 
+- id: 300
+  text_nl: Fossiele brandstoffen worden veel goedkoper, waardoor hernieuwbare bronnen
+    nauwelijks goedkoper worden
+  ordering: 5
+  question_id: 69
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Fosiele brandstoffen worden 40% goedkoper. Biomassa wordt iets geodkoper.
+  text_de: 
+  description_de: 
+  text_en: Fossil fuels will be less expensive, with little difference in price between
+    fossil fuels and renewable sources.
+  description_en: 
+- id: 301
+  text_nl: Aardgas importeren, met name uit Rusland en het Midden Oosten
+  ordering: 0
+  question_id: 70
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Er verandert verder niets bij deze keuze, anders dan de herkomstmix
+    van gas
+  text_de: ''
+  description_de: 
+  text_en: The natural gas we need will be imported from Russia and the Middle East.
+  description_en: 
+- id: 302
+  text_nl: Dit opvangen door zowel aardgas te importeren als een flink deel van de
+    vraag door besparingen teniet te doen
+  ordering: 1
+  question_id: 70
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Large amounts of natural gas will be imported and demand will be lowered
+    by increased savings.
+  description_en: 
+- id: 303
+  text_nl: De helft opwekken met energie uit 'eigen' <em key='biomass'>biomassa</em>,
+    zon en wind en een flink deel uit energiebesparing halen
+  ordering: 2
+  question_id: 70
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: '[NOTE] Dezelfde instellingen van 1b maar tevens de volgende maatregelen
+    aan de aanbodkant (350PJ hernieuwbaar inzetten verdeeld over biomassa zon en wind'
+  text_de: ''
+  description_de: ''
+  text_en: Half of our energy needs will be met with <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power.
+  description_en: ''
+- id: 304
+  text_nl: Het tekort aan aardgas zoveel mogelijk uit andere, eigen energiebronnen
+    halen zoals <em key='biomass'>biomassa</em>, <em key='geothermal'>geothermie</em>,
+    zon en wind om de energie-import zo klein mogelijk te houden
+  ordering: 3
+  question_id: 70
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: As much energy as possible will be sourced from <em key='biomass'>biomass</em>,
+    <em key='geothermal'>geothermal</em>, solar, and wind-power, keeping imports as
+    low as possible.
+  description_en: ''
+- id: 305
+  text_nl: 'Niets. Ik twijfel aan het verband tussen CO2-uitstoot en de opwarming
+    van de aarde. Bovendien: andere landen gaan toch door met de CO2 uitstoot, een
+    actieve houding van Nederland zal weinig effect hebben'
+  ordering: 0
+  question_id: 71
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: '[NOTE] Er gebeurt niets.'
+  text_de: ''
+  description_de: 
+  text_en: Nothing should be done; I doubt the link between CO2 emissions and climate
+    change. Moreover, as other countries continue to produce CO2, a change of attitude
+    in the Netherlands would likely have little effect.
+  description_en: 
+- id: 306
+  text_nl: 'Maximale inzet van hernieuwbare opwek: zon, wind, waterkracht, geothermie
+    en schone biomassa'
+  ordering: 4
+  question_id: 71
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: '[NOTE] Check of de gebruiker voor 2b heeft gekozen en waarschuwing
+    geven dat de helft van het aardgas nog steeds wordt gebruikt'
+  text_de: ''
+  description_de: 
+  text_en: 'We would use as much renewable energy as possible: solar, wind, hydroelectric
+    power, geothermal, and clean biomass should be used to their maximum potential.'
+  description_en: 
+- id: 307
+  text_nl: Maximale inzet van CO2-neutrale opwek, dus hernieuwbare maar ook kernenergie
+  ordering: 3
+  question_id: 71
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: |-
+    AW heeft 3a aangepast en is onderstaande geldt dus ook niet meer.
+    Alle conventionele centrales uitgefaseerd.
+    [NOTE] Alle instellingen als bij 3a maar bouw nu ook 3 grote nieuwe kerncentrale en schrap equivalente hoeveelheid wind
+  text_de: ''
+  description_de: 
+  text_en: We should focus on using CO2-neutral sources – not only renewables sources,
+    but also nuclear fission.
+  description_en: 
+- id: 308
+  text_nl: Vervangen van kolencentrales door CO2 arme bronnen zoals aardgascentrales.
+    De laatste stoten maar half zoveel CO2 uit
+  ordering: 2
+  question_id: 71
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: '[NOTE] Zou goed zijn om hier informatie te geven over verschil
+    tussen 1 Gas en Kolencentrale in termen van CO2 uitstoot'
+  text_de: ''
+  description_de: 
+  text_en: Replace coal power plants with less-polluting sources such as natural gas
+    plants which emit only half as much CO2.
+  description_en: 
+- id: 309
+  text_nl: Alleen <em key='carbon_capture_storage'>opvang en opslag van CO2</em> uit
+    grote emissiebronnen (bv kolencentrales en olieraffinaderijen)
+  ordering: 1
+  question_id: 71
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: '[NOTE] Olierafinaderijen zitten niet in het model. Er moet nog
+    bepaald worden HOEVEEL suppl'
+  text_de: ''
+  description_de: 
+  text_en: Only use <em key='carbon_capture_storage'>capture and storage</em> of CO2
+    on major sources (e.g. coal power plants and refineries).
+  description_en: 
+- id: 310
+  text_nl: Ondanks de plannen van de EU blijven we nog steeds hoofdzakelijk op benzine
+    en diesel rijden.
+  ordering: 0
+  question_id: 72
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: De brandstofmix is in de toekomst hetzelfde als nu.
+  text_de: 
+  description_de: 
+  text_en: Regardless of the EU plans, we will remain mostly using petrol and diesel.
+  description_en: 
+- id: 311
+  text_nl: Benzine en diesel met een kwart biobrandstof bijgemengd
+  ordering: 1
+  question_id: 72
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: 
+  text_de: 
+  description_de: 
+  text_en: Petrol and diesel will still be used, but around 25% of vehicles will use
+    biofuels.
+  description_en: 
+- id: 312
+  text_nl: De helft van de auto's rijdt nog op benzine/diesel/biobrandstof, de andere
+    helft op elektriciteit, waarbij de elektriciteit voornamelijk opgewekt is met
+    gasgestookte <em key='fuel_cells'>brandstofcellen</em> in de gebouwde omgeving
+  ordering: 2
+  question_id: 72
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: 
+  text_de: 
+  description_de: 
+  text_en: Half of cars will continue to use petrol, diesel, and biofuels, with the
+    other half on electricity. This electricity is generated using gas-fired <em key='fuel_cells'>fuel
+    cells</em>.
+  description_en: 
+- id: 313
+  text_nl: Driekwart van de auto's rijdt op elektriciteit waarbij de elektriciteit
+    geheel uit hernieuwbare bronnen komt, een kwart van de auto's rijdt nog op benzine/diesel/biobrandstof.
+  ordering: 3
+  question_id: 72
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: '[NOTE] herniewbare bronnen moeten nog worden aangepast!'
+  text_de: 
+  description_de: 
+  text_en: Three quarters of vehicles will be powered with electricity from renewable
+    sources, with the rest using petrol, diesel, and biofuel.
+  description_en: 
+- id: 314
+  text_nl: De energiebehoefte blijft ongeveer gelijk. De huizen worden wel steeds
+    iets zuiniger maar de mensen gaan ook steeds luxer leven
+  ordering: 0
+  question_id: 73
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: Er verandert hierdoor dus niets uit de uitkomsten.
+  text_de: ''
+  description_de: 
+  text_en: Energy use will remain much as it is today. Homes may be better insulated,
+    but this is negated by improved prosperity.
+  description_en: 
+- id: 315
+  text_nl: Nieuwe gebouwen zijn zo goed ge&#239;soleerd dat ze met de helft van het
+    aardgas toe kunnen
+  ordering: 1
+  question_id: 73
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: New buildings will be very well-insulated, halfing the amount of natural
+    gas consumed for heating.
+  description_en: 
+- id: 316
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en kunnen met de helft
+    minder aardgas toe
+  ordering: 2
+  question_id: 73
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: 'N.B.: I cheated a bit and included a -2%/yr heat demand growth,
+    because insulation of ''other buildings'' was not possible and this way building
+    heating demand was reduced by 50%.'
+  text_de: ''
+  description_de: 
+  text_en: Both old and new buildings will be well-insulated.
+  description_en: 
+- id: 317
+  text_nl: Oude en nieuwe gebouwen zijn goed ge&#239;soleerd en maken gebruik van
+    de nieuwste verwarmingstechnieken (<em key='micro_chp'>HRe</em>, <em key='heat_pumps'>warmtepompen</em>
+    op gas of elektriciteit, hout-CV kachels en gasgestookte <em key='fuel_cells'>brandstofcellen</em>).
+  ordering: 3
+  question_id: 73
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Both new and old buildings will be extremely well-insulated, with the latest
+    heating technology – <em key='micro_chp'>Micro CHPs</em>, <em key='heat_pumps'>heat
+    pumps</em>, and <em key='fuel_cells'>gas-fired fuel cells</em> – being used extensively.
+  description_en: ''
+- id: 318
+  text_nl: Groeien door een snel groeiende wereldeconomie en de behoefte aan energie
+    stijgt navenant
+  ordering: 0
+  question_id: 74
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 4%
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow rapidly, significantly increasing energy use.
+  description_en: 
+- id: 319
+  text_nl: Groeien, maar de energiebehoefte stijgt minder snel door groeiende effici&euml;ntie
+    in energiegebruik
+  ordering: 1
+  question_id: 74
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 3%, de efficiency  verbetert
+    met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The world economy will grow modestly, but energy use increases less rapidly
+    thanks to higher efficiencies.
+  description_en: 
+- id: 320
+  text_nl: Langzaam groeien, de energiebehoefte stijgt ook maar licht
+  ordering: 2
+  question_id: 74
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De energievraag van de industrie stijgt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, as will energy use.
+  description_en: 
+- id: 321
+  text_nl: Langzaam groeien en door verregaande effici&euml;ntie daalt de energiebehoefte
+    licht
+  ordering: 3
+  question_id: 74
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De energievraag van de industrie groeit ieder jaar met 1%, efficientie
+    verbeterd met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will grow slowly, but energy efficiency will get worse.
+  description_en: 
+- id: 322
+  text_nl: Langzaam krimpen (produktie is hier te duur), energiebehoefte neemt navenant
+    af
+  ordering: 4
+  question_id: 74
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De energievraag van de industrie daalt met 2% per jaar.
+  text_de: ''
+  description_de: 
+  text_en: The economy will shrink as production becomes more expensive. Energy use
+    falls accordingly.
+  description_en: 
+- id: 323
+  text_nl: Onveranderlijk uit fossiele energiebronnen
+  ordering: 0
+  question_id: 75
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Energy continues to be sourced from fossil fuels.
+  description_en: 
+- id: 324
+  text_nl: Voor een kwart uit zelf opgewekte energie uit biomassa en de rest uit fossiele
+    energie
+  ordering: 1
+  question_id: 75
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will be supplied by biomass, the rest by fossil fuels.
+  description_en: 
+- id: 325
+  text_nl: Voor een kwart uit zelf opgewekte energie met zonnewarmte en biomassa,
+    een kwart met geothermische energie en de helft met fossiele energie
+  ordering: 2
+  question_id: 75
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy will come from solar and biomass, a quarter from geothermal
+    sources and the remaining half from fossil fuels.
+  description_en: 
+- id: 326
+  text_nl: Voor 25% uit eigen biomassa en zonnewarmte en voor 75% uit geothermie
+  ordering: 3
+  question_id: 75
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: A quarter of energy is sourced from biomass, and the rest from geothermal
+    sources.
+  description_en: 
+- id: 327
+  text_nl: De economie groeit langzaam
+  ordering: 2
+  question_id: 76
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: De economie groeit gemiddeld met 2% per jaar tussen 2011 en 2025.
+    Het energiegebruik stijgt met 1% per jaar.
+  text_de: 
+  description_de: 
+  text_en: The economy will slowly grow
+  description_en: 
+- id: 328
+  text_nl: De economie groeit soms een beetje en krimpt soms een beetje
+  ordering: 3
+  question_id: 76
+  created_at: 2013-10-31 13:14:31.000000000 Z
+  updated_at: 2013-10-31 13:14:31.000000000 Z
+  description_nl: De economie groeit gemiddeld met 0% per jaar
+  text_de: 
+  description_de: 
+  text_en: The economy will occasionally grow and shrink a little.
+  description_en: 
+- id: 329
+  text_nl: De economie krimpt langzaam
+  ordering: 4
+  question_id: 76
+  created_at: 2013-10-31 13:14:31.000000000 Z
+  updated_at: 2013-10-31 13:14:31.000000000 Z
+  description_nl: De economie krimpt met 1% per jaar. De energievraag neemt met een
+    0.5% per jaar af.
+  text_de: 
+  description_de: 
+  text_en: The economy will slowly shrink.
+  description_en: 
+- id: 330
+  text_nl: De economie groeit snel
+  ordering: 1
+  question_id: 76
+  created_at: 2013-10-31 13:14:31.000000000 Z
+  updated_at: 2013-10-31 13:14:31.000000000 Z
+  description_nl: |-
+    Voor 2050 als uitgangspunten genomen dat de alle CO2 betaald is.
+    Aanname dat e-gebruik sneller groeit dan ruimteverwarmingsvraag.
+    Aanname dat aantal gebouwen en personen met 0.5% per jaar groeit, vanwege ruimtegebrek.
+  text_de: 
+  description_de: 
+  text_en: The economy will grow quickly.
+  description_en: 
+- id: 331
+  text_nl: It will become colder due to an imminent ice age period
+  ordering: 1
+  question_id: 77
+  created_at: 2013-11-04 16:33:09.000000000 Z
+  updated_at: 2013-11-18 06:52:12.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: It will become colder due to an imminent ice age period
+  description_en: ''
+- id: 332
+  text_nl: 'We will see the normal variation of climate '
+  ordering: 2
+  question_id: 77
+  created_at: 2013-11-04 16:33:09.000000000 Z
+  updated_at: 2013-11-06 07:56:01.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: 'We will see the normal variation of climate '
+  description_en: ''
+- id: 333
+  text_nl: 'It will become warmer but less than 2 C '
+  ordering: 3
+  question_id: 77
+  created_at: 2013-11-04 16:33:09.000000000 Z
+  updated_at: 2013-11-06 07:56:51.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: 'It will become warmer but less than 2 C '
+  description_en: ''
+- id: 334
+  text_nl: It will become more than 4 C warmer on average
+  ordering: 4
+  question_id: 77
+  created_at: 2013-11-04 16:33:09.000000000 Z
+  updated_at: 2013-11-06 07:55:34.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: It will become more than 4 C warmer on average
+  description_en: ''
+- id: 335
+  text_nl: Not much adaption will be needed
+  ordering: 1
+  question_id: 78
+  created_at: 2013-11-04 16:36:39.000000000 Z
+  updated_at: 2013-11-06 08:01:20.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Not much adaption will be needed
+  description_en: ''
+- id: 336
+  text_nl: Some adaptation will be needed but we can easily handle that
+  ordering: 2
+  question_id: 78
+  created_at: 2013-11-04 16:36:39.000000000 Z
+  updated_at: 2013-11-06 08:03:06.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Some adaptation will be needed but we can easily handle that
+  description_en: ''
+- id: 337
+  text_nl: All nations will unite to keep earth from heating up (reason prevails)
+  ordering: 3
+  question_id: 78
+  created_at: 2013-11-04 16:36:39.000000000 Z
+  updated_at: 2013-11-06 08:04:00.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: All nations will unite to keep earth from heating up (reason prevails)
+  description_en: ''
+- id: 338
+  text_nl: Climate change leads to disruptions and chaos (fear prevails)
+  ordering: 4
+  question_id: 78
+  created_at: 2013-11-04 16:36:39.000000000 Z
+  updated_at: 2013-11-06 08:04:54.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Climate change leads to disruptions and chaos (fear prevails)
+  description_en: ''
+- id: 339
+  text_nl: Price is more than 20% lower
+  ordering: 1
+  question_id: 79
+  created_at: 2013-11-04 16:38:57.000000000 Z
+  updated_at: 2013-11-06 08:09:51.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Price is more than 20% lower
+  description_en: ''
+- id: 340
+  text_nl: Roughly the same as today
+  ordering: 2
+  question_id: 79
+  created_at: 2013-11-04 16:38:57.000000000 Z
+  updated_at: 2013-11-06 08:10:19.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Roughly the same as today
+  description_en: ''
+- id: 341
+  text_nl: Price is more than 20% higher than today
+  ordering: 3
+  question_id: 79
+  created_at: 2013-11-04 16:38:57.000000000 Z
+  updated_at: 2013-11-06 08:11:00.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Price is more than 20% higher than today
+  description_en: ''
+- id: 342
+  text_nl: More than 20% lower
+  ordering: 1
+  question_id: 80
+  created_at: 2013-11-04 16:40:42.000000000 Z
+  updated_at: 2013-11-06 08:13:38.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: More than 20% lower
+  description_en: ''
+- id: 343
+  text_nl: Roughly the same as today
+  ordering: 2
+  question_id: 80
+  created_at: 2013-11-04 16:40:42.000000000 Z
+  updated_at: 2013-11-06 08:13:57.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Roughly the same as today
+  description_en: ''
+- id: 344
+  text_nl: More than 20% higher
+  ordering: 3
+  question_id: 80
+  created_at: 2013-11-04 16:40:42.000000000 Z
+  updated_at: 2013-11-06 08:14:15.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: More than 20% higher
+  description_en: ''
+- id: 345
+  text_nl: Drops to less than 2 Euro per tonne
+  ordering: 1
+  question_id: 81
+  created_at: 2013-11-04 16:47:24.000000000 Z
+  updated_at: 2013-11-06 08:15:03.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Drops to less than 2 Euro per tonne
+  description_en: ''
+- id: 346
+  text_nl: Stays roughly the same
+  ordering: 2
+  question_id: 81
+  created_at: 2013-11-04 16:47:24.000000000 Z
+  updated_at: 2013-11-06 08:15:34.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Stays roughly the same
+  description_en: ''
+- id: 347
+  text_nl: Doubles to 8 Euro per tonne
+  ordering: 3
+  question_id: 81
+  created_at: 2013-11-04 16:47:24.000000000 Z
+  updated_at: 2013-11-06 08:16:01.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Doubles to 8 Euro per tonne
+  description_en: ''
+- id: 348
+  text_nl: Increases to more than 40 Euro per tonne
+  ordering: 4
+  question_id: 81
+  created_at: 2013-11-04 16:47:24.000000000 Z
+  updated_at: 2013-11-04 16:48:27.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Increases to more than 40 euro per tonne
+  description_en: ''
+- id: 349
+  text_nl: Impossible
+  ordering: 1
+  question_id: 82
+  created_at: 2013-11-04 16:50:42.000000000 Z
+  updated_at: 2013-11-06 09:33:01.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Impossible
+  description_en: ''
+- id: 350
+  text_nl: Less than 5 % of the time
+  ordering: 2
+  question_id: 82
+  created_at: 2013-11-04 16:50:42.000000000 Z
+  updated_at: 2013-11-06 09:33:34.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Less than 5 % of the time
+  description_en: ''
+- id: 351
+  text_nl: 'Approx. 10 % of the time '
+  ordering: 3
+  question_id: 82
+  created_at: 2013-11-04 16:50:42.000000000 Z
+  updated_at: 2013-11-06 09:34:05.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: 'Approx. 10 % of the time '
+  description_en: ''
+- id: 352
+  text_nl: More than 15% of the time
+  ordering: 4
+  question_id: 82
+  created_at: 2013-11-04 16:50:42.000000000 Z
+  updated_at: 2013-11-06 09:34:26.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: More than 15% of the time
+  description_en: ''
+- id: 353
+  text_nl: Less than 10%
+  ordering: 1
+  question_id: 83
+  created_at: 2013-11-04 16:53:01.000000000 Z
+  updated_at: 2013-11-06 11:42:30.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Less than 10%
+  description_en: ''
+- id: 354
+  text_nl: 'Approx. 25% '
+  ordering: 2
+  question_id: 83
+  created_at: 2013-11-04 16:53:01.000000000 Z
+  updated_at: 2013-11-06 11:42:57.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Approx 25%
+  description_en: ''
+- id: 355
+  text_nl: More than 50%
+  ordering: 3
+  question_id: 83
+  created_at: 2013-11-04 16:53:01.000000000 Z
+  updated_at: 2013-11-06 11:43:19.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: More than 50%
+  description_en: ''
+- id: 356
+  text_nl: 'Less than 10% '
+  ordering: 1
+  question_id: 84
+  created_at: 2013-11-04 16:54:32.000000000 Z
+  updated_at: 2013-11-06 11:48:10.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: 'Less than 10% '
+  description_en: ''
+- id: 357
+  text_nl: 'More than 10% '
+  ordering: 2
+  question_id: 84
+  created_at: 2013-11-04 16:54:32.000000000 Z
+  updated_at: 2013-11-06 11:48:46.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: 'More than 10% '
+  description_en: ''
+- id: 358
+  text_nl: More than 50%
+  ordering: 3
+  question_id: 84
+  created_at: 2013-11-04 16:54:32.000000000 Z
+  updated_at: 2013-11-06 11:49:31.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: More than 50%
+  description_en: ''
+- id: 359
+  text_nl: The Netherlands (i.e. the National Energy Agreement)
+  ordering: 1
+  question_id: 85
+  created_at: 2013-11-04 16:57:27.000000000 Z
+  updated_at: 2013-11-04 16:57:27.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: The Netherlands (i.e. the National Energy Agreement)
+  description_en: 
+- id: 360
+  text_nl: Germany (i.e. cheap electricity)
+  ordering: 2
+  question_id: 85
+  created_at: 2013-11-04 16:57:27.000000000 Z
+  updated_at: 2013-11-04 16:57:27.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Germany (i.e. cheap electricity)
+  description_en: 
+- id: 361
+  text_nl: US  (i.e. cheap gas)
+  ordering: 3
+  question_id: 85
+  created_at: 2013-11-04 16:57:27.000000000 Z
+  updated_at: 2013-11-04 16:57:27.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: US  (i.e. cheap gas)
+  description_en: 
+- id: 362
+  text_nl: Asia (i.e. growth market, cheap labor)
+  ordering: 4
+  question_id: 85
+  created_at: 2013-11-04 16:57:27.000000000 Z
+  updated_at: 2013-11-18 06:57:40.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Asia (i.e. growth market, cheap labor)
+  description_en: ''
+- id: 363
+  text_nl: This is not an important objective
+  ordering: 1
+  question_id: 86
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: This is not an important objective
+  description_en: 
+- id: 364
+  text_nl: About the same as the 1990 level
+  ordering: 2
+  question_id: 86
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: About the same as the 1990 level
+  description_en: 
+- id: 365
+  text_nl: Minus 20%
+  ordering: 3
+  question_id: 86
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 20%
+  description_en: 
+- id: 366
+  text_nl: Minus 40%
+  ordering: 4
+  question_id: 86
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 40%
+  description_en: 
+- id: 367
+  text_nl: Minus 60%
+  ordering: 5
+  question_id: 86
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 60%
+  description_en: 
+- id: 368
+  text_nl: This is not an important objective
+  ordering: 1
+  question_id: 87
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: This is not an important objective
+  description_en: 
+- id: 369
+  text_nl: About the same as the 1990 level
+  ordering: 2
+  question_id: 87
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: About the same as the 1990 level
+  description_en: 
+- id: 370
+  text_nl: Minus 20%
+  ordering: 3
+  question_id: 87
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 20%
+  description_en: 
+- id: 371
+  text_nl: Minus 40%
+  ordering: 4
+  question_id: 87
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 40%
+  description_en: 
+- id: 372
+  text_nl: Minus 60%
+  ordering: 5
+  question_id: 87
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-04 17:00:37.000000000 Z
+  description_nl: 
+  text_de: ''
+  description_de: 
+  text_en: Minus 60%
+  description_en: 
+- id: 373
+  text_nl: Biomass power plants
+  ordering: 1
+  question_id: 88
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:10:11.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Biomass power plants
+  description_en: ''
+- id: 374
+  text_nl: Hydro power plants
+  ordering: 2
+  question_id: 88
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:10:44.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Hydro power plants
+  description_en: ''
+- id: 375
+  text_nl: Gas power plants
+  ordering: 3
+  question_id: 88
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:11:37.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Gas power plants
+  description_en: ''
+- id: 376
+  text_nl: Coal power plants
+  ordering: 4
+  question_id: 88
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:11:59.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Coal power plants
+  description_en: ''
+- id: 377
+  text_nl: Nuclear power plants
+  ordering: 5
+  question_id: 88
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:12:37.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Nuclear power plants
+  description_en: ''
+- id: 378
+  text_nl: Batteries in electric cars
+  ordering: 6
+  question_id: 88
+  created_at: 2013-11-05 14:18:45.000000000 Z
+  updated_at: 2013-11-06 11:13:02.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Batteries in electric cars
+  description_en: ''
+- id: 379
+  text_nl: Gas Fuel Cells  in homes
+  ordering: 7
+  question_id: 88
+  created_at: 2013-11-05 14:18:45.000000000 Z
+  updated_at: 2013-11-06 11:13:33.000000000 Z
+  description_nl: ''
+  text_de: ''
+  description_de: ''
+  text_en: Gas Fuel Cells  in homes
+  description_en: ''

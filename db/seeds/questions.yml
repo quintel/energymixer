@@ -1,0 +1,1480 @@
+---
+- id: 1
+  text_nl: Hoe verandert de prijs van aardgas tussen 2011 en 2030?
+  ordering: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "Ook de toekomstige energiekosten zijn belangrijk voor jouw visie
+    op de toekomst. <br/>\r\nDe prijs van energie kan stijgen als gevolg van [vraagtoename](/info/demand_growth)
+    door groei van de wereldbevolking en toename van de welvaart. Ook kan de winning
+    van brandstof duurder worden, doordat bijvoorbeeld [aardgas uit dichte aardlagen](/info/unconventional_gas)
+    komt etc. <br/> \r\nFactoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings),
+    het vinden van nieuwe gasreserves en het goedkoper worden van [hernieuwbare](/info/renewable)
+    energie."
+  question_set_id: 1
+  text_de: Wie wird sich der Preis von Erdgas in den Jahren 2011 bis 2030 entwickeln?
+  description_de: "Auch die künftigen Energiekosten werden deine Zukunftserwartungen
+    entscheidend beeinflussen. <br/>\r\n\r\nDie Energiepreise können steigen als Folge
+    der [wachsenden Nachfrage](/info/demand_growth) wegen des weltweiten Bevölkerungswachstums
+    und des wachsenden Wohlstands. Auch kann die Brennstofferzeugung teurer werden,
+    weil z.B. [Erdgas aus dichten Erdschichten](/info/unconventional_gas)</em> gewonnen
+    werden muss. <br/> Faktoren, die den Preis drücken können, sind wachsende [Einsparungen](/info/savings),
+    das Aufspüren neuer Gasreserven und günstigere Angebote von [erneuerbarer](/info/renewable)
+    Energie."
+  text_en: How will the price of natural gas change from 2011 to 2030?
+  description_en: |-
+    Your vision of the future will be strongly influenced by future energy costs. <br/>
+    Energy prices may rise due to [increased demand](/info/demand_growth), global population growth or increased prosperity. Of course, the cost of extracting fossil fuels may also rise, for example because more natural gas comes from [shale gas formations](/info/unconventional_gas). <br/>
+    Some developments may lower prices, such as increased [savings](/info/savings), finds of large reserves of natural gas, or falling costs of [renewable energy](/info/renewable).
+  enabled: true
+- id: 2
+  text_nl: Hoe kunnen we het beste onze huizen verwarmen in 2030?
+  ordering: 2
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "We begonnen in Nederland onze huizen al in de jaren zestig te verwarmen
+    met aardgas in cv-ketels. Bijna 90% van de huizen gebruikt deze techniek nog.\r\n<br/>\r\nToch
+    zijn er nieuwe technieken om aardgas veel efficiënter te benutten voor verwarming
+    en soms ook koeling. Welke apparaat heeft jouw voorkeur: de HR-combi ketel, de
+    [HRe ketel](/info/micro_chp), de [gaswarmtepomp](/info/heat_pumps_gas) of de [elektrische
+    warmtepomp](/info/heat_pumps_el) met aardsondes?"
+  question_set_id: 1
+  text_de: Wie können wir im Jahre 2030 am besten unsere Häuser beheizen?
+  description_de: "Bereits in den 60-er Jahren sind wir in unserem Lande damit begonnen,
+    unsere Häuser mit Erdgas in Zentralheizungen zu beheizen. In etwa 90% aller Wohnungen
+    wird diese Technik noch heute verwendet.\r\n<br/>\r\nHeutzutage gibt es neue Techniken,
+    um Erdgas viel effizienter einzusetzen zum Heizen und manchmal auch zum Kühlen.
+    Welches dieser Geräte würdest du bevorzugen: den HR-combi Wärmeerzeuger, den [HRe
+    Wärmeerzeuger](/info/micro_chp), die [Gaswärmepumpe](/info/heat_pumps_gas) oder
+    die [elektrische Wärmepumpe](/info/heat_pumps_el) mit Erdwärmesonden?"
+  text_en: What is the best option for heating our homes in 2030?
+  description_en: |-
+    Gas-fired heating became available in our country in the 1960s. In some countries, more than 90% of homes are still heated this way.<br/>
+    Today, technology has become available to make more efficient use of natural gas for both heating and cooling. Which devices do you prefer: high-yield boilers, [micro-CHPs](/info/micro_chp), [gas-powered heat pumps](/info/heat_pumps_gas), or [electric heat pumps](/info/heat_pumps_el) which draw heat from the ground?
+  enabled: true
+- id: 3
+  text_nl: Hoe kunnen we het beste koken in 2030?
+  ordering: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: 'Traditioneel koken we voornamelijk op gas, maar steeds meer mensen
+    gaan elektrisch koken. Daar zijn weer allerlei vormen van: de gewone elektrische
+    kookplaat, de halogeen kookplaat en de inductie kookplaat. Maakt het eigenlijk
+    veel verschil als het gaat om energiegebruik?'
+  question_set_id: 1
+  text_de: Wie können wir im Jahre 2030 am besten kochen?
+  description_de: 'Gewohnheitsmäßig kochen wir in erster Linie mit Gas, aber immer
+    mehr Menschen gebrauchen elektrische Kochgeräte. Davon gibt es verschiedene Varianten:
+    die gewöhnliche elektrische Kochplatte, die Halogen-Kochplatte und die Induktionskochplatte.
+    Gibt es dabei eigentlich große Unterschiede im Energieverbrauch?'
+  text_en: What is the best technology for cooking in 2030?
+  description_en: 'We traditionally tend to cook using gas, but electric cooking is
+    increasingly common. There are several different electric technologies: resistive,
+    halogen, and induction stoves. Does this even make much impact when it comes to
+    energy use?'
+  enabled: true
+- id: 4
+  text_nl: De EU wil dat er in onze steden in 2050 geen auto's meer op benzine of
+    diesel rijden, maar waar gaan we dan in rijden?
+  ordering: 5
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "De motor van een auto die rijdt op benzine of diesel moet je koelen,
+    omdat zo'n motor heet wordt. Daarmee gooi je warmte en dus energie weg. Ook gaat
+    er door wrijving energie verloren in de motor en de versnellingsbak. <br/>\r\nHet
+    kan anders: een elektrische motor hoef je niet te koelen en er is ook minder wrijving.
+    Wel wordt zo'n auto zwaarder als je veel batterijen gebruikt en zware auto's verbruiken
+    meer energie dan lichte."
+  question_set_id: 1
+  text_de: Die EU plant, dass in unseren Städten ab 2050 keine Benzin- oder Dieselfahrzeuge
+    mehr fahren, aber wie bewegen wir uns dann fort?
+  description_de: "Der Motor eines Benzin- oder Dieselfahrzeugs muss gekühlt werden,
+    weil so ein Verbrennungsmotor heiß wird. Dadurch wird Wärme und folglich Energie
+    verschwendet. Ebenso geht auch Energie durch Reibung im Motor und im Getriebe
+    verloren. <br/>\r\nEs gibt Alternativen: einen elektrischen Motor muss man nicht
+    kühlen und er hat auch weniger Reibungsverluste. Allerdings wird so ein elektrisch
+    angetriebenes Auto schwerer, wenn man viele Batterien einbaut. Schwere Autos verbrauchen
+    mehr Energie als leichte."
+  text_en: The EU plans to ban gasoline and diesel-fuelled cars from cities in 2050,
+    but what will we use instead?
+  description_en: |-
+    Gasoline and diesel-fuelled engines require cooling, and this results in energy being wasted. Friction inside the engine and gear box also cause further losses.<br/>
+    There is an alternative: electric motors need almost no cooling and experience less friction. Of course, electric cars are weighed down by heavy battery packs resulting in higher energy consumption.
+  enabled: true
+- id: 5
+  text_nl: Wat voor nieuwe elektriciteitscentrales moeten we bouwen?
+  ordering: 6
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: De komende jaren gaat Nederland nieuwe elektriciteitscentales bouwen.
+    Het maakt een behoorlijk verschil wat voor centrales je bouwt. Worden het kolen-,
+    kern-, gas-, biomassa-, wind-, of zonnecentrales? Iedere vorm heeft zijn eigen
+    voor- en nadelen. Welke nadelen wil jij vermijden en welke voordelen wil jij benutten?
+  question_set_id: 1
+  text_de: Welchen Typ von Elektrizitätswerk müssen wir in Zukunft bauen?
+  description_de: In den kommenden Jahren werden in unserem Land neue Elektrizitätswerke
+    gebaut. Der Kraftwerkstyp hat entscheidende Konsequenzen. Werden in Zukunft Kohle-,
+    Kern-, Gas-, Biomasse-, Wind- oder Sonnenkraftwerke gebaut? Jeder Kraftwerkstyp
+    hat seine besonderen Vor- und Nachteile. Welche Nachteile möchtest du vermeiden
+    und welche Vorteile möchtest du ausnutzen?
+  text_en: What kind of power plants should we build in the future?
+  description_en: In the near future our country will need new power plants. Will
+    they be coal, nuclear, gas, biomass, wind or solar power plants? Each choice has
+    its own pros and cons; which advantage will you exploit, and which disadvantages
+    do you want to avoid?
+  enabled: true
+- id: 6
+  text_nl: Wat doen we als ons aardgas in de toekomst steeds verder opraakt?
+  ordering: 7
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: Nederland voorziet nu volledig in zijn eigen aardgasbehoefte en
+    is de grootste gasexporteur van de Europese Unie. Dit makkelijk winbare gas raakt
+    alleen snel op. In 2030 produceren we mogelijk nog maar de helft van ons eigen
+    verbruik en vóór 2050 is het gas op. Nu zijn de jaarlijkse aardgasbaten ongeveer
+    600 euro per Nederlander. In de toekomst moeten we geld uitgeven om aardgas in
+    het buitenland te kopen.
+  question_set_id: 1
+  text_de: Was tun wir, wenn in Zukunft das eigene Erdgas immer weiter aufgebraucht
+    wird?
+  description_de: Die Niederlande decken heute den Bedarf an Erdgas vollständig aus
+    eigenen Quellen und sind der größte Gasexporteur der EU. Allerdings werden die
+    Quellen des leicht zu gewinnende Gases bald versiegen. In 2030 werden die Niederlande
+    vermutlich nur noch die Hälfte des eigenen Verbrauchs erzeugen können und in 2050
+    sind die Erdgasquellen leer. Heute betragen die Gewinne aus Erdgas etwa 600 Euro
+    pro Person. In Zukunft muss Geld aufgewendet werden, um Gas im Ausland zu kaufen.
+  text_en: What will we do when our natural gas reserves run out?
+  description_en: The Netherlands are fully self-sufficient when it comes to their
+    natural gas needs and they are the largest natural gas exporter in the EU. Such
+    'easy gas' is rapidly running out, however; production in 2030 will be at only
+    half the level they are today, and reserves will be depleted by 2050. Nowadays,
+    revenues from natural gas are approximately 600 euros per citizen, but in the
+    future this money will need to be spent on obtaining natural gas from abroad.
+  enabled: true
+- id: 7
+  text_nl: Wil jij in 2030 groen gas gebruiken in plaats van aardgas?
+  ordering: 8
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: In Nederland is groen gas een veelgenoemde vorm van duurzame energie.
+    Groen gas is gezuiverd biogas en is geschikt om in het aardgasnet gebruikt te
+    worden. Je kunt het uit mest en biomassa maken (vergisting). Er is wel heel veel
+    biomassa nodig om voldoende groen gas te maken. Nederland heeft zelf weinig biomassa,
+    maar wel een hele grote haven om het in te voeren.
+  question_set_id: 1
+  text_de: Wirst du im Jahre 2030 "grünes Gas" gebrauchen anstelle von Erdgas?
+  description_de: In den Niederlanden ist "grünes Gas" eine vielgenannte Form von
+    erneuerbarer Energie. Grünes Gas ist gereinigtes Biogas und geeignet für die Einspeisung
+    in das Erdgasnetz. Man kann es aus Mist und Biomasse gewinnen (Vergasung). Allerdings
+    muss man sehr viel Biomasse aufwenden, um genügend grünes Gas zu produzieren.
+    Die Niederlande haben zu wenig eigene Biomasse, aber verfügen wohl über einen
+    großen Hafen, um Biomasse einzuführen.
+  text_en: Will your country use green gas instead of natural gas in 2030?
+  description_en: '''Green gas'' is often mentioned as a renewable alternative to
+    natural gas; it is biogas which is cleaned and upgraded to natural gas quality,
+    and can be fed into the gas mains. It is usually produced from manure and biomass
+    (digestion). However, it requires vast amounts of biomass to make enough green
+    gas to supply a whole country. The Netherlands has too little domestic biomass
+    to do so, but does have a large port at their disposal for importing biomass.'
+  enabled: true
+- id: 8
+  text_nl: 'Wat denk jij dat er met onze welvaart gaat gebeuren tussen 2011 en 2030? '
+  ordering: 0
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "Om te beginnen een vraag over de groei van de economie en het energieverbruik:
+    <br/>\r\nAls we allemaal rijker worden gaan we meer energie gebruiken. We hebben
+    meer apparaten, grotere huizen en gaan meer reizen. Door deze [groeiende consumptie](/info/consumption)
+    gaat ook de industrie meer produceren. Ook als onze landgenoten niet meer consumeren,
+    groeit onze economie misschien nog vanwege export voor de [snel groeiende wereldbevolking](/info/world_population).
+    <br/>\r\nBij een krimp van de economie zijn de effecten precies andersom. "
+  question_set_id: 1
+  text_de: Wie wird sich deiner Meinung nach unser Lebensstandard in den Jahren 2011
+    bis 2030 entwickeln?
+  description_de: "Wir wollen beginnen mit einer Frage zum Wirtschaftswachstum und
+    zum Energieverbrauch: <br/>\r\nWenn unser Wohlstand wächst, werden wir mehr Energie
+    verbrauchen. Wir werden mehr Geräte anschaffen, größere Häuser bauen und mehr
+    reisen. Als Folge dieses [wachsenden Konsums](/info/consumption) wird auch die
+    Industrieproduktion steigen. Selbst wenn unsere Mitbürger nicht mehr konsumieren,
+    wird unsere Wirtschaft vielleicht noch wachsen durch steigenden Export für die
+    [schnell wachsende Weltbevölkerung](/info/world_population). <br/>\r\nFalls die
+    Wirtschaft schrumpft, ergeben sich genau die entgegengesetzten Folgen."
+  text_en: What do you think will happen to our prosperity between 2011 and 2030?
+  description_en: |-
+    Let's start with a question about growth of the economy and energy use:<br/>
+    If we all become more prosperous, we will use more energy. We will own more appliances, larger homes, and will travel more. [Growing consumption](/info/consumption) will lead to higher industrial output. Even if our fellow countrymen do not consume more, our economy may still grow because of increasing exports to a [rapidly growing global population](/info/world_population).<br/>
+    If the economy shrinks, exactly the opposite is expected to happen.
+  enabled: true
+- id: 10
+  text_nl: Nu neem je misschien vaak de auto, maar wat ga jij in de toekomst doen?
+  ordering: 4
+  created_at: 2011-07-08 07:21:58.000000000 Z
+  updated_at: 2012-06-01 16:07:39.000000000 Z
+  description_nl: "Personenauto's verbruiken een kleine 10% van de energie in Nederland.
+    Het autogebruik neemt nog altijd toe. Mede hierdoor raken wegen verstopt en neemt
+    de luchtvervuiling toe. De overheid wil dan ook zoveel mogelijk het gebruik van
+    het openbaar vervoer stimuleren. <br/>\r\nDe mate waarin dit succesvol zal zijn
+    hangt mede af van de brandstofkosten. Als de olieprijs hoog blijft, zullen meer
+    mensen hun auto laten staan, of er zelf helemaal geen nemen."
+  question_set_id: 1
+  text_de: Heute fährst du vielleicht sehr oft mit dem Auto, aber wie bewegst du dich
+    in der Zukunft?
+  description_de: "Personenwagen verbrauchen bis zu 10% der Energie in unserem Land.
+    Noch immer wird das Autofahren stets beliebter. Dies ist eine der Ursachen für
+    verstopfte Fahrbahnen und zunehmende Luftverschmutzung. Die Behörden bemühen sich
+    darum auch nach Kräften, die Benutzung von öffentlichen Verkehrsmitteln anzuregen.
+    <br/>\r\nInwieweit solche Bemühungen erfolgreich sein werden, hängt u.a. ab von
+    den Energiekosten. Wenn die Ölpreise auf einem hohen Niveau bleiben, werden mehr
+    Leute das Auto stehen lassen oder erst gar kein Auto anschaffen."
+  text_en: Nowadays you may still take your car to go places, but what will you do
+    in the future?
+  description_en: |-
+    Cars use approximately 10% of all energy in our country. Their use is still growing. This trend is partly to blame for declining air quality and traffic congestion. Governments tend to want to stimulate the use of public transport as much as possible.<br/>
+    The extent to which this will be successful depends on future fuel prices. Should oil prices remain high, more people will either not take their cars or avoid buying one altogether.
+  enabled: true
+- id: 11
+  text_nl: Hoe verandert volgens u de prijs van energie in 2050 (zonder inflatie)?
+  ordering: 1
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: De prijs van energie kan stijgen als gevolg van [vraagtoename](/info/demand_growth)
+    door groei van de wereldbevolking en toename van de welvaart. Ook kan de winning
+    van brandstof duurder worden, doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil)</em>
+    komt etc. <br/> Factoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings),
+    het vinden van nieuwe gasreserves en het goedkoper worden van [hernieuwbare](/info/renewable)
+    energie.
+  question_set_id: 2
+  text_de: 
+  description_de: 
+  text_en: How will the price of energy change by 2050 (excluding inflation)?
+  description_en: |-
+    Energy prices may rise due to [increased demand](/info/demand_growth), global population growth or increased prosperity. Of course, the cost of extracting fossil fuels may also rise, for example because more natural gas comes from [shale gas formations](/info/unconventional_gas). <br/>
+    Some developments may lower prices, such as increased [savings](/info/savings), finds of large reserves of natural gas, or falling costs of [renewable energy](/info/renewable).
+  enabled: true
+- id: 12
+  text_nl: Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben
+    in Nederland in 2050?
+  ordering: 2
+  created_at: 2011-03-23 10:26:52.000000000 Z
+  updated_at: 2012-11-28 11:00:11.000000000 Z
+  description_nl: Nederland is een aardgasproducent. Op dit moment gebruiken we ongeveer
+    de helft zelf en de helft exporteren we. Deze export is vastgelegd in langetermijncontracten.
+    Terwijl de velden leger worden, [neemt de productie af](/info/declining_gas_production)
+    en vóór 2050 zal de conventionele gasproductie stoppen.
+  question_set_id: 2
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to meet energy demand in 2050?
+  description_en: "Presently, the Netherlands is a net producer of natural gas; only
+    half of the gas produced is used while the other half is exported with long-term
+    contracts.\r\nHowever, conventional sources of gas [are declining](/info/declining_gas_production)
+    and will be completely exhausted by 2050."
+  enabled: true
+- id: 13
+  text_nl: Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas
+    te laten dalen?
+  ordering: 3
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 10:56:55.000000000 Z
+  description_nl: Bij de verbranding van fossiele brandstoffen komt CO2 vrij. De veronderstelling
+    is dat de CO2-uitstoot leidt tot opwarming van de aarde (broeikaseffect) die rampzalige
+    gevolgen kan hebben. Meer informatie over opwarming van de aarde vindt u op de
+    site van <a class='no_popup' target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA</a>.  Meer
+    informatie over het aantal grote natuurrampen wereldwijd vindt u in de statistieken
+    die een grote (her-)verzekeraar als <a class='no_popup' target='_blank'  href='http://www.munichre.com/app_pages/www/@res/pdf/NatCatService/great_natural_catastrophes/NatCatSERVICE_Great_1950_2010_number_touch_en.pdf'>Munich
+    Re</a> bijhoudt.
+  question_set_id: 2
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to reduce CO2 emissions?
+  description_en: "The use of fossil fuels to generate energy results in emissions
+    of CO2, with these emissions likely resulting in significant contributions to
+    climate change.\r\nMore information on such warming can be found on <a class='no_popup'
+    target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA's website</a>."
+  enabled: true
+- id: 14
+  text_nl: Welke 'brandstoffen' zullen we in 2050 naar uw verwachting gebruiken voor
+    het Nederlandse wegverkeer?
+  ordering: 4
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: 18% van onze totale energievraag komt van auto's, bussen en vrachtwagens.
+    Op dit moment rijden vrijwel alle vrachtwagens op diesel (met een paar procent
+    [biodiesel](/info/biodiesel) bijgemengd). Ongeveer evenveel auto's rijden op diesel
+    of benzine. Het aandeel [elektrische auto's](/info/electric_cars) is nog verwaarloosbaar
+    klein, maar als het <a class = 'no_popup' target = '_blank'  href='http://www.energieoverheid.nl/2011/03/eu-in-2050-geen-benzine-en-dieselauto’s-van-de-weg/'>aan
+    de EU ligt</a> mogen auto's op benzine en diesel in 2050 niet meer in stedelijke
+    gebieden rijden.
+  question_set_id: 2
+  text_de: 
+  description_de: 
+  text_en: What fuel would you like to see powering road vehicles in 2050?
+  description_en: |-
+    Approximately 18% of all energy used in our country is spent on cars, buses, and trucks. At present, almost all trucks use diesel (with a few percent using [biodiesel](/info/biodiesel)).
+    The number of [electric cars](/info/electric_cars) is still negligible, but if the EU plans to ban petrol and diesel vehicles in cities (by 2050) goes ahead, this situation may change.
+  enabled: true
+- id: 15
+  text_nl: Wat verwacht u dat er in 2050 is veranderd in de energiebehoefte van huizen
+    en gebouwen?
+  ordering: 5
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:11:07.000000000 Z
+  description_nl: Huizen en gebouwen gebruiken op dit moment 28% van de energie in
+    Nederland, waarbij ruim 52% op gaat aan verwarming. Die verwarming op haar beurt
+    wordt bijna geheel door aardgas geleverd. Het kan ook <a class = 'no_popup' target
+    = '_blank' href='http://www.passiefhuis.nl/ph.html'>anders</a> en volgens de  <a
+    class = 'no_popup' target = '_blank' href='http://www.agentschapnl.nl/nieuws/nieuwe-epbd-energieverbruik-gebouwen-vanaf-2020-bijna-nul'>EU</a>
+    moet het ook anders.
+  question_set_id: 2
+  text_de: ''
+  description_de: ''
+  text_en: How do you expect the energy needs of homes and offices to change by 2050?
+  description_en: Homes and office buildings currently consume 28% of energy in the
+    Netherlands, with 52% of that used on heating and cooling. Most energy for heating
+    comes from burning natural gas. Better insulation could eliminate the need for
+    energy to be used on heating and cooling.
+  enabled: true
+- id: 16
+  text_nl: 'Naar uw verwachting zal de industrie tot 2050:'
+  ordering: 6
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:10:02.000000000 Z
+  description_nl: 'Nederland is een industrierijk land. De [energiebehoefte van de
+    industrie](/info/energy_intensity) beslaat 47% van de totale vraag (ter vergelijking:
+    in Engeland is dit slechts 25%). De groei van de industrie is een gevolg van welvaartgroei
+    van de wereldburgers. Om een beter idee te krijgen van hoe de mens steeds rijker
+    is geworden en steeds langer leeft, kijk dan naar dit Engelstalige <a class="iframe"
+    href="http://youtube.com/embed/jbkSRLYSojo?rel=0" class="cboxElement">filmpje</a>.'
+  question_set_id: 2
+  text_de: ''
+  description_de: ''
+  text_en: How will industry change by 2050?
+  description_en: "The Netherlands is an industry-rich country; the [energy needs
+    of the industry](/info/energy_intensity) amounts to 47% of total demand (for comparison,
+    in England this figure is only 25%).\r\nIf the people of the world become more
+    prosperous, industry can be expected to grow. To learn more about how we have
+    become richer and healthier, see Han Rosling's <a class=\"iframe\" href=\"http://youtube.com/embed/jbkSRLYSojo?rel=0\"
+    class=\"cboxElement\">200 Countries, 200 Years, 4 Minutes</a>."
+  enabled: true
+- id: 17
+  text_nl: Waar komt de benodigde energie voor tuinbouw vandaan in 2050?
+  ordering: 7
+  created_at: 2011-03-23 10:26:53.000000000 Z
+  updated_at: 2012-11-28 11:16:11.000000000 Z
+  description_nl: Landbouw in Nederland is verantwoordelijk 7% van de totale energievraag.
+    Maar liefst 80% daarvan komt uit de tuinbouw met haar kassen, de rest uit akkerbouw
+    en veeteelt. Op dit moment komt vrijwel alle benodigde energie uit aardgas.
+  question_set_id: 2
+  text_de: ''
+  description_de: ''
+  text_en: Which resources will be used to supply agricultural energy needs in 2050?
+  description_en: "Agriculture in the Netherlands is responsible for 7% of energy
+    demand. At least 80% of that comes from greenhouses, with the rest being spent
+    on crops and livestock.\r\nAt present, almost all this energy comes from natural
+    gas."
+  enabled: true
+- id: 18
+  text_nl: Wat denkt u dat onze economie gaat doen tussen 2011 en 2050?
+  ordering: 0
+  created_at: 2011-03-23 19:02:55.000000000 Z
+  updated_at: 2012-07-09 15:22:28.000000000 Z
+  description_nl: |-
+    Als we allemaal rijker worden gaan we meer energie gebruiken. We hebben meer apparaten, grotere huizen en gaan meer reizen. De afgelopen jaren was er  bij een groei van de economie van 2% een groei van 1% in het energieverbruik. Door deze [groeiende consumptie](/info/consumption) gaat ook de industrie meer produceren. Ook als onze landgenoten niet meer consumeren, groeit onze economie misschien nog vanwege export voor de [snel groeiende wereldbevolking](/info/world_population). <br/>
+    Bij een krimp van de economie zijn de effecten precies andersom.
+  question_set_id: 2
+  text_de: 
+  description_de: 
+  text_en: What do you think will happen to our economy between 2011 and 2050?
+  description_en: |-
+    If we all become more prosperous, we will use more energy. We will own more appliances, larger homes, and will travel more. In recent years there has been an economic growth of 2%, with a 1% growth in energy consumption. [Growing consumption](/info/consumption) will lead to higher industrial output. Even if our fellow countrymen do not consume more, our economy may still grow because of increasing exports to a [rapidly growing global population](/info/world_population).<br/>
+    If the economy shrinks, exactly the opposite is expected to happen.
+  enabled: true
+- id: 19
+  text_nl: Hoe verandert volgens u de prijs van energie in 2030 (zonder inflatie)?
+  ordering: 1
+  created_at: 2013-04-19 09:40:02.000000000 Z
+  updated_at: 2013-05-23 06:26:01.000000000 Z
+  description_nl: De prijs van energie kan stijgen als gevolg van [vraagtoename](/info/demand_growth)
+    door groei van de wereldbevolking en toename van de welvaart. Ook kan de winning
+    van brandstof duurder worden, doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil)</em>
+    komt etc. <br/> Factoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings),
+    het vinden van nieuwe gasreserves en het goedkoper worden van [hernieuwbare](/info/renewable)
+    energie.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: How will the price of energy change by 2030 (excluding inflation)?
+  description_en: "Energy prices may rise due to [increased demand](/info/demand_growth),
+    global population growth or increased prosperity. Of course, the cost of extracting
+    fossil fuels may also rise, for example because more natural gas comes from [shale
+    gas formations](/info/unconventional_gas). <br/>\r\nSome developments may lower
+    prices, such as increased [savings](/info/savings), finds of large reserves of
+    natural gas, or falling costs of [renewable energy](/info/renewable)."
+  enabled: false
+- id: 20
+  text_nl: Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben
+    in Nederland in 2050?
+  ordering: 2
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 10:37:22.000000000 Z
+  description_nl: Nederland is een aardgasproducent. Op dit moment gebruiken we ongeveer
+    de helft zelf en de helft exporteren we. Deze export is vastgelegd in langetermijncontracten.
+    Terwijl de velden leger worden, [neemt de productie af](/info/declining_gas_production)
+    en vóór 2050 zal de conventionele gasproductie stoppen.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to meet energy demand in 2050?
+  description_en: "Presently, the Netherlands is a net producer of natural gas; only
+    half of the gas produced is used while the other half is exported with long-term
+    contracts.\r\nHowever, conventional sources of gas [are declining](/info/declining_gas_production)
+    and will be completely exhausted by 2050."
+  enabled: false
+- id: 21
+  text_nl: Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas
+    te laten dalen?
+  ordering: 3
+  created_at: 2013-04-19 09:40:03.000000000 Z
+  updated_at: 2013-04-19 10:52:13.000000000 Z
+  description_nl: Bij de verbranding van fossiele brandstoffen komt CO2 vrij. De veronderstelling
+    is dat de CO2-uitstoot leidt tot opwarming van de aarde (broeikaseffect) die rampzalige
+    gevolgen kan hebben. Meer informatie over opwarming van de aarde vindt u op de
+    site van <a class='no_popup' target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA</a>.  Meer
+    informatie over het aantal grote natuurrampen wereldwijd vindt u in de statistieken
+    die een grote (her-)verzekeraar als <a class='no_popup' target='_blank'  href='http://www.munichre.com/app_pages/www/@res/pdf/NatCatService/great_natural_catastrophes/NatCatSERVICE_Great_1950_2010_number_touch_en.pdf'>Munich
+    Re</a> bijhoudt.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to reduce CO2 emissions?
+  description_en: "The use of fossil fuels to generate energy results in emissions
+    of CO2, with these emissions likely resulting in significant contributions to
+    climate change.\r\nMore information on such warming can be found on <a class='no_popup'
+    target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA's website</a>."
+  enabled: false
+- id: 22
+  text_nl: Welke 'brandstoffen' zullen we in 2050 naar uw verwachting gebruiken voor
+    het Nederlandse wegverkeer?
+  ordering: 4
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 10:55:06.000000000 Z
+  description_nl: 18% van onze totale energievraag komt van auto's, bussen en vrachtwagens.
+    Op dit moment rijden vrijwel alle vrachtwagens op diesel (met een paar procent
+    [biodiesel](/info/biodiesel) bijgemengd). Ongeveer evenveel auto's rijden op diesel
+    of benzine. Het aandeel [elektrische auto's](/info/electric_cars) is nog verwaarloosbaar
+    klein, maar als het <a class = 'no_popup' target = '_blank'  href='http://www.energieoverheid.nl/2011/03/eu-in-2050-geen-benzine-en-dieselauto’s-van-de-weg/'>aan
+    de EU ligt</a> mogen auto's op benzine en diesel in 2050 niet meer in stedelijke
+    gebieden rijden.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: What fuel would you like to see powering road vehicles in 2050?
+  description_en: "Approximately 18% of all energy used in our country is spent on
+    cars, buses, and trucks. At present, almost all trucks use diesel (with a few
+    percent using [biodiesel](/info/biodiesel)).\r\nThe number of [electric cars](/info/electric_cars)
+    is still negligible, but if the EU plans to ban petrol and diesel vehicles in
+    cities (by 2050) goes ahead, this situation may change."
+  enabled: false
+- id: 23
+  text_nl: Wat verwacht u dat er in 2050 is veranderd in de energiebehoefte van huizen
+    en gebouwen?
+  ordering: 5
+  created_at: 2013-04-19 09:40:04.000000000 Z
+  updated_at: 2013-04-19 11:03:16.000000000 Z
+  description_nl: Huizen en gebouwen gebruiken op dit moment 28% van de energie in
+    Nederland, waarbij ruim 52% op gaat aan verwarming. Die verwarming op haar beurt
+    wordt bijna geheel door aardgas geleverd. Het kan ook <a class = 'no_popup' target
+    = '_blank' href='http://www.passiefhuis.nl/ph.html'>anders</a> en volgens de  <a
+    class = 'no_popup' target = '_blank' href='http://www.agentschapnl.nl/nieuws/nieuwe-epbd-energieverbruik-gebouwen-vanaf-2020-bijna-nul'>EU</a>
+    moet het ook anders.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: How do you expect the energy needs of homes and offices to change by 2050?
+  description_en: Homes and office buildings currently consume 28% of energy in the
+    Netherlands, with 52% of that used on heating and cooling. Most energy for heating
+    comes from burning natural gas. Better insulation could eliminate the need for
+    energy to be used on heating and cooling.
+  enabled: false
+- id: 24
+  text_nl: 'Naar uw verwachting zal de industrie tot 2050:'
+  ordering: 6
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 11:03:33.000000000 Z
+  description_nl: 'Nederland is een industrierijk land. De [energiebehoefte van de
+    industrie](/info/energy_intensity) beslaat 47% van de totale vraag (ter vergelijking:
+    in Engeland is dit slechts 25%). De groei van de industrie is een gevolg van welvaartgroei
+    van de wereldburgers. Om een beter idee te krijgen van hoe de mens steeds rijker
+    is geworden en steeds langer leeft, kijk dan naar dit Engelstalige <a class="iframe"
+    href="http://youtube.com/embed/jbkSRLYSojo?rel=0" class="cboxElement">filmpje</a>.'
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: How will industry change by 2050?
+  description_en: "The Netherlands is an industry-rich country; the [energy needs
+    of the industry](/info/energy_intensity) amounts to 47% of total demand (for comparison,
+    in England this figure is only 25%).\r\nIf the people of the world become more
+    prosperous, industry can be expected to grow. To learn more about how we have
+    become richer and healthier, see Han Rosling's <a class=\"iframe\" href=\"http://youtube.com/embed/jbkSRLYSojo?rel=0\"
+    class=\"cboxElement\">200 Countries, 200 Years, 4 Minutes</a>."
+  enabled: false
+- id: 25
+  text_nl: Waar komt de benodigde energie voor tuinbouw vandaan in 2050?
+  ordering: 7
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-04-19 13:17:54.000000000 Z
+  description_nl: Landbouw in Nederland is verantwoordelijk 7% van de totale energievraag.
+    Maar liefst 80% daarvan komt uit de tuinbouw met haar kassen, de rest uit akkerbouw
+    en veeteelt. Op dit moment komt vrijwel alle benodigde energie uit aardgas.
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: Which resources will be used to supply agricultural energy needs in 2050?
+  description_en: "Agriculture in the Netherlands is responsible for 7% of energy
+    demand. At least 80% of that comes from greenhouses, with the rest being spent
+    on crops and livestock.\r\nAt present, almost all this energy comes from natural
+    gas."
+  enabled: false
+- id: 26
+  text_nl: Wat denkt u dat onze economie gaat doen tussen 2011 en 2030?
+  ordering: 0
+  created_at: 2013-04-19 09:40:05.000000000 Z
+  updated_at: 2013-05-23 06:25:36.000000000 Z
+  description_nl: "Als we allemaal rijker worden gaan we meer energie gebruiken. We
+    hebben meer apparaten, grotere huizen en gaan meer reizen. De afgelopen jaren
+    was er  bij een groei van de economie van 2% een groei van 1% in het energieverbruik.
+    Door deze [groeiende consumptie](/info/consumption) gaat ook de industrie meer
+    produceren. Ook als onze landgenoten niet meer consumeren, groeit onze economie
+    misschien nog vanwege export voor de [snel groeiende wereldbevolking](/info/world_population).
+    <br/>\r\nBij een krimp van de economie zijn de effecten precies andersom."
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: What do you think will happen to our economy between 2011 and 2030?
+  description_en: "If we all become more prosperous, we will use more energy. We will
+    own more appliances, larger homes, and will travel more. In recent years there
+    has been an economic growth of 2%, with a 1% growth in energy consumption. [Growing
+    consumption](/info/consumption) will lead to higher industrial output. Even if
+    our fellow countrymen do not consume more, our economy may still grow because
+    of increasing exports to a [rapidly growing global population](/info/world_population).<br/>\r\nIf
+    the economy shrinks, exactly the opposite is expected to happen."
+  enabled: false
+- id: 27
+  text_nl: Gaat de groothandelsprijs van aardgas de komende 17 jaar stijgen of dalen
+    in Noord-West Europa?
+  ordering: 2
+  created_at: 2013-04-19 10:25:54.000000000 Z
+  updated_at: 2013-05-23 06:26:14.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 28
+  text_nl: Nederland gebruikte in 2012  43 miljard m3 aardgas. Hoeveel schaliegas
+    gaan we per jaar produceren vanaf 2020?
+  ordering: 3
+  created_at: 2013-04-19 10:50:57.000000000 Z
+  updated_at: 2013-05-23 06:26:29.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 29
+  text_nl: Hoeveel groen gas gaan we produceren in Nederland vanaf 2020?
+  ordering: 4
+  created_at: 2013-04-19 10:54:46.000000000 Z
+  updated_at: 2013-05-23 06:26:42.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 30
+  text_nl: Hoeveel miljard m3  waterstof-/methaangas gaan we invoeden in het aardgasnet
+    gemaakt via Power to Gas vanaf 2020?
+  ordering: 5
+  created_at: 2013-04-19 10:58:09.000000000 Z
+  updated_at: 2013-05-23 06:26:53.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 31
+  text_nl: Hoeveel miljard m3  waterstof-/methaangas gaan we invoeden in het aardgasnet
+    gemaakt via Power to Gas vanaf 2020?
+  ordering: 1
+  created_at: 2013-04-19 10:58:34.000000000 Z
+  updated_at: 2013-04-19 11:00:34.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 32
+  text_nl: Wat gebeurt er met de aardgasbaten tussen nu en 2030? Dit jaar zijn de
+    aardgasbaten naar verwachting 13 miljard euro.
+  ordering: 6
+  created_at: 2013-04-19 13:26:52.000000000 Z
+  updated_at: 2013-05-23 06:27:11.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 33
+  text_nl: Wat gebeurt er met de handelsbalans m.b.t. aardgas. In 2012 exporteerde
+    GasTerra 48.6 m3 aardgas.
+  ordering: 7
+  created_at: 2013-04-19 13:38:18.000000000 Z
+  updated_at: 2013-05-23 06:27:23.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 34
+  text_nl: Zouden we in de toekomst minder aardgas moeten winnen in Nederland i.v.m.
+    aardbevingen?
+  ordering: 8
+  created_at: 2013-04-19 13:40:40.000000000 Z
+  updated_at: 2013-05-23 06:27:35.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 35
+  text_nl: Aardgas draagt bij aan de opwarming van de aarde. Is dat een reden om het
+    in de grond te laten zitten?
+  ordering: 9
+  created_at: 2013-04-19 13:44:03.000000000 Z
+  updated_at: 2013-05-23 06:27:46.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 36
+  text_nl: Hoeveel procent van de Nederlandse elektriciteitsvoorziening komt in 2030
+    uit Noord Afrika en het Midden Oosten?
+  ordering: 20
+  created_at: 2013-05-22 14:39:38.000000000 Z
+  updated_at: 2013-05-23 06:36:23.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 37
+  text_nl: 'Hoeveel procent van de Nederlandse elektriciteitsvoorziening komt in 2050
+    uit Noord Afrika en het Midden Oosten? '
+  ordering: 21
+  created_at: 2013-05-22 14:40:52.000000000 Z
+  updated_at: 2013-05-23 06:36:42.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 38
+  text_nl: Wat is de kleinste regio die zelfstandig de kans op onvermogen moet kunnen
+    opvangen?
+  ordering: 22
+  created_at: 2013-05-22 14:42:52.000000000 Z
+  updated_at: 2013-05-27 15:50:19.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 39
+  text_nl: 'Wat is beter voor Nederland?  '
+  ordering: 24
+  created_at: 2013-05-22 14:45:07.000000000 Z
+  updated_at: 2013-05-22 14:45:07.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 40
+  text_nl: Zou de Nederlandse overheid moeten participeren in Dii?
+  ordering: 25
+  created_at: 2013-05-22 14:46:12.000000000 Z
+  updated_at: 2013-05-23 06:42:02.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 41
+  text_nl: Zou het Nederlandse bedrijfsleven moeten participeren in Dii?
+  ordering: 26
+  created_at: 2013-05-22 14:48:49.000000000 Z
+  updated_at: 2013-05-22 14:50:58.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 42
+  text_nl: Denkt u dat een energievoorziening die voor 90% gebaseerd is op duurzame
+    energie kan in 2050
+  ordering: 27
+  created_at: 2013-05-22 15:08:20.000000000 Z
+  updated_at: 2013-05-23 06:24:04.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 43
+  text_nl: Maakt de inzet van duurzame energie uit het Midden Oosten en Noord Afrika
+    elektriciteit duurder of goedkoper?
+  ordering: 28
+  created_at: 2013-05-22 15:08:40.000000000 Z
+  updated_at: 2013-05-27 15:55:38.000000000 Z
+  description_nl: ''
+  question_set_id: 3
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: true
+- id: 44
+  text_nl: Hoe verandert volgens u de prijs van energie in 2030 (zonder inflatie)?
+  ordering: 1
+  created_at: 2013-10-31 13:14:20.000000000 Z
+  updated_at: 2013-10-31 13:14:20.000000000 Z
+  description_nl: De prijs van energie kan stijgen als gevolg van [vraagtoename](/info/demand_growth)
+    door groei van de wereldbevolking en toename van de welvaart. Ook kan de winning
+    van brandstof duurder worden, doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil)</em>
+    komt etc. <br/> Factoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings),
+    het vinden van nieuwe gasreserves en het goedkoper worden van [hernieuwbare](/info/renewable)
+    energie.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How will the price of energy change by 2030 (excluding inflation)?
+  description_en: "Energy prices may rise due to [increased demand](/info/demand_growth),
+    global population growth or increased prosperity. Of course, the cost of extracting
+    fossil fuels may also rise, for example because more natural gas comes from [shale
+    gas formations](/info/unconventional_gas). <br/>\r\nSome developments may lower
+    prices, such as increased [savings](/info/savings), finds of large reserves of
+    natural gas, or falling costs of [renewable energy](/info/renewable)."
+  enabled: false
+- id: 45
+  text_nl: Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben
+    in Nederland in 2050?
+  ordering: 2
+  created_at: 2013-10-31 13:14:21.000000000 Z
+  updated_at: 2013-10-31 13:14:21.000000000 Z
+  description_nl: Nederland is een aardgasproducent. Op dit moment gebruiken we ongeveer
+    de helft zelf en de helft exporteren we. Deze export is vastgelegd in langetermijncontracten.
+    Terwijl de velden leger worden, [neemt de productie af](/info/declining_gas_production)
+    en vóór 2050 zal de conventionele gasproductie stoppen.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to meet energy demand in 2050?
+  description_en: "Presently, the Netherlands is a net producer of natural gas; only
+    half of the gas produced is used while the other half is exported with long-term
+    contracts.\r\nHowever, conventional sources of gas [are declining](/info/declining_gas_production)
+    and will be completely exhausted by 2050."
+  enabled: false
+- id: 46
+  text_nl: Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas
+    te laten dalen?
+  ordering: 3
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: Bij de verbranding van fossiele brandstoffen komt CO2 vrij. De veronderstelling
+    is dat de CO2-uitstoot leidt tot opwarming van de aarde (broeikaseffect) die rampzalige
+    gevolgen kan hebben. Meer informatie over opwarming van de aarde vindt u op de
+    site van <a class='no_popup' target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA</a>.  Meer
+    informatie over het aantal grote natuurrampen wereldwijd vindt u in de statistieken
+    die een grote (her-)verzekeraar als <a class='no_popup' target='_blank'  href='http://www.munichre.com/app_pages/www/@res/pdf/NatCatService/great_natural_catastrophes/NatCatSERVICE_Great_1950_2010_number_touch_en.pdf'>Munich
+    Re</a> bijhoudt.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to reduce CO2 emissions?
+  description_en: "The use of fossil fuels to generate energy results in emissions
+    of CO2, with these emissions likely resulting in significant contributions to
+    climate change.\r\nMore information on such warming can be found on <a class='no_popup'
+    target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA's website</a>."
+  enabled: false
+- id: 47
+  text_nl: Welke 'brandstoffen' zullen we in 2050 naar uw verwachting gebruiken voor
+    het Nederlandse wegverkeer?
+  ordering: 4
+  created_at: 2013-10-31 13:14:22.000000000 Z
+  updated_at: 2013-10-31 13:14:22.000000000 Z
+  description_nl: 18% van onze totale energievraag komt van auto's, bussen en vrachtwagens.
+    Op dit moment rijden vrijwel alle vrachtwagens op diesel (met een paar procent
+    [biodiesel](/info/biodiesel) bijgemengd). Ongeveer evenveel auto's rijden op diesel
+    of benzine. Het aandeel [elektrische auto's](/info/electric_cars) is nog verwaarloosbaar
+    klein, maar als het <a class = 'no_popup' target = '_blank'  href='http://www.energieoverheid.nl/2011/03/eu-in-2050-geen-benzine-en-dieselauto’s-van-de-weg/'>aan
+    de EU ligt</a> mogen auto's op benzine en diesel in 2050 niet meer in stedelijke
+    gebieden rijden.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What fuel would you like to see powering road vehicles in 2050?
+  description_en: "Approximately 18% of all energy used in our country is spent on
+    cars, buses, and trucks. At present, almost all trucks use diesel (with a few
+    percent using [biodiesel](/info/biodiesel)).\r\nThe number of [electric cars](/info/electric_cars)
+    is still negligible, but if the EU plans to ban petrol and diesel vehicles in
+    cities (by 2050) goes ahead, this situation may change."
+  enabled: false
+- id: 48
+  text_nl: Wat verwacht u dat er in 2050 is veranderd in de energiebehoefte van huizen
+    en gebouwen?
+  ordering: 5
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: Huizen en gebouwen gebruiken op dit moment 28% van de energie in
+    Nederland, waarbij ruim 52% op gaat aan verwarming. Die verwarming op haar beurt
+    wordt bijna geheel door aardgas geleverd. Het kan ook <a class = 'no_popup' target
+    = '_blank' href='http://www.passiefhuis.nl/ph.html'>anders</a> en volgens de  <a
+    class = 'no_popup' target = '_blank' href='http://www.agentschapnl.nl/nieuws/nieuwe-epbd-energieverbruik-gebouwen-vanaf-2020-bijna-nul'>EU</a>
+    moet het ook anders.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How do you expect the energy needs of homes and offices to change by 2050?
+  description_en: Homes and office buildings currently consume 28% of energy in the
+    Netherlands, with 52% of that used on heating and cooling. Most energy for heating
+    comes from burning natural gas. Better insulation could eliminate the need for
+    energy to be used on heating and cooling.
+  enabled: false
+- id: 49
+  text_nl: 'Naar uw verwachting zal de industrie tot 2050:'
+  ordering: 6
+  created_at: 2013-10-31 13:14:23.000000000 Z
+  updated_at: 2013-10-31 13:14:23.000000000 Z
+  description_nl: 'Nederland is een industrierijk land. De [energiebehoefte van de
+    industrie](/info/energy_intensity) beslaat 47% van de totale vraag (ter vergelijking:
+    in Engeland is dit slechts 25%). De groei van de industrie is een gevolg van welvaartgroei
+    van de wereldburgers. Om een beter idee te krijgen van hoe de mens steeds rijker
+    is geworden en steeds langer leeft, kijk dan naar dit Engelstalige <a class="iframe"
+    href="http://youtube.com/embed/jbkSRLYSojo?rel=0" class="cboxElement">filmpje</a>.'
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How will industry change by 2050?
+  description_en: "The Netherlands is an industry-rich country; the [energy needs
+    of the industry](/info/energy_intensity) amounts to 47% of total demand (for comparison,
+    in England this figure is only 25%).\r\nIf the people of the world become more
+    prosperous, industry can be expected to grow. To learn more about how we have
+    become richer and healthier, see Han Rosling's <a class=\"iframe\" href=\"http://youtube.com/embed/jbkSRLYSojo?rel=0\"
+    class=\"cboxElement\">200 Countries, 200 Years, 4 Minutes</a>."
+  enabled: false
+- id: 50
+  text_nl: Waar komt de benodigde energie voor tuinbouw vandaan in 2050?
+  ordering: 7
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: Landbouw in Nederland is verantwoordelijk 7% van de totale energievraag.
+    Maar liefst 80% daarvan komt uit de tuinbouw met haar kassen, de rest uit akkerbouw
+    en veeteelt. Op dit moment komt vrijwel alle benodigde energie uit aardgas.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: Which resources will be used to supply agricultural energy needs in 2050?
+  description_en: "Agriculture in the Netherlands is responsible for 7% of energy
+    demand. At least 80% of that comes from greenhouses, with the rest being spent
+    on crops and livestock.\r\nAt present, almost all this energy comes from natural
+    gas."
+  enabled: false
+- id: 51
+  text_nl: Wat denkt u dat onze economie gaat doen tussen 2011 en 2020?
+  ordering: 0
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 19:51:30.000000000 Z
+  description_nl: "Als we allemaal rijker worden gaan we meer energie gebruiken. We
+    hebben meer apparaten, grotere huizen en gaan meer reizen. De afgelopen jaren
+    was er  bij een groei van de economie van 2% een groei van 1% in het energieverbruik.
+    Door deze [groeiende consumptie](/info/consumption) gaat ook de industrie meer
+    produceren. Ook als onze landgenoten niet meer consumeren, groeit onze economie
+    misschien nog vanwege export voor de [snel groeiende wereldbevolking](/info/world_population).
+    <br/>\r\nBij een krimp van de economie zijn de effecten precies andersom."
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think will happen to our economy between 2011 and 2020?
+  description_en: "If we all become more prosperous, we will use more energy. We will
+    own more appliances, larger homes, and will travel more. In recent years there
+    has been an economic growth of 2%, with a 1% growth in energy consumption. [Growing
+    consumption](/info/consumption) will lead to higher industrial output. Even if
+    our fellow countrymen do not consume more, our economy may still grow because
+    of increasing exports to a [rapidly growing global population](/info/world_population).<br/>\r\nIf
+    the economy shrinks, exactly the opposite is expected to happen."
+  enabled: false
+- id: 52
+  text_nl: Gaat de groothandelsprijs van aardgas de komende 17 jaar stijgen of dalen
+    in Noord-West Europa?
+  ordering: 2
+  created_at: 2013-10-31 13:14:24.000000000 Z
+  updated_at: 2013-10-31 13:14:24.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 53
+  text_nl: Nederland gebruikte in 2012  43 miljard m3 aardgas. Hoeveel schaliegas
+    gaan we per jaar produceren vanaf 2020?
+  ordering: 3
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 54
+  text_nl: Hoeveel groen gas gaan we produceren in Nederland vanaf 2020?
+  ordering: 4
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 55
+  text_nl: Hoeveel miljard m3  waterstof-/methaangas gaan we invoeden in het aardgasnet
+    gemaakt via Power to Gas vanaf 2020?
+  ordering: 5
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 56
+  text_nl: Hoeveel miljard m3  waterstof-/methaangas gaan we invoeden in het aardgasnet
+    gemaakt via Power to Gas vanaf 2020?
+  ordering: 1
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 57
+  text_nl: Wat gebeurt er met de aardgasbaten tussen nu en 2030? Dit jaar zijn de
+    aardgasbaten naar verwachting 13 miljard euro.
+  ordering: 6
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 58
+  text_nl: Wat gebeurt er met de handelsbalans m.b.t. aardgas. In 2012 exporteerde
+    GasTerra 48.6 m3 aardgas.
+  ordering: 7
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 59
+  text_nl: Zouden we in de toekomst minder aardgas moeten winnen in Nederland i.v.m.
+    aardbevingen?
+  ordering: 8
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 60
+  text_nl: Aardgas draagt bij aan de opwarming van de aarde. Is dat een reden om het
+    in de grond te laten zitten?
+  ordering: 9
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:14:25.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 61
+  text_nl: Hoeveel procent van de Nederlandse elektriciteitsvoorziening komt in 2030
+    uit Noord Afrika en het Midden Oosten?
+  ordering: 20
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:53:15.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 62
+  text_nl: 'Hoeveel procent van de Nederlandse elektriciteitsvoorziening komt in 2050
+    uit Noord Afrika en het Midden Oosten? '
+  ordering: 21
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:54:19.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 63
+  text_nl: Wat is de kleinste regio die zelfstandig de kans op onvermogen moet kunnen
+    opvangen?
+  ordering: 22
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:55:16.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 64
+  text_nl: 'Wat is beter voor Nederland?  '
+  ordering: 24
+  created_at: 2013-10-31 13:14:25.000000000 Z
+  updated_at: 2013-10-31 13:55:40.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 65
+  text_nl: Zou de Nederlandse overheid moeten participeren in Dii?
+  ordering: 25
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:56:06.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 66
+  text_nl: Zou het Nederlandse bedrijfsleven moeten participeren in Dii?
+  ordering: 26
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:56:18.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 67
+  text_nl: Denkt u dat een energievoorziening die voor 90% gebaseerd is op duurzame
+    energie kan in 2050
+  ordering: 27
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:56:37.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 68
+  text_nl: Maakt de inzet van duurzame energie uit het Midden Oosten en Noord Afrika
+    elektriciteit duurder of goedkoper?
+  ordering: 28
+  created_at: 2013-10-31 13:14:26.000000000 Z
+  updated_at: 2013-10-31 13:56:55.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: ''
+  description_en: ''
+  enabled: false
+- id: 69
+  text_nl: Hoe verandert volgens u de prijs van energie in 2050 (zonder inflatie)?
+  ordering: 101
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: De prijs van energie kan stijgen als gevolg van [vraagtoename](/info/demand_growth)
+    door groei van de wereldbevolking en toename van de welvaart. Ook kan de winning
+    van brandstof duurder worden, doordat bijvoorbeeld [olie uit dieper gelegen velden](/info/unconventional_oil)</em>
+    komt etc. <br/> Factoren die de prijs kunnen drukken zijn toenemende [besparingen](/info/savings),
+    het vinden van nieuwe gasreserves en het goedkoper worden van [hernieuwbare](/info/renewable)
+    energie.
+  question_set_id: 4
+  text_de: 
+  description_de: 
+  text_en: How will the price of energy change by 2050 (excluding inflation)?
+  description_en: |-
+    Energy prices may rise due to [increased demand](/info/demand_growth), global population growth or increased prosperity. Of course, the cost of extracting fossil fuels may also rise, for example because more natural gas comes from [shale gas formations](/info/unconventional_gas). <br/>
+    Some developments may lower prices, such as increased [savings](/info/savings), finds of large reserves of natural gas, or falling costs of [renewable energy](/info/renewable).
+  enabled: false
+- id: 70
+  text_nl: Wat vindt u dat we moeten doen om voldoende energie beschikbaar te hebben
+    in Nederland in 2050?
+  ordering: 102
+  created_at: 2013-10-31 13:14:27.000000000 Z
+  updated_at: 2013-10-31 13:14:27.000000000 Z
+  description_nl: Nederland is een aardgasproducent. Op dit moment gebruiken we ongeveer
+    de helft zelf en de helft exporteren we. Deze export is vastgelegd in langetermijncontracten.
+    Terwijl de velden leger worden, [neemt de productie af](/info/declining_gas_production)
+    en vóór 2050 zal de conventionele gasproductie stoppen.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to meet energy demand in 2050?
+  description_en: "Presently, the Netherlands is a net producer of natural gas; only
+    half of the gas produced is used while the other half is exported with long-term
+    contracts.\r\nHowever, conventional sources of gas [are declining](/info/declining_gas_production)
+    and will be completely exhausted by 2050."
+  enabled: false
+- id: 71
+  text_nl: Wat vindt u dat we in Nederland moeten doen om de uitstoot van CO2 broeikasgas
+    te laten dalen?
+  ordering: 103
+  created_at: 2013-10-31 13:14:28.000000000 Z
+  updated_at: 2013-10-31 13:14:28.000000000 Z
+  description_nl: Bij de verbranding van fossiele brandstoffen komt CO2 vrij. De veronderstelling
+    is dat de CO2-uitstoot leidt tot opwarming van de aarde (broeikaseffect) die rampzalige
+    gevolgen kan hebben. Meer informatie over opwarming van de aarde vindt u op de
+    site van <a class='no_popup' target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA</a>.  Meer
+    informatie over het aantal grote natuurrampen wereldwijd vindt u in de statistieken
+    die een grote (her-)verzekeraar als <a class='no_popup' target='_blank'  href='http://www.munichre.com/app_pages/www/@res/pdf/NatCatService/great_natural_catastrophes/NatCatSERVICE_Great_1950_2010_number_touch_en.pdf'>Munich
+    Re</a> bijhoudt.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think should be done to reduce CO2 emissions?
+  description_en: "The use of fossil fuels to generate energy results in emissions
+    of CO2, with these emissions likely resulting in significant contributions to
+    climate change.\r\nMore information on such warming can be found on <a class='no_popup'
+    target='_blank'  href='http://climate.nasa.gov/keyIndicators/'>NASA's website</a>."
+  enabled: false
+- id: 72
+  text_nl: Welke 'brandstoffen' zullen we in 2050 naar uw verwachting gebruiken voor
+    het Nederlandse wegverkeer?
+  ordering: 104
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: 18% van onze totale energievraag komt van auto's, bussen en vrachtwagens.
+    Op dit moment rijden vrijwel alle vrachtwagens op diesel (met een paar procent
+    [biodiesel](/info/biodiesel) bijgemengd). Ongeveer evenveel auto's rijden op diesel
+    of benzine. Het aandeel [elektrische auto's](/info/electric_cars) is nog verwaarloosbaar
+    klein, maar als het <a class = 'no_popup' target = '_blank'  href='http://www.energieoverheid.nl/2011/03/eu-in-2050-geen-benzine-en-dieselauto’s-van-de-weg/'>aan
+    de EU ligt</a> mogen auto's op benzine en diesel in 2050 niet meer in stedelijke
+    gebieden rijden.
+  question_set_id: 4
+  text_de: 
+  description_de: 
+  text_en: What fuel would you like to see powering road vehicles in 2050?
+  description_en: |-
+    Approximately 18% of all energy used in our country is spent on cars, buses, and trucks. At present, almost all trucks use diesel (with a few percent using [biodiesel](/info/biodiesel)).
+    The number of [electric cars](/info/electric_cars) is still negligible, but if the EU plans to ban petrol and diesel vehicles in cities (by 2050) goes ahead, this situation may change.
+  enabled: false
+- id: 73
+  text_nl: Wat verwacht u dat er in 2050 is veranderd in de energiebehoefte van huizen
+    en gebouwen?
+  ordering: 105
+  created_at: 2013-10-31 13:14:29.000000000 Z
+  updated_at: 2013-10-31 13:14:29.000000000 Z
+  description_nl: Huizen en gebouwen gebruiken op dit moment 28% van de energie in
+    Nederland, waarbij ruim 52% op gaat aan verwarming. Die verwarming op haar beurt
+    wordt bijna geheel door aardgas geleverd. Het kan ook <a class = 'no_popup' target
+    = '_blank' href='http://www.passiefhuis.nl/ph.html'>anders</a> en volgens de  <a
+    class = 'no_popup' target = '_blank' href='http://www.agentschapnl.nl/nieuws/nieuwe-epbd-energieverbruik-gebouwen-vanaf-2020-bijna-nul'>EU</a>
+    moet het ook anders.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How do you expect the energy needs of homes and offices to change by 2050?
+  description_en: Homes and office buildings currently consume 28% of energy in the
+    Netherlands, with 52% of that used on heating and cooling. Most energy for heating
+    comes from burning natural gas. Better insulation could eliminate the need for
+    energy to be used on heating and cooling.
+  enabled: false
+- id: 74
+  text_nl: 'Naar uw verwachting zal de industrie tot 2050:'
+  ordering: 106
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: 'Nederland is een industrierijk land. De [energiebehoefte van de
+    industrie](/info/energy_intensity) beslaat 47% van de totale vraag (ter vergelijking:
+    in Engeland is dit slechts 25%). De groei van de industrie is een gevolg van welvaartgroei
+    van de wereldburgers. Om een beter idee te krijgen van hoe de mens steeds rijker
+    is geworden en steeds langer leeft, kijk dan naar dit Engelstalige <a class="iframe"
+    href="http://youtube.com/embed/jbkSRLYSojo?rel=0" class="cboxElement">filmpje</a>.'
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How will industry change by 2050?
+  description_en: "The Netherlands is an industry-rich country; the [energy needs
+    of the industry](/info/energy_intensity) amounts to 47% of total demand (for comparison,
+    in England this figure is only 25%).\r\nIf the people of the world become more
+    prosperous, industry can be expected to grow. To learn more about how we have
+    become richer and healthier, see Han Rosling's <a class=\"iframe\" href=\"http://youtube.com/embed/jbkSRLYSojo?rel=0\"
+    class=\"cboxElement\">200 Countries, 200 Years, 4 Minutes</a>."
+  enabled: false
+- id: 75
+  text_nl: Waar komt de benodigde energie voor tuinbouw vandaan in 2050?
+  ordering: 107
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: Landbouw in Nederland is verantwoordelijk 7% van de totale energievraag.
+    Maar liefst 80% daarvan komt uit de tuinbouw met haar kassen, de rest uit akkerbouw
+    en veeteelt. Op dit moment komt vrijwel alle benodigde energie uit aardgas.
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: Which resources will be used to supply agricultural energy needs in 2050?
+  description_en: "Agriculture in the Netherlands is responsible for 7% of energy
+    demand. At least 80% of that comes from greenhouses, with the rest being spent
+    on crops and livestock.\r\nAt present, almost all this energy comes from natural
+    gas."
+  enabled: false
+- id: 76
+  text_nl: Wat denkt u dat onze economie gaat doen tussen 2011 en 2050?
+  ordering: 100
+  created_at: 2013-10-31 13:14:30.000000000 Z
+  updated_at: 2013-10-31 13:14:30.000000000 Z
+  description_nl: |-
+    Als we allemaal rijker worden gaan we meer energie gebruiken. We hebben meer apparaten, grotere huizen en gaan meer reizen. De afgelopen jaren was er  bij een groei van de economie van 2% een groei van 1% in het energieverbruik. Door deze [groeiende consumptie](/info/consumption) gaat ook de industrie meer produceren. Ook als onze landgenoten niet meer consumeren, groeit onze economie misschien nog vanwege export voor de [snel groeiende wereldbevolking](/info/world_population). <br/>
+    Bij een krimp van de economie zijn de effecten precies andersom.
+  question_set_id: 4
+  text_de: 
+  description_de: 
+  text_en: What do you think will happen to our economy between 2011 and 2050?
+  description_en: |-
+    If we all become more prosperous, we will use more energy. We will own more appliances, larger homes, and will travel more. In recent years there has been an economic growth of 2%, with a 1% growth in energy consumption. [Growing consumption](/info/consumption) will lead to higher industrial output. Even if our fellow countrymen do not consume more, our economy may still grow because of increasing exports to a [rapidly growing global population](/info/world_population).<br/>
+    If the economy shrinks, exactly the opposite is expected to happen.
+  enabled: false
+- id: 77
+  text_nl: What happens to the world climate this century?
+  ordering: 201
+  created_at: 2013-11-04 16:33:09.000000000 Z
+  updated_at: 2013-11-19 08:41:27.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What happens to the world climate this century?
+  description_en: ''
+  enabled: true
+- id: 78
+  text_nl: What are the consequences of your climate prediction this century?
+  ordering: 201
+  created_at: 2013-11-04 16:36:39.000000000 Z
+  updated_at: 2013-11-04 16:36:39.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What are the consequences of your climate prediction this century?
+  description_en: ''
+  enabled: true
+- id: 79
+  text_nl: What is the gas price in 2020 in Europe?
+  ordering: 202
+  created_at: 2013-11-04 16:38:57.000000000 Z
+  updated_at: 2013-11-04 16:38:57.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What is the gas price in 2020 in Europe?
+  description_en: ''
+  enabled: true
+- id: 80
+  text_nl: What will be the coal price in 2020?
+  ordering: 203
+  created_at: 2013-11-04 16:40:41.000000000 Z
+  updated_at: 2013-11-04 16:40:41.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What will be the coal price in 2020?
+  description_en: ''
+  enabled: true
+- id: 81
+  text_nl: What do you think will happen to the CO2 price?
+  ordering: 204
+  created_at: 2013-11-04 16:47:24.000000000 Z
+  updated_at: 2013-11-04 16:47:24.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What do you think will happen to the CO2 price?
+  description_en: ''
+  enabled: true
+- id: 82
+  text_nl: How many hours can we run the Netherlands completely on solar- and wind
+    power in 2020?
+  ordering: 205
+  created_at: 2013-11-04 16:50:42.000000000 Z
+  updated_at: 2013-11-18 06:54:10.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: How many hours can we run the Netherlands completely on solar- and wind
+    power in 2020?
+  description_en: ''
+  enabled: true
+- id: 83
+  text_nl: What percentage of house renovations in 2020 will lead to energy neutral
+    houses in the Netherlands?
+  ordering: 207
+  created_at: 2013-11-04 16:53:01.000000000 Z
+  updated_at: 2013-11-18 07:05:57.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What percentage of house renovations in 2020 will lead to energy neutral
+    houses in the Netherlands?
+  description_en: ''
+  enabled: true
+- id: 84
+  text_nl: What percentage of new cars sold in the Netherlands in 2020 will be zero-emission
+    cars?
+  ordering: 208
+  created_at: 2013-11-04 16:54:32.000000000 Z
+  updated_at: 2013-11-18 07:06:35.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What percentage of new cars sold in the Netherlands in 2020 will be zero-emission
+    cars?
+  description_en: ''
+  enabled: true
+- id: 85
+  text_nl: If you were leading an energy intensive multinational and could invest
+    100 million euro in a new production site, where would you invest?
+  ordering: 209
+  created_at: 2013-11-04 16:57:27.000000000 Z
+  updated_at: 2013-11-05 14:13:34.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: If you were leading an energy intensive multinational and could invest
+    100 million euro in a new production site, where would you invest?
+  description_en: ''
+  enabled: true
+- id: 86
+  text_nl: What percentage of CO2 reduction should The Netherlands achieve in 2030
+    as compared to 1990?
+  ordering: 210
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-07 14:39:26.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What percentage of CO2 reduction should The Netherlands achieve in 2030
+    as compared to 1990?
+  description_en: ''
+  enabled: true
+- id: 87
+  text_nl: What percentage of CO2 reduction should The Netherlands achieve in 2030
+    as compared to 1990?
+  ordering: 211
+  created_at: 2013-11-04 17:00:37.000000000 Z
+  updated_at: 2013-11-18 06:58:33.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: What percentage of CO2 reduction should The Netherlands achieve in 2030
+    as compared to 1990?
+  description_en: ''
+  enabled: false
+- id: 88
+  text_nl: When there is a moment with too little wind and solar power what will then
+    primarily use as backup to produce electricity?
+  ordering: 206
+  created_at: 2013-11-05 14:17:12.000000000 Z
+  updated_at: 2013-11-06 11:39:38.000000000 Z
+  description_nl: ''
+  question_set_id: 4
+  text_de: ''
+  description_de: ''
+  text_en: When there is a moment with too little wind and solar power what will then
+    primarily use as backup to produce electricity?
+  description_en: ''
+  enabled: false
