@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     @scenarios = scenarios.to_a.sort_by{|s| s.send @order.to_sym}
     @scenarios.reverse! if @direction == 'desc'
     @scenarios.each_with_index { |s, i| s.title = "<anonymous>" ; s.name = "person ##{s.id}" } if params[:anonymous]
+    @questions = @scenarios.first.answers.map(&:question)
   end
 
   private
