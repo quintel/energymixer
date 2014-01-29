@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @answer] do |f|
+= simple_form_for [:admin, @answer], html: { novalidate: true } do |f|
   = f.input :text_nl
   = f.input :text_de
   = f.input :text_en
