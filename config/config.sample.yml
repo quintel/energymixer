@@ -16,7 +16,6 @@ application:
   production:
     <<: *application
     api_url:              'http://et-engine.com'
-    local_proxy:          false
     view_scenario_path:   'http://et-model.com/scenarios'
   test:
     <<: *application
