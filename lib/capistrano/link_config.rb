@@ -17,5 +17,6 @@ namespace :deploy do
   task :link_config, roles: :app, except: { no_release: true } do
     run link_config_command('database.yml')
     run link_config_command('config.yml')
+    run link_config_command('newrelic.yml')
   end
 end

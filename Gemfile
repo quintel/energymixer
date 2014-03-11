@@ -40,9 +40,9 @@ group :development do
   gem 'pry-remote'
 end
 
-group :production do
-  # Use unicorn as the web server
+group :production, :staging do
   gem 'unicorn'
+  gem 'newrelic_rpm'
 end
 
 group :test do
