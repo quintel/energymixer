@@ -1,5 +1,5 @@
 worker_processes 4
-working_directory '/u/apps/energymixer/current'
+working_directory '/var/www/energymixer/current'
 
 # This loads the application in the master process before forking worker
 # processes. Read more about it here:
@@ -12,14 +12,14 @@ timeout 30
 
 # This is where we specify the socket. We will point the upstream Nginx module
 # to this socket later on
-listen '/u/apps/energymixer/shared/pids/unicorn.sock', backlog: 64
+listen '/var/www/energymixer/shared/tmp/sockets/unicorn.sock', backlog: 64
 
 # File containing the mixer process ID.
-pid '/u/apps/energymixer/shared/pids/unicorn.pid'
+pid '/var/www/energymixer/shared/tmp/pids/unicorn.pid'
 
 # Set the path of the log files inside the log folder of the testapp
-stderr_path '/u/apps/energymixer/shared/log/unicorn.log'
-stdout_path '/u/apps/energymixer/shared/log/unicorn.log'
+stderr_path '/var/www/energymixer/shared/log/unicorn.log'
+stdout_path '/var/www/energymixer/shared/log/unicorn.log'
 
 before_fork do |server, worker|
   # This option works in together with preload_app true setting. What is does
@@ -30,7 +30,7 @@ before_fork do |server, worker|
   # around until it is explicitly killed (so that it can be used if the new
   # master fails to start). Since we got as far as starting a new worker, we
   # end the old process...
-  old_pid = '/u/apps/energymixer/shared/pids/unicorn.pid.oldbin'
+  old_pid = '/var/www/energymixer/shared/tmp/pids/unicorn.pid.oldbin'
 
   if File.exists?(old_pid) && server.pid != old_pid
     begin

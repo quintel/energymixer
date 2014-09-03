@@ -18,7 +18,6 @@ gem 'tabs_on_rails'
 gem 'memcache-client'
 gem 'jbuilder'
 gem "jquery-etmodel-rails", '~> 0.3', :github => "quintel/etplugin"
-gem 'capistrano'
 
 group :development, :test do
   gem 'rspec-rails',        '~> 2.13.0'
@@ -38,6 +37,13 @@ group :development do
   gem 'annotate', :require => false
   gem 'guard'
   gem 'pry-remote'
+
+  # Deploy with Capistrano.
+  gem 'capistrano',             '~> 3.0',   require: false
+  gem 'capistrano-rbenv',       '~> 2.0',   require: false
+  gem 'capistrano-rails',       '~> 1.1',   require: false
+  gem 'capistrano-bundler',     '~> 1.1',   require: false
+  gem 'capistrano3-unicorn',    '~> 0.2',   require: false
 end
 
 group :production, :staging do
