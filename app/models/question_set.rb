@@ -43,7 +43,7 @@ class QuestionSet < ActiveRecord::Base
       situation  = api_client.current_situation
       attributes = Scenario.queries_to_outputs(api_client.current_situation)
 
-      Scenario.new(attributes.merge(year: 2011))
+      Scenario.new(attributes.merge(year: 2012))
     end
   rescue
     Scenario.acceptable_scenario

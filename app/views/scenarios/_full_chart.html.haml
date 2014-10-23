@@ -5,7 +5,7 @@
   current_chart_height = Math.sqrt(scenario.total_amount / max_amount.to_f) * max_height
 .full_chart.shaded_gradient
   %header.header_blue
-    - scenario_year = scenario.current_scenario? ? 2011 : scenario.year || question_set.end_year
+    - scenario_year = scenario.current_scenario? ? 2012 : scenario.year || question_set.end_year
     - if scenario.current_scenario?
       = t 'current_scenario'
     - else

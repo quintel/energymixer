@@ -14,11 +14,11 @@ de:
     header:
       text: "Der %{app_name} ist eine online Anwendung, mit der du deine Kenntnisse über die Energiezukunft erweitern kannst. Die Beantwortung von Fragen, die Bezug haben auf deine Ideen zum Energiemix der Zukunft, erlaubt dir, die Konsequenzen deiner Entscheidungen für Preis, Dauerhaftigkeit und Verfügbarkeit zu erkennen."
     intro:
-      title: "Dies ist der Energieverbrauch in den Niederlanden im Jahre 2011."
+      title: "Dies ist der Energieverbrauch in den Niederlanden im Jahre 2012."
       text: "In den Niederlanden kommt beinahe die Hälfte der verbrauchten Energie aus Erdöl, Erdgas oder Steinkohle. Unser Transportsystem hängt fast vollständig vom Erdöl ab; die Heizwärme und die Elektrizität für unsere Wohnungen werden in erster Linie aus Erdgas und Steinkohle erzeugt. Wollen wir dies so beibehalten und können wir uns das weiterhin erlauben? Wie wird deiner Meinung nach der Energiemix inunserem Land im Jahr %{end_year} aussehen? Gestalte mit dem %{app_name} den Energiemix nach deinen eigenen Vorstellungen auf der Basis desselben Rechenmodells, das auch die Politiker verwenden."
     chart:
       header:
-        title: Energiemix 2011
+        title: Energiemix 2012
         costs: "Kosten &euro; <span class='amount'>%{amount}</span> Milliarden"
     popups:
       buildings: "Etwa 59% des Energieverbrauchs in Wohnungen, Schulen und Bürogebäuden wird genutzt für Beheizung und Kühlung. In Wohnungen wird etwa 20% des Energieverbrauchs für Elektrizität aufgewendet; in Schulen und Bürogebäuden ist dieser Anteil etwa 40%. Benötigen wir diese Energie auch noch im Jahre %{end_year}?"
@@ -53,7 +53,7 @@ de:
     info: Info
   scenario_steps:
     total_amount:
-      step_0: "Der Energiemix ist zum Glück billiger als im Jahre 2011. Wir zahlen schon so viel für Energie."
+      step_0: "Der Energiemix ist zum Glück billiger als im Jahre 2012. Wir zahlen schon so viel für Energie."
       step_1: "Der Energiemix wird langsam teurer, aber wenn unsere Wirtschaft weiter wächst, können wir uns das wahrscheinlich leisten."
       step_2: "Der Energiemix wird ansehnlich teurer. Können wir uns das wohl leisten?"
       step_3: "Der Energiemix wird viel teurer. Bringt uns das Wirtschaftwachstum aus der Problemzone oder können wir das nicht mehr bezahlen?"
@@ -65,11 +65,11 @@ de:
     renewables:
       step_0: "Wir bleiben weiterhin abhängig von fossilen Energiequellen und es gelingt nicht, erneuerbare Energiequellen zu erschließen. Vielleicht ist das auch gar nicht nötig."
       step_1: "Wir machen ganz langsam Fortschritte beim Einrichten eines besseren Gleichgewichts zwischen fossiler und erneuerbarer Energie, aber schnell geht das wirklich nicht."
-      step_2: "Im Jahre %{end_year} erfüllen wir noch immer nicht die Ziele für erneuerbare Energie, die die Regierung im Jahr 2011 für das Jahr 2020 abgesteckt hat!"
+      step_2: "Im Jahre %{end_year} erfüllen wir noch immer nicht die Ziele für erneuerbare Energie, die die Regierung im Jahr 2012 für das Jahr 2020 abgesteckt hat!"
       step_3: "Die Energiewende beginnt langsam in Fahrt zu kommen und wir gehen stets bewusster mit unserem Energieverbrauch um. Ein ansehnlicher Teil unserer Energie kommt im Jahre %{end_year} aus erneuerbaren Quellen."
       step_4: "Mehr als 50% unseres Energiebedarf wird aus erneuerbaren Quellen gedeckt!"
     footprint:
-      step_0: "Unser Einsatz von Biomasse ist mehr oder weniger so geblieben wie im Jahr 2011. Das ist eigentlich ganz schön viel."
+      step_0: "Unser Einsatz von Biomasse ist mehr oder weniger so geblieben wie im Jahr 2012. Das ist eigentlich ganz schön viel."
       step_1: "Wir werden stets mehr Natur- und Ackerbauflächen für die Produktion von Biomasse einsetzen."
       step_2: "Der Einsatz von Biomasse nimmt stark zu. Wie erschliessen wir die Natur- und Ackerbauflächen, um diese Biomasse wachsen zu lassen?"
     energy_import:

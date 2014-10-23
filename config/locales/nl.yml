@@ -14,11 +14,11 @@ nl:
     header:
       text: "De %{app_name} is een online tool waarmee je je kennis over de energietoekomst kunt vergroten. Door het beantwoorden van vragen die betrekking hebben op je idee over de energiemix van de toekomst, kun je zien wat de gevolgen zijn van je beslissingen voor prijs, hernieuwbaarheid en beschikbaarheid."
     intro:
-      title: Dit is het energieverbruik van Nederland in 2011
+      title: Dit is het energieverbruik van Nederland in 2012
       text: "In Nederland komt bijna 92% van de energie die we gebuiken van aardolie, aardgas en steenkool. Ons transport is bijna volledig gebaseerd op aardolie. De verwarming en de elektriciteit in onze huizen worden voornamelijk opgewekt met aardgas en steenkool. Maar willen we dit en kan dit zo blijven? Hoe denk je dat de Energy Mix van Nederland er in %{end_year} uit zal zien? Maak met de %{app_name} eenvoudig je eigen mix, gebaseerd op het zelfde rekenmodel waarmee ook beleidsmakers werken."
     chart:
       header:
-        title: Energy Mix 2011
+        title: Energy Mix 2012
         costs: "Kosten &euro; <span class='amount'>%{amount}</span> miljard"
     popups:
       buildings: "Ruim 59% van de energie voor huizen, scholen en kantoorgebouwen is voor verwarming of koeling. In huizen is ongeveer 20% nodig voor elektriciteit, in scholen en kantoorgebouwen is dit wel 40%. Hebben we die energie ook nog nodig in %{end_year}?"
@@ -52,7 +52,7 @@ nl:
   info: Info
   scenario_steps:
     total_amount:
-      step_0: "De mix is gelukkig goedkoper dan in 2011. We betalen al zo veel voor energie."
+      step_0: "De mix is gelukkig goedkoper dan in 2012. We betalen al zo veel voor energie."
       step_1: "De mix wordt langzaam duurder, maar als onze economie blijft groeien kunnen we dat waarschijnlijk wel betalen."
       step_2: "De mix wordt behoorlijk veel duurder. Kunnen we dat wel blijven betalen?"
       step_3: "De mix wordt veel duurder. Groeien we onszelf uit de problemen of kunnen we dat niet meer betalen?"
@@ -64,11 +64,11 @@ nl:
     renewables:
       step_0: "We blijven verslaafd aan fossiel en het lukt niet om hernieuwbare energie in te zetten. Misschien is het ook wel niet nodig."
       step_1: "We maken heel langzaam voortgang met het vinden van een betere balans tussen fossiele en hernieuwbare energie, maar hard gaat het niet."
-      step_2: "In %{end_year} halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2011 heeft gezet voor 2020 niet!"
+      step_2: "In %{end_year} halen we nog steeds de doelen voor hernieuwbare energie die het kabinet in 2012 heeft gezet voor 2020 niet!"
       step_3: "De energietransitie begint goed op gang te komen we gaan steeds bewuster om met ons energiegebruik. Een behoorlijk deel van onze energie komt in %{end_year} uit hernieuwbare bronnen."
       step_4: "Meer dan 50% van onze energiebehoefte wordt ingevuld met hernieuwbare bronnen!"
     footprint:
-      step_0: "Ons biomassa gebruik is min of meer gelijk aan dat in 2011. Best veel eigenlijk."
+      step_0: "Ons biomassa gebruik is min of meer gelijk aan dat in 2012. Best veel eigenlijk."
       step_1: "We gaan steeds meer natuur en landbouwgronden inzetten voor de produktie van biomassa."
       step_2: "Het gebruik van biomassa groeit sterk. Hoe gaan we de landbouwgronden en natuur vinden om al deze biomassa op te telen?"
     energy_import:

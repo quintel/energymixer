@@ -172,7 +172,7 @@ class Scenario < ActiveRecord::Base
     :output_10 => 2141265.8747384516,    # share_of_total_costs_assigned_to_renewables_solar
     :output_11 => 2170862923.8200254,    # share_of_total_costs_assigned_to_renewables_biomass
     :output_12 => 42.420507732497605,    # mixer_total_costs
-    :year      => 2011
+    :year      => 2012
     )
   end
 
