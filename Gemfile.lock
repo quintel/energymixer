@@ -145,7 +145,7 @@ GEM
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
     kgio (2.7.4)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.7)
     libwebsocket (0.1.4)
       addressable
     listen (0.4.7)
